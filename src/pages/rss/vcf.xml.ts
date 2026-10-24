@@ -1,0 +1,2 @@
+import rss from '@astrojs/rss'; import { getAllArticles } from '../../lib/data';
+export async function GET(context: { site?: URL }) { const items = getAllArticles().filter((a) => a.categories.includes('VCF・VMware・競合')); const base = import.meta.env.BASE_URL; return rss({ title: 'Daily News Digest — VCF', description: 'VMware・VCF・競合ニュース', site: context.site!, items: items.map((a) => ({ title: a.title, pubDate: new Date(a.publishedAt), description: a.summary.join(' '), link: `${base}articles/${a.id}/`, guid: a.id, categories: a.categories })) }); }

@@ -1,0 +1,3 @@
+import rss from '@astrojs/rss'; import { getAllArticles } from '../lib/data';
+export async function GET(context: { site?: URL }) { const base = import.meta.env.BASE_URL; return rss({ title: 'Daily News Digest', description: '毎朝の重要ニュース', site: context.site!, items: getAllArticles().map((a) => ({ title: a.title, pubDate: new Date(a.publishedAt), description: a.summary.join(' '), link: `${base}articles/${a.id}/`, guid: a.id, categories: a.categories, customData: `<source-url>${escapeXml(a.sourceUrl)}</source-url>` })) }); }
+function escapeXml(s: string) { return s.replace(/[<>&'\"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[c]!); }
