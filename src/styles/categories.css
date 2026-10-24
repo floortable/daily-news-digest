@@ -1,26 +1,26 @@
 :root {
-  --cat-domestic: #557a68;
-  --cat-tech: #526f91;
-  --cat-science: #6f6695;
-  --cat-life: #8b704f;
-  --cat-entertainment: #8a6175;
-  --cat-vcf: #596f7a;
-  --cat-security: #925f57;
-  --cat-other: #707671;
+  --cat-domestic: #0f766e;
+  --cat-tech: #255f9e;
+  --cat-science: #6746ad;
+  --cat-life: #94600a;
+  --cat-entertainment: #a83e69;
+  --cat-vcf: #4f5d75;
+  --cat-security: #b42318;
+  --cat-other: #52606d;
 }
 
 :root[data-theme='dark'] {
-  --cat-domestic: #79a68f;
-  --cat-tech: #7f9fc4;
-  --cat-science: #9a91bf;
-  --cat-life: #b0946d;
-  --cat-entertainment: #b6879d;
-  --cat-vcf: #819da9;
-  --cat-security: #bd8178;
-  --cat-other: #969d98;
+  --cat-domestic: #5eead4;
+  --cat-tech: #93c5fd;
+  --cat-science: #c4b5fd;
+  --cat-life: #f2c66d;
+  --cat-entertainment: #f0a3be;
+  --cat-vcf: #b8cad8;
+  --cat-security: #fda29b;
+  --cat-other: #cbd5e1;
 }
 
-.article-card { border-left: 4px solid var(--category-color, var(--cat-other)); }
+.article-card { border-left: 7px solid var(--category-color, var(--cat-other)); background-image: linear-gradient(90deg, color-mix(in srgb, var(--category-color, var(--cat-other)) 7%, transparent), transparent 32%); }
 .article-card[data-primary-category='国内・国際'] { --category-color: var(--cat-domestic); }
 .article-card[data-primary-category='テクノロジー'] { --category-color: var(--cat-tech); }
 .article-card[data-primary-category='科学・医療'] { --category-color: var(--cat-science); }
@@ -29,7 +29,7 @@
 .article-card[data-primary-category='VCF・VMware・競合'] { --category-color: var(--cat-vcf); }
 .article-card[data-primary-category='セキュリティ'] { --category-color: var(--cat-security); }
 
-.tags span { --tag-color: var(--cat-other); border-color: color-mix(in srgb, var(--tag-color) 45%, var(--line)); color: var(--tag-color); background: color-mix(in srgb, var(--tag-color) 9%, transparent); }
+.tags span { --tag-color: var(--cat-other); border-width: 1.5px; border-color: color-mix(in srgb, var(--tag-color) 65%, var(--line)); color: var(--tag-color); background: color-mix(in srgb, var(--tag-color) 14%, transparent); font-weight: 700; }
 .tags span[data-category='国内・国際'] { --tag-color: var(--cat-domestic); }
 .tags span[data-category='テクノロジー'] { --tag-color: var(--cat-tech); }
 .tags span[data-category='科学・医療'] { --tag-color: var(--cat-science); }
