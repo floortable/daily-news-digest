@@ -19,8 +19,27 @@ export const articleSchema = z.object({
   channels: z.array(z.enum(['hatena', 'hacker-news', 'other'])).min(1),
   top5Rank: z.number().int().min(1).max(5).nullable(),
   summary: z.array(z.string().min(1).max(500)).min(1).max(3),
-  comment: z.string().min(1).max(500),
+  comment: z.string().min(80, '独自解説は80文字以上必要です').max(1000),
   informationType: z.enum(['公式発表', '報道', '研究', '意見']),
+  editorialReview: z.object({
+    titleIsOriginal: z.literal(true),
+    quotation: z.discriminatedUnion('used', [
+      z.object({ used: z.literal(false) }).strict(),
+      z.object({
+        used: z.literal(true),
+        text: z.string().min(1).max(300),
+        sourceUrl: z.url(),
+        attribution: z.string().min(1).max(200),
+        purpose: z.string().min(30).max(300),
+      }).strict(),
+    ]),
+    mediaAssets: z.array(z.object({
+      url: z.url(),
+      license: z.enum(['CC0-1.0', 'CC-BY-4.0', 'CC-BY-SA-4.0', 'public-domain', 'explicit-permission']),
+      attribution: z.string().min(1).max(300),
+      licenseUrl: z.url().nullable(),
+    }).strict()).max(3),
+  }).strict(),
   metrics: z.object({
     hatenaBookmarks: z.number().int().nonnegative().optional(),
     hnPoints: z.number().int().nonnegative().optional(),
@@ -32,8 +51,8 @@ export const articleSchema = z.object({
     checkedAt: isoDateTime,
     httpStatus: z.number().int().min(100).max(599).optional(),
     note: z.string().max(300).optional(),
-  }),
-});
+  }).strict(),
+}).strict();
 
 export const editionSchema = z.object({
   date: z.iso.date(),
@@ -45,9 +64,10 @@ export const editionSchema = z.object({
     copiedImages: z.literal(false),
     quotationsReviewed: z.literal(true),
     sourceTermsReviewed: z.literal(true),
-  }),
+    explanationsReviewed: z.literal(true),
+  }).strict(),
   articles: z.array(articleSchema).min(1),
-}).superRefine((edition, ctx) => {
+}).strict().superRefine((edition, ctx) => {
   const ids = new Set<string>();
   const urls = new Set<string>();
   const ranks = new Set<number>();

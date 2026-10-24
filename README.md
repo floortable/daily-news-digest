@@ -30,8 +30,9 @@ npm run dev
 
 1. `data/daily/YYYY-MM-DD.json` を既存ファイルからではなく、検証済みの収集結果を基に作成する。
 2. すべてのURLが記事個別ページであることを確認し、確認結果を `urlCheck` に記録する。
-3. `npm run validate:data`、`npm test`、`npm run build` を実行する。
-4. JSONだけをレビューし、mainへ反映する。CI成功後にPagesが公開される。
+3. 80文字以上の独自解説、独自見出し、引用・画像の権利情報を記録し、日次の権利確認項目を完了する。
+4. `npm run validate:data`、`npm test`、`npm run build` を実行する。
+5. JSONだけをレビューし、mainへ反映する。CI成功後にPagesが公開される。
 
 不正なデータではビルドが失敗します。生成失敗時に前日のデータを当日分としてコピーしないでください。
 
