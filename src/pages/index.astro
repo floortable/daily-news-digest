@@ -1,28 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getLatestEdition } from '../lib/data';
+const edition = getLatestEdition();
+const top5 = edition.articles.filter((a) => a.top5Rank !== null).sort((a, b) => a.top5Rank! - b.top5Rank!);
+const others = edition.articles.filter((a) => a.top5Rank === null);
 ---
-<Base title="Private Daily News Digest" description="暗号化された個人用ニュースダイジェスト">
-  <section id="login-view" class="login-view" aria-labelledby="login-title">
-    <div class="login-panel">
-      <p class="eyebrow">PRIVATE NEWS VAULT</p>
-      <h1 id="login-title">自分だけのニュース。</h1>
-      <p>記事データは暗号化されています。パスフレーズは端末内での復号にだけ使われ、送信・保存されません。</p>
-      <form id="login-form">
-        <label for="passphrase">パスフレーズ</label>
-        <div class="password-row"><input id="passphrase" name="passphrase" type="password" minlength="16" required autocomplete="current-password" /><button type="submit">ロック解除</button></div>
-      </form>
-      <p id="login-status" class="login-status" role="status" aria-live="polite"></p>
-      <details><summary>セキュリティについて</summary><p>PBKDF2-SHA-256（60万回）とAES-256-GCMを使用します。暗号化ファイルは公開されていますが、パスフレーズなしでは復号できません。</p></details>
-    </div>
+<Base>
+  <section class="hero">
+    <p class="eyebrow">MORNING BRIEFING</p><h1>今日を読む、5分間。</h1>
+    <p><time datetime={edition.date}>{edition.date}</time> · {edition.articles.length}件</p>
   </section>
-  <div id="vault-view" hidden>
-    <section class="vault-header"><div><p class="eyebrow">PRIVATE MORNING BRIEFING</p><h1>今日を読む、5分間。</h1><p id="edition-meta"></p></div><button id="logout" type="button">ロックする</button></section>
-    <section class="vault-controls" aria-label="記事の検索と絞り込み">
-      <label>検索 <input id="vault-search" type="search" placeholder="タイトル、要約、解説…" autocomplete="off" /></label>
-      <label>表示 <select id="vault-filter"><option value="all">すべて</option><option value="favorites">お気に入り</option><option value="top5">Top 5</option><option value="unread">未読</option><option value="国内・国際">国内・国際</option><option value="テクノロジー">テクノロジー</option><option value="科学・医療">科学・医療</option><option value="生活・文化">生活・文化</option><option value="エンタメ">エンタメ</option><option value="VCF・VMware・競合">VCF・VMware・競合</option><option value="セキュリティ">セキュリティ</option><option value="その他">その他</option></select></label>
-      <label>日付 <select id="vault-date"></select></label>
-    </section>
-    <p id="vault-result-count" aria-live="polite"></p><div id="vault-articles" class="article-list"></div>
-  </div>
-  <script>import '../scripts/vault-app';</script>
+  <section aria-labelledby="top5"><h2 id="top5">今日これだけは読んでおきたい Top 5</h2><div class="top-grid">{top5.map((article) => <ArticleCard article={article} featured />)}</div></section>
+  <section aria-labelledby="all-news">
+    <div class="section-heading"><h2 id="all-news">すべてのニュース</h2><div class="controls">
+      <label>表示 <select id="article-filter"><option value="all">すべて</option><option value="favorites">お気に入り</option><option value="top5">Top 5</option><option value="hatena">はてなブックマーク</option><option value="hacker-news">Hacker News</option><option value="togetter">Togetter</option><option value="reddit">Reddit</option><option value="4chan">4chan</option><option value="social-other">その他ソーシャル</option><option value="国内・国際">国内・国際ニュース</option><option value="VCF・VMware・競合">VCF・VMware・競合</option><option value="セキュリティ">セキュリティ</option><option value="その他">その他</option></select></label>
+      <label><input id="unread-only" type="checkbox" /> 未読のみ</label>
+    </div></div>
+    <div class="article-list">{others.map((article) => <ArticleCard article={article} />)}</div>
+  </section>
+  <script>import '../scripts/preferences';</script>
 </Base>

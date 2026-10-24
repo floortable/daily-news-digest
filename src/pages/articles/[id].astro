@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro'; import AttentionAnalysis from '../../components/AttentionAnalysis.astro'; import { getAllArticles, getArticle } from '../../lib/data'; import type { Article } from '../../lib/schema';
+export function getStaticPaths() { return getAllArticles().map((article) => ({ params: { id: article.id }, props: { article } })); }
+const { article } = Astro.props; const base = import.meta.env.BASE_URL; const related = article.relatedArticleIds.map(getArticle).filter((item): item is Article => Boolean(item));
+---
+<Base title={`${article.title} | Daily News Digest`} description={article.summary.join('')}><article class="article-detail"><p class="meta">{article.sourceName} · {article.informationType}</p><h1>{article.title}</h1><div class="tags">{article.categories.map((c) => <span>{c}</span>)}</div>{article.summary.map((s) => <p>{s}</p>)}<aside><strong>編集コメント</strong><p>{article.comment}</p></aside><AttentionAnalysis article={article} /><a class="source-link" href={article.sourceUrl} target="_blank" rel="noopener noreferrer">原文を開く ↗</a>{related.length > 0 && <section><h2>関連する過去記事</h2><ul>{related.map((item) => <li><a href={`${base}articles/${item.id}/`}>{item.title}</a></li>)}</ul></section>}</article></Base>
