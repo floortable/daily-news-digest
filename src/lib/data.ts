@@ -4,7 +4,7 @@ const rawEditions = import.meta.glob('/data/daily/*.json', { eager: true, import
 
 export function getEditions(): Edition[] {
   return Object.entries(rawEditions)
-    .map(([path, raw]) => editionSchema.parse(raw, { path: [path] }))
+    .map(([, raw]) => editionSchema.parse(raw))
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 

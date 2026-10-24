@@ -9,19 +9,20 @@
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "check:free-tier": "tsx scripts/check-free-tier.ts",
+    "check:public-safety": "tsx scripts/check-public-safety.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.14",
-    "astro": "^5.15.3",
-    "zod": "^3.25.76"
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^7.4.2",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.5",
-    "@types/node": "^24.10.1",
-    "tsx": "^4.20.6",
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^24.19.2",
+    "tsx": "^4.23.15",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.6"
+    "vitest": "^4.1.12"
   }
 }
