@@ -1,0 +1,57 @@
+:root {
+  --cat-domestic: #557a68;
+  --cat-tech: #526f91;
+  --cat-science: #6f6695;
+  --cat-life: #8b704f;
+  --cat-entertainment: #8a6175;
+  --cat-vcf: #596f7a;
+  --cat-security: #925f57;
+  --cat-other: #707671;
+}
+
+:root[data-theme='dark'] {
+  --cat-domestic: #79a68f;
+  --cat-tech: #7f9fc4;
+  --cat-science: #9a91bf;
+  --cat-life: #b0946d;
+  --cat-entertainment: #b6879d;
+  --cat-vcf: #819da9;
+  --cat-security: #bd8178;
+  --cat-other: #969d98;
+}
+
+.article-card { border-left: 4px solid var(--category-color, var(--cat-other)); }
+.article-card[data-primary-category='国内・国際'] { --category-color: var(--cat-domestic); }
+.article-card[data-primary-category='テクノロジー'] { --category-color: var(--cat-tech); }
+.article-card[data-primary-category='科学・医療'] { --category-color: var(--cat-science); }
+.article-card[data-primary-category='生活・文化'] { --category-color: var(--cat-life); }
+.article-card[data-primary-category='エンタメ'] { --category-color: var(--cat-entertainment); }
+.article-card[data-primary-category='VCF・VMware・競合'] { --category-color: var(--cat-vcf); }
+.article-card[data-primary-category='セキュリティ'] { --category-color: var(--cat-security); }
+
+.tags span { --tag-color: var(--cat-other); border-color: color-mix(in srgb, var(--tag-color) 45%, var(--line)); color: var(--tag-color); background: color-mix(in srgb, var(--tag-color) 9%, transparent); }
+.tags span[data-category='国内・国際'] { --tag-color: var(--cat-domestic); }
+.tags span[data-category='テクノロジー'] { --tag-color: var(--cat-tech); }
+.tags span[data-category='科学・医療'] { --tag-color: var(--cat-science); }
+.tags span[data-category='生活・文化'] { --tag-color: var(--cat-life); }
+.tags span[data-category='エンタメ'] { --tag-color: var(--cat-entertainment); }
+.tags span[data-category='VCF・VMware・競合'] { --tag-color: var(--cat-vcf); }
+.tags span[data-category='セキュリティ'] { --tag-color: var(--cat-security); }
+
+.attention { display: flex; align-items: center; flex-wrap: wrap; gap: .45rem .7rem; margin: .7rem 0 1rem; color: var(--muted); font-size: .75rem; }
+.attention-label { font-weight: 700; letter-spacing: .04em; }
+.attention-items { display: flex; flex-wrap: wrap; gap: .4rem; }
+.attention-metric { display: inline-flex; align-items: center; gap: .28rem; padding: .22rem .5rem; border: 1px solid var(--line); border-radius: 2rem; background: color-mix(in srgb, var(--paper) 88%, var(--metric-color, var(--muted))); }
+.attention-metric strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.metric-icon { min-width: 1.25rem; color: var(--metric-color, var(--muted)); font-weight: 800; text-align: center; }
+.metric-hatena { --metric-color: #397599; }
+.metric-hn { --metric-color: #a2603e; }
+.metric-comments, .metric-replies { --metric-color: #6d7180; }
+.metric-views { --metric-color: #5c7b72; }
+.metric-reddit { --metric-color: #9a614e; }
+.attention-unavailable { display: inline-flex; align-items: center; gap: .35rem; opacity: .82; }
+.attention small { width: 100%; }
+
+@media (max-width: 700px) {
+  .attention { align-items: flex-start; flex-direction: column; }
+}

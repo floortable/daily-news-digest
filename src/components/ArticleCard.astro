@@ -1,10 +1,11 @@
 ---
 import type { Article } from '../lib/schema';
+import AttentionMetrics from './AttentionMetrics.astro';
 interface Props { article: Article; featured?: boolean; }
 const { article, featured = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
-<article class:list={['article-card', { featured }]} data-article-id={article.id} data-categories={article.categories.join('|')} data-channels={article.channels.join('|')} data-top5={article.top5Rank !== null}>
+<article class:list={['article-card', { featured }]} data-article-id={article.id} data-primary-category={article.categories[0]} data-categories={article.categories.join('|')} data-channels={article.channels.join('|')} data-top5={article.top5Rank !== null}>
   <header>
     {article.top5Rank && <span class="rank">{article.top5Rank}</span>}
     <div>
@@ -12,7 +13,8 @@ const base = import.meta.env.BASE_URL;
       <h3><a href={`${base}articles/${article.id}/`}>{article.title}</a></h3>
     </div>
   </header>
-  <div class="tags">{article.categories.map((category) => <span>{category}</span>)}</div>
+  <div class="tags">{article.categories.map((category) => <span data-category={category}>{category}</span>)}</div>
+  <AttentionMetrics article={article} />
   <section class="article-body" aria-label="要約と解説">
     <h4>要約</h4>
     {article.summary.map((sentence) => <p>{sentence}</p>)}

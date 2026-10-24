@@ -1,0 +1,36 @@
+---
+import type { Article } from '../lib/schema';
+interface Props { article: Article; }
+const { article } = Astro.props;
+const metrics = article.metrics;
+const checkedAt = metrics?.socialMetricsCheckedAt;
+const items = [
+  metrics?.hatenaBookmarks !== undefined && { kind: 'hatena', icon: 'B!', label: 'はてなブックマーク', value: metrics.hatenaBookmarks, unit: 'users' },
+  metrics?.hnPoints !== undefined && { kind: 'hn', icon: 'Y', label: 'Hacker News points', value: metrics.hnPoints, unit: 'pts' },
+  metrics?.hnComments !== undefined && { kind: 'comments', icon: '◌', label: 'Hacker News comments', value: metrics.hnComments, unit: 'comments' },
+  metrics?.togetterViews !== undefined && { kind: 'views', icon: '◉', label: 'Togetter views', value: metrics.togetterViews, unit: 'views' },
+  metrics?.redditScore !== undefined && { kind: 'reddit', icon: '▲', label: 'Reddit score', value: metrics.redditScore, unit: 'score' },
+  metrics?.redditComments !== undefined && { kind: 'comments', icon: '◌', label: 'Reddit comments', value: metrics.redditComments, unit: 'comments' },
+  metrics?.fourChanReplies !== undefined && { kind: 'replies', icon: '↪', label: '4chan replies', value: metrics.fourChanReplies, unit: 'replies' },
+].filter(Boolean) as Array<{ kind: string; icon: string; label: string; value: number; unit: string }>;
+const format = new Intl.NumberFormat('ja-JP');
+---
+<div class="attention" aria-label="媒体別の注目指標">
+  {items.length > 0 ? (
+    <>
+      <span class="attention-label">注目指標</span>
+      <div class="attention-items">
+        {items.map((item) => (
+          <span class:list={['attention-metric', `metric-${item.kind}`]} title={`${item.label}。媒体ごとに母数と集計方法が異なります`}>
+            <span class="metric-icon" aria-hidden="true">{item.icon}</span>
+            <strong>{format.format(item.value)}</strong>
+            <span>{item.unit}</span>
+          </span>
+        ))}
+      </div>
+      {checkedAt && <small>取得: {new Date(checkedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</small>}
+    </>
+  ) : (
+    <span class="attention-unavailable"><span aria-hidden="true">ⓘ</span> 配信元で公開された注目指標なし</span>
+  )}
+</div>
