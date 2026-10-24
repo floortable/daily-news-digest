@@ -5,6 +5,6 @@ const isProjectPage = Boolean(process.env.GITHUB_ACTIONS && repository && !repos
 
 export default defineConfig({
   site: process.env.SITE_URL || 'https://floortable.github.io',
-  base: isProjectPage ? `/${repository}` : '/',
+  base: isProjectPage ? `/${repository}/` : '/',
   output: 'static',
 });
