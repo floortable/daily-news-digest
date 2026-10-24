@@ -1,6 +1,7 @@
 ---
 import type { Article } from '../lib/schema';
 import AttentionMetrics from './AttentionMetrics.astro';
+import DeepDive from './DeepDive.astro';
 interface Props { article: Article; featured?: boolean; }
 const { article, featured = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -22,8 +23,9 @@ const base = import.meta.env.BASE_URL;
     <p class="comment">{article.comment}</p>
     <a class="source-link" href={article.sourceUrl} target="_blank" rel="noopener noreferrer">原文を開く ↗</a>
   </section>
+  <DeepDive article={article} />
   <div class="card-actions">
     <button type="button" data-action="read" aria-pressed="false">既読</button>
-    <button type="button" data-action="save" aria-pressed="false">あとで読む</button>
+    <button type="button" data-action="favorite" aria-pressed="false"><span aria-hidden="true">☆</span> お気に入り</button>
   </div>
 </article>

@@ -14,7 +14,7 @@ const others = edition.articles.filter((a) => a.top5Rank === null);
   <section aria-labelledby="top5"><h2 id="top5">今日これだけは読んでおきたい Top 5</h2><div class="top-grid">{top5.map((article) => <ArticleCard article={article} featured />)}</div></section>
   <section aria-labelledby="all-news">
     <div class="section-heading"><h2 id="all-news">すべてのニュース</h2><div class="controls">
-      <label>表示 <select id="article-filter"><option value="all">すべて</option><option value="top5">Top 5</option><option value="hatena">はてなブックマーク</option><option value="hacker-news">Hacker News</option><option value="togetter">Togetter</option><option value="reddit">Reddit</option><option value="4chan">4chan</option><option value="social-other">その他ソーシャル</option><option value="国内・国際">国内・国際ニュース</option><option value="VCF・VMware・競合">VCF・VMware・競合</option><option value="セキュリティ">セキュリティ</option><option value="その他">その他</option></select></label>
+      <label>表示 <select id="article-filter"><option value="all">すべて</option><option value="favorites">お気に入り</option><option value="top5">Top 5</option><option value="hatena">はてなブックマーク</option><option value="hacker-news">Hacker News</option><option value="togetter">Togetter</option><option value="reddit">Reddit</option><option value="4chan">4chan</option><option value="social-other">その他ソーシャル</option><option value="国内・国際">国内・国際ニュース</option><option value="VCF・VMware・競合">VCF・VMware・競合</option><option value="セキュリティ">セキュリティ</option><option value="その他">その他</option></select></label>
       <label><input id="unread-only" type="checkbox" /> 未読のみ</label>
     </div></div>
     <div class="article-list">{others.map((article) => <ArticleCard article={article} />)}</div>

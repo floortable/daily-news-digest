@@ -1,0 +1,26 @@
+---
+import type { Article } from '../lib/schema';
+interface Props { article: Article; }
+const { article } = Astro.props;
+const informationGuidance: Record<Article['informationType'], string> = {
+  '公式発表': '発表主体の立場から書かれているため、適用条件や第三者評価も合わせて確認するのが有効です。',
+  '報道': '見出しだけで判断せず、一次情報、取材対象、続報による変更点を確認するのが有効です。',
+  '研究': '研究対象、比較条件、効果量、査読状況、再現性を確認してから一般化する必要があります。',
+  '意見': '事実と筆者の評価を分け、異なる立場の根拠も確認するのが有効です。',
+};
+const position = article.top5Rank
+  ? `本日のTop 5で${article.top5Rank}位です。${article.categories.join('・')}を横断する重要記事として選定されています。`
+  : `${article.categories.join('・')}の継続確認対象です。Top 5以外の記事も、今後の続報や実務への影響によって重要度が変わる可能性があります。`;
+const momentum = article.metrics
+  ? '公開されている媒体別指標はカード上部に表示しています。異なる媒体の数字は単純比較せず、同じ媒体内の関心度として読んでください。'
+  : '配信元が公開する閲覧数や反応数は取得できていません。注目度を推測値で補わず、内容と一次情報を基準に判断します。';
+---
+<aside class="deep-dive" data-deep-dive hidden aria-label="お気に入り記事の深掘り解説">
+  <div class="deep-dive-heading"><span aria-hidden="true">✦</span><strong>お気に入り深掘り</strong><small>記事データから自動構成・外部AI API未使用</small></div>
+  <dl>
+    <div><dt>位置づけ</dt><dd>{position}</dd></div>
+    <div><dt>読み方</dt><dd>{informationGuidance[article.informationType]}</dd></div>
+    <div><dt>注目度</dt><dd>{momentum}</dd></div>
+    <div><dt>次の確認</dt><dd>{article.sourceName}の原文と今後の続報を確認してください。{article.relatedArticleIds.length ? `関連する過去記事が${article.relatedArticleIds.length}件あります。` : '現時点で関連付けられた過去記事はありません。'}</dd></div>
+  </dl>
+</aside>
