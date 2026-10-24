@@ -20,6 +20,7 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm run check:free-tier
+      - run: npm run check:licenses
       - run: npm run check:public-safety
       - run: npm audit --omit=dev --audit-level=high
       - run: npm test
