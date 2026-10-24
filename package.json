@@ -8,6 +8,7 @@
     "build": "npm run validate:data && ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
+    "check:free-tier": "tsx scripts/check-free-tier.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"
   },
