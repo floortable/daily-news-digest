@@ -1,2 +1,0 @@
-import rss from '@astrojs/rss'; import { getAllArticles } from '../../lib/data';
-export async function GET(context: { site?: URL }) { const items = getAllArticles().filter((a) => a.top5Rank !== null); const base = import.meta.env.BASE_URL; return rss({ title: 'Daily News Digest — Top 5', description: '毎日のTop 5', site: context.site!, items: items.map((a) => ({ title: a.title, pubDate: new Date(a.publishedAt), description: a.summary.join(' '), link: `${base}articles/${a.id}/`, guid: a.id, categories: a.categories })) }); }

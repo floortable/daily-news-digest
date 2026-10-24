@@ -1,0 +1,17 @@
+.login-view { min-height: 72vh; display: grid; place-items: center; }
+.login-panel { width: min(620px, 100%); padding: clamp(1.4rem, 5vw, 3rem); border: 1px solid var(--line); border-radius: 1rem; background: var(--paper); box-shadow: var(--shadow); }
+.login-panel h1, .vault-header h1 { font: clamp(2.3rem, 7vw, 5rem)/1 Georgia, serif; letter-spacing: -.045em; margin: .35rem 0 1rem; }
+.login-panel form { display: grid; gap: .4rem; margin: 2rem 0 1rem; }
+.password-row { display: grid; grid-template-columns: 1fr auto; gap: .5rem; }
+.password-row input, .password-row button, #logout { min-height: 3rem; }
+.password-row button, #logout { border: 0; border-radius: .45rem; padding: .6rem 1rem; background: var(--accent2); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+.password-row button:disabled { opacity: .55; cursor: wait; }
+.login-status { min-height: 1.75rem; color: var(--accent); font-weight: 700; }
+.login-panel details { border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); }
+.login-panel summary { cursor: pointer; }
+.vault-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 3rem; }
+.vault-controls { position: sticky; top: 4.2rem; z-index: 4; display: grid; grid-template-columns: minmax(16rem, 2fr) 1fr 1fr; gap: .75rem; margin: 2rem 0; padding: 1rem; border: 1px solid var(--line); border-radius: .7rem; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); }
+.vault-controls label { display: grid; gap: .25rem; color: var(--muted); font-size: .75rem; font-weight: 700; }
+.vault-controls input, .vault-controls select { width: 100%; color: var(--text); }
+[hidden] { display: none !important; }
+@media (max-width: 700px) { .password-row, .vault-controls { grid-template-columns: 1fr; } .vault-header { align-items: flex-start; flex-direction: column; } .vault-controls { position: static; } }

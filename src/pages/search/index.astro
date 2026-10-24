@@ -1,8 +1,0 @@
----
-import Base from '../../layouts/Base.astro'; import { getAllArticles } from '../../lib/data';
-const articles = getAllArticles(); const base = import.meta.env.BASE_URL;
----
-<Base title="検索 | Daily News Digest"><section><h1>記事を検索</h1><label class="search-box">キーワード<input id="search" type="search" placeholder="タイトル、要約、カテゴリ…" autocomplete="off" /></label><p id="result-count" aria-live="polite"></p><div id="results" class="search-results">{articles.map((a) => <a href={`${base}articles/${a.id}/`} data-search={JSON.stringify([a.title, ...a.summary, ...a.categories, a.sourceName]).toLowerCase()}><span>{a.editionDate} · {a.sourceName}</span><strong>{a.title}</strong></a>)}</div></section><script is:inline>
-const input = document.querySelector('#search'); const items = [...document.querySelectorAll('[data-search]')]; const count = document.querySelector('#result-count');
-function update() { const terms = input.value.trim().toLowerCase().split(/\s+/).filter(Boolean); let shown = 0; for (const item of items) { const hit = terms.every((term) => item.dataset.search.includes(term)); item.hidden = !hit; if (hit) shown++; } count.textContent = `${shown}件`; } input.addEventListener('input', update); update();
-</script></Base>

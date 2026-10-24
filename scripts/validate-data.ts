@@ -2,9 +2,9 @@ import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { editionSchema, normalizeUrl } from '../src/lib/schema';
 
-const directory = resolve('data/daily');
+const directory = resolve('private-data/daily');
 const files = (await readdir(directory)).filter((name) => name.endsWith('.json')).sort();
-if (!files.length) throw new Error('data/daily にJSONファイルがありません');
+if (!files.length) throw new Error('private-data/daily にJSONファイルがありません');
 
 const globalIds = new Set<string>();
 const globalUrls = new Map<string, string>();

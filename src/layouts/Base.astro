@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/categories.css';
+import '../styles/private.css';
 interface Props { title?: string; description?: string; }
 const { title = 'Daily News Digest', description = '毎朝の重要ニュースを、短く、確かに。' } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -12,21 +13,21 @@ const base = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="color-scheme" content="light dark" />
-    <link rel="alternate" type="application/rss+xml" title="全記事" href={`${base}rss.xml`} />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests" />
     <title>{title}</title>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href={base}>Daily News Digest</a>
       <nav aria-label="メインナビゲーション">
-        <a href={base}>最新</a><a href={`${base}archive/`}>アーカイブ</a><a href={`${base}search/`}>検索</a>
+        <a href={base}>ニュース保管庫</a>
         <button id="theme-toggle" type="button" aria-label="表示テーマを切り替える">◐</button>
       </nav>
     </header>
     <main><slot /></main>
     <footer>
       <p>既読・お気に入りはこのブラウザーにのみ保存され、端末間では同期されません。</p>
-      <p><a href={`${base}rss.xml`}>RSS</a> · <a href="https://github.com/floortable/daily-news-digest/blob/main/docs/editorial-policy.md">編集・権利ポリシー</a> · <a href="https://github.com/floortable/daily-news-digest/blob/main/LICENSE">MIT License</a></p>
+      <p><a href="https://github.com/floortable/daily-news-digest/blob/main/docs/editorial-policy.md">編集・権利ポリシー</a> · <a href="https://github.com/floortable/daily-news-digest/blob/main/LICENSE">MIT License</a></p>
       <p>注目指標は各媒体が公開した実数です。媒体ごとに母数と集計方法が異なるため、媒体をまたいだ単純比較はできません。</p>
     </footer>
     <script is:inline>

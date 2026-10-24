@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 
 const failures: string[] = [];
 const runGit = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
@@ -17,6 +18,7 @@ const secretPatterns: Array<[string, RegExp]> = [
 ];
 
 for (const file of files) {
+  if (!existsSync(file)) continue;
   if (forbiddenNames.test(file) && !/\.env\.example$/i.test(file)) failures.push(`${file}: 公開禁止ファイル名`);
   const buffer = await readFile(file);
   if (buffer.includes(0) || buffer.length > 2_000_000) continue;

@@ -1,5 +1,0 @@
----
-import Base from '../../layouts/Base.astro'; import { getEditions } from '../../lib/data';
-const editions = getEditions(); const base = import.meta.env.BASE_URL;
----
-<Base title="アーカイブ | Daily News Digest"><section><h1>アーカイブ</h1><div class="archive-list">{editions.map((edition) => <a href={`${base}archive/${edition.date}/`}><strong>{edition.date}</strong><span>{edition.articles.length}件</span></a>)}</div></section></Base>

@@ -6,12 +6,15 @@
   "type": "module",
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
-    "build": "npm run validate:data && ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "build": "npm run check:encrypted && ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "check:free-tier": "tsx scripts/check-free-tier.ts",
     "check:licenses": "tsx scripts/check-licenses.ts",
+    "check:encrypted": "tsx scripts/check-encrypted.ts",
     "check:public-safety": "tsx scripts/check-public-safety.ts",
+    "encrypt:vault": "tsx scripts/encrypt-vault.ts",
+    "decrypt:vault": "tsx scripts/decrypt-vault.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"
   },

@@ -1,8 +1,12 @@
 # Daily News Digest
 
-日本語ニュースダイジェストを静的サイトとRSSで公開するAstroプロジェクトです。日次データにはURL、公開日、権利条件を確認した実在ニュースだけを登録します。
+日本語ニュースダイジェストをGitHub Pagesで配信する、クライアント側暗号化対応のAstroプロジェクトです。記事はAES-256-GCMで暗号化され、パスフレーズを知る本人だけがブラウザー内で復号できます。
 
 記事はブラウザー内のお気に入りに保存できます。登録すると記事データから自動構成した深掘りビューを表示します。外部AI APIは使用せず、お気に入り情報も外部へ送信しません。
+
+GitHub Pagesと暗号化ファイルは公開されています。これはサーバー認証ではありません。十分に長いパスフレーズを使い、パスワードマネージャーで管理してください。パスフレーズは送信・保存されず、忘れた場合の再発行もできません。復号後は15分間操作がないと自動ロックします。
+
+編集用データを復元する場合は `npm run decrypt:vault` を実行します。復元先はGit管理対象外の `private-data/daily` で、所有者だけが読めるファイル権限を設定します。
 
 ソースコードは[MIT License](LICENSE)で公開します。ニュース記事・画像など第三者コンテンツにこのライセンスは適用されません。収集、要約、引用、削除対応は[編集・権利ポリシー](docs/editorial-policy.md)に従います。
 
@@ -22,6 +26,7 @@ Node.js 24とnpmを使用します。
 npm ci
 npm run check:free-tier
 npm run check:licenses
+npm run check:encrypted
 npm run check:public-safety
 npm test
 npm run build
@@ -34,23 +39,22 @@ npm run dev
 
 1. Hacker News、はてなブックマーク、Reddit、4chan、Lobsters、Togetter、GIGAZINE、一般報道・一次情報から並行して候補を集める。
 2. `docs/selection-policy.md` の件数配分、分野上限、媒体上限を確認し、30記事とTop 5を選ぶ。
-3. `data/daily/YYYY-MM-DD.json` を既存ファイルからではなく、検証済みの収集結果を基に作成する。
+3. Git管理対象外の `private-data/daily/YYYY-MM-DD.json` を、検証済みの収集結果を基に作成する。平文をリポジトリへ追加しない。
 4. すべてのURLが記事個別ページであることを確認し、確認結果を `urlCheck` に記録する。
 5. 合計140文字以上・2〜3段落の独自要約、180文字以上の独自解説、独自見出し、引用・画像の権利情報を記録し、日次の権利確認項目を完了する。
-6. `npm run validate:data`、`npm test`、`npm run build` を実行する。
-7. JSONと選定バランスをレビューし、mainへ反映する。CI成功後にPagesが公開される。
+6. `npm run validate:data` で平文データを検証し、`npm run encrypt:vault` を実行して非表示入力でパスフレーズを2回入力する。
+7. `public/private/vault.json` だけを更新対象とし、`npm run check:encrypted`、`npm test`、`npm run build` を実行する。
+8. 暗号化ファイルと選定バランスをレビューし、mainへ反映する。CI成功後にPagesが公開される。
 
 不正なデータではビルドが失敗します。生成失敗時に前日のデータを当日分としてコピーしないでください。
 
 ## データ仕様
 
-実行時の正規スキーマは `src/lib/schema.ts` です。日付ごとのJSONにはTop 5の順位1〜5、安定した記事ID、検証済みURL、出典、日時、カテゴリ、独自要約、コメント、情報種別を含めます。追跡パラメータ除去後のURL重複も検出します。
+実行時の正規スキーマは `src/lib/schema.ts` です。平文データは無視対象の `private-data/` にだけ置きます。公開リポジトリには、PBKDF2-SHA-256（60万回）で鍵導出し、gzip圧縮後にAES-256-GCMで暗号化した `public/private/vault.json` だけを保存します。
 
-## 配信先
+## RSS
 
-- `/rss.xml`: 全記事
-- `/rss/top5.xml`: Top 5
-- `/rss/vcf.xml`: VCF・VMware・競合
+RSSには安全なパスフレーズ認証を組み込めないため停止しています。フィードを公開すると記事内容が漏れるため、暗号化運用中は再追加しません。
 
 ## GitHub Pages
 
@@ -62,7 +66,8 @@ Repository Settings → Pages → SourceをGitHub Actionsに設定してくだ�
 
 ## 復旧
 
-- データエラー: `npm run validate:data` のファイル名と項目を修正する。
+- データエラー: `private-data/daily` の平文JSONを修正し、再暗号化する。
+- パスフレーズ紛失: 復号・再発行はできない。手元の平文バックアップから新しいパスフレーズで保管庫を再作成する。
 - ビルドエラー: Node.js 24で `npm ci && npm run build` を再現する。
 - 公開エラー: ActionsのCIが成功していること、PagesのSourceがGitHub Actionsであることを確認する。
-- 誤った版: Git履歴で該当JSONの変更をrevertする。過去の正しい版を別日として複製しない。
+- 誤った版: 暗号化ファイルをrevertする。前日の記事を当日分として複製しない。
