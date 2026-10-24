@@ -1,0 +1,14 @@
+---
+import type { Article } from '../lib/schema';
+interface Props { article: Article; }
+const { article } = Astro.props;
+const analysis = article.attentionAnalysis;
+---
+{analysis && (
+  <aside class="attention-analysis" aria-label="注目度の見立て">
+    <h4>この記事を見るポイント</h4>
+    <p><strong>注目する理由：</strong>{analysis.whyNotable}</p>
+    <p><strong>現在の反響：</strong>{analysis.currentReaction}</p>
+    <p><strong>反響の見立て：</strong><span class="attention-assessment">{analysis.assessment}</span> — {analysis.assessmentComment}</p>
+  </aside>
+)}

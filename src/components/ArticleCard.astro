@@ -1,6 +1,7 @@
 ---
 import type { Article } from '../lib/schema';
 import AttentionMetrics from './AttentionMetrics.astro';
+import AttentionAnalysis from './AttentionAnalysis.astro';
 import DeepDive from './DeepDive.astro';
 interface Props { article: Article; featured?: boolean; }
 const { article, featured = false } = Astro.props;
@@ -21,6 +22,7 @@ const base = import.meta.env.BASE_URL;
     {article.summary.map((sentence) => <p>{sentence}</p>)}
     <h4>解説</h4>
     <p class="comment">{article.comment}</p>
+    <AttentionAnalysis article={article} />
     <a class="source-link" href={article.sourceUrl} target="_blank" rel="noopener noreferrer">原文を開く ↗</a>
   </section>
   <DeepDive article={article} />

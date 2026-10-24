@@ -43,4 +43,17 @@ describe('editorial compliance', () => {
     };
     expect(editionSchema.safeParse(social).success).toBe(true);
   });
+
+  it('accepts a neutral attention analysis and rejects an unsupported assessment', () => {
+    const reviewed = structuredClone(edition);
+    reviewed.articles[0].attentionAnalysis = {
+      whyNotable: '利用者情報に関わる可能性があり、影響範囲の確定まで継続確認が必要です。',
+      currentReaction: '発表直後で反応はまだ限定的で、主に安全性を扱う読者が注目しています。',
+      assessment: '判断には早い',
+      assessmentComment: '漏えいの有無と対象範囲が未確定であり、現時点では断定的な評価を避ける段階です。',
+    };
+    expect(editionSchema.safeParse(reviewed).success).toBe(true);
+    reviewed.articles[0].attentionAnalysis.assessment = '大炎上';
+    expect(editionSchema.safeParse(reviewed).success).toBe(false);
+  });
 });

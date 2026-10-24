@@ -22,6 +22,12 @@ export const articleSchema = z.object({
   top5Rank: z.number().int().min(1).max(5).nullable(),
   summary: z.array(z.string().min(1).max(500)).min(1).max(3),
   comment: z.string().min(80, '独自解説は80文字以上必要です').max(1000),
+  attentionAnalysis: z.object({
+    whyNotable: z.string().min(20).max(240),
+    currentReaction: z.string().min(20).max(240),
+    assessment: z.enum(['過熱気味', '妥当', '注目不足', '評価が分かれる', '判断には早い']),
+    assessmentComment: z.string().min(20).max(240),
+  }).strict().optional(),
   informationType: z.enum(['公式発表', '報道', '研究', '意見']),
   editorialReview: z.object({
     titleIsOriginal: z.literal(true),
