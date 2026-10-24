@@ -51,11 +51,25 @@
 
 ## VCF専門枠
 
-Broadcom／VMware公式ブログ、TechDocs、リリースノート、Knowledge Base、Security Advisoryだけでなく、William LamのブログとX、Duncan EppingのYellow BricksとXを毎日確認する。加えてCormac Hogan、Frank Denneman、Niels Hagoortなど、VCF・vSphere・vSAN・NSX・VKSを実機で検証するエンジニアやvExpertコミュニティ、Redditの運用者投稿も発見経路として使う。
+毎日、次の情報群を並行して確認する。単一のブログ一覧だけで巡回完了としない。
+
+- Broadcom／VMware公式ブログ、TechDocs、製品別リリースノート、Knowledge Base、Security Advisory
+- Broadcom Service Status、緊急障害、パッチの撤回・再公開、アップグレード停止推奨
+- Product Interoperability Matrix、Compatibility Guide、Hardware Compatibility List、サポート終了・ライフサイクル表
+- ライセンス、価格、サポート、パートナー、VCSP制度の変更
+- William LamのブログとX、Duncan EppingのYellow BricksとX
+- Cormac Hogan、Frank Denneman、Niels Hagoort、Bob Plankers、Pete Flecha、Eric Sloof、Chris Wahl、Viktor van den Bergなど、実機検証を公開するエンジニア
+- Broadcom Community、VMware {code}、vExpert、Redditなどの運用者コミュニティ
+- Veeam、NVIDIA、Dell、HPE、NetAppなど、バックアップ、GPU、サーバー、ストレージの主要連携ベンダー
+- Nutanix、Hyper-V／Azure Stack HCI、Proxmox、OpenShift Virtualizationなど、競合・移行先の重要な製品変更
 
 個人ブログやXは、公式資料だけでは分かりにくい制約、実機検証、回避策、アップグレード時の注意を見つける入口として重視する。ただし、製品仕様、対応バージョン、脆弱性、ライセンス、サポート可否はBroadcom公式文書でも照合する。「公式確認済みの事実」「個人の検証結果」「推測・意見」を明確に分け、個人投稿を一般的事実の唯一の根拠にしない。
 
-対象はVCF、vSphere、vSAN、NSX、HCX、VCF Operations、VCF Automation、Tanzu／VKS、vDefend、Avi、VCSP、ライセンス・サポート・パートナー制度とする。各記事では対象製品とバージョン、影響を受ける利用者、運用上の意味、既知の制約、公式根拠、次に確認すべき点を示す。該当する新情報がない日は0件とし、古い記事や軽微な更新で枠を埋めない。
+対象はVCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automation、Tanzu／VKS、vDefend、Avi、VCSP、ライセンス・サポート・パートナー制度とする。各記事では対象製品とバージョン、影響を受ける利用者、運用上の意味、既知の制約、公式根拠、次に確認すべき点を示す。特に脆弱性、データ損失、停止、互換性喪失、サポート終了、パッチ撤回、アップグレード停止推奨を通常の機能紹介より優先する。該当する新情報がない日は0件とし、古い記事や軽微な更新で枠を埋めない。
+
+巡回先がログイン要求、削除、アクセス制限、障害などで確認できない場合は、確認済みと扱わない。制限を回避せず、取得不能であることを編集記録へ残し、同じ内容を公式文書や別の信頼できる公開情報から確認する。X、Reddit、コミュニティ投稿の反響を一般利用者全体の評価とは表現しない。
+
+同じ出来事について、公式情報と現場検証の両方に価値がある場合は、原則として一つの記事に統合して両方のURLと立場を説明する。仕様とサポート可否は公式情報を優先し、個人検証は再現条件、対象バージョン、未検証範囲を明示する。
 
 同一媒体は原則4件まで、同一組織の公式発表は原則3件までとする。同じ出来事を扱う記事は、独自情報や明確に異なる視点がない限り重複掲載しない。
 
