@@ -2,12 +2,19 @@
 
 日本語ニュースダイジェストを静的サイトとRSSで公開するAstroプロジェクトです。現在のデータはUI検証用の架空サンプルで、実ニュースではありません。
 
+## 必須の費用方針
+
+このプロジェクトは追加課金なしで運用します。使用できる基盤は、GitHub Freeの公開リポジトリ、GitHub Pages、標準GitHub Actionsランナーのみです。有料プラン、有料API、有料・セルフホストランナー、独自ドメインへ自動的に切り替えてはいけません。
+
+`npm run check:free-tier` はworkflowが `ubuntu-latest` だけを使用し、外部secretや代表的な課金AI API設定を参照していないことを検査します。この検査は費用発生を完全に判定するものではないため、新しい外部サービスの追加時は[無料運用ポリシー](docs/free-operation.md)も確認してください。
+
 ## セットアップ
 
 Node.js 24とnpmを使用します。
 
 ```sh
 npm ci
+npm run check:free-tier
 npm test
 npm run build
 npm run dev
