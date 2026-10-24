@@ -30,4 +30,17 @@ describe('editorial compliance', () => {
     invalidMedia.articles[0].editorialReview.mediaAssets = [{ url: 'https://example.com/image.jpg' }];
     expect(editionSchema.safeParse(invalidMedia).success).toBe(false);
   });
+
+  it('accepts supported social discovery channels and timestamped metrics', () => {
+    const social = structuredClone(edition);
+    social.articles[0].channels = ['togetter', 'reddit', '4chan'];
+    social.articles[0].metrics = {
+      togetterViews: 1200,
+      redditScore: 450,
+      redditComments: 80,
+      fourChanReplies: 35,
+      socialMetricsCheckedAt: '2026-10-24T11:00:00+09:00',
+    };
+    expect(editionSchema.safeParse(social).success).toBe(true);
+  });
 });

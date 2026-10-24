@@ -16,7 +16,9 @@ export const articleSchema = z.object({
   collectedAt: isoDateTime,
   editionDate: z.iso.date(),
   categories: z.array(z.enum(categories)).min(1),
-  channels: z.array(z.enum(['hatena', 'hacker-news', 'other'])).min(1),
+  channels: z.array(z.enum([
+    'hatena', 'hacker-news', 'togetter', 'reddit', '4chan', 'social-other', 'other',
+  ])).min(1),
   top5Rank: z.number().int().min(1).max(5).nullable(),
   summary: z.array(z.string().min(1).max(500)).min(1).max(3),
   comment: z.string().min(80, '独自解説は80文字以上必要です').max(1000),
@@ -44,6 +46,11 @@ export const articleSchema = z.object({
     hatenaBookmarks: z.number().int().nonnegative().optional(),
     hnPoints: z.number().int().nonnegative().optional(),
     hnComments: z.number().int().nonnegative().optional(),
+    togetterViews: z.number().int().nonnegative().optional(),
+    redditScore: z.number().int().nonnegative().optional(),
+    redditComments: z.number().int().nonnegative().optional(),
+    fourChanReplies: z.number().int().nonnegative().optional(),
+    socialMetricsCheckedAt: isoDateTime.optional(),
   }).optional(),
   relatedArticleIds: z.array(z.string()).default([]),
   urlCheck: z.object({
