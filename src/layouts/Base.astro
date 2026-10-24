@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; description?: string; }
+const { title = 'Daily News Digest', description = '毎朝の重要ニュースを、短く、確かに。' } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="alternate" type="application/rss+xml" title="全記事" href={`${base}rss.xml`} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={base}>Daily News Digest</a>
+      <nav aria-label="メインナビゲーション">
+        <a href={base}>最新</a><a href={`${base}archive/`}>アーカイブ</a><a href={`${base}search/`}>検索</a>
+        <button id="theme-toggle" type="button" aria-label="表示テーマを切り替える">◐</button>
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer>既読・あとで読むはこのブラウザーにのみ保存され、端末間では同期されません。</footer>
+    <script is:inline>
+      const root = document.documentElement;
+      const saved = localStorage.getItem('dnd-theme');
+      if (saved) root.dataset.theme = saved;
+      document.querySelector('#theme-toggle')?.addEventListener('click', () => {
+        const dark = root.dataset.theme === 'dark' || (!root.dataset.theme && matchMedia('(prefers-color-scheme: dark)').matches);
+        root.dataset.theme = dark ? 'light' : 'dark'; localStorage.setItem('dnd-theme', root.dataset.theme);
+      });
+    </script>
+  </body>
+</html>

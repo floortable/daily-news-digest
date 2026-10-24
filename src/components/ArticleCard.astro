@@ -1,0 +1,26 @@
+---
+import type { Article } from '../lib/schema';
+interface Props { article: Article; featured?: boolean; }
+const { article, featured = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<article class:list={['article-card', { featured }]} data-article-id={article.id} data-categories={article.categories.join('|')} data-channels={article.channels.join('|')} data-top5={article.top5Rank !== null}>
+  <header>
+    {article.top5Rank && <span class="rank">{article.top5Rank}</span>}
+    <div>
+      <p class="meta">{article.sourceName} · <time datetime={article.publishedAt}>{new Date(article.publishedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}</time></p>
+      <h3><a href={`${base}articles/${article.id}/`}>{article.title}</a></h3>
+    </div>
+  </header>
+  <div class="tags">{article.categories.map((category) => <span>{category}</span>)}</div>
+  <details>
+    <summary>要約とコメントを読む</summary>
+    {article.summary.map((sentence) => <p>{sentence}</p>)}
+    <p class="comment">視点：{article.comment}</p>
+    <a class="source-link" href={article.sourceUrl} target="_blank" rel="noopener noreferrer">原文を開く ↗</a>
+  </details>
+  <div class="card-actions">
+    <button type="button" data-action="read" aria-pressed="false">既読</button>
+    <button type="button" data-action="save" aria-pressed="false">あとで読む</button>
+  </div>
+</article>

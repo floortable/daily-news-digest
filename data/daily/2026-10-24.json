@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-24",
+  "generatedAt": "2026-10-24T06:00:00+09:00",
+  "articles": [
+    {
+      "id": "2026-10-24-sample-public-policy", "title": "サンプル：公共政策に関する重要発表", "sourceUrl": "https://example.com/news/public-policy", "sourceName": "Example News", "publishedAt": "2026-10-24T05:00:00+09:00", "collectedAt": "2026-10-24T05:30:00+09:00", "editionDate": "2026-10-24", "categories": ["国内・国際"], "channels": ["other"], "top5Rank": 1,
+      "summary": ["これは画面とデータ検証を確認するための架空のサンプル記事です。", "実運用では検証済みの個別原文URLと収集メタデータに置き換えます。"], "comment": "サンプルデータを実際のニュースとして扱わないでください。", "informationType": "報道", "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:31:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    },
+    {
+      "id": "2026-10-24-sample-security", "title": "サンプル：主要ソフトウェアのセキュリティ更新", "sourceUrl": "https://example.org/advisory/security-update", "sourceName": "Example Security", "publishedAt": "2026-10-24T04:00:00+09:00", "collectedAt": "2026-10-24T05:32:00+09:00", "editionDate": "2026-10-24", "categories": ["セキュリティ", "テクノロジー"], "channels": ["hacker-news"], "top5Rank": 2,
+      "summary": ["架空のセキュリティ更新を題材にした表示確認用の記事です。", "本番データでは影響範囲と一次情報を確認してから掲載します。"], "comment": "公式アドバイザリと報道を区別する設計です。", "informationType": "公式発表", "metrics": { "hnPoints": 120, "hnComments": 34 }, "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:33:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    },
+    {
+      "id": "2026-10-24-sample-science", "title": "サンプル：新しい研究成果が公開", "sourceUrl": "https://example.net/research/new-study", "sourceName": "Example Research", "publishedAt": "2026-10-23T23:00:00+09:00", "collectedAt": "2026-10-24T05:35:00+09:00", "editionDate": "2026-10-24", "categories": ["科学・医療"], "channels": ["hatena"], "top5Rank": 3,
+      "summary": ["検索、カテゴリ、Top 5表示を検証するためのサンプル研究記事です。", "研究結果を実際に要約する際は限界や査読状況も記録します。"], "comment": "断定を避け、研究そのものと第三者の解釈を分離します。", "informationType": "研究", "metrics": { "hatenaBookmarks": 250 }, "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:36:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    },
+    {
+      "id": "2026-10-24-sample-vcf", "title": "サンプル：仮想化基盤の新機能を発表", "sourceUrl": "https://example.com/enterprise/virtualization", "sourceName": "Example Enterprise", "publishedAt": "2026-10-23T22:00:00+09:00", "collectedAt": "2026-10-24T05:37:00+09:00", "editionDate": "2026-10-24", "categories": ["VCF・VMware・競合"], "channels": ["other"], "top5Rank": 4,
+      "summary": ["VCF専門フィードとカテゴリ表示の動作確認に使う架空の記事です。", "製品名、バージョン、ライセンス条件は一次情報から取得する想定です。"], "comment": "ベンダー発表は事実と訴求表現を分けて要約します。", "informationType": "公式発表", "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:38:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    },
+    {
+      "id": "2026-10-24-sample-culture", "title": "サンプル：文化イベントが開幕", "sourceUrl": "https://example.org/culture/event", "sourceName": "Example Culture", "publishedAt": "2026-10-23T21:00:00+09:00", "collectedAt": "2026-10-24T05:39:00+09:00", "editionDate": "2026-10-24", "categories": ["生活・文化"], "channels": ["hatena"], "top5Rank": 5,
+      "summary": ["ジャンル横断のTop 5選定を表現するためのサンプル記事です。", "実際のイベント情報では日時と公式案内を検証します。"], "comment": "社会・技術以外の重要な動きも選定対象にします。", "informationType": "報道", "metrics": { "hatenaBookmarks": 88 }, "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:40:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    },
+    {
+      "id": "2026-10-24-sample-hn-tool", "title": "サンプル：開発者向けツールが公開", "sourceUrl": "https://example.net/technology/developer-tool", "sourceName": "Example Tech", "publishedAt": "2026-10-23T20:00:00+09:00", "collectedAt": "2026-10-24T05:41:00+09:00", "editionDate": "2026-10-24", "categories": ["テクノロジー"], "channels": ["hacker-news"], "top5Rank": null,
+      "summary": ["Hacker Newsフィルターと指標表示を確認するためのサンプルです。"], "comment": "人気指標は収集元の値だけを保存します。", "informationType": "報道", "metrics": { "hnPoints": 76, "hnComments": 18 }, "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:42:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    },
+    {
+      "id": "2026-10-24-sample-entertainment", "title": "サンプル：映像作品の公開日が決定", "sourceUrl": "https://example.com/entertainment/release", "sourceName": "Example Entertainment", "publishedAt": "2026-10-23T19:00:00+09:00", "collectedAt": "2026-10-24T05:43:00+09:00", "editionDate": "2026-10-24", "categories": ["エンタメ"], "channels": ["other"], "top5Rank": null,
+      "summary": ["アーカイブと検索を確認するための架空のエンタメ記事です。"], "comment": "作品の権利物を転載せず、独自の短い要約を掲載します。", "informationType": "公式発表", "relatedArticleIds": [], "urlCheck": { "status": "ok", "checkedAt": "2026-10-24T05:44:00+09:00", "httpStatus": 200, "note": "予約済みサンプルドメイン" }
+    }
+  ]
+}
