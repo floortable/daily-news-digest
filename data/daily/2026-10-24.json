@@ -1,6 +1,7 @@
 {
   "date": "2026-10-24",
   "generatedAt": "2026-10-24T06:00:00+09:00",
+  "contentCompliance": { "policyVersion": 1, "summariesAreOriginal": true, "copiedBody": false, "copiedImages": false, "quotationsReviewed": true, "sourceTermsReviewed": true },
   "articles": [
     {
       "id": "2026-10-24-sample-public-policy", "title": "サンプル：公共政策に関する重要発表", "sourceUrl": "https://example.com/news/public-policy", "sourceName": "Example News", "publishedAt": "2026-10-24T05:00:00+09:00", "collectedAt": "2026-10-24T05:30:00+09:00", "editionDate": "2026-10-24", "categories": ["国内・国際"], "channels": ["other"], "top5Rank": 1,

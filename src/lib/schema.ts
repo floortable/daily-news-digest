@@ -38,6 +38,14 @@ export const articleSchema = z.object({
 export const editionSchema = z.object({
   date: z.iso.date(),
   generatedAt: isoDateTime,
+  contentCompliance: z.object({
+    policyVersion: z.literal(1),
+    summariesAreOriginal: z.literal(true),
+    copiedBody: z.literal(false),
+    copiedImages: z.literal(false),
+    quotationsReviewed: z.literal(true),
+    sourceTermsReviewed: z.literal(true),
+  }),
   articles: z.array(articleSchema).min(1),
 }).superRefine((edition, ctx) => {
   const ids = new Set<string>();

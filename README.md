@@ -2,6 +2,8 @@
 
 日本語ニュースダイジェストを静的サイトとRSSで公開するAstroプロジェクトです。現在のデータはUI検証用の架空サンプルで、実ニュースではありません。
 
+ソースコードは[MIT License](LICENSE)で公開します。ニュース記事・画像など第三者コンテンツにこのライセンスは適用されません。収集、要約、引用、削除対応は[編集・権利ポリシー](docs/editorial-policy.md)に従います。
+
 ## 必須の費用方針
 
 このプロジェクトは追加課金なしで運用します。使用できる基盤は、GitHub Freeの公開リポジトリ、GitHub Pages、標準GitHub Actionsランナーのみです。有料プラン、有料API、有料・セルフホストランナー、独自ドメインへ自動的に切り替えてはいけません。
@@ -15,6 +17,7 @@ Node.js 24とnpmを使用します。
 ```sh
 npm ci
 npm run check:free-tier
+npm run check:licenses
 npm run check:public-safety
 npm test
 npm run build
