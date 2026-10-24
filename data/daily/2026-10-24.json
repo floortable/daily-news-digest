@@ -1352,6 +1352,50 @@
         "httpStatus": 200,
         "note": "個別ページと公開日をブラウザで確認。本文の一部に購読または自動取得の制限あり"
       }
+    },
+    {
+      "collectedAt": "2026-10-24T15:40:00+09:00",
+      "editionDate": "2026-10-24",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "id": "2026-10-24-vcf-upgrade-planner-enhancements",
+      "title": "VCF 9.1 Upgrade Plannerが大幅更新、9.1.1・VKS・変更審査向け出力に対応",
+      "sourceUrl": "https://williamlam.com/2026/10/major-enhancements-to-vcf-9-1-upgrade-planner-tool.html",
+      "sourceName": "WilliamLam.com",
+      "publishedAt": "2026-10-22T20:08:28Z",
+      "categories": [
+        "VCF・VMware・競合",
+        "テクノロジー"
+      ],
+      "channels": [
+        "social-other",
+        "other"
+      ],
+      "top5Rank": null,
+      "informationType": "意見",
+      "summary": [
+        "VMwareエンジニアのWilliam Lam氏は、VCF 9.1 Upgrade Plannerに100件を超える修正・改善を加えたと紹介した。VCF 9.1.1と最新Express Patch、追加のVCF Instance、Workload Domainを含むアップグレード経路を扱えるようになった。",
+        "vSphere SupervisorとVKSの更新順序も既存のVCF計画へ組み込め、VKSだけを対象にした専用経路も選べる。計画はプレーンテキストまたはMarkdownで出力でき、変更諮問委員会へ提出するランブック作成にも使える。ただし、Plannerは個別環境の互換性やサポートを最終保証するものではない。"
+      ],
+      "comment": "VCF 9.1.1への更新では、管理ドメイン、ワークロードドメイン、Supervisor、VKS、Express Patchの順序と依存関係が運用上の難所になります。William Lam氏の説明は、複数チームで変更計画を作る利用者に具体的な入口を提供します。一方、コメント欄ではVKS 1.37、Avi、AKO、NSXの互換性確認が不足しているという利用者の指摘もあります。生成された手順をそのまま本番へ適用せず、Broadcomのリリースノート、Compatibility Guide、KB、サポート回答と照合し、バックアップとロールバック条件を含む変更計画としてレビューする必要があります。",
+      "attentionAnalysis": {
+        "whyNotable": "VCF 9.1.1とVKSを含む複雑な更新順序を環境別に整理でき、実際の変更計画とCAB資料の作成負担を減らせる更新です。",
+        "currentReaction": "William Lam氏は公開後数か月で9万回を超える利用があったと説明し、記事公開時点で具体的な構成に関する利用者コメントも寄せられています。",
+        "assessment": "妥当",
+        "assessmentComment": "現場需要は明確ですが、Plannerの出力を公式互換性確認の代替にせず、未対応コンポーネントを個別確認する前提で評価すべきです。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-10-24T15:40:00+09:00",
+        "httpStatus": 200,
+        "note": "William Lam氏の公開ブログ本文、公開日時、機能一覧を確認。製品サポートの最終根拠はBroadcom公式文書との照合が必要"
+      }
     }
   ]
 }
