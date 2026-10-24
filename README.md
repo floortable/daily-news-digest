@@ -4,7 +4,7 @@
 
 ソースコードは[MIT License](LICENSE)で公開します。ニュース記事・画像など第三者コンテンツにこのライセンスは適用されません。収集、要約、引用、削除対応は[編集・権利ポリシー](docs/editorial-policy.md)に従います。
 
-記事は、はてなブックマーク、Hacker News、Togetter、Reddit、4chanなどのソーシャル、一般報道・一次情報を入口として、専門分野の外まで幅広く選びます。ソーシャル投稿は話題発見に使い、事実の根拠にはしません。件数配分、分野上限、Top 5の多様性は[記事選定ポリシー](docs/selection-policy.md)に従います。
+記事は海外の話題を中心に、Hacker News、Reddit、4chanなどの海外ソーシャルと国際報道・一次情報から幅広く選びます。はてなブックマーク、Togetter、GIGAZINEなど日本語圏の入口は、日本の重要ニュースと海外話題の補完に使います。ソーシャル投稿は話題発見に使い、事実の根拠にはしません。件数配分、地域配分、分野上限、Top 5の多様性は[記事選定ポリシー](docs/selection-policy.md)に従います。
 
 ## 必須の費用方針
 
@@ -30,7 +30,7 @@ npm run dev
 
 ## 毎日の手動更新
 
-1. はてなブックマーク、Hacker News、Togetter、Reddit、4chan、一般報道・一次情報から候補を集める。
+1. Hacker News、Reddit、4chan、Lobsters、海外報道・一次情報から候補を集め、日本語圏の情報源で補完する。
 2. `docs/selection-policy.md` の件数配分、分野上限、媒体上限を確認し、30記事とTop 5を選ぶ。
 3. `data/daily/YYYY-MM-DD.json` を既存ファイルからではなく、検証済みの収集結果を基に作成する。
 4. すべてのURLが記事個別ページであることを確認し、確認結果を `urlCheck` に記録する。
