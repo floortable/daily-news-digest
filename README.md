@@ -15,6 +15,7 @@ Node.js 24とnpmを使用します。
 ```sh
 npm ci
 npm run check:free-tier
+npm run check:public-safety
 npm test
 npm run build
 npm run dev

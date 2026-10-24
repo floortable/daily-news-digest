@@ -5,16 +5,16 @@ export const categories = [
   'エンタメ', 'VCF・VMware・競合', 'セキュリティ', 'その他',
 ] as const;
 
-const isoDateTime = z.string().datetime({ offset: true });
+const isoDateTime = z.iso.datetime({ offset: true });
 
 export const articleSchema = z.object({
   id: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/),
   title: z.string().min(1).max(180),
-  sourceUrl: z.string().url().refine((url) => /^https?:\/\//.test(url), 'HTTP(S) URLが必要です'),
+  sourceUrl: z.url().refine((url) => /^https?:\/\//.test(url), 'HTTP(S) URLが必要です'),
   sourceName: z.string().min(1).max(80),
   publishedAt: isoDateTime,
   collectedAt: isoDateTime,
-  editionDate: z.string().date(),
+  editionDate: z.iso.date(),
   categories: z.array(z.enum(categories)).min(1),
   channels: z.array(z.enum(['hatena', 'hacker-news', 'other'])).min(1),
   top5Rank: z.number().int().min(1).max(5).nullable(),
@@ -36,7 +36,7 @@ export const articleSchema = z.object({
 });
 
 export const editionSchema = z.object({
-  date: z.string().date(),
+  date: z.iso.date(),
   generatedAt: isoDateTime,
   articles: z.array(articleSchema).min(1),
 }).superRefine((edition, ctx) => {
