@@ -41,7 +41,8 @@ const noBgmWav = resolve(root, 'top5-no-bgm.wav');
 await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', voice,
   '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-ar', '48000', noBgmWav]);
 await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', noBgmWav,
-  '-c:a', 'aac', '-b:a', '160k', '-metadata', `comment=${timeline.credit}; BGMなし`, resolve(root, 'top5-no-bgm.m4a')]);
+  '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart',
+  '-metadata', `comment=${timeline.credit}; BGMなし`, resolve(root, 'top5-no-bgm.m4a')]);
 
 const mixedWav = resolve(root, 'top5-mixed.wav');
 const bgmGain = 10 ** (-config.bgmReductionDb / 20);
@@ -61,7 +62,8 @@ await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', ...bgmInputs,
   '-map', '[out]', '-ar', '48000', mixedWav]);
 const bgmTitles = selectedTracks.map((track) => track.title).join(' / ');
 await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', mixedWav,
-  '-c:a', 'aac', '-b:a', '160k', '-metadata', `title=${timeline.date} 毎日の注目記事 Top 5`,
+  '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart',
+  '-metadata', `title=${timeline.date} 毎日の注目記事 Top 5`,
   '-metadata', `artist=floortable`,
   '-metadata', `comment=${timeline.credit}; BGM: ${bgmTitles}; ${config.bgmCredit}; ${config.jingleCredit}`, resolve(root, 'top5.m4a')]);
 

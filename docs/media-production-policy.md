@@ -63,3 +63,4 @@
 4. BGM原本が公開ディレクトリへコピーされていないことを確認する。
 5. `npm run validate:data`、`npm test`、`npm run build`、各種checkをすべて通す。
 6. 完成したM4Aを試聴・再生確認してから `config/published-media.json` へ追加する。
+7. M4Aは `moov` を先頭へ配置し、公開URLのRange応答とPC・iOS系ブラウザーでのストリーミング再生を確認する。
