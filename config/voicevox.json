@@ -1,8 +1,8 @@
 {
   "cast": [
-    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.08, "volumeScale": 1.0 },
-    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.05, "volumeScale": 0.96 },
-    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.05, "volumeScale": 0.98 }
+    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.13, "volumeScale": 1.0 },
+    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.2, "volumeScale": 0.96 },
+    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.11, "volumeScale": 0.98 }
   ],
   "outputSamplingRate": 48000,
   "outputStereo": true,
