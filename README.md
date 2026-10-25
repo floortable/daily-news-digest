@@ -70,7 +70,7 @@ VOICEVOX Engineの既定URLは `http://127.0.0.1:50021` です。別のURLを使
 `VOICEVOX_URL` を指定します。日付を固定する場合は、各コマンドの末尾に
 `-- --date YYYY-MM-DD` を追加します。生成物は `generated/media/YYYY-MM-DD/` に保存され、
 Gitには登録されません。キャスターと話速は `config/voicevox.json` で変更できます。
-固有名詞の読みは `config/pronunciations.json` で調整します。`media:voicevox` は記事間ジングルを含む
+固有名詞の読みは `config/pronunciations.json` で調整します。英字を含む製品名・ライブラリ名などは公式情報を優先して読みを確認し、未登録語が残る場合は台本・音声生成を停止します。`media:voicevox` は記事間ジングルを含む
 48 kHz WAVを作り、`media:render` はテーマ別の候補から日ごとにBGMを選び、各トピックで切り替えて読み上げより21 dB下げて合成します。
 約 -16 LUFSに正規化し、モバイルのストリーミング再生向けにメタデータを先頭配置したAAC/M4AとBGMなしM4Aが
 `generated/media/YYYY-MM-DD/` に生成されます。BGM原本は公開先へコピーされません。

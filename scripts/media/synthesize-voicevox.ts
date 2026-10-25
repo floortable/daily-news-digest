@@ -4,7 +4,7 @@ import { spawn } from 'node:child_process';
 import { readVoicevoxConfig } from './config';
 import { getDateArgument, readEdition } from './edition';
 import { buildNarrationPlan } from './narration';
-import { applyPronunciations, readPronunciations } from './pronunciation';
+import { applyPronunciations, assertLatinPronunciations, readPronunciations } from './pronunciation';
 
 type VoicevoxSpeaker = {
   name: string;
@@ -16,6 +16,7 @@ const edition = await readEdition(getDateArgument());
 const config = await readVoicevoxConfig();
 const plan = buildNarrationPlan(edition, config.cast, config.credit, config.spokenCredit);
 const pronunciations = await readPronunciations();
+assertLatinPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 const outputDirectory = resolve('generated/media', edition.date, 'voice');
 await mkdir(outputDirectory, { recursive: true });
 

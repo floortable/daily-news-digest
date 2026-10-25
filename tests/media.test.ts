@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { applyPronunciations } from '../scripts/media/pronunciation';
+import { applyPronunciations, assertLatinPronunciations, findUnpronouncedLatinTerms } from '../scripts/media/pronunciation';
 import { getMediaUrls, isMediaPublished } from '../src/lib/media';
 
 describe('media publishing', () => {
@@ -16,6 +16,22 @@ describe('media publishing', () => {
   it('uses contextual readings for ambiguous counters', () => {
     expect(applyPronunciations('更新と再起動までを一組として扱います。', { 一組として: 'ひとくみとして' }))
       .toBe('更新と再起動までをひとくみとして扱います。');
+  });
+
+  it('uses the correct reading for weed-control compounds', () => {
+    expect(applyPronunciations('防草シートと防草砂', {
+      防草シート: 'ぼうそうシート',
+      防草砂: 'ぼうそうずな',
+    })).toBe('ぼうそうシートとぼうそうずな');
+  });
+
+  it('detects English product and library names without confirmed readings', () => {
+    expect(findUnpronouncedLatinTerms('BrotliとUnknownSDK', { Brotli: 'ブロートリ' }))
+      .toEqual(['UnknownSDK']);
+    expect(() => assertLatinPronunciations(
+      ['Node.jsとMysteryLib'],
+      { 'Node.js': 'ノードジェイエス' },
+    )).toThrow(/MysteryLib/);
   });
 
   it('builds project-page-safe URLs and hides unpublished media', () => {
