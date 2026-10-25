@@ -1,0 +1,37 @@
+---
+import type { Article } from '../lib/schema';
+interface Props { article: Article; }
+const { article } = Astro.props;
+const detail = article.articleDetail;
+const narration = article.narration;
+---
+{detail ? (
+  <section class="article-explanation" aria-label="詳しい解説">
+    <h2>結論</h2>
+    <p>{detail.conclusion}</p>
+    <h2>何が分かったのか</h2>
+    {detail.facts.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>背景</h2>
+    {detail.background.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>基礎からの解説</h2>
+    {detail.explanation.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>読者にとっての意味</h2>
+    {detail.implications.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>注意点・未確定事項</h2>
+    {detail.caveats.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>次に確認すること</h2>
+    <ul>{detail.nextChecks.map((item) => <li>{item}</li>)}</ul>
+  </section>
+) : narration ? (
+  <section class="article-explanation" aria-label="詳しい解説">
+    <h2>結論</h2><p>{narration.result ?? article.summary[0]}</p>
+    <h2>事実関係と背景</h2>
+    {narration.detail.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>基礎からの解説</h2>
+    {narration.learning.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>客観評価</h2>
+    {narration.analysis.map((paragraph) => <p>{paragraph}</p>)}
+    <h2>先回りして確認したいこと</h2>
+    {narration.anticipatedQuestions.map((item) => <section class="anticipated-question"><h3>{item.question}</h3><p>{item.answer}</p></section>)}
+  </section>
+) : null}

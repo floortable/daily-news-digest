@@ -17,8 +17,8 @@ const base = import.meta.env.BASE_URL;
   </header>
   <div class="tags">{article.categories.map((category) => <span data-category={category}>{category}</span>)}</div>
   <AttentionMetrics article={article} />
-  <section class="article-body" aria-label="要約と解説">
-    <h4>要約</h4>
+  <section class="article-body" aria-label="概要と解説">
+    <h4>概要</h4>
     {article.summary.map((sentence) => <p>{sentence}</p>)}
     <h4>解説</h4>
     <p class="comment">{article.comment}</p>

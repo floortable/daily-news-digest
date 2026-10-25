@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { editionSchema } from '../src/lib/schema';
-import { preserveRssGuids, toRssItem } from '../src/lib/rss';
+import { escapeXml, preserveRssGuids, toRssItem } from '../src/lib/rss';
 
 describe('full-text RSS item', () => {
   const edition = editionSchema.parse(
@@ -15,11 +15,15 @@ describe('full-text RSS item', () => {
   });
 
   it('contains all reader-facing editorial sections', () => {
-    expect(item.content).toContain('<h2>要約</h2>');
+    expect(item.content).toContain('<h2>概要</h2>');
     expect(item.content).toContain('<h2>解説</h2>');
+    expect(item.content).toContain('<h2>事実関係と背景</h2>');
+    expect(item.content).toContain('<h2>基礎からの解説</h2>');
     expect(item.content).toContain('<h2>注目度と反響</h2>');
     expect(item.content).toContain(article.summary[0]);
     expect(item.content).toContain(article.comment);
+    expect(item.content).toContain(escapeXml(article.narration!.detail[0]));
+    expect(item.content).toContain(escapeXml(article.narration!.learning[0]));
     expect(item.content).toContain(article.attentionAnalysis.whyNotable);
     expect(item.content).toContain(article.attentionAnalysis.currentReaction);
     expect(item.content).toContain(article.attentionAnalysis.assessmentComment);
