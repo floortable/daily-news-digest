@@ -16,13 +16,13 @@ describe('Top 5 narration plan', () => {
     segment.id === `rank-${rank}` || segment.id.startsWith(`rank-${rank}-`));
   const articleText = (rank: number) => articleSegments(rank).map((segment) => segment.text).join(' ');
 
-  it('builds an opening, five sections for each story, and a closing', () => {
-    expect(plan.segments).toHaveLength(27);
+  it('builds an opening, at most three clear roles for each story, and a closing', () => {
+    expect(plan.segments).toHaveLength(17);
     for (let rank = 1; rank <= 5; rank += 1) {
       expect(articleSegments(rank).map((segment) => segment.id)).toEqual([
-        `rank-${rank}`, `rank-${rank}-background`, `rank-${rank}-learning`,
-        `rank-${rank}-analysis`, `rank-${rank}-questions`,
+        `rank-${rank}`, `rank-${rank}-explanation`, `rank-${rank}-perspective`,
       ]);
+      expect(articleSegments(rank)).toHaveLength(3);
     }
   });
 
@@ -45,9 +45,9 @@ describe('Top 5 narration plan', () => {
   it('puts one concise reaction sentence directly before the article body', () => {
     const first = edition.articles.find((article) => article.top5Rank === 1)!;
     const lead = plan.segments.find((item) => item.id === 'rank-1')!;
-    const background = plan.segments.find((item) => item.id === 'rank-1-background')!;
+    const explanation = plan.segments.find((item) => item.id === 'rank-1-explanation')!;
     expect(lead.text).toContain(toBroadcastStyle(first.attentionAnalysis.currentReaction));
-    expect(background.text).toContain(toBroadcastStyle(`${first.narration!.detail[0].split('。')[0]}。`));
+    expect(explanation.text).toContain(toBroadcastStyle(`${first.narration!.detail[0].split('。')[0]}。`));
     expect(lead.text).not.toContain(toBroadcastStyle(`${first.summary[0].split('。')[0]}。`));
     expect(lead.text).not.toContain('反響は大きいと言えます');
     expect(lead.text).not.toContain('注目度の評価は');
@@ -81,15 +81,24 @@ describe('Top 5 narration plan', () => {
     }
   });
 
-  it('rotates section speakers without fixing an explanation role', () => {
+  it('uses one caster per role and rotates those roles between stories', () => {
     for (let rank = 1; rank <= 5; rank += 1) {
       const speakers = articleSegments(rank).map((segment) => segment.speaker.name);
+      expect(speakers).toHaveLength(3);
       expect(new Set(speakers).size).toBe(3);
     }
-    const backgroundSpeakers = new Set(
-      plan.segments.filter((segment) => /-background$/.test(segment.id)).map((segment) => segment.speaker.name),
+    const explanationSpeakers = new Set(
+      plan.segments.filter((segment) => /-explanation$/.test(segment.id)).map((segment) => segment.speaker.name),
     );
-    expect(backgroundSpeakers.size).toBe(3);
+    expect(explanationSpeakers.size).toBe(3);
+  });
+
+  it('does not repeat an identical sentence across roles in one story', () => {
+    for (let rank = 1; rank <= 5; rank += 1) {
+      const sentences = articleSegments(rank).flatMap((segment) =>
+        segment.text.split(/(?<=。)/).map((sentence) => sentence.trim()).filter(Boolean));
+      expect(new Set(sentences).size).toBe(sentences.length);
+    }
   });
 
   it('uses restrained Zundamon endings in each assigned section', () => {

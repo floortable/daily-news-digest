@@ -69,7 +69,7 @@ for (const [index, segment] of plan.segments.entries()) {
   const duration = await probeDuration(outputPath);
   timeline.push({ id: segment.id, title: segment.text, speaker: segment.speaker.name, start: elapsed, end: elapsed + duration });
   elapsed += duration;
-  if (/^rank-[1-4]-questions$/.test(segment.id)) {
+  if (/^rank-[1-4]-perspective$/.test(segment.id)) {
     const jingle = `jingle-${segment.id}.wav`;
     await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i',
       resolve('assets/audio/jingles/topic-transition-glass-ping.m4a'), '-af',

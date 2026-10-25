@@ -60,8 +60,6 @@ export function buildNarrationPlan(
       speakerAt(articleOffset),
       speakerAt(articleOffset + 1),
       speakerAt(articleOffset + 2),
-      speakerAt(articleOffset + 3),
-      speakerAt(articleOffset + 4),
     ];
     segments.push(...buildArticleSegments(article, rank, articleSpeakers));
   }
@@ -85,7 +83,7 @@ function buildArticleSegments(article: Article, rank: number, speakers: CastMemb
     toBroadcastStyle(article.attentionAnalysis.currentReaction),
     speakers[0].name,
   );
-  const sections = [
+  const sections = dedupeSections([
     {
       id: `rank-${rank}`,
       text: [
@@ -95,27 +93,33 @@ function buildArticleSegments(article: Article, rank: number, speakers: CastMemb
       ].filter(Boolean).join(' '),
     },
     {
-      id: `rank-${rank}-background`,
-      text: (article.narration?.detail ?? []).join(' '),
+      id: `rank-${rank}-explanation`,
+      text: [
+        ...(article.narration?.detail ?? []),
+        ...(article.narration?.learning ?? []),
+      ].join(' '),
     },
     {
-      id: `rank-${rank}-learning`,
-      text: (article.narration?.learning ?? []).join(' '),
+      id: `rank-${rank}-perspective`,
+      text: [
+        ...(article.narration?.analysis ?? []),
+        ...(article.narration?.anticipatedQuestions.map(formatAnticipatedQuestion) ?? []),
+      ].join(' '),
     },
-    {
-      id: `rank-${rank}-analysis`,
-      text: (article.narration?.analysis ?? []).join(' '),
-    },
-    {
-      id: `rank-${rank}-questions`,
-      text: (article.narration?.anticipatedQuestions.map(formatAnticipatedQuestion) ?? []).join(' '),
-    },
-  ].filter((section) => section.text);
+  ]).filter((section) => section.text);
 
   return sections.map((section, index) => ({
     id: section.id,
     speaker: speakers[index],
-    text: applySpeakerTone(toBroadcastStyle(dedupeSentences(section.text)), speakers[index].name),
+    text: applySpeakerTone(toBroadcastStyle(section.text), speakers[index].name),
+  }));
+}
+
+function dedupeSections<T extends { text: string }>(sections: T[]) {
+  const seen = new Set<string>();
+  return sections.map((section) => ({
+    ...section,
+    text: dedupeSentences(section.text, seen),
   }));
 }
 
@@ -162,6 +166,7 @@ function applyOpeningTone(text: string, speakerName: string) {
 
 function applySpeakerTone(text: string, speakerName: string) {
   if (speakerName !== 'ずんだもん') return text;
+  if (text.endsWith('のだ。')) return text;
   if (text.endsWith('判断できます。')) return text.replace(/判断できます。$/, '判断できるのだ。');
   if (text.endsWith('確認する必要があります。')) {
     return text.replace(/確認する必要があります。$/, '確認する必要があるのだ。');
@@ -206,8 +211,7 @@ export function toBroadcastStyle(text: string) {
   return endings.reduce((result, [pattern, replacement]) => result.replace(pattern, replacement), text);
 }
 
-function dedupeSentences(text: string) {
-  const seen = new Set<string>();
+function dedupeSentences(text: string, seen = new Set<string>()) {
   const boilerplate = new Set([
     '原文の更新、反対意見、対象範囲を継続して確認し、単一の数値や印象だけで結論を固定しないことが重要である。',
     '読者にとっては、確認済みの事実と発表者の評価を分け、実生活や業務への影響、未確定点、次に見るべき資料を整理することが大切である。',
