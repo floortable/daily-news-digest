@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "name": "毎日の注目記事約30選＋VCF運用監視",
+  "canonicalPrompt": "automation/daily-news-digest.prompt.md",
+  "execution": {
+    "environment": "local-codex",
+    "timeZone": "Asia/Tokyo",
+    "dailyAt": "08:00",
+    "requiresMacAwake": true,
+    "requiresCodexRunning": true
+  },
+  "repository": {
+    "branch": "main",
+    "dailyDataPattern": "data/daily/YYYY-MM-DD.json"
+  },
+  "publication": {
+    "provider": "GitHub Pages",
+    "trigger": "push-to-main"
+  },
+  "localOnly": [
+    "absoluteRepositoryPath",
+    "automationId",
+    "targetThreadId",
+    "credentialsAndTokens",
+    "cookiesAndBrowserSessions",
+    "executionStateAndLocalLogs"
+  ]
+}

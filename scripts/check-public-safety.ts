@@ -3,9 +3,9 @@ import { readFile } from 'node:fs/promises';
 
 const failures: string[] = [];
 const runGit = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024 });
-const files = runGit('ls-files').trim().split('\n').filter(Boolean);
+const files = runGit('ls-files', '--cached', '--others', '--exclude-standard').trim().split('\n').filter(Boolean);
 
-const forbiddenNames = /(^|\/)(\.env($|\.)|\.npmrc$|\.netrc$|id_(rsa|ed25519)$|credentials($|\.)|.*\.(pem|key|p12|pfx|keystore)$)/i;
+const forbiddenNames = /(^|\/)(private-data\/|automation\/local\/|automation\/.*\.local\.|\.env($|\.)|\.npmrc$|\.netrc$|id_(rsa|ed25519)$|credentials($|\.)|automation\.toml$|.*\.(pem|key|p12|pfx|keystore)$)/i;
 const secretPatterns: Array<[string, RegExp]> = [
   ['秘密鍵', /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/],
   ['AWSアクセスキー', /\bAKIA[0-9A-Z]{16}\b/],
@@ -14,6 +14,8 @@ const secretPatterns: Array<[string, RegExp]> = [
   ['URL埋込み認証', /https?:\/\/[^\s/@:]+:[^\s/@]+@/],
   ['ローカルホームパス', /(?:\/Users\/[^/\s]+|\/home\/[^/\s]+)/],
   ['メールアドレス', /\b[A-Z0-9._%+-]+@(?!users\.noreply\.github\.com\b)[A-Z0-9.-]+\.[A-Z]{2,}\b/i],
+  ['Codex対象Chat ID', /\btarget_thread_id\b/i],
+  ['Codex自動化ID', /(?:^|\n)\s*(?:automation_?id|id)\s*=\s*["'][^"']+["']/i],
 ];
 
 for (const file of files) {
@@ -29,8 +31,12 @@ for (const file of files) {
   }
 }
 
-const authors = runGit('log', 'HEAD', '--tags', '--format=%ae').trim().split('\n').filter(Boolean);
-for (const email of new Set(authors)) if (!email.endsWith('@users.noreply.github.com')) failures.push(`Git履歴: 公開用ではないauthor email ${email}`);
+const authorEmails = runGit('log', 'HEAD', '--tags', '--format=%ae').trim().split('\n').filter(Boolean);
+for (const email of new Set(authorEmails)) if (!email.endsWith('@users.noreply.github.com')) failures.push(`Git履歴: 公開用ではないauthor email ${email}`);
+// 既存公開履歴は書き換えず、この安全境界より後の全commitでcommitterもnoreplyを必須にする。
+const committerPolicyStart = 'd72e253a45460a2c7c181582a1e656411871358b';
+const protectedCommitEmails = runGit('log', `${committerPolicyStart}..HEAD`, '--format=%ae%n%ce').trim().split('\n').filter(Boolean);
+for (const email of new Set(protectedCommitEmails)) if (!email.endsWith('@users.noreply.github.com')) failures.push(`安全境界後: 公開用ではないauthor/committer email ${email}`);
 
 const history = runGit('log', 'HEAD', '--tags', '-p', '--no-ext-diff', '--no-color');
 for (const [label, pattern] of secretPatterns.slice(0, 6)) if (pattern.test(history)) failures.push(`Git履歴: ${label}`);

@@ -5,3 +5,5 @@ dist/
 *.log
 private-data/
 generated/
+automation/*.local.*
+automation/local/

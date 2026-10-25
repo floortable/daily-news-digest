@@ -97,7 +97,9 @@ Repository Settings → Pages → SourceをGitHub Actionsに設定してくだ�
 
 ## 自動化方針
 
-現時点の調査、費用、制約、推奨構成は [docs/architecture.md](docs/architecture.md) を参照してください。ChatGPT PlusとOpenAI API課金は別扱いです。既存のChatGPTニュースタスクは新方式の確認前に停止しないでください。
+毎朝8時（Asia/Tokyo）の更新は、Mac上のCodexローカル定期実行で行います。公開可能な完全指示は [automation/daily-news-digest.prompt.md](automation/daily-news-digest.prompt.md)、運用方法と公開・非公開の境界は [docs/automation-operations.md](docs/automation-operations.md) を正本とします。
+
+端末の絶対パス、自動化ID、対象Chat ID、GitHub認証情報、Cookie、ローカル実行履歴はPublicリポジトリへ保存しません。これらはGit管理外の `private-data/` に保持します。構成上の制約と採用理由は [docs/architecture.md](docs/architecture.md) を参照してください。
 
 ## 復旧
 
