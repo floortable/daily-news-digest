@@ -37,11 +37,6 @@ const articleWindows = [...timeline.segments.reduce((windows, segment) => {
 if (articleWindows.length !== 5) throw new Error('BGM切替用の記事区間が5件ではありません');
 const top5 = edition.articles.filter((article) => article.top5Rank !== null).sort((a, b) => a.top5Rank! - b.top5Rank!);
 const selectedTracks = selectThemedTracks(top5, tracks, selection, edition.date);
-const srt = resolve(root, 'top5.srt');
-await writeFile(srt, timeline.segments.map((segment, index) =>
-  `${index + 1}\n${stamp(segment.start)} --> ${stamp(segment.end)}\n${segment.speaker}：${subtitle(segment.title)}\n`,
-).join('\n') + `\n${timeline.segments.length + 1}\n${stamp(Math.max(0, duration - 4))} --> ${stamp(duration)}\n${timeline.credit}\n`);
-
 const noBgmWav = resolve(root, 'top5-no-bgm.wav');
 await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', voice,
   '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-ar', '48000', noBgmWav]);
@@ -70,28 +65,11 @@ await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', mixedWav,
   '-metadata', `artist=floortable`,
   '-metadata', `comment=${timeline.credit}; BGM: ${bgmTitles}; ${config.bgmCredit}; ${config.jingleCredit}`, resolve(root, 'top5.m4a')]);
 
-const cardFilters = articleWindows.map(([rank, window], index) => {
-  const y = 150 + index * 150;
-  return `drawbox=x=150:y=${y}:w=1620:h=110:color=${rank % 2 ? '0xd9583b' : '0x1c6e5a'}@0.9:t=fill:enable='between(t,${window.start},${window.end})'`;
-}).join(',');
-await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-f', 'lavfi', '-i',
-  `color=c=0x101916:s=1920x1080:r=30:d=${duration}`, '-i', resolve(root, 'top5.m4a'), '-i', srt,
-  '-vf', cardFilters || 'null', '-map', '0:v', '-map', '1:a', '-map', '2:s', '-c:v', 'libx264',
-  '-preset', 'medium', '-crf', '23', '-c:a', 'copy', '-c:s', 'mov_text', '-metadata:s:s:0', 'language=jpn',
-  '-metadata', `comment=${timeline.credit}; BGM: ${bgmTitles}; ${config.bgmCredit}; ${config.jingleCredit}`,
-  '-metadata:s:s:0', `title=字幕・${timeline.credit}`, '-shortest', resolve(root, 'top5.mp4')]);
-
 const publicDir = resolve('generated/public/media', edition.date);
 await mkdir(publicDir, { recursive: true });
-for (const file of ['top5.m4a', 'top5-no-bgm.m4a', 'top5.mp4']) await copyFile(resolve(root, file), resolve(publicDir, file));
+for (const file of ['top5.m4a', 'top5-no-bgm.m4a']) await copyFile(resolve(root, file), resolve(publicDir, file));
 await writeFile(resolve(root, 'media.json'), `${JSON.stringify({ date: edition.date, bgmByTopic: selectedTracks.map((track, index) => ({ topic: index + 1, title: track.title })), bgmCredit: config.bgmCredit, jingleCredit: config.jingleCredit, bgmReductionDb: config.bgmReductionDb, targetLufs: -16, credit: timeline.credit }, null, 2)}\n`);
-console.log(`${root} にBGMあり・なし音声と字幕付き動画を生成しました（BGM: ${bgmTitles}）。`);
-
-function stamp(seconds: number) {
-  const ms = Math.round(seconds * 1000); const h = Math.floor(ms / 3600000); const m = Math.floor(ms / 60000) % 60; const s = Math.floor(ms / 1000) % 60;
-  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')},${String(ms % 1000).padStart(3, '0')}`;
-}
-function subtitle(value: string) { return value.replace(/\s+/g, ' ').replace(/(.{1,34})(?:。|、|$)/g, '$1\n').trim(); }
+console.log(`${root} にBGMあり・なし音声を生成しました（BGM: ${bgmTitles}）。`);
 function shuffled<T>(values: T[], seedText: string) {
   const result = [...values];
   let seed = [...seedText].reduce((value, character) => Math.imul(value ^ character.charCodeAt(0), 16777619) >>> 0, 2166136261);

@@ -72,12 +72,12 @@ VOICEVOX Engineの既定URLは `http://127.0.0.1:50021` です。別のURLを使
 Gitには登録されません。キャスターと話速は `config/voicevox.json` で変更できます。
 固有名詞の読みは `config/pronunciations.json` で調整します。`media:voicevox` は記事間ジングルを含む
 48 kHz WAVを作り、`media:render` はテーマ別の候補から日ごとにBGMを選び、各トピックで切り替えて読み上げより21 dB下げて合成します。
-約 -16 LUFSに正規化したAAC/M4A、BGMなしM4A、字幕トラックと記事カードを持つMP4が
+約 -16 LUFSに正規化したAAC/M4AとBGMなしM4Aが
 `generated/media/YYYY-MM-DD/` に生成されます。BGM原本は公開先へコピーされません。
 
 公開済みメディアだけをサイトと `/rss/audio.xml` に表示するため、配信ファイルを配置した日付を
-`config/published-media.json` に追加します。ローカル生成だけでは追加しないでください。音声・動画には
-VOICEVOXクレジットと、BGM・トピック切替SEの制作／利用権管理表記をメタデータ、字幕、サイト表示で付与します。
+`config/published-media.json` に追加します。ローカル生成だけでは追加しないでください。音声には
+VOICEVOXクレジットと、BGM・トピック切替SEの制作／利用権管理表記をメタデータとサイト表示で付与します。
 
 台本は各記事を「タイトル → 現在の反響を示す事実1文 → 結果を先に示す要約 → 内容と解説」の順に構成し、読み上げでは順位を付けません。
 反響の事実だけで規模が伝わる場合は、「反響が大きい」「評価は妥当」などの重複した定型説明を加えません。
@@ -87,7 +87,7 @@ VOICEVOXクレジットと、BGM・トピック切替SEの制作／利用権管�
 解説の想定読者と深さは `config/narration-audience.json` に定めます。各記事では概要の言い換えだけで終わらず、
 専門用語の定義、仕組みの具体像、重要性、未確定点、持ち帰れる判断軸を `narration.learning` に記録します。
 台本の重複防止、記事内のキャスター交代、VOICEVOXとBGMの公開条件は
-[Top 5 台本・音声・動画生成ルール](docs/media-production-policy.md)を必須ルールとします。
+[Top 5 台本・音声生成ルール](docs/media-production-policy.md)を必須ルールとします。
 
 読み上げクレジット: VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん
 
