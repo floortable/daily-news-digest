@@ -56,6 +56,22 @@ npm run dev
 - `/rss/top5.xml`: Top 5
 - `/rss/vcf.xml`: VCF・VMware・競合
 
+## Top 5読み上げ
+
+VOICEVOXを起動した状態で、最新日のTop 5台本と3キャスターによる読み上げ音声を生成できます。
+
+```sh
+npm run media:script
+npm run media:voicevox
+```
+
+VOICEVOX Engineの既定URLは `http://127.0.0.1:50021` です。別のURLを使う場合は
+`VOICEVOX_URL` を指定します。日付を固定する場合は、各コマンドの末尾に
+`-- --date YYYY-MM-DD` を追加します。生成物は `generated/media/YYYY-MM-DD/` に保存され、
+Gitには登録されません。キャスターと話速は `config/voicevox.json` で変更できます。
+
+読み上げクレジット: VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん
+
 ## GitHub Pages
 
 Repository Settings → Pages → SourceをGitHub Actionsに設定してください。`main`へのpushでCIとデプロイが実行されます。ワークフローはcontentsをread、Pagesデプロイだけをpages/writeとid-token/writeに限定しています。

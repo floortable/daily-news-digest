@@ -1,0 +1,10 @@
+{
+  "cast": [
+    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.08 },
+    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.05 },
+    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.05 }
+  ],
+  "outputSamplingRate": 48000,
+  "outputStereo": true,
+  "credit": "VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん"
+}

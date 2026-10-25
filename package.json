@@ -12,6 +12,8 @@
     "check:free-tier": "tsx scripts/check-free-tier.ts",
     "check:licenses": "tsx scripts/check-licenses.ts",
     "check:public-safety": "tsx scripts/check-public-safety.ts",
+    "media:script": "tsx scripts/media/build-narration.ts",
+    "media:voicevox": "tsx scripts/media/synthesize-voicevox.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"
   },
