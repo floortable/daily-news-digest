@@ -26,9 +26,60 @@ export function toRssItem(article: Article) {
     title: article.title,
     pubDate: new Date(article.publishedAt),
     description: article.summary.join(' '),
-    link: `articles/${article.id}/`,
+    content: renderArticleContent(article),
+    // RSSからサイトを一度経由せず、原文へ直接移動できるようにする。
+    link: article.sourceUrl,
     categories: article.categories,
   };
+}
+
+export function renderArticleContent(article: Article) {
+  const date = new Date(article.publishedAt).toLocaleString('ja-JP', {
+    timeZone: 'Asia/Tokyo',
+    dateStyle: 'long',
+    timeStyle: 'short',
+  });
+  const analysis = article.attentionAnalysis;
+
+  return [
+    `<p><strong>配信元:</strong> ${escapeHtml(article.sourceName)} ／ <strong>公開:</strong> ${escapeHtml(date)} ／ <strong>情報種別:</strong> ${escapeHtml(article.informationType)}</p>`,
+    `<p><strong>分野:</strong> ${article.categories.map(escapeHtml).join('、')}</p>`,
+    '<h2>要約</h2>',
+    ...article.summary.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`),
+    '<h2>解説</h2>',
+    `<p>${escapeHtml(article.comment)}</p>`,
+    '<h2>注目度と反響</h2>',
+    `<h3>注目する理由</h3><p>${escapeHtml(analysis.whyNotable)}</p>`,
+    `<h3>確認できた現在の反響</h3><p>${escapeHtml(analysis.currentReaction)}</p>`,
+    `<h3>中立評価: ${escapeHtml(analysis.assessment)}</h3><p>${escapeHtml(analysis.assessmentComment)}</p>`,
+    renderMetrics(article),
+    `<p><a href="${escapeHtml(article.sourceUrl)}">元記事を直接開く ↗</a></p>`,
+  ].join('');
+}
+
+function renderMetrics(article: Article) {
+  const metrics = article.metrics;
+  if (!metrics) return '<p><strong>公開注目指標:</strong> 取得できる数値なし</p>';
+
+  const labels: Array<[keyof typeof metrics, string]> = [
+    ['hatenaBookmarks', 'はてなブックマーク'],
+    ['hnPoints', 'Hacker News points'],
+    ['hnComments', 'Hacker News comments'],
+    ['togetterViews', 'Togetter views'],
+    ['redditScore', 'Reddit score'],
+    ['redditComments', 'Reddit comments'],
+    ['fourChanReplies', '4chan replies'],
+  ];
+  const values = labels.flatMap(([key, label]) => {
+    const value = metrics[key];
+    return typeof value === 'number' ? [`${label}: ${value.toLocaleString('ja-JP')}`] : [];
+  });
+  if (!values.length) return '<p><strong>公開注目指標:</strong> 取得できる数値なし</p>';
+
+  const checkedAt = metrics.socialMetricsCheckedAt
+    ? `（${new Date(metrics.socialMetricsCheckedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })}確認）`
+    : '';
+  return `<p><strong>公開注目指標:</strong> ${escapeHtml(values.join(' ／ '))}${escapeHtml(checkedAt)}</p>`;
 }
 
 export function escapeXml(value: string) {
@@ -38,3 +89,5 @@ export function escapeXml(value: string) {
       ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', "'": '&apos;', '"': '&quot;' })[character]!,
   );
 }
+
+const escapeHtml = escapeXml;
