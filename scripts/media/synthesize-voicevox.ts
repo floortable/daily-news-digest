@@ -35,7 +35,15 @@ for (const member of config.cast) {
 
 const files: string[] = [];
 const timeline: Array<{ id: string; title: string; speaker: string; start: number; end: number }> = [];
-const synthesisInput: Array<{ id: string; speaker: string; displayText: string; spokenText: string }> = [];
+const synthesisInput: Array<{
+  id: string;
+  speaker: string;
+  displayText: string;
+  spokenText: string;
+  speedScale: number;
+  volumeScale: number;
+  intonationScale: number;
+}> = [];
 let elapsed = 0;
 for (const [index, segment] of plan.segments.entries()) {
   const styleId = styleIds.get(`${segment.speaker.name}/${segment.speaker.style}`)!;
@@ -44,9 +52,18 @@ for (const [index, segment] of plan.segments.entries()) {
     text: spokenText,
     speaker: String(styleId),
   });
-  synthesisInput.push({ id: segment.id, speaker: segment.speaker.name, displayText: segment.text, spokenText });
+  synthesisInput.push({
+    id: segment.id,
+    speaker: segment.speaker.name,
+    displayText: segment.text,
+    spokenText,
+    speedScale: segment.speaker.speedScale,
+    volumeScale: segment.speaker.volumeScale ?? 1,
+    intonationScale: segment.speaker.intonationScale ?? 1,
+  });
   query.speedScale = segment.speaker.speedScale;
   query.volumeScale = segment.speaker.volumeScale ?? 1;
+  query.intonationScale = segment.speaker.intonationScale ?? 1;
   query.outputSamplingRate = config.outputSamplingRate;
   query.outputStereo = config.outputStereo;
   query.prePhonemeLength = index === 0 ? config.pause.opening : 0.3;

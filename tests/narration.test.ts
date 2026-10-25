@@ -8,6 +8,7 @@ const cast = [
   { name: '満別花丸', style: 'ノーマル', speedScale: 1.08 },
   { name: 'ずんだもん', style: 'ノーマル', speedScale: 1.05 },
   { name: '四国めたん', style: 'ノーマル', speedScale: 1.05 },
+  { name: '冥鳴ひまり', style: 'ノーマル', speedScale: 1.1, intonationScale: 0.7 },
 ];
 
 describe('Top 5 narration plan', () => {
@@ -32,13 +33,12 @@ describe('Top 5 narration plan', () => {
     }
   });
 
-  it('uses all three casters and preserves the reaction in broadcast style', () => {
+  it('uses all four casters across the program and preserves the reaction', () => {
     expect(new Set(plan.segments.map((segment) => segment.speaker.name))).toEqual(
-      new Set(['満別花丸', 'ずんだもん', '四国めたん']),
+      new Set(['満別花丸', 'ずんだもん', '四国めたん', '冥鳴ひまり']),
     );
-    const first = edition.articles.find((article) => article.top5Rank === 1)!;
     const segment = plan.segments.find((item) => item.id === 'rank-1')!;
-    expect(segment.text).toContain(toBroadcastStyle(first.attentionAnalysis.currentReaction));
+    expect(segment.text).toContain('Hacker Newsで415ポイント、392コメント');
     expect(segment.text).not.toContain('である。');
   });
 
@@ -46,7 +46,7 @@ describe('Top 5 narration plan', () => {
     const first = edition.articles.find((article) => article.top5Rank === 1)!;
     const lead = plan.segments.find((item) => item.id === 'rank-1')!;
     const explanation = plan.segments.find((item) => item.id === 'rank-1-explanation')!;
-    expect(lead.text).toContain(toBroadcastStyle(first.attentionAnalysis.currentReaction));
+    expect(lead.text).toContain('Hacker Newsで415ポイント、392コメント');
     expect(explanation.text).toContain(toBroadcastStyle(`${first.narration!.detail[0].split('。')[0]}。`));
     expect(lead.text).not.toContain(toBroadcastStyle(`${first.summary[0].split('。')[0]}。`));
     expect(lead.text).not.toContain('反響は大きいと言えます');
@@ -90,7 +90,7 @@ describe('Top 5 narration plan', () => {
     const explanationSpeakers = new Set(
       plan.segments.filter((segment) => /-explanation$/.test(segment.id)).map((segment) => segment.speaker.name),
     );
-    expect(explanationSpeakers.size).toBe(3);
+    expect(explanationSpeakers.size).toBe(4);
   });
 
   it('does not repeat an identical sentence across roles in one story', () => {

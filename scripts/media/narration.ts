@@ -5,6 +5,7 @@ export type CastMember = {
   style: string;
   speedScale: number;
   volumeScale?: number;
+  intonationScale?: number;
   deEsser?: {
     intensity: number;
     maxReduction: number;
@@ -31,7 +32,7 @@ export function buildNarrationPlan(
   credit: string,
   spokenCredit = '',
 ): NarrationPlan {
-  if (cast.length !== 3) throw new Error('キャスターは3人設定してください');
+  if (cast.length < 3) throw new Error('キャスターは3人以上設定してください');
 
   const top5 = edition.articles
     .filter((article) => article.top5Rank !== null)
@@ -49,13 +50,13 @@ export function buildNarrationPlan(
     {
       id: 'opening',
       speaker: speakerAt(0),
-      text: `${spokenDate}、デイリーニュースダイジェスト、今日のトップファイブ${speakerAt(0).name === 'ずんだもん' ? 'なのだ' : 'です'}。${speakerAt(0).name}、${speakerAt(1).name}、${speakerAt(2).name}の3人でお伝えします。`,
+      text: `${spokenDate}、デイリーニュースダイジェスト、今日のトップファイブ${speakerAt(0).name === 'ずんだもん' ? 'なのだ' : 'です'}。${cast.map((member) => member.name).join('、')}の${cast.length}人でお伝えします。`,
     },
   ];
 
   for (const [index, article] of top5.entries()) {
     const rank = index + 1;
-    const articleOffset = index * 2;
+    const articleOffset = index;
     const articleSpeakers = [
       speakerAt(articleOffset),
       speakerAt(articleOffset + 1),

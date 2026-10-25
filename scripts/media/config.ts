@@ -8,12 +8,13 @@ const configSchema = z.object({
     style: z.string().min(1),
     speedScale: z.number().min(0.5).max(2),
     volumeScale: z.number().min(0).max(2).default(1),
+    intonationScale: z.number().min(0).max(2).default(1),
     deEsser: z.object({
       intensity: z.number().min(0).max(1),
       maxReduction: z.number().min(0).max(1),
       frequency: z.number().min(0).max(1),
     }).optional(),
-  })).length(3),
+  })).length(4),
   outputSamplingRate: z.number().int().min(8000).max(96000),
   outputStereo: z.boolean(),
   pause: z.object({
