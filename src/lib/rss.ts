@@ -33,6 +33,17 @@ export function toRssItem(article: Article) {
   };
 }
 
+export async function preserveRssGuids(response: Response, articles: Article[], site: URL) {
+  let xml = await response.text();
+  for (const article of articles) {
+    const generatedGuid = `<guid isPermaLink="true">${escapeXml(article.sourceUrl)}</guid>`;
+    const stableUrl = new URL(`articles/${article.id}/`, site).href;
+    const stableGuid = `<guid isPermaLink="true">${escapeXml(stableUrl)}</guid>`;
+    xml = xml.replace(generatedGuid, stableGuid);
+  }
+  return new Response(xml, { status: response.status, headers: response.headers });
+}
+
 export function renderArticleContent(article: Article) {
   const date = new Date(article.publishedAt).toLocaleString('ja-JP', {
     timeZone: 'Asia/Tokyo',
