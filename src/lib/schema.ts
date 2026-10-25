@@ -20,6 +20,18 @@ export const articleSchema = z.object({
     'hatena', 'hacker-news', 'togetter', 'reddit', '4chan', 'social-other', 'other',
   ])).min(1),
   top5Rank: z.number().int().min(1).max(5).nullable(),
+  narration: z.object({
+    sourceCheckedAt: isoDateTime,
+    result: z.string().min(20).max(500).optional(),
+    detail: z.array(z.string().min(20).max(500)).min(1).max(4),
+    learning: z.array(z.string().min(20).max(500)).min(1).max(4),
+    analysis: z.array(z.string().min(20).max(500)).min(1).max(3),
+    anticipatedQuestions: z.array(z.object({
+      question: z.string().min(10).max(160),
+      answer: z.string().min(20).max(500),
+    }).strict()).min(1).max(3),
+    references: z.array(z.url()).max(5).default([]),
+  }).strict().optional(),
   summary: z.array(z.string().min(1).max(500)).min(2).max(3)
     .refine((paragraphs) => paragraphs.join('').length >= 140, '独自要約は合計140文字以上必要です'),
   comment: z.string().min(180, '独自解説は180文字以上必要です').max(1000),

@@ -9,7 +9,12 @@ export async function readPronunciations() {
 }
 
 export function applyPronunciations(text: string, dictionary: Record<string, string>) {
-  return Object.entries(dictionary)
-    .sort(([a], [b]) => b.length - a.length)
-    .reduce((result, [surface, reading]) => result.replaceAll(surface, reading), text);
+  const keys = Object.keys(dictionary).sort((a, b) => b.length - a.length);
+  if (!keys.length) return text;
+  const pattern = new RegExp(keys.map(escapeRegExp).join('|'), 'g');
+  return text.replace(pattern, (surface) => dictionary[surface]);
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }

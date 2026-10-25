@@ -8,6 +8,11 @@ const configSchema = z.object({
     style: z.string().min(1),
     speedScale: z.number().min(0.5).max(2),
     volumeScale: z.number().min(0).max(2).default(1),
+    deEsser: z.object({
+      intensity: z.number().min(0).max(1),
+      maxReduction: z.number().min(0).max(1),
+      frequency: z.number().min(0).max(1),
+    }).optional(),
   })).length(3),
   outputSamplingRate: z.number().int().min(8000).max(96000),
   outputStereo: z.boolean(),
@@ -19,6 +24,9 @@ const configSchema = z.object({
   }),
   bgmReductionDb: z.number().min(18).max(24),
   credit: z.string().min(1),
+  spokenCredit: z.string().min(1),
+  bgmCredit: z.string().min(1),
+  jingleCredit: z.string().min(1),
 });
 
 export async function readVoicevoxConfig() {

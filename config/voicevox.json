@@ -1,12 +1,15 @@
 {
   "cast": [
-    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.13, "volumeScale": 1.0 },
-    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.2, "volumeScale": 0.96 },
-    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.11, "volumeScale": 0.98 }
+    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.13, "volumeScale": 0.72, "deEsser": { "intensity": 0.35, "maxReduction": 0.5, "frequency": 0.5 } },
+    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.4, "volumeScale": 0.96 },
+    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.2, "volumeScale": 0.78 }
   ],
   "outputSamplingRate": 48000,
   "outputStereo": true,
-  "pause": { "opening": 0.6, "betweenSegments": 0.65, "closing": 1.0, "jingle": 0.7 },
+  "pause": { "opening": 0.6, "betweenSegments": 0.65, "closing": 1.0, "jingle": 1.0 },
   "bgmReductionDb": 21,
-  "credit": "VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん"
+  "credit": "VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん",
+  "spokenCredit": "この音声は、VOICEVOXの満別花丸、ずんだもん、四国めたんを使用しています。",
+  "bgmCredit": "BGM制作・利用権管理:floortable（Suno有料プラン生成）",
+  "jingleCredit": "トピック切替SE制作・利用権管理:floortable（Suno有料プラン生成）"
 }

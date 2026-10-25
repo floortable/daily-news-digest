@@ -5,6 +5,11 @@ export type CastMember = {
   style: string;
   speedScale: number;
   volumeScale?: number;
+  deEsser?: {
+    intensity: number;
+    maxReduction: number;
+    frequency: number;
+  };
 };
 
 export type NarrationSegment = {
@@ -24,6 +29,7 @@ export function buildNarrationPlan(
   edition: Edition,
   cast: CastMember[],
   credit: string,
+  spokenCredit = '',
 ): NarrationPlan {
   if (cast.length !== 3) throw new Error('キャスターは3人設定してください');
 
@@ -49,18 +55,21 @@ export function buildNarrationPlan(
 
   for (const [index, article] of top5.entries()) {
     const rank = index + 1;
-    const speaker = speakerAt(index);
-    segments.push({
-      id: `rank-${rank}`,
-      speaker,
-      text: buildArticleNarration(article, rank, speaker.name),
-    });
+    const articleOffset = index * 2;
+    const articleSpeakers = [
+      speakerAt(articleOffset),
+      speakerAt(articleOffset + 1),
+      speakerAt(articleOffset + 2),
+      speakerAt(articleOffset + 3),
+      speakerAt(articleOffset + 4),
+    ];
+    segments.push(...buildArticleSegments(article, rank, articleSpeakers));
   }
 
   segments.push({
     id: 'closing',
     speaker: speakerAt(2),
-    text: `以上、今日のトップファイブ${speakerAt(2).name === 'ずんだもん' ? 'なのだ' : 'でした'}。詳しい内容と元記事は、デイリーニュースダイジェストのRSSとサイトで確認できます。`,
+    text: `以上、今日のトップファイブ${speakerAt(2).name === 'ずんだもん' ? 'なのだ' : 'でした'}。詳しい内容と元記事は、デイリーニュースダイジェストのRSSとサイトで確認できます。${spokenCredit}`,
   });
 
   return {
@@ -71,36 +80,93 @@ export function buildNarrationPlan(
   };
 }
 
-export function buildArticleNarration(article: Article, rank: number, speakerName: string) {
-  const attentionLead = speakerName === 'ずんだもん'
-    ? 'まずは、どれくらい話題なのか見ていくのだ。'
-    : speakerName === '満別花丸'
-      ? 'はじめに、現在の注目度を見てみましょう。'
-      : 'まず、現在の反響と注目度から確認します。';
-  const contentLead = speakerName === 'ずんだもん' ? 'では、内容を見ていくよ。' : '続いて、内容です。';
-  const magnitude = describeReactionMagnitude(article);
-  const reaction = toBroadcastStyle(article.attentionAnalysis.currentReaction);
-  const assessmentComment = toBroadcastStyle(
-    article.attentionAnalysis.assessmentComment.replace(article.attentionAnalysis.currentReaction, '').trim(),
+function buildArticleSegments(article: Article, rank: number, speakers: CastMember[]): NarrationSegment[] {
+  const reaction = applyOpeningTone(
+    toBroadcastStyle(article.attentionAnalysis.currentReaction),
+    speakers[0].name,
   );
-  const body = dedupeSentences([...article.summary, article.comment].join(' '));
+  const sections = [
+    {
+      id: `rank-${rank}`,
+      text: [
+        `${article.title}。`,
+        reaction,
+        article.narration?.result,
+      ].filter(Boolean).join(' '),
+    },
+    {
+      id: `rank-${rank}-background`,
+      text: (article.narration?.detail ?? []).join(' '),
+    },
+    {
+      id: `rank-${rank}-learning`,
+      text: (article.narration?.learning ?? []).join(' '),
+    },
+    {
+      id: `rank-${rank}-analysis`,
+      text: (article.narration?.analysis ?? []).join(' '),
+    },
+    {
+      id: `rank-${rank}-questions`,
+      text: (article.narration?.anticipatedQuestions.map(formatAnticipatedQuestion) ?? []).join(' '),
+    },
+  ].filter((section) => section.text);
 
-  return [
-    `第${rank}位。${article.title}。`,
-    attentionLead,
-    reaction,
-    magnitude,
-    describeAssessment(article.attentionAnalysis.assessment),
-    assessmentComment,
-    contentLead,
-    toBroadcastStyle(body),
-  ].filter(Boolean).join(' ');
+  return sections.map((section, index) => ({
+    id: section.id,
+    speaker: speakers[index],
+    text: applySpeakerTone(toBroadcastStyle(dedupeSentences(section.text)), speakers[index].name),
+  }));
 }
 
-function describeAssessment(assessment: Article['attentionAnalysis']['assessment']) {
-  if (assessment === '評価が分かれる') return '注目度については、評価が分かれています。';
-  if (assessment === '判断には早い') return '注目度を判断するには、まだ早い状況です。';
-  return `注目度の評価は、${assessment}です。`;
+export function buildArticleNarration(article: Article, speakerName: string) {
+  const reaction = applyOpeningTone(
+    toBroadcastStyle(article.attentionAnalysis.currentReaction),
+    speakerName,
+  );
+  const body = dedupeSentences([
+    article.summary[0],
+    article.attentionAnalysis.whyNotable,
+    ...(article.narration?.detail ?? []),
+    ...(article.narration?.learning ?? []),
+    ...(article.narration?.analysis ?? []),
+    ...(article.narration?.anticipatedQuestions.map(formatAnticipatedQuestion) ?? []),
+  ].join(' '));
+
+  const narration = [
+    `${article.title}。`,
+    reaction,
+    article.narration?.result,
+    toBroadcastStyle(body),
+  ].filter(Boolean).join(' ');
+  return applySpeakerTone(narration, speakerName);
+}
+
+function formatAnticipatedQuestion(item: { question: string; answer: string }, index: number) {
+  const leads = ['ここで気になるのは', 'もう一つ、確認しておきたいのは', 'さらに実用面では'];
+  return `${leads[index] ?? leads[2]}、${stripFinalPunctuation(item.question)}という点です。${item.answer}`;
+}
+
+function stripFinalPunctuation(text: string) {
+  return text.replace(/[。？！?！]+$/, '');
+}
+
+function applyOpeningTone(text: string, speakerName: string) {
+  if (speakerName !== 'ずんだもん') return text;
+  return text
+    .replace(/されています。$/, 'されているのだ。')
+    .replace(/っています。$/, 'っているのだ。')
+    .replace(/ています。$/, 'ているのだ。')
+    .replace(/です。$/, 'なのだ。');
+}
+
+function applySpeakerTone(text: string, speakerName: string) {
+  if (speakerName !== 'ずんだもん') return text;
+  if (text.endsWith('判断できます。')) return text.replace(/判断できます。$/, '判断できるのだ。');
+  if (text.endsWith('確認する必要があります。')) {
+    return text.replace(/確認する必要があります。$/, '確認する必要があるのだ。');
+  }
+  return `${text} ここが、この話題を見るうえでのポイントなのだ。`;
 }
 
 export function toBroadcastStyle(text: string) {
@@ -142,26 +208,13 @@ export function toBroadcastStyle(text: string) {
 
 function dedupeSentences(text: string) {
   const seen = new Set<string>();
+  const boilerplate = new Set([
+    '原文の更新、反対意見、対象範囲を継続して確認し、単一の数値や印象だけで結論を固定しないことが重要である。',
+    '読者にとっては、確認済みの事実と発表者の評価を分け、実生活や業務への影響、未確定点、次に見るべき資料を整理することが大切である。',
+  ]);
   return text.split(/(?<=。)/).map((sentence) => sentence.trim()).filter((sentence) => {
-    if (!sentence || seen.has(sentence)) return false;
+    if (!sentence || seen.has(sentence) || boilerplate.has(sentence)) return false;
     seen.add(sentence);
     return true;
   }).join(' ');
-}
-
-export function describeReactionMagnitude(article: Article) {
-  const metrics = article.metrics;
-  if (!metrics) return '';
-  const values = [
-    metrics.hatenaBookmarks, metrics.hnPoints, metrics.hnComments, metrics.togetterViews,
-    metrics.redditScore, metrics.redditComments, metrics.fourChanReplies,
-  ].filter((value): value is number => typeof value === 'number');
-  if (!values.length) return '';
-  const large = (metrics.hatenaBookmarks ?? 0) >= 100
-    || (metrics.hnPoints ?? 0) >= 200 || (metrics.hnComments ?? 0) >= 100
-    || (metrics.togetterViews ?? 0) >= 100_000
-    || (metrics.redditScore ?? 0) >= 1_000 || (metrics.redditComments ?? 0) >= 200
-    || (metrics.fourChanReplies ?? 0) >= 300;
-  if (large) return '確認できた公開数値の範囲では、反響は大きいと言えます。';
-  return '確認できた公開数値の範囲では、反響はまだ大きくありません。';
 }

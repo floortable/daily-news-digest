@@ -1,0 +1,37 @@
+{
+  "rules": [
+    {
+      "name": "security-urgency",
+      "keywords": ["脆弱性", "攻撃", "セキュリティ", "CVE"],
+      "tracks": ["countdown-to-something-amazing.m4a", "innovation-begins-here.m4a"]
+    },
+    {
+      "name": "science-discovery",
+      "keywords": ["反物質", "粒子", "宇宙", "物理", "科学"],
+      "tracks": ["something-amazing-is-coming.m4a", "countdown-to-something-amazing.m4a", "sparkling-news.m4a"]
+    },
+    {
+      "name": "language-and-digital-culture",
+      "keywords": ["AI生成文", "文章", "言語", "理解"],
+      "tracks": ["happy-pixel-news.m4a", "sparkling-news.m4a", "innovation-begins-here.m4a"]
+    },
+    {
+      "name": "innovation-and-business",
+      "keywords": ["AI投資", "生産性", "テクノロジー", "企業"],
+      "tracks": ["innovation-begins-here.m4a", "something-amazing-is-coming.m4a", "sparkling-news.m4a"]
+    },
+    {
+      "name": "daily-life",
+      "keywords": ["防草", "庭", "生活", "家庭"],
+      "tracks": ["cozy-pop-bulletin.m4a", "sparkling-news.m4a"]
+    }
+  ],
+  "fallbackTracks": [
+    "sparkling-news.m4a",
+    "innovation-begins-here.m4a",
+    "happy-pixel-news.m4a",
+    "something-amazing-is-coming.m4a",
+    "countdown-to-something-amazing.m4a",
+    "cozy-pop-bulletin.m4a"
+  ]
+}
