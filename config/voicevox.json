@@ -3,7 +3,7 @@
     { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.13, "volumeScale": 0.72, "deEsser": { "intensity": 0.35, "maxReduction": 0.5, "frequency": 0.5 } },
     { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.4, "volumeScale": 0.96 },
     { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.2, "volumeScale": 0.78 },
-    { "name": "冥鳴ひまり", "style": "ノーマル", "speedScale": 1.1, "volumeScale": 0.78, "intonationScale": 0.7 }
+    { "name": "冥鳴ひまり", "style": "ノーマル", "speedScale": 1.1, "volumeScale": 0.78, "intonationScale": 1.0 }
   ],
   "outputSamplingRate": 48000,
   "outputStereo": true,
