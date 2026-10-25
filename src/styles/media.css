@@ -1,0 +1,8 @@
+.media-player {
+  background: var(--paper); border: 1px solid var(--line); border-radius: .8rem;
+  padding: 1.2rem; margin: 2rem 0; box-shadow: var(--shadow);
+}
+.media-player h2 { margin-top: 0; }
+.media-player audio, .media-player video { display: block; width: 100%; margin: .8rem 0; }
+.media-player video { max-height: 70vh; background: #101916; }
+.media-credit { font-size: .78rem; color: var(--muted); }

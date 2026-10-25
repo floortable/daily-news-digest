@@ -1,0 +1,15 @@
+---
+import { getMediaUrls } from '../lib/media';
+const { date } = Astro.props;
+const media = getMediaUrls(import.meta.env.BASE_URL, date);
+---
+<aside class="media-player" aria-labelledby={`media-${date}`}>
+  <h2 id={`media-${date}`}>Top 5をながら聞き</h2>
+  <p>満別花丸、ずんだもん、四国めたんの3人が、その日のTop 5を読み上げます。</p>
+  <audio controls preload="none" src={media.audio}>音声を再生できません。<a href={media.audio}>音声を開く</a></audio>
+  <details><summary>動画・BGMなし版</summary>
+    <video controls preload="metadata" src={media.video}></video>
+    <p><a href={media.audioNoBgm}>BGMなし音声を開く</a></p>
+  </details>
+  <p class="media-credit">VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん</p>
+</aside>

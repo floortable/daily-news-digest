@@ -14,6 +14,7 @@
     "check:public-safety": "tsx scripts/check-public-safety.ts",
     "media:script": "tsx scripts/media/build-narration.ts",
     "media:voicevox": "tsx scripts/media/synthesize-voicevox.ts",
+    "media:render": "tsx scripts/media/render-media.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"
   },

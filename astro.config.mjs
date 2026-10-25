@@ -7,4 +7,5 @@ export default defineConfig({
   site: process.env.SITE_URL || 'https://floortable.github.io',
   base: isProjectPage ? `/${repository}/` : '/',
   output: 'static',
+  publicDir: './generated/public',
 });

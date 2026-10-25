@@ -1,10 +1,12 @@
 {
   "cast": [
-    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.08 },
-    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.05 },
-    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.05 }
+    { "name": "満別花丸", "style": "ノーマル", "speedScale": 1.08, "volumeScale": 1.0 },
+    { "name": "ずんだもん", "style": "ノーマル", "speedScale": 1.05, "volumeScale": 0.96 },
+    { "name": "四国めたん", "style": "ノーマル", "speedScale": 1.05, "volumeScale": 0.98 }
   ],
   "outputSamplingRate": 48000,
   "outputStereo": true,
+  "pause": { "opening": 0.6, "betweenSegments": 0.65, "closing": 1.0, "jingle": 0.7 },
+  "bgmReductionDb": 21,
   "credit": "VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん"
 }

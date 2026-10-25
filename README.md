@@ -63,12 +63,21 @@ VOICEVOXを起動した状態で、最新日のTop 5台本と3キャスターに
 ```sh
 npm run media:script
 npm run media:voicevox
+npm run media:render
 ```
 
 VOICEVOX Engineの既定URLは `http://127.0.0.1:50021` です。別のURLを使う場合は
 `VOICEVOX_URL` を指定します。日付を固定する場合は、各コマンドの末尾に
 `-- --date YYYY-MM-DD` を追加します。生成物は `generated/media/YYYY-MM-DD/` に保存され、
 Gitには登録されません。キャスターと話速は `config/voicevox.json` で変更できます。
+固有名詞の読みは `config/pronunciations.json` で調整します。`media:voicevox` は記事間ジングルを含む
+48 kHz WAVを作り、`media:render` は日付から日替わりBGMを選び、読み上げより21 dB下げて合成します。
+約 -16 LUFSに正規化したAAC/M4A、BGMなしM4A、字幕トラックと記事カードを持つMP4が
+`generated/media/YYYY-MM-DD/` に生成されます。BGM原本は公開先へコピーされません。
+
+公開済みメディアだけをサイトと `/rss/audio.xml` に表示するため、配信ファイルを配置した日付を
+`config/published-media.json` に追加します。ローカル生成だけでは追加しないでください。音声・動画には
+VOICEVOXクレジットをメタデータ、字幕、サイト表示で付与します。
 
 読み上げクレジット: VOICEVOX:満別花丸、VOICEVOX:ずんだもん、VOICEVOX:四国めたん
 

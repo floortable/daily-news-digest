@@ -1,6 +1,7 @@
 ---
-import Base from '../../layouts/Base.astro'; import ArticleCard from '../../components/ArticleCard.astro'; import { getEditions } from '../../lib/data';
+import Base from '../../layouts/Base.astro'; import ArticleCard from '../../components/ArticleCard.astro'; import MediaPlayer from '../../components/MediaPlayer.astro'; import { getEditions } from '../../lib/data';
+import { isMediaPublished } from '../../lib/media';
 export function getStaticPaths() { return getEditions().map((edition) => ({ params: { date: edition.date }, props: { edition } })); }
 const { edition } = Astro.props;
 ---
-<Base title={`${edition.date} | Daily News Digest`}><section><h1>{edition.date}</h1><p>{edition.articles.length}件</p><div class="article-list">{edition.articles.map((article) => <ArticleCard article={article} />)}</div></section><script>import '../../scripts/preferences';</script></Base>
+<Base title={`${edition.date} | Daily News Digest`}><section><h1>{edition.date}</h1><p>{edition.articles.length}件</p>{isMediaPublished(edition.date) && <MediaPlayer date={edition.date} />}<div class="article-list">{edition.articles.map((article) => <ArticleCard article={article} />)}</div></section><script>import '../../scripts/preferences';</script></Base>

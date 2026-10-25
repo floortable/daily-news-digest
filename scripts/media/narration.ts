@@ -4,6 +4,7 @@ export type CastMember = {
   name: string;
   style: string;
   speedScale: number;
+  volumeScale?: number;
 };
 
 export type NarrationSegment = {
