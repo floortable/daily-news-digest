@@ -60,12 +60,37 @@ export function renderArticleContent(article: Article) {
     '<h2>解説</h2>',
     `<p>${escapeHtml(article.comment)}</p>`,
     renderDetailedExplanation(article),
+    renderMediaTrend(article),
     '<h2>注目度と反響</h2>',
     `<h3>注目する理由</h3><p>${escapeHtml(analysis.whyNotable)}</p>`,
     `<h3>確認できた現在の反響</h3><p>${escapeHtml(analysis.currentReaction)}</p>`,
     `<h3>中立評価: ${escapeHtml(analysis.assessment)}</h3><p>${escapeHtml(analysis.assessmentComment)}</p>`,
     renderMetrics(article),
     `<p><a href="${escapeHtml(article.sourceUrl)}">元記事を直接開く ↗</a></p>`,
+  ].join('');
+}
+
+function renderMediaTrend(article: Article) {
+  const trend = article.mediaTrend;
+  if (!trend) return '';
+  const originLink = trend.origin.originalUrl
+    ? `<p><a href="${escapeHtml(trend.origin.originalUrl)}">確認した元投稿を開く ↗</a></p>`
+    : '';
+  const materialList = (items: typeof trend.sourceMaterials) => items.length
+    ? `<ul>${items.map((item) => `<li><strong>${escapeHtml(item.title)}</strong>（${escapeHtml(item.kind)}・${escapeHtml(item.identificationStatus)}・${escapeHtml(item.rightsStatus)}）— ${escapeHtml(item.note)}${item.sourceUrl ? ` <a href="${escapeHtml(item.sourceUrl)}">根拠 ↗</a>` : ''}</li>`).join('')}</ul>`
+    : '<p>個別の素材は確認できていません。</p>';
+  return [
+    '<h2>ミーム・流行動画の解説</h2>',
+    `<p><strong>形式:</strong> ${trend.formats.map(escapeHtml).join('、')}</p>`,
+    '<h3>発祥</h3>',
+    `<p><strong>確認状態:</strong> ${escapeHtml(trend.origin.status)} ／ <strong>投稿先:</strong> ${escapeHtml(trend.origin.platform)} ／ <strong>投稿者:</strong> ${escapeHtml(trend.origin.creatorName ?? '未特定')}</p>`,
+    `<p>${escapeHtml(trend.origin.explanation)}</p>`, originLink,
+    '<h3>元ネタ・使用素材</h3>', `<p>${escapeHtml(trend.sourceMaterialAnalysis)}</p>`, materialList(trend.sourceMaterials),
+    '<h3>BGM・音源</h3>', `<p>${escapeHtml(trend.musicAnalysis)}</p>`, materialList(trend.music),
+    '<h3>拡散経路</h3>',
+    `<ul>${trend.spread.map((item) => `<li><strong>${escapeHtml(item.platform)}</strong>（${escapeHtml(new Date(item.observedAt).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }))}確認）— ${escapeHtml(item.evidence)}${item.exampleUrl ? ` <a href="${escapeHtml(item.exampleUrl)}">確認例 ↗</a>` : ''}</li>`).join('')}</ul>`,
+    '<h3>反響と中立評価</h3>', `<p>${escapeHtml(trend.reactionSummary)}</p>`, `<p>${escapeHtml(trend.neutralAssessment)}</p>`,
+    '<h3>権利・安全上の注意</h3>', `<p>${escapeHtml(trend.rightsAndSafety)}</p>`,
   ].join('');
 }
 

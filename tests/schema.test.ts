@@ -114,4 +114,49 @@ describe('editorial compliance', () => {
     reviewed.articles[0].attentionAnalysis.assessment = '大炎上';
     expect(editionSchema.safeParse(reviewed).success).toBe(false);
   });
+
+  it('requires verified origin, materials, spread, reaction, and rights notes for media trends', () => {
+    const trendEdition = structuredClone(edition);
+    const article = trendEdition.articles[0];
+    article.categories = ['ネット文化・ミーム'];
+    article.informationType = 'ミーム・ネット文化';
+    expect(editionSchema.safeParse(trendEdition).success).toBe(false);
+
+    article.mediaTrend = {
+      formats: ['短尺動画', 'ミーム'],
+      origin: {
+        status: '確認済み',
+        platform: 'YouTube Shorts',
+        creatorName: 'Example Creator',
+        accountHandle: '@example',
+        originalUrl: 'https://example.com/original',
+        postedAt: '2026-10-24T10:00:00+09:00',
+        explanation: '投稿者の公式アカウント、投稿日時、動画内容を照合し、確認できた範囲ではこの投稿が起点です。転載版より前に公開されていることも確認しました。投稿者自身の説明と後続の派生投稿から参照されているURLも一致しています。',
+      },
+      sourceMaterialAnalysis: '映像の元ネタは公開作品の一場面を模した演出ですが、作品本編を切り抜いたものではありません。制作者自身の説明と公式資料を照合しました。構図とセリフのどの部分が参照され、どの部分が投稿者独自の改変なのかも分けて確認しています。',
+      sourceMaterials: [{
+        kind: '映画・番組', title: 'Example Work', creator: 'Example Studio',
+        sourceUrl: 'https://example.com/work', identificationStatus: '確認済み',
+        rightsStatus: '公式投稿へのリンクのみ', note: '制作者が元ネタとして明記しており、公式作品ページでも名称を確認しました。',
+      }],
+      musicAnalysis: 'BGMは投稿画面の公式音源表示と権利者の配信ページを照合しました。本サイトでは音源を転載せず、確認用リンクだけを掲載します。',
+      music: [{
+        kind: '音楽', title: 'Example Song', creator: 'Example Artist',
+        sourceUrl: 'https://example.com/song', identificationStatus: '確認済み',
+        rightsStatus: '公式投稿へのリンクのみ', note: '公式音源ページと動画側の音源クレジットが一致することを確認しました。',
+      }],
+      spread: [{
+        platform: 'Reddit', observedAt: '2026-10-25T08:00:00+09:00',
+        evidence: '複数のサブコミュニティで派生動画と元ネタ解説が共有され、模倣形式へ広がっていました。',
+        exampleUrl: 'https://example.com/reddit-example',
+      }],
+      reactionSummary: '元動画そのものへの好意的な反応に加え、撮影方法を再現する派生動画や、元ネタを説明する投稿が複数のコミュニティで確認されました。一方で、同じ形式の投稿が増えすぎたという飽和への反応や、企業アカウントによる利用への批判も分けて確認しています。',
+      neutralAssessment: '複数媒体への広がりは確認できますが、観測範囲は公開投稿に限られます。再生数だけで支持や長期的な定着を判断せず、派生の継続を確認する段階です。広告出稿や推薦アルゴリズムによる露出も考えられるため、自然発生の人気だけで説明しない評価にします。',
+      rightsAndSafety: '動画、音源、作品画像は転載せず、元投稿と権利者の公式ページへのリンクだけを使います。投稿者の個人情報や削除済み投稿を追跡せず、二次被害につながる内容も含めません。楽曲名の特定と再利用許諾は別であり、本サイトが音源や映像を利用できるという意味ではないことも明記します。',
+    };
+    expect(editionSchema.safeParse(trendEdition).success).toBe(true);
+
+    article.mediaTrend.origin.originalUrl = null;
+    expect(editionSchema.safeParse(trendEdition).success).toBe(false);
+  });
 });

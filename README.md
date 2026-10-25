@@ -10,7 +10,7 @@
 
 動画・音声用のBGMにもMIT Licenseは適用されません。利用条件は[音源ライブラリの説明](assets/audio/bgm/README.md)に記載しています。
 
-記事は個人的な関心を軸にしつつ、特定分野へ偏りすぎないよう、内容の面白さ、重要性、話題性、意外性、分野の広がりから選びます。Hacker News、はてなブックマーク、Reddit、4chan、Togetter、GIGAZINE、一般報道・一次情報を並行して確認します。ソーシャル投稿は話題発見に使い、事実の根拠にはしません。件数配分、分野上限、Top 5の多様性は[記事選定ポリシー](docs/selection-policy.md)に従います。
+記事は個人的な関心を軸にしつつ、特定分野へ偏りすぎないよう、内容の面白さ、重要性、話題性、意外性、分野の広がりから選びます。Hacker News、はてなブックマーク、Reddit、4chan、Togetter、TikTok、YouTube、Instagram Reels、ニコニコ、Bluesky、Mastodon、GIGAZINE、一般報道・一次情報を並行して確認します。ニュースだけでなく、検証可能なミーム、バズ動画、流行音源も対象です。ソーシャル投稿は話題発見に使い、事実の根拠にはしません。件数配分、分野上限、Top 5の多様性は[記事選定ポリシー](docs/selection-policy.md)に従います。
 
 ## 必須の費用方針
 
@@ -36,7 +36,7 @@ npm run dev
 
 ## 毎日の手動更新
 
-1. Hacker News、はてなブックマーク、Reddit、4chan、Lobsters、Togetter、GIGAZINE、一般報道・一次情報から並行して候補を集める。
+1. Hacker News、はてなブックマーク、Reddit、4chan、Lobsters、Togetter、TikTok、YouTube、Instagram Reels、ニコニコ、Bluesky、Mastodon、GIGAZINE、一般報道・一次情報から並行して候補を集める。
 2. `docs/selection-policy.md` の件数目安、分野上限、媒体上限を確認し、一般ニュースを30件前後（通常25〜35件程度）とTop 5、必要なVCF専門枠を選ぶ。件数合わせの水増しや機械的な削除は行わない。
 3. `data/daily/YYYY-MM-DD.json` を既存ファイルからではなく、検証済みの収集結果を基に作成する。
 4. すべてのURLが記事個別ページであることを確認し、確認結果を `urlCheck` に記録する。
@@ -48,7 +48,7 @@ npm run dev
 
 ## データ仕様
 
-実行時の正規スキーマは `src/lib/schema.ts` です。方針v2の日付ごとのJSONにはTop 5の順位1〜5、安定した記事ID、検証済みURL、出典、日時、カテゴリ、独自概要、解説、結論・事実・背景・基礎解説・影響・注意点・次の確認事項を含めます。追跡パラメータ除去後のURL重複と、内容を増やさない定型的な埋め草も検出します。
+実行時の正規スキーマは `src/lib/schema.ts` です。方針v2の日付ごとのJSONにはTop 5の順位1〜5、安定した記事ID、検証済みURL、出典、日時、カテゴリ、独自概要、解説、結論・事実・背景・基礎解説・影響・注意点・次の確認事項を含めます。ミーム・流行動画では、発祥、元投稿、元ネタ、BGM・素材、拡散経路、反響、権利・安全確認も必須です。追跡パラメータ除去後のURL重複と、内容を増やさない定型的な埋め草も検出します。
 
 ## 配信先
 

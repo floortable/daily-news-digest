@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-const light = ['#0f766e', '#255f9e', '#6746ad', '#94600a', '#a83e69', '#4f5d75', '#b42318', '#52606d'];
-const dark = ['#5eead4', '#93c5fd', '#c4b5fd', '#f2c66d', '#f0a3be', '#b8cad8', '#fda29b', '#cbd5e1'];
+const light = ['#0f766e', '#255f9e', '#6746ad', '#94600a', '#a83e69', '#7a3e6d', '#4f5d75', '#b42318', '#52606d'];
+const dark = ['#5eead4', '#93c5fd', '#c4b5fd', '#f2c66d', '#f0a3be', '#f2a7df', '#b8cad8', '#fda29b', '#cbd5e1'];
 
 function luminance(hex: string) {
   const channels = hex.match(/[0-9a-f]{2}/gi)!.map((value) => parseInt(value, 16) / 255).map((value) => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4);

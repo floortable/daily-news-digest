@@ -44,4 +44,29 @@ describe('full-text RSS item', () => {
       `<guid isPermaLink="true">https://floortable.github.io/daily-news-digest/articles/${article.id}/</guid>`,
     );
   });
+
+  it('renders origin, materials, music, spread, reaction, and rights for media trends', () => {
+    const trendArticle = structuredClone(article);
+    trendArticle.categories = ['ネット文化・ミーム'];
+    trendArticle.informationType = 'ミーム・ネット文化';
+    trendArticle.mediaTrend = {
+      formats: ['短尺動画'],
+      origin: { status: '未特定', platform: 'TikTok', creatorName: null, accountHandle: null, originalUrl: null, postedAt: null, explanation: '転載が先行しており、確認できる公開投稿だけでは最初の投稿者と投稿時刻を特定できません。最古と断定せず未特定として扱います。' },
+      sourceMaterialAnalysis: '映像の構図には既存作品との類似が指摘されていますが、制作者の説明を確認できないため元ネタを確定していません。',
+      sourceMaterials: [],
+      musicAnalysis: '動画に音声はありますが、公式クレジットと権利者情報を照合できず、曲名や作者を推測で記載していません。',
+      music: [],
+      spread: [{ platform: 'TikTok', observedAt: '2026-10-25T08:00:00+09:00', evidence: '同じ構図を使った複数の派生投稿が公開範囲で確認されました。', exampleUrl: null }],
+      reactionSummary: '模倣投稿と元ネタを尋ねる反応が確認されていますが、取得可能な公開投稿だけの観測であり、利用者全体の反応とは扱いません。',
+      neutralAssessment: '短期間の派生は確認できる一方、発祥と素材が未特定です。拡散規模だけを根拠に代表的な流行と断定せず、追加確認が必要です。',
+      rightsAndSafety: '元動画、音声、画像はRSSへ転載せず、確認できた公開情報の説明だけを掲載します。削除済み投稿や非公開情報へアクセスせず、投稿者の特定も行いません。',
+    };
+    const content = toRssItem(trendArticle).content;
+    expect(content).toContain('<h2>ミーム・流行動画の解説</h2>');
+    expect(content).toContain('<h3>発祥</h3>');
+    expect(content).toContain('<h3>元ネタ・使用素材</h3>');
+    expect(content).toContain('<h3>BGM・音源</h3>');
+    expect(content).toContain('<h3>拡散経路</h3>');
+    expect(content).toContain('<h3>権利・安全上の注意</h3>');
+  });
 });

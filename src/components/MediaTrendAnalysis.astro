@@ -1,0 +1,37 @@
+---
+import type { Article } from '../lib/schema';
+interface Props { article: Article; }
+const { article } = Astro.props;
+const trend = article.mediaTrend;
+const formatDate = (value: string | null) => value
+  ? new Date(value).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+  : '確認できず';
+---
+{trend && <section class="media-trend-analysis" aria-label="ミーム・流行動画の検証">
+  <h2>ミーム・流行動画の解説</h2>
+  <p><strong>形式：</strong>{trend.formats.join('、')}</p>
+
+  <h3>誰が、どこへ、いつ投稿したのか</h3>
+  <p><strong>確認状態：</strong>{trend.origin.status}</p>
+  <p><strong>投稿先：</strong>{trend.origin.platform} ／ <strong>投稿者：</strong>{trend.origin.creatorName ?? '未特定'}{trend.origin.accountHandle ? `（${trend.origin.accountHandle}）` : ''} ／ <strong>投稿日時：</strong>{formatDate(trend.origin.postedAt)}</p>
+  <p>{trend.origin.explanation}</p>
+  {trend.origin.originalUrl && <p><a href={trend.origin.originalUrl} target="_blank" rel="noopener noreferrer">確認した元投稿を開く ↗</a></p>}
+
+  <h3>元ネタ・使用素材</h3>
+  <p>{trend.sourceMaterialAnalysis}</p>
+  {trend.sourceMaterials.length > 0 ? <ul>{trend.sourceMaterials.map((material) => <li><strong>{material.title}</strong>（{material.kind}・{material.identificationStatus}・{material.rightsStatus}）— {material.note}{material.sourceUrl && <> <a href={material.sourceUrl} target="_blank" rel="noopener noreferrer">根拠 ↗</a></>}</li>)}</ul> : <p>個別の元素材は確認できていません。</p>}
+
+  <h3>BGM・音源</h3>
+  <p>{trend.musicAnalysis}</p>
+  {trend.music.length > 0 ? <ul>{trend.music.map((material) => <li><strong>{material.title}</strong>{material.creator ? `／${material.creator}` : ''}（{material.identificationStatus}・{material.rightsStatus}）— {material.note}{material.sourceUrl && <> <a href={material.sourceUrl} target="_blank" rel="noopener noreferrer">根拠 ↗</a></>}</li>)}</ul> : <p>BGMや音源は使われていないか、確認できていません。</p>}
+
+  <h3>どこへ、どう広がったのか</h3>
+  <ul>{trend.spread.map((item) => <li><strong>{item.platform}</strong>（{formatDate(item.observedAt)}確認）— {item.evidence}{item.exampleUrl && <> <a href={item.exampleUrl} target="_blank" rel="noopener noreferrer">確認例 ↗</a></>}</li>)}</ul>
+
+  <h3>反響と中立的な見立て</h3>
+  <p>{trend.reactionSummary}</p>
+  <p>{trend.neutralAssessment}</p>
+
+  <h3>権利・安全上の注意</h3>
+  <p>{trend.rightsAndSafety}</p>
+</section>}

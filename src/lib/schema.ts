@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const categories = [
   '国内・国際', 'テクノロジー', '科学・医療', '生活・文化',
-  'エンタメ', 'VCF・VMware・競合', 'セキュリティ', 'その他',
+  'エンタメ', 'ネット文化・ミーム', 'VCF・VMware・競合', 'セキュリティ', 'その他',
 ] as const;
 
 const isoDateTime = z.iso.datetime({ offset: true });
@@ -16,6 +16,56 @@ const articleDetailSchema = z.object({
   caveats: z.array(z.string().min(40).max(700)).min(1).max(3),
   nextChecks: z.array(z.string().min(30).max(500)).min(1).max(3),
 }).strict();
+
+const trendMaterialSchema = z.object({
+  kind: z.enum(['動画', '画像', '音楽', '音声', '映画・番組', 'ゲーム', '投稿', 'その他']),
+  title: z.string().min(1).max(240),
+  creator: z.string().min(1).max(160).nullable(),
+  sourceUrl: z.url().nullable(),
+  identificationStatus: z.enum(['確認済み', '有力候補', '未特定']),
+  rightsStatus: z.enum(['利用許諾確認済み', '公開ライセンス', '公式投稿へのリンクのみ', '権利条件不明']),
+  note: z.string().min(30).max(500),
+}).strict();
+
+const mediaTrendSchema = z.object({
+  formats: z.array(z.enum(['ミーム', '短尺動画', '長尺動画', '音源・楽曲', 'ダンス・チャレンジ', '画像・テンプレート', '言い回し', 'その他'])).min(1).max(4),
+  origin: z.object({
+    status: z.enum(['確認済み', '有力候補', '未特定', '起源に異説あり']),
+    platform: z.string().min(1).max(80),
+    creatorName: z.string().min(1).max(160).nullable(),
+    accountHandle: z.string().min(1).max(160).nullable(),
+    originalUrl: z.url().nullable(),
+    postedAt: isoDateTime.nullable(),
+    explanation: z.string().min(80).max(900),
+  }).strict(),
+  sourceMaterialAnalysis: z.string().min(80).max(900),
+  sourceMaterials: z.array(trendMaterialSchema).max(8),
+  musicAnalysis: z.string().min(60).max(700),
+  music: z.array(trendMaterialSchema).max(5),
+  spread: z.array(z.object({
+    platform: z.string().min(1).max(80),
+    observedAt: isoDateTime,
+    evidence: z.string().min(40).max(600),
+    exampleUrl: z.url().nullable(),
+  }).strict()).min(1).max(8),
+  reactionSummary: z.string().min(100).max(1000),
+  neutralAssessment: z.string().min(100).max(1000),
+  rightsAndSafety: z.string().min(100).max(1000),
+}).strict().superRefine((trend, ctx) => {
+  if (trend.origin.status === '確認済み' && (!trend.origin.creatorName || !trend.origin.originalUrl || !trend.origin.postedAt)) {
+    ctx.addIssue({ code: 'custom', path: ['origin'], message: '起源を確認済みとする場合は投稿者、元URL、投稿日時が必要です' });
+  }
+  for (const [index, material] of trend.sourceMaterials.entries()) {
+    if (material.identificationStatus === '確認済み' && !material.sourceUrl) {
+      ctx.addIssue({ code: 'custom', path: ['sourceMaterials', index, 'sourceUrl'], message: '素材を確認済みとする場合は根拠URLが必要です' });
+    }
+  }
+  for (const [index, material] of trend.music.entries()) {
+    if (material.identificationStatus === '確認済み' && !material.sourceUrl) {
+      ctx.addIssue({ code: 'custom', path: ['music', index, 'sourceUrl'], message: '音源を確認済みとする場合は根拠URLが必要です' });
+    }
+  }
+});
 
 export const articleSchema = z.object({
   id: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/),
@@ -46,13 +96,14 @@ export const articleSchema = z.object({
     .refine((paragraphs) => paragraphs.join('').length >= 140, '独自要約は合計140文字以上必要です'),
   comment: z.string().min(180, '独自解説は180文字以上必要です').max(1000),
   articleDetail: articleDetailSchema.optional(),
+  mediaTrend: mediaTrendSchema.optional(),
   attentionAnalysis: z.object({
     whyNotable: z.string().min(20).max(240),
     currentReaction: z.string().min(20).max(240),
     assessment: z.enum(['過熱気味', '妥当', '注目不足', '評価が分かれる', '判断には早い']),
     assessmentComment: z.string().min(20).max(240),
   }).strict(),
-  informationType: z.enum(['公式発表', '報道', '研究', '意見']),
+  informationType: z.enum(['公式発表', '報道', '研究', '意見', 'ミーム・ネット文化']),
   editorialReview: z.object({
     titleIsOriginal: z.literal(true),
     quotation: z.discriminatedUnion('used', [
@@ -148,6 +199,13 @@ export const editionSchema = z.object({
       for (const boilerplate of forbiddenEditorialBoilerplate) {
         if (prose.includes(boilerplate)) ctx.addIssue({ code: 'custom', path: ['articles', index], message: `定型的な埋め草を使用できません: ${boilerplate}` });
       }
+    }
+    const isMediaTrend = article.informationType === 'ミーム・ネット文化' || article.categories.includes('ネット文化・ミーム');
+    if (isMediaTrend && !article.mediaTrend) {
+      ctx.addIssue({ code: 'custom', path: ['articles', index, 'mediaTrend'], message: 'ミーム・流行動画には発祥・素材・拡散・反響・権利の検証記録が必要です' });
+    }
+    if (!isMediaTrend && article.mediaTrend) {
+      ctx.addIssue({ code: 'custom', path: ['articles', index, 'mediaTrend'], message: 'mediaTrendを使う記事は情報種別またはカテゴリをネット文化・ミームにしてください' });
     }
   }
   if ([1, 2, 3, 4, 5].some((rank) => !ranks.has(rank))) ctx.addIssue({ code: 'custom', path: ['articles'], message: 'Top 5の順位1〜5が必要です' });

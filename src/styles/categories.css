@@ -4,6 +4,7 @@
   --cat-science: #6746ad;
   --cat-life: #94600a;
   --cat-entertainment: #a83e69;
+  --cat-meme: #7a3e6d;
   --cat-vcf: #4f5d75;
   --cat-security: #b42318;
   --cat-other: #52606d;
@@ -15,6 +16,7 @@
   --cat-science: #c4b5fd;
   --cat-life: #f2c66d;
   --cat-entertainment: #f0a3be;
+  --cat-meme: #f2a7df;
   --cat-vcf: #b8cad8;
   --cat-security: #fda29b;
   --cat-other: #cbd5e1;
@@ -26,6 +28,7 @@
 .article-card[data-primary-category='科学・医療'] { --category-color: var(--cat-science); }
 .article-card[data-primary-category='生活・文化'] { --category-color: var(--cat-life); }
 .article-card[data-primary-category='エンタメ'] { --category-color: var(--cat-entertainment); }
+.article-card[data-primary-category='ネット文化・ミーム'] { --category-color: var(--cat-meme); }
 .article-card[data-primary-category='VCF・VMware・競合'] { --category-color: var(--cat-vcf); }
 .article-card[data-primary-category='セキュリティ'] { --category-color: var(--cat-security); }
 
@@ -35,6 +38,7 @@
 .tags span[data-category='科学・医療'] { --tag-color: var(--cat-science); }
 .tags span[data-category='生活・文化'] { --tag-color: var(--cat-life); }
 .tags span[data-category='エンタメ'] { --tag-color: var(--cat-entertainment); }
+.tags span[data-category='ネット文化・ミーム'] { --tag-color: var(--cat-meme); }
 .tags span[data-category='VCF・VMware・競合'] { --tag-color: var(--cat-vcf); }
 .tags span[data-category='セキュリティ'] { --tag-color: var(--cat-security); }
 
