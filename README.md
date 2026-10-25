@@ -6,7 +6,7 @@
 
 ソースコードは[MIT License](LICENSE)で公開します。ニュース記事・画像など第三者コンテンツにこのライセンスは適用されません。収集、要約、引用、削除対応は[編集・権利ポリシー](docs/editorial-policy.md)に従います。
 
-動画・音声用のBGMにもMIT Licenseは適用されません。利用範囲と権利根拠は[音源ライブラリの説明](assets/audio/bgm/README.md)に記録します。
+動画・音声用のBGMにもMIT Licenseは適用されません。利用条件は[音源ライブラリの説明](assets/audio/bgm/README.md)に記載しています。
 
 記事は国や地域を優先条件にせず、内容の面白さ、重要性、話題性、分野の広がりで選びます。Hacker News、はてなブックマーク、Reddit、4chan、Togetter、GIGAZINE、一般報道・一次情報を並行して確認します。ソーシャル投稿は話題発見に使い、事実の根拠にはしません。件数配分、分野上限、Top 5の多様性は[記事選定ポリシー](docs/selection-policy.md)に従います。
 
