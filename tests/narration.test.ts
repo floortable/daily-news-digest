@@ -107,6 +107,7 @@ describe('Top 5 narration plan', () => {
       expect((segment.text.match(/のだ。/g) ?? []).length).toBeGreaterThanOrEqual(1);
       expect((segment.text.match(/のだ。/g) ?? []).length).toBeLessThanOrEqual(3);
       expect(segment.text.endsWith('のだ。')).toBe(true);
+      expect(segment.text).not.toContain('ここが、この話題を見るうえでのポイント');
     }
   });
 

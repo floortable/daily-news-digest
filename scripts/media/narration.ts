@@ -168,11 +168,23 @@ function applyOpeningTone(text: string, speakerName: string) {
 function applySpeakerTone(text: string, speakerName: string) {
   if (speakerName !== 'ずんだもん') return text;
   if (text.endsWith('のだ。')) return text;
-  if (text.endsWith('判断できます。')) return text.replace(/判断できます。$/, '判断できるのだ。');
-  if (text.endsWith('確認する必要があります。')) {
-    return text.replace(/確認する必要があります。$/, '確認する必要があるのだ。');
+  const endings: Array<[RegExp, string]> = [
+    [/確認する必要があります。$/, '確認する必要があるのだ。'],
+    [/判断できます。$/, '判断できるのだ。'],
+    [/してください。$/, 'してほしいのだ。'],
+    [/ています。$/, 'ているのだ。'],
+    [/できます。$/, 'できるのだ。'],
+    [/なります。$/, 'なるのだ。'],
+    [/あります。$/, 'あるのだ。'],
+    [/でした。$/, 'だったのだ。'],
+    [/です。$/, 'なのだ。'],
+    [/だ。$/, 'なのだ。'],
+    [/(る|た|ない|よい|しい|たい)。$/, '$1のだ。'],
+  ];
+  for (const [pattern, replacement] of endings) {
+    if (pattern.test(text)) return text.replace(pattern, replacement);
   }
-  return `${text} ここが、この話題を見るうえでのポイントなのだ。`;
+  return text;
 }
 
 export function toBroadcastStyle(text: string) {
