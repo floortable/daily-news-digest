@@ -34,5 +34,41 @@
     "file": "cozy-pop-bulletin.m4a",
     "durationSeconds": 173.2,
     "sha256": "d582ffde22fb631a2ef3ee1162ba6cd32926c36c28c7b14f94aa21b2d71ab484"
+  },
+  {
+    "title": "A Little Ahead of Schedule",
+    "file": "a-little-ahead-of-schedule.m4a",
+    "durationSeconds": 108.4,
+    "sha256": "5919e01fa1824628928721956722674f5aad8605d51b22641641d6b2cc1b3d7f"
+  },
+  {
+    "title": "After-School Algorithm",
+    "file": "after-school-algorithm.m4a",
+    "durationSeconds": 158,
+    "sha256": "03131ff877f343b18036311701962e31cb5e617f79da169e07168b3713d654ea"
+  },
+  {
+    "title": "One More Tab Open",
+    "file": "one-more-tab-open.m4a",
+    "durationSeconds": 85.2,
+    "sha256": "f897edfbb34ebfb0e02a3bd25069f916f775cb0199fc1d3dacc82ea67939597c"
+  },
+  {
+    "title": "Emergency Maintenance Club",
+    "file": "emergency-maintenance-club.m4a",
+    "durationSeconds": 162.12,
+    "sha256": "2c7553401d16975a5a7467d4a13f0e246f21a486ac4a44e91986b1cf1c4d90c3"
+  },
+  {
+    "title": "Small Discovery on the Way Home",
+    "file": "small-discovery-on-the-way-home.m4a",
+    "durationSeconds": 167.2,
+    "sha256": "653ada0c4b33fde5fbb7a0f675a9a52ad7cf82b02204ba389685be31d9f026d8"
+  },
+  {
+    "title": "Weekend Side Quest",
+    "file": "weekend-side-quest.m4a",
+    "durationSeconds": 188.76,
+    "sha256": "4c138fd1085ff86a26eea623e66f53b3a9523a9e77afd5a96dbb01d60e2bcddd"
   }
 ]
