@@ -21,6 +21,15 @@ describe('editorial compliance', () => {
     expect(editionSchema.safeParse(invalid).success).toBe(false);
   });
 
+  it('rejects an anticipated-question answer that ends with generic judgment advice', () => {
+    const current = JSON.parse(readFileSync('data/daily/2026-10-26.json', 'utf8'));
+    const invalid = structuredClone(current);
+    const article = invalid.articles.find((item: { narration?: unknown }) => item.narration);
+    article.narration.anticipatedQuestions[0].answer =
+      '影響する要素は一つではありません。複数の要素を合わせて判断する必要があります。';
+    expect(editionSchema.safeParse(invalid).success).toBe(false);
+  });
+
   it('requires substantive structured content for policy version 2', () => {
     const invalid = structuredClone(edition);
     invalid.contentCompliance.policyVersion = 2;

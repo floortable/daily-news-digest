@@ -88,7 +88,10 @@ export const articleSchema = z.object({
     analysis: z.array(z.string().min(20).max(500)).min(1).max(3),
     anticipatedQuestions: z.array(z.object({
       question: z.string().min(10).max(160),
-      answer: z.string().min(20).max(500),
+      answer: z.string().min(20).max(500).refine(
+        (answer) => !/(?:総合的に|慎重に|複数の要素を|.+を合わせて)判断する必要があります[。]?$/u.test(answer),
+        '先回り質問には、判断材料の列挙だけでなく、根拠付きの見通しまたは現時点の結論が必要です',
+      ),
     }).strict()).min(1).max(3),
     references: z.array(z.url()).max(5).default([]),
   }).strict().optional(),
