@@ -30,6 +30,17 @@ describe('editorial compliance', () => {
     expect(editionSchema.safeParse(invalid).success).toBe(false);
   });
 
+  it('rejects a same-URL republication without concrete follow-up facts', () => {
+    const current = JSON.parse(readFileSync('data/daily/2026-10-26.json', 'utf8'));
+    const duplicate = structuredClone(current.articles[0]);
+    duplicate.id = '2026-10-26-duplicate-without-update';
+    duplicate.top5Rank = null;
+    duplicate.relatedArticleIds = [current.articles[0].id];
+    duplicate.title = `再確認：${duplicate.title}`;
+    current.articles.push(duplicate);
+    expect(editionSchema.safeParse(current).success).toBe(false);
+  });
+
   it('requires substantive structured content for policy version 2', () => {
     const invalid = structuredClone(edition);
     invalid.contentCompliance.policyVersion = 2;

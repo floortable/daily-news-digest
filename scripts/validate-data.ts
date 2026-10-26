@@ -16,7 +16,12 @@ for (const file of files) {
     globalIds.add(article.id);
     const url = normalizeUrl(article.sourceUrl);
     const previous = globalUrls.get(url);
-    if (previous && !article.relatedArticleIds.includes(previous)) throw new Error(`${file}: URLが ${previous} と重複しています`);
+    if (previous) {
+      if (!article.relatedArticleIds.includes(previous)) throw new Error(`${file}: URLが ${previous} と重複しています`);
+      if (!article.followUp || article.followUp.previousArticleId !== previous) {
+        throw new Error(`${file}: ${article.id} は同じURLの再掲に具体的な更新記録がありません`);
+      }
+    }
     globalUrls.set(url, article.id);
   }
 }

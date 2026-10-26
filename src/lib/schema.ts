@@ -69,7 +69,7 @@ const mediaTrendSchema = z.object({
 
 export const articleSchema = z.object({
   id: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/),
-  title: z.string().min(1).max(180),
+  title: z.string().min(1).max(180).refine((title) => !title.startsWith('再確認：'), '更新内容を示さない「再確認：」タイトルは使用できません'),
   sourceUrl: z.url().refine((url) => /^https?:\/\//.test(url), 'HTTP(S) URLが必要です'),
   sourceName: z.string().min(1).max(80),
   publishedAt: isoDateTime,
@@ -137,6 +137,11 @@ export const articleSchema = z.object({
     socialMetricsCheckedAt: isoDateTime.optional(),
   }).optional(),
   relatedArticleIds: z.array(z.string()).default([]),
+  followUp: z.object({
+    previousArticleId: z.string().min(1),
+    checkedAt: isoDateTime,
+    newFacts: z.array(z.string().min(20).max(500)).min(1).max(5),
+  }).strict().optional(),
   urlCheck: z.object({
     status: z.enum(['ok', 'restricted', 'failed']),
     checkedAt: isoDateTime,
