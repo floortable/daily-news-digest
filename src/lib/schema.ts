@@ -141,12 +141,14 @@ export const articleSchema = z.object({
     z.object({
       type: z.literal('substantive-update'),
       previousArticleId: z.string().min(1),
+      originalEditionDate: z.iso.date(),
       checkedAt: isoDateTime,
       developments: z.array(z.string().min(20).max(500)).min(1).max(5),
     }).strict(),
     z.object({
       type: z.literal('renewed-attention'),
       previousArticleId: z.string().min(1),
+      originalEditionDate: z.iso.date(),
       checkedAt: isoDateTime,
       developments: z.array(z.string().min(20).max(500)).min(1).max(5),
       previousMetrics: z.string().min(10).max(300),

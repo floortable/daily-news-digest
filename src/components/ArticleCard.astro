@@ -1,13 +1,16 @@
 ---
 import type { Article } from '../lib/schema';
+import { formatFollowUpLabel } from '../lib/follow-up';
 import AttentionMetrics from './AttentionMetrics.astro';
 import AttentionAnalysis from './AttentionAnalysis.astro';
 import DeepDive from './DeepDive.astro';
 interface Props { article: Article; featured?: boolean; }
 const { article, featured = false } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const followUpLabel = formatFollowUpLabel(article);
 ---
 <article class:list={['article-card', { featured }]} data-article-id={article.id} data-primary-category={article.categories[0]} data-categories={article.categories.join('|')} data-channels={article.channels.join('|')} data-top5={article.top5Rank !== null}>
+  {followUpLabel && <p class="follow-up-label">{followUpLabel}</p>}
   <header>
     {article.top5Rank && <span class="rank">{article.top5Rank}</span>}
     <div>

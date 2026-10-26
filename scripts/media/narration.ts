@@ -1,4 +1,5 @@
 import type { Article, Edition } from '../../src/lib/schema';
+import { formatFollowUpLabel } from '../../src/lib/follow-up';
 
 export type CastMember = {
   name: string;
@@ -88,6 +89,7 @@ function buildArticleSegments(article: Article, rank: number, speakers: CastMemb
     {
       id: `rank-${rank}`,
       text: [
+        article.followUp ? `${formatFollowUpLabel(article)}です。` : undefined,
         `${article.title}。`,
         reaction,
         article.narration?.result,
@@ -139,6 +141,7 @@ export function buildArticleNarration(article: Article, speakerName: string) {
   ].join(' '));
 
   const narration = [
+    article.followUp ? `${formatFollowUpLabel(article)}です。` : undefined,
     `${article.title}。`,
     reaction,
     article.narration?.result,

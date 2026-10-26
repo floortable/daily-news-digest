@@ -1,0 +1,10 @@
+.follow-up-label {
+  display: inline-block;
+  margin: 0 0 0.55rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 2rem;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+}

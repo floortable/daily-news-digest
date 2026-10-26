@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { articleSchema, editionSchema, normalizeUrl } from '../src/lib/schema';
+import { formatFollowUpLabel } from '../src/lib/follow-up';
 
 describe('normalizeUrl', () => {
   it('tracking parameters and fragments are removed', () => {
@@ -47,6 +48,7 @@ describe('editorial compliance', () => {
     article.followUp = {
       type: 'renewed-attention',
       previousArticleId: '2026-10-25-related-story',
+      originalEditionDate: '2026-10-25',
       checkedAt: '2026-10-26T09:00:00+09:00',
       developments: ['別のコミュニティへ波及し、前回確認後に反響が明確に増加しました。'],
       previousMetrics: '10月25日09時時点で100件の反応を確認しました。',
@@ -54,6 +56,7 @@ describe('editorial compliance', () => {
       resurgenceContext: '関連する新しい投稿をきっかけに、別のコミュニティで議論が再燃しました。',
     };
     expect(articleSchema.safeParse(article).success).toBe(true);
+    expect(formatFollowUpLabel(article)).toBe('2026年10月25日の記事が再燃');
 
     delete article.followUp.currentMetrics;
     expect(articleSchema.safeParse(article).success).toBe(false);

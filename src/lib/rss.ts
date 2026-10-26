@@ -1,4 +1,5 @@
 import type { Article } from './schema';
+import { formatFollowUpLabel } from './follow-up';
 
 export function getRssMetadata(contextSite: URL | undefined, feedPath: string, articles: Article[]) {
   if (!contextSite) throw new Error('RSSのsite URLが設定されていません');
@@ -51,8 +52,12 @@ export function renderArticleContent(article: Article) {
     timeStyle: 'short',
   });
   const analysis = article.attentionAnalysis;
+  const followUp = article.followUp
+    ? `<p><strong>${escapeHtml(formatFollowUpLabel(article))}</strong></p>`
+    : '';
 
   return [
+    followUp,
     `<p><strong>配信元:</strong> ${escapeHtml(article.sourceName)} ／ <strong>公開:</strong> ${escapeHtml(date)} ／ <strong>情報種別:</strong> ${escapeHtml(article.informationType)}</p>`,
     `<p><strong>分野:</strong> ${article.categories.map(escapeHtml).join('、')}</p>`,
     '<h2>概要</h2>',
