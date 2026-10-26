@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { editionSchema, normalizeUrl } from '../src/lib/schema';
+import { articleSchema, editionSchema, normalizeUrl } from '../src/lib/schema';
 
 describe('normalizeUrl', () => {
   it('tracking parameters and fragments are removed', () => {
@@ -39,6 +39,24 @@ describe('editorial compliance', () => {
     duplicate.title = `再確認：${duplicate.title}`;
     current.articles.push(duplicate);
     expect(editionSchema.safeParse(current).success).toBe(false);
+  });
+
+  it('accepts renewed attention only with before-and-after evidence', () => {
+    const current = JSON.parse(readFileSync('data/daily/2026-10-26.json', 'utf8'));
+    const article = structuredClone(current.articles[0]);
+    article.followUp = {
+      type: 'renewed-attention',
+      previousArticleId: '2026-10-25-related-story',
+      checkedAt: '2026-10-26T09:00:00+09:00',
+      developments: ['別のコミュニティへ波及し、前回確認後に反響が明確に増加しました。'],
+      previousMetrics: '10月25日09時時点で100件の反応を確認しました。',
+      currentMetrics: '10月26日09時時点で1,000件の反応を確認しました。',
+      resurgenceContext: '関連する新しい投稿をきっかけに、別のコミュニティで議論が再燃しました。',
+    };
+    expect(articleSchema.safeParse(article).success).toBe(true);
+
+    delete article.followUp.currentMetrics;
+    expect(articleSchema.safeParse(article).success).toBe(false);
   });
 
   it('requires substantive structured content for policy version 2', () => {

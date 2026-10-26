@@ -137,11 +137,23 @@ export const articleSchema = z.object({
     socialMetricsCheckedAt: isoDateTime.optional(),
   }).optional(),
   relatedArticleIds: z.array(z.string()).default([]),
-  followUp: z.object({
-    previousArticleId: z.string().min(1),
-    checkedAt: isoDateTime,
-    newFacts: z.array(z.string().min(20).max(500)).min(1).max(5),
-  }).strict().optional(),
+  followUp: z.discriminatedUnion('type', [
+    z.object({
+      type: z.literal('substantive-update'),
+      previousArticleId: z.string().min(1),
+      checkedAt: isoDateTime,
+      developments: z.array(z.string().min(20).max(500)).min(1).max(5),
+    }).strict(),
+    z.object({
+      type: z.literal('renewed-attention'),
+      previousArticleId: z.string().min(1),
+      checkedAt: isoDateTime,
+      developments: z.array(z.string().min(20).max(500)).min(1).max(5),
+      previousMetrics: z.string().min(10).max(300),
+      currentMetrics: z.string().min(10).max(300),
+      resurgenceContext: z.string().min(20).max(500),
+    }).strict(),
+  ]).optional(),
   urlCheck: z.object({
     status: z.enum(['ok', 'restricted', 'failed']),
     checkedAt: isoDateTime,
