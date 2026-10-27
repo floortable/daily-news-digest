@@ -5,7 +5,21 @@ import { z } from 'zod';
 const dictionarySchema = z.record(z.string().min(1), z.string().min(1));
 
 export async function readPronunciations() {
-  return dictionarySchema.parse(JSON.parse(await readFile(resolve('config/pronunciations.json'), 'utf8')));
+  const dictionary = dictionarySchema.parse(JSON.parse(await readFile(resolve('config/pronunciations.json'), 'utf8')));
+  assertPronunciationContinuity(dictionary);
+  return dictionary;
+}
+
+export function assertPronunciationContinuity(dictionary: Record<string, string>) {
+  const interrupted = Object.entries(dictionary)
+    .filter(([surface, reading]) => /[A-Za-z]/.test(surface) && /[・、]/.test(reading))
+    .map(([surface]) => surface);
+  if (interrupted.length) {
+    throw new Error(
+      `読みの途中にVOICEVOXが間を置く中黒または読点が含まれています: ${interrupted.join(', ')}。`
+      + '一つの固有名詞や略語は「ユーアールエル」のようにつなげて登録してください。',
+    );
+  }
 }
 
 export function applyPronunciations(text: string, dictionary: Record<string, string>) {

@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { applyPronunciations, assertLatinPronunciations, findUnpronouncedLatinTerms } from '../scripts/media/pronunciation';
+import {
+  applyPronunciations,
+  assertLatinPronunciations,
+  assertPronunciationContinuity,
+  findUnpronouncedLatinTerms,
+} from '../scripts/media/pronunciation';
 import { getMediaUrls, isMediaPublished } from '../src/lib/media';
 
 describe('media publishing', () => {
@@ -11,6 +16,23 @@ describe('media publishing', () => {
   it('does not apply another dictionary rule inside a generated reading', () => {
     expect(applyPronunciations('AIとA', { AI: 'エーエイ', A: 'ア' }))
       .toBe('エーエイとア');
+  });
+
+  it('keeps English names and initialisms connected without artificial pauses', () => {
+    const dictionary = {
+      'Hacker News': 'ハッカーニューズ',
+      AP通信: 'エーピー通信',
+      AP: 'エーピー',
+      URL: 'ユーアールエル',
+    };
+    expect(applyPronunciations('Hacker News、AP通信、URL', dictionary))
+      .toBe('ハッカーニューズ、エーピー通信、ユーアールエル');
+    expect(() => assertPronunciationContinuity({ URL: 'ユー・アール・エル' }))
+      .toThrow(/中黒/);
+    expect(() => assertPronunciationContinuity({ AP: 'エー、ピー' }))
+      .toThrow(/読点/);
+    expect(() => assertPronunciationContinuity({ 注意書き: '前半、後半' }))
+      .not.toThrow();
   });
 
   it('uses contextual readings for ambiguous counters', () => {
