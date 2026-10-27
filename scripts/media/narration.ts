@@ -150,9 +150,12 @@ export function buildArticleNarration(article: Article, speakerName: string) {
   return applySpeakerTone(narration, speakerName);
 }
 
-function formatAnticipatedQuestion(item: { question: string; answer: string }, index: number) {
-  const leads = ['ここで気になるのは', 'もう一つ、確認しておきたいのは', 'さらに実用面では'];
-  return `${leads[index] ?? leads[2]}、${stripFinalPunctuation(item.question)}という点です。${item.answer}`;
+function formatAnticipatedQuestion(item: { question: string; answer: string }) {
+  const original = stripFinalPunctuation(item.question);
+  const question = original.endsWith('のか')
+    ? `${original.slice(0, -2)}のでしょうか`
+    : original.endsWith('か') ? `${original.slice(0, -1)}でしょうか` : original;
+  return `${question}。${item.answer}`;
 }
 
 function stripFinalPunctuation(text: string) {
@@ -202,6 +205,7 @@ export function toBroadcastStyle(text: string) {
     [/である。/g, 'です。'],
     [/だった。/g, 'でした。'],
     [/報じられた。/g, '報じられました。'],
+    [/議論された。/g, '議論されました。'],
     [/公開された。/g, '公開されました。'],
     [/案内されている。/g, '案内されています。'],
     [/共有されている。/g, '共有されています。'],
@@ -212,10 +216,45 @@ export function toBroadcastStyle(text: string) {
     [/調べている。/g, '調べています。'],
     [/見ている。/g, '見ています。'],
     [/指摘した。/g, '指摘しました。'],
+    [/説明した。/g, '説明しました。'],
+    [/確認した。/g, '確認しました。'],
+    [/提示した。/g, '提示しました。'],
+    [/追加した。/g, '追加しました。'],
+    [/対象にした。/g, '対象にしました。'],
     [/報告した。/g, '報告しました。'],
     [/分析した。/g, '分析しました。'],
+    [/応募した。/g, '応募しました。'],
+    [/併存した。/g, '併存しました。'],
+    [/現れた。/g, '現れました。'],
+    [/取得できなかった。/g, '取得できませんでした。'],
+    [/含まれる。/g, '含まれます。'],
+    [/示される。/g, '示されます。'],
+    [/左右される。/g, '左右されます。'],
+    [/予定されている。/g, '予定されています。'],
+    [/設計されている。/g, '設計されています。'],
+    [/構成になっている。/g, '構成になっています。'],
+    [/試されている。/g, '試されています。'],
+    [/続けている。/g, '続けています。'],
+    [/機能する。/g, '機能します。'],
+    [/影響する。/g, '影響します。'],
+    [/表示する。/g, '表示します。'],
+    [/説明する。/g, '説明します。'],
+    [/左右する。/g, '左右します。'],
     [/評価する。/g, '評価します。'],
     [/結論づけられない。/g, '結論づけられません。'],
+    [/確定しない。/g, '確定しません。'],
+    [/決まる。/g, '決まります。'],
+    [/局面になる。/g, '局面になります。'],
+    [/重要になる。/g, '重要になります。'],
+    [/中心になる。/g, '中心になります。'],
+    [/になる。/g, 'になります。'],
+    [/可能性が高い。/g, '可能性が高いとみられます。'],
+    [/点にある。/g, '点にあります。'],
+    [/理由になった。/g, '理由になりました。'],
+    [/強まる。/g, '強まります。'],
+    [/欠かせない。/g, '欠かせません。'],
+    [/始められる。/g, '始められます。'],
+    [/難しい。/g, '難しいです。'],
     [/変わる。/g, '変わります。'],
     [/異なる。/g, '異なります。'],
     [/関わる。/g, '関わります。'],

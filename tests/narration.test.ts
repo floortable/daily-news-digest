@@ -74,10 +74,15 @@ describe('Top 5 narration plan', () => {
       const text = articleText(article.top5Rank!);
       expect(article.narration?.anticipatedQuestions.length).toBeGreaterThan(0);
       for (const item of article.narration!.anticipatedQuestions) {
-        expect(text).toContain(`${item.question.replace(/[。？！?！]+$/, '')}という点です。`);
+        const original = item.question.replace(/[。？！?！]+$/, '');
+        const question = original.endsWith('のか')
+          ? `${original.slice(0, -2)}のでしょうか`
+          : original.endsWith('か') ? `${original.slice(0, -1)}でしょうか` : original;
+        expect(text).toContain(`${question}。`);
         const answerLead = `${item.answer.split('。')[0]}。`;
         expect(text).toContain(toBroadcastStyle(answerLead));
       }
+      expect(text).not.toContain('ここで気になるのは');
     }
   });
 
@@ -122,7 +127,7 @@ describe('Top 5 narration plan', () => {
   });
 
   it('turns written-form endings into natural broadcast speech', () => {
-    expect(toBroadcastStyle('重要である。結果は変わる。分析した。'))
-      .toBe('重要です。結果は変わります。分析しました。');
+    expect(toBroadcastStyle('重要である。結果は変わる。人数は確定しない。応募率で決まる。比較する局面になる。'))
+      .toBe('重要です。結果は変わります。人数は確定しません。応募率で決まります。比較する局面になります。');
   });
 });
