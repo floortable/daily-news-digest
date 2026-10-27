@@ -126,7 +126,7 @@ describe('Top 5 narration plan', () => {
   });
 
   it('turns written-form endings into natural broadcast speech', () => {
-    expect(toBroadcastStyle('重要である。結果は変わる。人数は確定しない。応募率で決まる。比較する局面になる。'))
-      .toBe('重要です。結果は変わります。人数は確定しません。応募率で決まります。比較する局面になります。');
+    expect(toBroadcastStyle('重要である。結果は変わる。人数は確定しない。応募率で決まる。会社はAI置換だと説明していない。'))
+      .toBe('重要です。結果は変わります。人数は確定しません。応募率で決まります。会社はAI置換だと説明していません。');
   });
 });
