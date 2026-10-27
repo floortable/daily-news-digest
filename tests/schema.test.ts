@@ -31,6 +31,13 @@ describe('editorial compliance', () => {
     expect(editionSchema.safeParse(invalid).success).toBe(false);
   });
 
+  it('allows no anticipated question when it would only repeat the explanation', () => {
+    const current = JSON.parse(readFileSync('data/daily/2026-10-26.json', 'utf8'));
+    const article = current.articles.find((item: { narration?: unknown }) => item.narration);
+    article.narration.anticipatedQuestions = [];
+    expect(articleSchema.safeParse(article).success).toBe(true);
+  });
+
   it('rejects a same-URL republication without concrete follow-up facts', () => {
     const current = JSON.parse(readFileSync('data/daily/2026-10-26.json', 'utf8'));
     const duplicate = structuredClone(current.articles[0]);

@@ -42,12 +42,7 @@
         "analysis": [
           "従業員にとっては現金だけでなく、残る場合の給与、未確定株式、医療保障の期間、次の仕事までの時間を合わせた比較になる。会社側は応募を受け付けても部門の要員を維持するため承認を調整できるため、対象6万人と実際の退職者数は大きく離れる可能性が高い。"
         ],
-        "anticipatedQuestions": [
-          {
-            "question": "退職金はいくら上乗せされるのか？",
-            "answer": "全員共通の金額や月数は公表されていません。確認できたのは標準退職パッケージ相当という範囲で、基本給部分は勤続年数と職位で変わり、株式、医療保障、転職支援も含まれます。したがって額面だけでなく、権利確定前の株式がどこまで残るかが人によって大きな差になります。"
-          }
-        ],
+        "anticipatedQuestions": [],
         "references": [
           "https://apnews.com/article/c5a639f53615be198db1799adf6837e1",
           "https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/",
@@ -141,12 +136,7 @@
         "analysis": [
           "短期的な供給不足が直ちに解消する可能性は低いが、資金支援と長期契約が国内生産や再利用設備への投資を促す可能性がある。利用者側では必要量の可視化と漏えい削減が最も早く取れる対策になる。"
         ],
-        "anticipatedQuestions": [
-          {
-            "question": "重要物資への指定でヘリウム不足はすぐ解消するのか？",
-            "answer": "すぐには解消しません。指定は資金支援と監視を強めますが、新規生産には時間がかかるため、短期は回収・再利用と優先供給が中心になります。"
-          }
-        ],
+        "anticipatedQuestions": [],
         "references": [
           "https://www.energy.gov/articles/energy-department-designates-helium-critical-material-strengthen-american-manufacturing"
         ]
@@ -235,12 +225,7 @@
         "analysis": [
           "短期的には気分転換と軽い運動を得やすく、中長期の認知機能への影響は継続期間と生活全体に左右される。始めるなら週ごとの観察時間と歩数、気分を記録し、無理なく続くかを見るのが現実的である。"
         ],
-        "anticipatedQuestions": [
-          {
-            "question": "鳥を見るだけで認知症を予防できるのか？",
-            "answer": "予防できるとはまだ言えません。運動、学習、交流を同時に続けやすい利点はありますが、医療的効果を確定する介入試験は不足しています。"
-          }
-        ],
+        "anticipatedQuestions": [],
         "references": [
           "https://www.bbc.com/future/article/20261019-birdwatching-rewires-the-brain-and-slows-cognitive-decline"
         ]
@@ -1200,12 +1185,7 @@
         "analysis": [
           "短期的にはイベントと商品への関心が続く可能性が高い。中長期では新キャラクターが券面、アプリ、案内表示へどう導入され、旧デザインがどこまで併存するかが利用者体験を左右する。"
         ],
-        "anticipatedQuestions": [
-          {
-            "question": "ペンギン卒業後も今のSuicaカードや残高は使えるのか？",
-            "answer": "キャラクター交代だけを理由に使えなくなるとは案内されていません。カードの利用条件や残高は別のサービス規約で管理され、絵柄変更と分けて確認できます。"
-          }
-        ],
+        "anticipatedQuestions": [],
         "references": [
           "https://www.jreast.co.jp/suica/penguinyears/"
         ]

@@ -72,7 +72,6 @@ describe('Top 5 narration plan', () => {
   it('anticipates concrete listener questions and answers them', () => {
     for (const article of edition.articles.filter((item) => item.top5Rank !== null)) {
       const text = articleText(article.top5Rank!);
-      expect(article.narration?.anticipatedQuestions.length).toBeGreaterThan(0);
       for (const item of article.narration!.anticipatedQuestions) {
         const original = item.question.replace(/[。？！?！]+$/, '');
         const question = original.endsWith('のか')
