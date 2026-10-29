@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "enforcementStartDate": "2026-10-30",
+  "sources": [
+    {
+      "id": "discovery-global-social",
+      "area": "general",
+      "requiredDaily": true,
+      "label": "海外ソーシャル発見",
+      "urls": [
+        "https://news.ycombinator.com/",
+        "https://www.reddit.com/",
+        "https://lobste.rs/",
+        "https://bsky.app/",
+        "https://mastodon.social/explore"
+      ]
+    },
+    {
+      "id": "discovery-japan-social",
+      "area": "general",
+      "requiredDaily": true,
+      "label": "国内ソーシャル・横断媒体",
+      "urls": [
+        "https://b.hatena.ne.jp/hotentry/all",
+        "https://togetter.com/",
+        "https://gigazine.net/"
+      ]
+    },
+    {
+      "id": "discovery-video-culture",
+      "area": "general",
+      "requiredDaily": true,
+      "label": "動画・ネット文化",
+      "urls": [
+        "https://www.youtube.com/feed/trending",
+        "https://www.tiktok.com/",
+        "https://www.nicovideo.jp/ranking/genre/all"
+      ]
+    },
+    {
+      "id": "discovery-general-reporting",
+      "area": "general",
+      "requiredDaily": true,
+      "label": "一般報道と一次発表",
+      "urls": [
+        "https://www.reuters.com/",
+        "https://apnews.com/",
+        "https://www.bbc.com/news"
+      ]
+    },
+    {
+      "id": "ai-openai",
+      "area": "ai",
+      "requiredDaily": true,
+      "label": "OpenAI公式更新・安全情報・稼働状況",
+      "urls": [
+        "https://openai.com/news/",
+        "https://platform.openai.com/docs/changelog",
+        "https://status.openai.com/"
+      ]
+    },
+    {
+      "id": "ai-anthropic",
+      "area": "ai",
+      "requiredDaily": true,
+      "label": "Anthropic公式更新・研究・稼働状況",
+      "urls": [
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/research",
+        "https://status.anthropic.com/"
+      ]
+    },
+    {
+      "id": "ai-google",
+      "area": "ai",
+      "requiredDaily": true,
+      "label": "Google AI・DeepMind公式更新",
+      "urls": [
+        "https://deepmind.google/discover/blog/",
+        "https://blog.google/technology/ai/",
+        "https://status.cloud.google.com/"
+      ]
+    },
+    {
+      "id": "ai-microsoft-meta-nvidia",
+      "area": "ai",
+      "requiredDaily": true,
+      "label": "Microsoft・Meta・NVIDIA AI公式更新",
+      "urls": [
+        "https://blogs.microsoft.com/ai/",
+        "https://ai.meta.com/blog/",
+        "https://blogs.nvidia.com/blog/category/deep-learning/"
+      ]
+    },
+    {
+      "id": "vuln-cisa-nvd",
+      "area": "security",
+      "requiredDaily": true,
+      "label": "CISA KEV・NVD",
+      "urls": [
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://nvd.nist.gov/vuln"
+      ]
+    },
+    {
+      "id": "vuln-cert-japan",
+      "area": "security",
+      "requiredDaily": true,
+      "label": "CERT/CC・JPCERT/CC・IPA",
+      "urls": [
+        "https://www.kb.cert.org/vuls/",
+        "https://www.jpcert.or.jp/at/",
+        "https://www.ipa.go.jp/security/security-alert/"
+      ]
+    },
+    {
+      "id": "vuln-oss-cloud-vendors",
+      "area": "security",
+      "requiredDaily": true,
+      "label": "OSS・クラウド・主要ベンダーセキュリティ告知",
+      "urls": [
+        "https://github.com/advisories",
+        "https://msrc.microsoft.com/update-guide/",
+        "https://security.googleblog.com/",
+        "https://support.apple.com/en-us/100100"
+      ]
+    },
+    {
+      "id": "vcf-vmsa-cloud-foundation",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "Broadcom VCF Security Advisories",
+      "urls": [
+        "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+      ]
+    },
+    {
+      "id": "vcf-vmsa-app-network-security",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "Broadcom Application Networking and Security Advisories",
+      "urls": [
+        "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+      ]
+    },
+    {
+      "id": "vcf-kb-release-notes",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "Broadcom KB・TechDocs・製品別リリースノート",
+      "urls": [
+        "https://knowledge.broadcom.com/",
+        "https://techdocs.broadcom.com/"
+      ]
+    },
+    {
+      "id": "vcf-status",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "Broadcom Service Status・緊急障害",
+      "urls": [
+        "https://status.broadcom.com/"
+      ]
+    },
+    {
+      "id": "vcf-compatibility-lifecycle",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "相互運用性・互換性・HCL・ライフサイクル",
+      "urls": [
+        "https://interopmatrix.vmware.com/Interoperability",
+        "https://compatibilityguide.broadcom.com/",
+        "https://support.broadcom.com/group/ecx/productlifecycle"
+      ]
+    },
+    {
+      "id": "vcf-avi",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "Avi Load Balancer専用監視",
+      "urls": [
+        "https://knowledge.broadcom.com/",
+        "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html"
+      ]
+    },
+    {
+      "id": "vcf-vdefend",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "vDefend・NSX・SSP専用監視",
+      "urls": [
+        "https://knowledge.broadcom.com/",
+        "https://blogs.vmware.com/security/"
+      ]
+    },
+    {
+      "id": "vcf-engineers-william-duncan",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "William Lam・Duncan Epping",
+      "urls": [
+        "https://williamlam.com/",
+        "https://x.com/lamw",
+        "https://www.yellow-bricks.com/",
+        "https://x.com/DuncanYB"
+      ]
+    },
+    {
+      "id": "vcf-community-engineers",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "運用者コミュニティ・実機検証者",
+      "urls": [
+        "https://community.broadcom.com/vmware-cloud-foundation/home",
+        "https://www.reddit.com/r/vmware/",
+        "https://blogs.vmware.com/code/"
+      ]
+    },
+    {
+      "id": "vcf-partners",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "バックアップ・GPU・サーバー・ストレージ連携ベンダー",
+      "urls": [
+        "https://www.veeam.com/blog/",
+        "https://docs.nvidia.com/datacenter/tesla/drivers/",
+        "https://www.dell.com/support/product-details/en-us/product/vmware-esxi-8.x/overview",
+        "https://support.hpe.com/",
+        "https://mysupport.netapp.com/"
+      ]
+    },
+    {
+      "id": "vcf-competitors-migration",
+      "area": "vcf",
+      "requiredDaily": true,
+      "label": "競合・移行先",
+      "urls": [
+        "https://www.nutanix.com/blog",
+        "https://azure.microsoft.com/en-us/updates/",
+        "https://www.proxmox.com/en/about/press-releases",
+        "https://www.redhat.com/en/blog/channel/openshift"
+      ]
+    }
+  ]
+}

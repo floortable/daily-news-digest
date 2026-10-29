@@ -1,16 +1,22 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { editionSchema, normalizeUrl } from '../src/lib/schema';
+import { monitoringRegistrySchema, validateMonitoringCoverage } from './monitoring-validation';
 
 const directory = resolve('data/daily');
 const files = (await readdir(directory)).filter((name) => name.endsWith('.json')).sort();
 if (!files.length) throw new Error('data/daily にJSONファイルがありません');
+const monitoringRegistry = monitoringRegistrySchema.parse(JSON.parse(
+  await readFile(resolve('config/monitoring-sources.json'), 'utf8'),
+));
 
 const globalIds = new Set<string>();
 const globalUrls = new Map<string, { id: string; editionDate: string }>();
 for (const file of files) {
   const parsed = editionSchema.parse(JSON.parse(await readFile(resolve(directory, file), 'utf8')));
   if (`${parsed.date}.json` !== file) throw new Error(`${file}: ファイル名と版の日付が一致しません`);
+  const monitoringErrors = validateMonitoringCoverage(parsed, monitoringRegistry);
+  if (monitoringErrors.length) throw new Error(monitoringErrors.join('\n'));
   for (const article of parsed.articles) {
     if (globalIds.has(article.id)) throw new Error(`${file}: 記事ID ${article.id} は別の日にも存在します`);
     globalIds.add(article.id);

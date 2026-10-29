@@ -72,6 +72,8 @@ export function buildNarrationPlan(
     text: `以上、今日のトップファイブ${speakerAt(2).name === 'ずんだもん' ? 'なのだ' : 'でした'}。詳しい内容と元記事は、デイリーニュースダイジェストのRSSとサイトで確認できます。${spokenCredit}`,
   });
 
+  assertPoliteNarration(segments);
+
   return {
     date: edition.date,
     title: `${spokenDate} 毎日の注目記事 Top 5`,
@@ -82,7 +84,7 @@ export function buildNarrationPlan(
 
 function buildArticleSegments(article: Article, rank: number, speakers: CastMember[]): NarrationSegment[] {
   const reaction = applyOpeningTone(
-    toBroadcastStyle(article.attentionAnalysis.currentReaction),
+    toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction)),
     speakers[0].name,
   );
   const sections = dedupeSections([
@@ -106,7 +108,7 @@ function buildArticleSegments(article: Article, rank: number, speakers: CastMemb
       id: `rank-${rank}-perspective`,
       text: [
         ...(article.narration?.analysis ?? []),
-        ...(article.narration?.anticipatedQuestions.map(formatAnticipatedQuestion) ?? []),
+        ...(article.narration?.anticipatedQuestions.map(formatAnticipatedInsight) ?? []),
       ].join(' '),
     },
   ]).filter((section) => section.text);
@@ -128,7 +130,7 @@ function dedupeSections<T extends { text: string }>(sections: T[]) {
 
 export function buildArticleNarration(article: Article, speakerName: string) {
   const reaction = applyOpeningTone(
-    toBroadcastStyle(article.attentionAnalysis.currentReaction),
+    toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction)),
     speakerName,
   );
   const body = dedupeSentences([
@@ -137,7 +139,7 @@ export function buildArticleNarration(article: Article, speakerName: string) {
     ...(article.narration?.detail ?? []),
     ...(article.narration?.learning ?? []),
     ...(article.narration?.analysis ?? []),
-    ...(article.narration?.anticipatedQuestions.map(formatAnticipatedQuestion) ?? []),
+    ...(article.narration?.anticipatedQuestions.map(formatAnticipatedInsight) ?? []),
   ].join(' '));
 
   const narration = [
@@ -150,16 +152,15 @@ export function buildArticleNarration(article: Article, speakerName: string) {
   return applySpeakerTone(narration, speakerName);
 }
 
-function formatAnticipatedQuestion(item: { question: string; answer: string }) {
-  const original = stripFinalPunctuation(item.question);
-  const question = original.endsWith('のか')
-    ? `${original.slice(0, -2)}のでしょうか`
-    : original.endsWith('か') ? `${original.slice(0, -1)}でしょうか` : original;
-  return `${question}。${item.answer}`;
+function formatAnticipatedInsight(item: { question: string; answer: string }) {
+  return item.answer;
 }
 
-function stripFinalPunctuation(text: string) {
-  return text.replace(/[。？！?！]+$/, '');
+export function formatReactionForNarration(text: string) {
+  return text.replace(
+    /^(.+?)で(.+?)を\d{4}年\d{1,2}月\d{1,2}日\d{1,2}時\d{1,2}分に確認(?:した|しました)。$/,
+    '$1では、今朝の時点で$2です。',
+  );
 }
 
 function applyOpeningTone(text: string, speakerName: string) {
@@ -182,6 +183,7 @@ function applySpeakerTone(text: string, speakerName: string) {
     [/できます。$/, 'できるのだ。'],
     [/なります。$/, 'なるのだ。'],
     [/あります。$/, 'あるのだ。'],
+    [/ました。$/, 'たのだ。'],
     [/でした。$/, 'だったのだ。'],
     [/です。$/, 'なのだ。'],
     [/だ。$/, 'なのだ。'],
@@ -194,6 +196,24 @@ function applySpeakerTone(text: string, speakerName: string) {
 }
 
 export function toBroadcastStyle(text: string) {
+  const spokenCountryNames: Array<[RegExp, string]> = [
+    [/米国エネルギー省/g, 'アメリカのエネルギー省'],
+    [/米国内/g, 'アメリカ国内'],
+    [/英国内/g, 'イギリス国内'],
+    [/日米関係/g, '日本とアメリカの関係'],
+    [/日米同盟/g, '日本とアメリカの同盟'],
+    [/米中関係/g, 'アメリカと中国の関係'],
+    [/米中競争/g, 'アメリカと中国の競争'],
+    [/米英関係/g, 'アメリカとイギリスの関係'],
+    [/日米/g, '日本とアメリカ'],
+    [/米中/g, 'アメリカと中国'],
+    [/米英/g, 'アメリカとイギリス'],
+    [/日英/g, '日本とイギリス'],
+    [/米国/g, 'アメリカ'],
+    [/英国/g, 'イギリス'],
+    [/米(?=政府|軍|企業|当局|議会|大統領|市場|国内|側)/g, 'アメリカ'],
+    [/英(?=政府|軍|企業|当局|議会|首相|市場|国内|側)/g, 'イギリス'],
+  ];
   const endings: Array<[RegExp, string]> = [
     [/議論が大きい。/g, '議論が大きく広がっています。'],
     [/ではない。/g, 'ではありません。'],
@@ -205,9 +225,23 @@ export function toBroadcastStyle(text: string) {
     [/である。/g, 'です。'],
     [/だった。/g, 'でした。'],
     [/報じられた。/g, '報じられました。'],
+    [/発表した。/g, '発表しました。'],
+    [/延ばした。/g, '延ばしました。'],
+    [/加えた。/g, '加えました。'],
+    [/持っていた。/g, '持っていました。'],
+    [/方針を選んだ。/g, '方針を選びました。'],
+    [/問われた。/g, '問われました。'],
+    [/案内した。/g, '案内しました。'],
+    [/整理した。/g, '整理しました。'],
+    [/集まった。/g, '集まりました。'],
+    [/疑問が出た。/g, '疑問が出ました。'],
+    [/論点になった。/g, '論点になりました。'],
+    [/始まった。/g, '始まりました。'],
+    [/注目された。/g, '注目されました。'],
     [/議論された。/g, '議論されました。'],
     [/観察された。/g, '観察されました。'],
     [/公開された。/g, '公開されました。'],
+    [/係留された。/g, '係留されました。'],
     [/案内されている。/g, '案内されています。'],
     [/共有されている。/g, '共有されています。'],
     [/議論されている。/g, '議論されています。'],
@@ -226,6 +260,8 @@ export function toBroadcastStyle(text: string) {
     [/分析した。/g, '分析しました。'],
     [/応募した。/g, '応募しました。'],
     [/併存した。/g, '併存しました。'],
+    [/併存できる。/g, '併存できます。'],
+    [/絶滅危惧とした。/g, '絶滅危惧としました。'],
     [/現れた。/g, '現れました。'],
     [/取得できなかった。/g, '取得できませんでした。'],
     [/含まれる。/g, '含まれます。'],
@@ -236,6 +272,8 @@ export function toBroadcastStyle(text: string) {
     [/構成になっている。/g, '構成になっています。'],
     [/試されている。/g, '試されています。'],
     [/続けている。/g, '続けています。'],
+    [/求めている。/g, '求めています。'],
+    [/進んでいる。/g, '進んでいます。'],
     [/再配置していた。/g, '再配置していました。'],
     [/変換している。/g, '変換しています。'],
     [/位置付けている。/g, '位置付けています。'],
@@ -244,11 +282,25 @@ export function toBroadcastStyle(text: string) {
     [/証明されていない。/g, '証明されていません。'],
     [/公表されていない。/g, '公表されていません。'],
     [/機能する。/g, '機能します。'],
+    [/認証と認可を行う。/g, '認証と認可を行います。'],
+    [/整える。/g, '整えます。'],
+    [/決める。/g, '決めます。'],
+    [/測る。/g, '測ります。'],
+    [/分かれる。/g, '分かれます。'],
+    [/検出される。/g, '検出されます。'],
+    [/自動記録できる。/g, '自動記録できます。'],
+    [/絞り込める。/g, '絞り込めます。'],
+    [/比較できない。/g, '比較できません。'],
+    [/単純移植できない。/g, '単純移植できません。'],
+    [/見逃されやすい。/g, '見逃されやすいです。'],
+    [/対象にする。/g, '対象にします。'],
+    [/突き合わせる。/g, '突き合わせます。'],
     [/影響する。/g, '影響します。'],
     [/表示する。/g, '表示します。'],
     [/説明する。/g, '説明します。'],
     [/展開する。/g, '展開します。'],
     [/使う。/g, '使います。'],
+    [/戻す。/g, '戻します。'],
     [/左右する。/g, '左右します。'],
     [/評価する。/g, '評価します。'],
     [/結論づけられない。/g, '結論づけられません。'],
@@ -266,16 +318,42 @@ export function toBroadcastStyle(text: string) {
     [/欠かせない。/g, '欠かせません。'],
     [/始められる。/g, '始められます。'],
     [/難しい。/g, '難しいです。'],
+    [/約30メートル長い。/g, '約30メートル長いです。'],
     [/ものだ。/g, 'ものです。'],
     [/変わる。/g, '変わります。'],
     [/異なる。/g, '異なります。'],
     [/関わる。/g, '関わります。'],
     [/広がる。/g, '広がります。'],
+    [/つながる。/g, 'つながります。'],
+    [/強くなる。/g, '強くなります。'],
     [/役立つ。/g, '役立ちます。'],
     [/焦点となる。/g, '焦点となります。'],
     [/根拠になる。/g, '根拠になります。'],
   ];
-  return endings.reduce((result, [pattern, replacement]) => result.replace(pattern, replacement), text);
+  const naturalCountryNames = spokenCountryNames.reduce(
+    (result, [pattern, replacement]) => result.replace(pattern, replacement),
+    text,
+  );
+  return endings.reduce((result, [pattern, replacement]) => result.replace(pattern, replacement), naturalCountryNames);
+}
+
+export function findPlainNarrationEndings(text: string) {
+  const plainEnding = /[^。！？]*(?:(?<![まで])した|された|問われた|出た|った|ている|でいる|になる|がある|する|できる|される|られる|れる|める|える|せる|測る|決める|整える|る|ない|やすい|しい)。/g;
+  return text.match(plainEnding)?.map((sentence) => sentence.trim()) ?? [];
+}
+
+export function assertPoliteNarration(segments: NarrationSegment[]) {
+  const politeEnding = /(?:です|ます|ません|でした|ました|でしょう|ましょう|のだ|だったのだ)。$/;
+  const violations = segments.flatMap((segment) => {
+    const sentences = segment.text.split(/(?<=。)/).map((sentence) => sentence.trim()).filter(Boolean);
+    return sentences.flatMap((sentence, index) => {
+      const isTopicTitle = /^rank-\d+$/.test(segment.id) && index === 0;
+      return !isTopicTitle && !politeEnding.test(sentence) ? [`${segment.id}: ${sentence}`] : [];
+    });
+  });
+  if (violations.length) {
+    throw new Error(`ニュース読みへ変換されていない常体の文末があります:\n${violations.join('\n')}`);
+  }
 }
 
 function dedupeSentences(text: string, seen = new Set<string>()) {

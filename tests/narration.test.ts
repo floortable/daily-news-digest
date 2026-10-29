@@ -1,7 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { editionSchema } from '../src/lib/schema';
-import { buildNarrationPlan, toBroadcastStyle } from '../scripts/media/narration';
+import {
+  assertPoliteNarration,
+  buildNarrationPlan,
+  findPlainNarrationEndings,
+  formatReactionForNarration,
+  toBroadcastStyle,
+} from '../scripts/media/narration';
 
 const edition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-25.json', 'utf8')));
 const cast = [
@@ -40,6 +46,7 @@ describe('Top 5 narration plan', () => {
     const segment = plan.segments.find((item) => item.id === 'rank-1')!;
     expect(segment.text).toContain('Hacker Newsで415ポイント、392コメント');
     expect(segment.text).not.toContain('である。');
+    expect(plan.segments.map((item) => item.text).join(' ')).not.toContain('ましたのだ');
   });
 
   it('puts one concise reaction sentence directly before the article body', () => {
@@ -52,6 +59,30 @@ describe('Top 5 narration plan', () => {
     expect(lead.text).not.toContain('反響は大きいと言えます');
     expect(lead.text).not.toContain('注目度の評価は');
     expect(lead.text).not.toContain('続いて、内容です');
+  });
+
+  it('omits exact reaction timestamps from narration without changing source data', () => {
+    const source = 'Hacker Newsで635ポイント、385コメントを2026年10月28日8時24分に確認した。';
+    expect(formatReactionForNarration(source))
+      .toBe('Hacker Newsでは、今朝の時点で635ポイント、385コメントです。');
+    expect(source).toContain('2026年10月28日8時24分');
+  });
+
+  it('rejects plain-form sentence endings left in caster narration', () => {
+    expect(findPlainNarrationEndings('更新を求める。結果を確認した。対応が難しい。'))
+      .toEqual(['更新を求める。', '結果を確認した。', '対応が難しい。']);
+    expect(() => assertPoliteNarration([{
+      id: 'plain-ending',
+      speaker: cast[0],
+      text: '更新を求める。',
+    }])).toThrow(/常体の文末/);
+    expect(() => assertPoliteNarration([{
+      id: 'unknown-plain-ending',
+      speaker: cast[0],
+      text: '集中管理ポリシーで認可を行う。',
+    }])).toThrow(/常体の文末/);
+    expect(findPlainNarrationEndings('更新を求めます。結果を確認しました。対応が難しいです。'))
+      .toEqual([]);
   });
 
   it('includes source-checked narration detail without character filler', () => {
@@ -69,19 +100,17 @@ describe('Top 5 narration plan', () => {
     }
   });
 
-  it('anticipates concrete listener questions and answers them', () => {
+  it('turns anticipated listener questions into direct commentary', () => {
     for (const article of edition.articles.filter((item) => item.top5Rank !== null)) {
       const text = articleText(article.top5Rank!);
       for (const item of article.narration!.anticipatedQuestions) {
-        const original = item.question.replace(/[。？！?！]+$/, '');
-        const question = original.endsWith('のか')
-          ? `${original.slice(0, -2)}のでしょうか`
-          : original.endsWith('か') ? `${original.slice(0, -1)}でしょうか` : original;
-        expect(text).toContain(`${question}。`);
+        const question = item.question.replace(/[。？！?！]+$/, '');
+        expect(text).not.toContain(question);
         const answerLead = `${item.answer.split('。')[0]}。`;
         expect(text).toContain(toBroadcastStyle(answerLead));
       }
       expect(text).not.toContain('ここで気になるのは');
+      expect(text).not.toMatch(/でしょうか[。？！]/);
     }
   });
 
@@ -128,5 +157,10 @@ describe('Top 5 narration plan', () => {
   it('turns written-form endings into natural broadcast speech', () => {
     expect(toBroadcastStyle('重要である。結果は変わる。人数は確定しない。応募率で決まる。会社はAI置換だと説明していない。'))
       .toBe('重要です。結果は変わります。人数は確定しません。応募率で決まります。会社はAI置換だと説明していません。');
+  });
+
+  it('uses natural spoken country names instead of newspaper abbreviations', () => {
+    expect(toBroadcastStyle('米国と英国が説明した。米政府は日米関係と米中競争を説明した。米国エネルギー省は米国内を説明した。'))
+      .toBe('アメリカとイギリスが説明しました。アメリカ政府は日本とアメリカの関係とアメリカと中国の競争を説明しました。アメリカのエネルギー省はアメリカ国内を説明しました。');
   });
 });

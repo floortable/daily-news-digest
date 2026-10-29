@@ -65,11 +65,14 @@
 
 一般ニュースではテクノロジーとセキュリティを合計して全体の40％を超えない。VCF専門枠は件数計算から外し、一般ニュースの分野バランスを崩さない。
 
+AIと一般脆弱性の横断監視は、重要候補を発見し損ねないために行う。監視対象という理由だけで一般ニュースの採用枠を予約せず、採用時は一般ニュースと同じ重要性、話題性、多様性、重複除外、40％上限を適用する。VCF専門枠は仕事上の監視であり、一般ニュースの件数、分野比率、Top 5から完全に分離する。
+
 ## VCF専門枠
 
 毎日、次の情報群を並行して確認する。単一のブログ一覧だけで巡回完了としない。
 
 - Broadcom／VMware公式ブログ、TechDocs、製品別リリースノート、Knowledge Base、Security Advisory
+- Broadcom Support PortalのVCF区分とApplication Networking and Security区分の両方
 - Broadcom Service Status、緊急障害、パッチの撤回・再公開、アップグレード停止推奨
 - Product Interoperability Matrix、Compatibility Guide、Hardware Compatibility List、サポート終了・ライフサイクル表
 - ライセンス、価格、サポート、パートナー、VCSP制度の変更
@@ -81,7 +84,9 @@
 
 個人ブログやXは、公式資料だけでは分かりにくい制約、実機検証、回避策、アップグレード時の注意を見つける入口として重視する。ただし、製品仕様、対応バージョン、脆弱性、ライセンス、サポート可否はBroadcom公式文書でも照合する。「公式確認済みの事実」「個人の検証結果」「推測・意見」を明確に分け、個人投稿を一般的事実の唯一の根拠にしない。
 
-対象はVCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automation、Tanzu／VKS、vDefend、Avi、VCSP、ライセンス・サポート・パートナー制度とする。各記事では対象製品とバージョン、影響を受ける利用者、運用上の意味、既知の制約、公式根拠、次に確認すべき点を示す。特に脆弱性、データ損失、停止、互換性喪失、サポート終了、パッチ撤回、アップグレード停止推奨を通常の機能紹介より優先する。該当する新情報がない日は0件とし、古い記事や軽微な更新で枠を埋めない。
+対象はVCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automation、Tanzu／VKS、vDefend Firewall、vDefend Security Services Platform（SSP）、Avi Load BalancerのController・Service Engine・Avi Operations・WAF・GSLB、VCSP、ライセンス・サポート・パートナー制度とする。各記事では対象製品とバージョン、影響を受ける利用者、運用上の意味、既知の制約、公式根拠、次に確認すべき点を示す。特に脆弱性、データ損失、停止、検知・フロー・監査情報の欠落、互換性喪失、サポート終了、パッチ撤回、アップグレード停止推奨を通常の機能紹介より優先する。該当する新情報がない日は0件とし、古い記事や軽微な更新で枠を埋めない。
+
+AviとvDefendは製品別KB、リリースノート、VMSA、既知障害を毎日独立確認する。VCF Operationsで最新VMSAが表示されない問題、vDefendでフローや検知データが欠落する問題、Aviが背後サービスへ提供するWAF緩和策も運用影響があれば候補とする。ただし「Avi自体は非該当だが背後を保護できる」のような情報を、Avi自体の脆弱性と誤記しない。
 
 巡回先がログイン要求、削除、アクセス制限、障害などで確認できない場合は、確認済みと扱わない。制限を回避せず、取得不能であることを編集記録へ残し、同じ内容を公式文書や別の信頼できる公開情報から確認する。X、Reddit、コミュニティ投稿の反響を一般利用者全体の評価とは表現しない。
 

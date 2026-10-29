@@ -35,6 +35,13 @@ describe('media publishing', () => {
       .not.toThrow();
   });
 
+  it('keeps English product names and generation numbers connected', () => {
+    expect(applyPronunciations('Genie 4を発表した。', {
+      'Genie 4': 'ジーニーフォー',
+      Genie: 'ジーニー',
+    })).toBe('ジーニーフォーを発表した。');
+  });
+
   it('uses contextual readings for ambiguous counters', () => {
     expect(applyPronunciations('更新と再起動までを一組として扱います。', { 一組として: 'ひとくみとして' }))
       .toBe('更新と再起動までをひとくみとして扱います。');

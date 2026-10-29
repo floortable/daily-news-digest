@@ -7,6 +7,44 @@ export const categories = [
 
 const isoDateTime = z.iso.datetime({ offset: true });
 
+const vcfReviewSchema = z.object({
+  products: z.array(z.string().min(2).max(120)).min(1).max(12),
+  versions: z.array(z.string().min(1).max(120)).min(1).max(12),
+  affectedUsers: z.string().min(40).max(700),
+  operationalImpact: z.string().min(60).max(900),
+  knownConstraints: z.array(z.string().min(30).max(500)).min(1).max(6),
+  officialSources: z.array(z.url()).min(1).max(8),
+  fieldSources: z.array(z.url()).max(8).default([]),
+  evidenceClassification: z.object({
+    officialFacts: z.array(z.string().min(30).max(500)).min(1).max(8),
+    fieldReports: z.array(z.string().min(30).max(500)).max(8),
+    inference: z.array(z.string().min(30).max(500)).max(6),
+  }).strict(),
+  nextChecks: z.array(z.string().min(30).max(500)).min(1).max(6),
+}).strict();
+
+const monitoringReviewSchema = z.object({
+  policyVersion: z.literal(1),
+  checkedAt: isoDateTime,
+  entries: z.array(z.object({
+    sourceId: z.string().regex(/^[a-z0-9-]+$/),
+    status: z.enum(['checked', 'restricted', 'failed']),
+    checkedAt: isoDateTime,
+    note: z.string().min(20).max(700),
+    evidenceUrls: z.array(z.url()).min(1).max(15),
+  }).strict()).min(1),
+  findings: z.array(z.object({
+    title: z.string().min(10).max(240),
+    area: z.enum(['general', 'ai', 'security', 'vcf']),
+    sourceId: z.string().regex(/^[a-z0-9-]+$/),
+    url: z.url(),
+    severity: z.enum(['critical', 'high', 'medium', 'low', 'informational']),
+    disposition: z.enum(['included', 'deferred', 'not-relevant']),
+    articleId: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/).nullable(),
+    reason: z.string().min(30).max(700),
+  }).strict()).max(100),
+}).strict();
+
 const articleDetailSchema = z.object({
   conclusion: z.string().min(40).max(500),
   facts: z.array(z.string().min(50).max(700)).min(2).max(4),
@@ -99,6 +137,7 @@ export const articleSchema = z.object({
     .refine((paragraphs) => paragraphs.join('').length >= 140, '独自要約は合計140文字以上必要です'),
   comment: z.string().min(180, '独自解説は180文字以上必要です').max(1000),
   articleDetail: articleDetailSchema.optional(),
+  vcfReview: vcfReviewSchema.optional(),
   mediaTrend: mediaTrendSchema.optional(),
   attentionAnalysis: z.object({
     whyNotable: z.string().min(20).max(240),
@@ -176,6 +215,7 @@ export const editionSchema = z.object({
     sourceTermsReviewed: z.literal(true),
     explanationsReviewed: z.literal(true),
   }).strict(),
+  monitoringReview: monitoringReviewSchema.optional(),
   articles: z.array(articleSchema).min(1),
 }).strict().superRefine((edition, ctx) => {
   if (edition.date >= '2026-10-26' && edition.contentCompliance.policyVersion !== 2) {
@@ -228,6 +268,16 @@ export const editionSchema = z.object({
     }
     if (!isMediaTrend && article.mediaTrend) {
       ctx.addIssue({ code: 'custom', path: ['articles', index, 'mediaTrend'], message: 'mediaTrendを使う記事は情報種別またはカテゴリをネット文化・ミームにしてください' });
+    }
+    const isVcf = article.categories.includes('VCF・VMware・競合');
+    if (edition.date >= '2026-10-30' && isVcf && !article.vcfReview) {
+      ctx.addIssue({ code: 'custom', path: ['articles', index, 'vcfReview'], message: 'VCF専門記事には製品・版・影響・公式根拠の構造化記録が必要です' });
+    }
+    if (!isVcf && article.vcfReview) {
+      ctx.addIssue({ code: 'custom', path: ['articles', index, 'vcfReview'], message: 'vcfReviewを使う記事はVCF・VMware・競合カテゴリにしてください' });
+    }
+    if (edition.date >= '2026-10-30' && isVcf && article.top5Rank !== null) {
+      ctx.addIssue({ code: 'custom', path: ['articles', index, 'top5Rank'], message: 'VCF専門枠は一般Top 5へ含めません' });
     }
   }
   if ([1, 2, 3, 4, 5].some((rank) => !ranks.has(rank))) ctx.addIssue({ code: 'custom', path: ['articles'], message: 'Top 5の順位1〜5が必要です' });

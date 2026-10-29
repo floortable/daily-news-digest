@@ -10,6 +10,14 @@
 
 Top 5は一般ニュースの総数にかかわらず5件とし、4分野以上、4媒体以上から選んでください。技術・セキュリティ系は2件以下、政府公式発表は2件以下、Hacker News・はてな・ソーシャル由来を2件以上、文化・暮らし・科学・スポーツ・地域・人物・ネット文化から1件以上含めてください。
 
+AI、一般脆弱性、VCF専門監視を強化しても、一般ニュースを技術媒体へ寄せてはいけません。一般ニュース約30件が本体であり、社会、国際、経済、仕事、科学、医療、環境、暮らし、教育、文化、娯楽、趣味、スポーツ、地域、人物、意外性、ネット文化を引き続き主軸にしてください。監視対象へ新着があったという理由だけで一般枠やTop 5の席を予約せず、通常の選定基準とテクノロジー・セキュリティ40％上限を適用してください。
+
+## AI・一般脆弱性の横断監視
+
+重要候補の発見漏れを防ぐため、`config/monitoring-sources.json` のAI・security項目を毎日確認してください。AIはOpenAI、Anthropic、Google／DeepMind、Microsoft、Meta、NVIDIAの公式発表、モデル・API更新、安全性報告、セキュリティ告知、重大障害を確認します。一般脆弱性はCISA KEV、NVD、CERT/CC、JPCERT/CC、IPA、GitHub Advisory、主要OS・クラウド・ネットワーク製品の公式セキュリティ告知を確認してください。
+
+これは候補発見の横断監視であり、AI・脆弱性の記事数を増やすための別枠ではありません。悪用確認、認証前RCE、サプライチェーン侵害、広範なデータ損失、主要サービス停止など、一般読者にも影響が大きいものだけを通常の一般ニュースとして選びます。軽微なCVE、単なるモデル更新、ベンチマーク順位だけの記事で一般枠を埋めないでください。
+
 ## ミーム・バズ動画・流行音源
 
 一般ニュースの中で0〜3件を目安にし、件数合わせはしないでください。ミーム、短尺・長尺動画、流行音源、ダンス、チャレンジ、画像テンプレート、言い回しなど、その日に複数のコミュニティまたはプラットフォームへ広がり、背景を説明する価値があるものを候補にしてください。十分に検証できればTop 5にも選べます。
@@ -24,11 +32,17 @@ Top 5は一般ニュースの総数にかかわらず5件とし、4分野以上�
 
 ## VCF専門枠
 
-一般ニュースとは別に、当日または直近の重要なVCF関連情報を0〜5件掲載してください。新情報がない日は古い記事で埋めず0件にしてください。機能紹介より、脆弱性、データ損失、停止、既知障害、互換性喪失、サポート終了、パッチ撤回・再公開、アップグレード停止推奨、ライセンス・価格・サポート・パートナー／VCSP制度変更を優先してください。
+一般ニュースとは完全に別の仕事用監視枠として、当日または直近の重要なVCF関連情報を0〜5件掲載してください。VCF専門枠の記事を一般ニュースの件数、テクノロジー・セキュリティ比率、Top 5へ含めてはいけません。新情報がない日は古い記事で埋めず0件にしてください。機能紹介より、脆弱性、データ損失、停止、検知・フロー・監査データの欠落、既知障害、互換性喪失、サポート終了、パッチ撤回・再公開、アップグレード停止推奨、ライセンス・価格・サポート・パートナー／VCSP制度変更を優先してください。
 
-毎日、Broadcom／VMware公式ブログ、TechDocs、製品別リリースノート、Knowledge Base、Security Advisory、Broadcom Service Status、Product Interoperability Matrix、Compatibility Guide、Hardware Compatibility List、ライフサイクル表を確認してください。William Lamのwilliamlam.comと本人のX、Duncan Eppingのyellow-bricks.comと本人のXは毎日必須確認です。Cormac Hogan、Frank Denneman、Niels Hagoort、Bob Plankers、Pete Flecha、Eric Sloof、Chris Wahl、Viktor van den Berg、Broadcom Community、VMware {code}、vExpert、Reddit r/vmwareも候補発見に使ってください。Veeam、NVIDIA、Dell、HPE、NetAppなどの連携ベンダーと、Nutanix、Hyper-V／Azure Stack HCI、Proxmox、OpenShift Virtualizationなどの競合・移行先の重要変更も確認してください。
+毎日、`config/monitoring-sources.json` のVCF項目をすべて確認してください。Broadcom Support PortalではVCF区分だけでなくApplication Networking and Security区分も確認し、VMSA、Knowledge Base、TechDocs、製品別リリースノート、Broadcom Service Status、Product Interoperability Matrix、Compatibility Guide、Hardware Compatibility List、ライフサイクル表を単一のブログ一覧とは別に巡回してください。
+
+対象製品はVCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automation、Tanzu／VKS、vDefend Firewall、vDefend Security Services Platform（SSP）、Avi Load BalancerのController・Service Engine・Avi Operations・WAF・GSLB、VCSPです。AviとvDefendは名称を含む検索だけでなく、製品別KB、リリースノート、VMSA、既知障害を独立して確認してください。VCF OperationsでVMSAや診断情報が表示されない問題、vDefendでフローや検知データが欠落する問題、Aviが背後サービス向けに提供するWAF緩和策も候補に含めます。製品自体が非該当の場合は、その事実と緩和対象を混同しないでください。
+
+William Lamのwilliamlam.comと本人のX、Duncan Eppingのyellow-bricks.comと本人のXは毎日必須確認です。Cormac Hogan、Frank Denneman、Niels Hagoort、Bob Plankers、Pete Flecha、Eric Sloof、Chris Wahl、Viktor van den Berg、Broadcom Community、VMware {code}、vExpert、Reddit r/vmwareも候補発見に使ってください。Veeam、NVIDIA、Dell、HPE、NetAppなどの連携ベンダーと、Nutanix、Hyper-V／Azure Stack HCI、Proxmox、OpenShift Virtualizationなどの競合・移行先の重要変更も確認してください。
 
 個人ブログ、X、Reddit、コミュニティは制約、実機検証、回避策を見つける入口として使い、製品仕様、対応バージョン、脆弱性、ライセンス、サポート可否はBroadcom公式文書でも照合してください。「公式確認済みの事実」「個人の検証結果」「推測・意見」を明確に分け、個人投稿を一般的事実の唯一の根拠にしないでください。同じ出来事の公式情報と現場検証は原則一記事へ統合してください。巡回先がログイン要求、削除、アクセス制限、障害などで確認できない場合は確認済みと扱わず、制限を回避せず、確認不能として記録してください。
+
+2026年10月30日版以降は、一般発見、AI、一般脆弱性、VCFの全必須巡回結果を日次JSONの `monitoringReview` に記録してください。`checked`、`restricted`、`failed` を実態どおりに使い、確認時刻、確認内容または取得不能理由、実際に確認したURLを残してください。重要候補は採否にかかわらず `findings` へ記録し、`included`、`deferred`、`not-relevant` と理由を付けます。重大なVCF情報を一般ニュースの件数・分野バランスを理由に落とさず、VCF専門枠で扱ってください。詳しい記録規則は `docs/monitoring-policy.md` に従ってください。
 
 ## 全記事共通
 
