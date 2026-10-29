@@ -27,6 +27,13 @@
       "audioNoBgm": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-28/top5-no-bgm.m4a",
       "audioBytes": 10115602,
       "durationSeconds": 490
+    },
+    {
+      "date": "2026-10-29",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-29/top5.m4a",
+      "audioNoBgm": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-29/top5-no-bgm.m4a",
+      "audioBytes": 10785599,
+      "durationSeconds": 522
     }
   ]
 }
