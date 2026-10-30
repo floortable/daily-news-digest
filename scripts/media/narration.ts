@@ -157,6 +157,9 @@ function formatAnticipatedInsight(item: { question: string; answer: string }) {
 }
 
 export function formatReactionForNarration(text: string) {
+  if (text === '公開記事と一次資料を確認しました。取得できない反応数は推測せず、内容の広がりと検証可能性を優先しました。') {
+    return '';
+  }
   return text.replace(
     /^(.+?)で(.+?)を\d{4}年\d{1,2}月\d{1,2}日\d{1,2}時\d{1,2}分に確認(?:した|しました)。$/,
     '$1では、今朝の時点で$2です。',

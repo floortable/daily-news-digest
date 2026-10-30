@@ -10,6 +10,7 @@ import {
 } from '../scripts/media/narration';
 
 const edition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-25.json', 'utf8')));
+const currentEdition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-29.json', 'utf8')));
 const cast = [
   { name: '満別花丸', style: 'ノーマル', speedScale: 1.08 },
   { name: 'ずんだもん', style: 'ノーマル', speedScale: 1.05 },
@@ -66,6 +67,11 @@ describe('Top 5 narration plan', () => {
     expect(formatReactionForNarration(source))
       .toBe('Hacker Newsでは、今朝の時点で635ポイント、385コメントです。');
     expect(source).toContain('2026年10月28日8時24分');
+  });
+
+  it('does not read editorial fallback text when reaction metrics are unavailable', () => {
+    const fallback = '公開記事と一次資料を確認しました。取得できない反応数は推測せず、内容の広がりと検証可能性を優先しました。';
+    expect(formatReactionForNarration(fallback)).toBe('');
   });
 
   it('rejects plain-form sentence endings left in caster narration', () => {
@@ -162,5 +168,15 @@ describe('Top 5 narration plan', () => {
   it('uses natural spoken country names instead of newspaper abbreviations', () => {
     expect(toBroadcastStyle('米国と英国が説明した。米政府は日米関係と米中競争を説明した。米国エネルギー省は米国内を説明した。'))
       .toBe('アメリカとイギリスが説明しました。アメリカ政府は日本とアメリカの関係とアメリカと中国の競争を説明しました。アメリカのエネルギー省はアメリカ国内を説明しました。');
+
+    const currentPlan = buildNarrationPlan(currentEdition, cast, 'VOICEVOX credit');
+    const spokenText = currentPlan.segments.map((segment) => segment.text).join('\n');
+    expect(spokenText).not.toMatch(/米国|英国|米政府|英政府|日米|米中|米英|日英/);
+  });
+
+  it('identifies unfamiliar journals instead of naming them without context', () => {
+    const currentPlan = buildNarrationPlan(currentEdition, cast, 'VOICEVOX credit');
+    const spokenText = currentPlan.segments.map((segment) => segment.text).join('\n');
+    expect(spokenText).toContain('科学誌Scienceを発行するアメリカ科学振興協会、AAASの査読付き総合科学誌Science Advances');
   });
 });
