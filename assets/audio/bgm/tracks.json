@@ -70,5 +70,47 @@
     "file": "weekend-side-quest.m4a",
     "durationSeconds": 188.76,
     "sha256": "4c138fd1085ff86a26eea623e66f53b3a9523a9e77afd5a96dbb01d60e2bcddd"
+  },
+  {
+    "title": "Crystal Blue Morning",
+    "file": "crystal-blue-morning.m4a",
+    "durationSeconds": 157.92,
+    "sha256": "3bd21bf3b817354140c2cd847395868880ce127864352853a1314024edac2889"
+  },
+  {
+    "title": "Colorful Digital Days",
+    "file": "colorful-digital-days.m4a",
+    "durationSeconds": 139.2,
+    "sha256": "84b0c2bdf8c2843aded429d7b3ec0ce0bb9bfaaa978d2854660d0f23b36e0eb5"
+  },
+  {
+    "title": "Endless Blue Groove",
+    "file": "endless-blue-groove.m4a",
+    "durationSeconds": 151.2,
+    "sha256": "e34cbc79bc02ddc4b06d920193333d08e7e39c52eb4bd75f9c2c9a80ea86e603"
+  },
+  {
+    "title": "Brightside Overdrive",
+    "file": "brightside-overdrive.m4a",
+    "durationSeconds": 183.2,
+    "sha256": "7107ac6bdea9775cb8ce530c3f39debe2c79b9af10c41535b69f78eb7369d740"
+  },
+  {
+    "title": "Simple Blue Groove — Extended Mix",
+    "file": "simple-blue-groove-extended-mix.m4a",
+    "durationSeconds": 170,
+    "sha256": "4e29cf9dd575d5c1233cabf664d8236f1cec796c852848f45c10cb9d337e924f"
+  },
+  {
+    "title": "Bouncy Little Beat",
+    "file": "bouncy-little-beat.m4a",
+    "durationSeconds": 142.8,
+    "sha256": "e12c57165fd25b4041101a1edae5edf8518109d5cbac0a6acff5db621693148f"
+  },
+  {
+    "title": "Clean Motion",
+    "file": "clean-motion.m4a",
+    "durationSeconds": 168,
+    "sha256": "f0f4e957e437bd78044cdbb172c28e44f798d8c0e911616d0d7688328c906cbc"
   }
 ]

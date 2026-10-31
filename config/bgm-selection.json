@@ -3,37 +3,37 @@
     {
       "name": "security-urgency",
       "keywords": ["脆弱性", "攻撃", "セキュリティ", "CVE"],
-      "tracks": ["emergency-maintenance-club.m4a", "one-more-tab-open.m4a", "countdown-to-something-amazing.m4a", "innovation-begins-here.m4a"]
+      "tracks": ["emergency-maintenance-club.m4a", "one-more-tab-open.m4a", "clean-motion.m4a", "brightside-overdrive.m4a", "countdown-to-something-amazing.m4a", "innovation-begins-here.m4a"]
     },
     {
       "name": "science-discovery",
       "keywords": ["反物質", "粒子", "宇宙", "物理", "科学"],
-      "tracks": ["small-discovery-on-the-way-home.m4a", "something-amazing-is-coming.m4a", "countdown-to-something-amazing.m4a", "sparkling-news.m4a"]
+      "tracks": ["small-discovery-on-the-way-home.m4a", "crystal-blue-morning.m4a", "endless-blue-groove.m4a", "something-amazing-is-coming.m4a", "countdown-to-something-amazing.m4a", "sparkling-news.m4a"]
     },
     {
       "name": "language-and-digital-culture",
       "keywords": ["AI生成文", "文章", "言語", "理解"],
-      "tracks": ["after-school-algorithm.m4a", "one-more-tab-open.m4a", "happy-pixel-news.m4a", "sparkling-news.m4a", "innovation-begins-here.m4a"]
+      "tracks": ["after-school-algorithm.m4a", "colorful-digital-days.m4a", "endless-blue-groove.m4a", "simple-blue-groove-extended-mix.m4a", "one-more-tab-open.m4a", "happy-pixel-news.m4a", "sparkling-news.m4a", "innovation-begins-here.m4a"]
     },
     {
       "name": "innovation-and-business",
       "keywords": ["AI投資", "生産性", "テクノロジー", "企業"],
-      "tracks": ["a-little-ahead-of-schedule.m4a", "after-school-algorithm.m4a", "innovation-begins-here.m4a", "something-amazing-is-coming.m4a", "sparkling-news.m4a"]
+      "tracks": ["a-little-ahead-of-schedule.m4a", "brightside-overdrive.m4a", "clean-motion.m4a", "simple-blue-groove-extended-mix.m4a", "colorful-digital-days.m4a", "after-school-algorithm.m4a", "innovation-begins-here.m4a", "something-amazing-is-coming.m4a", "sparkling-news.m4a"]
     },
     {
       "name": "daily-life",
       "keywords": ["防草", "庭", "生活", "家庭"],
-      "tracks": ["small-discovery-on-the-way-home.m4a", "weekend-side-quest.m4a", "a-little-ahead-of-schedule.m4a", "cozy-pop-bulletin.m4a", "sparkling-news.m4a"]
+      "tracks": ["small-discovery-on-the-way-home.m4a", "crystal-blue-morning.m4a", "bouncy-little-beat.m4a", "endless-blue-groove.m4a", "weekend-side-quest.m4a", "a-little-ahead-of-schedule.m4a", "cozy-pop-bulletin.m4a", "sparkling-news.m4a"]
     },
     {
       "name": "culture-sports-and-people",
       "keywords": ["文化", "音楽", "映画", "ゲーム", "スポーツ", "選手", "人物", "地域", "ミーム"],
-      "tracks": ["weekend-side-quest.m4a", "a-little-ahead-of-schedule.m4a", "happy-pixel-news.m4a", "cozy-pop-bulletin.m4a"]
+      "tracks": ["weekend-side-quest.m4a", "bouncy-little-beat.m4a", "endless-blue-groove.m4a", "colorful-digital-days.m4a", "a-little-ahead-of-schedule.m4a", "happy-pixel-news.m4a", "cozy-pop-bulletin.m4a"]
     },
     {
       "name": "software-and-development",
       "keywords": ["ソフトウェア", "プログラミング", "ライブラリ", "開発", "GitHub", "データベース"],
-      "tracks": ["one-more-tab-open.m4a", "after-school-algorithm.m4a", "emergency-maintenance-club.m4a", "innovation-begins-here.m4a"]
+      "tracks": ["one-more-tab-open.m4a", "clean-motion.m4a", "simple-blue-groove-extended-mix.m4a", "colorful-digital-days.m4a", "after-school-algorithm.m4a", "emergency-maintenance-club.m4a", "innovation-begins-here.m4a"]
     }
   ],
   "fallbackTracks": [
@@ -48,6 +48,13 @@
     "happy-pixel-news.m4a",
     "something-amazing-is-coming.m4a",
     "countdown-to-something-amazing.m4a",
-    "cozy-pop-bulletin.m4a"
+    "cozy-pop-bulletin.m4a",
+    "crystal-blue-morning.m4a",
+    "colorful-digital-days.m4a",
+    "endless-blue-groove.m4a",
+    "brightside-overdrive.m4a",
+    "simple-blue-groove-extended-mix.m4a",
+    "bouncy-little-beat.m4a",
+    "clean-motion.m4a"
   ]
 }
