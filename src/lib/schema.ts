@@ -7,6 +7,20 @@ export const categories = [
 
 const isoDateTime = z.iso.datetime({ offset: true });
 
+const isEditorialRestraintOnly = (text: string) => (
+  /推測せず.+(?:扱います|区別します)[。]?$/u.test(text)
+  || /断定せず.+(?:公開を待つ|発表を待つ)必要があります[。]?$/u.test(text)
+);
+
+const isFutureCheckOnly = (answer: string) => (
+  /^(?:[^。]+(?:発表|報告|公開|手続き|投票|審査|変更|追試|測定|状況|範囲|条件)[^。]*)?を確認します[。]?$/u.test(answer)
+);
+
+const isImpactlessQualification = (text: string) => (
+  /(?:推定|直接測定ではなく).*(?:違えば|によって).*(?:変わります|異なります)[。]?$/u.test(text)
+  && !/(?:\d|％|倍|結論|分類|判断|影響|候補|比較|意味|規模|費用|用途|適用|リスク)/u.test(text)
+);
+
 const vcfReviewSchema = z.object({
   products: z.array(z.string().min(2).max(120)).min(1).max(12),
   versions: z.array(z.string().min(1).max(120)).min(1).max(12),
@@ -51,8 +65,8 @@ const articleDetailSchema = z.object({
   background: z.array(z.string().min(50).max(700)).min(1).max(3),
   explanation: z.array(z.string().min(80).max(900)).min(1).max(3),
   implications: z.array(z.string().min(50).max(700)).min(1).max(3),
-  caveats: z.array(z.string().min(40).max(700)).min(1).max(3),
-  nextChecks: z.array(z.string().min(30).max(500)).min(1).max(3),
+  caveats: z.array(z.string().min(40).max(700)).max(3),
+  nextChecks: z.array(z.string().min(30).max(500)).max(3),
 }).strict();
 
 const trendMaterialSchema = z.object({
@@ -123,7 +137,7 @@ export const articleSchema = z.object({
     result: z.string().min(20).max(500).optional(),
     detail: z.array(z.string().min(20).max(500)).min(1).max(4),
     learning: z.array(z.string().min(20).max(500)).min(1).max(4),
-    analysis: z.array(z.string().min(20).max(500)).min(1).max(3),
+    analysis: z.array(z.string().min(20).max(500)).max(3),
     anticipatedQuestions: z.array(z.object({
       question: z.string().min(10).max(160),
       answer: z.string().min(20).max(500).refine(
@@ -225,6 +239,27 @@ export const editionSchema = z.object({
   const urls = new Set<string>();
   const ranks = new Set<number>();
   for (const [index, article] of edition.articles.entries()) {
+    if (article.top5Rank !== null && article.narration) {
+      if (edition.date >= '2026-10-30' && (!article.narration.result || article.narration.result.length < 60)) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'result'], message: 'Top 5は、記事が扱う中心事象について、主体、対象、起きたこと、具体的な結果を含む自己完結した概要が必要です' });
+      }
+      article.narration.analysis.forEach((text, analysisIndex) => {
+        if (isEditorialRestraintOnly(text)) {
+          ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'analysis', analysisIndex], message: '編集上の自制だけを読み上げず、具体的な事実、比較、仕組み、見通しのいずれかを示してください' });
+        }
+        if (isImpactlessQualification(text)) {
+          ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'analysis', analysisIndex], message: '推定条件や不確実性だけを補足せず、その幅が結論、分類、比較、実用上の判断をどう変えるかまで示してください' });
+        }
+      });
+      article.narration.anticipatedQuestions.forEach((item, questionIndex) => {
+        if (item.question === 'このニュースで結論を変える次の確認点は何ですか。') {
+          ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'anticipatedQuestions', questionIndex, 'question'], message: '汎用的な確認予定を作るための定型質問は使用できません' });
+        }
+        if (isFutureCheckOnly(item.answer)) {
+          ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'anticipatedQuestions', questionIndex, 'answer'], message: '確認予定の列挙だけで終えず、現時点で分かる答えを示すか、この先回り解説を省いてください' });
+        }
+      });
+    }
     if (article.editionDate !== edition.date) ctx.addIssue({ code: 'custom', path: ['articles', index, 'editionDate'], message: '版の日付と一致しません' });
     if (ids.has(article.id)) ctx.addIssue({ code: 'custom', path: ['articles', index, 'id'], message: '記事IDが重複しています' });
     ids.add(article.id);

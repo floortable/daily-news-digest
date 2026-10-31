@@ -73,6 +73,7 @@ export function buildNarrationPlan(
   });
 
   assertPoliteNarration(segments);
+  assertNoBareEnumerations(segments);
 
   return {
     date: edition.date,
@@ -160,6 +161,12 @@ export function formatReactionForNarration(text: string) {
   if (text === '公開記事と一次資料を確認しました。取得できない反応数は推測せず、内容の広がりと検証可能性を優先しました。') {
     return '';
   }
+  const sourcedPlatformReaction = text.match(
+    /^.+?の記事は(Hacker News|Reddit|はてなブックマーク)で(.+?)を\d{4}年\d{1,2}月\d{1,2}日\d{1,2}時\d{1,2}分に確認(?:した|しました)。$/,
+  );
+  if (sourcedPlatformReaction) {
+    return `${sourcedPlatformReaction[1]}では、今朝の時点で${sourcedPlatformReaction[2]}です。`;
+  }
   return text.replace(
     /^(.+?)で(.+?)を\d{4}年\d{1,2}月\d{1,2}日\d{1,2}時\d{1,2}分に確認(?:した|しました)。$/,
     '$1では、今朝の時点で$2です。',
@@ -186,6 +193,7 @@ function applySpeakerTone(text: string, speakerName: string) {
     [/できます。$/, 'できるのだ。'],
     [/なります。$/, 'なるのだ。'],
     [/あります。$/, 'あるのだ。'],
+    [/結びました。$/, '結んだのだ。'],
     [/ました。$/, 'たのだ。'],
     [/でした。$/, 'だったのだ。'],
     [/です。$/, 'なのだ。'],
@@ -356,6 +364,33 @@ export function assertPoliteNarration(segments: NarrationSegment[]) {
   });
   if (violations.length) {
     throw new Error(`ニュース読みへ変換されていない常体の文末があります:\n${violations.join('\n')}`);
+  }
+}
+
+export function findBareEnumerations(text: string) {
+  const sentences = text.split(/(?<=。)/).map((sentence) => sentence.trim()).filter(Boolean);
+  return sentences.filter((sentence, index) => {
+    if ((sentence.match(/、/g) ?? []).length < 2) return false;
+    const endsAsUndigestedChecklist = /(?:を|について)(?:確認|検討|考慮|評価|精査|監視|追跡|比較)(?:します|する必要があります|が必要です)。$/u.test(sentence);
+    const endsAsGenericImportance = /(?:が|は)(?:重要|必要|課題|論点)(?:です|になります)。$/u.test(sentence)
+      || /(?:さまざまな|複数の|多くの)(?:要素|観点|条件)(?:があります|です)。$/u.test(sentence);
+    if (!endsAsUndigestedChecklist && !endsAsGenericImportance) return false;
+    const sentenceExplainsRelation = /(?:は、|一方|これに対して|それぞれ|一組として|優先|決定的|原因|結果|ため|ので|役割|担います|比べ|比較すると|改善|悪化|増え|減り|異な)/u.test(sentence);
+    if (sentenceExplainsRelation) return false;
+    const next = sentences[index + 1] ?? '';
+    const nextExplainsRelation = /^(?:このうち|その結果|一方|これに対して|今回|最も|つまり|具体的には)/u.test(next);
+    return !nextExplainsRelation;
+  });
+}
+
+export function assertNoBareEnumerations(segments: NarrationSegment[]) {
+  const violations = segments.flatMap((segment) =>
+    findBareEnumerations(segment.text).map((sentence) => `${segment.id}: ${sentence}`));
+  if (violations.length) {
+    throw new Error(
+      '項目を並べただけで、因果関係、差、優先順位、今回の決定要因を説明していない列挙があります:\n'
+      + violations.join('\n'),
+    );
   }
 }
 

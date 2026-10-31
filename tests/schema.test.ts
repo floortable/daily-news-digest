@@ -38,6 +38,18 @@ describe('editorial compliance', () => {
     expect(articleSchema.safeParse(article).success).toBe(true);
   });
 
+  it('rejects a qualification that states uncertainty without explaining its impact', () => {
+    const current = JSON.parse(readFileSync('data/daily/2026-10-30.json', 'utf8'));
+    const invalid = structuredClone(current);
+    const article = invalid.articles.find((item: { top5Rank: number | null }) => item.top5Rank === 3);
+    article.narration.analysis = [
+      '大きさは直接測定ではなく明るさからの推定で、表面反射率が違えば直径も変わります。',
+    ];
+    const result = editionSchema.safeParse(invalid);
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('分類、比較、実用上の判断'))).toBe(true);
+  });
+
   it('rejects a same-URL republication without concrete follow-up facts', () => {
     const current = JSON.parse(readFileSync('data/daily/2026-10-26.json', 'utf8'));
     const duplicate = structuredClone(current.articles[0]);
