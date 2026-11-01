@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { editionSchema } from '../src/lib/schema';
+import { buildPodcastFeed } from '../src/lib/podcast-feed';
 import { escapeXml, preserveRssGuids, toRssItem } from '../src/lib/rss';
 
 describe('full-text RSS item', () => {
@@ -69,5 +70,30 @@ describe('full-text RSS item', () => {
     expect(content).toContain('<h3>BGM・音源</h3>');
     expect(content).toContain('<h3>拡散経路</h3>');
     expect(content).toContain('<h3>権利・安全上の注意</h3>');
+  });
+});
+
+describe('podcast RSS', () => {
+  const feed = buildPodcastFeed(new URL('https://floortable.github.io'), '/daily-news-digest/');
+
+  it('keeps podcast episodes separate from the article feed with complete show metadata', () => {
+    expect(feed).toContain('<title>毎日の注目ニュース5選</title>');
+    expect(feed).toContain('xmlns:content="http://purl.org/rss/1.0/modules/content/"');
+    expect(feed).toContain('<itunes:image href="https://floortable.github.io/daily-news-digest/podcast-cover.jpg" />');
+    expect(feed).toContain('<itunes:category text="News"><itunes:category text="Tech News" /></itunes:category>');
+    expect(feed).toContain('<itunes:explicit>false</itunes:explicit>');
+    expect(feed).toContain('<atom:link href="https://floortable.github.io/daily-news-digest/podcast.xml" rel="self"');
+  });
+
+  it('publishes source links and synthetic-voice disclosure for every episode', () => {
+    expect(feed).toContain('<content:encoded><![CDATA[');
+    expect(feed).toContain('VOICEVOXによる合成音声を使用しています');
+    expect(feed).toContain('取り上げたニュースと出典');
+    expect(feed).toContain('<itunes:episodeType>full</itunes:episodeType>');
+    expect(feed).toContain('<enclosure url="https://github.com/floortable/daily-news-digest/releases/download/');
+  });
+
+  it('preserves the existing audio-feed GUIDs so readers do not receive duplicate episodes', () => {
+    expect(feed).toContain('<guid isPermaLink="true">https://floortable.github.io/daily-news-digest/archive/2026-10-25/#audio</guid>');
   });
 });

@@ -55,6 +55,7 @@
 
 ## RSS 2.0
 
+- 正式なPodcastフィードは `/podcast.xml` とし、通常の記事RSSから分離する。従来の `/rss/audio.xml` は互換URLとして同じ内容を返す。
 - RSSは公開HTTPS URLに置き、RSS 2.0、`itunes`、`content` 名前空間を宣言する。番組にはtitle、link、description、language、author、category、explicit、copyright、show artworkを含める。
 - 各話には一意で不変のGUID、title、descriptionまたはcontent、pubDate、link、`itunes:episodeType`、`itunes:duration`、`itunes:explicit`、enclosureを含める。
 - enclosureには安定した音声URL、実ファイルと一致するbyte長、`audio/mp4`を設定する。ファイルを差し替えた場合はbyte長とdurationを再計測し、RSSと実体の不一致を公開前検査で失敗させる。
@@ -74,7 +75,7 @@
 
 - `top5.m4a` のAAC-LC、48 kHz、ステレオ、約160 kbps、faststartはAppleの推奨範囲に入っている。音声形式の変更より先にホスティング応答を直す。
 - GitHub Release assetはRange GETへ206を返すが、最終応答が `application/octet-stream`、`Content-Disposition: attachment` で、期限付きURLへリダイレクトされる。Safariでの直接再生に成功しても、Apple TVが同じURLを取得するAirPlayの互換性は保証できない。
-- 現在の音声RSSにはenclosure、GUID、pubDate、durationはあるが、Podcast提出に必要な番組アートワークと、推奨する番組・エピソードメタデータが不足している。ホスティングとアートワークを決めてからRSSを完成させる。
+- `/podcast.xml` にはenclosure、既存購読者と互換のGUID、pubDate、duration、番組アートワーク、カテゴリ、explicit、AI合成音声の開示、各話の出典付きショーノートを含める。番組アートワークは3000×3000のJPEGを使用する。
 - Release assetを差し替えた後に `config/published-media.json` のbyte長とdurationが古いまま残った事例があった。今後はアップロード後のリモート実体を測定し、不一致なら公開検査を失敗させる。
 
 ## 公式確認先
