@@ -68,7 +68,9 @@ export function renderArticleContent(article: Article) {
     renderMediaTrend(article),
     '<h2>注目度と反響</h2>',
     `<h3>注目する理由</h3><p>${escapeHtml(analysis.whyNotable)}</p>`,
-    `<h3>確認できた現在の反響</h3><p>${escapeHtml(analysis.currentReaction)}</p>`,
+    ...(analysis.currentReaction
+      ? [`<h3>確認できた現在の反響</h3><p>${escapeHtml(analysis.currentReaction)}</p>`]
+      : []),
     `<h3>中立評価: ${escapeHtml(analysis.assessment)}</h3><p>${escapeHtml(analysis.assessmentComment)}</p>`,
     renderMetrics(article),
     `<p><a href="${escapeHtml(article.sourceUrl)}">元記事を直接開く ↗</a></p>`,

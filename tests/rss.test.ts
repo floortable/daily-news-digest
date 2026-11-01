@@ -25,7 +25,8 @@ describe('full-text RSS item', () => {
     expect(item.content).toContain(escapeXml(article.narration!.detail[0]));
     expect(item.content).toContain(escapeXml(article.narration!.learning[0]));
     expect(item.content).toContain(article.attentionAnalysis.whyNotable);
-    expect(item.content).toContain(article.attentionAnalysis.currentReaction);
+    expect(article.attentionAnalysis.currentReaction).not.toBeNull();
+    expect(item.content).toContain(article.attentionAnalysis.currentReaction!);
     expect(item.content).toContain(article.attentionAnalysis.assessmentComment);
   });
 

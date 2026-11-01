@@ -14,6 +14,7 @@ import {
 const edition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-25.json', 'utf8')));
 const currentEdition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-29.json', 'utf8')));
 const latestEdition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-30.json', 'utf8')));
+const october31Edition = editionSchema.parse(JSON.parse(readFileSync('data/daily/2026-10-31.json', 'utf8')));
 const cast = [
   { name: '満別花丸', style: 'ノーマル', speedScale: 1.08 },
   { name: 'ずんだもん', style: 'ノーマル', speedScale: 1.05 },
@@ -197,6 +198,19 @@ describe('Top 5 narration plan', () => {
     expect(() => editionSchema.parse(invalidEdition)).toThrow(/編集上の自制だけ/);
   });
 
+  it('rejects abstract editorial filler even when it is paraphrased', () => {
+    const invalidEdition = structuredClone(october31Edition);
+    invalidEdition.articles[0].comment += ' 適用範囲と具体的な結果を確認しました。';
+    expect(() => editionSchema.parse(invalidEdition)).toThrow(/抽象的な埋め草/);
+  });
+
+  it('rejects an identical sentence reused across editorial fields', () => {
+    const invalidEdition = structuredClone(october31Edition);
+    const article = invalidEdition.articles[0];
+    article.comment += ` ${article.attentionAnalysis.whyNotable}`;
+    expect(() => editionSchema.parse(invalidEdition)).toThrow(/同じ文を再掲/);
+  });
+
   it('states demo results and significance before a bounded limitation', () => {
     const latestPlan = buildNarrationPlan(latestEdition, cast, 'VOICEVOX credit');
     const qwenputer = latestPlan.segments
@@ -269,5 +283,19 @@ describe('Top 5 narration plan', () => {
     expect(qwenputerExplanation).toContain('Cで書いたプログラムはRISC-Vの機械語へ変換');
     expect(doorDashLead).not.toContain('結びたのだ');
     expect(doorDashLead).toContain('結んだのだ');
+  });
+
+  it('identifies the confirmed API-key abuse without inventing a provider or loss amount', () => {
+    const plan = buildNarrationPlan(october31Edition, cast, 'VOICEVOX credit');
+    const northflank = plan.segments
+      .filter((segment) => segment.id.startsWith('rank-1'))
+      .map((segment) => segment.text)
+      .join(' ');
+    expect(northflank).toContain('内部データベースへ暗号化保存');
+    expect(northflank).toContain('メモリをダンプしたのかは未公表');
+    expect(northflank).toContain('複数利用者が保存していたAI APIキーの不正利用');
+    expect(northflank).toContain('どの事業者だったか、利用モデル、呼び出し回数、発生料金、利用者がどう発見したかを公表していません');
+    expect(northflank).not.toContain('`.env`');
+    expect(northflank).not.toContain('SSH');
   });
 });

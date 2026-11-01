@@ -85,7 +85,9 @@ export function buildNarrationPlan(
 
 function buildArticleSegments(article: Article, rank: number, speakers: CastMember[]): NarrationSegment[] {
   const reaction = applyOpeningTone(
-    toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction)),
+    article.attentionAnalysis.currentReaction
+      ? toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction))
+      : '',
     speakers[0].name,
   );
   const sections = dedupeSections([
@@ -131,7 +133,9 @@ function dedupeSections<T extends { text: string }>(sections: T[]) {
 
 export function buildArticleNarration(article: Article, speakerName: string) {
   const reaction = applyOpeningTone(
-    toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction)),
+    article.attentionAnalysis.currentReaction
+      ? toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction))
+      : '',
     speakerName,
   );
   const body = dedupeSentences([

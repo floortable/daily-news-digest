@@ -21,6 +21,21 @@ const isImpactlessQualification = (text: string) => (
   && !/(?:\d|％|倍|結論|分類|判断|影響|候補|比較|意味|規模|費用|用途|適用|リスク)/u.test(text)
 );
 
+const editorialFillerPatterns = [
+  /この出来事を評価する際は/u,
+  /入力から結果(?:へ至る|まで)の経路/u,
+  /適用範囲と具体的な結果を確認/u,
+  /何が変わったかを対象と結果から確認/u,
+  /今回の時期と直前の変化を結ぶ背景/u,
+  /読者にとっては、出来事の大きさ/u,
+  /読者の判断へつながる影響/u,
+];
+
+const containsEditorialFiller = (text: string) => editorialFillerPatterns.some((pattern) => pattern.test(text));
+
+const editorialSentences = (text: string) => text.match(/[^。！？!?]+[。！？!?]?/gu)?.map((item) => item.trim()).filter(Boolean) ?? [];
+const normalizeEditorialSentence = (text: string) => text.replace(/[\s　。、，,.「」『』（）()]/gu, '');
+
 const vcfReviewSchema = z.object({
   products: z.array(z.string().min(2).max(120)).min(1).max(12),
   versions: z.array(z.string().min(1).max(120)).min(1).max(12),
@@ -60,13 +75,13 @@ const monitoringReviewSchema = z.object({
 }).strict();
 
 const articleDetailSchema = z.object({
-  conclusion: z.string().min(40).max(500),
-  facts: z.array(z.string().min(50).max(700)).min(2).max(4),
-  background: z.array(z.string().min(50).max(700)).min(1).max(3),
-  explanation: z.array(z.string().min(80).max(900)).min(1).max(3),
-  implications: z.array(z.string().min(50).max(700)).min(1).max(3),
-  caveats: z.array(z.string().min(40).max(700)).max(3),
-  nextChecks: z.array(z.string().min(30).max(500)).max(3),
+  conclusion: z.string().min(20).max(500),
+  facts: z.array(z.string().min(20).max(700)).max(4),
+  background: z.array(z.string().min(20).max(700)).max(3),
+  explanation: z.array(z.string().min(20).max(900)).max(3),
+  implications: z.array(z.string().min(20).max(700)).max(3),
+  caveats: z.array(z.string().min(20).max(700)).max(3),
+  nextChecks: z.array(z.string().min(20).max(500)).max(3),
 }).strict();
 
 const trendMaterialSchema = z.object({
@@ -149,13 +164,13 @@ export const articleSchema = z.object({
   }).strict().optional(),
   summary: z.array(z.string().min(1).max(500)).min(2).max(3)
     .refine((paragraphs) => paragraphs.join('').length >= 140, '独自要約は合計140文字以上必要です'),
-  comment: z.string().min(180, '独自解説は180文字以上必要です').max(1000),
+  comment: z.string().min(20, '独自解説には概要にない具体的な理解を加えてください').max(1000),
   articleDetail: articleDetailSchema.optional(),
   vcfReview: vcfReviewSchema.optional(),
   mediaTrend: mediaTrendSchema.optional(),
   attentionAnalysis: z.object({
     whyNotable: z.string().min(20).max(240),
-    currentReaction: z.string().min(20).max(240),
+    currentReaction: z.string().min(20).max(240).nullable(),
     assessment: z.enum(['過熱気味', '妥当', '注目不足', '評価が分かれる', '判断には早い']),
     assessmentComment: z.string().min(20).max(240),
   }).strict(),
@@ -220,6 +235,7 @@ export const articleSchema = z.object({
 export const editionSchema = z.object({
   date: z.iso.date(),
   generatedAt: isoDateTime,
+  selectionShortfallReason: z.string().min(40).max(700).optional(),
   contentCompliance: z.object({
     policyVersion: z.union([z.literal(1), z.literal(2)]),
     summariesAreOriginal: z.literal(true),
@@ -271,11 +287,14 @@ export const editionSchema = z.object({
       ranks.add(article.top5Rank);
     }
     if (edition.contentCompliance.policyVersion === 2) {
-      if (article.summary.length !== 3 || article.summary.join('').length < 240) {
-        ctx.addIssue({ code: 'custom', path: ['articles', index, 'summary'], message: '方針v2の概要は結論・事実・範囲の3段落、合計240文字以上が必要です' });
+      if (article.summary.length !== 3) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'summary'], message: '方針v2の概要は結論・主要事実・範囲の3段落が必要です' });
       }
-      if (article.comment.length < 300) {
-        ctx.addIssue({ code: 'custom', path: ['articles', index, 'comment'], message: '方針v2の解説は300文字以上必要です' });
+      if (edition.date >= '2026-11-01' && article.summary.join('').length < 240) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'summary'], message: '2026-11-01以降の概要は、埋め草や重複を使わず合計240文字以上が必要です' });
+      }
+      if (edition.date >= '2026-11-01' && article.comment.length < 300) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'comment'], message: '2026-11-01以降の独自解説は、概要の再掲を使わず300文字以上が必要です' });
       }
       if (!article.articleDetail) {
         ctx.addIssue({ code: 'custom', path: ['articles', index, 'articleDetail'], message: '方針v2では構造化した詳しい解説が必要です' });
@@ -295,6 +314,37 @@ export const editionSchema = z.object({
       ].join(' ');
       for (const boilerplate of forbiddenEditorialBoilerplate) {
         if (prose.includes(boilerplate)) ctx.addIssue({ code: 'custom', path: ['articles', index], message: `定型的な埋め草を使用できません: ${boilerplate}` });
+      }
+      if (containsEditorialFiller(prose)) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index], message: '具体的な情報を増やさない抽象的な埋め草を使用できません' });
+      }
+      if (article.articleDetail && article.articleDetail.implications.includes(article.attentionAnalysis.whyNotable)) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'attentionAnalysis', 'whyNotable'], message: '注目理由は影響欄の再掲ではなく、この時点で注目する固有の理由を示してください' });
+      }
+      if (edition.date >= '2026-10-30') {
+        const repeatedSentences = new Set<string>();
+        const seenSentences = new Set<string>();
+        const repetitionFields = [
+          ...article.summary,
+          article.comment,
+          ...(article.articleDetail ? [
+            ...article.articleDetail.facts,
+            ...article.articleDetail.background,
+            ...article.articleDetail.explanation,
+            ...article.articleDetail.implications,
+            ...article.articleDetail.caveats,
+          ] : []),
+          article.attentionAnalysis.whyNotable,
+        ];
+        for (const sentence of repetitionFields.flatMap(editorialSentences)) {
+          const normalizedSentence = normalizeEditorialSentence(sentence);
+          if (normalizedSentence.length < 25) continue;
+          if (seenSentences.has(normalizedSentence)) repeatedSentences.add(sentence);
+          seenSentences.add(normalizedSentence);
+        }
+        if (repeatedSentences.size) {
+          ctx.addIssue({ code: 'custom', path: ['articles', index], message: `概要・解説・注目理由で同じ文を再掲できません: ${[...repeatedSentences][0]}` });
+        }
       }
     }
     const isMediaTrend = article.informationType === 'ミーム・ネット文化' || article.categories.includes('ネット文化・ミーム');

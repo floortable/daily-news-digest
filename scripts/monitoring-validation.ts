@@ -35,6 +35,8 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
 
   const configured = new Map(registry.sources.map((source) => [source.id, source]));
   const seen = new Set<string>();
+  const noteCounts = new Map<string, number>();
+  const checkedAtCounts = new Map<string, number>();
   for (const entry of review.entries) {
     if (seen.has(entry.sourceId)) errors.push(`${edition.date}: 監視元 ${entry.sourceId} が重複しています`);
     seen.add(entry.sourceId);
@@ -42,6 +44,8 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
     if (entry.status !== 'checked' && entry.note.length < 30) {
       errors.push(`${edition.date}: ${entry.sourceId} の確認不能理由が不足しています`);
     }
+    noteCounts.set(entry.note, (noteCounts.get(entry.note) ?? 0) + 1);
+    checkedAtCounts.set(entry.checkedAt, (checkedAtCounts.get(entry.checkedAt) ?? 0) + 1);
   }
   for (const source of registry.sources.filter((source) => source.requiredDaily)) {
     if (!seen.has(source.id)) errors.push(`${edition.date}: 必須監視元 ${source.id} (${source.label}) の記録がありません`);
@@ -62,6 +66,17 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
   const general = edition.articles.filter((article) => !article.categories.includes('VCF・VMware・競合'));
   const vcf = edition.articles.filter((article) => article.categories.includes('VCF・VMware・競合'));
   if (!general.length) errors.push(`${edition.date}: 一般ニュースがありません`);
+  if (edition.date >= '2026-11-01' && general.length < 25 && !edition.selectionShortfallReason) {
+    errors.push(`${edition.date}: 一般ニュースが25件未満の場合は、弱い記事で埋めず selectionShortfallReason に不足理由を記録してください`);
+  }
+  if (edition.date >= '2026-11-01') {
+    for (const [note, count] of noteCounts) {
+      if (count > 1) errors.push(`${edition.date}: 監視注記を${count}件で使い回しています: ${note}`);
+    }
+    for (const [checkedAt, count] of checkedAtCounts) {
+      if (count > 3) errors.push(`${edition.date}: ${count}件の監視元が同一確認時刻 ${checkedAt} です。各監視元の実確認時刻を記録してください`);
+    }
+  }
   if (vcf.length > 5) errors.push(`${edition.date}: VCF専門枠は5件以下にしてください`);
 
   const technologyOrSecurity = general.filter((article) =>
