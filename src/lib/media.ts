@@ -2,9 +2,9 @@ import published from '../../config/published-media.json';
 
 export function getMediaUrls(base: string, date: string) {
   const entry = getPublishedMedia(date);
-  if (entry) return { audio: entry.audio, audioNoBgm: entry.audioNoBgm };
+  if (entry) return { audio: entry.audio };
   const root = `${base.endsWith('/') ? base : `${base}/`}media/${date}/`;
-  return { audio: `${root}top5.m4a`, audioNoBgm: `${root}top5-no-bgm.m4a` };
+  return { audio: `${root}top5.m4a` };
 }
 
 export function isMediaPublished(date: string) {

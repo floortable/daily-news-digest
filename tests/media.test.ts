@@ -64,11 +64,15 @@ describe('media publishing', () => {
   });
 
   it('builds project-page-safe URLs and hides unpublished media', () => {
-    expect(getMediaUrls('/daily-news-digest/', '2026-10-25').audio)
+    const published = getMediaUrls('/daily-news-digest/', '2026-10-25');
+    expect(published.audio)
       .toBe('https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-25/top5.m4a');
+    expect(published).not.toHaveProperty('audioNoBgm');
     expect(isMediaPublished('2026-10-25')).toBe(true);
-    expect(getMediaUrls('/daily-news-digest/', '2026-10-24').audio)
+    const unpublished = getMediaUrls('/daily-news-digest/', '2026-10-24');
+    expect(unpublished.audio)
       .toBe('/daily-news-digest/media/2026-10-24/top5.m4a');
+    expect(unpublished).not.toHaveProperty('audioNoBgm');
     expect(isMediaPublished('2026-10-24')).toBe(false);
   });
 });

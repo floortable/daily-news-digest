@@ -37,13 +37,6 @@ const articleWindows = [...timeline.segments.reduce((windows, segment) => {
 if (articleWindows.length !== 5) throw new Error('BGM切替用の記事区間が5件ではありません');
 const top5 = edition.articles.filter((article) => article.top5Rank !== null).sort((a, b) => a.top5Rank! - b.top5Rank!);
 const selectedTracks = selectThemedTracks(top5, tracks, selection, edition.date);
-const noBgmWav = resolve(root, 'top5-no-bgm.wav');
-await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', voice,
-  '-af', 'loudnorm=I=-16:TP=-1.5:LRA=11', '-ar', '48000', noBgmWav]);
-await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', noBgmWav,
-  '-c:a', 'aac', '-b:a', '160k', '-movflags', '+faststart',
-  '-metadata', `comment=${timeline.credit}; BGMなし`, resolve(root, 'top5-no-bgm.m4a')]);
-
 const mixedWav = resolve(root, 'top5-mixed.wav');
 const bgmGain = 10 ** (-config.bgmReductionDb / 20);
 const bgmInputs = selectedTracks.flatMap((track) => ['-stream_loop', '-1', '-i', resolve('assets/audio/bgm', track.file)]);
@@ -69,9 +62,9 @@ await run('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', mixedWav,
 
 const publicDir = resolve('generated/public/media', edition.date);
 await mkdir(publicDir, { recursive: true });
-for (const file of ['top5.m4a', 'top5-no-bgm.m4a']) await copyFile(resolve(root, file), resolve(publicDir, file));
+await copyFile(resolve(root, 'top5.m4a'), resolve(publicDir, 'top5.m4a'));
 await writeFile(resolve(root, 'media.json'), `${JSON.stringify({ date: edition.date, bgmByTopic: selectedTracks.map((track, index) => ({ topic: index + 1, title: track.title })), bgmCredit: config.bgmCredit, jingleCredit: config.jingleCredit, bgmReductionDb: config.bgmReductionDb, targetLufs: -16, credit: timeline.credit }, null, 2)}\n`);
-console.log(`${root} にBGMあり・なし音声を生成しました（BGM: ${bgmTitles}）。`);
+console.log(`${root} にBGM入り音声を生成しました（BGM: ${bgmTitles}）。`);
 function shuffled<T>(values: T[], seedText: string) {
   const result = [...values];
   let seed = [...seedText].reduce((value, character) => Math.imul(value ^ character.charCodeAt(0), 16777619) >>> 0, 2166136261);
