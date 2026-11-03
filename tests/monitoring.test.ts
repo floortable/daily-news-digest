@@ -56,20 +56,19 @@ describe('監視証跡の検証', () => {
     expect(prompt).toContain('is:issue is:open in:title "[Museレビュー]"');
     expect(prompt).toContain('外部レビューやGitHubを取得できないことだけを理由に生成を停止せず');
     expect(prompt).toContain('指摘を鵜呑みにせず');
-    expect(prompt).toContain('最新レビューや親の評価を渡さず');
+    expect(prompt).toContain('最新レビューや主担当の評価を渡さず');
     expect(prompt).toContain('独立監査');
     expect(prompt).toContain('レビューの文章、数値、評価をニュースの事実や記事材料として転記してはいけません');
     expect(prompt.indexOf('npm run media:script -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('記事と台本の独立監査が合格してから'));
     expect(prompt.indexOf('記事と台本の独立監査が合格してから')).toBeLessThan(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD'));
     expect(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('commit、push、CI、Pages公開'));
     expect(prompt).toContain('fork_turns: "none"');
-    expect(prompt).toContain('model: "gpt-6-luna"');
-    expect(prompt).toContain('reasoning_effort: "low"');
-    expect(prompt).toContain('model: "gpt-6.1-sol"');
+    expect(prompt).toContain('model: "gpt-5.6-sol"');
     expect(prompt).toContain('reasoning_effort: "medium"');
-    expect(prompt).toContain('model: "gpt-6-astra"');
-    expect(prompt).toContain('reasoning_effort: "high"');
-    expect(prompt).toContain('記事ごとに細分化したサブエージェントを大量に起動しません');
+    expect(prompt).toContain('これらのためにサブエージェントを起動しません');
+    expect(prompt).toContain('独立監査1体だけ');
+    expect(prompt).toContain('新しい監査エージェントを繰り返し起動してはいけません');
+    expect(prompt).toContain('6系へ自動昇格しません');
     expect(prompt).toContain('記事本文やログ全文をルートへ再掲させません');
   });
 

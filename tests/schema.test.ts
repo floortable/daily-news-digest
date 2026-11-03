@@ -147,19 +147,28 @@ describe('editorial compliance', () => {
   });
 
   it('rejects reaction metrics placed in facts on future editions', () => {
-    const result = editionSchema.safeParse(november4Version());
+    const future = november4Version();
+    future.articles[0].articleDetail.facts[0] = 'Hacker Newsで415ポイント、392コメントを記録しました。';
+    const result = editionSchema.safeParse(future);
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('反響数はattentionAnalysis'))).toBe(true);
   });
 
   it('rejects editorial verification prose in narration detail', () => {
-    const result = editionSchema.safeParse(november4Version());
+    const future = november4Version();
+    const narrated = future.articles.find((article: { narration?: unknown }) => article.narration);
+    narrated.narration.detail[0] = '公開反響を混同せず、確認できた範囲として扱います。';
+    const result = editionSchema.safeParse(future);
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('編集手順や確認姿勢'))).toBe(true);
   });
 
   it('rejects a repeated long sentence suffix across three or more articles', () => {
-    const result = editionSchema.safeParse(november4Version());
+    const future = november4Version();
+    for (const [index, article] of future.articles.slice(0, 3).entries()) {
+      article.comment = `記事${index + 1}固有の説明です。読者が実際の判断に使える条件を具体的に確認します。`;
+    }
+    const result = editionSchema.safeParse(future);
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('3記事以上に共通する定型的な文末骨格'))).toBe(true);
   });
