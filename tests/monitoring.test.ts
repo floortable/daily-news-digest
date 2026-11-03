@@ -63,9 +63,14 @@ describe('監視証跡の検証', () => {
     expect(prompt.indexOf('記事と台本の独立監査が合格してから')).toBeLessThan(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD'));
     expect(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('commit、push、CI、Pages公開'));
     expect(prompt).toContain('fork_turns: "none"');
+    expect(prompt).toContain('model: "gpt-6-luna"');
+    expect(prompt).toContain('reasoning_effort: "low"');
+    expect(prompt).toContain('model: "gpt-6.1-sol"');
+    expect(prompt).toContain('reasoning_effort: "medium"');
     expect(prompt).toContain('model: "gpt-6-astra"');
     expect(prompt).toContain('reasoning_effort: "high"');
-    expect(prompt).toContain('親エージェントのモデルは変更しません');
+    expect(prompt).toContain('記事ごとに細分化したサブエージェントを大量に起動しません');
+    expect(prompt).toContain('記事本文やログ全文をルートへ再掲させません');
   });
 
   it('施行日前の既存版には監視証跡を要求しない', () => {
