@@ -59,6 +59,9 @@ describe('監視証跡の検証', () => {
     expect(prompt).toContain('サブエージェントへ最新レビューの結論を渡さず');
     expect(prompt).toContain('独立監査');
     expect(prompt).toContain('レビューの文章、数値、評価をニュースの事実や記事材料として転記してはいけません');
+    expect(prompt.indexOf('npm run media:script -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('記事と台本の独立監査が合格してから'));
+    expect(prompt.indexOf('記事と台本の独立監査が合格してから')).toBeLessThan(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD'));
+    expect(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('commit、push、CI、Pages公開'));
   });
 
   it('施行日前の既存版には監視証跡を要求しない', () => {
