@@ -126,6 +126,17 @@
       ]
     },
     {
+      "id": "vuln-synology",
+      "area": "security",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-04",
+      "label": "Synologyセキュリティ告知・製品警告",
+      "urls": [
+        "https://www.synology.com/en-global/security/advisory",
+        "https://www.synology.com/en-global/company/news"
+      ]
+    },
+    {
       "id": "vcf-vmsa-cloud-foundation",
       "area": "vcf",
       "requiredDaily": true,

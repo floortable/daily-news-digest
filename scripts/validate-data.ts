@@ -12,6 +12,7 @@ const monitoringRegistry = monitoringRegistrySchema.parse(JSON.parse(
 
 const globalIds = new Set<string>();
 const globalUrls = new Map<string, { id: string; editionDate: string }>();
+const relatedReferences: Array<{ file: string; articleId: string; relatedId: string }> = [];
 for (const file of files) {
   const parsed = editionSchema.parse(JSON.parse(await readFile(resolve(directory, file), 'utf8')));
   if (`${parsed.date}.json` !== file) throw new Error(`${file}: ファイル名と版の日付が一致しません`);
@@ -20,6 +21,9 @@ for (const file of files) {
   for (const article of parsed.articles) {
     if (globalIds.has(article.id)) throw new Error(`${file}: 記事ID ${article.id} は別の日にも存在します`);
     globalIds.add(article.id);
+    for (const relatedId of article.relatedArticleIds) {
+      relatedReferences.push({ file, articleId: article.id, relatedId });
+    }
     const url = normalizeUrl(article.sourceUrl);
     const previous = globalUrls.get(url);
     if (previous) {
@@ -32,6 +36,11 @@ for (const file of files) {
       }
     }
     globalUrls.set(url, { id: article.id, editionDate: article.editionDate });
+  }
+}
+for (const reference of relatedReferences) {
+  if (!globalIds.has(reference.relatedId)) {
+    throw new Error(`${reference.file}: ${reference.articleId} の relatedArticleIds が存在しない記事 ${reference.relatedId} を参照しています`);
   }
 }
 console.log(`${files.length}日分、${globalIds.size}記事のデータ検証に成功しました。`);

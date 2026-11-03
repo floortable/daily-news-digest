@@ -8,6 +8,7 @@ export const monitoringRegistrySchema = z.object({
     id: z.string().min(1),
     area: z.enum(['general', 'ai', 'security', 'vcf']),
     requiredDaily: z.boolean(),
+    requiredFrom: z.iso.date().optional(),
     label: z.string().min(1),
     urls: z.array(z.url()).min(1),
   })).min(1),
@@ -47,7 +48,7 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
     noteCounts.set(entry.note, (noteCounts.get(entry.note) ?? 0) + 1);
     checkedAtCounts.set(entry.checkedAt, (checkedAtCounts.get(entry.checkedAt) ?? 0) + 1);
   }
-  for (const source of registry.sources.filter((source) => source.requiredDaily)) {
+  for (const source of registry.sources.filter((source) => source.requiredDaily && (!source.requiredFrom || edition.date >= source.requiredFrom))) {
     if (!seen.has(source.id)) errors.push(`${edition.date}: 必須監視元 ${source.id} (${source.label}) の記録がありません`);
   }
 

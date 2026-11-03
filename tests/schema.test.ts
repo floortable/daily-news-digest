@@ -12,6 +12,13 @@ describe('normalizeUrl', () => {
 describe('editorial compliance', () => {
   const edition = JSON.parse(readFileSync('data/daily/2026-10-24.json', 'utf8'));
 
+  const november4Version = () => {
+    const future = JSON.parse(readFileSync('data/daily/2026-11-03.json', 'utf8'));
+    future.date = '2026-11-04';
+    for (const article of future.articles) article.editionDate = '2026-11-04';
+    return future;
+  };
+
   it('accepts the reviewed sample edition', () => {
     expect(editionSchema.safeParse(edition).success).toBe(true);
   });
@@ -137,6 +144,30 @@ describe('editorial compliance', () => {
       nextChecks: ['次の公式文書で対象、日付、数値が確定するかを具体的に確認します。'],
     };
     expect(editionSchema.safeParse(invalid).success).toBe(false);
+  });
+
+  it('rejects reaction metrics placed in facts on future editions', () => {
+    const result = editionSchema.safeParse(november4Version());
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('反響数はattentionAnalysis'))).toBe(true);
+  });
+
+  it('rejects editorial verification prose in narration detail', () => {
+    const result = editionSchema.safeParse(november4Version());
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('編集手順や確認姿勢'))).toBe(true);
+  });
+
+  it('rejects a repeated long sentence suffix across three or more articles', () => {
+    const result = editionSchema.safeParse(november4Version());
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('3記事以上に共通する定型的な文末骨格'))).toBe(true);
+  });
+
+  it('requires a structured reason for late inclusion', () => {
+    const result = editionSchema.safeParse(november4Version());
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('対象期間より前の記事を遅れて採用'))).toBe(true);
   });
 
   it('rejects unattributed quotation and unlicensed media', () => {

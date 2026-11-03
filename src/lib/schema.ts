@@ -36,6 +36,20 @@ const containsEditorialFiller = (text: string) => editorialFillerPatterns.some((
 const editorialSentences = (text: string) => text.match(/[^。！？!?]+[。！？!?]?/gu)?.map((item) => item.trim()).filter(Boolean) ?? [];
 const normalizeEditorialSentence = (text: string) => text.replace(/[\s　。、，,.「」『』（）()]/gu, '');
 
+const reactionMetricPattern = /(?:はてなブックマーク|Hacker News|Reddit|Togetter|4chan).{0,50}(?:\d|件|ポイント|コメント|反応)|(?:\d[\d,.万億]*)(?:件|ポイント|回)の(?:コメント|ブックマーク|閲覧|再生|いいね|シェア|反応)/iu;
+const editorialProcessPattern = /(?:公開反響を混同せず|確認できた範囲として扱|抽象的な話題性ではなく|具体的な事実を当日確認できたことが選定理由)/u;
+const previousEditionReferencePattern = /(?:前日|昨日|前回(?:掲載|版)|以前の記事)/u;
+
+const lastEditorialSentence = (text: string) => editorialSentences(text).at(-1) ?? '';
+const normalizedSuffix = (text: string, length = 24) => {
+  const skeleton = text
+    .replace(/[「『][^」』]+[」』]/gu, '<引用>')
+    .replace(/[A-Za-z][A-Za-z0-9_.+:/-]*/gu, '<英字>')
+    .replace(/\d+(?:[.,]\d+)?/gu, '<数値>')
+    .replace(/[\s　]/gu, '');
+  return skeleton.length >= length ? skeleton.slice(-length) : '';
+};
+
 const vcfReviewSchema = z.object({
   products: z.array(z.string().min(2).max(120)).min(1).max(12),
   versions: z.array(z.string().min(1).max(120)).min(1).max(12),
@@ -224,6 +238,11 @@ export const articleSchema = z.object({
       resurgenceContext: z.string().min(20).max(500),
     }).strict(),
   ]).optional(),
+  lateInclusion: z.object({
+    discoveredAt: isoDateTime,
+    reason: z.string().min(30).max(500),
+    currentNewsValue: z.string().min(30).max(500),
+  }).strict().optional(),
   urlCheck: z.object({
     status: z.enum(['ok', 'restricted', 'failed']),
     checkedAt: isoDateTime,
@@ -254,6 +273,7 @@ export const editionSchema = z.object({
   const ids = new Set<string>();
   const urls = new Set<string>();
   const ranks = new Set<number>();
+  const repeatedSuffixes = new Map<string, Array<{ index: number; field: string }>>();
   for (const [index, article] of edition.articles.entries()) {
     if (article.top5Rank !== null && article.narration) {
       if (edition.date >= '2026-10-30' && (!article.narration.result || article.narration.result.length < 60)) {
@@ -267,6 +287,13 @@ export const editionSchema = z.object({
           ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'analysis', analysisIndex], message: '推定条件や不確実性だけを補足せず、その幅が結論、分類、比較、実用上の判断をどう変えるかまで示してください' });
         }
       });
+      if (edition.date >= '2026-11-04') {
+        for (const [detailIndex, text] of article.narration.detail.entries()) {
+          if (editorialProcessPattern.test(text)) {
+            ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'detail', detailIndex], message: '音声台本のdetailには編集手順や確認姿勢ではなく、記事固有の事実または仕組みを書いてください' });
+          }
+        }
+      }
       article.narration.anticipatedQuestions.forEach((item, questionIndex) => {
         if (item.question === 'このニュースで結論を変える次の確認点は何ですか。') {
           ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'anticipatedQuestions', questionIndex, 'question'], message: '汎用的な確認予定を作るための定型質問は使用できません' });
@@ -321,6 +348,22 @@ export const editionSchema = z.object({
       if (article.articleDetail && article.articleDetail.implications.includes(article.attentionAnalysis.whyNotable)) {
         ctx.addIssue({ code: 'custom', path: ['articles', index, 'attentionAnalysis', 'whyNotable'], message: '注目理由は影響欄の再掲ではなく、この時点で注目する固有の理由を示してください' });
       }
+      if (edition.date >= '2026-11-04' && article.articleDetail) {
+        for (const [factIndex, fact] of article.articleDetail.facts.entries()) {
+          if (reactionMetricPattern.test(fact)) {
+            ctx.addIssue({ code: 'custom', path: ['articles', index, 'articleDetail', 'facts', factIndex], message: 'factsには出来事そのものの事実を書き、反響数はattentionAnalysisまたはmetricsへ分離してください' });
+          }
+        }
+        for (const caveat of article.articleDetail.caveats) {
+          const normalizedCaveat = normalizeEditorialSentence(caveat);
+          if (normalizedCaveat.length >= 25 && normalizeEditorialSentence(article.comment).includes(normalizedCaveat)) {
+            ctx.addIssue({ code: 'custom', path: ['articles', index, 'comment'], message: '独自解説の末尾へcaveatsを転記せず、新しい理解を増やす記事固有の結論で閉じてください' });
+          }
+        }
+        if (editorialProcessPattern.test(article.attentionAnalysis.whyNotable)) {
+          ctx.addIssue({ code: 'custom', path: ['articles', index, 'attentionAnalysis', 'whyNotable'], message: '注目理由には編集手順ではなく、その記事を今取り上げる固有の理由を書いてください' });
+        }
+      }
       if (edition.date >= '2026-10-30') {
         const repeatedSentences = new Set<string>();
         const seenSentences = new Set<string>();
@@ -346,6 +389,29 @@ export const editionSchema = z.object({
           ctx.addIssue({ code: 'custom', path: ['articles', index], message: `概要・解説・注目理由で同じ文を再掲できません: ${[...repeatedSentences][0]}` });
         }
       }
+      if (edition.date >= '2026-11-04') {
+        const candidates = [
+          { field: 'comment末尾', text: lastEditorialSentence(article.comment) },
+          { field: 'whyNotable', text: article.attentionAnalysis.whyNotable },
+          ...(article.narration?.detail ?? []).map((text) => ({ field: 'narration.detail', text })),
+        ];
+        for (const candidate of candidates) {
+          const suffix = normalizedSuffix(candidate.text);
+          if (!suffix) continue;
+          const key = `${candidate.field}\u0000${suffix}`;
+          repeatedSuffixes.set(key, [...(repeatedSuffixes.get(key) ?? []), { index, field: candidate.field }]);
+        }
+      }
+    }
+    if (edition.date >= '2026-11-04') {
+      const windowStart = new Date(`${edition.date}T07:00:00+09:00`);
+      windowStart.setUTCDate(windowStart.getUTCDate() - 1);
+      if (new Date(article.publishedAt) < windowStart && !article.lateInclusion) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'lateInclusion'], message: '対象期間より前の記事を遅れて採用する場合は、発見時刻、遅れた理由、現在のニュース価値を記録してください' });
+      }
+      if (previousEditionReferencePattern.test([...article.summary, article.comment].join(' ')) && article.relatedArticleIds.length === 0) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'relatedArticleIds'], message: '前日・前回の記事へ言及する場合はrelatedArticleIdsで関係を明示してください' });
+      }
     }
     const isMediaTrend = article.informationType === 'ミーム・ネット文化' || article.categories.includes('ネット文化・ミーム');
     if (isMediaTrend && !article.mediaTrend) {
@@ -363,6 +429,13 @@ export const editionSchema = z.object({
     }
     if (edition.date >= '2026-10-30' && isVcf && article.top5Rank !== null) {
       ctx.addIssue({ code: 'custom', path: ['articles', index, 'top5Rank'], message: 'VCF専門枠は一般Top 5へ含めません' });
+    }
+  }
+  if (edition.date >= '2026-11-04') {
+    for (const [key, occurrences] of repeatedSuffixes) {
+      if (new Set(occurrences.map((item) => item.index)).size < 3) continue;
+      const [field, suffix] = key.split('\u0000');
+      ctx.addIssue({ code: 'custom', path: ['articles'], message: `${field}で3記事以上に共通する定型的な文末骨格を使用できません: ${suffix}` });
     }
   }
   if ([1, 2, 3, 4, 5].some((rank) => !ranks.has(rank))) ctx.addIssue({ code: 'custom', path: ['articles'], message: 'Top 5の順位1〜5が必要です' });
