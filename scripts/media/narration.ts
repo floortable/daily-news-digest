@@ -177,36 +177,11 @@ export function formatReactionForNarration(text: string) {
   );
 }
 
-function applyOpeningTone(text: string, speakerName: string) {
-  if (speakerName !== 'ずんだもん') return text;
-  return text
-    .replace(/されています。$/, 'されているのだ。')
-    .replace(/っています。$/, 'っているのだ。')
-    .replace(/ています。$/, 'ているのだ。')
-    .replace(/です。$/, 'なのだ。');
+function applyOpeningTone(text: string, _speakerName: string) {
+  return text;
 }
 
-function applySpeakerTone(text: string, speakerName: string) {
-  if (speakerName !== 'ずんだもん') return text;
-  if (text.endsWith('のだ。')) return text;
-  const endings: Array<[RegExp, string]> = [
-    [/確認する必要があります。$/, '確認する必要があるのだ。'],
-    [/判断できます。$/, '判断できるのだ。'],
-    [/してください。$/, 'してほしいのだ。'],
-    [/ています。$/, 'ているのだ。'],
-    [/できます。$/, 'できるのだ。'],
-    [/なります。$/, 'なるのだ。'],
-    [/あります。$/, 'あるのだ。'],
-    [/結びました。$/, '結んだのだ。'],
-    [/ました。$/, 'たのだ。'],
-    [/でした。$/, 'だったのだ。'],
-    [/です。$/, 'なのだ。'],
-    [/だ。$/, 'なのだ。'],
-    [/(る|た|ない|よい|しい|たい)。$/, '$1のだ。'],
-  ];
-  for (const [pattern, replacement] of endings) {
-    if (pattern.test(text)) return text.replace(pattern, replacement);
-  }
+function applySpeakerTone(text: string, _speakerName: string) {
   return text;
 }
 
@@ -379,7 +354,7 @@ export function findBareEnumerations(text: string) {
     const endsAsGenericImportance = /(?:が|は)(?:重要|必要|課題|論点)(?:です|になります)。$/u.test(sentence)
       || /(?:さまざまな|複数の|多くの)(?:要素|観点|条件)(?:があります|です)。$/u.test(sentence);
     if (!endsAsUndigestedChecklist && !endsAsGenericImportance) return false;
-    const sentenceExplainsRelation = /(?:は、|一方|これに対して|それぞれ|一組として|優先|決定的|原因|結果|ため|ので|役割|担います|比べ|比較すると|改善|悪化|増え|減り|異な)/u.test(sentence);
+    const sentenceExplainsRelation = /(?:は、|一方|これに対して|ただし|わけでは|それぞれ|一組として|優先|決定的|原因|結果|ため|ので|役割|担います|比べ|比較すると|改善|悪化|増え|減り|異な)/u.test(sentence);
     if (sentenceExplainsRelation) return false;
     const next = sentences[index + 1] ?? '';
     const nextExplainsRelation = /^(?:このうち|その結果|一方|これに対して|今回|最も|つまり|具体的には)/u.test(next);

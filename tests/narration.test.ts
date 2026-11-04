@@ -146,12 +146,11 @@ describe('Top 5 narration plan', () => {
     }
   });
 
-  it('uses restrained Zundamon endings in each assigned section', () => {
+  it('keeps Zundamon sections in natural polite broadcast style', () => {
     const topics = plan.segments.filter((segment) => segment.id.startsWith('rank-') && segment.speaker.name === 'ずんだもん');
     for (const segment of topics) {
-      expect((segment.text.match(/のだ。/g) ?? []).length).toBeGreaterThanOrEqual(1);
-      expect((segment.text.match(/のだ。/g) ?? []).length).toBeLessThanOrEqual(3);
-      expect(segment.text.endsWith('のだ。')).toBe(true);
+      expect(segment.text).not.toMatch(/(?:なのだ|たのだ|るのだ)。/u);
+      expect(segment.text).toMatch(/(?:です|ます|ません|でした)。$/u);
       expect(segment.text).not.toContain('ここが、この話題を見るうえでのポイント');
     }
   });
@@ -282,7 +281,7 @@ describe('Top 5 narration plan', () => {
     expect(qwenputerExplanation).toContain('CPUが理解する命令の種類と形式を定めた公開仕様');
     expect(qwenputerExplanation).toContain('Cで書いたプログラムはRISC-Vの機械語へ変換');
     expect(doorDashLead).not.toContain('結びたのだ');
-    expect(doorDashLead).toContain('結んだのだ');
+    expect(doorDashLead).toContain('結びました');
   });
 
   it('identifies the confirmed API-key abuse without inventing a provider or loss amount', () => {
