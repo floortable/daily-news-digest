@@ -63,13 +63,18 @@ describe('監視証跡の検証', () => {
     expect(prompt.indexOf('記事と台本の独立監査が合格してから')).toBeLessThan(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD'));
     expect(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('commit、push、CI、Pages公開'));
     expect(prompt).toContain('fork_turns: "none"');
+    expect(prompt).toContain('model: "gpt-5.6-terra"');
     expect(prompt).toContain('model: "gpt-5.6-sol"');
     expect(prompt).toContain('reasoning_effort: "medium"');
+    expect(prompt).toContain('reasoning_effort: "low"');
     expect(prompt).toContain('これらのためにサブエージェントを起動しません');
     expect(prompt).toContain('独立監査1体だけ');
     expect(prompt).toContain('新しい監査エージェントを繰り返し起動してはいけません');
     expect(prompt).toContain('6系へ自動昇格しません');
     expect(prompt).toContain('記事本文やログ全文をルートへ再掲させません');
+    expect(prompt).toContain('候補台帳を先に完成させる');
+    expect(prompt).toContain('非Top 5の5件サンプル');
+    expect(prompt).toContain('当日版全体を再読させません');
   });
 
   it('施行日前の既存版には監視証跡を要求しない', () => {
@@ -81,6 +86,25 @@ describe('監視証跡の検証', () => {
 
   it('必須監視元をすべて記録した版を受理する', () => {
     expect(validateMonitoringCoverage(futureEdition(), registry)).toEqual([]);
+  });
+
+  it('重要候補の発見漏れを減らす専用フィードを次回版から要求する', () => {
+    const requiredIds = registry.sources
+      .filter((source) => source.requiredDaily && source.requiredFrom === '2026-11-06')
+      .map((source) => source.id);
+    expect(requiredIds).toEqual(expect.arrayContaining([
+      'ai-industry-operations',
+      'vuln-machine-readable-feeds',
+      'vuln-public-research-feeds',
+      'vuln-project-vendor-advisories',
+    ]));
+
+    const nextEdition = futureEdition();
+    nextEdition.date = '2026-11-06';
+    nextEdition.monitoringReview!.entries = nextEdition.monitoringReview!.entries
+      .filter((entry) => entry.sourceId !== 'vuln-machine-readable-feeds');
+    expect(validateMonitoringCoverage(nextEdition, registry).some((error) =>
+      error.includes('vuln-machine-readable-feeds'))).toBe(true);
   });
 
   it('必須監視元の欠落を検出する', () => {

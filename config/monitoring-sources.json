@@ -93,6 +93,17 @@
       ]
     },
     {
+      "id": "ai-industry-operations",
+      "area": "ai",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-06",
+      "label": "AI企業の買収・終了・提供条件変更",
+      "urls": [
+        "https://about.fb.com/news/",
+        "https://techcrunch.com/category/artificial-intelligence/"
+      ]
+    },
+    {
       "id": "vuln-cisa-nvd",
       "area": "security",
       "requiredDaily": true,
@@ -123,6 +134,41 @@
         "https://msrc.microsoft.com/update-guide/",
         "https://security.googleblog.com/",
         "https://support.apple.com/en-us/100100"
+      ]
+    },
+    {
+      "id": "vuln-machine-readable-feeds",
+      "area": "security",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-06",
+      "label": "悪用確認・国内脆弱性の機械可読フィード",
+      "urls": [
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "https://jvn.jp/en/"
+      ]
+    },
+    {
+      "id": "vuln-public-research-feeds",
+      "area": "security",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-06",
+      "label": "公開セキュリティ調査・侵害報道",
+      "urls": [
+        "https://blog.sekoia.io/",
+        "https://www.welivesecurity.com/en/",
+        "https://www.bleepingcomputer.com/feed/"
+      ]
+    },
+    {
+      "id": "vuln-project-vendor-advisories",
+      "area": "security",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-06",
+      "label": "主要プロジェクト・製品ベンダーの個別告知",
+      "urls": [
+        "https://discuss.rubyonrails.org/c/security-announcements/9",
+        "https://github.com/airbytehq/airbyte/security/advisories",
+        "https://www.zyxel.com/global/en/support/security-advisories"
       ]
     },
     {

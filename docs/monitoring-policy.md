@@ -8,6 +8,8 @@ VCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automat
 
 ## 日次巡回記録
 
+本文作成より先に候補台帳を作り、必須巡回先と前日版の続報候補を一巡してから一般発見を行う。候補にはURL、公開日時、出来事、一次資料、話題性、重複先、暫定採否を残し、高重要度候補を未分類のまま本文作成へ進めない。一般発見は不足分を埋める一巡にとどめ、同じ検索の言い換えを繰り返さない。
+
 2026年10月30日版以降は、`config/monitoring-sources.json` の `requiredDaily: true` の全項目について、日次JSONの `monitoringReview.entries` に次を記録する。
 
 - `sourceId`: 設定ファイルのID
@@ -19,6 +21,8 @@ VCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automat
 ログイン要求、地域制限、robots制限、削除、障害は回避しない。`restricted` または `failed` とし、代替の公式資料や信頼できる公開情報を `evidenceUrls` と `note` に残す。確認不能を `checked` と記録してはいけない。
 
 巡回で重要候補を発見した場合は `monitoringReview.findings` に記録し、`included`、`deferred`、`not-relevant` のいずれかと理由を付ける。重大または高重要度の脆弱性、悪用確認、パッチ撤回、データ損失、停止推奨、互換性喪失を、単に一般ニュースの件数上限を理由として `deferred` にしてはいけない。VCF関連なら専門枠で扱う。
+
+一般ニュースが25件未満の場合は、`selectionShortfallReason` を書く前に候補台帳と `findings` を照合する。高重要度の未分類候補、一次資料を取得できる候補、見落とした候補が残っている状態は不足理由として認めない。
 
 ## 優先する専門情報
 
