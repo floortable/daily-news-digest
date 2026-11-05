@@ -12,6 +12,17 @@ describe('日次処理のコンテキスト効率', () => {
     expect(prompt).toContain('npm run check:all');
     expect(prompt).toContain('同じ日付のレビュー本文がローカルにあれば、Issueへ転載された同一本文を再読しない');
     expect(prompt).toContain('すべての専門ルールを毎回読み込まない');
+    expect(prompt).toContain('警告と注釈も確認する');
+  });
+
+  it('低頻度の保守調査を日次生成から分離する', () => {
+    const prompt = readFileSync(resolve('automation/monthly-maintenance.prompt.md'), 'utf8');
+    expect(Buffer.byteLength(prompt)).toBeLessThan(10_000);
+    expect(prompt).toContain('キャッシュ率だけで効率を判断せず');
+    expect(prompt).toContain('要対応');
+    expect(prompt).toContain('期限まで監視');
+    expect(prompt).toContain('情報のみ');
+    expect(prompt).toContain('ニュース記事や音声は生成しない');
   });
 
   it('Hacker NewsのJSONを候補台帳へ正規化する', () => {

@@ -35,7 +35,8 @@
 
 - GitHub: 公開可能な指示、選定・権利ポリシー、Schema、検証、サイト、日次データ、CI、Pages設定を管理する。
 - Mac: 自動化ID、対象Chat ID、絶対パス、認証情報、Cookie、実行状態、端末固有ログを管理する。
-- Codexローカル定期実行: 毎朝8時（Asia/Tokyo）にGitHub上の正本と同じ指示で処理する。
+- Codexローカル定期実行: 毎朝7時（Asia/Tokyo）にGitHub上の正本と同じ指示で処理する。
+- 月次保守レビュー: 日次生成とは別の新規ジョブで、警告、非推奨化、品質、モデル・トークン使用量を低頻度で見直す。
 - GitHub Actions: push済み内容だけを再検証し、成功した場合にPagesへ公開する。ニュース生成や外部AI API呼び出しは行わない。
 
 詳細な復元・同期手順は [automation-operations.md](automation-operations.md) を参照する。
