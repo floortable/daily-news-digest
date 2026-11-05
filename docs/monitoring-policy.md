@@ -8,7 +8,7 @@ VCF、vSphere、ESXi、vCenter、vSAN、NSX、HCX、VCF Operations、VCF Automat
 
 ## 日次巡回記録
 
-本文作成より先に候補台帳を作り、必須巡回先と前日版の続報候補を一巡してから一般発見を行う。候補にはURL、公開日時、出来事、一次資料、話題性、重複先、暫定採否を残し、高重要度候補を未分類のまま本文作成へ進めない。一般発見は不足分を埋める一巡にとどめ、同じ検索の言い換えを繰り返さない。
+本文作成より先に `npm run candidates:collect -- --date YYYY-MM-DD` で公開フィードの候補台帳を作り、失敗したフィード、必須巡回先、前日版の続報候補を補完してから一般発見を行う。候補にはURL、公開日時、出来事、一次資料、話題性、重複先、暫定採否を残し、高重要度候補を未分類のまま本文作成へ進めない。一般発見は不足分を埋める一巡にとどめ、同じ検索の言い換えを繰り返さない。
 
 2026年10月30日版以降は、`config/monitoring-sources.json` の `requiredDaily: true` の全項目について、日次JSONの `monitoringReview.entries` に次を記録する。
 

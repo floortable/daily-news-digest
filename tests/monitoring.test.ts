@@ -75,6 +75,8 @@ describe('監視証跡の検証', () => {
     expect(prompt).toContain('候補台帳を先に完成させる');
     expect(prompt).toContain('非Top 5の5件サンプル');
     expect(prompt).toContain('当日版全体を再読させません');
+    expect(prompt).toContain('docs/editorial-audit-rubric.md');
+    expect(prompt).toContain('Issueへ転載された同一本文を再読しない');
   });
 
   it('施行日前の既存版には監視証跡を要求しない', () => {

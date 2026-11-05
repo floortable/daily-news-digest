@@ -1,0 +1,34 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { describe, expect, it } from 'vitest';
+import { parseFeed } from '../scripts/collect-candidate-ledger';
+
+describe('日次処理のコンテキスト効率', () => {
+  it('実行プロンプトを高密度に保ち、重い処理をスクリプトへ委譲する', () => {
+    const prompt = readFileSync(resolve('automation/daily-news-digest.prompt.md'), 'utf8');
+    expect(Buffer.byteLength(prompt)).toBeLessThan(25_000);
+    expect(prompt).toContain('npm run candidates:collect');
+    expect(prompt).toContain('npm run media:audit-bundle');
+    expect(prompt).toContain('npm run check:all');
+    expect(prompt).toContain('同じ日付のレビュー本文がローカルにあれば、Issueへ転載された同一本文を再読しない');
+    expect(prompt).toContain('すべての専門ルールを毎回読み込まない');
+  });
+
+  it('Hacker NewsのJSONを候補台帳へ正規化する', () => {
+    const candidates = parseFeed('hn-algolia', JSON.stringify({ hits: [{
+      objectID: '123', title: 'A useful project', url: 'https://example.com/project',
+      created_at: '2026-11-05T00:00:00Z', points: 42, num_comments: 7,
+    }] }), 'hn', 'Hacker News');
+    expect(candidates).toEqual([expect.objectContaining({
+      sourceId: 'hn', title: 'A useful project', url: 'https://example.com/project',
+      observedMetric: '42 points / 7 comments',
+    })]);
+  });
+
+  it('RSSとAtomの代表的な形式を候補台帳へ正規化する', () => {
+    const rss = '<?xml version="1.0"?><rss><channel><item><title><![CDATA[Security update &amp; fix]]></title><link>https://example.com/fix</link><pubDate>Wed, 05 Nov 2026 00:00:00 GMT</pubDate></item></channel></rss>';
+    expect(parseFeed('rss', rss, 'feed', 'Feed')).toEqual([expect.objectContaining({
+      title: 'Security update & fix', url: 'https://example.com/fix',
+    })]);
+  });
+});

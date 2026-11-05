@@ -13,8 +13,11 @@
     "check:licenses": "tsx scripts/check-licenses.ts",
     "check:public-safety": "tsx scripts/check-public-safety.ts",
     "media:script": "tsx scripts/media/build-narration.ts",
+    "media:audit-bundle": "tsx scripts/build-editorial-audit-bundle.ts",
     "media:voicevox": "tsx scripts/media/synthesize-voicevox.ts",
     "media:render": "tsx scripts/media/render-media.ts",
+    "candidates:collect": "tsx scripts/collect-candidate-ledger.ts",
+    "check:all": "tsx scripts/run-required-checks.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"
   },
