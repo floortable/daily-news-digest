@@ -96,8 +96,8 @@ function buildArticleSegments(article: Article, rank: number, speakers: CastMemb
       text: [
         article.followUp ? `${formatFollowUpLabel(article)}です。` : undefined,
         `${article.title}。`,
-        reaction,
         article.narration?.result,
+        reaction,
       ].filter(Boolean).join(' '),
     },
     {
@@ -150,8 +150,8 @@ export function buildArticleNarration(article: Article, speakerName: string) {
   const narration = [
     article.followUp ? `${formatFollowUpLabel(article)}です。` : undefined,
     `${article.title}。`,
-    reaction,
     article.narration?.result,
+    reaction,
     toBroadcastStyle(body),
   ].filter(Boolean).join(' ');
   return applySpeakerTone(narration, speakerName);
