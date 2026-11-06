@@ -64,13 +64,13 @@ describe('監視証跡の検証', () => {
     expect(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('commit、push、CI、Pages公開'));
     expect(prompt).toContain('fork_turns: "none"');
     expect(prompt).toContain('model: "gpt-5.6-terra"');
-    expect(prompt).toContain('model: "gpt-5.6-sol"');
+    expect(prompt).toContain('model: "gpt-6-sol"');
     expect(prompt).toContain('reasoning_effort: "medium"');
     expect(prompt).toContain('reasoning_effort: "low"');
     expect(prompt).toContain('これらのためにサブエージェントを起動しません');
     expect(prompt).toContain('独立監査1体だけ');
     expect(prompt).toContain('新しい監査エージェントを繰り返し起動してはいけません');
-    expect(prompt).toContain('6系へ自動昇格しません');
+    expect(prompt).toContain('指定モデルが利用不能なら自動代替せず');
     expect(prompt).toContain('記事本文やログ全文をルートへ再掲させません');
     expect(prompt).toContain('候補台帳を先に完成させる');
     expect(prompt).toContain('非Top 5の5件サンプル');

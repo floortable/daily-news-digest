@@ -16,7 +16,8 @@ describe('日次処理のコンテキスト効率', () => {
     expect(prompt).toContain('全ツール定義を表示しない');
     expect(prompt).toContain('合計10件だけを最終JSONへ書き');
     expect(prompt).toContain('生成スクリプトで作ってはいけない');
-    expect(prompt).toContain('別世代へ置換せず');
+    expect(prompt).toContain('model: "gpt-6-sol"');
+    expect(prompt).toContain('主担当で使えるモデル名とサブエージェントへ指定できるモデル名は別');
   });
 
   it('低頻度の保守調査を日次生成から分離する', () => {
