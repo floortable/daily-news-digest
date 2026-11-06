@@ -165,12 +165,26 @@ describe('editorial compliance', () => {
 
   it('rejects a repeated long sentence suffix across three or more articles', () => {
     const future = november4Version();
-    for (const [index, article] of future.articles.slice(0, 3).entries()) {
+    const nonTopArticles = future.articles.filter((article: { top5Rank: number | null }) => article.top5Rank === null).slice(0, 3);
+    for (const [index, article] of nonTopArticles.entries()) {
       article.comment = `記事${index + 1}固有の説明です。読者が実際の判断に使える条件を具体的に確認します。`;
     }
     const result = editionSchema.safeParse(future);
     expect(result.success).toBe(false);
     if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('3記事以上に共通する定型的な文末骨格'))).toBe(true);
+  });
+
+  it('rejects a generic explanation skeleton reused across three articles', () => {
+    const future = JSON.parse(readFileSync('data/daily/2026-11-05.json', 'utf8'));
+    future.date = '2026-11-06';
+    const shared = 'この変更を判断するには、発表内容だけでなく対象範囲と実際の運用条件を結び付けて確認する必要があります。';
+    for (const [index, article] of future.articles.slice(0, 3).entries()) {
+      article.editionDate = '2026-11-06';
+      article.articleDetail.explanation = [`記事${index + 1}について、${shared}`];
+    }
+    const result = editionSchema.safeParse(future);
+    expect(result.success).toBe(false);
+    if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('同じ定型的な説明骨格'))).toBe(true);
   });
 
   it('requires a structured reason for late inclusion', () => {

@@ -13,6 +13,10 @@ describe('日次処理のコンテキスト効率', () => {
     expect(prompt).toContain('同じ日付のレビュー本文がローカルにあれば、Issueへ転載された同一本文を再読しない');
     expect(prompt).toContain('すべての専門ルールを毎回読み込まない');
     expect(prompt).toContain('警告と注釈も確認する');
+    expect(prompt).toContain('全ツール定義を表示しない');
+    expect(prompt).toContain('合計10件だけを最終JSONへ書き');
+    expect(prompt).toContain('生成スクリプトで作ってはいけない');
+    expect(prompt).toContain('別世代へ置換せず');
   });
 
   it('低頻度の保守調査を日次生成から分離する', () => {
@@ -34,6 +38,20 @@ describe('日次処理のコンテキスト効率', () => {
       sourceId: 'hn', title: 'A useful project', url: 'https://example.com/project',
       observedMetric: '42 points / 7 comments',
     })]);
+  });
+
+  it('候補設定に全体上限と媒体別上限を要求する', () => {
+    const config = JSON.parse(readFileSync(resolve('config/candidate-feeds.json'), 'utf8'));
+    expect(config.maxCandidates).toBeLessThanOrEqual(45);
+    expect(config.feeds.every((feed: { maxCandidates?: number }) =>
+      typeof feed.maxCandidates === 'number' && feed.maxCandidates <= 20)).toBe(true);
+  });
+
+  it('Hacker News候補は対象期間をAPIへ渡せる設定を使う', () => {
+    const config = JSON.parse(readFileSync(resolve('config/candidate-feeds.json'), 'utf8'));
+    const hackerNews = config.feeds.find((feed: { adapter: string }) => feed.adapter === 'hn-algolia');
+    expect(hackerNews.url).toContain('hn.algolia.com/api/v1/search_by_date');
+    expect(hackerNews.maxCandidates).toBeLessThanOrEqual(20);
   });
 
   it('RSSとAtomの代表的な形式を候補台帳へ正規化する', () => {

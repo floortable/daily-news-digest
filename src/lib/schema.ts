@@ -274,6 +274,7 @@ export const editionSchema = z.object({
   const urls = new Set<string>();
   const ranks = new Set<number>();
   const repeatedSuffixes = new Map<string, Array<{ index: number; field: string }>>();
+  const crossArticleSentenceSuffixes = new Map<string, Array<{ index: number; sentence: string }>>();
   for (const [index, article] of edition.articles.entries()) {
     if (article.top5Rank !== null && article.narration) {
       if (edition.date >= '2026-10-30' && (!article.narration.result || article.narration.result.length < 60)) {
@@ -302,6 +303,27 @@ export const editionSchema = z.object({
           ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'anticipatedQuestions', questionIndex, 'answer'], message: '確認予定の列挙だけで終えず、現時点で分かる答えを示すか、この先回り解説を省いてください' });
         }
       });
+    }
+    if (edition.date >= '2026-11-06') {
+      const crossArticleFields = [
+        ...article.summary,
+        article.comment,
+        ...(article.articleDetail ? [
+          ...article.articleDetail.facts,
+          ...article.articleDetail.background,
+          ...article.articleDetail.explanation,
+          ...article.articleDetail.implications,
+          ...article.articleDetail.caveats,
+        ] : []),
+        article.attentionAnalysis.whyNotable,
+      ];
+      for (const sentence of crossArticleFields.flatMap(editorialSentences)) {
+        const suffix = normalizedSuffix(sentence, 32);
+        if (!suffix) continue;
+        crossArticleSentenceSuffixes.set(suffix, [
+          ...(crossArticleSentenceSuffixes.get(suffix) ?? []), { index, sentence },
+        ]);
+      }
     }
     if (article.editionDate !== edition.date) ctx.addIssue({ code: 'custom', path: ['articles', index, 'editionDate'], message: '版の日付と一致しません' });
     if (ids.has(article.id)) ctx.addIssue({ code: 'custom', path: ['articles', index, 'id'], message: '記事IDが重複しています' });
@@ -436,6 +458,12 @@ export const editionSchema = z.object({
       if (new Set(occurrences.map((item) => item.index)).size < 3) continue;
       const [field, suffix] = key.split('\u0000');
       ctx.addIssue({ code: 'custom', path: ['articles'], message: `${field}で3記事以上に共通する定型的な文末骨格を使用できません: ${suffix}` });
+    }
+  }
+  if (edition.date >= '2026-11-06') {
+    for (const [suffix, occurrences] of crossArticleSentenceSuffixes) {
+      if (new Set(occurrences.map((item) => item.index)).size < 3) continue;
+      ctx.addIssue({ code: 'custom', path: ['articles'], message: `3記事以上で同じ定型的な説明骨格を使用できません: ${suffix}` });
     }
   }
   if ([1, 2, 3, 4, 5].some((rank) => !ranks.has(rank))) ctx.addIssue({ code: 'custom', path: ['articles'], message: 'Top 5の順位1〜5が必要です' });

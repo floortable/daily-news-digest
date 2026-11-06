@@ -4,11 +4,14 @@ import { z } from 'zod';
 
 const configSchema = z.object({
   version: z.number().int().positive(),
+  maxCandidates: z.number().int().positive().max(100),
   feeds: z.array(z.object({
     id: z.string().regex(/^[a-z0-9-]+$/),
     label: z.string().min(1),
     adapter: z.enum(['hn-algolia', 'cisa-kev', 'rss', 'discourse']),
     url: z.url(),
+    maxCandidates: z.number().int().positive().max(100),
+    minimumEngagementScore: z.number().int().nonnegative().optional(),
   }).strict()).min(1),
 }).strict();
 
@@ -19,6 +22,7 @@ export type Candidate = {
   url: string;
   publishedAt: string | null;
   observedMetric: string | null;
+  engagementScore?: number;
 };
 
 const text = (value: unknown) => typeof value === 'string' ? value.trim() : '';
@@ -45,7 +49,8 @@ export function parseFeed(adapter: string, body: string, sourceId: string, sourc
       const points = typeof hit.points === 'number' ? hit.points : null;
       const comments = typeof hit.num_comments === 'number' ? hit.num_comments : null;
       return [{ sourceId, sourceLabel, title, url, publishedAt: normalizeDate(hit.created_at), observedMetric:
-        points === null && comments === null ? null : `${points ?? 0} points / ${comments ?? 0} comments` }];
+        points === null && comments === null ? null : `${points ?? 0} points / ${comments ?? 0} comments`,
+      engagementScore: (points ?? 0) + (comments ?? 0) * 2 }];
     });
   }
   if (adapter === 'cisa-kev') {
@@ -92,10 +97,19 @@ async function main() {
   const end = new Date(`${date}T07:00:00+09:00`);
   const results = await Promise.all(config.feeds.map(async (feed) => {
     try {
-      const response = await fetch(feed.url, { headers: { 'user-agent': 'floortable-daily-news-digest/1.0' }, signal: AbortSignal.timeout(15_000) });
+      const requestUrl = new URL(feed.url);
+      if (feed.adapter === 'hn-algolia') {
+        requestUrl.searchParams.set('numericFilters', `created_at_i>=${Math.floor(start.getTime() / 1000)},created_at_i<${Math.floor(end.getTime() / 1000)}`);
+        requestUrl.searchParams.set('hitsPerPage', '500');
+      }
+      const response = await fetch(requestUrl, { headers: { 'user-agent': 'floortable-daily-news-digest/1.0' }, signal: AbortSignal.timeout(15_000) });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const candidates = parseFeed(feed.adapter, await response.text(), feed.id, feed.label)
-        .filter((item) => !item.publishedAt || (new Date(item.publishedAt) >= start && new Date(item.publishedAt) < end));
+        .filter((item) => !item.publishedAt || (new Date(item.publishedAt) >= start && new Date(item.publishedAt) < end))
+        .filter((item) => feed.minimumEngagementScore === undefined || (item.engagementScore ?? 0) >= feed.minimumEngagementScore)
+        .sort((a, b) => (b.engagementScore ?? 0) - (a.engagementScore ?? 0)
+          || (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''))
+        .slice(0, feed.maxCandidates);
       return { feed: { id: feed.id, label: feed.label, url: feed.url }, status: 'checked' as const, error: null, candidates };
     } catch (error) {
       return { feed: { id: feed.id, label: feed.label, url: feed.url }, status: 'failed' as const,
@@ -103,12 +117,19 @@ async function main() {
     }
   }));
   const seen = new Set<string>();
-  const candidates = results.flatMap((result) => result.candidates).filter((item) => {
-    const key = `${item.title.toLowerCase().replace(/\s+/g, ' ')}\u0000${item.url}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  }).sort((a, b) => (b.publishedAt ?? '').localeCompare(a.publishedAt ?? ''));
+  const candidates: Candidate[] = [];
+  const longest = Math.max(0, ...results.map((result) => result.candidates.length));
+  for (let index = 0; index < longest && candidates.length < config.maxCandidates; index += 1) {
+    for (const result of results) {
+      const item = result.candidates[index];
+      if (!item) continue;
+      const key = `${item.title.toLowerCase().replace(/\s+/g, ' ')}\u0000${item.url}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      candidates.push(item);
+      if (candidates.length >= config.maxCandidates) break;
+    }
+  }
   const output = { version: 1, date, window: { start: start.toISOString(), end: end.toISOString() }, generatedAt: new Date().toISOString(),
     feeds: results.map(({ feed, status, error, candidates: items }) => ({ ...feed, status, error, candidateCount: items.length })), candidates };
   const directory = resolve('generated/candidates');

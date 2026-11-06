@@ -1,47 +1,56 @@
 {
   "version": 1,
+  "maxCandidates": 45,
   "feeds": [
     {
       "id": "hacker-news-newest",
       "label": "Hacker News newest",
       "adapter": "hn-algolia",
-      "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=100"
+      "url": "https://hn.algolia.com/api/v1/search_by_date?tags=story&hitsPerPage=100",
+      "maxCandidates": 20,
+      "minimumEngagementScore": 2
     },
     {
       "id": "cisa-kev",
       "label": "CISA KEV",
       "adapter": "cisa-kev",
-      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "maxCandidates": 10
     },
     {
       "id": "jvn",
       "label": "JVN",
       "adapter": "rss",
-      "url": "https://jvn.jp/rss/jvn.rdf"
+      "url": "https://jvn.jp/rss/jvn.rdf",
+      "maxCandidates": 8
     },
     {
       "id": "bleepingcomputer",
       "label": "BleepingComputer",
       "adapter": "rss",
-      "url": "https://www.bleepingcomputer.com/feed/"
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "maxCandidates": 8
     },
     {
       "id": "sekoia",
       "label": "Sekoia.io Blog",
       "adapter": "rss",
-      "url": "https://blog.sekoia.io/feed/"
+      "url": "https://blog.sekoia.io/feed/",
+      "maxCandidates": 6
     },
     {
       "id": "techcrunch-ai",
       "label": "TechCrunch AI",
       "adapter": "rss",
-      "url": "https://techcrunch.com/category/artificial-intelligence/feed/"
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "maxCandidates": 8
     },
     {
       "id": "rails-security",
       "label": "Rails Security Announcements",
       "adapter": "discourse",
-      "url": "https://discuss.rubyonrails.org/c/security-announcements/9.json"
+      "url": "https://discuss.rubyonrails.org/c/security-announcements/9.json",
+      "maxCandidates": 6
     }
   ]
 }
