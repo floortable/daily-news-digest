@@ -51,7 +51,7 @@ export function buildNarrationPlan(
     {
       id: 'opening',
       speaker: speakerAt(0),
-      text: `${spokenDate}、デイリーニュースダイジェスト、今日のトップファイブ${speakerAt(0).name === 'ずんだもん' ? 'なのだ' : 'です'}。${cast.map((member) => member.name).join('、')}の${cast.length}人でお伝えします。`,
+      text: `${spokenDate}、デイリーニュースダイジェスト、今日のトップファイブ${speakerAt(0).name === 'ずんだもん' ? 'なのだ' : 'です'}。${cast[0].style === 'audit' ? '今回の注目記事をお伝えします。' : `${cast.map((member) => member.name).join('、')}の${cast.length}人でお伝えします。`}`,
     },
   ];
 
@@ -95,7 +95,6 @@ function buildArticleSegments(article: Article, rank: number, speakers: CastMemb
       id: `rank-${rank}`,
       text: [
         article.followUp ? `${formatFollowUpLabel(article)}です。` : undefined,
-        `${article.title}。`,
         article.narration?.result,
         reaction,
       ].filter(Boolean).join(' '),

@@ -18,8 +18,8 @@ describe('日次処理のコンテキスト効率', () => {
     expect(prompt).toContain('生成スクリプトで作ってはいけない');
     expect(prompt).toContain('model: "gpt-6-sol"');
     expect(prompt).toContain('主担当で使えるモデル名とサブエージェントへ指定できるモデル名は別');
-    expect(prompt).toContain('未完成バッチや定型生成物へ監査を消費しない');
-    expect(prompt).toContain('新しい完成候補に限り');
+    expect(prompt).toContain('未完成バッチや定型生成物へレビューを消費しない');
+    expect(prompt).toContain('同じレビュー担当にも新しい担当にも再レビューを依頼しない');
   });
 
   it('低頻度の保守調査を日次生成から分離する', () => {

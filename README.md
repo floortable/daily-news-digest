@@ -41,8 +41,8 @@ npm run dev
 3. `data/daily/YYYY-MM-DD.json` を既存ファイルからではなく、検証済みの収集結果を基に作成する。
 4. すべてのURLが記事個別ページであることを確認し、確認結果を `urlCheck` に記録する。
 5. 結論・主要事実・適用範囲が分かる3段落・240文字以上の概要、300文字以上の解説、構造化した詳細欄、独自見出し、引用・画像の権利情報を記録し、日次の権利確認項目を完了する。過去の方針v1データはアーカイブとして維持する。
-6. `npm run media:script -- --date YYYY-MM-DD` で台本だけを生成し、別サブエージェントが記事と台本を独立監査する。修正時は台本を再生成して再監査する。
-7. 独立監査合格後にのみ `npm run media:voicevox -- --date YYYY-MM-DD`、`npm run media:render -- --date YYYY-MM-DD` を実行し、完成音声を検証する。
+6. `npm run media:script -- --date YYYY-MM-DD --audit-only` で内容確認用の台本を生成し、別サブエージェントが記事と台本を独立編集レビューする。レビューは1回だけで、指摘は主担当が修正・削除・差し替えする。
+7. 指摘反映後の機械検査が通ったら `npm run media:script -- --date YYYY-MM-DD`、`npm run media:voicevox -- --date YYYY-MM-DD`、`npm run media:render -- --date YYYY-MM-DD` を実行し、完成音声を検証する。
 8. `npm run validate:data`、`npm test`、`npm run build` を実行する。
 9. 音声をReleaseへ配置し、公開メディア情報を更新してからmainへ反映する。CI成功後にPagesが公開される。
 
