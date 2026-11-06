@@ -12,7 +12,7 @@
 
 毎回新しい独立ジョブを`model: "gpt-5.6-terra"`、`reasoning_effort: "medium"`で実行する。過去の実行チャットを継承せず、現行ファイルを正本とする。調査、選定、執筆、修正、公開は主担当1体が順番に行い、これらのためにサブエージェントを起動しません。定型確認、候補整理、重複検査、検証、音声処理はスクリプトへ任せ、成功ログや一覧をモデルへ再掲しない。
 
-サブエージェントは公開前の独立監査1体だけとする。主担当で使えるモデル名とサブエージェントへ指定できるモデル名は別に扱い、`fork_turns: "none"`、`model: "gpt-6-sol"`、`reasoning_effort: "low"`で起動する。`docs/editorial-audit-rubric.md`と生成済み監査バンドルだけを渡し、指定モデルが利用不能なら自動代替せず監査を開始しない。最新レビューや主担当の評価を渡さず、記事本文やログ全文をルートへ再掲させません。監査は原則1回とする。指摘が3記事以内の局所修正なら同じ担当へ変更箇所だけ1回再確認できるが、当日版全体を再読させません。4記事以上、記事横断の定型文、生成方式の問題を指摘された場合は再監査せず、主担当が生成方式から直して機械検査をやり直す。新しい監査エージェントを繰り返し起動してはいけません。
+サブエージェントは公開前の独立監査1体だけとする。主担当で使えるモデル名とサブエージェントへ指定できるモデル名は別に扱い、`fork_turns: "none"`、`model: "gpt-6-sol"`、`reasoning_effort: "low"`で起動する。`docs/editorial-audit-rubric.md`と生成済み監査バンドルだけを渡し、指定モデルが利用不能なら自動代替せず監査を開始しない。最新レビューや主担当の評価を渡さず、記事本文やログ全文をルートへ再掲させません。監査前に機械検査と主担当の最終一巡を完了し、未完成バッチや定型生成物へ監査を消費しない。監査は原則1回とする。指摘が3記事以内の局所修正なら同じ担当へ変更箇所だけ1回再確認できるが、当日版全体を再読させません。4記事以上、記事横断の定型文、生成方式の問題を指摘された場合は、その失敗作を再監査せず、該当本文を根拠メモから個別に全面書き直して機械検査をやり直す。旧監査の指摘箇所が機械検査と主担当の一巡で解消した新しい完成候補に限り、同じ監査担当へ全体を1回だけ最終監査させられる。最終監査も不合格ならその日は公開しない。新しい監査エージェントを繰り返し起動してはいけません。
 
 コンテキストへ全候補、全データ、全スキーマ、全ツール定義を表示しない。既知のツールを探すためにツール一覧を列挙せず、候補は必要な列だけ40件以下、ファイルは必要な範囲だけ取得し、1回の出力を原則8,000文字以下にする。同じ検証コマンドを修正なしで繰り返さない。
 
@@ -70,9 +70,9 @@ Top 5ごとに主要主張、裏付け、反応から得た検証論点、別解
 
 ## 7. 監査、音声、公開
 
-記事完成後に`npm run media:script -- --date YYYY-MM-DD`を実行する。この時点ではVOICEVOX合成をしない。続けて`npm run media:audit-bundle -- --date YYYY-MM-DD`を実行する。監査バンドルは全記事の概要と結論を含み、全文精査はTop 5、機械的なリスク記事、その日の年月日から決める非Top 5の5件サンプルに限定する。独立監査は`docs/editorial-audit-rubric.md`だけを基準にする。
+記事完成後に`npm run media:script -- --date YYYY-MM-DD --audit-only`を実行する。監査専用モードではVOICEVOX設定と発音辞書を読まず、内容監査用の仮話者だけで台本を作る。続けて`npm run media:audit-bundle -- --date YYYY-MM-DD`を実行する。監査バンドルは全記事の概要と結論を含み、全文精査はTop 5、機械的なリスク記事、その日の年月日から決める非Top 5の5件サンプルに限定する。独立監査は`docs/editorial-audit-rubric.md`だけを基準にする。
 
-記事と台本の独立監査が合格してから、`docs/media-production-policy.md`、`config/voicevox.json`、`config/pronunciations.json`を読み、`npm run media:voicevox -- --date YYYY-MM-DD`、`npm run media:render -- --date YYYY-MM-DD`を実行する。監査不合格、未登録読み、VOICEVOX停止、音声検証失敗なら音声を公開せず既存公開版を維持する。完成M4Aのデコード、約-16 LUFS、クレジット、メタデータ、Range再生を確認し、Releaseと`config/published-media.json`を更新する。
+記事と台本の独立監査が合格してから、`docs/media-production-policy.md`、`config/voicevox.json`、`config/pronunciations.json`を読み、正式な`npm run media:script -- --date YYYY-MM-DD`、`npm run media:voicevox -- --date YYYY-MM-DD`、`npm run media:render -- --date YYYY-MM-DD`を実行する。VOICEVOXが停止中ならローカルアプリを一度起動してAPI応答を待ち、起動不能、未登録読み、音声検証失敗の場合だけ音声を公開せず既存公開版を維持する。完成M4Aのデコード、約-16 LUFS、クレジット、メタデータ、Range再生を確認し、Releaseと`config/published-media.json`を更新する。
 
 `npm run check:all`を1回実行し、すべて成功した場合だけ意図したファイルを選択的にcommit、push、CI、Pages公開へ進む。個別コマンドを成功確認のため繰り返さない。Git authorとcommitterは`floortable <floortable@users.noreply.github.com>`を使う。公開ページ、RSS、Release音声まで確認する。
 

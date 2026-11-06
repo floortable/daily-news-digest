@@ -59,9 +59,11 @@ describe('監視証跡の検証', () => {
     expect(prompt).toContain('最新レビューや主担当の評価を渡さず');
     expect(prompt).toContain('独立監査');
     expect(prompt).toContain('レビューの文章、数値、評価をニュースの事実や記事材料として転記してはいけません');
-    expect(prompt.indexOf('npm run media:script -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('記事と台本の独立監査が合格してから'));
+    expect(prompt).toContain('npm run media:script -- --date YYYY-MM-DD --audit-only');
+    expect(prompt.indexOf('npm run media:script -- --date YYYY-MM-DD --audit-only')).toBeLessThan(prompt.indexOf('記事と台本の独立監査が合格してから'));
     expect(prompt.indexOf('記事と台本の独立監査が合格してから')).toBeLessThan(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD'));
     expect(prompt.indexOf('npm run media:voicevox -- --date YYYY-MM-DD')).toBeLessThan(prompt.indexOf('commit、push、CI、Pages公開'));
+    expect(prompt).toContain('VOICEVOXが停止中ならローカルアプリを一度起動');
     expect(prompt).toContain('fork_turns: "none"');
     expect(prompt).toContain('model: "gpt-5.6-terra"');
     expect(prompt).toContain('model: "gpt-6-sol"');
@@ -70,6 +72,7 @@ describe('監視証跡の検証', () => {
     expect(prompt).toContain('これらのためにサブエージェントを起動しません');
     expect(prompt).toContain('独立監査1体だけ');
     expect(prompt).toContain('新しい監査エージェントを繰り返し起動してはいけません');
+    expect(prompt).toContain('最終監査も不合格ならその日は公開しない');
     expect(prompt).toContain('指定モデルが利用不能なら自動代替せず');
     expect(prompt).toContain('記事本文やログ全文をルートへ再掲させません');
     expect(prompt).toContain('候補台帳を先に完成させる');
