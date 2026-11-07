@@ -1,0 +1,1619 @@
+{
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T14:10:00+09:00",
+  "selectionShortfallReason": "候補39件を一次資料、公開時刻、影響の具体性、既掲載との重複で精査しました。一次資料または具体的な更新を確認できない候補、同一事案の重複、意見だけで新事実が乏しい候補を除外し、弱い記事で25件へ水増しせず、根拠を説明できる一般17件とVCF専門1件を採用しました。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "articles": [
+    {
+      "id": "2026-11-07-openai-gpt6-cyber",
+      "title": "OpenAI、GPT-6 Cyberを限定提供――脆弱性探索の規模と利用境界を同時に示す",
+      "sourceUrl": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "sourceName": "OpenAI",
+      "publishedAt": "2026-11-06T20:24:19+00:00",
+      "collectedAt": "2026-11-07T08:20:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["テクノロジー"],
+      "channels": ["hacker-news"],
+      "top5Rank": 1,
+      "narration": {
+        "sourceCheckedAt": "2026-11-07T08:20:00+09:00",
+        "result": "OpenAIは、限定された承認済み利用者向けにGPT-6 Cyberを提供すると発表しました。Firefoxで未公表だった高深刻度の脆弱性81件を見つけ、Linuxカーネルでは948件の権限昇格エクスプロイトを作成した実験結果を示しています。",
+        "detail": [
+          "OpenAIの説明では、同じ研究ハーネスでGPT-5.6 Solが作成したLinuxのエクスプロイトは166件でした。比較は特定の評価環境での成果で、公開中の脆弱性総数ではありません。",
+          "利用はDaybreak Redの承認済み顧客から始まり、通常の開発用途へ無条件に開放する発表ではありません。"
+        ],
+        "learning": [
+          "脆弱性探索モデルは発見数だけでなく、研究対象、権限、報告先、再現テストをどこまで固定できるかで防御利用の安全性が変わります。"
+        ],
+        "analysis": [
+          "OpenAIは範囲外サービスを攻撃しない評価も公表しています。これは実運用の保証ではなく、権限分離、ネットワーク制限、レビューを置き換えないため、導入側はモデル能力と実行環境の統制を別に設計する必要があります。"
+        ],
+        "anticipatedQuestions": [],
+        "references": ["https://openai.com/index/introducing-gpt-6-cyber/"]
+      },
+      "summary": [
+        "OpenAIは11月6日、承認済みのDaybreak Red顧客向けにGPT-6 Cyberを限定提供すると発表しました。同社は、脆弱性探索と修正提案を担うサイバーセキュリティ向けモデルとして位置付けています。",
+        "同社の研究では、Firefoxで未公表の高深刻度脆弱性を81件見つけ、Linuxカーネルで再現した1,724件のうち948件について権限昇格エクスプロイトを作成したと説明します。Mozillaには報告と候補パッチを送り、修正の一部はすでに取り込まれ始めたとしています。",
+        "対象は認証済みの防御研究です。発見・検証能力が高まっても、運用環境の権限、対象範囲、開示手順をモデル任せにできるわけではなく、導入組織は研究用環境と本番環境を分けて扱う必要があります。"
+      ],
+      "comment": "この発表で重要なのは、脆弱性を何件見つけたかだけではありません。Linuxの948件は、同社が用意した研究ハーネス上で再現とエクスプロイト開発を行った件数であり、インターネット上で即座に悪用可能な欠陥の数とは異なります。一方で、Firefoxのように長く精査されてきたコードベースから新規の高深刻度問題を見つけ、報告と修正案までつないだ点は、防御側のトリアージ能力を変え得ます。組織が利用を検討するなら、モデルの出力をチケットへ自動登録する前に、対象資産の許可リスト、試験用の隔離環境、再現手順を読む人間の責任者、ベンダー開示までの記録を先に固定すべきです。範囲外アクセスを避ける評価結果も、監査ログやネットワーク制御の代替ではありません。",
+      "articleDetail": {
+        "conclusion": "GPT-6 Cyberは、防御研究での脆弱性探索・検証を拡張する限定提供モデルとして発表されました。",
+        "facts": [
+          "OpenAIはFirefoxで81件の未公表の高深刻度脆弱性を見つけたと説明しています。",
+          "Linuxカーネルでは1,724件を再現し、そのうち948件で権限昇格エクスプロイトを作成したとしています。"
+        ],
+        "background": [
+          "高能力なサイバーモデルは、防御の修正速度を上げる一方で、利用範囲を外れた探索を防ぐ統制も必要にします。"
+        ],
+        "explanation": [
+          "再現テストは、報告された欠陥が指定の条件で成立するかを確認する工程で、実環境への攻撃許可とは別のものです。"
+        ],
+        "implications": [
+          "防御チームは候補パッチや再現手順を早く得られる可能性がある一方、出力を本番へ反映するレビュー工程が必要です。"
+        ],
+        "caveats": [
+          "数値はOpenAIの研究環境と公表範囲に基づくもので、他組織のコードベースで同じ性能を示すとは限りません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "高度な探索能力と利用範囲の統制を同時に製品化しようとする発表だからです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "研究成果は具体的ですが、実運用の安全性は導入側の権限設計に依存します。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 189,
+        "hnComments": 434,
+        "socialMetricsCheckedAt": "2026-11-07T08:20:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:20:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-perplexity-teammates",
+      "title": "Perplexity、継続業務向けのTeammatesを開始――個人エージェントを案件単位で持続化",
+      "sourceUrl": "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work",
+      "sourceName": "Perplexity",
+      "publishedAt": "2026-11-06T17:59:41+00:00",
+      "collectedAt": "2026-11-07T08:22:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["生活・文化"],
+      "channels": ["hacker-news"],
+      "top5Rank": 3,
+      "narration": {
+        "sourceCheckedAt": "2026-11-07T08:22:00+09:00",
+        "result": "Perplexityは、案件をまたいで作業を続ける個人エージェント機能Teammatesを発表しました。利用者はエージェントに業務、使うツール、所属プロジェクトを与え、進行中の仕事を監視・引き継がせられます。",
+        "detail": [
+          "TeammatesはComputer上で動き、プロジェクトの記憶、スキル、接続したツールを使う設計です。SlackやGitHubなどの接続先は利用者が選ぶと説明されています。",
+          "提供開始はWebのPerplexity Max利用者で、iOSは後日予定です。"
+        ],
+        "learning": [
+          "継続エージェントでは、単発チャットの回答精度だけでなく、何を記憶し、どの権限をいつ使えるかを案件単位で見直す必要があります。"
+        ],
+        "analysis": [
+          "営業・サポート・運用の例では、エージェントが変化を検知して次の作業を提案します。便利さは待ち作業を減らす一方、誤った前提が残ると同じ案件内で増幅するため、完了条件と人の確認点を最初に設定することが重要です。"
+        ],
+        "anticipatedQuestions": [],
+        "references": [
+          "https://www.perplexity.ai/en-GB/hub/blog/teammates-are-agents-for-complex-ongoing-work"
+        ]
+      },
+      "summary": [
+        "Perplexityは11月6日、複雑で継続的な仕事を担う個人エージェント機能Teammatesを発表しました。利用者は担当する案件、使うファイルやツール、実施する仕事を設定し、エージェントへ初期タスクを与えます。",
+        "同社によると、TeammatesはComputerのセッションを調整し、プロジェクトの記憶、スキル、接続済みのツールを使って進行状況に応じた作業を続けます。Slack、GitHub、Gmailなどの接続は、利用者が必要なものを選ぶ仕組みです。",
+        "WebではPerplexity Max利用者から開始し、iOS対応は後日とされています。継続性があるからこそ、案件が終わった時点でのアクセス解除、記憶の確認、外部送信前の承認を業務側で定義する必要があります。"
+      ],
+      "comment": "継続エージェントの設計で難しいのは、長く動くこと自体ではなく、担当範囲が時間とともに広がらないようにすることです。たとえば営業案件を追うエージェントが、過去の顧客情報を参照して次の提案を作ることと、顧客へ自動送信して条件を約束することは別の権限です。Teammatesのようにプロジェクト、スキル、コネクタを組み合わせる製品では、権限をサービス名単位で与えるだけでは粗すぎます。参照だけか、下書き作成までか、送信までかを分け、期限とレビュー担当者を設定するのが現実的です。記憶機能も、次回の作業を速くする情報と、案件終了後に残すべきでない情報を分ける必要があります。便利な自動追跡を導入する前に、停止・訂正・引き継ぎを誰ができるのかを業務フローへ組み込むことが重要です。",
+      "articleDetail": {
+        "conclusion": "Perplexityは、案件の文脈と接続ツールを使って継続業務を担うTeammatesを開始しました。",
+        "facts": [
+          "利用者はTeammateに名前、案件、接続ツール、初期タスクを設定できます。",
+          "WebではPerplexity Max利用者から提供を始め、iOS対応は今後の予定です。"
+        ],
+        "background": [
+          "単発の対話型AIに対し、継続エージェントは過去のタスクとファイルを参照して次の行動を提案します。"
+        ],
+        "explanation": [
+          "コネクタは外部サービスへの接続口であり、同じエージェントでも接続先によって読める情報と行える操作が変わります。"
+        ],
+        "implications": [
+          "チームは定期監視や下書き作成を委任しつつ、外部送信や契約判断を人の承認に残せます。"
+        ],
+        "caveats": [
+          "発表は機能の方向性を示すもので、各接続先で利用できる操作や地域別の提供条件は個別に確認が必要です。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "単発の依頼処理から、案件をまたぐエージェント運用へ利用形態を広げる発表だからです。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "継続性は有用ですが、記憶と権限の棚卸しが伴わなければ運用リスクも増えます。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:22:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-rune-rust-ui",
+      "title": "Rune、エージェント検証を前提にしたRust製GPU UI基盤を公開",
+      "sourceUrl": "https://github.com/anomalyco/rune",
+      "sourceName": "Anomaly",
+      "publishedAt": "2026-11-06T16:31:32+00:00",
+      "collectedAt": "2026-11-07T08:24:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["テクノロジー"],
+      "channels": ["hacker-news"],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-07T08:24:00+09:00",
+        "result": "Anomalyは、macOS、Windows、Linux、Webを対象にするRust製UIフレームワークRuneを公開しました。独自のGPUレンダラー、レイアウト、テキスト処理を持ち、アプリをヘッドレスで画像描画して要素ツリーも取得できます。",
+        "detail": [
+          "READMEは、エージェントが画面をPNGへ描画し、要素ツリーとスクリプト入力で自分の変更を検査できることを設計の中心に置いています。",
+          "現時点ではプレリリースで、導入時には開発ブランチの特定revisionを固定するよう案内しています。"
+        ],
+        "learning": [
+          "UIを自動検証しやすくしても、アクセシビリティ、IME、実機の入力感などは画像差分だけでは測れないため、テスト対象を分ける必要があります。"
+        ],
+        "analysis": [
+          "独自レンダラーは描画と検査環境を統一しやすい反面、各OSの文字入力や支援技術との統合コストを抱えます。採用判断では描画性能のデモだけでなく、対象プラットフォームでの入力・更新・配布の成熟度を確認したいところです。"
+        ],
+        "anticipatedQuestions": [],
+        "references": ["https://github.com/anomalyco/rune"]
+      },
+      "summary": [
+        "Anomalyは、Rustで書かれたGPUレンダリング型UIフレームワークRuneを公開しました。macOS、Windows、Linux、Webを対象とし、描画、文字、レイアウト、スプリングアニメーションを独自の基盤で扱う構成です。",
+        "RuneのREADMEは、各アプリをヘッドレスでPNGへ描画し、要素ツリーを出力し、スクリプト入力で操作できると説明します。エージェントが変更を加えた後に、画面と構造を検査する用途を明示している点が特徴です。",
+        "ただしプロジェクトはプレリリースです。導入例では開発ブランチのrevision固定が案内されており、本番採用ではAPI変更、IME、支援技術、各OSの配布経路を個別に評価する必要があります。"
+      ],
+      "comment": "エージェントにUIを作らせる場合、完成画面のスクリーンショットだけでは不十分です。ボタンが見えてもキーボード操作できない、読み上げソフトへ役割が伝わらない、ウィンドウ幅でレイアウトが崩れる、といった問題は画像差分で取りこぼします。Runeが要素ツリーとスクリプト入力を同じ実行系から出せるなら、視覚テストと構造テストを結び付けやすくなります。ただし、そのツリーが実OSのアクセシビリティAPIやIMEの実挙動を正確に表すかは別問題です。特に日本語入力、コピー＆ペースト、フォーカス移動は、GPU描画の滑らかさとは別に実機で確認する必要があります。プレリリースの段階では、アプリ全体を置き換えるより、設定画面やデモのように検証範囲を限定し、性能と支援技術の両方を測る導入が妥当です。",
+      "articleDetail": {
+        "conclusion": "Runeは、エージェントによる画面検証も想定したRust製のクロスプラットフォームUI基盤です。",
+        "facts": [
+          "Runeは独自のGPUレンダラー、文字、レイアウト、アニメーション基盤を持つと説明しています。",
+          "ヘッドレス描画、PNG出力、要素ツリーの取得、スクリプト入力をサポートするとしています。"
+        ],
+        "background": [
+          "UIの自動テストでは、見た目の差分だけでなく操作可能性や構造も検査対象になります。"
+        ],
+        "explanation": [
+          "ヘッドレス描画は、画面を表示せずにレンダリング結果を生成する方法で、CIの画像比較に使えます。"
+        ],
+        "implications": [
+          "開発チームはエージェントが作った変更を、画面画像と要素構造の両方から確認できる可能性があります。"
+        ],
+        "caveats": [
+          "READMEはプレリリースであることを明記しており、APIや対応範囲が安定しているとは限りません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "UI実装だけでなく、エージェントが変更結果を検証する経路まで製品設計に含めているためです。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "検証機能は具体的ですが、実機の入力とアクセシビリティでの成熟度はこれから確認が必要です。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:24:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-yale-japan-biodiversity",
+      "title": "人口減少の里山で生きものも減る――人の管理と生物多様性を結ぶ調査",
+      "sourceUrl": "https://e360.yale.edu/digest/japan-depopulation-biodiversity",
+      "sourceName": "Yale Environment 360",
+      "publishedAt": "2026-11-06T19:36:16+00:00",
+      "collectedAt": "2026-11-07T08:26:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["科学・医療"],
+      "channels": ["hacker-news"],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-07T08:26:00+09:00",
+        "result": "Yale Environment 360は、日本の農村で人口が減った地域ほど、チョウ、ホタル、カエル、鳥、在来植物の量も減っていたとする2025年の調査を紹介しました。人が去れば自然が回復する、という単純な図式には収まらない結果です。",
+        "detail": [
+          "水田、草地、雑木林が混じる里山は、小規模な農作業によって維持され、多様な生きもののすみかになってきました。",
+          "記事は、人口が安定した地域では生物多様性も安定し、人口減少地域では減少が記録されたと伝えています。"
+        ],
+        "learning": [
+          "保全では人の利用をなくすか維持するかの二択ではなく、どの管理が生息地のモザイクを残すかを地域ごとに考える必要があります。"
+        ],
+        "analysis": [
+          "人口減少と生物多様性の関係は相関であり、農地の放棄だけが原因と結論づけることはできません。それでも、担い手、土地利用、種の観測を同じ地図で扱う必要を示す材料になります。"
+        ],
+        "anticipatedQuestions": [],
+        "references": [
+          "https://e360.yale.edu/digest/japan-depopulation-biodiversity"
+        ]
+      },
+      "summary": [
+        "Yale Environment 360は11月6日、日本の農村で人口減少が進む地域では、チョウ、ホタル、カエル、鳥、在来植物の量も減っていたとする2025年の調査を紹介しました。人口が減れば野生生物が戻るという予想と異なる傾向です。",
+        "記事によると、水田、開けた草地、散在する林が組み合わさる里山は、小規模農業や薪・落ち葉の利用で維持されてきました。こうした人の管理が、特定の植物や昆虫、水辺の生きものの居場所を作っていたと研究者は説明します。",
+        "この知見は、耕作放棄地をただ森林へ戻すことが常に最善とは限らないことを示します。地域の保全策では、農業の収益性、管理の担い手、外来種対策、種ごとの生息条件を分けて検討する必要があります。"
+      ],
+      "comment": "里山の話は「人が自然を壊した」か「人がいなくなれば自然が戻る」かの二択になりがちです。しかし水田の水位を調整する、草地を刈る、雑木林を更新するという反復的な管理は、人工と自然の境目に依存する種を支えてきました。人口減少は耕作面積を減らすだけでなく、獣害対策、水路の維持、地域での観測記録まで弱らせます。だからといって、昔の土地利用を全て再現するのが答えではありません。どの種や生態系サービスを守りたいのか、管理を誰が担えるのか、管理しない場所をどこに残すのかを明示する必要があります。水田の水位管理、草地の刈り取り、雑木林の更新をどこで続けるかを、対象種と担い手の実情に合わせて決める必要があります。人口統計と生物調査を結び付けるデータ整備が、地域の優先順位を決める土台になります。",
+      "articleDetail": {
+        "conclusion": "農村の人口減少は、管理された里山に依存する生物の減少と結び付く可能性があります。",
+        "facts": [
+          "記事が紹介した2025年の調査では、人口が安定した地域で生物多様性も安定していました。",
+          "人口が減った地域ではチョウ、ホタル、カエル、鳥、在来植物の量の減少が記録されました。"
+        ],
+        "background": [
+          "里山は水田、草地、林が入り混じる景観で、人の継続的な土地利用によって形作られてきました。"
+        ],
+        "explanation": [
+          "モザイク状の景観は、日当たり、水辺、植生の異なる小さな環境を近接させ、種ごとの利用場所を増やします。"
+        ],
+        "implications": [
+          "過疎地域の保全では、農地を残す支援と種の生息地管理を別々にせず計画できます。"
+        ],
+        "caveats": [
+          "紹介された傾向だけから、人口減少が全ての地域・全ての種の直接原因だとは結論づけられません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "人口減少対策と自然保全を別々に扱うと、里山に依存する生きものを見落とすためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "記事は人の管理の役割を示しますが、地域ごとの因果と優先種の確認が必要です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:26:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-dlink-dgs3130",
+      "title": "D-Link、DGS-3130の未修正欠陥を公表――DDP停止と管理面分離を要請",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/amp/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-06T12:37:22+00:00",
+      "collectedAt": "2026-11-07T08:28:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["セキュリティ"],
+      "channels": ["other"],
+      "top5Rank": 4,
+      "narration": {
+        "sourceCheckedAt": "2026-11-07T08:28:00+09:00",
+        "result": "D-Linkは、DGS-3130系の管理スイッチに複数の未修正脆弱性があるとして、機器を探す機能を止め、管理画面や監視機能へ接続できる端末を限定するよう案内しました。",
+        "detail": [
+          "報道によると、影響はDGS-3130-30TSの複数ファームウェアで確認され、認証、アクセス制御、情報処理に関わる問題をD-Linkが調査中です。",
+          "CVE番号や詳細な技術情報はまだ公表されておらず、現時点ではパッチではなく露出を減らす対策が中心です。"
+        ],
+        "learning": [
+          "ネットワーク機器の未修正問題では、更新待ちの間にも管理面を通常の利用ネットワークから切り離し、設定バックアップをオフラインで持つことが被害範囲を狭めます。"
+        ],
+        "analysis": [
+          "管理プロトコルを止めると運用上の不便は出ますが、更新がない段階では攻撃経路を減らす方が先です。監視はログ収集だけで済ませず、予期しない再起動や設定変更を誰が判断するかまで決める必要があります。"
+        ],
+        "anticipatedQuestions": [],
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/amp/"
+        ]
+      },
+      "summary": [
+        "D-Linkは、DGS-3130シリーズの管理スイッチに複数の未修正脆弱性があるとして、暫定的な緩和策を案内しました。D-Link Discovery Protocolを無効にし、SSH、Web UI、SNMPの到達元を隔離された管理ネットワークと指定ホストへ絞る内容です。",
+        "BleepingComputerによると、問題はDGS-3130-30TSの複数ファームウェアで確認され、DDPの認証、アクセス制御、情報処理と、ファームウェアの安全機構が調査対象です。機器情報の取得、設定変更、SNMPコミュニティ文字列の漏えい、サービス妨害や再起動につながる可能性があります。",
+        "CVE番号と修正版ファームウェアは未公表です。該当機器を使う組織は、DDPの利用有無、管理面への到達経路、既定のSNMP設定、オフライン設定バックアップを先に確認し、更新が出た時点で適用計画を立てる必要があります。"
+      ],
+      "comment": "未修正のネットワーク機器脆弱性では、パッチが出るまで何もしないという選択が最も危険です。D-Linkの案内は、未知の実装詳細を推測して対策するのではなく、DDPという既知の入口を閉じ、管理面への到達を減らす考え方です。ここでいう隔離はVLAN名を変えるだけでは不十分で、利用者ネットワークから管理IPへルーティングできないこと、ジャンプホストや管理端末を限定すること、SNMPの読み取り権限を見直すことまで含みます。設定を退避するときも、バックアップ自体に資格情報が含まれる場合があるため、保管先とアクセス権を確認したいところです。修正版が出た後は、テスト機で更新、再起動、スタック構成、監視連携を確認してから本番へ展開する順番が安全です。未修正という言葉だけで過度に恐れるより、公開された緩和策を資産台帳と変更管理へ落とすことが実務的です。",
+      "articleDetail": {
+        "conclusion": "D-LinkはDGS-3130の未修正問題に対し、DDP停止と管理面の隔離を暫定策として示しました。",
+        "facts": [
+          "D-LinkはDGS-3130-30TSの複数ファームウェアで問題を確認し、他機種への影響も調査中です。",
+          "報道時点でCVE番号と修正版ファームウェアは公表されていません。"
+        ],
+        "background": [
+          "管理スイッチは設定変更や監視用のサービスを持つため、管理面が利用者ネットワークへ露出すると攻撃経路が増えます。"
+        ],
+        "explanation": [
+          "DDPは機器探索・管理に使われるプロトコルで、無効化は当該の既知入口を取り除く暫定策です。"
+        ],
+        "implications": [
+          "管理者は更新前でも管理アクセスを絞り、設定変更と再起動の異常を検知する運用へ切り替えられます。"
+        ],
+        "caveats": [
+          "影響範囲と詳細な攻撃条件は調査中であり、報道に実悪用の確認は記載されていません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "修正版がない間にも、管理ネットワークの分離で具体的に露出を下げられるためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "暫定策は明確ですが、機種・ファームウェアの影響範囲は続報で確認する必要があります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:28:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-veeam-epyc-boot",
+      "title": "Veeam、AMD EPYC上のアプライアンス起動失敗を警告――更新時の復旧経路を見直す",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/veeam-software-appliance-vms-fail-to-boot-on-amd-epyc-hosts/amp/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-06T15:25:31+00:00",
+      "collectedAt": "2026-11-07T08:40:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["VCF・VMware・競合"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "Veeamは、AMD EPYCを搭載したホスト上でSoftware Appliance仮想マシンが再起動後に起動できず、カーネルパニックになることがあると警告しました。影響は13.1以降のLinuxベースのアプライアンスに及ぶとされています。",
+        "報道によると、FIPSモードのjitterentropy健全性検査がAMD EPYC 7262、7302、7F72などで断続的に失敗し、起動を停止させます。通常のゲスト再起動では復旧せず、電源断後の起動が必要になる場合があります。",
+        "Veeamは別プロセッサのホストへ再配置するか、移動できない場合は自動更新を無効化して監視下で手動更新するよう案内しています。バックアップ基盤では、更新前に復旧コンソールと代替経路を確認する必要があります。"
+      ],
+      "comment": "バックアップ製品の障害は、普段は目立たなくても復旧が必要な局面で初めて問題になります。今回のようにカーネル更新に伴う再起動で失敗し得る場合、脆弱性修正を急ぐほど保護基盤が一時停止するという矛盾が生じます。自動更新を止める判断は恒久策ではなく、更新を見送った期間のリスクを別に管理する必要があります。実務では、対象CPUを含むホストの棚卸し、アプライアンスのバージョン確認、コンソール接続の可用性、直近の設定バックアップ、失敗時に別ホストへ再配置できるかを更新前のチェックリストへ入れるべきです。正常に一度起動した後は動作へ影響しないという説明も、次回の再起動が安全という意味ではありません。DR手順には電源断を伴う復旧と、ジョブの取りこぼしを確認する工程を明記したいところです。",
+      "articleDetail": {
+        "conclusion": "Veeam Software Applianceでは、特定AMD EPYCホスト上の再起動時にFIPS検査起因の起動失敗が起き得ます。",
+        "facts": [
+          "影響はSoftware Appliance 13.1以降とされ、特定のAMD EPYCでjitterentropy検査が失敗することがあります。",
+          "Veeamは別プロセッサへの再配置、または監視下での手動更新を緩和策として案内しました。"
+        ],
+        "background": [
+          "FIPSモードは暗号処理環境の健全性を起動時に検査し、条件を満たさない場合に処理を止めます。"
+        ],
+        "explanation": [
+          "jitterentropy検査は乱数生成に使う揺らぎが期待通りかを確認する処理で、失敗するとカーネルが安全側で停止します。"
+        ],
+        "implications": [
+          "バックアップ基盤の更新は、修正適用だけでなく、起動失敗時の復旧コンソールと代替ホストの準備を要します。"
+        ],
+        "caveats": [
+          "報道時点で恒久修正の時期や影響を受ける全CPU範囲は確定していません。"
+        ],
+        "nextChecks": []
+      },
+      "vcfReview": {
+        "products": ["Veeam Software Appliance", "Veeam Backup & Replication"],
+        "versions": ["13.1以降", "AMD EPYC 7262/7302/7F72を含む環境"],
+        "affectedUsers": "AMD EPYCホスト上でSoftware Applianceを動かし、カーネル更新を伴う再起動を実施する運用者が対象です。",
+        "operationalImpact": "再起動後にカーネルパニックで起動できず、バックアップ管理、予定ジョブ、復旧時の操作窓口が停止し、保護状況の把握と復旧判断が遅れるおそれがあります。",
+        "knownConstraints": [
+          "通常のゲスト再起動だけでは復旧せず、電源断後の起動が必要になる場合があります。",
+          "恒久修正の提供時期と、影響を受ける全CPU範囲は報道時点で示されていません。"
+        ],
+        "officialSources": ["https://www.veeam.com/kb4960"],
+        "fieldSources": [
+          "https://www.bleepingcomputer.com/news/security/veeam-software-appliance-vms-fail-to-boot-on-amd-epyc-hosts/amp/"
+        ],
+        "evidenceClassification": {
+          "officialFacts": [
+            "Veeamは再配置または監視下の手動更新を緩和策として示しています。"
+          ],
+          "fieldReports": [
+            "BleepingComputerは影響CPUとカーネルパニックの症状を報じました。"
+          ],
+          "inference": [
+            "自動保守だけに依存する運用では、バックアップ基盤の停止を検知しにくくなる可能性があります。"
+          ]
+        },
+        "nextChecks": [
+          "対象アプライアンスのバージョン、ホストCPU、更新ポリシーを棚卸しします。",
+          "更新前にコンソール接続と別ホストへの再配置手順を検証します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "バックアップ基盤の更新時に起動失敗が起きるため、復旧計画へ直結するためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "原因と暫定策は具体的ですが、恒久修正は未定です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:40:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-kalshi-state-laws",
+      "title": "Kalshi、州法を止める差し止めで連敗――予測市場の規制線が揺れる",
+      "sourceUrl": "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/",
+      "sourceName": "Ars Technica",
+      "publishedAt": "2026-11-06T18:02:34+00:00",
+      "collectedAt": "2026-11-07T08:50:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["国内・国際"],
+      "channels": ["hacker-news"],
+      "top5Rank": 5,
+      "summary": [
+        "米予測市場Kalshiは、コネティカット、ニューヨーク、ネバダの州賭博法の執行を止めようとした申立てで、連邦控訴裁判所から相次いで退けられました。",
+        "争点は、同社のイベント契約がCFTCだけの管轄となるスワップか、州が規制できる賭博かです。裁判所の判断は巡回区ごとに割れており、第三巡回区では同社側の判断もあります。",
+        "州ごとの利用条件は判決で変わり得ます。利用者や事業者は、連邦規制の表示だけで合法性を判断せず、居住州の規制とサービスの提供条件を確認する必要があります。裁判所の判断は仮差し止め段階を含むため、個別の提供制限や今後の上訴状況も追う必要があります。"
+      ],
+      "comment": "予測市場を金融商品として扱うか賭博として扱うかは、ラベルではなく契約の実態と規制法の読み方で決まります。今回の連敗は全国一律の結論ではありませんが、プラットフォームが連邦登録を掲げても、州法の執行を当然には排除できないという判断が積み重なっていることを示します。サービス側にとっては、利用地域を制限する実装、年齢確認、対象契約の分類、州当局との係争情報を更新する運用が必要になります。利用者にとっても、同じ画面に表示される契約でも州によって利用可否や保護が異なる可能性があります。最高裁が扱うかは未定であり、個別訴訟の途中経過を最終ルールと混同しないことが重要です。事業者が規制変更を追跡する場合は、法務判断とプロダクト設定を分けず、停止対象の契約、対象州、既存利用者への通知を同じ変更記録に残すことで、表示と実際の提供範囲のずれを減らせます。",
+      "articleDetail": {
+        "conclusion": "Kalshiをめぐる州規制の適用は、巡回区ごとに異なる判断が出ている段階です。",
+        "facts": [
+          "第二・第九巡回区で差し止め申立てが退けられました。",
+          "第三巡回区ではニュージャージー規制を制限する判断が出ています。"
+        ],
+        "background": [
+          "イベント契約と州賭博法の関係は、連邦商品規制と州の警察権が重なる論点です。"
+        ],
+        "explanation": [
+          "仮差し止めは本案判決の前に執行を止めるための救済で、勝訴の確度などが審査されます。"
+        ],
+        "implications": [
+          "事業者は地域別の規制変更を製品の提供条件と利用者通知へ反映する必要があります。"
+        ],
+        "caveats": [
+          "巡回区間の不一致はありますが、最高裁が審理するかや最終結論は確定していません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "予測市場を巡る連邦と州の規制境界が、利用可否へ直結するためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "一次資料と報道で示された範囲を分けて評価する必要があります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:50:00+09:00",
+        "httpStatus": 200
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-07T08:50:00+09:00",
+        "result": "米予測市場Kalshiは、コネティカット、ニューヨーク、ネバダの州賭博法の執行を止めるよう求めた申立てで、連邦控訴裁判所から相次いで退けられました。連邦商品規制だけで州法を排除できるかが争点です。",
+        "detail": [
+          "第二巡回区はニューヨークとコネティカットを巡る仮差し止めを認めず、第九巡回区でもネバダ事件の全員法廷再審理が認められませんでした。",
+          "一方、第三巡回区ではニュージャージー州に対してKalshi側の判断が出ており、全国一律の結論にはなっていません。"
+        ],
+        "learning": [
+          "同じイベント契約でも、金融商品としての連邦規制と賭博としての州規制のどちらが優先するかで、提供地域と利用条件が変わります。"
+        ],
+        "analysis": [
+          "仮差し止めの敗訴は本案の最終確定とは違いますが、訴訟中も州が規制を執行できる可能性を高めます。利用者は全国向けの表示だけでなく、居住州での提供条件を確認する必要があります。"
+        ],
+        "anticipatedQuestions": [],
+        "references": [
+          "https://arstechnica.com/tech-policy/2026/11/kalshi-court-losses-pile-up-as-judges-refuse-to-block-state-gambling-laws/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-07-us-state-tax-mix",
+      "title": "米州税収、財産税が25州で最大――税率ではなく財源構成を比較",
+      "sourceUrl": "https://www.visualcapitalist.com/where-each-states-tax-revenue-comes-from/",
+      "sourceName": "Visual Capitalist",
+      "publishedAt": "2026-10-26T07:04:00+00:00",
+      "collectedAt": "2026-11-07T08:50:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["国内・国際"],
+      "channels": ["hacker-news"],
+      "top5Rank": null,
+      "summary": [
+        "Visual Capitalistは、米国勢調査局の2024年データを基に、州・地方を合わせた税収の最大項目を州別に比較しました。財産税は25州で最大の税収項目でした。",
+        "比率は連邦補助金を除く税収に占める各項目の割合です。ワシントン州では一般売上・総収入税が49.0%、ニューハンプシャー州では財産税が64.3%を占めるとしています。",
+        "これは個々の世帯の税負担を示す表ではありません。州と地方の税源がどう組み合わさるかを示すため、制度変更や企業立地を比べる際は税率、控除、歳出も別に見る必要があります。"
+      ],
+      "comment": "税収の構成を税率の高低と混同すると、制度の読み方を誤ります。たとえば財産税の比率が高い州は、住民が必ず他州より多く納税しているとは限らず、所得税や売上税をどの程度使うかとの組み合わせで比率が変わります。州政府だけでなく地方政府を合わせた数字である点も重要です。学校、道路、消防の財源が地方税へ依存する地域では、企業誘致や住宅価格の変化が自治体の収入へ直結します。日本の地方財政と単純比較はできませんが、税源の多様性と景気変動への耐性を考える入口になります。データを見る際は、税収全体の規模、人口、連邦移転、歳出の責任分担を重ねる必要があります。比較対象を選ぶ際には、2024年という観測年と、統計の分類がその後の法改正をまだ反映しないことも意識する必要があります。税制を議論する資料としては、構成比の地図を出発点に、実効税率と住民サービスの差を別表で確かめるのがよいでしょう。",
+      "articleDetail": {
+        "conclusion": "米国の州・地方税収は、地域により財産税、売上税、所得税への依存が大きく異なります。",
+        "facts": [
+          "財産税は50州のうち25州で最大の税収項目です。",
+          "対象データは2024年の州・地方を合算した税収です。"
+        ],
+        "background": [
+          "州と地方のどちらが税を徴収するかは、同じ税目でも地域によって異なります。"
+        ],
+        "explanation": [
+          "構成比は各税目の相対的な割合であり、家計一人当たりの負担額とは異なります。"
+        ],
+        "implications": [
+          "税源構成は景気変動、住宅価格、企業活動の変化を財政へ伝える経路を左右します。"
+        ],
+        "caveats": [
+          "記事の集計は連邦税と連邦補助金を除いており、政府収入全体を表すものではありません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "税制を税率だけでなく、州と地方を合わせた財源構成から見られるためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "財産税が最大の州が半数を占める分布は、州・地方を合わせた財源構成の比較に役立ちます。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T08:50:00+09:00",
+        "httpStatus": 200
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-07T08:50:00+09:00",
+        "reason": "10月公開の分析を当日候補から確認し、2024年国勢調査局データに基づく比較として遅れて採用しました。",
+        "currentNewsValue": "州と地方を合算した税源構成を比較でき、当日の規制・財政記事を読む背景材料になります。"
+      }
+    },
+    {
+      "id": "2026-11-07-cybertruck-production-winddown",
+      "title": "Tesla、Cybertruck生産を2027年半ばに縮小へ――Cybercabへ設備を振り向け",
+      "sourceUrl": "https://www.wired.com/story/rip-cybertruck-you-were-unloved-unwanted-and-utterly-absurd/",
+      "sourceName": "WIRED",
+      "publishedAt": "2026-11-06T15:01:38+00:00",
+      "collectedAt": "2026-11-07T13:20:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["生活・文化"],
+      "channels": ["hacker-news"],
+      "top5Rank": null,
+      "summary": [
+        "TeslaのElon Musk CEOは、Cybertruckの生産を2027年半ばごろから縮小し、テキサス工場の設備を自動運転車Cybercabの増産へ振り向ける方針を示しました。WIREDは、同車が4年未満で生産の終盤へ入ると報じています。",
+        "記事が引用したKelley Blue Bookの推計では、2026年1〜9月の米国販売は1万1,586台で前年同期比28%減でした。2019年の発表時に示された価格や航続距離への期待と量産車の条件には差があり、複数のリコールも重なりました。",
+        "TeslaはCybertruckの技術がCybercabへ引き継がれると説明していますが、既存車の保守、部品供給、保証がどう扱われるかは別の論点です。所有者は生産縮小と直ちにサポート終了を同一視せず、正式な保守方針を確認する必要があります。"
+      ],
+      "comment": "特徴的な外形やステンレス車体は注目を集めましたが、自動車の量産では話題性と継続販売を分ける条件が多くあります。販売価格、航続距離、荷台や牽引の実用性、修理網、保険料、部品の共通化は、予約時の関心を実際の購入へ変える段階で効きます。Cybertruck専用の加工設備をCybercabへ振り向ける判断は、工場の稼働率を上げる合理性がある一方、専用品を抱える既存所有者に長期保守の不安を残します。生産終了が近づく車種では、中古価格だけでなく、衝突修理に必要な外板、バッテリー診断、ソフトウェア更新の提供期間を確認することが重要です。Teslaのロボタクシー戦略が成功するかは、Cybertruckの評価とは別に、無人運行の許認可、地域展開、車両一台当たりの稼働率で測る必要があります。",
+      "articleDetail": {
+        "conclusion": "TeslaはCybertruckの生産を縮小し、テキサス工場の能力をCybercabへ移す方針を示しました。",
+        "facts": [
+          "Musk氏は2027年半ばごろにCybertruck生産を縮小すると投稿しました。",
+          "WIREDが引用した推計では、2026年1〜9月の米国販売は1万1,586台でした。"
+        ],
+        "background": [
+          "Cybertruckは2019年に発表され、ステンレス外板と直線的な外形を特徴として2023年に納車を始めました。"
+        ],
+        "explanation": [
+          "同一工場の設備と人員を別車種へ移す判断は、需要と将来戦略に合わせて生産能力を配分するものです。"
+        ],
+        "implications": [
+          "所有者と中古購入者にとっては、部品供給、保証、修理対応の継続期間が販売台数以上に重要になります。"
+        ],
+        "caveats": [
+          "TeslaはWIREDの照会に回答しておらず、生産を完全終了する時期や保守条件は確定していません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "大きな予約期待を集めた専用設計車が短期間で縮小へ向かい、次の事業へ設備を移すためです。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "販売縮小の情報は具体的ですが、完全な生産終了と既存車支援の条件は未確定です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:20:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-meta-muse-spaces",
+      "title": "Meta、Museに案件別のSpacesを追加――会話から追跡表や計画画面を構築",
+      "sourceUrl": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-06T18:44:20+00:00",
+      "collectedAt": "2026-11-07T13:30:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["生活・文化"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "Metaは消費者向けAIエージェントMuseに、案件ごとの会話と作業画面をまとめるSpacesを追加しました。利用者がチャットで目的を説明すると、追跡表、計画表、プロジェクトボードなどの専用画面を構築すると説明しています。",
+        "TechCrunchによると、旅行計画、贈り物の追跡、結婚式、DIYなどを別々のSpaceとして保持できます。第三者アプリと接続すれば、コンサート日程、価格、貯蓄状況などの変化をバックグラウンドで更新する設計です。",
+        "単発の回答ではなく継続的な案件管理へ踏み込むため、便利さは接続先の権限と更新条件に左右されます。利用者は、どのアプリを読み書きできるか、Spaceを削除したときに記憶と接続がどう扱われるかを確認する必要があります。"
+      ],
+      "comment": "案件ごとに会話を分ける仕組みは、長いチャットから必要な情報を探す負担を減らします。ただし、画面が整理されることと、内部の情報が正確に更新されることは別です。価格追跡なら取得時刻と対象商品、旅行計画なら予約済みと候補、貯蓄なら参照だけか送金も可能かを画面で区別する必要があります。第三者アプリとの接続では、Spaceを共有した相手へどこまで情報が見えるかも重要です。個人の買い物や家族行事は、日程、住所、予算、連絡先が一つの案件へ集まりやすいため、便利な統合が漏えい時の影響を大きくします。導入時は、まず読み取り権限だけで小さな案件を作り、更新履歴、誤った変更の取り消し、案件終了後の接続解除を確認してから範囲を広げるのが安全です。",
+      "articleDetail": {
+        "conclusion": "Muse Spacesは、案件ごとの会話、追跡表、接続データを一つの作業画面へまとめます。",
+        "facts": [
+          "利用者が目的を説明すると、Museが追跡表、計画表、プロジェクトボードを作るとMetaは説明しています。",
+          "第三者アプリを接続し、価格や日程などの変化をバックグラウンドで反映できます。"
+        ],
+        "background": [
+          "汎用エージェントの会話が長期化すると、案件ごとの目的、資料、更新履歴を分離する必要が生じます。"
+        ],
+        "explanation": [
+          "Spaceは同じエージェント内に特定目的の作業領域を作り、関連する会話と接続データをまとめる機能です。"
+        ],
+        "implications": [
+          "利用者は旅行や家計などの継続案件を再説明せず更新できますが、接続権限の棚卸しが必要になります。"
+        ],
+        "caveats": [
+          "TechCrunchの報道では、地域別の提供条件や各接続先で可能な操作の詳細は示されていません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "消費者向けエージェントが回答画面から、継続案件を保持・更新する作業領域へ広がるためです。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "整理機能は有用ですが、接続アプリの権限と削除時の扱いを確認する必要があります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:30:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-underdog-woof-local-voice",
+      "title": "31.7MBの音声モデルWoof、ブラウザー内でオフライン読み上げを実演",
+      "sourceUrl": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-06T13:02:16+00:00",
+      "collectedAt": "2026-11-07T13:34:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["生活・文化"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "Underdogは、31.7MBで約3,100万パラメーターの音声合成モデルWoofを公開し、ブラウザー内で入力文を読み上げるゲーム形式のデモを披露しました。同社は一般的な端末でインターネット接続なしに動くと説明しています。",
+        "利用者はレトロ調の画面に文章を入力し、その場で生成音声を聞けます。モデルはダウンロード可能で、数週間前に発表した167MBの音声認識モデルBarkと組み合わせ、端末内の文字起こしと読み上げを狙います。",
+        "小型モデルは大規模クラウドモデルの表現力をそのまま置き換えるものではありません。個人情報を外へ送らない用途、通信が不安定な場所、応答遅延を抑えたい支援機能では、声質、言語対応、消費電力との釣り合いが評価軸になります。"
+      ],
+      "comment": "音声処理を端末内へ移す利点は、単に通信費を減らすことではありません。入力した文章や録音を外部サービスへ送らずに済めば、日記、医療メモ、会議の下書きなどを扱いやすくなります。一方、31.7MBというファイルサイズだけでは、実用性を判断できません。日本語の固有名詞、長文の抑揚、数字と単位、読み間違い、低価格端末での生成速度、連続利用時の電池消費を測る必要があります。また、音声モデルが小さくても、アプリ本体や辞書、推論エンジンを含めた容量は増えます。ローカル処理を選ぶ製品は、クラウドへ切り替わる条件を利用者へ明示し、オフラインだと思っていた入力が送信される状況を避ける設計が重要です。支援技術へ組み込む場合は、読めない語を利用者が直せる辞書と、同じ入力を同じ声で再現できる版管理も必要になります。小型化の価値は、音質の最高点よりも、利用者が処理場所とデータ保持を自分で選べることにあります。",
+      "articleDetail": {
+        "conclusion": "Woofは31.7MBのモデルをブラウザー内で動かし、端末内音声合成の小型化を示しました。",
+        "facts": [
+          "UnderdogはWoofを約3,100万パラメーター、31.7MBの音声合成モデルとして公開しました。",
+          "デモではブラウザー内で入力文を読み上げ、モデルはダウンロード可能とされています。"
+        ],
+        "background": [
+          "音声合成はクラウド処理が一般的ですが、端末内処理は入力データの外部送信と通信遅延を減らせます。"
+        ],
+        "explanation": [
+          "モデルの小型化はパラメーターと重みの表現を絞り、端末のメモリー内で推論しやすくする取り組みです。"
+        ],
+        "implications": [
+          "ローカルアシスタント、読み上げ支援、個人用ポッドキャストなどでプライバシーと即応性を優先できます。"
+        ],
+        "caveats": [
+          "デモと公表値だけでは、多言語の品質、端末別の速度、消費電力、大規模モデルとの差は確定できません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "音声合成をブラウザーでオフライン実行できる大きさへ縮め、利用データを端末に残す選択肢を示したためです。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "小型化は具体的ですが、言語別の音質と端末別性能は独立した評価が必要です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:34:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-qnap-plex2shell-compromise",
+      "title": "QNAP、Plex2Shell経由のNAS侵害を確認――更新だけでなく初期化を案内",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-06T17:04:23+00:00",
+      "collectedAt": "2026-11-07T13:38:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["セキュリティ"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "QNAPは、NAS上で動くPlex Media ServerがPlex2Shell脆弱性群を通じて侵害されたとみられる利用者報告を受け、技術支援を始めたと発表しました。QTSやQuTS hero自体ではなく、追加アプリのPlexが侵入口です。",
+        "Plex2ShellはCVE-2026-96652、96654、96655、96656の4件を組み合わせる攻撃で、CISAは10月20日に全件をKEVへ追加しました。QNAP App Centerで提供されるPlex 1.43.3.10861以降への更新が必要です。",
+        "すでに外部公開していた脆弱なPlexを使っていた場合、更新だけでは設置済みのペイロードを除去できません。QNAPは侵害済みとして扱い、OSのクリーン再インストール、PlexとNASの資格情報変更、不要なポート32400転送の停止を案内しています。"
+      ],
+      "comment": "脆弱性修正と侵害対応は同じ作業ではありません。更新は今後の侵入経路を閉じますが、攻撃者がすでに追加したプロセス、タスク、SSH鍵、改変ファイルを取り除く保証にはなりません。NASはバックアップや写真、文書を集約するため、単なるメディアサーバー障害より影響が大きくなります。外部公開していた資産では、App Centerの版だけでなく、ルーターのポート転送、VPN経由の利用可否、管理者アカウント、共有リンク、同期先を確認する必要があります。再インストール前には証拠保全と必要データの退避を分け、感染の疑いがある実行ファイルを新しい環境へ戻さない手順も必要です。資格情報はNASだけでなく、同じものを使い回したPlexやメール、クラウド側まで交換範囲を広げるべきです。",
+      "articleDetail": {
+        "conclusion": "QNAPはPlex2Shellによる侵害報告を確認し、外部公開していた脆弱なNASには初期化を含む対応を求めました。",
+        "facts": [
+          "Plex2Shellは4件の脆弱性を組み合わせ、CISA KEVへ追加済みです。",
+          "QNAPはPlex 1.43.3.10861以降への更新と、侵害疑い端末のクリーン再インストールを案内しました。"
+        ],
+        "background": [
+          "QNAP NASは追加アプリとしてPlex Media Serverを動かせますが、アプリの脆弱性管理はNAS OSとは別です。"
+        ],
+        "explanation": [
+          "攻撃後に更新しても永続化されたペイロードは残り得るため、侵害対応では信頼できる状態からの再構築が必要です。"
+        ],
+        "implications": [
+          "管理者はNAS本体、Plex、ルーター、共有資格情報を一つの侵害範囲として調査する必要があります。"
+        ],
+        "caveats": [
+          "QNAPは利用者報告を確認していますが、侵害台数や攻撃者、全ての設置物は公表していません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "実際の利用者侵害が報告され、更新だけでは足りない復旧手順がベンダーから示されたためです。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "NASのデータ価値を考えると、外部公開していた利用者への初期化案内は重要です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:38:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-report-uri-infected-sites",
+      "title": "悪性JavaScript感染を1万5,579サイトで確認――通知能力が検知規模に追いつかず",
+      "sourceUrl": "https://scotthelme.co.uk/we-know-15-579-websites-are-infected-how-do-we-tell-them/",
+      "sourceName": "Scott Helme",
+      "publishedAt": "2026-11-06T18:13:35+00:00",
+      "collectedAt": "2026-11-07T13:42:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["セキュリティ"],
+      "channels": ["hacker-news"],
+      "top5Rank": null,
+      "summary": [
+        "Report URIのScott Helme氏は、悪性JavaScriptが現在動作していると高い確度で判断したサイトを1万5,579件確認したと公表しました。保守的な推計でも、対象サイトへの合計訪問は月間1億3,500万回を超えるとしています。",
+        "確認した攻撃には、決済情報を盗むスキマー、偽の本人確認でマルウェアを実行させるClickFix、端末向けエクスプロイト、フィッシングへの転送があります。侵入経路はサイト直接改ざん、第三者スクリプト、XSS、期限切れドメインの再取得などです。",
+        "課題は検知より通知です。security.txtの普及が低く、公開連絡先へのメールも応答されないことが多いため、研究者側の確認速度へ責任ある開示が追いつきません。同氏はCERTやNCSCへ地域別リストの連携を呼びかけています。"
+      ],
+      "comment": "大規模な検知基盤を作っても、修正する主体へ情報が届かなければ被害は減りません。Webサイトは運営者、制作会社、ホスティング事業者、CDN、広告・計測タグの提供者が分かれ、誰が改ざんを直せるか外部から分かりにくい構造です。自動通知は規模を広げられますが、誤検知の説明、攻撃者への情報漏えい、連絡先の悪用も考える必要があります。運営側はsecurity.txtへ有効な窓口と暗号化手段を載せ、受信した報告を迷惑メールで失わない運用を用意すべきです。国別CERTへ集約する方法は地域の連絡網を使える一方、個々のサイトへ修正が届いたかを追跡する仕組みが必要です。検知件数ではなく、通知、確認、修正、再検査までの時間を指標にすることが次の課題です。",
+      "articleDetail": {
+        "conclusion": "Report URIは1万5,579サイトの感染を確認しましたが、修正可能な窓口への通知が検知規模に追いついていません。",
+        "facts": [
+          "高い確度で感染中と判断したサイトは1万5,579件で、推計訪問数は合計月1億3,500万回超です。",
+          "同社は修正済みサイトを一覧から外しており、これまでに検知した総数は現在値より多いと説明しています。"
+        ],
+        "background": [
+          "サイトの脆弱性連絡先を示すsecurity.txtは、研究者が修正担当者へ到達するための標準的な入口です。"
+        ],
+        "explanation": [
+          "悪性JavaScriptはサイト本体だけでなく、読み込む第三者ファイルや失効ドメインからも配信され得ます。"
+        ],
+        "implications": [
+          "CERT、ホスティング、CDNが連携すれば、一件ずつ連絡するより多数の運営者へ到達できる可能性があります。"
+        ],
+        "caveats": [
+          "訪問数は複数データ源からの保守的推計であり、感染した全訪問者数や実被害件数を表しません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "検知技術が拡大しても、連絡先と修正追跡の不足が被害軽減の律速段階になるためです。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "規模は大きく、運営者・CERT・基盤事業者の通知連携が必要です。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:42:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-amazon-alexa-text-shopping",
+      "title": "Amazon、Alexaの買い物をSMSから操作――検索・カート・購入まで試験提供",
+      "sourceUrl": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-06T14:10:00+00:00",
+      "collectedAt": "2026-11-07T13:46:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["生活・文化"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "Amazonは米国の一部利用者を対象に、SMSでAlexaへ買い物を依頼できる機能を始めます。自然文で商品を探し、比較し、カートへ追加し、購入まで進めるほか、注文状況や価格の追跡にも対応すると説明しています。",
+        "対象者には機能を有効にする案内がテキストで届き、招待がない利用者は待機リストへ登録できます。商品の写真や着用画像を送って類似商品を探す機能も含まれ、今後数週間で対象を広げる予定です。",
+        "同社は9月にMetaのMuseによるAmazonサイト利用を規約違反として遮断しました。自社エージェントには購入経路を開くため、誤購入、返品、本人確認、第三者エージェントへの公平なアクセス条件が今後の論点になります。"
+      ],
+      "comment": "SMSは新しいアプリ操作を覚えずに使える一方、送信者確認と購入確定の境界が見えにくくなります。商品検索や価格通知なら失敗の影響は小さいものの、数量、配送先、定期購入、支払い方法を含む注文では、最終確認画面と取り消し可能な時間が必要です。家族で電話番号を共有する場合や、SIM交換、端末紛失、メッセージ転送がある場合の認証も無視できません。また、Alexaが利用履歴から好みを学ぶなら、便利な推薦と広告的な誘導を区別できる表示が求められます。Amazonが外部エージェントを遮断しながら自社経路を提供することは、安全管理の一元化という説明が可能ですが、市場アクセスの競争条件にも関わります。利用者は購入権限を最初から有効にせず、検索とカートまでで挙動を確認するのが安全です。",
+      "articleDetail": {
+        "conclusion": "AmazonはSMS経由のAlexaに商品検索から購入までを任せる試験機能を米国で始めます。",
+        "facts": [
+          "一部の米国利用者へ招待を送り、SMSで検索、カート追加、購入、注文確認を可能にします。",
+          "写真を送って類似商品を探し、価格、買い物リスト、配送状況も確認できるとしています。"
+        ],
+        "background": [
+          "Amazonは自社サイトへのMeta Museのアクセスを規約違反として9月に遮断していました。"
+        ],
+        "explanation": [
+          "SMSを操作面にすると専用アプリを開かず依頼できますが、電話番号の本人確認が購入権限へ直結します。"
+        ],
+        "implications": [
+          "利用者は会話から購入までの手順を短縮できますが、誤注文とアカウント乗っ取りへの確認設計が重要になります。"
+        ],
+        "caveats": [
+          "初期提供は招待された米国利用者に限られ、購入確認や責任分担の詳細は報道で全て示されていません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "日常的なSMSを購入操作へ変え、エージェント商取引の本人確認と競争条件を具体化するためです。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "操作は簡単になりますが、購入確定と外部エージェント遮断の扱いが論点です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:46:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-sonicwall-cve-2026-19868-kev",
+      "title": "SonicWall SSL VPNのSAML・MFA回避を悪用確認――CISAがKEVへ追加",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "sourceName": "CISA",
+      "publishedAt": "2026-11-06T00:00:00+00:00",
+      "collectedAt": "2026-11-07T13:50:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["セキュリティ"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "CISAは11月6日、SonicWall SonicOS SSL VPNのCVE-2026-19868を、実悪用を確認した脆弱性の一覧KEVへ追加しました。別の認証方式で有効な資格情報を持つ利用者が、SAML認証の制御を回避できる問題です。",
+        "回避に成功すると、IDプロバイダー側でSAMLへ強制していた多要素認証も通らずに接続できる可能性があります。CISAは米連邦政府機関へ11月20日までの対応を求め、SonicWallの案内に従うよう指定しました。",
+        "これは資格情報なしで侵入する欠陥ではありませんが、漏えい・窃取済みの別方式の認証情報をMFAで止められない点が重要です。運用者は修正だけでなく、VPNログから認証方式の不一致や通常と異なる接続元を調査する必要があります。"
+      ],
+      "comment": "MFAを導入していても、全ての認証経路が同じポリシーを通らなければ強度は最も弱い経路に引き下げられます。今回の問題では、SAMLを使う主経路で多要素認証を強制していても、別の認証方式で有効な資格情報が残っていると制御を回避される可能性があります。修正適用前後には、ローカルアカウント、LDAP、RADIUS、SAMLの有効範囲を棚卸しし、使っていない方式と休眠アカウントを無効化する必要があります。実悪用が確認された後は、更新しただけで調査を終えず、VPN接続元、利用時刻、端末識別、接続後にアクセスした内部資産を確認すべきです。境界装置のログ保持が短い環境では、調査可能な期間を失う前にログを退避し、同じ資格情報が他サービスで使われていないかも確認する必要があります。",
+      "articleDetail": {
+        "conclusion": "CVE-2026-19868はSonicOS SSL VPNのSAML・MFA制御を回避し得る実悪用済みの認証問題です。",
+        "facts": [
+          "CISAは2026年11月6日にCVE-2026-19868をKEVへ追加しました。",
+          "別認証方式の有効な資格情報により、SAML認証とSAMLで強制するMFAを回避できる可能性があります。"
+        ],
+        "background": [
+          "SSL VPNはインターネット側から内部ネットワークへ接続する境界サービスで、認証制御の不整合が直接侵入経路になります。"
+        ],
+        "explanation": [
+          "複数の認証方式を併用する装置では、一つの経路だけMFAを強制しても、別経路が同じ利用者を受け入れると迂回が成立します。"
+        ],
+        "implications": [
+          "修正と同時に、代替認証方式、休眠アカウント、異常なVPN接続履歴を確認する必要があります。"
+        ],
+        "caveats": [
+          "CISAのKEV登録は実悪用を示しますが、攻撃者、被害件数、ランサムウェア利用は公表されていません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "境界VPNで実悪用が確認され、MFAを設定済みの組織でも代替認証経路が弱点になり得るためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "KEV登録と短い対応期限があり、修正と侵害調査を優先する根拠が明確です。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:50:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-library-ai-bot-overload",
+      "title": "大学図書館へAI収集ボットが殺到――公開資料を守る対策が人のアクセスも阻む",
+      "sourceUrl": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
+      "sourceName": "CBC News",
+      "publishedAt": "2026-11-06T14:13:09+00:00",
+      "collectedAt": "2026-11-07T13:54:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["生活・文化"],
+      "channels": ["hacker-news"],
+      "top5Rank": null,
+      "summary": [
+        "大学図書館やデジタルアーカイブで、AI学習用とみられる大量の収集ボットが資料へ繰り返しアクセスし、検索や閲覧を遅延・停止させる事例が増えています。CBC Newsは、学生、研究者、一般利用者の公開アクセスが影響を受けていると報じました。",
+        "一部のボットはrobots.txtを無視し、毎秒数千件の文書を複数形式で取得します。ノースカロライナ大学チャペルヒル校では、同じ日にフィンランド音楽へ1万1,000件を超える検索が多数のIPアドレスから届き、利用者が締め出される時間がありました。",
+        "図書館はCAPTCHAやログインで防御できますが、障害のある利用者、検索エンジン、保存目的の善良なボットも排除し得ます。大手AI企業は共通のrobots.txt拒否信号を尊重すると表明したものの、第三者ボットや小規模事業者への拘束力はありません。"
+      ],
+      "comment": "文化資産の公開は、誰でも同じURLへアクセスできることだけでは成り立ちません。少数の収集者が帯域、検索基盤、画像変換を占有すれば、形式上は公開でも人間が使えない状態になります。図書館側が全資料の一括配布ファイルやレート制限付きAPIを用意し、収集者がそれを使う設計にできれば、ページを一件ずつ巡回する負荷を減らせます。一方で、維持費を負担できない機関へAPI構築を一方的に求めるのも現実的ではありません。AI企業はrobots.txtの遵守に加え、組織名を示すUser-Agent、連絡先、取得速度、再配布条件を明示すべきです。防御側もIP遮断だけに頼らず、セッション全体の速度、同一資料の形式違い取得、失敗時の再試行を組み合わせて制御すると、家庭や大学の共有IPを巻き込みにくくなります。",
+      "articleDetail": {
+        "conclusion": "AI収集ボットの過剰アクセスが、大学図書館の公開資料を人間が利用するための可用性を損ねています。",
+        "facts": [
+          "一部の収集ボットは毎秒数千件を要求し、同じ文書を複数形式でダウンロードしています。",
+          "ノースカロライナ大学の事例では、フィンランド音楽へ1日1万1,000件超の検索が多数のIPから届きました。"
+        ],
+        "background": [
+          "図書館、博物館、Project Gutenbergなどは、研究・教育向けの高品質資料をログインなしで公開してきました。"
+        ],
+        "explanation": [
+          "分散したIPから短時間に同じ資料を取得すると、単純なIP遮断を回避しながら検索・変換サーバーを圧迫できます。"
+        ],
+        "implications": [
+          "強いCAPTCHAやログインを導入すれば負荷は下がりますが、一般利用者と善良な保存ボットのアクセスも狭まります。"
+        ],
+        "caveats": [
+          "全ての大量アクセスが大手AI企業によるものとは限らず、第三者収集業者や設定不良ボットも含まれます。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AI学習データの取得が、公共資料の公開性を守る機関へ直接の可用性コストを移しているためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "複数機関の具体例があり、収集側の識別・速度制御と公開側の代替配布が必要です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-07T13:54:00+09:00",
+        "httpStatus": 403,
+        "note": "CBC本文は取得制限のため、公開検索結果と再配信された本文で内容を照合しました。"
+      }
+    },
+    {
+      "id": "2026-11-07-fox-roku-acquisition-close",
+      "title": "Fox、Rokuの買収を完了――1億世帯超の配信基盤と番組・広告事業を統合",
+      "sourceUrl": "https://investor.foxcorporation.com/news/archives/2026/fox-corporation-completes-acquisition-of-roku/",
+      "sourceName": "Fox Corporation",
+      "publishedAt": "2026-11-06T00:00:00+00:00",
+      "collectedAt": "2026-11-07T13:58:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["エンタメ"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "Fox Corporationは11月6日、Rokuの買収を完了したと発表しました。Foxのスポーツ、ニュース、地域番組、Tubi、Fox Oneと、世界1億世帯超へ接続するRokuのテレビ配信基盤、広告、視聴データを同じ企業グループへ統合します。",
+        "合併条件では、旧Roku株主は保有していたClass A・B株1株につき現金95.30ドルとFox Class A株0.9799株を受け取ります。FoxはRokuを多数のアプリとチャンネルへ開かれた配信基盤として継続すると説明しています。",
+        "買収完了はテレビ端末の利用者に直ちにアプリ変更を強いる発表ではありません。一方、配信面、広告在庫、視聴データ、Fox自身の番組が同じ所有者へ集まるため、競合サービスの扱いと推薦・広告の中立性が今後の確認点になります。"
+      ],
+      "comment": "ストリーミング市場では番組を持つ企業と、視聴者へ届くOS・ホーム画面を持つ企業の交渉力が異なります。FoxがRokuを所有すると、自社番組の配信だけでなく、ホーム画面の配置、検索、広告販売、視聴傾向の分析まで一つの事業判断でつなげられます。これは広告主へ大きな到達範囲を提供する一方、競合アプリの表示順位、広告条件、データ利用に公平性の問題を生みます。利用者にとって重要なのは、契約完了そのものより、プライバシー設定が引き継がれるか、推薦へFox番組が優遇されるか、古いRoku端末の更新が続くかです。開発者や配信事業者は、手数料、審査、広告API、測定指標の変更を追い、Foxのコンテンツ部門とプラットフォーム部門のルールを区別して確認する必要があります。",
+      "articleDetail": {
+        "conclusion": "FoxはRoku買収を完了し、番組・広告事業と1億世帯超へ届くテレビ配信基盤を統合しました。",
+        "facts": [
+          "旧Roku株主は1株につき現金95.30ドルとFox Class A株0.9799株を受け取ります。",
+          "FoxはRokuの配信基盤が世界1億世帯超へ接続し、引き続き多数のアプリとチャンネルを扱うと説明しています。"
+        ],
+        "background": [
+          "Foxはスポーツ、ニュース、地域放送、Tubi、Fox Oneを持ち、RokuはテレビOS、端末、広告、The Roku Channelを運営します。"
+        ],
+        "explanation": [
+          "番組制作と配信面を垂直統合すると、コンテンツ、推薦、広告販売、視聴測定を同じ企業内で調整できます。"
+        ],
+        "implications": [
+          "広告主は到達範囲をまとめて買いやすくなる一方、競合配信サービスは表示・データ・手数料条件の変化を受け得ます。"
+        ],
+        "caveats": [
+          "Foxの発表は開放性の継続を表明していますが、具体的な推薦、広告、データ統合の変更時期は示していません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "大手番組会社がテレビの配信面と視聴データを取得し、ストリーミングの競争条件を変え得るためです。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "買収完了と条件は公式に確認できますが、利用者・競合への実際の変更は今後表れます。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T13:58:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-07-flock-local-government-exits",
+      "title": "米自治体でFlock監視カメラの契約見直し――少なくとも10団体が縮小・終了へ",
+      "sourceUrl": "https://techcrunch.com/2026/11/05/at-least-10-local-governments-have-moved-to-drop-flocks-surveillance-cameras-since-summer/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-06T07:18:00+00:00",
+      "collectedAt": "2026-11-07T14:05:00+09:00",
+      "editionDate": "2026-11-07",
+      "categories": ["国内・国際"],
+      "channels": ["other"],
+      "top5Rank": null,
+      "summary": [
+        "米国で、自動車のナンバープレートを読み取るFlock Safetyのカメラについて、少なくとも10の自治体・警察組織が2026年夏以降、利用の縮小、制限、契約終了へ動いたとTechCrunchが報じました。大量監視とデータ共有への懸念が背景です。",
+        "自治体ごとの理由には、州補助金の停止、住民投票、移民当局を含む外部機関からの検索、契約終了後の機器撤去遅延などがあります。テキサス州では資金停止後に多数のカメラが無効化され、バージニア州の一部自治体も契約終了を選びました。",
+        "ベンダーを外すだけでは、同じ機能を別製品へ移す可能性があります。自治体は、設置目的、検索権限、保存期間、域外機関との共有、監査ログ、契約終了時のデータ削除と機器撤去を、製品名に依存しない規則として定める必要があります。"
+      ],
+      "comment": "ナンバープレート読取は盗難車捜索などの個別目的に使えますが、道路上の移動履歴を広域に結合できると、令状や事件との関係がない人の行動も後から検索できます。自治体が契約を終了する際に重要なのは、カメラの電源を切ることだけではありません。過去データがいつ削除されるか、他機関へ複製済みの検索結果をどう扱うか、警察官や外部利用者のアカウントを無効化したかを確認する必要があります。住民への説明も、導入台数や犯罪検挙の例だけでなく、誤読率、検索件数、域外共有、監査違反を同じ期間で示すべきです。別ベンダーへ置き換える場合は、製品の比較より先に、保存日数、目的外検索の禁止、独立監査、苦情・訂正手続きという共通条件を条例や契約へ入れることが重要です。",
+      "articleDetail": {
+        "conclusion": "米国の少なくとも10自治体・警察組織が、Flockのナンバー読取カメラを縮小・制限・終了する動きを見せています。",
+        "facts": [
+          "TechCrunchは2026年夏以降、少なくとも10団体が利用見直しへ動いたと報じました。",
+          "見直し理由にはプライバシー、外部機関とのデータ共有、資金、契約終了後の撤去が含まれます。"
+        ],
+        "background": [
+          "自動ナンバー読取カメラは、通過車両の番号、時刻、場所などを記録し、複数地点の検索に使われます。"
+        ],
+        "explanation": [
+          "自治体間で検索権限を共有すると、一つの地域のカメラでも広域の移動履歴を照会できるようになります。"
+        ],
+        "implications": [
+          "契約終了時には機器撤去だけでなく、保存データ、共有先、利用者アカウント、監査ログの処理が必要です。"
+        ],
+        "caveats": [
+          "少なくとも10団体という数は縮小・制限・終了を含み、全てが同じ理由で完全撤去したことを意味しません。"
+        ],
+        "nextChecks": []
+      },
+      "attentionAnalysis": {
+        "whyNotable": "個別自治体の判断が複数地域へ広がり、監視技術の契約とデータ統治を見直す段階に入ったためです。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "捜査上の有用性と無関係な人の移動記録を両立させる具体的な統治条件が必要です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": { "used": false },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-07T14:05:00+09:00",
+        "httpStatus": 200
+      }
+    }
+  ],
+  "monitoringReview": {
+    "policyVersion": 1,
+    "checkedAt": "2026-11-07T09:12:00+09:00",
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:45:00.000Z",
+        "note": "海外ソーシャル発見の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/",
+          "https://www.reddit.com/",
+          "https://lobste.rs/",
+          "https://bsky.app/",
+          "https://mastodon.social/explore"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:46:00.000Z",
+        "note": "国内ソーシャル・横断媒体の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all",
+          "https://togetter.com/",
+          "https://gigazine.net/"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:47:00.000Z",
+        "note": "動画・ネット文化の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending",
+          "https://www.tiktok.com/",
+          "https://www.nicovideo.jp/ranking/genre/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "status": "restricted",
+        "checkedAt": "2026-11-06T23:48:00.000Z",
+        "note": "一般報道と一次発表は一部の公開入口がアクセス制限となったため、取得できた公開情報だけを確認しました。",
+        "evidenceUrls": [
+          "https://www.reuters.com/",
+          "https://apnews.com/",
+          "https://www.bbc.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:49:00.000Z",
+        "note": "OpenAI公式更新・安全情報・稼働状況の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://openai.com/news/",
+          "https://platform.openai.com/docs/changelog",
+          "https://status.openai.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:50:00.000Z",
+        "note": "Anthropic公式更新・研究・稼働状況の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news",
+          "https://www.anthropic.com/research",
+          "https://status.anthropic.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:51:00.000Z",
+        "note": "Google AI・DeepMind公式更新の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/",
+          "https://blog.google/technology/ai/",
+          "https://status.cloud.google.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:52:00.000Z",
+        "note": "Microsoft・Meta・NVIDIA AI公式更新の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/",
+          "https://ai.meta.com/blog/",
+          "https://blogs.nvidia.com/blog/category/deep-learning/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:53:00.000Z",
+        "note": "AI企業の買収・終了・提供条件変更の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/",
+          "https://techcrunch.com/category/artificial-intelligence/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:54:00.000Z",
+        "note": "CISA KEV・NVDの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "https://nvd.nist.gov/vuln"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:55:00.000Z",
+        "note": "CERT/CC・JPCERT/CC・IPAの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/",
+          "https://www.jpcert.or.jp/at/",
+          "https://www.ipa.go.jp/security/security-alert/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:56:00.000Z",
+        "note": "OSS・クラウド・主要ベンダーセキュリティ告知の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://github.com/advisories",
+          "https://msrc.microsoft.com/update-guide/",
+          "https://security.googleblog.com/",
+          "https://support.apple.com/en-us/100100"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:57:00.000Z",
+        "note": "悪用確認・国内脆弱性の機械可読フィードの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "https://jvn.jp/en/"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:58:00.000Z",
+        "note": "公開セキュリティ調査・侵害報道の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/",
+          "https://www.welivesecurity.com/en/",
+          "https://www.bleepingcomputer.com/feed/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "status": "checked",
+        "checkedAt": "2026-11-06T23:59:00.000Z",
+        "note": "主要プロジェクト・製品ベンダーの個別告知の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9",
+          "https://github.com/airbytehq/airbyte/security/advisories",
+          "https://www.zyxel.com/global/en/support/security-advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:00:00.000Z",
+        "note": "Synologyセキュリティ告知・製品警告の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory",
+          "https://www.synology.com/en-global/company/news"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:01:00.000Z",
+        "note": "Broadcom VCF Security Advisoriesの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:02:00.000Z",
+        "note": "Broadcom Application Networking and Security Advisoriesの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "status": "restricted",
+        "checkedAt": "2026-11-07T00:03:00.000Z",
+        "note": "Broadcom KB・TechDocs・製品別リリースノートは一部の公開入口がアクセス制限となったため、取得できた公開情報だけを確認しました。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/",
+          "https://techdocs.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:04:00.000Z",
+        "note": "Broadcom Service Status・緊急障害の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": ["https://status.broadcom.com/"]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "status": "restricted",
+        "checkedAt": "2026-11-07T00:05:00.000Z",
+        "note": "相互運用性・互換性・HCL・ライフサイクルは一部の公開入口がアクセス制限となったため、取得できた公開情報だけを確認しました。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability",
+          "https://compatibilityguide.broadcom.com/",
+          "https://support.broadcom.com/group/ecx/productlifecycle"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "status": "restricted",
+        "checkedAt": "2026-11-07T00:06:00.000Z",
+        "note": "Avi Load Balancer専用監視は一部の公開入口がアクセス制限となったため、取得できた公開情報だけを確認しました。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/",
+          "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "status": "restricted",
+        "checkedAt": "2026-11-07T00:07:00.000Z",
+        "note": "vDefend・NSX・SSP専用監視は一部の公開入口がアクセス制限となったため、取得できた公開情報だけを確認しました。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/",
+          "https://blogs.vmware.com/security/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:08:00.000Z",
+        "note": "William Lam・Duncan Eppingの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://williamlam.com/",
+          "https://x.com/lamw",
+          "https://www.yellow-bricks.com/",
+          "https://x.com/DuncanYB"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:09:00.000Z",
+        "note": "運用者コミュニティ・実機検証者の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home",
+          "https://www.reddit.com/r/vmware/",
+          "https://blogs.vmware.com/code/"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:10:00.000Z",
+        "note": "バックアップ・GPU・サーバー・ストレージ連携ベンダーの公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/",
+          "https://docs.nvidia.com/datacenter/tesla/drivers/",
+          "https://www.dell.com/support/product-details/en-us/product/vmware-esxi-8.x/overview",
+          "https://support.hpe.com/",
+          "https://mysupport.netapp.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "status": "checked",
+        "checkedAt": "2026-11-07T00:11:00.000Z",
+        "note": "競合・移行先の公開入口を当日巡回し、候補・継続案件・一次資料への導線を確認しました。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog",
+          "https://azure.microsoft.com/en-us/updates/",
+          "https://www.proxmox.com/en/about/press-releases",
+          "https://www.redhat.com/en/blog/channel/openshift"
+        ]
+      }
+    ],
+    "findings": [
+      {
+        "title": "GPT-6 Cyberの限定提供",
+        "area": "ai",
+        "sourceId": "ai-openai",
+        "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-07-openai-gpt6-cyber",
+        "reason": "限定された防御研究向け提供と、脆弱性探索・報告の規模に関する公式発表を確認しました。"
+      },
+      {
+        "title": "DGS-3130未修正問題の緩和策",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/d-link-warns-of-multiple-zero-days-in-dgs-3130-series-switches/amp/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-07-dlink-dgs3130",
+        "reason": "未修正のネットワーク機器問題であり、管理面分離という具体的な緩和策が示されています。"
+      },
+      {
+        "title": "Veeam Software ApplianceのEPYC起動失敗",
+        "area": "vcf",
+        "sourceId": "vcf-partners",
+        "url": "https://www.veeam.com/kb4960",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-07-veeam-epyc-boot",
+        "reason": "バックアップ基盤の更新と再起動時に影響し得るため、運用上の重要度が高いと判断しました。"
+      },
+      {
+        "title": "QNAP NASでPlex2Shell侵害報告",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/",
+        "severity": "critical",
+        "disposition": "included",
+        "articleId": "2026-11-07-qnap-plex2shell-compromise",
+        "reason": "実際の侵害報告があり、更新だけでなく再インストールと資格情報変更が必要なため採用しました。"
+      },
+      {
+        "title": "悪性JavaScript感染サイトの通知課題",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://scotthelme.co.uk/we-know-15-579-websites-are-infected-how-do-we-tell-them/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-07-report-uri-infected-sites",
+        "reason": "感染中と判断されたサイト数と推計訪問規模が大きく、通知・修正の運用課題が具体的なため採用しました。"
+      },
+      {
+        "title": "Meta Muse Spacesの継続案件機能",
+        "area": "ai",
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "url": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+        "severity": "informational",
+        "disposition": "included",
+        "articleId": "2026-11-07-meta-muse-spaces",
+        "reason": "消費者向けエージェントが第三者アプリを接続し、継続案件を更新する機能変更として採用しました。"
+      },
+      {
+        "title": "Underdog Woofの端末内音声合成",
+        "area": "ai",
+        "sourceId": "ai-industry-operations",
+        "url": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/",
+        "severity": "informational",
+        "disposition": "included",
+        "articleId": "2026-11-07-underdog-woof-local-voice",
+        "reason": "31.7MBのモデルをブラウザー内で動かす具体的な小型化とプライバシー上の選択肢を確認しました。"
+      },
+      {
+        "title": "SonicOS SSL VPNのSAML・MFA回避",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "critical",
+        "disposition": "included",
+        "articleId": "2026-11-07-sonicwall-cve-2026-19868-kev",
+        "reason": "CISAが実悪用を確認してKEVへ追加し、境界VPNのMFA制御を回避し得るため採用しました。"
+      },
+      {
+        "title": "大学図書館へのAI収集ボット過負荷",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-07-library-ai-bot-overload",
+        "reason": "公共資料の可用性を損なう具体例と、人間のアクセスを阻む防御上のトレードオフを確認しました。"
+      },
+      {
+        "title": "FoxによるRoku買収完了",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://investor.foxcorporation.com/news/archives/2026/fox-corporation-completes-acquisition-of-roku/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-07-fox-roku-acquisition-close",
+        "reason": "1億世帯超へ届く配信基盤と番組・広告事業の統合が完了し、利用者と競合への影響が大きいため採用しました。"
+      },
+      {
+        "title": "米自治体でFlock監視カメラ契約見直し",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://techcrunch.com/2026/11/05/at-least-10-local-governments-have-moved-to-drop-flocks-surveillance-cameras-since-summer/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-07-flock-local-government-exits",
+        "reason": "少なくとも10の自治体・警察組織が縮小・制限・終了へ動き、監視データの共有と契約終了時の統治が具体的な論点となったため採用しました。"
+      },
+      {
+        "title": "PwnEscapeのFirecracker実証",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.pwn.ai/blog/firecracker-escape",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "既報のCVE-2026-99999をFirecrackerのroot実行構成で実証した続報ですが、jailerなしの研究構成であり、当日版では監視findingへ残しました。"
+      }
+    ]
+  }
+}
