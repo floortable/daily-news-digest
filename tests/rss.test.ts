@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { editionSchema } from '../src/lib/schema';
 import { buildPodcastFeed } from '../src/lib/podcast-feed';
 import { escapeXml, preserveRssGuids, toRssItem } from '../src/lib/rss';
+import voicevox from '../config/voicevox.json';
 
 describe('full-text RSS item', () => {
   const edition = editionSchema.parse(
@@ -95,5 +96,19 @@ describe('podcast RSS', () => {
 
   it('preserves the existing audio-feed GUIDs so readers do not receive duplicate episodes', () => {
     expect(feed).toContain('<guid isPermaLink="true">https://floortable.github.io/daily-news-digest/archive/2026-10-25/#audio</guid>');
+  });
+});
+
+describe('article RSS voice credit', () => {
+  it('keeps the configured VOICEVOX credit available to every article feed', async () => {
+    const [{ GET: getAllFeed }, { GET: getTop5Feed }] = await Promise.all([
+      import('../src/pages/rss.xml'),
+      import('../src/pages/rss/top5.xml'),
+    ]);
+    const context = { site: new URL('https://floortable.github.io') };
+    const [allFeed, top5Feed] = await Promise.all([getAllFeed(context), getTop5Feed(context)]);
+
+    expect(await allFeed.text()).toContain(voicevox.credit);
+    expect(await top5Feed.text()).toContain(voicevox.credit);
   });
 });
