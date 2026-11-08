@@ -20,12 +20,18 @@ export type Candidate = {
   sourceLabel: string;
   title: string;
   url: string;
+  discoveryUrl: string | null;
   publishedAt: string | null;
   observedMetric: string | null;
+  sourceSummary: string | null;
   engagementScore?: number;
 };
 
 const text = (value: unknown) => typeof value === 'string' ? value.trim() : '';
+const sourceSummary = (value: unknown) => {
+  const normalized = text(value);
+  return normalized ? normalized.slice(0, 1_000) : null;
+};
 const decodeXml = (value: string) => value
   .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
   .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -46,10 +52,12 @@ export function parseFeed(adapter: string, body: string, sourceId: string, sourc
       const title = text(hit.title);
       const url = text(hit.url) || (hit.objectID ? `https://news.ycombinator.com/item?id=${hit.objectID}` : '');
       if (!title || !url) return [];
+      const discoveryUrl = hit.objectID ? `https://news.ycombinator.com/item?id=${hit.objectID}` : null;
       const points = typeof hit.points === 'number' ? hit.points : null;
       const comments = typeof hit.num_comments === 'number' ? hit.num_comments : null;
-      return [{ sourceId, sourceLabel, title, url, publishedAt: normalizeDate(hit.created_at), observedMetric:
+      return [{ sourceId, sourceLabel, title, url, discoveryUrl, publishedAt: normalizeDate(hit.created_at), observedMetric:
         points === null && comments === null ? null : `${points ?? 0} points / ${comments ?? 0} comments`,
+      sourceSummary: sourceSummary(hit.story_text),
       engagementScore: (points ?? 0) + (comments ?? 0) * 2 }];
     });
   }
@@ -58,8 +66,9 @@ export function parseFeed(adapter: string, body: string, sourceId: string, sourc
     return (data.vulnerabilities ?? []).flatMap((item) => {
       const title = [text(item.cveID), text(item.vulnerabilityName)].filter(Boolean).join(' ');
       if (!title) return [];
-      return [{ sourceId, sourceLabel, title, url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog',
-        publishedAt: normalizeDate(item.dateAdded), observedMetric: text(item.dueDate) ? `due ${text(item.dueDate)}` : null }];
+      return [{ sourceId, sourceLabel, title, url: 'https://www.cisa.gov/known-exploited-vulnerabilities-catalog', discoveryUrl: null,
+        publishedAt: normalizeDate(item.dateAdded), observedMetric: text(item.dueDate) ? `due ${text(item.dueDate)}` : null,
+        sourceSummary: sourceSummary(item.shortDescription) }];
     });
   }
   if (adapter === 'discourse') {
@@ -69,8 +78,9 @@ export function parseFeed(adapter: string, body: string, sourceId: string, sourc
       const slug = text(topic.slug);
       const id = typeof topic.id === 'number' ? topic.id : null;
       if (!title || !slug || id === null) return [];
-      return [{ sourceId, sourceLabel, title, url: `https://discuss.rubyonrails.org/t/${slug}/${id}`,
-        publishedAt: normalizeDate(topic.created_at), observedMetric: typeof topic.posts_count === 'number' ? `${topic.posts_count} posts` : null }];
+      return [{ sourceId, sourceLabel, title, url: `https://discuss.rubyonrails.org/t/${slug}/${id}`, discoveryUrl: null,
+        publishedAt: normalizeDate(topic.created_at), observedMetric: typeof topic.posts_count === 'number' ? `${topic.posts_count} posts` : null,
+        sourceSummary: sourceSummary(topic.excerpt) }];
     });
   }
   const blocks = [...body.matchAll(/<(?:item|entry)\b[\s\S]*?<\/(?:item|entry)>/gi)].map((match) => match[0]);
@@ -79,7 +89,10 @@ export function parseFeed(adapter: string, body: string, sourceId: string, sourc
     const link = decodeXml(block.match(/<link\b[^>]*href=["']([^"']+)["'][^>]*\/?\s*>/i)?.[1]
       ?? block.match(/<link\b[^>]*>([\s\S]*?)<\/link>/i)?.[1] ?? '');
     const published = block.match(/<(?:pubDate|published|updated|dc:date)\b[^>]*>([\s\S]*?)<\/(?:pubDate|published|updated|dc:date)>/i)?.[1];
-    return title && link ? [{ sourceId, sourceLabel, title, url: link, publishedAt: normalizeDate(decodeXml(published ?? '')), observedMetric: null }] : [];
+    const summary = decodeXml(block.match(/<(?:description|summary|content:encoded)\b[^>]*>([\s\S]*?)<\/(?:description|summary|content:encoded)>/i)?.[1] ?? '');
+    return title && link ? [{ sourceId, sourceLabel, title, url: link, discoveryUrl: null,
+      publishedAt: normalizeDate(decodeXml(published ?? '')), observedMetric: null,
+      sourceSummary: sourceSummary(summary) }] : [];
   });
 }
 

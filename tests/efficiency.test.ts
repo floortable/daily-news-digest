@@ -20,6 +20,10 @@ describe('日次処理のコンテキスト効率', () => {
     expect(prompt).toContain('主担当で使えるモデル名とサブエージェントへ指定できるモデル名は別');
     expect(prompt).toContain('未完成バッチや定型生成物へレビューを消費しない');
     expect(prompt).toContain('同じレビュー担当にも新しい担当にも再レビューを依頼しない');
+    expect(prompt).toContain('版全体の事実確認不能へ拡大してはいけません');
+    expect(prompt).toContain('代替経路を1巡→候補差し替え→記事数を18件、なお必要なら15件まで縮小');
+    expect(prompt).toContain('403の件数や取得不能な媒体名だけでは停止根拠になりません');
+    expect(prompt).toContain('これらを試さず「十分に裏付けられない」「品質を下げたくない」と総括して終了してはいけません');
   });
 
   it('低頻度の保守調査を日次生成から分離する', () => {
@@ -39,6 +43,7 @@ describe('日次処理のコンテキスト効率', () => {
     }] }), 'hn', 'Hacker News');
     expect(candidates).toEqual([expect.objectContaining({
       sourceId: 'hn', title: 'A useful project', url: 'https://example.com/project',
+      discoveryUrl: 'https://news.ycombinator.com/item?id=123',
       observedMetric: '42 points / 7 comments',
     })]);
   });
@@ -58,9 +63,16 @@ describe('日次処理のコンテキスト効率', () => {
   });
 
   it('RSSとAtomの代表的な形式を候補台帳へ正規化する', () => {
-    const rss = '<?xml version="1.0"?><rss><channel><item><title><![CDATA[Security update &amp; fix]]></title><link>https://example.com/fix</link><pubDate>Wed, 05 Nov 2026 00:00:00 GMT</pubDate></item></channel></rss>';
+    const rss = '<?xml version="1.0"?><rss><channel><item><title><![CDATA[Security update &amp; fix]]></title><link>https://example.com/fix</link><description><![CDATA[Vendor advisory with affected versions and remediation.]]></description><pubDate>Wed, 05 Nov 2026 00:00:00 GMT</pubDate></item></channel></rss>';
     expect(parseFeed('rss', rss, 'feed', 'Feed')).toEqual([expect.objectContaining({
       title: 'Security update & fix', url: 'https://example.com/fix',
+      sourceSummary: 'Vendor advisory with affected versions and remediation.',
     })]);
+  });
+
+  it('候補要約をコンテキスト保護のため1000文字へ制限する', () => {
+    const rss = `<?xml version="1.0"?><rss><channel><item><title>Long report</title><link>https://example.com/long</link><description>${'x'.repeat(1_500)}</description></item></channel></rss>`;
+    const [candidate] = parseFeed('rss', rss, 'feed', 'Feed');
+    expect(candidate.sourceSummary).toHaveLength(1_000);
   });
 });
