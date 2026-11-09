@@ -17,6 +17,8 @@
     "media:voicevox": "tsx scripts/media/synthesize-voicevox.ts",
     "media:render": "tsx scripts/media/render-media.ts",
     "candidates:collect": "tsx scripts/collect-candidate-ledger.ts",
+    "edition:assemble": "tsx scripts/assemble-edition.ts",
+    "edition:guard": "tsx scripts/title-body-guard.ts",
     "check:all": "tsx scripts/run-required-checks.ts",
     "validate:data": "tsx scripts/validate-data.ts",
     "test": "vitest run"

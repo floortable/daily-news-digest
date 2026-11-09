@@ -50,11 +50,11 @@ function registryWithStart(enforcementStartDate: string): MonitoringRegistry {
 }
 
 describe('監視証跡の検証', () => {
-  it('外部レビューと独立編集レビューを停止ゲートにせず修正へ使う', () => {
+  it('reviews入力と独立編集レビューを停止ゲートにせず修正へ使う', () => {
     const prompt = readFileSync(resolve('automation/daily-news-digest.prompt.md'), 'utf8');
     expect(prompt).toContain('reviews/README.md');
-    expect(prompt).toContain('is:issue is:open in:title "[Museレビュー]"');
-    expect(prompt).toContain('外部レビューやGitHubを取得できないことだけを理由に生成を停止せず');
+    expect(prompt).toContain('レビューの入力はVM生成の`reviews/`だけ');
+    expect(prompt).not.toContain('is:issue is:open in:title "[Museレビュー]"');
     expect(prompt).toContain('指摘を鵜呑みにせず');
     expect(prompt).toContain('最新レビューや主担当の評価を渡さず');
     expect(prompt).toContain('独立編集レビュー');
@@ -70,16 +70,16 @@ describe('監視証跡の検証', () => {
     expect(prompt).toContain('reasoning_effort: "medium"');
     expect(prompt).toContain('reasoning_effort: "low"');
     expect(prompt).toContain('これらのためにサブエージェントを起動しません');
-    expect(prompt).toContain('独立編集レビュー1体だけ');
-    expect(prompt).toContain('レビューは1回だけ');
+    expect(prompt).toContain('記事単位の独立監査');
+    expect(prompt).toContain('版全体レビューは1回だけ');
     expect(prompt).toContain('合否判定や公開停止権を持たせない');
-    expect(prompt).toContain('指定モデルが利用不能な場合はレビューを省略');
+    expect(prompt).toContain('指定モデルが利用不能な場合は該当レビューを省略');
     expect(prompt).toContain('記事本文やログ全文をルートへ再掲させません');
     expect(prompt).toContain('候補台帳を先に完成させる');
     expect(prompt).toContain('非Top 5の5件サンプル');
-    expect(prompt).toContain('再レビューを依頼しない');
+    expect(prompt).toContain('版全体レビューを再依頼しない');
     expect(prompt).toContain('docs/editorial-audit-rubric.md');
-    expect(prompt).toContain('Issueへ転載された同一本文を再読しない');
+    expect(prompt).toContain('廃止済みのGitHub Issue確認やMac生成は行わない');
   });
 
   it('施行日前の既存版には監視証跡を要求しない', () => {
