@@ -89,6 +89,12 @@
       "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-08/top5.m4a",
       "audioBytes": 4898369,
       "durationSeconds": 237
+    },
+    {
+      "date": "2026-11-09",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-09/top5.m4a",
+      "audioBytes": 5572816,
+      "durationSeconds": 269
     }
   ]
 }
