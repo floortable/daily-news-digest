@@ -42,7 +42,7 @@ Top 5は5件、4分野以上、4媒体以上から選ぶ。技術・セキュリ
 
 AIはOpenAI、Anthropic、Google／DeepMind、Microsoft、Meta、NVIDIAのモデル、API、安全性、障害、買収、サービス終了、価格・条件変更を確認する。セキュリティはCISA KEVのJSON、JVN／JPCERT、主要プロジェクト・ベンダー告知、公開調査フィードを一般検索より先に確認する。悪用確認、認証前RCE、サプライチェーン侵害は不採用でも`findings`へ理由を残す。軽微なCVEやベンチマーク順位だけで一般枠を埋めない。
 
-VCFは`config/monitoring-sources.json`のVCF項目をすべて確認し、VMSA、KB、TechDocs、リリースノート、Service Status、互換性、HCL、ライフサイクル、Avi、vDefend、VCF Operationsを別経路として扱う。William Lam、Duncan Epping、運用者コミュニティは現場情報の入口に使い、仕様、版、脆弱性、サポート可否を公式資料でも照合する。取得不能は`restricted`または`failed`として実態、時刻、URLを個別記録し、処理終了時刻や同じ注記を全件へコピーしない。
+VCFは`config/monitoring-sources.json`のVCF項目をすべて確認し、VMSA、KB、TechDocs、リリースノート、Service Status、互換性、HCL、ライフサイクル、Avi、vDefend、VCF Operationsに加え、公式ブログ・ニュースルームの製品・ポートフォリオ発表を独立した経路として扱う。新しいエディションやパッケージの追加、ライセンス体系と価格モデル、製品の追加・終了・改名、販売終了とサポート期限、提供地域や購入条件の変更は、セキュリティ情報でなくてもfindingsとして必ず評価し、採用しない場合も理由を記録する。過去に発表されたが未掲載のままの重要な公式発表は、期間外を理由に参考扱いで終えず、詳細の判明や続報が出た時点で`lateInclusion`として改めて評価する。William Lam、Duncan Epping、運用者コミュニティは現場情報の入口に使い、仕様、版、脆弱性、サポート可否を公式資料でも照合する。取得不能は`restricted`または`failed`として実態、時刻、URLを個別記録し、処理終了時刻や同じ注記を全件へコピーしない。
 
 ミーム・流行動画は0〜3件を目安とし、発祥、元素材、音源、拡散経路、広告・仕込み、権利を確認できたものだけ扱う。元動画、画像、音源、歌詞、サムネイルは転載せず、二次被害のおそれがある題材は採用しない。
 

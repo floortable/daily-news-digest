@@ -211,6 +211,17 @@
       ]
     },
     {
+      "id": "vcf-product-portfolio",
+      "area": "vcf",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-11",
+      "label": "Broadcom・VMware公式の製品・ポートフォリオ発表（新エディション、ライセンス、販売・サポート期限）",
+      "urls": [
+        "https://blogs.vmware.com/cloud-foundation/",
+        "https://blogs.vmware.com/"
+      ]
+    },
+    {
       "id": "vcf-status",
       "area": "vcf",
       "requiredDaily": true,
