@@ -153,6 +153,20 @@ describe('監視証跡の検証', () => {
     expect(validateMonitoringCoverage(edition, registry).some((error) => error.includes('40％'))).toBe(true);
   });
 
+  it('短縮版では技術・セキュリティ4件を7件中まで許し、5件中4件は拒否する', () => {
+    const seven = futureEdition();
+    seven.articles = seven.articles.slice(0, 7);
+    for (const [index, article] of seven.articles.entries()) {
+      article.categories = [index < 4 ? 'テクノロジー' : '生活・文化'];
+    }
+    expect(validateMonitoringCoverage(seven, registry).some((error) => error.includes('比率'))).toBe(false);
+
+    const five = structuredClone(seven);
+    five.articles = five.articles.slice(0, 5);
+    five.articles[4].categories = ['生活・文化'];
+    expect(validateMonitoringCoverage(five, registry).some((error) => error.includes('60％'))).toBe(true);
+  });
+
   it('施行日を過ぎたVCF記事に専用レビューを要求し、Top 5入りを拒否する', () => {
     const raw = futureEdition() as unknown as Record<string, any>;
     const vcf = structuredClone(raw.articles[5]);

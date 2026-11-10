@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { editionSchema, normalizeUrl } from '../src/lib/schema';
 import { monitoringRegistrySchema, validateMonitoringCoverage } from './monitoring-validation';
 import { collectTitleBodyErrors, collectTitleBodyWarnings } from './title-body-guard';
+import { collectEditorialQualityErrors } from './editorial-quality-validation';
 
 const directory = resolve('data/daily');
 const files = (await readdir(directory)).filter((name) => name.endsWith('.json')).sort();
@@ -21,6 +22,8 @@ for (const file of files) {
   if (monitoringErrors.length) throw new Error(monitoringErrors.join('\n'));
   const titleBodyErrors = collectTitleBodyErrors(parsed);
   if (titleBodyErrors.length) throw new Error(titleBodyErrors.join('\n'));
+  const editorialQualityErrors = collectEditorialQualityErrors(parsed);
+  if (editorialQualityErrors.length) throw new Error(editorialQualityErrors.join('\n'));
   for (const warning of collectTitleBodyWarnings(parsed)) console.warn(`警告: ${warning}`);
   for (const article of parsed.articles) {
     if (globalIds.has(article.id)) throw new Error(`${file}: 記事ID ${article.id} は別の日にも存在します`);

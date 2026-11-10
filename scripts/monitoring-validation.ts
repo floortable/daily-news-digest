@@ -82,8 +82,10 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
 
   const technologyOrSecurity = general.filter((article) =>
     article.categories.includes('テクノロジー') || article.categories.includes('セキュリティ'));
-  if (general.length && technologyOrSecurity.length / general.length > 0.4) {
-    errors.push(`${edition.date}: 一般ニュースのテクノロジー・セキュリティ比率が40％を超えています`);
+  // 短縮版では1件の追加で比率が大きく動く。8件未満だけ60％を許し、通常件数では多様性の40％上限に戻す。
+  const technologySecurityLimit = general.length < 8 ? 0.6 : 0.4;
+  if (general.length && technologyOrSecurity.length / general.length > technologySecurityLimit) {
+    errors.push(`${edition.date}: 一般ニュースのテクノロジー・セキュリティ比率が${technologySecurityLimit * 100}％を超えています`);
   }
 
   const top5 = general.filter((article) => article.top5Rank !== null);

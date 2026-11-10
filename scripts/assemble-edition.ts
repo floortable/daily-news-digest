@@ -1,5 +1,5 @@
 /** 個別記事、確定台帳、版メタから日次版を決定的に組み立てる。 */
-import { readFile, readdir, writeFile } from 'node:fs/promises';
+import { access, readFile, readdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { z } from 'zod';
 import { articleSchema, editionSchema } from '../src/lib/schema';
@@ -19,7 +19,7 @@ const metaSchema = z.object({
   generatedAt: z.iso.datetime({ offset: true }),
   selectionShortfallReason: z.string().optional(),
   contentCompliance: z.unknown(),
-  monitoringReview: z.unknown().optional(),
+  monitoringReview: z.unknown(),
 }).strict();
 
 function valueAfter(flag: string): string | undefined {
@@ -50,6 +50,16 @@ async function main(): Promise<void> {
     }
   }
   if (!order.size) throw new Error(`${ledgerPath}: included の候補がありません`);
+
+  // anchors は生成時の根拠メモであり、公開データ検証ではなく結合前に必須とする。
+  for (const id of order.keys()) {
+    const anchorPath = resolve(articlesDir, 'anchors', `${id}.json`);
+    try {
+      await access(anchorPath);
+    } catch {
+      throw new Error(`台帳で included の ${id} に対応するアンカー事実がありません: ${anchorPath}`);
+    }
+  }
 
   const rawMeta = JSON.parse(await readFile(resolve(articlesDir, 'edition-meta.json'), 'utf8'));
   const meta = metaSchema.parse(rawMeta);
@@ -84,11 +94,9 @@ async function main(): Promise<void> {
   const edition = editionSchema.parse(assembled);
   const titleErrors = collectTitleBodyErrors(edition);
   if (titleErrors.length) throw new Error(titleErrors.join('\n'));
-  if (edition.monitoringReview) {
-    const registry = monitoringRegistrySchema.parse(JSON.parse(await readFile(resolve('config/monitoring-sources.json'), 'utf8')));
-    const monitoringErrors = validateMonitoringCoverage(edition, registry);
-    if (monitoringErrors.length) throw new Error(monitoringErrors.join('\n'));
-  }
+  const registry = monitoringRegistrySchema.parse(JSON.parse(await readFile(resolve('config/monitoring-sources.json'), 'utf8')));
+  const monitoringErrors = validateMonitoringCoverage(edition, registry);
+  if (monitoringErrors.length) throw new Error(monitoringErrors.join('\n'));
   const serialized = `${JSON.stringify(assembled, null, 2)}\n`;
   if (checkOnly) {
     const existing = await readFile(outPath, 'utf8');
