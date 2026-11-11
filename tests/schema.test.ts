@@ -19,6 +19,16 @@ describe('editorial compliance', () => {
     return future;
   };
 
+  const commentRuleEdition = (date: '2026-11-11' | '2026-11-12') => {
+    const current = JSON.parse(readFileSync('data/daily/2026-11-11.json', 'utf8'));
+    current.date = date;
+    for (const article of current.articles) {
+      article.editionDate = date;
+      article.publishedAt = `${date}T08:00:00+09:00`;
+    }
+    return current;
+  };
+
   it('accepts the reviewed sample edition', () => {
     expect(editionSchema.safeParse(edition).success).toBe(true);
   });
@@ -27,6 +37,34 @@ describe('editorial compliance', () => {
     const invalid = structuredClone(edition);
     invalid.articles[0].comment = '短い感想です。';
     expect(editionSchema.safeParse(invalid).success).toBe(false);
+  });
+
+  it('allows a 200-character comment for a non-Top 5 article from 2026-11-12', () => {
+    const current = commentRuleEdition('2026-11-12');
+    const article = current.articles.find((item: { top5Rank: number | null }) => item.top5Rank === null);
+    article.comment = 'あ'.repeat(200);
+    expect(editionSchema.safeParse(current).success).toBe(true);
+  });
+
+  it('rejects a sub-150-character comment for a non-Top 5 article from 2026-11-12', () => {
+    const current = commentRuleEdition('2026-11-12');
+    const article = current.articles.find((item: { top5Rank: number | null }) => item.top5Rank === null);
+    article.comment = 'あ'.repeat(100);
+    expect(editionSchema.safeParse(current).success).toBe(false);
+  });
+
+  it('keeps the 300-character minimum for Top 5 articles from 2026-11-12', () => {
+    const current = commentRuleEdition('2026-11-12');
+    const article = current.articles.find((item: { top5Rank: number | null }) => item.top5Rank !== null);
+    article.comment = 'あ'.repeat(200);
+    expect(editionSchema.safeParse(current).success).toBe(false);
+  });
+
+  it('keeps the prior 300-character minimum before the 2026-11-12 gate', () => {
+    const current = commentRuleEdition('2026-11-11');
+    const article = current.articles.find((item: { top5Rank: number | null }) => item.top5Rank === null);
+    article.comment = 'あ'.repeat(200);
+    expect(editionSchema.safeParse(current).success).toBe(false);
   });
 
   it('rejects an anticipated-question answer that ends with generic judgment advice', () => {
