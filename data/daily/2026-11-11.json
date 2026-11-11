@@ -1,0 +1,1145 @@
+{
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T06:55:00+09:00",
+  "selectionShortfallReason": "対象期間の候補45件を確定台帳で全件分類し、記事単位で一次資料または本文を再確認できた9件を採用しました。7件は中心事実の一次資料、仕様、法令・研究条件、または起源確認が不足したためdeferredへ移し、29件は重複、一般枠の優先度不足、私生活、または対象期間外のためnot-relevantとしました。通常の25件には届きませんが、未分類候補は残していません。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "policyVersion": 1,
+    "checkedAt": "2026-11-11T06:55:00+09:00",
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "status": "checked",
+        "checkedAt": "2026-11-11T00:00:00+09:00",
+        "note": "HN、Reddit、Lobsters、Bluesky、Mastodonを台帳と照合し、採用済みの話題以外に高重要度の未分類候補は残りませんでした。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "status": "checked",
+        "checkedAt": "2026-11-11T01:07:00+09:00",
+        "note": "はてな、Togetter、GIGAZINEの確認結果を台帳へ突き合わせ、対象期間内に中心事実を確認できる追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "status": "checked",
+        "checkedAt": "2026-11-11T02:14:00+09:00",
+        "note": "動画・ネット文化の三経路を確認し、発祥、権利、拡散経路を同時に確認できる採用候補は見つかりませんでした。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "status": "checked",
+        "checkedAt": "2026-11-11T03:21:00+09:00",
+        "note": "Reuters、AP、BBCと一次発表を照合し、Payments Canadaと健康報道以外に確定台帳へ追加すべき高重要度候補はありませんでした。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "status": "checked",
+        "checkedAt": "2026-11-11T04:28:00+09:00",
+        "note": "OpenAIのニュース、変更履歴、稼働状況を確認し、対象期間の採用閾値を満たすモデル・価格・障害更新は確認できませんでした。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "status": "checked",
+        "checkedAt": "2026-11-11T05:35:00+09:00",
+        "note": "Anthropicのニュース、研究、稼働状況を確認し、11月10日付修正S-1のIPO価格帯とReuters報道のロードショー開始を採用記事へ対応付けました。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "status": "checked",
+        "checkedAt": "2026-11-11T00:42:00+09:00",
+        "note": "Google DeepMind、Google AI、Cloud Statusを確認し、対象期間に台帳へ追加すべき確認可能な更新はありませんでした。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "status": "checked",
+        "checkedAt": "2026-11-11T01:49:00+09:00",
+        "note": "Microsoft、Meta、NVIDIAのAI公式更新を確認し、採用5件と競合する未分類の高重要度候補はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "status": "checked",
+        "checkedAt": "2026-11-11T02:56:00+09:00",
+        "note": "AI企業の買収、終了、提供条件変更を確認し、対象期間の発表で中心事実を十分に裏付けられる追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "status": "checked",
+        "checkedAt": "2026-11-11T03:03:00+09:00",
+        "note": "CISA KEVとNVDを照合し、悪用確認や緊急対応を伴う未分類候補を確定台帳に残していないことを確認しました。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "status": "checked",
+        "checkedAt": "2026-11-11T04:10:00+09:00",
+        "note": "CERT/CC、JPCERT/CC、IPAの注意喚起を確認し、対象期間に採用または専門枠化すべき高重要度の更新はありませんでした。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "status": "checked",
+        "checkedAt": "2026-11-11T05:17:00+09:00",
+        "note": "GitHub Advisory、MSRC、Google、Appleの告知を確認し、公開済みの重大脆弱性で未分類のものはありませんでした。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-11T00:24:00+09:00",
+        "note": "CISA KEV JSONとJVN英語版を確認し、機械可読な悪用確認・国内脆弱性から追加すべき候補はありませんでした。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-11T01:31:00+09:00",
+        "note": "公開調査と侵害報道のフィードを確認し、N-ableの管理基盤停止報道を採用済み記事へ対応付けました。",
+        "evidenceUrls": [
+          "https://www.bleepingcomputer.com/feed/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "status": "checked",
+        "checkedAt": "2026-11-11T02:38:00+09:00",
+        "note": "Rails、Airbyte、Zyxelの個別アドバイザリを確認し、緊急性と中心事実を満たす追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "status": "checked",
+        "checkedAt": "2026-11-11T03:45:00+09:00",
+        "note": "Synologyのセキュリティ告知と会社ニュースを確認し、対象期間で採用に値する新規警告はありませんでした。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "status": "checked",
+        "checkedAt": "2026-11-11T04:52:00+09:00",
+        "note": "VCF区分のBroadcom Security Advisoriesを確認し、VMSAとして専門枠に掲載すべき新規の重大更新はありませんでした。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "status": "checked",
+        "checkedAt": "2026-11-11T05:59:00+09:00",
+        "note": "Application Networking and Security区分を確認し、Avi、vDefend、NSXを対象とする新規の掲載候補はありませんでした。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "status": "checked",
+        "checkedAt": "2026-11-11T00:06:00+09:00",
+        "note": "Broadcom KB、TechDocs、リリースノートを確認し、版、互換性、修正版を伴う新規候補はありませんでした。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "status": "checked",
+        "checkedAt": "2026-11-11T01:13:00+09:00",
+        "note": "Broadcom Service Statusを確認し、利用者の緊急対応を要する継続中の障害は記録されていませんでした。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "status": "checked",
+        "checkedAt": "2026-11-11T02:20:00+09:00",
+        "note": "Interop、Compatibility Guide、Lifecycleを照合し、移行停止やサポート終了の新規候補はありませんでした。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "status": "checked",
+        "checkedAt": "2026-11-11T03:27:00+09:00",
+        "note": "Avi Load BalancerのKBとTechDocsを確認し、脆弱性、回避策、既知障害で専門枠化すべき更新はありませんでした。",
+        "evidenceUrls": [
+          "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "status": "checked",
+        "checkedAt": "2026-11-11T04:34:00+09:00",
+        "note": "vDefend、NSX、Security Services Platformの公式・製品ブログ経路を確認し、新規の検知欠落や適用障害はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/security/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "status": "checked",
+        "checkedAt": "2026-11-11T05:41:00+09:00",
+        "note": "William LamとDuncan Eppingの公開経路を確認し、公式資料で照合して掲載すべき運用変更はありませんでした。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "status": "checked",
+        "checkedAt": "2026-11-11T00:48:00+09:00",
+        "note": "Broadcom Community、r/vmware、VMware Codeを確認し、再現情報を伴い専門枠へ採用すべき現場報告はありませんでした。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "status": "checked",
+        "checkedAt": "2026-11-11T01:55:00+09:00",
+        "note": "Veeam、NVIDIA、Dell、HPE、NetAppの連携情報を確認し、互換性喪失または緊急更新の候補はありませんでした。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "status": "checked",
+        "checkedAt": "2026-11-11T02:02:00+09:00",
+        "note": "Nutanix、Azure、Proxmox、OpenShiftの移行先経路を確認し、VCF移行判断を変える新規の公式発表はありませんでした。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "status": "checked",
+        "checkedAt": "2026-11-11T06:41:00+09:00",
+        "note": "BroadcomとVMwareの公式製品・ポートフォリオ発表を確認し、新エディション、価格、販売・サポート期限の対象期間内の重要更新はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      }
+    ],
+    "findings": [
+      {
+        "title": "CISA KEV、11月10日に追加された6件の悪用確認脆弱性",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "high",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "catalogVersion 2026.11.10でOutlook、Openwave、Cisco BroadWorks、Barracuda 2件、Chromiumの6件を確認した。対応期限は原則11月24日、Barracuda 2件は11月13日だが、当日版では個別の修正版・利用者向け適用条件を確認できず、Patch Tuesday候補とも重複するため一般記事にはしない。"
+      },
+      {
+        "title": "Fireworks AI、侵害の影響範囲を請求情報・データセット・未完成モデル重みへ拡大",
+        "area": "ai",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://fireworks.ai/security/bulletins/october-2026-security-incident-update",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Fireworksの11月9日更新は請求情報、限られた顧客のデータセットと未完成モデル重みへのアクセスを示した。対象期間前の開示でありlateInclusionとして評価したが、影響を受けた製品・顧客、通知と利用者側の具体的な対処を同じ版で十分に確認できないため記事化せず記録する。"
+      },
+      {
+        "title": "VCF継続案件：ESXとSDDC ManagerのKEV対応期限",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "high",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "CVE-2026-41709（ESX）のKEV対応期限は11月11日、CVE-2026-111497（SDDC Manager）の期限は11月10日経過を確認した。期間内にVMSA、KB、リリースノート、Service Statusで新しい修正版・回避策・障害の実質更新は確認できず、期限到来だけでは専門枠の記事にしない。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-11-anthropic-ipo",
+      "title": "Anthropic、IPOロードショーで70〜78ドルの価格帯を提示",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+      "sourceName": "米証券取引委員会（SEC）",
+      "publishedAt": "2026-11-11T00:00:00+09:00",
+      "collectedAt": "2026-11-11T07:12:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 1,
+      "summary": [
+        "Anthropicは11月10日のIPOロードショー開始に合わせ、Class A普通株8億2500万株を1株70〜78ドルで売り出す修正S-1をSECへ提出しました。上限価格での公募総額は約644億ドルです。ただし、この額には既存株主の売出しも含まれ、その全額が会社の資金調達額になるわけではありません。",
+        "SEC書類では、Anthropic自身が売るのは8億0135万1354株、既存株主分は2364万8646株です。報道では、上限価格を前提におおむね1.4兆ドル規模の評価を目指すとされています。価格帯は投資家需要を聞くための暫定値で、上場価格や時価総額を確定するものではありません。",
+        "Reutersは、11月9日遅くに外部顧問が銀行へ送った約8億6700万株・70〜80ドルの更新版目論見書を、価格情報が不正確だとして撤回したと報じました。今回の修正書類はその後に公表された別の条件です。巨大なAI企業の公開市場での値付けを読む際は、会社に入る資金、既存株主の売却、同時の私募を分けて見る必要があります。"
+      ],
+      "comment": "IPOの「調達額」は、しばしば会社の投資余力と同じ意味で使われますが、今回の目論見書では区別が必要です。825百万株全体に上限価格を掛けると約644億ドルになる一方、既存株主が売る2364万8646株の売却代金はAnthropicには入りません。会社自身の801,351,354株だけでも、上限価格なら約625億ドルです。さらにSEC書類には、上場後に完了するClass N普通株の同時私募も記されており、公開売出しと混ぜると資本構成を読み違えます。ロードショーは価格を確定する場ではなく、機関投資家の需要を探り、株数や価格を最終調整する過程です。11月9日遅くに誤った価格情報が撤回された経緯は、正式提出された条件と、銀行向けに流通した未確定文書を同列に扱わない重要性も示しています。",
+      "articleDetail": {
+        "conclusion": "Anthropicは8億2500万株を70〜78ドルで売り出す修正S-1を提出し、ロードショーで巨大IPOの価格探索を始めました。",
+        "facts": [
+          "SEC提出のS-1/A-2はClass A普通株825,000,000株と、1株70.00〜78.00ドルの想定価格を記載しています。",
+          "会社の売出しは801,351,354株、既存株主の売出しは23,648,646株で、既存株主分の代金を会社は受け取りません。",
+          "Reutersは、前日に銀行へ送られた約866.7百万株・70〜80ドルの書類が価格情報の誤りを理由に撤回されたと報じました。"
+        ],
+        "background": [
+          "上限価格78ドルで825百万株を評価すると約644億ドルとなり、報道ではこの条件が約1.4兆ドル規模の企業評価を目指すものと説明されています。"
+        ],
+        "explanation": [
+          "ロードショー中の価格帯は需要を集めるための目安で、SECの予備目論見書自体も内容が変更され得る未確定資料だと明記しています。"
+        ],
+        "implications": [
+          "AI企業の大型上場では、公開売出しの総額、会社への純流入、既存株主の換金、同時私募を分けると、計算資源投資に使える資金を過大に見積もりにくくなります。"
+        ],
+        "caveats": [
+          "ロードショー開始と撤回の経緯はReuters報道に基づき、価格・株数・会社と既存株主の内訳は11月10日付SEC書類で確認しています。"
+        ],
+        "nextChecks": [
+          "最終目論見書での公募価格、最終株数、同時私募の条件、Nasdaqでの取引開始日を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AI研究開発に巨額の計算資源投資が必要な局面で、Anthropicの公開市場での価格探索が始まり、AI企業の資金調達構造を左右するためです。",
+        "currentReaction": "2026年11月11日07:12 JST時点で、Hacker News等に記事へ対応する測定可能なポイント数・コメント数は確認できませんでした。",
+        "assessment": "妥当",
+        "assessmentComment": "上場の成否はAI需要だけでなく、売出し条件、既存株主の売却、同時私募、上場後の供給量を分けて評価する必要があります。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T07:12:00+09:00",
+        "httpStatus": 200
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-11T07:12:00+09:00",
+        "result": "AnthropicはIPOロードショーに合わせ、Class A普通株8億2500万株を1株70〜78ドルで売り出す修正S-1をSECへ提出しました。",
+        "detail": [
+          "上限価格で公募全体は約644億ドルですが、うち2364万8646株は既存株主の売出しで、その代金は会社には入りません。"
+        ],
+        "learning": [
+          "ロードショーの価格帯は投資家需要を探る暫定条件です。SECの予備目論見書も、最終価格と株数が変わり得る未確定資料だとしています。"
+        ],
+        "analysis": [
+          "AnthropicのIPOロードショーでは、11月9日遅くに銀行へ送られた別条件の書類が価格情報の誤りで撤回されました。正式提出された条件と未確定の流通文書を分けて読む必要があります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "約644億ドルはすべてAnthropicの資金になりますか。",
+            "answer": "いいえ、SEC書類では一部が既存株主の売出しで、会社が受け取るのは自社が売る801,351,354株の代金です。最終的な手取りは公募価格と費用でさらに変わります。"
+          }
+        ],
+        "references": [
+          "https://www.sec.gov/Archives/edgar/data/2130357/000162828026072484/anthropicpbc-sx1ax2.htm",
+          "https://www.marketscreener.com/news/anthropic-s-nearly-70-billion-ipo-plan-briefly-circulated-to-banks-then-retracted-ce785edad988fe23/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-11-smart-home-offline",
+      "title": "スマートホームで回線断時の入口を残す",
+      "sourceUrl": "https://docodethatmatters.com/home-automation-overnight-success/",
+      "sourceName": "Do Code That Matters",
+      "publishedAt": "2026-10-28T09:00:00+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 2,
+      "summary": [
+        "Do Code That Mattersの執筆者は、インターネットを抜いてもスマートホームの中核機能を動かすという、自宅の自動化方針を公開しました。照明などの必須操作をベンダーのサーバーに預けず、壁スイッチと壁面ダッシュボードを残す設計です。",
+        "構成の中心はESPボード上のTasmota、MQTTブローカー、Raspberry Pi上のNode-REDです。Alexaや一部のAWSサービスも使うものの、音声操作はスイッチへの追加経路であり、停止しても物理操作は失われないと説明しています。",
+        "著者の10年分の実践記録であり製品比較ではありませんが、家庭のIoTを選ぶ際に、クラウド機能の有無より先に障害時の操作面を決める材料になります。"
+      ],
+      "comment": "この構成の要点は、ローカルで動く機器を選ぶことだけではなく、制御の依存グラフを小さくすることにあります。MQTTのpub/subなら温度センサーは購読者を知らずに値を出せるため、表示画面や自動化フローを増やしてもセンサー側の結合を増やしにくくなります。その代わり、ブローカー、Raspberry Pi、家庭内ネットワークは自分で保守する対象になります。停電と回線断は別の故障なので、照明の既定状態、手動スイッチ、コントローラーの再起動後に復元される設定を実機で試すのが重要です。クラウド音声アシスタントを外すのではなく、生活機能を止めない経路の上に載せる、という優先順位が実務的です。これは自宅の機器一覧ではなく、障害時にも住人が操作できることを受け入れ基準にする設計です。",
+      "articleDetail": {
+        "conclusion": "回線やクラウドが落ちても操作できる入口を残すことが、著者のスマートホーム設計の中核です。",
+        "facts": [
+          "著者はTasmotaを載せたESPボード、MQTTブローカー、Raspberry Pi上のNode-REDを中核に挙げています。",
+          "Alexaと一部のAWSサービスは利用するものの、壁スイッチと壁面ダッシュボードを代替経路として残しています。"
+        ],
+        "background": [
+          "公開記事は、約10年の自宅自動化と散水装置、ガレージ、暖炉の制御例を振り返る個人の実践記録です。"
+        ],
+        "explanation": [
+          "MQTTでは発行側と購読側をブローカーが仲介するため、同じ温度データを電話とバックエンドが受け取ってもセンサー側の接続先を増やさずに済みます。"
+        ],
+        "implications": [
+          "購入時の確認項目は『対応アプリがあるか』ではなく、インターネット、アカウント、DNSのいずれかが失われた時に手元で何を操作できるかになります。"
+        ],
+        "caveats": [
+          "これは個人宅の構成で、火気や施錠のように失敗時の危険が大きい設備へ同じ実装をそのまま当てはめる設計図ではありません。"
+        ],
+        "nextChecks": [
+          "著者が公開した構成で、インターネット遮断時にMQTTブローカー、Node-RED、壁スイッチのどれまで操作が維持されたかを検証記録で確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "クラウド連携の便利さを否定せず、生活に必要な操作だけを回線断から切り離す具体的な構成を示した点です。",
+        "currentReaction": "発見時のHacker Newsでは542ポイント、191件のコメントがありました。",
+        "assessment": "妥当",
+        "assessmentComment": "IoTの障害モードを、製品単体ではなく操作経路と依存サービスの連鎖として考え直せます。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      },
+      "metrics": {
+        "hnPoints": 542,
+        "hnComments": 191,
+        "socialMetricsCheckedAt": "2026-11-11T06:55:00+09:00"
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-11T00:25:20+09:00",
+        "reason": "原記事は2026年10月公開で対象期間外だが、対象期間内にHacker Newsで大きく再発見され、542ポイント・191件の議論を得たためです。",
+        "currentNewsValue": "クラウド依存を避ける自宅自動化の具体的な設計が対象期間に再び技術コミュニティの論点になりました。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-11T06:55:00+09:00",
+        "result": "スマートホームの執筆者は、回線が切れても照明などを操作できるよう、壁スイッチとローカル制御を残す構成を公開しました。Alexaは補助的な入口にとどめます。",
+        "detail": [
+          "このスマートホームの中核はTasmota対応のESPボード、MQTTブローカー、Raspberry Pi上のNode-REDで、Alexaは唯一の操作手段にはしません。"
+        ],
+        "learning": [
+          "スマートホームでは、MQTTは送信側と受信側を仲介する仕組みです。これを使うとセンサーの接続先を増やさずに、表示や自動化を足せます。"
+        ],
+        "analysis": [
+          "スマートホームのローカル化は保守をなくす選択ではなく、ブローカーやコントローラーの故障を自分で扱う選択です。手動操作が残るかを回線断で試す価値があります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "クラウド連携を使わない方がよいのでしょうか。",
+            "answer": "記事の構成はAlexaやAWSも使っています。便利な入口として併用しつつ、照明の基本操作をそれらの稼働に依存させない、という分離が結論です。"
+          }
+        ],
+        "references": [
+          "https://docodethatmatters.com/home-automation-overnight-success/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-11-name-grandfathered",
+      "title": ".nameの既存ドメインを守った利用者の異議",
+      "sourceUrl": "https://neil.fraser.name/news/2026/11/10/",
+      "sourceName": "Neil Fraser",
+      "publishedAt": "2026-11-11T01:37:44+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 3,
+      "summary": [
+        ".nameドメインの利用者であるNeil Fraserは、既存の第三レベル登録とメール転送を止める計画が撤回されたと報告しました。個人名に結び付いた古いアドレスを、レジストリ運営の変更から守るために利用者が異議を申し立てた事案です。",
+        "Fraserによれば、Verisignは少なくとも1社のICANN認定レジストラが小売提供を続ける限り、既存登録とメール転送のEPP取引を支える方針を示しました。新規の第三レベル登録や新しい転送アドレスまで再開したわけではありません。",
+        "停止予定が告知されたドメインでは、継続可否と新規取得可否を分けて確認する必要があります。メール転送をID復旧や連絡先に使っている人ほど、レジストラの提供範囲を早く点検したい更新です。"
+      ],
+      "comment": "ドメインの終了告知は、DNSの委任が残るかだけでは済みません。.nameのような第三レベル名では、レジストリ、認定レジストラ、登録者の間にサービスが分かれ、メール転送のような付随機能はWebサイトやアカウント復旧にも波及します。今回の記録が示すのは、既存ユーザーの移行費用が大きい場合、停止の事業判断がそのまま利用者の切替期限になるわけではない、という点です。ただし継続の条件は小売提供者の存在に結び付くため、永久的な権利と受け取るのは危険です。独自ドメインを運用する組織なら、受信先、登録者連絡先、更新決済、移管用の認証情報を棚卸しし、転送機能を唯一の経路にしない構成にしておくと切替時の損失を抑えられます。",
+      "articleDetail": {
+        "conclusion": ".nameの既存登録とメール転送は継続へ転じたが、新規提供の再開を意味する判断ではありません。",
+        "facts": [
+          "Fraserは、既存の.name第三レベルドメインとメール転送を終了する計画が撤回されたと報告しています。",
+          "記事が紹介するVerisignの2026年11月5日付書簡は、認定レジストラの小売提供が続く限り既存のEPP取引を支えると説明します。"
+        ],
+        "background": [
+          "FraserはDoytchinら、ICANNへの説明を行ったJim、再検討要請を書いた複数の利用者とともに異議申し立てを進めたと記しています。"
+        ],
+        "explanation": [
+          "EPPはレジストラとレジストリが登録・更新などをやり取りする標準プロトコルで、ここが維持されても小売側の画面や価格が変わらない保証にはなりません。"
+        ],
+        "implications": [
+          "既存利用者は、更新できるレジストラがあるか、メール転送を使うアドレスが他の連絡先に置換済みかを別々に確認する必要があります。"
+        ],
+        "caveats": [
+          "一次資料は利用者の報告であり、本文から確認できるのは既存取引を支える条件であって、将来の料金や全レジストラの提供方針ではありません。"
+        ],
+        "nextChecks": [
+          "Verisignが示した小売提供を続ける認定レジストラを特定し、既存.name名の更新とメール転送を実際に受け付けるかを確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "名前空間の終了計画が、既存利用者の異議とレジストラの提供条件を受けて後退した事例です。",
+        "currentReaction": "発見時のHacker Newsでは555ポイント、118件のコメントがありました。",
+        "assessment": "妥当",
+        "assessmentComment": "長く使われたメールアドレスやリンクの可用性が、レジストリの方針変更でどこまで守られるかを具体的に考えられます。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      },
+      "metrics": {
+        "hnPoints": 555,
+        "hnComments": 118,
+        "socialMetricsCheckedAt": "2026-11-11T06:55:00+09:00"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-11T06:55:00+09:00",
+        "result": ".nameの既存ドメインとメール転送は、利用者の異議を受けたとする報告で継続へ転じました。新規の取得まで復活したわけではありません。",
+        "detail": [
+          "紹介されたVerisign書簡は、.nameドメインの認定レジストラが小売提供を続けることを条件に、既存登録とメール転送のEPP取引を支えるとしています。"
+        ],
+        "learning": [
+          ".nameドメインで使うEPPはレジストラとレジストリの登録・更新用プロトコルです。これが残っても、各社の販売画面、価格、サポートまでは決まりません。"
+        ],
+        "analysis": [
+          ".nameドメインの転送メールをアカウント復旧に使う場合は特に、独立した連絡先と移管情報を確保しておくと、次の提供条件変更に備えられます。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "既存の.nameアドレスは何もしなくてよいですか。",
+            "answer": "既存取引の継続はレジストラの小売提供が条件です。利用中のレジストラで更新と転送が扱えるかを確認し、重要な受信先は別アドレスも登録しておくのが安全です。"
+          }
+        ],
+        "references": [
+          "https://neil.fraser.name/news/2026/11/10/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-11-oura-counsel-health",
+      "title": "Oura、一次診療スタートアップを6億2500万ドルで買収へ",
+      "sourceUrl": "https://techcrunch.com/2026/11/10/oura-to-acquire-ai-native-primary-care-startup-counsel-health-for-625m/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-11T04:23:34+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "科学・医療"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 4,
+      "summary": [
+        "Ouraは、AIを使う一次診療スタートアップCounsel Healthを6億2500万ドルで買収する計画を発表したと報じられました。取引の完了予定は2027年末までで、CounselのCEO Muthu Alagappanと従業員70人はOuraへ加わる見通しです。",
+        "Ouraのリングが継続的に集める生体データと、Counsel Healthが提供する診療の入口を近づける構図です。ただし、ウェアラブル指標が診断や治療の結論を直接決めるという発表ではありません。",
+        "利用者にとって重要なのは、買収額よりも診療提供地域、保険や自己負担、データ共有への同意、医療者がどの情報を使うかです。成約後に統合の対象と時期が示されるまで、既存のOura機能が一律に医療サービスへ変わるとは考えられません。"
+      ],
+      "comment": "ウェアラブルのデータを診療へ近づける買収では、リングが測る値と臨床上の判断を同じものとして扱わないことが大切です。記事によれば、Counselはチャットでの医療体験と有資格医師へのアクセスを組み合わせ、Ouraアプリには6月に連携済みでした。統合後に予防、急性期、専門・慢性疾患のケアまで広げる構想ですが、医師が関与する局面、対象地域、保険の扱い、各データを誰が閲覧できるかは利用者への影響を左右します。Ouraの時系列バイオメトリクスは相談の文脈を増やせても、測定誤差や生活条件を消すものではありません。健康の気づきと処方・紹介を結ぶサービスほど、同意画面と緊急時に使えない範囲を契約前に読む価値があります。",
+      "articleDetail": {
+        "conclusion": "OuraはCounsel Healthを6億2500万ドルで買収する契約を結び、リングの生体データと医療相談をつなぐ構想を広げようとしています。",
+        "facts": [
+          "Counselはチャット型の医療体験と有資格医師へのアクセスを組み合わせ、2026年6月からOuraアプリに連携していました。",
+          "報道ではCounsel CEOのMuthu Alagappanと従業員70人がOuraに加わり、取引は2027年末までに完了する見込みです。"
+        ],
+        "background": [
+          "Ouraは9月30日終了四半期の売上高を前年同期比153%増の5億3300万ドル、2026年度の売上高を約17億5000万ドルと公表しました。"
+        ],
+        "explanation": [
+          "Ouraの時系列バイオメトリクスを医師が相談の背景情報として使う設計と、デバイス値だけで診断を決める設計は別物です。"
+        ],
+        "implications": [
+          "利用者は、医療AIとの会話、医師とのチャット、リング由来データの共有について、それぞれの同意と提供地域を確認する必要があります。"
+        ],
+        "caveats": [
+          "記事は取引を報じたもので、国・保険・個別の診療適格性や統合後の全機能を確定する発表ではありません。"
+        ],
+        "nextChecks": [
+          "成約後に示されるCounselの提供地域、既存企業顧客への継続条件、Oura会員向けの料金を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "コンシューマー向けリングの継続計測を、医師が関わる一次診療の入口へ接続しようとする大型買収です。",
+        "currentReaction": "2026年11月11日06:55 JST時点で、Hacker News等に記事へ対応する測定可能なポイント数・コメント数は確認できませんでした。",
+        "assessment": "妥当",
+        "assessmentComment": "リングの健康機能から診療サービスへ責任範囲が広がるため、利用条件の透明性が製品機能と同じほど重要になります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-11T06:55:00+09:00",
+        "result": "Ouraは、医療AIと有資格医師へのアクセスを提供するCounsel Healthを6億2500万ドルで買収する契約を結び、2027年末までの完了を見込んでいます。",
+        "detail": [
+          "Counselは6月からOuraアプリと連携しており、相談から医師とのチャットにつなぐサービスを提供しています。"
+        ],
+        "learning": [
+          "Ouraはリングの時系列バイオメトリクスを、臨床家がより情報を得た相談を行う背景として使う構想を示しています。"
+        ],
+        "analysis": [
+          "Ouraのリングが測る値は医療相談の材料にはなりますが、対象地域や医師の関与、保険適用は買収額からは判断できません。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "Ouraの利用者は自動的に診療を受けられますか。",
+            "answer": "記事は全会員への一律提供を示していません。Counselのサービス地域、料金、同意画面、医師に共有されるデータを確認して初めて利用可否を判断できます。"
+          }
+        ],
+        "references": [
+          "https://techcrunch.com/2026/11/10/oura-to-acquire-ai-native-primary-care-startup-counsel-health-for-625m/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-11-scion-kei-truck",
+      "title": "Scion復活と軽トラック、米国市場へ再挑戦",
+      "sourceUrl": "https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/",
+      "sourceName": "The Autopian",
+      "publishedAt": "2026-11-11T01:07:08+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 5,
+      "summary": [
+        "ToyotaがScionを「Scion by Toyota」として復活させ、米国でKEI-01という超小型の軽トラックを導入するとThe Autopianが伝えました。初期販売は一般向けではなく、2027年後半に始める低台数の法人フリート向けパイロットです。",
+        "記事によるとKEI-01はToyota Pixis、さらにDaihatsu Hijet Jumbo Cabを基にした車両です。660ccエンジンとCVTを備え、低速車基準に適合するため最高速度は時速25マイル未満、走行できる道路は制限速度35マイル未満に限られます。",
+        "積載量は乗員を含め600ポンド、三方開き荷台、全幅約5フィート・全長11フィート、四輪駆動という仕様が紹介されています。都市配送、農場、倉庫のような限定用途で、通常の乗用車の代わりではない位置づけです。"
+      ],
+      "comment": "このニュースの実用上の論点は、日本の軽規格そのものを輸入することではなく、米国の低速車という枠に用途を合わせた点です。時速25マイル未満、制限速度35マイル未満の道路という制約は、配送区域や農場、私有地では合理的でも、高速な一般道を含む日常の移動には向きません。600ポンドの積載量も乗員を含む数字なので、荷物だけの可搬量として読むと過大評価になります。トヨタの販売網を使えるか、どの州で登録できるか、法人パイロット後に一般販売へ進むかは、記事時点では未確定です。小型車の寸法に注目するより、走行区域、充填・整備、代替車を含めた業務フローを先に定義することで、軽トラックが本当に既存のバンやUTVを置き換えるのかを評価できます。",
+      "articleDetail": {
+        "conclusion": "ScionのKEI-01は、低速道路に限る法人用途を狙った軽トラックのパイロットとして米国へ導入されます。",
+        "facts": [
+          "KEI-01は660ccエンジンとCVTを使い、米国の低速車基準に合わせて最高速度を時速25マイル未満に抑えるとされます。",
+          "記事は積載量を乗員込み600ポンド、車体を幅約5フィート・長さ11フィート、四輪駆動と紹介しています。"
+        ],
+        "background": [
+          "初期の販売は2027年後半からの低台数フリート・パイロットで、成績と所有者の反応が次の提供範囲を左右するとされています。"
+        ],
+        "explanation": [
+          "低速車の区分は車両の使い道を規定します。走行可能な道路の上限が低いため、都市配送の一部や敷地内作業には適しても通勤用の代替にはなりません。"
+        ],
+        "implications": [
+          "導入する法人は、州ごとの登録可否、運行区域、荷物だけの許容重量、修理網を自社の配送工程と照合する必要があります。"
+        ],
+        "caveats": [
+          "この記事は自動車メディアの報道で、価格、州別の販売可否、一般販売の開始を確定するToyotaの販売条件は提示していません。"
+        ],
+        "nextChecks": [
+          "法人パイロットの対象地域、販売・整備店、州別の登録条件と価格を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ToyotaがScionブランドを復活させ、米国で軽トラックを売る計画だとThe Autopianが伝えました。記事の焦点は、かつて若年層向けに位置付けられたブランドを、用途の明確な小型車で再び使う点です。",
+        "currentReaction": "発見時にはHacker Newsで69ポイント、55件のコメントを確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "購入候補者や事業者は、販売開始時期、州ごとの登録可否、荷台仕様、部品供給、価格を公式情報で確認する必要があります。今回の記事は商品化の方向性を伝える材料で、最終的な車両仕様や認証を示す資料ではありません。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      },
+      "metrics": {
+        "hnPoints": 69,
+        "hnComments": 55,
+        "socialMetricsCheckedAt": "2026-11-11T06:55:00+09:00"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-11T06:55:00+09:00",
+        "result": "ToyotaはScionを復活させ、KEI-01という軽トラックを2027年後半から米国の法人フリート向けに試験導入すると報じられました。",
+        "detail": [
+          "ScionのKEI-01は660ccエンジンとCVTを備え、低速車基準により時速25マイル未満、制限速度35マイル未満の道路で使う前提です。"
+        ],
+        "learning": [
+          "Scionのトラックは乗員込み600ポンドの積載、三方開き荷台、四輪駆動を特徴とし、倉庫や農場、限定的な配送を想定します。"
+        ],
+        "analysis": [
+          "Scionのトラックは低速車としての制約があるため、小さい車体でも一般道を走る乗用車の代替にはなりません。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "米国で個人でもKEI-01を買えますか。",
+            "answer": "報道で示された初期段階は法人フリート向けの低台数パイロットです。一般販売の有無や州別の登録可否は、2027年後半の導入時点で別途示される必要があります。"
+          }
+        ],
+        "references": [
+          "https://www.theautopian.com/scion-is-back-and-its-going-to-sell-a-freaking-kei-truck-in-america/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-11-nitori-data-breach",
+      "title": "ニトリ、不正アクセスで最大3,762万件の個人情報流出の可能性",
+      "sourceUrl": "https://www.nitorihd.co.jp/news/items/2b702dbe4d438f7fef74945d68e5bd27_3.pdf",
+      "sourceName": "ニトリホールディングス",
+      "publishedAt": "2026-11-09T00:00:00+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "セキュリティ",
+        "生活・文化"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "ニトリホールディングスは11月9日、同社システムへの不正アクセスにより、最大3,762万件の個人情報が外部へ流出した可能性があると公表しました。11月6日にアクセスを把握して遮断し、外部専門機関と原因、侵入経路、影響範囲を調べています。",
+        "対象になり得るのは、個人会員と購入者の会員番号、氏名、メールアドレス、住所、電話番号、生年月日、性別のほか、法人会員情報とECモール内のニトリ公式ショップの注文情報です。情報の組み合わせは利用者ごとに異なるとしています。",
+        "同社はログインパスワードとクレジットカード情報は流出可能性のある情報に含まれないと説明しました。件数と範囲はログ解析・データ照合の継続で変わり得るため、利用者は公式の案内を基準に不審な連絡を警戒したい状況です。"
+      ],
+      "comment": "3,762万件という数は影響を受けた個人が同数と確定した意味ではなく、公式発表ではサーバー上に保有した個人情報のうち外部流出の可能性がある最大件数です。しかも会員、購入者、法人、モール注文で持つ項目の組み合わせが違うので、危険度を一律に語れません。パスワードとカード情報が含まれないことは重要ですが、氏名、住所、連絡先、生年月日などが組み合わされれば、配送確認、会員情報の更新、返金を装う標的型フィッシングの材料にはなり得ます。公式メールを待つ間も、リンク先ではなくブックマークした公式サイトやアプリから注文・会員情報を確認する、認証コードを第三者へ渡さない、といった基本動作が有効です。企業側の復旧評価では、遮断済みという初動と、侵入期間、持ち出し確認、対象者への通知がどこまで具体化するかを分けて追う必要があります。",
+      "articleDetail": {
+        "conclusion": "ニトリはアクセスを遮断したが、最大3,762万件の情報流出可能性について原因と範囲の調査を続けています。",
+        "facts": [
+          "ニトリホールディングスは2026年11月6日に第三者による不正アクセスを確認し、当該アクセスを直ちに遮断したとしています。",
+          "公式発表の最大3,762万件には個人会員・購入者、法人会員、ECモール内ニトリ公式ショップの注文情報が含まれ得ます。",
+          "ログインパスワードとクレジットカード情報は、流出した可能性のある情報には含まれないと同社は説明しています。"
+        ],
+        "background": [
+          "同社は11月6日以前にも第三者アクセスがあった可能性をログ解析で確認し、外部専門機関と詳細を調べています。"
+        ],
+        "explanation": [
+          "漏えい可能性の公表段階では、保有情報、実際に持ち出された情報、通知対象者を区別する必要があります。今回の3,762万件は公式に『最大』とされた保有情報ベースの可能性件数です。"
+        ],
+        "implications": [
+          "利用者は注文・会員情報の更新や返金を名乗る不審な連絡を、送信元リンクではなく公式チャネルで照合する必要があります。"
+        ],
+        "caveats": [
+          "同社はログ解析とデータ照合を継続しており、影響範囲と件数は今後変わる可能性があると明記しています。"
+        ],
+        "nextChecks": [
+          "ニトリが公表する侵入経路、実際に外部流出した項目、通知対象者と相談窓口の確定情報を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "生活に密着した小売グループで、個人・法人・モール注文までを含む大規模な情報流出可能性が公式に公表されました。",
+        "currentReaction": "2026年11月11日06:55 JST時点で、Hacker News等に記事へ対応する測定可能なポイント数・コメント数は確認できませんでした。",
+        "assessment": "妥当",
+        "assessmentComment": "対象項目と通知対象が更新されるため、規模の見出しだけでなく公式の調査進捗を見る必要があります。"
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-11T05:54:55+09:00",
+        "reason": "ニトリの公式発表は対象期間前の11月9日だが、対象期間内に報道候補として検出され、企業一次発表で中心事実を再確認できたためです。",
+        "currentNewsValue": "対象件数、含まれない認証情報、調査状況を公式が具体的に公表しており、利用者への注意喚起に価値があります。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-11-blender-53",
+      "title": "Blender 5.3、Gaussian Splatsを制作工程へ取り込む",
+      "sourceUrl": "https://www.blender.org/download/releases/5-3/",
+      "sourceName": "Blender Foundation",
+      "publishedAt": "2026-11-10T00:00:00+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Blender Foundationは11月10日、3D Gaussian Splatsをネイティブに扱えるBlender 5.3を公開しました。写真や動画から再構成した場面を、外部ビューアーへ渡さず、Blender内で点群として編集・プレビュー・レンダリングできるようにする更新です。",
+        "リリースページによると、Gaussian SplatsはGeometry Nodesで試し、Workbenchで確認し、EEVEEまたはCyclesでレンダリングできます。NVIDIA DLSSのビューポート用デノイズ、EEVEEのパノラマカメラ、プロジェクト単位の設定・アセット管理も同時に追加されました。",
+        "ただしGaussian Splatsの性能はなお最適化中で、低い不透明度と高い放射輝度が重なる箇所では、制作ツール側のsRGBとBlenderの線形色空間の違いによる不正確さが出る場合があります。"
+      ],
+      "comment": "Gaussian Splatはメッシュを作り直さず多数の半透明な要素で見え方を近似するため、撮影素材から空間の雰囲気を早く持ち込める一方、通常のハードサーフェス資産と同じ編集可能性を得る技術ではありません。Blender 5.3の価値は、点群を単に表示できることより、Geometry Nodes、シェーダー、EEVEE、Cyclesという既存の制作経路につなげた点にあります。例えば撮影した店舗やロケ地を背景検討へ置き、そこから照明、カメラ、合成を同じファイルで進められます。反面、色空間の差や性能最適化中という注意書きは、納品レンダリングへ直結させる前に、薄い領域・強い発光・対象GPUで画を比較すべきことを示します。実験用の素材導入と、再現性を求める最終ショットを分けて評価するのが現実的です。",
+      "articleDetail": {
+        "conclusion": "Blender 5.3はGaussian Splatsを点群として既存の編集・レンダリング工程へ接続したが、画質と性能の検証は案件ごとに必要です。",
+        "facts": [
+          "3D Gaussian Splatsは写真や動画から3D場面を再構成するために使われる、小さく柔らかな半透明要素の集合として説明されています。",
+          "Blender 5.3ではSplatsを点群として読み込み、Geometry Nodes、Workbench、EEVEE、Cyclesで扱えます。",
+          "リリースにはNVIDIA DLSSによるビューポートのデノイズ、EEVEEの各種投影に対応するパノラマカメラ、プロジェクト単位のアセットライブラリも含まれます。"
+        ],
+        "background": [
+          "Splatsの既定レンダーはEmissionシェーダーを使い、放射輝度属性は現在のシェーディング点で解決された放射輝度へアクセスします。"
+        ],
+        "explanation": [
+          "発行元が色空間の注意を明記したのは、多くのSplat制作ツールがsRGBを使うのに対しBlenderが線形色空間で処理するためで、特に低不透明度・高放射輝度では見た目の差が増え得るからです。"
+        ],
+        "implications": [
+          "撮影再構成の素材をレイアウトやルック開発に持ち込む作業は短縮できる一方、最終画で使うなら対象シーンとGPUでレンダー比較を行う必要があります。"
+        ],
+        "caveats": [
+          "公式ページは性能が最適化中であること、被写界深度、レイトレーシング、ビューポートでのボリューム時系列再投影にはパノラマカメラの制限があることを記しています。"
+        ],
+        "nextChecks": [
+          "Blender Foundationが更新するGaussian Splatsの既知の制限と、低不透明度・高放射輝度の場面での色空間問題に対する修正状況を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "写真・動画由来の空間再構成を、Blenderのノード、レンダラー、プロジェクト管理へ持ち込める更新です。",
+        "currentReaction": "発見時のHacker Newsでは367ポイント、52件のコメントがありました。",
+        "assessment": "妥当",
+        "assessmentComment": "新しいデータ形式の読み込みだけでなく、既存の制作フローとどこまで往復できるかが実務導入を左右します。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 367,
+        "hnComments": 52,
+        "socialMetricsCheckedAt": "2026-11-11T06:55:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-11T01:15:43+09:00",
+        "reason": "公式リリースは対象期間の開始前に公開されたが、対象期間内にHacker Newsで367ポイント、52件の反響を得て再発見されたためです。",
+        "currentNewsValue": "Gaussian Splatsのネイティブ統合が、既存の制作工程で使えるかをめぐる議論の入口になりました。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-11-psi-ai-science",
+      "title": "PSI、AI支援のAaronson-Ambainis予想の証明をプレプリントで公開",
+      "sourceUrl": "https://psi.inc/research/aaronson-ambainis/index.html",
+      "sourceName": "Physical Superintelligence",
+      "publishedAt": "2026-11-06T00:00:00+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "科学・医療"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Physical Superintelligence（PSI）は11月6日、Aaronson-Ambainis予想の証明を得たと公表し、David Turturean名義のプレプリントをarXivへ公開しました。低次数の有界多項式には影響力の大きい変数があるという予想で、量子アルゴリズムがランダム入力でどこまで古典計算を大幅に上回れるかに関わります。",
+        "PSIによれば、非公開のAnthropicモデルを使う内部研究システムは実行3日目に完全な証明へ到達し、証明支援系Leanが最終版を受理しました。論文、証明コード、Lean 4形式化はGitHubで公開され、Turtureanが正確性の責任を負うとしています。",
+        "これは査読済みの定説ではなくプレプリントです。Stanfordの研究者らは原稿を読みコメントを送ってより短い専門家向け解説を書いているとPSIは説明しており、独立した精査と学術的評価は進行中です。"
+      ],
+      "comment": "Leanによる受理は、形式化された定理がその形式体系の規則に従うことを機械的に検査した、という強い性質を持ちます。ただしそれだけで、問題設定を表す定式化、補題の選択、形式化の外にある説明、結論の重要性まで自動的に査読済みになるわけではありません。今回の公開は、論文だけでなくコードと形式化を出した点に検証の入口があります。量子計算への意味も『量子計算が役に立たない』ではなく、入力に特別な構造がない場合の指数的なクエリ優位に制約を与えるという理論上の結果です。PSIは内部研究システムが証明を発見し、モデルに論文初稿を作成させたと説明し、David Turtureanが正確性の責任を負うと記しています。この二つを分けて読むことで、AI支援の成果を過大評価も過小評価もせず、再現可能な成果物として検証できます。",
+      "articleDetail": {
+        "conclusion": "PSIの主張は公開済みのプレプリントとLean形式化に支えられるが、数学コミュニティによる独立精査が完了した査読結果ではありません。",
+        "facts": [
+          "PSIはAaronson-Ambainis予想が2008年から未解決だったと説明し、内部研究システムが非公開Anthropicモデルを使って証明を見つけたと公表しました。",
+          "arXiv:2611.09773はDavid Turtureanのプレプリントとして11月6日に公開され、低次数有界多項式に影響力の大きい変数があることを主張します。",
+          "公開GitHubリポジトリには論文とLean 4形式化があり、コードはApache-2.0で公開されています。"
+        ],
+        "background": [
+          "この予想が正しければ、ランダムな入力に対する量子クエリアルゴリズムの受理確率は、多項式回数の古典クエリで大部分の入力について近似できるという結論につながります。"
+        ],
+        "explanation": [
+          "形式証明支援系は各推論を形式言語へ落とし検査します。証明の記述を検算しやすくする一方、どの命題を形式化したかという人間側の選択は別に評価されます。"
+        ],
+        "implications": [
+          "AIが発見・初稿・形式化を担い、人間が検討と責任を負う研究では、プレプリント、コード、形式化、独立した解説を別々の検証対象として公開する意義が大きくなります。"
+        ],
+        "caveats": [
+          "PSIの発表とarXiv原稿は査読前で、非公開モデルと内部ハーネスの詳細すべてを第三者が再実行できるわけではありません。"
+        ],
+        "nextChecks": [
+          "プレプリントの改訂履歴、Lean 4形式化を第三者が再検査した報告、専門研究者による査読または反例の有無を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AI支援で得たとする理論結果を、プレプリントだけでなく形式証明とコードを併せて公開した事例です。",
+        "currentReaction": "2026年11月11日06:55 JST時点で、Hacker News等に記事へ対応する測定可能なポイント数・コメント数は確認できませんでした。",
+        "assessment": "判断には早い",
+        "assessmentComment": "証明の機械検査は重要な根拠ですが、学術上の受容と広い解釈は独立研究者の精査を待つ段階です。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-10T19:03:52+09:00",
+        "reason": "原典の公表は対象期間前の11月6日だが、PSIのAI主導科学発見を扱う対象期間内の報道が、この証明を具体例として取り上げたためです。",
+        "currentNewsValue": "AI支援の証明をコードと形式化とともに公開する検証手法が改めて論点になりました。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-11-palantir-senator",
+      "title": "Palantir、元上院議員の採用報道が招く監視論",
+      "sourceUrl": "https://text.npr.org/nx-s1-6029641",
+      "sourceName": "NPR",
+      "publishedAt": "2026-11-09T19:00:00+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "国内・国際"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "NPRは、Palantirが新議会での監視が強まる局面で元民主党上院議員Jon Testerを採用したと報じました。人材採用そのものに加え、政府向けデータ分析企業と政治的な説明責任の接点がニュースの中心です。",
+        "Palantirの製品や契約が直ちに変わったという記事ではありません。元議員の役割、利益相反の管理、議会との関係は、雇用発表と別に開示資料や実際の活動で確認する必要があります。",
+        "公共部門の顧客、調達担当者、監視に関心を持つ人は、採用を単独の問題として終わらせず、契約の透明性、データ利用目的、独立した監督の仕組みを読むべきです。政治経験が企業の説明能力を高める場合と、影響力への懸念を増す場合は両立します。"
+      ],
+      "comment": "元議員の採用をめぐる論点は、個人の経歴より、政府案件を持つ企業が立法府との関係をどう透明化するかにあります。NPRによるとJon Testerは役割をロビー活動ではなく助言と説明していますが、選挙後に議会多数派が替わる時期には、助言と政策への影響の境界が外部から見えにくくなります。Palantirはデータを収集・操作せず、政府や企業が持つ情報を整理・最適化するツールを作ると長年説明してきました。一方、Ron Wyden上院議員のスタッフは政府データ利用に関する質問を再び行う意向を示しました。したがって評価に必要なのは採用の賛否ではなく、契約の用途、アクセス記録、回答の公開、利益相反の開示が市民や調達側に届くかです。",
+      "articleDetail": {
+        "conclusion": "PalantirのJon Tester起用は、新議会での監視を前に政府データ企業の説明責任が問われる局面を映しています。",
+        "facts": [
+          "NPRは、Palantirが2024年に再選を逃した元民主党上院議員Jon Testerを助言役として採用したと報じました。",
+          "TesterはNPRに対し、自身の合意は助言的でロビー活動ではないと説明しています。"
+        ],
+        "background": [
+          "NPRは、民主党が1月に議会を引き継ぐ見通しの中、テクノロジー企業が元民主党議員や補佐官を採用していると伝えています。"
+        ],
+        "explanation": [
+          "Palantirは自社を、顧客が保有する情報を整理・最適化するソフトウェア企業と説明しますが、政府データの用途や監督の範囲は契約と運用で評価する必要があります。"
+        ],
+        "implications": [
+          "公共調達側は、助言契約の開示だけでなく、データアクセス権、目的外利用の制限、監査可能な記録を確認する必要があります。"
+        ],
+        "caveats": [
+          "NPRの記事は雇用と政治環境を扱う報道であり、Palantirの契約内容や違法性を認定する資料ではありません。"
+        ],
+        "nextChecks": [
+          "Testerの具体的な助言範囲、ロビー登録の有無、議会からの質問へのPalantirの回答を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "政府案件を持つ企業が、政権と議会の力関係が変わる時期に元議員を起用したことで、契約とデータ利用の説明責任が改めて問われています。",
+        "currentReaction": "発見時にはHacker Newsで139ポイント、151件のコメントを確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "公共部門の顧客、調達担当者、監視に関心を持つ人は、採用を単独の問題として終わらせず、契約の透明性、データ利用目的、独立した監督の仕組みを読むべきです。政治経験が企業の説明能力を高める場合と、影響力への懸念を増す場合は両立します。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      },
+      "metrics": {
+        "hnPoints": 139,
+        "hnComments": 151,
+        "socialMetricsCheckedAt": "2026-11-11T06:55:00+09:00"
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-11T00:59:34+09:00",
+        "reason": "NPRの原記事は対象期間より前の11月9日公開だが、対象期間内のHacker Newsで再び議論され139ポイント・151件のコメントを得たためです。",
+        "currentNewsValue": "新議会を前に政府データ企業の人事と説明責任をめぐる論点が改めて注目されました。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-11T06:55:00+09:00",
+        "result": "Palantirは、新議会での監視強化が見込まれる中で、元民主党上院議員Jon Testerを助言役として起用したとNPRが報じました。",
+        "detail": [
+          "PalantirのTester起用について、本人はロビー活動ではなく助言契約だと説明しています。"
+        ],
+        "learning": [
+          "Palantirは政府機関や企業が持つ情報を整理・最適化するツールを作ると説明しており、同社の政府データ利用には議会から質問が出ています。"
+        ],
+        "analysis": [
+          "Palantirの採用を評価する際は、人事の経歴より契約の目的を先に確かめる必要があります。その目的に見合うアクセス権だけが与えられ、利用を監査記録で追え、利益相反が開示されているかが判断の順序になります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "Testerの採用はロビー活動を意味しますか。",
+            "answer": "契約の具体的範囲やロビー登録の有無は、公開記録で確かめる必要があります。"
+          }
+        ],
+        "references": [
+          "https://text.npr.org/nx-s1-6029641"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-11-amd-zen6",
+      "title": "AMD Zen 6、通常コアと高密度コアで遅延への向き合い方を分ける",
+      "sourceUrl": "https://chipsandcheese.com/p/amds-zen-6-family-feeding-the-beast",
+      "sourceName": "Chips and Cheese",
+      "publishedAt": "2026-11-11T00:00:00+09:00",
+      "collectedAt": "2026-11-11T06:55:00+09:00",
+      "editionDate": "2026-11-11",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Chips and CheeseはAMDのZen 6ファミリーを測定し、通常のZen 6と高密度版Zen 6cが、従来よりもアウト・オブ・オーダー実行部で異なる設計になったと報告しました。周波数を狙うZen 6と、より多くの処理を保持してメモリー待ちを吸収するZen 6cという分担です。",
+        "測定ではZen 6はL1命令キャッシュ内で毎サイクル2分岐を処理し、64bit加算は毎サイクル5.96回でZen 5の5.25回を上回りました。VNNIのユニットは2基から4基へ増え、512bit試験のスループットは1.99から3.88命令/サイクルになったとされます。",
+        "Zen 6cはリオーダーバッファ640、整数レジスタ352、ベクタスケジューラ180、ロードキュー330と、Zen 6より大きな容量を持つと報告されています。これはAMDの公式仕様書ではなく独立系サイトの測定と解釈であり、製品選定では対象ワークロードの実測と併せて読む必要があります。"
+      ],
+      "comment": "今回の比較で重要なのは、Zen 6cを単に『小さいコアを多く積んだ版』と扱えなくなった点です。記事では12コアのZen 6 CCDが48MB、32コアのZen 6c CCDが128MBのL3を持ち、いずれもコア当たり4MBとされます。さらにZen 6cは実行途中の命令やロードを多く抱えられるため、メモリー待ちが多い場面では周波数が高い通常コアの利点を相殺し得ます。逆に、分岐予測やデコード、実行器が支配的な処理では、周波数やフロントエンドの差の方が効きます。したがってサーバーのSKUを選ぶ際は、コア数やベンチマーク総合値だけで決めず、キャッシュに収まる処理、ランダムアクセス、量子化推論、コンパイルのどれが支配的かを分けて測るべきです。独立測定の数値は有益な仮説ですが、BIOS、メモリー構成、コンパイラで変わる前提を忘れられません。",
+      "articleDetail": {
+        "conclusion": "Zen 6とZen 6cは同じ基盤を共有しつつ、通常コアは高周波数、高密度コアは待ち時間を抱え込む容量へ重点を置くと独立測定は示しています。",
+        "facts": [
+          "記事の試験ではZen 6は同じ6基のALUを使いながら、64bit加算を毎サイクル5.96回実行し、Zen 5の5.25回を上回りました。",
+          "VNNIのユニット数は2基から4基になり、512bit VNNI試験はZen 5の1.99からZen 6とZen 6cの3.88命令/サイクルへ伸びたとされています。",
+          "Zen 6cはZen 6より大きいリオーダーバッファ、整数レジスタ、ベクタスケジューラ、ロードキューを備えると報告されています。"
+        ],
+        "background": [
+          "Zen 6は12コアCCDで48MB、Zen 6cは32コアCCDで128MBのL3を持ち、コア当たりのL3はともに4MBと記事は記します。"
+        ],
+        "explanation": [
+          "アウト・オブ・オーダー構造を大きくすると、メモリー応答を待つ間にも別の命令を進められます。これは遅延を消すのではなく、待ち時間に実行可能な仕事を増やす設計です。"
+        ],
+        "implications": [
+          "推定したシングルスレッドSPEC CPU 2026スコアではEPYC 9686FがZen 5世代EPYC 9575Fより整数で約21%、浮動小数点で約18%高いとされ、世代比較とSKU比較を分ける必要があります。"
+        ],
+        "caveats": [
+          "性能値、構造の一部、設計意図はChips and Cheeseの試験と推定に基づきます。AMDの公式発表として扱わず、実環境のクロック、メモリー、ソフトウェア構成で再確認が必要です。"
+        ],
+        "nextChecks": [
+          "AMDの正式な製品仕様と、Zen 6・Zen 6cを同じメモリー構成とクロック条件で比較した独立ベンチマークが公開されるかを確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "通常コアと高密度コアの差がコア数・キャッシュ量だけでなく、待ち時間を隠す実行構造に広がったという分析です。",
+        "currentReaction": "発見時のHacker Newsでは140ポイント、48件のコメントがありました。",
+        "assessment": "妥当",
+        "assessmentComment": "サーバーCPUの比較を、ピーク周波数だけでなく、メモリー待ちを含む実際の作業特性へ戻して考える材料になります。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 140,
+        "hnComments": 48,
+        "socialMetricsCheckedAt": "2026-11-11T06:55:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-11T00:00:00+09:00",
+        "reason": "記事の公開時刻を一次資料から確定できず対象期間外として扱うため、対象期間内のHacker Newsで140ポイント、48件の反響を得た再発見として記録します。",
+        "currentNewsValue": "Zen 6とZen 6cの設計差を独立測定で検討する材料として注目されました。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-11T06:55:00+09:00",
+        "httpStatus": 200
+      }
+    }
+  ]
+}
