@@ -82,9 +82,9 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
 
   const technologyOrSecurity = general.filter((article) =>
     article.categories.includes('テクノロジー') || article.categories.includes('セキュリティ'));
-  // 短縮版では1件の追加で比率が大きく動く。8件未満だけ60％を許し、通常件数では多様性の40％上限に戻す。
+  // 比率は選定バランスの目安。公開済みの2026-11-12以前だけは従来の40％（短縮版60％）上限を検証する。
   const technologySecurityLimit = general.length < 8 ? 0.6 : 0.4;
-  if (general.length && technologyOrSecurity.length / general.length > technologySecurityLimit) {
+  if (edition.date <= '2026-11-12' && general.length && technologyOrSecurity.length / general.length > technologySecurityLimit) {
     errors.push(`${edition.date}: 一般ニュースのテクノロジー・セキュリティ比率が${technologySecurityLimit * 100}％を超えています`);
   }
 

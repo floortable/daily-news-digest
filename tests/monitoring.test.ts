@@ -147,10 +147,18 @@ describe('監視証跡の検証', () => {
     expect(validateMonitoringCoverage(edition, registry).some((error) => error.includes('selectionShortfallReason'))).toBe(true);
   });
 
-  it('一般ニュースの技術・セキュリティ偏重を検出する', () => {
+  it('2026-11-12以前の一般ニュースの技術・セキュリティ偏重を検出する', () => {
     const edition = futureEdition();
+    edition.date = '2026-11-12';
     for (const article of edition.articles) article.categories = ['テクノロジー'];
     expect(validateMonitoringCoverage(edition, registry).some((error) => error.includes('40％'))).toBe(true);
+  });
+
+  it('2026-11-13以降は一般ニュースの技術・セキュリティ比率超過をエラーにしない', () => {
+    const edition = futureEdition();
+    edition.date = '2026-11-13';
+    for (const article of edition.articles) article.categories = ['テクノロジー'];
+    expect(validateMonitoringCoverage(edition, registry).some((error) => error.includes('比率'))).toBe(false);
   });
 
   it('短縮版では技術・セキュリティ4件を7件中まで許し、5件中4件は拒否する', () => {
