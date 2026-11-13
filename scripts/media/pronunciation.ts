@@ -44,6 +44,34 @@ export function assertLatinPronunciations(texts: string[], dictionary: Record<st
   }
 }
 
+export function findUnpronouncedLatinCompoundTerms(text: string, dictionary: Record<string, string>) {
+  const latinWord = '[A-Za-z]+(?:[.+#/_-][A-Za-z]+)*';
+  const registeredCompounds = Object.keys(dictionary).filter((surface) => /[A-Za-z].* [A-Za-z]/.test(surface));
+  const registeredRanges = registeredCompounds.flatMap((surface) => [...findLiteralRanges(text, surface)]);
+  const terms = [...text.matchAll(new RegExp(`(?<![A-Za-z0-9])${latinWord}(?: +${latinWord})+`, 'g'))]
+    .filter((match) => {
+      const [surface] = match;
+      const start = match.index!;
+      const end = start + surface.length;
+      return surface.split(/ +/).every((word) => dictionary[word])
+        && !dictionary[surface]
+        && !text.slice(end).match(/^ +\d/)
+        && !registeredRanges.some((range) => range.start < end && start < range.end);
+    })
+    .map((match) => match[0]);
+  return [...new Set(terms)];
+}
+
+export function assertLatinCompoundPronunciations(texts: string[], dictionary: Record<string, string>) {
+  const terms = [...new Set(texts.flatMap((text) => findUnpronouncedLatinCompoundTerms(text, dictionary)))];
+  if (terms.length) {
+    throw new Error(
+      `スペースで続く英字固有名詞に確認済みの連続した読みがありません: ${terms.join(', ')}。`
+      + '全体の複合形をconfig/pronunciations.jsonへ一語として登録してください。',
+    );
+  }
+}
+
 export function findUnpronouncedLatinNumberTerms(text: string, dictionary: Record<string, string>) {
   const spokenText = applyPronunciations(text, dictionary);
   const latinTerm = '[A-Za-z][A-Za-z0-9]*(?:[.+#/_-][A-Za-z0-9]+)*';
@@ -68,6 +96,14 @@ export function assertLatinNumberPronunciations(texts: string[], dictionary: Rec
       `番号付きの英字固有名詞に確認済みの連続した読みがありません: ${terms.join(', ')}。`
       + '数字まで含む複合形をconfig/pronunciations.jsonへ登録してください。',
     );
+  }
+}
+
+function* findLiteralRanges(text: string, value: string) {
+  let start = text.indexOf(value);
+  while (start !== -1) {
+    yield { start, end: start + value.length };
+    start = text.indexOf(value, start + value.length);
   }
 }
 

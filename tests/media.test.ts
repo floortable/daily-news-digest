@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyPronunciations,
+  assertLatinCompoundPronunciations,
   assertLatinNumberPronunciations,
   assertLatinPronunciations,
   assertPronunciationContinuity,
   findUnpronouncedLatinNumberTerms,
+  findUnpronouncedLatinCompoundTerms,
   findUnpronouncedLatinTerms,
 } from '../scripts/media/pronunciation';
 import { getMediaUrls, isMediaPublished } from '../src/lib/media';
@@ -51,6 +53,14 @@ describe('media publishing', () => {
     })).toBe('マイクロソフトスリーシックスファイブで障害が発生した。');
   });
 
+  it('applies AWS Emulator as one continuous reading', () => {
+    expect(applyPronunciations('AWS Emulatorを公開した。', {
+      'AWS Emulator': 'エーダブリューエスエミュレーター',
+      AWS: 'エーダブリューエス',
+      Emulator: 'エミュレーター',
+    })).toBe('エーダブリューエスエミュレーターを公開した。');
+  });
+
   it('uses contextual readings for ambiguous counters', () => {
     expect(applyPronunciations('更新と再起動までを一組として扱います。', { 一組として: 'ひとくみとして' }))
       .toBe('更新と再起動までをひとくみとして扱います。');
@@ -78,6 +88,32 @@ describe('media publishing', () => {
     })).toEqual(['MysteryTool 7', 'マイクロソフト 365']);
     expect(() => assertLatinNumberPronunciations(['MysteryTool 7'], {}))
       .toThrow(/MysteryTool 7/);
+  });
+
+  it('rejects a space-separated Latin compound left as individual readings', () => {
+    const individualWords = { AWS: 'エーダブリューエス', Emulator: 'エミュレーター' };
+    expect(findUnpronouncedLatinCompoundTerms('AWS Emulatorを公開した。', individualWords))
+      .toEqual(['AWS Emulator']);
+    expect(() => assertLatinCompoundPronunciations(['AWS Emulatorを公開した。'], individualWords))
+      .toThrow(/AWS Emulator/);
+  });
+
+  it('allows registered Latin compounds, ordinary prose, and Latin-plus-number names', () => {
+    const dictionary = {
+      'AWS Emulator': 'エーダブリューエスエミュレーター',
+      AWS: 'エーダブリューエス',
+      Emulator: 'エミュレーター',
+      Microsoft: 'マイクロソフト',
+    };
+    expect(() => assertLatinCompoundPronunciations([
+      'AWS Emulatorを公開した。',
+      'これは通常の日本語文です。',
+      'Microsoft 365を使います。',
+    ], dictionary)).not.toThrow();
+    expect(findUnpronouncedLatinCompoundTerms('AWS Emulator 2を使います。', {
+      AWS: 'エーダブリューエス',
+      Emulator: 'エミュレーター',
+    })).toEqual([]);
   });
 
   it('allows ordinary numeric expressions', () => {

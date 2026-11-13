@@ -6,6 +6,7 @@ import { getDateArgument, readEdition } from './edition';
 import { buildNarrationPlan } from './narration';
 import {
   applyPronunciations,
+  assertLatinCompoundPronunciations,
   assertLatinNumberPronunciations,
   assertLatinPronunciations,
   readPronunciations,
@@ -22,6 +23,7 @@ const config = await readVoicevoxConfig();
 const plan = buildNarrationPlan(edition, config.cast, config.credit, config.spokenCredit);
 const pronunciations = await readPronunciations();
 assertLatinPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
+assertLatinCompoundPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 assertLatinNumberPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 const outputDirectory = resolve('generated/media', edition.date, 'voice');
 await mkdir(outputDirectory, { recursive: true });
