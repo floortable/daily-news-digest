@@ -113,6 +113,10 @@ function renderDetailedExplanation(article: Article) {
     '<h2>次に確認すること</h2>', `<ul>${detail.nextChecks.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`,
   ].join('');
   if (!article.narration) return '';
+  if (article.narration.script) return [
+    '<h2>音声台本</h2>',
+    ...article.narration.script.map((item) => `<p>${escapeHtml(item)}</p>`),
+  ].join('');
   return [
     `<h2>結論</h2><p>${escapeHtml(article.narration.result ?? article.summary[0])}</p>`,
     '<h2>事実関係と背景</h2>', ...article.narration.detail.map((item) => `<p>${escapeHtml(item)}</p>`),

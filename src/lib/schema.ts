@@ -163,17 +163,24 @@ export const articleSchema = z.object({
   top5Rank: z.number().int().min(1).max(5).nullable(),
   narration: z.object({
     sourceCheckedAt: isoDateTime,
+    // 2026-11-14以降はscriptを台本の唯一の本文として保存する。旧欄は公開済み版の再構築用に残す。
+    script: z.array(z.string().min(20).max(700)).min(1).max(3).optional(),
     result: z.string().min(20).max(500).optional(),
-    detail: z.array(z.string().min(20).max(500)).min(1).max(4),
-    learning: z.array(z.string().min(20).max(500)).min(1).max(4),
-    analysis: z.array(z.string().min(20).max(500)).max(3),
+    detail: z.array(z.string().min(20).max(500)).max(4).default([]),
+    learning: z.array(z.string().min(20).max(500)).max(4).default([]),
+    analysis: z.array(z.string().min(20).max(500)).max(3).default([]),
     anticipatedQuestions: z.array(z.object({
       question: z.string().min(10).max(160),
       answer: z.string().min(20).max(500).refine(
         (answer) => !/(?:総合的に|慎重に|複数の要素を|.+を合わせて)判断する必要があります[。]?$/u.test(answer),
         '先回り質問には、判断材料の列挙だけでなく、根拠付きの見通しまたは現時点の結論が必要です',
       ),
-    }).strict()).max(3),
+    }).strict()).max(3).default([]),
+    questionResearch: z.array(z.object({
+      question: z.string().min(10).max(160),
+      findings: z.array(z.string().min(20).max(500)).min(1).max(3),
+      references: z.array(z.url()).max(5).default([]),
+    }).strict()).max(3).default([]),
     references: z.array(z.url()).max(5).default([]),
   }).strict().optional(),
   summary: z.array(z.string().min(1).max(500)).min(2).max(3)
@@ -277,10 +284,21 @@ export const editionSchema = z.object({
   const crossArticleSentenceSuffixes = new Map<string, Array<{ index: number; sentence: string }>>();
   for (const [index, article] of edition.articles.entries()) {
     if (article.top5Rank !== null && article.narration) {
-      if (edition.date >= '2026-10-30' && (!article.narration.result || article.narration.result.length < 60)) {
+      const unifiedNarration = edition.date >= '2026-11-14';
+      if (unifiedNarration && !article.narration.script?.length) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'script'], message: '新方式のTop 5台本は、一括で書いたscript区間を保存してください' });
+      }
+      if (unifiedNarration) {
+        article.narration.script?.forEach((text, scriptIndex) => {
+          if (/\d{4}年\d{1,2}月\d{1,2}日\s?\d{1,2}時\d{1,2}分/u.test(text)) {
+            ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'script', scriptIndex], message: '新方式の台本には年月日と分単位の詳細時刻を入れず、音声向けの簡潔な時点表現にしてください' });
+          }
+        });
+      }
+      if (!unifiedNarration && edition.date >= '2026-10-30' && (!article.narration.result || article.narration.result.length < 60)) {
         ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'result'], message: 'Top 5は、記事が扱う中心事象について、主体、対象、起きたこと、具体的な結果を含む自己完結した概要が必要です' });
       }
-      article.narration.analysis.forEach((text, analysisIndex) => {
+      if (!unifiedNarration) article.narration.analysis.forEach((text, analysisIndex) => {
         if (isEditorialRestraintOnly(text)) {
           ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'analysis', analysisIndex], message: '編集上の自制だけを読み上げず、具体的な事実、比較、仕組み、見通しのいずれかを示してください' });
         }
@@ -288,14 +306,14 @@ export const editionSchema = z.object({
           ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'analysis', analysisIndex], message: '推定条件や不確実性だけを補足せず、その幅が結論、分類、比較、実用上の判断をどう変えるかまで示してください' });
         }
       });
-      if (edition.date >= '2026-11-04') {
+      if (!unifiedNarration && edition.date >= '2026-11-04') {
         for (const [detailIndex, text] of article.narration.detail.entries()) {
           if (editorialProcessPattern.test(text)) {
             ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'detail', detailIndex], message: '音声台本のdetailには編集手順や確認姿勢ではなく、記事固有の事実または仕組みを書いてください' });
           }
         }
       }
-      article.narration.anticipatedQuestions.forEach((item, questionIndex) => {
+      if (!unifiedNarration) article.narration.anticipatedQuestions.forEach((item, questionIndex) => {
         if (item.question === 'このニュースで結論を変える次の確認点は何ですか。') {
           ctx.addIssue({ code: 'custom', path: ['articles', index, 'narration', 'anticipatedQuestions', questionIndex, 'question'], message: '汎用的な確認予定を作るための定型質問は使用できません' });
         }

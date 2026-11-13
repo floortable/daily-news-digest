@@ -24,6 +24,13 @@ const narration = article.narration;
   </section>
 ) : narration ? (
   <section class="article-explanation" aria-label="詳しい解説">
+    {narration.script ? (
+      <>
+        <h2>音声台本</h2>
+        {narration.script.map((paragraph) => <p>{paragraph}</p>)}
+      </>
+    ) : (
+      <>
     <h2>結論</h2><p>{narration.result ?? article.summary[0]}</p>
     <h2>事実関係と背景</h2>
     {narration.detail.map((paragraph) => <p>{paragraph}</p>)}
@@ -33,5 +40,7 @@ const narration = article.narration;
     {narration.analysis.map((paragraph) => <p>{paragraph}</p>)}
     <h2>先回りして確認したいこと</h2>
     {narration.anticipatedQuestions.map((item) => <section class="anticipated-question"><h3>{item.question}</h3><p>{item.answer}</p></section>)}
+      </>
+    )}
   </section>
 ) : null}

@@ -84,6 +84,13 @@ export function buildNarrationPlan(
 }
 
 function buildArticleSegments(article: Article, rank: number, speakers: CastMember[]): NarrationSegment[] {
+  if (article.editionDate >= '2026-11-14' && article.narration?.script) {
+    return article.narration.script.map((text, index) => ({
+      id: index === 0 ? `rank-${rank}` : index === 1 ? `rank-${rank}-explanation` : `rank-${rank}-perspective`,
+      speaker: speakers[index],
+      text: applySpeakerTone(toBroadcastStyle(text), speakers[index].name),
+    }));
+  }
   const reaction = applyOpeningTone(
     article.attentionAnalysis.currentReaction
       ? toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction))
@@ -131,6 +138,9 @@ function dedupeSections<T extends { text: string }>(sections: T[]) {
 }
 
 export function buildArticleNarration(article: Article, speakerName: string) {
+  if (article.editionDate >= '2026-11-14' && article.narration?.script) {
+    return applySpeakerTone(toBroadcastStyle(article.narration.script.join(' ')), speakerName);
+  }
   const reaction = applyOpeningTone(
     article.attentionAnalysis.currentReaction
       ? toBroadcastStyle(formatReactionForNarration(article.attentionAnalysis.currentReaction))

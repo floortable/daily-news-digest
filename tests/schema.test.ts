@@ -201,6 +201,24 @@ describe('editorial compliance', () => {
     if (!result.success) expect(result.error.issues.some((issue) => issue.message.includes('編集手順や確認姿勢'))).toBe(true);
   });
 
+  it('requires unified scripts after the narration-flow gate and rejects detailed timestamps in them', () => {
+    const future = JSON.parse(readFileSync('data/daily/2026-11-13.json', 'utf8'));
+    future.date = '2026-11-14';
+    for (const article of future.articles) article.editionDate = '2026-11-14';
+    const missingScript = editionSchema.safeParse(future);
+    expect(missingScript.success).toBe(false);
+    if (!missingScript.success) expect(missingScript.error.issues.some((issue) => issue.message.includes('一括で書いたscript区間'))).toBe(true);
+
+    for (const article of future.articles.filter((article: { top5Rank: number | null }) => article.top5Rank !== null)) {
+      article.narration.script = ['提供元が変更を発表しました。'];
+    }
+    future.articles.find((article: { top5Rank: number | null }) => article.top5Rank === 1)
+      .narration.script = ['2026年11月14日06時40分に確認した反響です。'];
+    const detailedTimestamp = editionSchema.safeParse(future);
+    expect(detailedTimestamp.success).toBe(false);
+    if (!detailedTimestamp.success) expect(detailedTimestamp.error.issues.some((issue) => issue.message.includes('詳細時刻'))).toBe(true);
+  });
+
   it('rejects a repeated long sentence suffix across three or more articles', () => {
     const future = november4Version();
     const nonTopArticles = future.articles.filter((article: { top5Rank: number | null }) => article.top5Rank === null).slice(0, 3);

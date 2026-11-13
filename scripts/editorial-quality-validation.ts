@@ -2,6 +2,7 @@ import type { Edition } from '../src/lib/schema';
 
 /** 新工程のデータ品質ゲート。公開済み版には遡及適用しない。 */
 export const EDITORIAL_QUALITY_ENFORCEMENT_DATE = '2026-11-11';
+export const UNIFIED_NARRATION_DATE = '2026-11-14';
 
 // 完全一致だけに限定する。固有の出来事を後ろに補った通常の見出しは誤って止めない。
 const placeholderTitles = new Set(['本日の更新', '今日の更新', '更新情報', 'ニュース更新']);
@@ -35,6 +36,10 @@ function narrationSentences(edition: Edition): Array<{ articleId: string; field:
   for (const article of edition.articles) {
     const narration = article.narration;
     if (narration) {
+      if (edition.date >= UNIFIED_NARRATION_DATE) {
+        narration.script?.forEach((text, index) => values.push({ articleId: article.id, field: `narration.script[${index}]`, text }));
+        continue;
+      }
       if (narration.result) values.push({ articleId: article.id, field: 'narration.result', text: narration.result });
       for (const field of ['detail', 'learning', 'analysis'] as const) {
         narration[field].forEach((text, index) => values.push({ articleId: article.id, field: `narration.${field}[${index}]`, text }));

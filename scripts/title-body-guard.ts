@@ -7,6 +7,7 @@ export interface GuardArticle {
   title: string;
   summary: string[];
   narration?: {
+    script?: string[];
     result?: string;
     detail?: string[];
     learning?: string[];
@@ -74,10 +75,10 @@ export function checkArticleAlignment(article: GuardArticle): AlignmentResult {
   const matched = (text: string) => tokens.filter((token) => appears(token, normalize(text)));
   const narration = article.narration;
   const narrationMatched = narration ? {
-    result: matched(narration.result ?? ''),
-    detail: matched((narration.detail ?? []).join('\n')),
-    learning: matched((narration.learning ?? []).join('\n')),
-    analysis: matched((narration.analysis ?? []).join('\n')),
+    result: matched(narration.script?.[0] ?? narration.result ?? ''),
+    detail: matched(narration.script?.slice(1).join('\n') ?? (narration.detail ?? []).join('\n')),
+    learning: matched(narration.script?.slice(1).join('\n') ?? (narration.learning ?? []).join('\n')),
+    analysis: matched(narration.script?.slice(1).join('\n') ?? (narration.analysis ?? []).join('\n')),
   } : null;
   return { articleId: article.id, tokens, summaryMatched: matched((article.summary ?? []).join('\n')), narrationMatched };
 }

@@ -80,6 +80,22 @@ describe('Top 5 narration plan', () => {
     expect(formatReactionForNarration(fallback)).toBe('');
   });
 
+  it('uses the unified script as-is and never auto-inserts currentReaction', () => {
+    const unified = structuredClone(latestEdition);
+    const article = unified.articles.find((item) => item.top5Rank === 1)!;
+    article.editionDate = '2026-11-14';
+    article.narration!.script = [
+      '提供元は対象サービスの障害を公表しました。Hacker Newsでは、今朝の時点で10ポイント、2コメントです。',
+      '復旧までの経過を利用者向けに説明しました。',
+    ];
+    article.attentionAnalysis.currentReaction = '2026年11月14日06時40分に確認した原文の反応です。';
+    const text = buildNarrationPlan(unified, cast, 'VOICEVOX credit').segments
+      .filter((segment) => segment.id.startsWith('rank-1'))
+      .map((segment) => segment.text).join(' ');
+    expect(text).toContain('今朝の時点で10ポイント、2コメントです');
+    expect(text).not.toContain('2026年11月14日06時40分');
+  });
+
   it('rejects plain-form sentence endings left in caster narration', () => {
     expect(findPlainNarrationEndings('更新を求める。結果を確認した。対応が難しい。'))
       .toEqual(['更新を求める。', '結果を確認した。', '対応が難しい。']);
