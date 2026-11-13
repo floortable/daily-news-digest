@@ -1,8 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyPronunciations,
+  assertLatinNumberPronunciations,
   assertLatinPronunciations,
   assertPronunciationContinuity,
+  findUnpronouncedLatinNumberTerms,
   findUnpronouncedLatinTerms,
 } from '../scripts/media/pronunciation';
 import { getMediaUrls, isMediaPublished } from '../src/lib/media';
@@ -42,6 +44,13 @@ describe('media publishing', () => {
     })).toBe('ジーニーフォーを発表した。');
   });
 
+  it('applies Microsoft 365 as one continuous reading', () => {
+    expect(applyPronunciations('Microsoft 365で障害が発生した。', {
+      'Microsoft 365': 'マイクロソフトスリーシックスファイブ',
+      Microsoft: 'マイクロソフト',
+    })).toBe('マイクロソフトスリーシックスファイブで障害が発生した。');
+  });
+
   it('uses contextual readings for ambiguous counters', () => {
     expect(applyPronunciations('更新と再起動までを一組として扱います。', { 一組として: 'ひとくみとして' }))
       .toBe('更新と再起動までをひとくみとして扱います。');
@@ -61,6 +70,19 @@ describe('media publishing', () => {
       ['Node.jsとMysteryLib'],
       { 'Node.js': 'ノードジェイエス' },
     )).toThrow(/MysteryLib/);
+  });
+
+  it('rejects a residual Latin or katakana product name followed by a number', () => {
+    expect(findUnpronouncedLatinNumberTerms('Microsoft 365とMysteryTool 7', {
+      Microsoft: 'マイクロソフト',
+    })).toEqual(['MysteryTool 7', 'マイクロソフト 365']);
+    expect(() => assertLatinNumberPronunciations(['MysteryTool 7'], {}))
+      .toThrow(/MysteryTool 7/);
+  });
+
+  it('allows ordinary numeric expressions', () => {
+    expect(() => assertLatinNumberPronunciations(['291ポイント、400億ドル、2027年に確認します。'], {}))
+      .not.toThrow();
   });
 
   it('builds project-page-safe URLs and hides unpublished media', () => {

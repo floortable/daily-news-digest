@@ -44,6 +44,33 @@ export function assertLatinPronunciations(texts: string[], dictionary: Record<st
   }
 }
 
+export function findUnpronouncedLatinNumberTerms(text: string, dictionary: Record<string, string>) {
+  const spokenText = applyPronunciations(text, dictionary);
+  const latinTerm = '[A-Za-z][A-Za-z0-9]*(?:[.+#/_-][A-Za-z0-9]+)*';
+  const number = '\\d+(?:[.,]\\d+)*';
+  const latinTerms = [...spokenText.matchAll(new RegExp(`(?<![A-Za-z0-9])${latinTerm} +${number}`, 'g'))]
+    .map((match) => match[0]);
+  const readings = [...new Set(Object.entries(dictionary)
+    .filter(([surface, reading]) => /[A-Za-z]/.test(surface) && /^[ァ-ヶー]+$/.test(reading))
+    .map(([, reading]) => reading))]
+    .sort((a, b) => b.length - a.length);
+  const katakanaTerms = readings.length
+    ? [...spokenText.matchAll(new RegExp(`(?<![ァ-ヶー])(?:${readings.map(escapeRegExp).join('|')}) +${number}`, 'g'))]
+      .map((match) => match[0])
+    : [];
+  return [...new Set([...latinTerms, ...katakanaTerms])];
+}
+
+export function assertLatinNumberPronunciations(texts: string[], dictionary: Record<string, string>) {
+  const terms = [...new Set(texts.flatMap((text) => findUnpronouncedLatinNumberTerms(text, dictionary)))];
+  if (terms.length) {
+    throw new Error(
+      `番号付きの英字固有名詞に確認済みの連続した読みがありません: ${terms.join(', ')}。`
+      + '数字まで含む複合形をconfig/pronunciations.jsonへ登録してください。',
+    );
+  }
+}
+
 function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
