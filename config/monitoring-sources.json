@@ -222,6 +222,19 @@
       ]
     },
     {
+      "id": "jp-gov-cyber-policy",
+      "area": "vcf",
+      "requiredDaily": true,
+      "requiredFrom": "2026-11-14",
+      "label": "日本政府のサイバー政策・要請（国家サイバー統括室・サイバーセキュリティ戦略本部・IPA）",
+      "urls": [
+        "https://www.cyber.go.jp/news/press/index.html",
+        "https://www.cyber.go.jp/council/cs/index.html",
+        "https://www.ipa.go.jp/pressrelease/index.html",
+        "https://www.ipa.go.jp/security/index.html"
+      ]
+    },
+    {
       "id": "vcf-status",
       "area": "vcf",
       "requiredDaily": true,
