@@ -5,8 +5,19 @@ import { parseFeed } from '../scripts/collect-candidate-ledger';
 
 describe('日次処理のコンテキスト効率', () => {
   it('実行プロンプトを高密度に保ち、重い処理をスクリプトへ委譲する', () => {
-    const prompt = readFileSync(resolve('automation/daily-news-digest.prompt.md'), 'utf8');
-    expect(Buffer.byteLength(prompt)).toBeLessThan(25_000);
+    const promptFiles = [
+      'automation/daily-news-digest.prompt.md',
+      'automation/rules/selection.md',
+      'automation/rules/writing.md',
+      'automation/rules/narration.md',
+      'automation/rules/review-publish.md',
+    ];
+    const prompt = promptFiles.map((file) => readFileSync(resolve(file), 'utf8')).join('\n');
+    expect(Buffer.byteLength(readFileSync(resolve(promptFiles[0])))).toBeLessThanOrEqual(10_000);
+    for (const file of promptFiles.slice(1)) {
+      expect(Buffer.byteLength(readFileSync(resolve(file)))).toBeLessThanOrEqual(12_000);
+    }
+    expect(Buffer.byteLength(prompt)).toBeLessThanOrEqual(40_000);
     expect(prompt).toContain('npm run candidates:collect');
     expect(prompt).toContain('npm run media:audit-bundle');
     expect(prompt).toContain('npm run check:all');

@@ -51,7 +51,13 @@ function registryWithStart(enforcementStartDate: string): MonitoringRegistry {
 
 describe('監視証跡の検証', () => {
   it('reviews入力と独立編集レビューを停止ゲートにせず修正へ使う', () => {
-    const prompt = readFileSync(resolve('automation/daily-news-digest.prompt.md'), 'utf8');
+    const prompt = [
+      'automation/daily-news-digest.prompt.md',
+      'automation/rules/selection.md',
+      'automation/rules/writing.md',
+      'automation/rules/narration.md',
+      'automation/rules/review-publish.md',
+    ].map((file) => readFileSync(resolve(file), 'utf8')).join('\n');
     expect(prompt).toContain('reviews/README.md');
     expect(prompt).toContain('レビューの入力はVM生成の`reviews/`だけ');
     expect(prompt).not.toContain('is:issue is:open in:title "[Museレビュー]"');

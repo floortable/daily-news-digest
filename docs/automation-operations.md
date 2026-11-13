@@ -4,7 +4,8 @@
 
 公開可能な自動化仕様はGitHubを正本とする。
 
-- 完全な処理指示: `automation/daily-news-digest.prompt.md`
+- 処理指示の入口・共通核: `automation/daily-news-digest.prompt.md`
+- 工程別の処理指示: `automation/rules/`
 - 実行方式と時刻: `automation/manifest.json`
 - 選定基準: `docs/selection-policy.md`
 - 権利・引用基準: `docs/editorial-policy.md`
@@ -38,7 +39,7 @@ Codexアプリ内の定期実行プロンプトを変更する場合は、先に
 1. GitHub側の正本とCodexアプリ内の指示を比較する。
 2. 仕様変更は正本へ反映し、公開禁止情報がないことを確認する。
 3. 全検証を実行して正本をmainへ反映する。
-4. `automation/daily-news-digest.prompt.md` の内容をCodexローカル定期実行へ同期する。
+4. `automation/daily-news-digest.prompt.md` と実行する工程の `automation/rules/` 内の対応ファイルをCodexローカル定期実行へ同期する。
 5. 実行時刻が毎朝7時（Asia/Tokyo）、状態が有効、対象が正しいローカルリポジトリであることをMac側で確認する。
 6. 自動化ID、Chat ID、絶対パス、確認日時だけを `private-data/automation.local.md` に記録する。
 
