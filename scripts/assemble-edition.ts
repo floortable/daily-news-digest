@@ -1,6 +1,7 @@
 /** 個別記事、確定台帳、版メタから日次版を決定的に組み立てる。 */
 import { access, readFile, readdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { articleSchema, editionSchema } from '../src/lib/schema';
 import { monitoringRegistrySchema, validateMonitoringCoverage } from './monitoring-validation';
@@ -49,6 +50,15 @@ function rejectFutureMonitoringEntries(monitoringReview: unknown, now: Date): vo
       throw new Error(`監視元 ${entry.sourceId} の checkedAt が assemble 実行時刻より未来です`);
     }
   }
+}
+
+export function sourceNameCountErrors(articles: Array<{ sourceName: string }>): string[] {
+  const sourceCounts = new Map<string, number>();
+  for (const article of articles) sourceCounts.set(article.sourceName, (sourceCounts.get(article.sourceName) ?? 0) + 1);
+  const overrepresentedSources = [...sourceCounts.entries()].filter(([, count]) => count >= 5);
+  return overrepresentedSources.length
+    ? [`同一媒体は4件以下にしてください: ${overrepresentedSources.map(([name, count]) => `${name} ${count}件`).join('、')}`]
+    : [];
 }
 
 async function main(): Promise<void> {
@@ -101,6 +111,8 @@ async function main(): Promise<void> {
   for (const id of order.keys()) if (!byId.has(id)) throw new Error(`台帳で included の ${id} に対応する記事ファイルがありません`);
 
   const entries = [...byId.values()];
+  const sourceErrors = sourceNameCountErrors(entries.map(({ parsed }) => parsed));
+  if (sourceErrors.length) throw new Error(sourceErrors.join('\n'));
   const top5 = entries.filter(({ parsed }) => parsed.top5Rank !== null).sort((a, b) => a.parsed.top5Rank! - b.parsed.top5Rank!);
   const ranks = top5.map(({ parsed }) => parsed.top5Rank!);
   if (ranks.length && (ranks.length !== 5 || new Set(ranks).size !== 5 || ranks.some((rank, index) => rank !== index + 1))) {
@@ -138,4 +150,6 @@ async function main(): Promise<void> {
   console.log(`${date}: 記事${entries.length}件（Top 5 ${top5.length}件＋他${rest.length}件）を ${outPath} へ結合しました。`);
 }
 
-main().catch((error) => { console.error(error instanceof Error ? error.message : error); process.exit(1); });
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  main().catch((error) => { console.error(error instanceof Error ? error.message : error); process.exit(1); });
+}

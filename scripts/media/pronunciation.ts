@@ -99,6 +99,45 @@ export function assertLatinNumberPronunciations(texts: string[], dictionary: Rec
   }
 }
 
+export function findKatakanaNumberTerms(text: string) {
+  // Exclude common counter and currency suffixes so, for example, 「トークン8ドル」
+  // remains ordinary prose rather than a product-name false positive.
+  const katakanaNumber = /(?<![ァ-ヶー])(?:[ァ-ヶー]+・)*[ァ-ヶー]+\d+(?![\d年月日時分秒回個台本枚件人円ドル%％])/g;
+  return [...new Set([...text.matchAll(katakanaNumber)].map((match) => match[0]))];
+}
+
+export function assertKatakanaNumberPronunciations(texts: string[]) {
+  const terms = [...new Set(texts.flatMap((text) => findKatakanaNumberTerms(text)))];
+  if (terms.length) {
+    throw new Error(
+      `カタカナで手書きされた番号付き固有名詞があります: ${terms.join(', ')}。`
+      + '台本では固有名詞と数字を原表記のまま書き、config/pronunciations.jsonの読みを使ってください。',
+    );
+  }
+}
+
+export function findSeparatedKatakanaPronunciationTerms(text: string, dictionary: Record<string, string>) {
+  const registeredReadings = new Set(
+    Object.values(dictionary).filter((reading) => /^[ァ-ヶー]+$/.test(reading)),
+  );
+  const separatedKatakana = /(?<![ァ-ヶー])(?:[ァ-ヶー]+・)+[ァ-ヶー]+(?![ァ-ヶー])/g;
+  return [...new Set(
+    [...text.matchAll(separatedKatakana)]
+      .map((match) => match[0])
+      .filter((term) => registeredReadings.has(term.replaceAll('・', ''))),
+  )];
+}
+
+export function assertSeparatedKatakanaPronunciations(texts: string[], dictionary: Record<string, string>) {
+  const terms = [...new Set(texts.flatMap((text) => findSeparatedKatakanaPronunciationTerms(text, dictionary)))];
+  if (terms.length) {
+    throw new Error(
+      `辞書の読みを中黒で分けて手書きした固有名詞があります: ${terms.join(', ')}。`
+      + '台本では固有名詞を原表記のまま書き、config/pronunciations.jsonの読みを使ってください。',
+    );
+  }
+}
+
 function* findLiteralRanges(text: string, value: string) {
   let start = text.indexOf(value);
   while (start !== -1) {

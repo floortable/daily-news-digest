@@ -131,6 +131,26 @@ describe('監視証跡の検証', () => {
     expect(validateMonitoringCoverage(edition, registry).some((error) => error.includes('確認不能理由'))).toBe(true);
   });
 
+  it('確認不能の必須監視元にはsourceId付きfindingを要求する', () => {
+    const restricted = futureEdition();
+    restricted.date = '2026-11-10';
+    const entry = restricted.monitoringReview!.entries[0];
+    entry.status = 'restricted';
+    entry.note = 'HTTP 403で応答は受信したが、認証要求により当日の内容を確認できなかったため取得制限として記録する。';
+    expect(validateMonitoringCoverage(restricted, registry).some((error) => error.includes(entry.sourceId) && error.includes('finding'))).toBe(true);
+
+    restricted.monitoringReview!.findings.push({
+      title: '取得制限により監視元の当日内容を未確認', area: 'general', sourceId: entry.sourceId,
+      url: entry.evidenceUrls[0], severity: 'informational', disposition: 'not-relevant', articleId: null,
+      reason: 'HTTP 403の取得制限で内容を確認できなかったため、別経路での確認または後続確認が必要な未確認事項として記録する。',
+    });
+    expect(validateMonitoringCoverage(restricted, registry)).toEqual([]);
+
+    const checked = futureEdition();
+    checked.date = '2026-11-10';
+    expect(validateMonitoringCoverage(checked, registry)).toEqual([]);
+  });
+
   it('監視注記と確認時刻の一括コピーを検出する', () => {
     const repeatedNotes = futureEdition('2026-11-01');
     for (const entry of repeatedNotes.monitoringReview!.entries) {

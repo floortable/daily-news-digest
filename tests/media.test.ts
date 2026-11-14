@@ -1,13 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyPronunciations,
+  assertKatakanaNumberPronunciations,
   assertLatinCompoundPronunciations,
   assertLatinNumberPronunciations,
   assertLatinPronunciations,
   assertPronunciationContinuity,
+  assertSeparatedKatakanaPronunciations,
+  findKatakanaNumberTerms,
   findUnpronouncedLatinNumberTerms,
   findUnpronouncedLatinCompoundTerms,
   findUnpronouncedLatinTerms,
+  findSeparatedKatakanaPronunciationTerms,
 } from '../scripts/media/pronunciation';
 import { getMediaUrls, isMediaPublished } from '../src/lib/media';
 
@@ -119,6 +123,31 @@ describe('media publishing', () => {
   it('allows ordinary numeric expressions', () => {
     expect(() => assertLatinNumberPronunciations(['291ポイント、400億ドル、2027年に確認します。'], {}))
       .not.toThrow();
+  });
+
+  it('rejects katakana product names written directly next to a number', () => {
+    expect(findKatakanaNumberTerms('トレザー・セーフ5の不正な改変です。'))
+      .toEqual(['トレザー・セーフ5']);
+    expect(() => assertKatakanaNumberPronunciations(['トレザー・セーフ5の不正な改変です。']))
+      .toThrow(/トレザー・セーフ5/);
+  });
+
+  it('allows katakana quantities with a counter or currency suffix', () => {
+    expect(findKatakanaNumberTerms('入力100万トークン8ドル、出力100万トークン40ドルです。')).toEqual([]);
+  });
+
+  it('rejects dictionary readings manually split with middle dots', () => {
+    const dictionary = { 'Hacker News': 'ハッカーニューズ' };
+    expect(findSeparatedKatakanaPronunciationTerms('ハッカー・ニューズで話題です。', dictionary))
+      .toEqual(['ハッカー・ニューズ']);
+    expect(() => assertSeparatedKatakanaPronunciations(['ハッカー・ニューズで話題です。'], dictionary))
+      .toThrow(/ハッカー・ニューズ/);
+  });
+
+  it('allows middle-dot personal names that do not equal a dictionary reading', () => {
+    expect(findSeparatedKatakanaPronunciationTerms('クルト・ゲーデルを紹介します。', {
+      'Hacker News': 'ハッカーニューズ',
+    })).toEqual([]);
   });
 
   it('builds project-page-safe URLs and hides unpublished media', () => {

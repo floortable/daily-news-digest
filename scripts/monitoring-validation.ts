@@ -23,6 +23,8 @@ export const monitoringRegistrySchema = z.object({
 });
 
 export type MonitoringRegistry = z.infer<typeof monitoringRegistrySchema>;
+// Published editions before this rule was introduced remain read-only historical records.
+const statusEvidenceEnforcementStartDate = '2026-11-10';
 
 export function validateMonitoringCoverage(edition: Edition, registry: MonitoringRegistry): string[] {
   if (edition.date < registry.enforcementStartDate) return [];
@@ -50,6 +52,10 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
   }
   for (const source of registry.sources.filter((source) => source.requiredDaily && (!source.requiredFrom || edition.date >= source.requiredFrom))) {
     if (!seen.has(source.id)) errors.push(`${edition.date}: 必須監視元 ${source.id} (${source.label}) の記録がありません`);
+    const entry = review.entries.find((item) => item.sourceId === source.id);
+    if (edition.date >= statusEvidenceEnforcementStartDate && entry && entry.status !== 'checked' && !review.findings.some((finding) => finding.sourceId === source.id)) {
+      errors.push(`${edition.date}: 確認不能の必須監視元 ${source.id} には sourceId 付き finding が必要です`);
+    }
   }
 
   const articleIds = new Set(edition.articles.map((article) => article.id));

@@ -6,12 +6,20 @@ describe('advisory:verify', () => {
     const facts = await collectFacts(['CVE-2026-12345', '123456'], async (url) => {
       if (url.includes('known_exploited')) return { vulnerabilities: [{ cveID: 'CVE-2026-12345', vendorProject: 'Example Vendor', dateAdded: '2026-11-13', dueDate: '2026-12-01' }] };
       if (url.includes('cveawg')) return { cveMetadata: { cveId: 'CVE-2026-12345' } };
-      return { note: 'VU includes CVE-2026-12345' };
+      return { cveids: ['CVE-2026-12345'], note: 'VU includes CVE-2026-12345' };
     });
     expect(facts).toEqual([
       { id: 'CVE-2026-12345', type: 'cve', status: 'ok', recordExists: true, kevListed: true, dueDate: '2026-12-01' },
       { id: 'VU#123456', type: 'vu', status: 'ok', cves: ['CVE-2026-12345'] },
     ]);
+  });
+
+  it('VINCEのcveidsを本文中の言及より優先する', async () => {
+    const [fact] = await collectFacts(['123456'], async () => ({
+      cveids: ['cve-2026-11111', 'CVE-2026-11111'],
+      overview: 'This text also mentions CVE-2026-99999 but it is not related.',
+    }));
+    expect(fact.cves).toEqual(['CVE-2026-11111']);
   });
 
   it('主張を pass と fail に判定する', () => {

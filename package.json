@@ -18,6 +18,7 @@
     "media:render": "tsx scripts/media/render-media.ts",
     "candidates:collect": "tsx scripts/collect-candidate-ledger.ts",
     "edition:assemble": "tsx scripts/assemble-edition.ts",
+    "edition:verify-published-at": "tsx scripts/verify-published-at.ts",
     "edition:stamp-monitoring": "tsx scripts/stamp-monitoring-check.ts",
     "edition:complete-check": "tsx scripts/check-generation-complete.ts",
     "advisory:verify": "tsx scripts/verify-advisory-ids.ts",

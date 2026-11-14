@@ -25,6 +25,15 @@ function cvesIn(value: unknown): string[] {
   return [...new Set(JSON.stringify(value).match(/CVE-\d{4}-\d{4,}/gi)?.map((id) => id.toUpperCase()) ?? [])];
 }
 
+function vinceCves(record: unknown): string[] {
+  if (record && typeof record === 'object' && Array.isArray((record as { cveids?: unknown }).cveids)) {
+    return [...new Set((record as { cveids: unknown[] }).cveids
+      .filter((id): id is string => typeof id === 'string')
+      .map((id) => id.toUpperCase()))];
+  }
+  return cvesIn(record);
+}
+
 export async function collectFacts(ids: string[], getJson: FetchJson = fetchJson): Promise<AdvisoryFact[]> {
   const normalized = ids.map(normalizeId);
   let kev: unknown | undefined;
@@ -36,7 +45,7 @@ export async function collectFacts(ids: string[], getJson: FetchJson = fetchJson
     try {
       if (type === 'vu') {
         const record = await getJson(`https://www.kb.cert.org/vuls/api/${id.slice(3)}/`);
-        return { id, type, status: 'ok', cves: cvesIn(record) };
+        return { id, type, status: 'ok', cves: vinceCves(record) };
       }
       const record = await getJson(`https://cveawg.mitre.org/api/cve/${id}`);
       if (kevError) return { id, type, status: 'unavailable', error: `KEV catalog: ${kevError}` };

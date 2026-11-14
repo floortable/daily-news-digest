@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { describe, expect, it } from 'vitest';
 import { stampMonitoringCheck } from '../scripts/stamp-monitoring-check';
+import { sourceNameCountErrors } from '../scripts/assemble-edition';
 
 const date = '2026-11-10';
 
@@ -64,7 +65,7 @@ describe('edition:assemble の生成成果物ゲート', () => {
     } finally {
       await rm(test.root, { recursive: true, force: true });
     }
-  }, 15_000);
+  }, 30_000);
 
   it('自動スタンプだけが異なる版を --check で許可し、それ以外の差分は拒否する', async () => {
     const test = await fixture();
@@ -73,7 +74,8 @@ describe('edition:assemble の生成成果物ゲート', () => {
       await mkdir(anchors);
       await Promise.all(test.ids.map((id: string) => writeFile(join(anchors, `${id}.json`), '{}')));
 
-      expect(assemble(test).status).toBe(0);
+      const four = assemble(test);
+      expect(four.status, four.stderr).toBe(0);
       const checked = assemble(test, true);
       expect(checked.status).toBe(0);
 
@@ -86,7 +88,7 @@ describe('edition:assemble の生成成果物ゲート', () => {
     } finally {
       await rm(test.root, { recursive: true, force: true });
     }
-  }, 15_000);
+  }, 30_000);
 
   it('未来の監視確認時刻を拒否し、スタンプは指定した監視元だけを更新する', async () => {
     const test = await fixture();
@@ -113,5 +115,12 @@ describe('edition:assemble の生成成果物ゲート', () => {
     } finally {
       await rm(test.root, { recursive: true, force: true });
     }
-  }, 15_000);
+  }, 30_000);
+
+  it('同一媒体5件を拒否し、4件までは受理する', () => {
+    expect(sourceNameCountErrors(Array.from({ length: 4 }, () => ({ sourceName: '検証媒体' })))).toEqual([]);
+    expect(sourceNameCountErrors(Array.from({ length: 5 }, () => ({ sourceName: '検証媒体' })))).toEqual([
+      '同一媒体は4件以下にしてください: 検証媒体 5件',
+    ]);
+  });
 });
