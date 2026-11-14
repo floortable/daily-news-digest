@@ -29,10 +29,33 @@ function valueAfter(flag: string): string | undefined {
 
 function usage(): never { throw new Error('使い方: assemble-edition.ts --date YYYY-MM-DD [--check] [--ledger PATH] [--articles-dir PATH] [--out PATH]'); }
 
+function jstTimestamp(now: Date): string {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+  }).formatToParts(now).reduce<Record<string, string>>((result, part) => {
+    result[part.type] = part.value;
+    return result;
+  }, {});
+  return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}+09:00`;
+}
+
+function rejectFutureMonitoringEntries(monitoringReview: unknown, now: Date): void {
+  const review = z.object({ entries: z.array(z.object({
+    sourceId: z.string(), checkedAt: z.iso.datetime({ offset: true }),
+  }).passthrough()) }).passthrough().parse(monitoringReview);
+  for (const entry of review.entries) {
+    if (new Date(entry.checkedAt).getTime() > now.getTime()) {
+      throw new Error(`監視元 ${entry.sourceId} の checkedAt が assemble 実行時刻より未来です`);
+    }
+  }
+}
+
 async function main(): Promise<void> {
   const date = valueAfter('--date');
   if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) usage();
   const checkOnly = process.argv.includes('--check');
+  const assembledAt = new Date();
   const ledgerPath = valueAfter('--ledger') ?? resolve(`generated/candidates/${date}.final.json`);
   const articlesDir = valueAfter('--articles-dir') ?? resolve(`generated/articles/${date}`);
   const outPath = valueAfter('--out') ?? resolve(`data/daily/${date}.json`);
@@ -63,6 +86,7 @@ async function main(): Promise<void> {
 
   const rawMeta = JSON.parse(await readFile(resolve(articlesDir, 'edition-meta.json'), 'utf8'));
   const meta = metaSchema.parse(rawMeta);
+  rejectFutureMonitoringEntries(meta.monitoringReview, assembledAt);
   const names = (await readdir(articlesDir)).filter((name) => name.endsWith('.json') && name !== 'edition-meta.json');
   const byId = new Map<string, { parsed: z.infer<typeof articleSchema>; raw: unknown }>();
   for (const name of names) {
@@ -83,12 +107,13 @@ async function main(): Promise<void> {
     throw new Error(`top5Rank は 1〜5 を重複なく全て持つ必要があります: ${ranks.join(', ')}`);
   }
   const rest = entries.filter(({ parsed }) => parsed.top5Rank === null).sort((a, b) => order.get(a.parsed.id)! - order.get(b.parsed.id)!);
+  const timestamp = jstTimestamp(assembledAt);
   const assembled = {
     date,
-    generatedAt: rawMeta.generatedAt,
+    generatedAt: checkOnly ? rawMeta.generatedAt : timestamp,
     selectionShortfallReason: rawMeta.selectionShortfallReason,
     contentCompliance: rawMeta.contentCompliance,
-    monitoringReview: rawMeta.monitoringReview,
+    monitoringReview: checkOnly ? rawMeta.monitoringReview : { ...meta.monitoringReview as object, checkedAt: timestamp },
     articles: [...top5, ...rest].map(({ raw }) => raw),
   };
   const edition = editionSchema.parse(assembled);
@@ -99,8 +124,13 @@ async function main(): Promise<void> {
   if (monitoringErrors.length) throw new Error(monitoringErrors.join('\n'));
   const serialized = `${JSON.stringify(assembled, null, 2)}\n`;
   if (checkOnly) {
-    const existing = await readFile(outPath, 'utf8');
-    if (existing !== serialized) throw new Error(`${date}: 既存の版JSONとバイト単位で一致しません`);
+    const existing = JSON.parse(await readFile(outPath, 'utf8')) as { generatedAt?: unknown; monitoringReview?: { checkedAt?: unknown } };
+    existing.generatedAt = assembled.generatedAt;
+    if (existing.monitoringReview && assembled.monitoringReview && typeof assembled.monitoringReview === 'object') {
+      existing.monitoringReview.checkedAt = (assembled.monitoringReview as { checkedAt?: unknown }).checkedAt;
+    }
+    const normalizedExisting = `${JSON.stringify(existing, null, 2)}\n`;
+    if (normalizedExisting !== serialized) throw new Error(`${date}: 既存の版JSONとバイト単位で一致しません`);
     console.log(`${date}: 既存の版JSONとバイト単位で一致しました（記事${entries.length}件）。`);
     return;
   }

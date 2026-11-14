@@ -6,9 +6,17 @@
 
 全記事の単体検証と記事単位監査が通過したら、`npm run edition:assemble -- --date YYYY-MM-DD`で版JSONを結合し、`npm run validate:data`を通す。主担当は版JSONを直接編集しない。レビュー指摘の修正は該当する個別記事ファイルだけに行い、assembleと検証を再実行する。続けて`npm run media:script -- --date YYYY-MM-DD --audit-only`を実行する。レビュー専用モードではVOICEVOX設定と発音辞書を読まず、内容確認用の仮話者だけで台本を作る。続けて`npm run media:audit-bundle -- --date YYYY-MM-DD`を実行する。レビューバンドルは全記事の概要と結論を含み、全文精査はTop 5、機械的なリスク記事、その日の年月日から決める非Top 5の5件サンプルに限定する。独立編集レビューは`docs/editorial-audit-rubric.md`だけを基準にする。
 
+監視元を再確認したら、`npm run edition:stamp-monitoring -- --date YYYY-MM-DD --source SOURCE_ID`（全件なら`--all`）で実測時刻を記録し、`checkedAt`を手書きしない。
+
+監査側が差し戻し等の指示にCVE／VU／KEV期限の事実主張を含める場合は、発行前に`npm run advisory:verify -- --claims claims.json`で一次情報と照合する。
+
 独立編集レビューの指摘を反映し、機械検査と主担当の差分確認を終えたら、`docs/media-production-policy.md`、`config/voicevox.json`、`config/pronunciations.json`を読み、正式な`npm run media:script -- --date YYYY-MM-DD`、`npm run media:voicevox -- --date YYYY-MM-DD`、`npm run media:render -- --date YYYY-MM-DD`を実行する。VOICEVOXが停止中ならローカルアプリを一度起動してAPI応答を待ち、起動不能、未登録読み、音声検証失敗の場合だけ音声を公開せず既存公開版を維持する。完成M4Aのデコード、約-16 LUFS、クレジット、メタデータ、Range再生を確認し、Releaseと`config/published-media.json`を更新する。
 
 `npm run check:all`を1回実行し、すべて成功した場合だけ意図したファイルを選択的にcommit、push、CI、Pages公開へ進む。個別コマンドを成功確認のため繰り返さない。Git authorとcommitterは`floortable <floortable@users.noreply.github.com>`を使う。公開ページ、RSS、Release音声まで確認する。
+
+## 生成完了ゲート
+
+生成担当は最終応答の前に必ず`npm run edition:complete-check -- --date YYYY-MM-DD`を実行する。`complete`でない場合は`missing`の不足分を続けて仕上げ、仕上げられない場合は最終応答で`missing`をそのまま明示する。`complete`でないのに完了と報告しない。
 
 CIとPagesの失敗だけでなく警告と注釈も確認する。廃止日、強制移行、セキュリティ、互換性に関わる新しい警告は、CI成功だけを理由に放置せず、公式の移行先が利用可能なら対応する。将来のホストイメージ変更など利用者側の変更が不要な通知は月次保守の監視対象へ回す。
 
