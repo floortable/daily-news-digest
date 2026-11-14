@@ -1,0 +1,2057 @@
+{
+  "date": "2026-11-14",
+  "generatedAt": "2026-11-14T08:35:05+09:00",
+  "selectionShortfallReason": "確定台帳の候補45件を分類し、一次資料または信頼できる報道で中心事実を確認できた19件を採用しました。deferredおよびnot-relevantの26件は、重複、対象期間外、中心事実・影響範囲の確認不足、または一般枠の優先度不足として分類済みです。通常の25件には届きませんが、高重要度の未分類候補は残していません。技術＋セキュリティは14/19件（73.7%）で目安40%を超過しますが、KEV掲載2件（UnrealIRCd CVE-2026-114713、Check Point CVE-2026-123039）、広く使われる製品の脆弱性（YouTrack、VNC Viewer、ImageMagick、Windows印刷、Check Point）、仮想化基盤に影響するESXi関連2件（Check PointのESXi破壊活動、GhostFrame）、重要なAI発表3件（ChatGPT Wallet、ElevenAI、Google AI学校）を採用したためです。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "policyVersion": 1,
+    "checkedAt": "2026-11-14T08:35:05+09:00",
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:22+09:00",
+        "note": "Hacker Newsの上位投稿を確認し、FAAの全国グラウンドストップは既採用済みで、追加の高重要度候補はありませんでした。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:22+09:00",
+        "note": "はてなブックマークの総合人気を確認し、対象期間に新たに記事化すべき高重要度の話題は見当たりませんでした。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:22+09:00",
+        "note": "YouTubeトレンドの公開ページを確認し、対象期間の社会的影響が大きい新規候補は確認できませんでした。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:24+09:00",
+        "note": "Reutersのトップページを確認しましたが、取得制限のため本文一覧は取得できず、既存候補以外の追加判断はしませんでした。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:24+09:00",
+        "note": "OpenAI Newsで11月13日のChatGPT Wallet発表を確認し、同件は既に採用済みで追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:24+09:00",
+        "note": "Anthropic Newsの最新掲載を確認し、当日付の新規発表は既存台帳の範囲を超えませんでした。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:25+09:00",
+        "note": "Google DeepMindのブログ一覧を確認し、対象期間に追加で記事化する公式AI発表は確認できませんでした。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:25+09:00",
+        "note": "Microsoft AIの最新記事一覧を確認し、対象期間の新規製品・政策変更で採用基準に達するものはありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:25+09:00",
+        "note": "Meta Newsroomの最新掲載を確認し、企業運営・提供条件の重要変更に当たる追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:27+09:00",
+        "note": "CISA KEVカタログを確認しましたが取得制限があり、既存台帳を覆す新規悪用確認は判定しませんでした。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:27+09:00",
+        "note": "CERT/CC Vulnerability Notesの最新公開情報を確認し、VNC Viewerの記事は既採用済みで追加の高優先案件はありませんでした。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:27+09:00",
+        "note": "GitHub Advisory Databaseを確認し、対象期間の採用基準を満たす追加のOSS・主要ベンダー案件は見当たりませんでした。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:28+09:00",
+        "note": "CISA KEV JSONフィードは取得制限でした。既存のKEV確認結果を維持し、新規候補は追加していません。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:28+09:00",
+        "note": "Sekoiaの調査ブログを確認し、Recorded FutureのGhostFrameは別途遅延掲載として採用し、他の追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:28+09:00",
+        "note": "Rails Security Announcementsを確認し、最新告知は11月4日で、対象期間の新規案件はありませんでした。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:29+09:00",
+        "note": "Synologyのセキュリティアドバイザリー一覧を確認し、対象期間に記事化が必要な新規告知はありませんでした。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:29+09:00",
+        "note": "BroadcomのVCセグメント用Security Advisory入口を確認し、対象期間の新規VMSAは確認できませんでした。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:29+09:00",
+        "note": "BroadcomのVAセグメント用Security Advisory入口を確認し、アプリケーション・ネットワーク領域の追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:30+09:00",
+        "note": "Broadcom Support/KB入口を確認し、対象期間にリリースノートへ反映すべき重要な更新は確認できませんでした。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:30+09:00",
+        "note": "VMware Cloud Foundationブログの最新投稿を確認し、既存の保留案件を更新する新しい提供条件はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:30+09:00",
+        "note": "国家サイバー統括室の指定URLは404でした。この確認では対象期間の新規政策発表を確認できませんでした。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:31+09:00",
+        "note": "Broadcom Service Statusを確認し、対象期間に記事化が必要な緊急障害は表示されていませんでした。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:31+09:00",
+        "note": "Broadcom相互運用性マトリクス入口を確認し、閲覧可能な範囲で対象期間の互換性・ライフサイクル変更は確認できませんでした。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:31+09:00",
+        "note": "Avi Load BalancerのTechDocs URLはアクセス制限でした。新規の製品運用変更は追加していません。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:32+09:00",
+        "note": "VMware Security Blogを確認し、最新のVMSAは10月27日付で、対象期間のvDefend・NSX追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:32+09:00",
+        "note": "William Lamの最新投稿を確認し、11月9日のチェックサム検証案内以降に対象期間の新規運用情報はありませんでした。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:32+09:00",
+        "note": "Broadcom VCFコミュニティを確認し、対象期間の障害・互換性に関する採用基準の新規報告はありませんでした。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:34+09:00",
+        "note": "Veeam公式ブログを確認し、VCF連携に影響する対象期間の新規パートナー更新は確認できませんでした。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "status": "checked",
+        "checkedAt": "2026-11-14T08:34:34+09:00",
+        "note": "Nutanix公式ブログを確認し、移行判断を変える対象期間の新規競合・移行情報は確認できませんでした。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "findings": [
+      {
+        "title": "SSHole CVE-2026-123158のKEV期限後確認",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "期限は2026年11月12日であることを確認しました。対象期間内に公式の新たな対応更新やVCF・ESXへの影響情報は確認できず、今回の記事化は見送りました。"
+      },
+      {
+        "title": "BarracudaとIvantiのKEV期限後確認",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "BarracudaのCVE-2026-111560、CVE-2026-116606とIvantiのCVE-2026-118527は11月13日が期限です。期間内の新規公式更新は確認できず、継続監視としました。"
+      },
+      {
+        "title": "ESX CVE-2026-41709の期限後確認",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "対応期限が2026年11月11日である既知の案件について、対象期間内の新しい公式アドバイザリーや修正版情報は確認できず、今回の記事化は見送りました。"
+      },
+      {
+        "title": "SDDC Manager CVE-2026-111497の期限後確認",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "対応期限が2026年11月10日である案件について、対象期間内に追加の公式発表や影響範囲の変更は確認できず、継続監視としました。"
+      },
+      {
+        "title": "Conductor買収の続報確認",
+        "area": "vcf",
+        "sourceId": "vcf-product-portfolio",
+        "url": "https://blogs.vmware.com/cloud-foundation/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "2026年11月4日発表のConductor買収について、対象期間内に統合計画、提供条件、顧客影響を変える公式続報は確認できず、記事化を見送りました。"
+      },
+      {
+        "title": "vSphere Expressの続報確認",
+        "area": "vcf",
+        "sourceId": "vcf-product-portfolio",
+        "url": "https://blogs.vmware.com/cloud-foundation/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "2026年11月4日発表のvSphere Expressについて、対象期間内に提供地域、価格、サポート条件を更新する公式情報は確認できず、継続監視としました。"
+      },
+      {
+        "title": "eMudhra G1のdistrust-after期限確認",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=2089115",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Mozilla bug 2089115でG1のdistrust-afterが2026年11月16日であることを確認しました。対象期間内の期限変更や実質的な新情報は確認できず、継続監視としました。"
+      },
+      {
+        "title": "Anthropic IPO の申込倍率6倍超",
+        "area": "ai",
+        "sourceId": "ai-anthropic",
+        "url": "https://www.unite.ai/anthropic-ipo-could-raise-64-billion-as-orders-reach-six-times/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Reutersが11月13日に報じたロードショー3日目の申込倍率6倍超を確認した。価格帯70〜78ドルと825百万株の募集条件は11月10日のS-1/Aで既報であり、新規の届出条件ではないため、本版では記事化せず保留した。"
+      },
+      {
+        "title": "SGLang Consortium の発足",
+        "area": "ai",
+        "sourceId": "ai-industry-operations",
+        "url": "https://teccurrent.com/articles/daily-brief-2026-11-13/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "11月12日にNVIDIA・AMD・Intel・Google・Meta等がSGLang Consortiumを発足させたことを確認した。対象期間外の発表であり、推論エンジンの連携枠組みで製品提供の変更ではないため、本版では記事化せず保留した。"
+      },
+      {
+        "title": "Claude for Manufacturing の提供開始",
+        "area": "ai",
+        "sourceId": "ai-anthropic",
+        "url": "https://teccurrent.com/articles/daily-brief-2026-11-13/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "11月12日にAnthropicが製造業向けClaudeを発表したことを確認した。対象期間外の製品発表であり、本版の対象期間内の新規情報ではないため、記事化せず保留した。"
+      },
+      {
+        "title": "GhostFrame（ESXi インプラント）",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.recordedfuture.com/blog/ghostframe-esxi-implant-settra-ransomware",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-14-ghostframe-esxi-implant",
+        "reason": "Recorded Futureが11月10日に公表したESXiインプラントの調査報告で、11-12・11-13版で拾い漏らしていたため、遅延掲載として本版へ追加した。"
+      },
+      {
+        "title": "Pentagon の AI 協定報道",
+        "area": "ai",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://forbestodays.pages.dev/sites/tylerroush/2026/05/01/openai-nvidia-alphabet-and-more-sign-ai-deal-with-pentagon-for-classified-military-use/",
+        "severity": "medium",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "2026年5月1日の協定をミラーサイトが11月13日に再掲したもので、対象期間の新規発表ではないため、本版の記事化対象外とした。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-14-trezor-cryptobilis",
+      "title": "Trezor Safe 5の不正インプラント、対象販売店と対策をメーカーが更新",
+      "sourceUrl": "https://trezor.io/blog/news/our-cryptobilis-investigation-what-we-found-and-what-weve-changed",
+      "sourceName": "Trezor",
+      "publishedAt": "2026-11-12T12:00:00+09:00",
+      "collectedAt": "2026-11-14T06:10:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ",
+        "生活・文化"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 1,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:10:00+09:00",
+        "script": [
+          "一つ目は、トレザー・セーフ5の不正なハードウェア改変です。メーカーのトレザーは、東南アジアの販売店クリプトビリスから2026年8月から9月に買われた端末に対象を絞り、確認済みの改変が情報を取得できないようにするファームウェア更新を出したと説明しました。資金を失ったという利用者報告は、同社には届いていません。",
+          "Trezor Safe 5のようなハードウェアウォレットは秘密の復元語を守るための機器なので、端末の外形やソフトウェアだけでなく、流通過程も安全性の一部になります。今回のように販売経路が限定される場合、購入店と購入時期を先に照合すると、一般的な全端末交換より対象を絞れます。",
+          "Trezorは販売店網を約8割縮小し、残る販売店の条件も厳しくするとしました。CryptoBilisで買った利用者には、新しいシードで作ったウォレットへ資金を移す案内もあります。復元語を求める連絡に応じず、公式窓口の手順を使うことが大切です。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "自分のTrezor Safe 5は対象か",
+            "answer": "CryptoBilisで2026年8月から9月に購入した端末が同社の調査対象です。購入記録を公式案内と照合し、案内された場合は新しいシードのウォレットへ移します。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "対象を購入履歴で絞れる根拠は何ですか。",
+            "findings": [
+              "メーカーは購入元、購入時期、機種を限定して調査結果を公表しました。"
+            ],
+            "references": [
+              "https://trezor.io/blog/news/our-cryptobilis-investigation-what-we-found-and-what-weve-changed"
+            ]
+          }
+        ],
+        "references": [
+          "https://trezor.io/blog/news/our-cryptobilis-investigation-what-we-found-and-what-weve-changed"
+        ]
+      },
+      "summary": [
+        "ハードウェアウォレットメーカーのTrezorは、販売店CryptoBilisから購入されたTrezor Safe 5で確認した不正インプラントについて、取得機能を止めるファームウェア更新を公開したと報告しました。対象は2026年8月から9月の同店経由の端末に限られるというのが、現時点の同社調査です。",
+        "同社は他の販売店やSafe 5以外のモデルでは同じ改変を見つけておらず、資金喪失を申し出た顧客もいないとしています。改変は取得した情報を暗号化し、携帯通信網経由で攻撃者側のサーバーへ送る設計だったと説明されました。",
+        "Trezorは販売店網を約80%減らし、残る販売店により厳しい要件を求める方針です。CryptoBilisの購入者には、新しいシードで作る新ウォレットへの資金移動も案内しており、交換対象は2026年3月以降の購入者としています。"
+      ],
+      "comment": "暗号資産の自己保管では、復元語を入力するソフトウェアだけでなく、それを扱う物理端末の調達経路が信頼の境界になります。今回の発表が有用なのは、感染有無を漠然とした地域や製造ロットで語らず、販売店、期間、機種という購入者が照合できる単位で絞ったことです。対象者は端末を初期化する前に公式案内と購入記録を突き合わせる必要があります。復元語を求める連絡や代替サイトは、この種の事故で便乗詐欺の入口にもなり得ます。販売網を縮小する判断は供給量との交換を伴いますが、正規流通を再設計することは、更新済みファームウェアだけでは覆えない物理サプライチェーンのリスクに対する措置です。端末だけを更新しても、既に使った復元語や移転先アドレスの確認を省けば不安は残ります。購入者を特定できる流通記録を持つこと自体が、自己保管を支える運用資産だといえます。",
+      "articleDetail": {
+        "conclusion": "TrezorはCryptoBilis経由のSafe 5に限定して確認した不正改変へ、ファームウェア更新と販売網見直しで対応しています。",
+        "facts": [
+          "対象は2026年8月から9月にCryptoBilisから購入されたTrezor Safe 5とされています。",
+          "メーカーは11月11日に、確認済みインプラントの取得機能を止める更新を公開しました。",
+          "同社は他販売店や他モデルでの確認例と、顧客の資金喪失報告はいずれもないと説明しました。"
+        ],
+        "background": [
+          "ハードウェアウォレットは秘密情報を端末内で扱うため、流通段階の改変は通常のアプリ更新とは異なるリスクになります。"
+        ],
+        "explanation": [
+          "購入経路で対象を限定できれば、利用者は端末番号だけでなく領収書や販売店情報から支援対象を判断できます。"
+        ],
+        "implications": [
+          "正規販売店の統制と購入履歴の保存が、消費者向けセキュリティ製品でも復旧手順の一部になります。"
+        ],
+        "caveats": [
+          "確認済み範囲はメーカー調査に基づき、第三者による全流通網の網羅調査を意味するものではありません。"
+        ],
+        "nextChecks": [
+          "メーカーが公表する対象者向け支援、追加の確認例、販売店要件の詳細を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "物理端末の改変が疑われた事案で、対象範囲と防御策をメーカーが具体的に更新したためです。",
+        "currentReaction": "2026年11月14日06時10分JST時点で、公式発表以外の比較可能な反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "対象購入者が判断できる購入経路と期間が示され、一般化を避けた説明になっています。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-14T06:10:00+09:00",
+        "reason": "対象期間開始前の更新だが、11月13日に調査範囲と流通対策が公表され、利用者判断に新しい情報が加わったためです。",
+        "currentNewsValue": "購入元と時期で照合可能な対象範囲、更新、販売網見直しが同時に示されています。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:10:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-faa-ground-stop",
+      "title": "FAAがNational Ground Stopを告知、便ごとの影響は運航情報で確認を",
+      "sourceUrl": "https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11132026&advn=111",
+      "sourceName": "Federal Aviation Administration",
+      "publishedAt": "2026-11-14T06:05:53+09:00",
+      "collectedAt": "2026-11-14T06:20:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "国内・国際",
+        "その他"
+      ],
+      "channels": [
+        "hacker-news",
+        "other"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:20:00+09:00",
+        "script": [
+          "二つ目は、アメリカ連邦航空局、FAAのNational Ground Stopです。FAAの運航情報ページは11月13日付でこの交通管理措置を掲示しました。これは飛行中の機体を一斉に止める指示ではなく、出発前の航空機を空港で待機させ、空域や空港の混雑を調整する仕組みです。",
+          "Ground Stopという表示だけから、全米の便が欠航した、あるいは特定の事故が起きたと決めつけることはできません。対象空港、対象便、理由、解除状況で影響は変わり、予約者が見るべきなのは航空会社が出す個別便の案内です。",
+          "FAAの短い告知は、空の運用が平常と異なる可能性を知らせる早い信号です。乗り継ぎを含む旅行では、空港へ向かう前に出発便だけでなく到着地の接続便も確認すると、待機措置が解けた後の遅延にも備えやすくなります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "予約便が欠航したと受け取るべきか",
+            "answer": "National Ground Stopの表示だけでは欠航は確定しません。便の扱いは航空会社の予約便案内と空港の出発情報で確認します。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "告知だけで分かる影響の範囲は何ですか。",
+            "findings": [
+              "告知の表題から交通管理措置の存在は確認できますが、原因や個別便の最終状態は確定できません。"
+            ],
+            "references": [
+              "https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11132026&advn=111"
+            ]
+          }
+        ],
+        "references": [
+          "https://www.fly.faa.gov/adv/adv_otherdis?adv_date=11132026&advn=111"
+        ]
+      },
+      "summary": [
+        "米連邦航空局（FAA）の運航情報ページは、2026年11月13日付でNational Ground Stopを掲示しました。Ground Stopは出発前の航空機を空港で待機させる交通管理の措置で、告知だけで全便の欠航や原因を示すものではありません。",
+        "航空交通では、天候、空域の混雑、施設の制約などに応じて出発の流量を抑えることがあります。飛行中の航空機を止める措置とは異なり、対象となる空港や時間帯、便の扱いは個別の運航情報で決まります。",
+        "この告知ページでは理由や対象範囲、解除時刻の詳細を確認できません。旅行者は航空会社の便名検索と空港の案内で自分の旅程を確認し、乗り継ぎがある場合は後続便の変更可能性も見ておく必要があります。"
+      ],
+      "comment": "Ground Stopは、出発便の流量を交通管理上の必要に応じて調節する措置です。表示の名称を事故や全面停止の意味へ読み替えることはできません。利用者に見える影響は、予約した便が対象に含まれるか、機材の運用が後続便へつながるかで変わります。空港の出発案内と航空会社の予約便案内は役割が異なり、前者だけで到着地や乗り継ぎの状態までは分かりません。今回のFAA告知は措置の存在を伝えるもので、原因や対象範囲を説明する発表ではありません。旅行の判断には、航空会社から旅程単位で示される変更・払い戻し条件を使う必要があります。空港へ向かう時刻や代替便の手配は、一般ニュースの見出しではなく、予約番号に結び付いた航空会社の案内を基準に更新するのが安全です。",
+      "articleDetail": {
+        "conclusion": "FAAはNational Ground Stopという出発便の交通管理措置を11月13日付で掲示しました。",
+        "facts": [
+          "FAAの運航情報ページにNational Ground Stopの告知が掲載されています。",
+          "Ground Stopは出発前の航空機を待機させる航空交通管理の手段です。"
+        ],
+        "background": [
+          "航空管制は到着能力を超える流入を避けるため、出発側で時間調整を行うことがあります。"
+        ],
+        "explanation": [
+          "同じ便でも出発空港、目的地、機材繰り、乗員の勤務時間によって影響の出方が異なります。"
+        ],
+        "implications": [
+          "旅行者は一つの告知だけで旅程を判断せず、予約便と接続便の状態を直接確認する必要があります。"
+        ],
+        "caveats": [
+          "取得できた告知からは原因、対象空港、解除時刻を特定できません。"
+        ],
+        "nextChecks": [
+          "FAAの更新と航空会社の便別案内で、対象範囲と解除後の遅延状況を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "航空交通の即時の制限は、多数の旅程と物流に波及する可能性があるためです。",
+        "currentReaction": "FAAは告知ページで措置の存在を掲示しています。",
+        "assessment": "判断には早い",
+        "assessmentComment": "原因と便別の結果は、告知とは別に運航会社が案内する情報で決まります。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:20:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-chatgpt-wallet",
+      "title": "ChatGPT Wallet、米国Pro会員でエージェント決済を限定提供",
+      "sourceUrl": "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-14T01:00:12+09:00",
+      "collectedAt": "2026-11-14T06:30:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:30:00+09:00",
+        "script": [
+          "三つ目は、ChatGPT Walletです。報道によると、OpenAIは米国のChatGPT Pro会員を対象に、エージェントが商品を探して購入手続きまで進める機能を限定提供し始めました。",
+          "これは会話で候補を出す段階から、支払いを伴う実行へ権限が移る変化です。公式ヘルプでは取引ごとの事前確認と承認、対応端末での生体認証を求めています。",
+          "限定提供なので、使える加盟店、返金、誤発注時の責任分担は一律には分かりません。ChatGPT Walletを使う人は、保存した決済手段の範囲と注文確認画面を先に確かめる必要があります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "日本の無料利用者もすぐに決済できるか",
+            "answer": "報道時点の提供は米国のChatGPT Pro会員に限定されています。利用地域、店舗、返金条件は導入前に公式条件で確認が必要です。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "提供範囲はどこまでですか。",
+            "findings": [
+              "開始時点は米国のChatGPT Pro会員向け限定提供と報じられています。",
+              "公式ヘルプは取引ごとの利用者承認と対応端末での生体認証を案内しています。"
+            ],
+            "references": [
+              "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+              "https://help.openai.com/en/articles/20001654-making-purchases-with-chatgpt-wallet"
+            ]
+          }
+        ],
+        "references": [
+          "https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/",
+          "https://help.openai.com/en/articles/20001654-making-purchases-with-chatgpt-wallet"
+        ]
+      },
+      "summary": [
+        "ChatGPT Walletは、AIエージェントが商品を探し、購入手続きまで進めるための決済機能として報じられました。開始時点では米国のChatGPT Pro会員に限った提供で、全利用者向けの標準機能ではありません。",
+        "従来の提案機能と異なり、支払いという取り消しにくい操作に会話型エージェントが近づきます。OpenAIのヘルプでは取引ごとの事前確認と承認、対応端末での生体認証を求めています。",
+        "利用可能な店舗、返金処理、保存カードの扱いは提供範囲に依存します。日本の利用者や無料プラン利用者に直ちに使えるという発表ではなく、限定提供の条件を前提に読む必要があります。"
+      ],
+      "comment": "エージェントの価値は検索結果を要約するだけでなく、複数の画面をまたぐ操作を代行できる点にあります。その代わり、決済は推薦の誤りを金銭的な結果へ変える境界でもあります。カードを登録することと、商品・数量・配送先を確定する権限を渡すことは別の判断です。企業で使う場合は個人の購買権限、経費精算、監査記録との接続も問題になります。限定提供の初期段階では、利用条件と注文の最終確認がどこで行われるかを分けて把握することが必要です。決済機能を評価する際は、便利な購買体験だけでなく、誤注文を止める確認画面が十分に明確か、代理操作の履歴を後から追えるかも比較軸になります。初期提供の対象、利用可能な販売者、支払いの取消条件が変わる可能性もあるため、試験的な利用結果を恒久的な購買フローの前提にしない姿勢が求められます。",
+      "articleDetail": {
+        "conclusion": "ChatGPT Walletは、会話型AIを購入操作へ広げる米国Pro会員向けの限定提供として報じられました。",
+        "facts": [
+          "報道は、AIエージェントが買い物とチェックアウトを進める機能だと説明しています。",
+          "開始対象は米国のChatGPT Pro会員とされています。",
+          "公式ヘルプは取引ごとの事前確認と承認、対応端末での生体認証を案内しています。"
+        ],
+        "background": [
+          "決済では、推薦内容ではなく確定した注文と支払い手段が取引の結果を決めます。"
+        ],
+        "explanation": [
+          "エージェント利用では、探索、注文作成、最終承認をどこで区切るかが権限設計になります。"
+        ],
+        "implications": [
+          "購入業務にAIを使う組織は、承認記録と返金時の処理を既存の統制に接続する必要があります。"
+        ],
+        "caveats": [
+          "加盟店の範囲や返金時の扱いは、報道だけから一律に確定できません。"
+        ],
+        "nextChecks": [
+          "正式な提供地域、加盟店、返金に関する利用規約の説明を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "生成AIが決済を伴う操作へ進むことで、権限と利用者保護の設計が具体的な製品課題になったためです。",
+        "currentReaction": "2026年11月14日06時30分JST時点で、比較可能な反響値は確認していません。",
+        "assessment": "判断には早い",
+        "assessmentComment": "承認と生体認証は示された一方、限定提供の実利用で加盟店や返金の運用がどうなるかはまだ見えません。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:30:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-godel-notebooks",
+      "title": "ゲーデル手稿をClaudeで分析、Coq検証で定理記録を調査",
+      "sourceUrl": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
+      "sourceName": "The Guardian",
+      "publishedAt": "2026-11-14T01:38:00+09:00",
+      "collectedAt": "2026-11-14T06:35:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "科学・医療"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 4,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:35:00+09:00",
+        "script": [
+          "四つ目は、数学者クルト・ゲーデルの手稿です。Jan von Platoは既存の転写と著書6冊をClaudeに渡し、16冊・1009ページを分析させました。Claudeは663件を抽出し、ゲーデル手稿の記録を探索する入口になりました。",
+          "重要なのは、AIが画像から手書き文字を読んだという話ではない点です。既存転写を材料にした分析の後、Coqで約400件をそのまま検証し、約200件は修正、約50件は誤りと判断されました。",
+          "Claudeの抽出を完成した数学的結論と同一視はできません。ゲーデル手稿の転写、Coqでの形式検証、各記述の史料学的な位置付けを公開して初めて、第三者が追試できます。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "AIが発見した663件は全て正しいのか",
+            "answer": "663件は候補の抽出数で、Coqの検証では約200件に修正が必要となり約50件は誤りと判断されました。AIの結果だけで確定はできません。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "抽出された定理はすべて正しかったのですか。",
+            "findings": [
+              "663件の抽出後、Coqで約400件がそのまま検証され、約200件は修正、約50件は誤りとされました。"
+            ],
+            "references": [
+              "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths"
+            ]
+          }
+        ],
+        "references": [
+          "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths"
+        ]
+      },
+      "summary": [
+        "数学史家Jan von Platoは、既存の転写と著書6冊をClaudeに渡し、クルト・ゲーデルの16冊、計1009ページを分析しました。報道によると、そこから663件の証明記録が抽出されました。",
+        "これは手稿画像をAIがOCRで読む工程が中心なのではなく、転写済みの材料を分析・抽出する作業です。その後のCoqによる形式検証では、約400件をそのまま確認し、約200件を修正、約50件を誤りとしました。",
+        "歴史資料の内容を発見する工程と、数学的に正しい証明として確定する工程は分けて扱う必要があります。転写と検証結果が公開されれば、数学史と形式検証の双方から検討できます。"
+      ],
+      "comment": "この事例の面白さは、AIが未知の手書き文字を魔法のように読んだことではなく、すでに作られた転写を大量に横断して候補を見つけ、形式検証へ渡す分業にあります。663件という抽出数だけを見ると自動発見に見えますが、Coqで約200件を直し、約50件を誤りとした結果は、候補生成と検証を切り離す必要を端的に示します。数学史では、正しい式でもいつ、どの文脈で書かれたかが問われます。原資料、転写、修正履歴、Coqの証明を結べる形で公開できるかが、AI支援を再現可能な研究方法に変える鍵になります。この分離が保たれれば、別の資料群でも人文学の探索と形式的な反証を相互に強める形で利用でき、研究者の判断理由を残す契機になります。",
+      "articleDetail": {
+        "conclusion": "Claudeによる既存転写の分析とCoqによる検証を組み合わせ、ゲーデル手稿の証明記録を調査した研究です。",
+        "facts": [
+          "Jan von Platoは既存転写と著書6冊をClaudeへ渡し、16冊・1009ページを分析しました。",
+          "663件を抽出し、Coqで約400件をそのまま検証、約200件を修正、約50件を誤りとしました。"
+        ],
+        "background": [
+          "形式証明系Coqは、与えられた定義と推論規則に照らして証明を機械的に検査できます。"
+        ],
+        "explanation": [
+          "AIの役割は既存転写から候補を探索・抽出することで、画像認識中心の工程ではありません。"
+        ],
+        "implications": [
+          "転写と形式検証を結び付けることで、歴史資料の探索結果を第三者が再検討しやすくなります。"
+        ],
+        "caveats": [
+          "Coqでの検証結果は史料上の帰属や完成稿かどうかの判断を単独で確定しません。"
+        ],
+        "nextChecks": [
+          "研究者が公開する転写、修正履歴、Coq検証の対象範囲を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AIによる候補抽出と形式検証を分け、歴史的数学資料を検討する具体例だからです。",
+        "currentReaction": "2026年11月14日06時35分JST時点で、Hacker Newsでは259ポイント、75コメントを確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "抽出結果だけでなく修正・誤りの内訳が示され、検証工程の重要性が明確です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 259,
+        "hnComments": 75,
+        "socialMetricsCheckedAt": "2026-11-14T06:35:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:35:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-palmfrets",
+      "title": "ミネソタのギタリストがPalmfretsを開発、演奏の音域を広げる試み",
+      "sourceUrl": "https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord",
+      "sourceName": "Echo Press",
+      "publishedAt": "2026-11-13T00:30:00+09:00",
+      "collectedAt": "2026-11-14T06:57:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 5,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:57:00+09:00",
+        "script": [
+          "五つ目は、ミネソタのギタリストBen Ransonが開発したPalmfretsです。地域紙は、ギターで出せる音と演奏の可能性を広げる発明として紹介しました。",
+          "Palmfretsは既存のギターを置き換えるというより、演奏者が新しい音の組み合わせを試すための補助具です。楽器の改造では、演奏性、調整、耐久性が実用化の鍵になります。",
+          "Palmfretsが他の演奏者や製作者にどう受け入れられるか、実演と利用者の反応を確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "Palmfretsはすべてのギターに同じように使えるか",
+            "answer": "記事は開発者の発明を紹介するもので、楽器の状態や奏法ごとの互換性を保証していません。導入前には仕様と実演を確認する必要があります。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord"
+        ]
+      },
+      "summary": [
+        "Echo Pressは、ミネソタのギタリストBen Ransonが開発したPalmfretsを紹介しました。記事は、ギターで出せる音を増やし、新しい演奏の可能性を作る発明として伝えています。",
+        "楽器のための小さな発明は、音域だけでなく、演奏者の身体感覚や作曲の発想を変えることがあります。製品として広がるかは、実演での使いやすさ、調整のしやすさ、演奏者コミュニティの評価に左右されます。",
+        "対象はPalmfretsという個人発のギター用発明の紹介であり、既存ギターすべてで同じ効果が得られることや、広範な販売開始を示す発表ではありません。演奏スタイル、楽器の状態、導入方法によって実用性は変わるため、購入や改造を考える人は開発者の仕様と実演を確認する必要があります。"
+      ],
+      "comment": "楽器の発明には、既存の奏法を壊すのではなく、手元の制約を少しずらして新しいフレーズを引き出すものがあります。Palmfretsの価値は、音数を増やせるという説明だけでなく、演奏者がどんな姿勢や手の動きでその音を使えるかにあります。地域発の試作が、実演を通じて他の奏者へ伝わる過程は、技術と文化が結び付く典型例です。量産や普及の前にも、演奏動画、修理性、異なる楽器との相性といった検証材料が必要になります。音域の説明と実際の演奏可能性を分けて評価することは、こうした楽器改良を過大な宣伝から守り、奏者自身の用途に照らす助けになります。演奏動画や第三者の試奏記録が蓄積されれば、特定の奏者の技巧に依存するのか、異なるジャンルでも再現できるのかを比較できるようになります。",
+      "articleDetail": {
+        "conclusion": "Palmfretsは、ギターの演奏可能性を広げようとする地域発の楽器補助具です。",
+        "facts": [
+          "Echo PressはBen RansonのPalmfretsを、ギターの音と可能性を広げる発明として紹介しました。"
+        ],
+        "background": [
+          "楽器の補助具は音域、演奏姿勢、作曲の選択肢に影響することがあります。"
+        ],
+        "explanation": [
+          "実演を通じて使い勝手が評価され、演奏者ごとの奏法へ取り込まれていきます。"
+        ],
+        "implications": [
+          "地域の創作が演奏コミュニティの新しい表現へつながる可能性があります。"
+        ],
+        "caveats": [
+          "普及度や長期的な演奏上の評価は今後の利用者に左右されます。"
+        ],
+        "nextChecks": [
+          "Palmfretsの実演、販売形態、演奏者の評価を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "地域の演奏者が既存楽器の表現を拡張する具体的な発明として紹介されたためです。",
+        "currentReaction": "2026年11月14日06時57分JST時点で、Hacker Newsでの掲載を確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "技術的工夫と演奏文化の接点を具体的に示しています。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:57:00+09:00",
+        "httpStatus": 200
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-14T06:10:00+09:00",
+        "reason": "一次資料の表示日時は対象期間開始前ですが、13日に発見され、地域発の新しい楽器発明として読者の関心を集めたためです。",
+        "currentNewsValue": "一次資料で開発者、用途、試作段階を確認でき、対象範囲を限定して紹介できます。"
+      }
+    },
+    {
+      "id": "2026-11-14-unrealircd-kev",
+      "title": "CISAがCVE-2026-114713をKEVに追加、UnrealIRCd管理者へ期限付き対応",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "sourceName": "CISA",
+      "publishedAt": "2026-11-13T09:00:00+09:00",
+      "collectedAt": "2026-11-14T06:40:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:40:00+09:00",
+        "script": [
+          "CISAはUnrealIRCdのCVE-2026-114713を、悪用確認済み脆弱性カタログ、KEVに追加しました。",
+          "KEVは実際の悪用情報に基づく優先対応の目安です。UnrealIRCdの運用者はCVE-2026-114713の対象版とベンダー修正を照合します。",
+          "公開サーバーだけでなく、管理用の到達経路とログも確認し、更新後に不審な実行痕跡を調べます。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "KEV掲載は直ちに侵害された意味ですか。",
+            "answer": "掲載は悪用が確認されたことを示しますが、各組織の侵害を意味しません。対象製品の有無と修正状況を優先して確認します。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      "summary": [
+        "米CISAの既知悪用脆弱性カタログに、UnrealIRCdのCVE-2026-114713が掲載されました。KEVは、実際の悪用が確認された脆弱性を防御側が優先順位付けするための一覧です。",
+        "UnrealIRCdを運用する組織は、利用中の版、公開範囲、ベンダーが示す修正・回避策を照合する必要があります。更新だけでなく、過去のログや管理権限に異常がないかを確認することも重要です。",
+        "この掲載はCVE-2026-114713とUnrealIRCdの運用者に向けた優先情報で、すべてのIRCサーバーや全バージョンの侵害を意味しません。対象製品の有無、該当する構成、期限をCISAとベンダーの一次情報で確認し、未使用の環境も含めて判断することが必要です。"
+      ],
+      "comment": "KEVへの掲載は、脆弱性の技術的な深刻度だけではなく、攻撃者に使われているという運用上の優先信号です。IRCサーバーを外部公開していない場合でも、踏み台や内部コミュニケーション用途で残っていることがあります。資産管理で製品名を検索し、対象の有無を先に確定すると対応漏れを減らせます。パッチ適用の可否、遮断の代替策、侵害調査の担当を同時に決めることが実務的です。",
+      "articleDetail": {
+        "conclusion": "CISAのKEV掲載を受け、UnrealIRCd利用環境ではCVE-2026-114713の有無と修正を優先確認する段階です。",
+        "facts": [
+          "CISAはCVE-2026-114713をKnown Exploited Vulnerabilities Catalogに2026年11月13日付で掲載し、対応期限を2026年11月16日としています。"
+        ],
+        "background": [
+          "KEVは実悪用が確認された脆弱性を防御側の対応優先度に反映させるカタログです。"
+        ],
+        "explanation": [
+          "資産台帳と公開範囲を照合すれば、影響調査を製品利用環境へ絞れます。"
+        ],
+        "implications": [
+          "更新計画と侵害痕跡の確認を並行させることで、対応後の見落としを抑えられます。"
+        ],
+        "caveats": [
+          "カタログ掲載だけでは、個別環境の侵害有無や影響範囲は分かりません。"
+        ],
+        "nextChecks": [
+          "CISAとベンダーが示す期限、対象版、修正手順を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "実悪用を前提とするCISAの優先対応リストに追加されたためです。",
+        "currentReaction": "2026年11月14日06時40分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "運用者が対象製品の有無を確認して対応順位を決める材料になります。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-07-sonicwall-cve-2026-19868-kev"
+      ],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:40:00+09:00",
+        "httpStatus": 200
+      },
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-07-sonicwall-cve-2026-19868-kev",
+        "originalEditionDate": "2026-11-07",
+        "checkedAt": "2026-11-14T06:40:00+09:00",
+        "developments": [
+          "CISAの同じKEVカタログに、前版で扱ったSonicWallとは別のUnrealIRCd CVE-2026-114713が追加され、対応対象が更新されました。"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-14-youtrack-xss",
+      "title": "JetBrains YouTrackのXSS脆弱性、JVNが注意喚起",
+      "sourceUrl": "https://jvn.jp/jp/JVN76799957/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-13T12:00:00+09:00",
+      "collectedAt": "2026-11-14T06:42:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:42:00+09:00",
+        "script": [
+          "JVNはJetBrains YouTrackのクロスサイトスクリプティング脆弱性を公表しました。",
+          "YouTrackの管理者は、JVNの対象条件とJetBrainsの修正版を照合します。XSSは閲覧者のブラウザ上で意図しないスクリプトを動かすおそれがあります。",
+          "YouTrackの公開範囲、管理者権限、更新後の利用者向け通知も確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "XSSはサーバーが乗っ取られる脆弱性ですか。",
+            "answer": "主に閲覧者のブラウザで不正なスクリプトを実行させる問題です。影響は権限や画面の公開範囲で変わります。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://jvn.jp/jp/JVN76799957/"
+        ]
+      },
+      "summary": [
+        "JVNはJetBrains製YouTrackにおけるクロスサイトスクリプティングの脆弱性を公表しました。課題管理システムは社内情報や管理操作を扱うため、管理者は対象版と更新情報を確認する必要があります。",
+        "XSSは、細工された入力を画面で処理した際に、利用者のブラウザで意図しないスクリプトが動く可能性がある問題です。修正適用に加え、公開されているプロジェクトや管理権限の確認が有効です。",
+        "対象はJVNが公表したYouTrackの該当脆弱性であり、すべてのYouTrack導入環境で攻撃成功が確認されたという報告ではありません。オンプレミスかクラウドか、公開範囲、実際の利用版を公式の影響範囲と照らし、更新計画と利用者への周知を決める必要があります。"
+      ],
+      "comment": "課題管理ツールはチケット本文、コメント、添付へのリンクなど、利用者入力を多く表示します。そのためXSSは一見小さく見えても、管理者が同じ画面を開く導線と結び付くと影響が広がります。更新の前後で、外部公開のプロジェクト、SSOや管理者セッションの扱い、監査ログの保存状況を確認しておくと、技術的な修正を組織の運用へつなげられます。",
+      "articleDetail": {
+        "conclusion": "YouTrack利用者はJVNとJetBrainsの情報を基に、対象版の更新と公開設定の点検を進める必要があります。",
+        "facts": [
+          "JVNはJetBrains製YouTrackのクロスサイトスクリプティング脆弱性を公表しました。",
+          "JVN#76799957は、このStored XSSをCVE-2026-75048として記載しています。影響を受けるのはYouTrack 2026.2.18068より前のバージョンで、修正版は2026.2.18068です。"
+        ],
+        "background": [
+          "XSSはWeb画面の入力処理を通じ、閲覧者側で不正なスクリプトが実行され得る問題です。",
+          "JetBrainsの2026.2.18068向け修正項目は、fenced code-blockのlanguage labelを経由したStored XSSが可能だったことを、JT-97453として示しています。"
+        ],
+        "explanation": [
+          "影響は脆弱な画面を誰が閲覧できるか、どの権限で利用するかに左右されます。",
+          "細工されたページを作成したユーザーとは別の利用者がそのページを閲覧すると、保存された内容に含まれるスクリプトが閲覧者のブラウザで実行される可能性があります。"
+        ],
+        "implications": [
+          "修正と公開範囲の見直しを組み合わせると、攻撃の到達経路を減らせます。"
+        ],
+        "caveats": [
+          "JVNの注意喚起だけでは個別環境の露出や悪用有無は確定しません。"
+        ],
+        "nextChecks": [
+          "JetBrainsが示す対象版、修正版、回避策を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "広く使われる課題管理製品について、国内の注意喚起が公開されたためです。",
+        "currentReaction": "2026年11月14日06時42分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "利用中の版と公開設定を具体的に確認できる情報です。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:42:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-check-point-php2shell",
+      "title": "Check PointがPHP2Shellの悪用を警告、Security Gatewayの修正を案内",
+      "sourceUrl": "https://blog.checkpoint.com/security/security-advisory-active-exploitation-of-php2shell-and-local-privilege-escalation/",
+      "sourceName": "Check Point",
+      "publishedAt": "2026-11-12T22:58:03+09:00",
+      "collectedAt": "2026-11-14T06:44:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:44:00+09:00",
+        "script": [
+          "Check PointはPHP2Shellの実悪用とローカル権限昇格について注意を出しました。",
+          "Security Gatewayの管理者はPHP2Shellの対象条件、修正、侵害調査手順を公式情報で確認します。",
+          "PHP2Shellへの対処では、更新と併せてGatewayのログおよび公式が示した侵害指標を確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "更新すれば過去の侵入も解消しますか。",
+            "answer": "更新は再悪用のリスクを下げますが、過去の侵入有無はログと公式が公開した侵害指標を用いて別途確認する必要があります。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://blog.checkpoint.com/security/security-advisory-active-exploitation-of-php2shell-and-local-privilege-escalation/"
+        ]
+      },
+      "summary": [
+        "Check PointはPHP2Shellに関する実悪用とローカル権限昇格について、Security Gateway利用者向けの注意を公開しました。対象機器を運用する組織は、公式の対象条件と修正手順を優先して照合する必要があります。",
+        "ネットワーク境界の装置は停止や更新の計画を伴います。更新可否、回避策、ログ保全を同時に検討し、公開された侵害指標に該当する痕跡やファイアウォールトラフィックログの欠落を確認することが重要です。",
+        "対象はCheck Point Security Gatewayに関するPHP2Shellの注意喚起で、すべてのネットワーク機器や全構成が同じ条件で影響を受けるわけではありません。製品系列、導入版、公開状況、保守契約の情報を公式文書と照合し、停止可能な時間帯を含む対応計画を作る必要があります。"
+      ],
+      "comment": "境界装置の脆弱性は、サービス停止を避けたい事情から対応が遅れやすい一方、攻撃者にとっては内部への足場になり得ます。公式アドバイザリーを基に対象版を確定し、変更管理の時間枠と監視を確保するのが出発点です。今回のベンダー資料は、PHPセッション内の特定文字列、正規コンポーネントを装うプロセス名、ログデーモンのクラッシュ後に生じるトラフィックログの欠落などを侵害指標として示しています。",
+      "articleDetail": {
+        "conclusion": "Check Point Security Gatewayの運用者はPHP2Shellの公式修正と侵害調査を優先する必要があります。",
+        "facts": [
+          "Check PointはPHP2Shellの実悪用について公式に注意を出しました。",
+          "CVE-2026-123039は、Check Point製品のGaia OS Dynamic CLI Serviceにおける不適切な権限割り当てによるローカル権限昇格の脆弱性です。",
+          "CISAのKnown Exploited Vulnerabilities Catalogは、CVE-2026-123039をCheck Point Multiple Productsの脆弱性として2026年11月13日に掲載し、対応期限を11月16日としています。",
+          "CISAの記録で対象製品にはSecurity Gatewayを含むCheck Pointの複数製品が挙げられ、Check Pointは11月のJumbo Hotfixで修正を提供するとしています。"
+        ],
+        "background": [
+          "CISAのKEVカタログは、実際に悪用された脆弱性を収載し、連邦民間行政機関には指定期限までの是正を求める仕組みです。",
+          "CVE-2026-123039では、rootとして動くDynamicCLIデーモンが接続元プロセスを認証しないワールド書き込み可能なローカルソケットを待ち受ける条件が問題とされています。"
+        ],
+        "explanation": [
+          "認証済みのローカル利用者がこのソケットへコマンドを送るとroot権限で実行され得るため、初期侵入後の権限昇格に使われる構造です。",
+          "11月のJumbo Hotfixを適用する際は、Management ServerとSecurity Gatewayの双方を対象にするようCheck Pointが案内しています。"
+        ],
+        "implications": [
+          "変更管理の計画には、公開された侵害指標とファイアウォールトラフィックログの確認を組み込む必要があります。"
+        ],
+        "caveats": [
+          "公式発表は個別環境の侵害有無を直接示すものではありません。"
+        ],
+        "nextChecks": [
+          "Check Pointが示す対象版、修正手順、PHPセッション文字列や偽装プロセス名などの侵害指標を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ベンダーが実悪用を示し、Gateway管理者の即時判断に関わるためです。",
+        "currentReaction": "2026年11月14日06時44分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "対象の確認と対応手順が運用上の優先課題です。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:44:00+09:00",
+        "httpStatus": 200
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-14T06:10:00+09:00",
+        "reason": "一次資料の公開は対象期間開始前ですが、13日に実悪用を扱う報道で再注目され、Gateway利用者の確認行動に新しい優先度が生じたためです。",
+        "currentNewsValue": "対象製品、修正手順、侵害調査を同時に確認すべき具体的な運用上の価値があります。"
+      }
+    },
+    {
+      "id": "2026-11-14-vnc-viewer-overflow",
+      "title": "TightVNC・UltraVNCのWindows Viewerにバッファオーバーフロー、CERT/CCが公表",
+      "sourceUrl": "https://www.kb.cert.org/vuls/id/644655",
+      "sourceName": "CERT/CC",
+      "publishedAt": "2026-11-13T09:08:48+09:00",
+      "collectedAt": "2026-11-14T06:46:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:46:00+09:00",
+        "script": [
+          "CERT/CCは、TightVNCとUltraVNCのWindows Viewerに、CERT/CC VU#644655、CVE-2026-128321としてヒープベースのバッファオーバーフローを公表しました。",
+          "Tight JPEGのデコードで、8192ピクセル幅用に確保したヒープ領域へ、サーバーが指定した矩形幅を使って変換するため、8257ピクセル幅から範囲外書き込みが始まります。",
+          "悪意あるVNCサーバーの細工した画面更新で発動し、サービス拒否は実証済みです。TightVNC 1.3.10では提供元と修正を調整できず、UltraVNCは1.8.2.8で修正されています。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "VNCサーバーだけを更新すればよいですか。",
+            "answer": "対象はWindows Viewerです。接続に使うクライアント端末の版も確認する必要があります。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://www.kb.cert.org/vuls/id/644655"
+        ]
+      },
+      "summary": [
+        "CERT/CCは、TightVNCとUltraVNCのWindows ViewerにおけるヒープベースのバッファオーバーフローをCERT/CC VU#644655、CVE-2026-128321として公表しました。悪意あるVNCサーバーが細工した画面更新を送ると発動し、サービス拒否は実証済みで、任意コード実行の可能性も示されています。",
+        "問題はTight JPEGデコード部のDecompressJpegRect()にあります。8192ピクセルの行幅でヒープを確保した後、サーバー指定の矩形幅で変換を行うため、幅8257ピクセルから確保範囲外への書き込みが始まります。通常は接続先から受け取る画面データを処理するWindows Viewer側の欠陥です。",
+        "TightVNC Windows Viewer 1.3.10では、CERT/CCが提供元と修正を調整できなかったとしています。UltraVNCは1.8.2.8で修正済みで、1.8.3.1など修正を含む現行版への更新が対象です。更新までの回避策は、接続先を信頼できるVNCサーバーに限定することです。"
+      ],
+      "comment": "VNCでは画面更新を送るサーバーが、Viewerのデコーダーにとって入力の提供者になります。本件はその入力に含まれるJPEG矩形の幅と、Viewer内部で確保する行幅の不一致により、クライアント側で境界外書き込みが起きるものです。CERT/CCはサービス拒否を実証済みとし、コード実行の可能性にも言及しています。TightVNC 1.3.10では提供元と修正を調整できなかった一方、UltraVNCには修正済み版が示されており、同じWindows Viewerでも製品ごとに公開されている対応情報が異なります。",
+      "articleDetail": {
+        "conclusion": "Windows上のTightVNC・UltraVNC Viewerについて、対象版の確認と更新が必要です。",
+        "facts": [
+          "CERT/CC VU#644655にはCVE-2026-128321が付与されています。",
+          "TightVNC Windows Viewer 1.3.10および影響を受けるUltraVNC Windows Viewerに、Tight JPEGデコード部のヒープベースのバッファオーバーフローがあります。",
+          "悪意あるVNCサーバーが細工した画面更新を送ることで発動し、サービス拒否は実証済みです。任意コード実行の可能性もあります。"
+        ],
+        "background": [
+          "DecompressJpegRect()は8192ピクセルの行幅でヒープを確保する一方、サーバー指定の矩形幅で変換を行います。8257ピクセル幅から範囲外書き込みが始まります。",
+          "TightVNC 1.3.10では、CERT/CCは提供元と修正を調整できなかったとしています。UltraVNCは1.8.2.8で修正済みです。"
+        ],
+        "explanation": [
+          "脆弱性は画面更新のJPEGデータを処理するWindows Viewer側にあり、接続先サーバーから受け取る矩形の幅が確保済みバッファーを超えるとヒープを破損します。",
+          "UltraVNCは1.8.3.1など、修正を含む現行版への更新が推奨されています。回避策は信頼できるVNCサーバーだけに接続を限定することです。"
+        ],
+        "implications": [
+          "接続先サーバーが攻撃条件になるため、Viewerを利用する管理端末も対象版を確認する必要があります。"
+        ],
+        "caveats": [
+          "影響を受けるUltraVNC Windows Viewerの具体的な範囲は、CERT/CCと提供元が示す版情報で確認が必要です。"
+        ],
+        "nextChecks": [
+          "TightVNC 1.3.10の代替方針と、UltraVNC Viewerが1.8.2.8以降または修正を含む現行版かを確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CERT/CCが、VNCの画面更新を処理するWindows Viewer側の境界外書き込みとして公表した脆弱性だからです。",
+        "currentReaction": "2026年11月14日06時46分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "CERT/CCのVU番号、CVE、製品別の修正状況により、管理端末上のViewerを対応対象として特定できます。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:46:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-check-point-esxi-wiper",
+      "title": "Check PointがGateway侵害後のESXi破壊活動を分析、PHP2Shellと接続",
+      "sourceUrl": "https://research.checkpoint.com/2026/php2shell-exploitation-on-check-point-gateway/",
+      "sourceName": "Check Point Research",
+      "publishedAt": "2026-11-12T22:56:37+09:00",
+      "collectedAt": "2026-11-14T06:48:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:48:00+09:00",
+        "script": [
+          "Check Point ResearchはPHP2Shellを起点とするGateway侵害と、ESXi環境への破壊活動を分析しました。",
+          "調査報告は攻撃経路を理解する材料であり、ESXiの被害が全てのGateway利用者に起きたことを意味しません。",
+          "PHP2ShellとESXiの両方を、公式の修正とバックアップ確認の対象にします。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "ESXiを使っていなければ関係ありませんか。",
+            "answer": "ESXiへの破壊活動は特定の後続行為です。Gatewayの脆弱性対応と侵害確認は、仮想化基盤の有無にかかわらず必要です。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://research.checkpoint.com/2026/php2shell-exploitation-on-check-point-gateway/"
+        ]
+      },
+      "summary": [
+        "Check Point Researchは、PHP2ShellでSecurity GatewayのMobile Accessポータルへ侵入した攻撃者が、ESXiホストにSSHで横移動し、vpxuserサービスアカウントを使ってdestroy_v6ワイパーを実行した事例を分析しました。これはVMware製品の脆弱性を突いた侵入ではありません。",
+        "第1波は10月30日にイスラエルの組織を対象に始まり、一部で破壊活動を伴いました。11月2日からの第2波は複数国・複数分野へ拡大しましたが、調査時点で破壊活動の証拠は確認されていません。",
+        "調査対象は、未修正のGatewayを起点に観測された一連の侵害です。全てのCheck Point Gateway利用組織やESXi環境で被害が起きたことを示すものではなく、侵害痕跡、Gatewayの版、仮想化基盤への管理接続を照合して自組織への適用を判断します。"
+      ],
+      "comment": "この事例では、VMware ESXiが侵入点ではなく、Gateway侵害後にSSHで到達した破壊対象でした。一次資料は、PHP2Shellによる初期侵入の後、DynamicCLIのローカル権限昇格（CVE-2026-123039）、PHP WebシェルとTSGAによる足場の維持、内部探索を経てESXiへ移った順序を示しています。したがって調査の対象はGatewayの修正状況だけでなく、GatewayからESXiへのSSH管理経路とvpxuserの利用記録まで連続して確認する必要があります。第1波と第2波で破壊活動の有無が異なるため、時期と対象範囲も侵害調査の文脈として区別されます。",
+      "articleDetail": {
+        "conclusion": "PHP2Shellを起点としたGateway侵害では、VMwareの脆弱性ではなくSSH経由でESXiに到達する後続被害を確認する必要があります。",
+        "facts": [
+          "Check Point Researchによると、攻撃者はPHP2ShellでCheck Point Security GatewayのMobile Accessポータルへ初期侵入しました。",
+          "侵入後、攻撃者はSSHでVMware ESXiホストへ横移動し、vpxuserサービスアカウントで認証してdestroy_v6ワイパーを実行しました。",
+          "攻撃は2波あり、10月30日の第1波はイスラエルの組織を対象として一部で破壊活動を伴い、11月2日以降の第2波は複数国・複数分野へ拡大したものの破壊活動の証拠は確認されていません。"
+        ],
+        "background": [
+          "CVE-2026-123039はDynamicCLI IPCインターフェースのローカル権限昇格脆弱性で、同社の分析ではPHP2Shellによる初期侵入後にポータルサービスアカウントからrootへ昇格するために使われました。",
+          "同社が示した侵入経路はGatewayからESXiへのSSH接続であり、VMware製品の脆弱性を悪用したものではありません。"
+        ],
+        "explanation": [
+          "攻撃者はroot権限でPHP WebシェルとTSGAバックドアを配置し、gogoスキャナーで内部資産を探索した後、vpxuserを用いたSSH接続でESXiへ移動しました。",
+          "ESXi上のdestroy_v6は対象ディレクトリを再帰的に走査し、通常はファイルをゼロで上書きしてから削除するLinux ELFワイパーです。"
+        ],
+        "implications": [
+          "Gateway侵害の有無を調べる際は、GatewayからESXiへのSSH接続とvpxuserによる認証を含めて追跡する必要があります。"
+        ],
+        "caveats": [
+          "調査報告は全ての利用者への被害発生を示すものではありません。"
+        ],
+        "nextChecks": [
+          "Check Pointが公開した検知指標、GatewayのPHP2Shell対策、およびCVE-2026-123039の修正情報を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "境界装置の悪用が仮想化基盤への破壊活動につながる経路を示したためです。",
+        "currentReaction": "2026年11月14日06時48分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "対応範囲をGatewayだけに限定しないための材料になります。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-14-check-point-php2shell"
+      ],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:48:00+09:00",
+        "httpStatus": 200
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-14T06:10:00+09:00",
+        "reason": "一次資料の公開は対象期間開始前ですが、13日にPHP2Shell悪用とESXi破壊活動を結ぶ報道で新たな文脈が示されたためです。",
+        "currentNewsValue": "境界装置の侵害後に仮想化基盤へ及ぶリスクを具体的に説明できる新しい判断材料があります。"
+      }
+    },
+    {
+      "id": "2026-11-14-google-ai-free-schools",
+      "title": "AI利用を避ける学校でGoogle検索が使えない問題、NPRが報道",
+      "sourceUrl": "https://text.npr.org/nx-s1-6029408",
+      "sourceName": "NPR",
+      "publishedAt": "2026-11-14T00:29:10+09:00",
+      "collectedAt": "2026-11-14T06:50:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:50:00+09:00",
+        "script": [
+          "NPRは、AIを使わない方針の学校でGoogle Searchへのアクセスが問題になる状況を報じました。",
+          "Google検索とAI機能が結び付くことで、教育機関は検索利用とAI方針を切り分けにくくなっています。",
+          "学校はGoogleの設定、代替検索、児童生徒のプライバシーを確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "学校がAIを避けると検索も使えなくなるのですか。",
+            "answer": "報道は一部の学校が直面する設定・方針上の問題を伝えています。契約や管理設定により選択肢は異なります。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://text.npr.org/nx-s1-6029408"
+        ]
+      },
+      "summary": [
+        "NPRは、AIを使わない教育方針を選ぶ学校で、Google検索へのアクセスが難しくなる問題を報じました。検索サービスへAI機能が統合されると、授業で何を許可するかという方針が複雑になります。",
+        "教育機関には、検索の必要性、管理者設定、児童生徒のデータ保護、代替手段を整理する課題があります。単に賛成・反対でなく、学習目的ごとの具体的な利用条件が問われます。",
+        "報道はAIを避ける教育方針の学校が直面する検索利用の問題を扱っており、Googleの全教育向け設定や全校の運用を説明するものではありません。学校ごとに契約形態、年齢区分、管理者が制御できる機能、利用規程が異なるため、実際の管理画面と保護者・教員への説明を基に判断する必要があります。"
+      ],
+      "comment": "教育のAI方針は、生成AIを使わせるかどうかだけでは済まなくなっています。長年の基盤だった検索に新機能が混ざると、教員は情報探索の授業まで見直す必要が出ます。学校が判断するには、機能を個別に無効化できるか、利用ログや年齢に関する条件はどうか、代替サービスが授業のアクセシビリティを損なわないかを具体的に確認する必要があります。",
+      "articleDetail": {
+        "conclusion": "検索とAI機能の統合は、AI利用を制限する学校の方針と実務に新しい調整を求めています。",
+        "facts": [
+          "NPRはAIを避ける学校でGoogle Searchの利用が問題になる事例を報じました。"
+        ],
+        "background": [
+          "教育機関は年齢、個人情報、学習目的に応じてオンラインサービスを管理します。"
+        ],
+        "explanation": [
+          "基盤サービスにAI機能が組み込まれると、利用可否を一括で決めにくくなります。"
+        ],
+        "implications": [
+          "学校は設定、契約、代替手段を学習目的と結び付けて検討する必要があります。"
+        ],
+        "caveats": [
+          "利用可能な設定や契約条件は学校・地域によって異なります。"
+        ],
+        "nextChecks": [
+          "Googleの教育向け設定と学校側の対応方針を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "生成AIの是非が検索という教育インフラの選択へ広がる事例だからです。",
+        "currentReaction": "2026年11月14日06時50分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "評価が分かれる",
+        "assessmentComment": "教育上の利便性と方針・プライバシーの両立が論点です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:50:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-imagemagick-file-write",
+      "title": "ImageMagick利用アプリの任意ファイル読み書き、JVNが注意喚起",
+      "sourceUrl": "https://jvn.jp/vu/JVNVU95718857/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-13T11:00:20+09:00",
+      "collectedAt": "2026-11-14T06:52:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:52:00+09:00",
+        "script": [
+          "JVNはImageMagickを利用したアプリケーションの任意ファイル読み書きについて注意を出しました。",
+          "ImageMagickを直接使わなくても、アップロード画像を処理するWebサービスが依存している場合があります。",
+          "ImageMagickの利用箇所と設定を確認し、JVNの対策情報を適用します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "ImageMagickを入れていなければ影響はありませんか。",
+            "answer": "アプリケーションやコンテナの依存関係として組み込まれている場合があります。実行環境と画像処理機能の両方を確認します。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://jvn.jp/vu/JVNVU95718857/"
+        ]
+      },
+      "summary": [
+        "JVNはImageMagickを利用するアプリケーションにおける任意ファイル読み書きの脆弱性を公表しました。画像変換を組み込んだWebサービスでは、直接の導入記録だけでなく依存関係も確認する必要があります。",
+        "影響の大きさは、入力ファイルを誰が渡せるか、処理プロセスの権限、ファイルシステムの分離に左右されます。更新と設定確認を組み合わせることが重要です。",
+        "対象はImageMagickを組み込んだアプリケーションでの該当問題で、ImageMagickという名称がある全サーバーの被害を示すものではありません。公開アップロードの有無、利用している版、変換処理の実行場所と権限を確認し、提供元の修正情報に沿って影響を判定する必要があります。"
+      ],
+      "comment": "画像処理ライブラリは、投稿画像の縮小やPDF変換など、利用者から見えない場所に入っていることがあります。任意ファイル読み書きの問題では、製品名の検索だけでなく、入力経路、変換用コンテナの権限、機密ファイルへのアクセス範囲を確認する必要があります。修正の展開に合わせて不要な形式や危険な処理を止めると、防御層を増やせます。",
+      "articleDetail": {
+        "conclusion": "ImageMagickを使うサービスは、対象版、入力経路、実行権限を確認して対策する必要があります。",
+        "facts": [
+          "包括的な識別子はCERT/CC Vulnerability Note VU#580079で、同ノート自体にCVEは付与されていません。一方、SVG経由でMSLを呼び出す経路とは別のVariant 2は、pwn.aiチームが独立に発見し、WordPressへCVE-2026-65640として報告しています。",
+          "既定設定またはアプリケーション指定のセキュリティポリシーが十分に制限されていないImageMagick利用アプリケーションで、任意ファイルの読み書きが可能になる問題です。"
+        ],
+        "background": [
+          "攻撃者が細工したSVGまたはPostScriptを処理させられ、危険なcoderやdelegateが有効な場合に、ImageMagickプロセスがアクセスできる場所のファイルが対象になります。",
+          "CERT/CCは、SVGのimage要素からMSLを呼び出す経路と、内容検出によりGhostscriptを起動するPostScript経路の2種類を示しています。"
+        ],
+        "explanation": [
+          "統合製品の提供元が更新を出している場合は適用し、ImageMagickだけを更新してもポリシーが危険なcoderやdelegateを許可したままなら十分ではありません。",
+          "回避策として、必要な形式と操作だけを許可するallowlist型のpolicy.xmlを適用し、MSL、MVG、PS、EPS、PDFなど不要なcoderとdelegateを無効にします。加えて、非信頼画像の処理をファイルシステム権限の小さい隔離環境で実行します。"
+        ],
+        "implications": [
+          "依存関係を含めた資産調査と実行環境の分離が重要になります。"
+        ],
+        "caveats": [
+          "注意喚起だけでは個別サービスの露出状況は分かりません。"
+        ],
+        "nextChecks": [
+          "JVNとImageMagick側の対象条件、修正、回避策を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "多数の画像処理機能へ波及し得る依存ライブラリの注意喚起だからです。",
+        "currentReaction": "2026年11月14日06時52分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "利用箇所と実行権限を具体的に確認できます。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:52:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-promzard-rce",
+      "title": "PromZardのリモートコード実行脆弱性、JVNが公表",
+      "sourceUrl": "https://jvn.jp/vu/JVNVU98641453/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-13T11:00:10+09:00",
+      "collectedAt": "2026-11-14T06:54:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:54:00+09:00",
+        "script": [
+          "JVNはPromZardのリモートコード実行脆弱性を公表しました。",
+          "PromZardを公開または社内運用する組織は、対象版と認証・ネットワーク設定を確認します。",
+          "信頼できない入力からのcontext key流入を遮断し、サービス実行権限を見直します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "RCEはどの程度危険ですか。",
+            "answer": "遠隔からコード実行につながり得るため、到達可能な環境では優先して対象版と修正を確認する必要があります。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://jvn.jp/vu/JVNVU98641453/"
+        ]
+      },
+      "summary": [
+        "JVNはPromZardにおけるリモートコード実行の脆弱性を公表しました。利用中の組織は、まず対象版とサービスの公開範囲を確認する必要があります。",
+        "RCEは攻撃者が遠隔から想定外の処理を実行できる可能性がある問題です。修正版への更新、アクセス制限、実行権限の最小化を組み合わせることが有効です。",
+        "対象はJVNが示すPromZardの該当脆弱性であり、Prometheus関連の全製品や内部ネットワークだけの環境が一律に侵害されたことを意味しません。導入版、公開インターフェース、認証設定、実行ホストの権限を提供元の情報と照合して、更新と緩和策の優先度を決める必要があります。"
+      ],
+      "comment": "リモートコード実行は名称だけで影響を断定できませんが、到達可能なサービスでは対応を後回しにしにくい分類です。構成管理でPromZardの稼働場所を調べ、外部公開か内部限定か、どのアカウントで動作しているかを確認します。更新がすぐに難しい場合でも、管理ネットワークへの隔離や入口の制限で攻撃面を減らせます。",
+      "articleDetail": {
+        "conclusion": "PromZard利用者は、RCE注意喚起を基に入力経路と実行権限を確認する必要があります。",
+        "facts": [
+          "識別子はCERT/CC Vulnerability NoteのVU#685399、CVEはCVE-2026-127109です。",
+          "PromZardのcontext keyにおけるコードインジェクションが、リモートコード実行につながる問題です。",
+          "影響範囲はpromzard 4.0.0以前で、CERT/CCは保守者と連絡を取れなかったため修正版を示していません。"
+        ],
+        "background": [
+          "promzardはテンプレートモジュールを評価して設定用データを作るNode.jsライブラリで、テンプレートに渡すコンテキストオブジェクト`ctx`を受け取ります。",
+          "実装は`ctx`のキーを検証・無害化せず、関数式の引数リストとなる文字列へ直接補間し、`vm.runInThisContext()`で評価します。"
+        ],
+        "explanation": [
+          "攻撃者が設定ファイル、HTTPリクエスト、環境変数などを介して`ctx`のキーを操作できる場合、引数リストから脱出するJavaScriptを注入でき、Node.jsプロセスの権限で実行されます。",
+          "CERT/CCは、信頼できない入力由来の任意キーを`ctx`へ渡さず、値を厳格に検証するよう案内しています。"
+        ],
+        "implications": [
+          "更新困難な環境でもアクセス制限で攻撃面を減らせます。"
+        ],
+        "caveats": [
+          "個別の影響は対象版とネットワーク構成に依存します。"
+        ],
+        "nextChecks": [
+          "JVNとCERT/CCの対象条件、回避策、保守者からの更新情報を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "遠隔コード実行として公表され、利用者の優先対応判断に関わるためです。",
+        "currentReaction": "2026年11月14日06時54分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "対象製品を利用する組織が具体的な確認を始められます。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:54:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-windows-printing",
+      "title": "Microsoftの11月更新後に印刷問題、BleepingComputerが報道",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-13T21:27:40+09:00",
+      "collectedAt": "2026-11-14T06:58:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:58:00+09:00",
+        "script": [
+          "BleepingComputerは、Microsoftが11月のセキュリティ更新後の印刷問題を認めたと報じました。",
+          "Windows管理者は11月更新と影響するプリンター構成を照合します。",
+          "印刷が業務に必須な端末では、Microsoftの既知の問題と回避策を確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "更新をすぐ削除すべきですか。",
+            "answer": "セキュリティ更新の削除には別のリスクがあります。影響範囲とMicrosoftの公式回避策を確認して判断します。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://www.bleepingcomputer.com/news/microsoft/microsoft-says-november-security-updates-cause-printing-issues/"
+        ]
+      },
+      "summary": [
+        "BleepingComputerは、Microsoftが11月のセキュリティ更新後に発生する印刷問題を認めたと報じました。共有プリンターや業務帳票に依存する組織では、更新状況と影響を早めに照合する必要があります。",
+        "対処は一律の更新削除ではありません。影響端末の切り分け、Microsoftの既知問題、暫定回避策、セキュリティ上の影響を合わせて検討することが重要です。",
+        "報道の対象は11月のMicrosoft更新後に認められた印刷問題で、すべてのWindows端末や全てのプリンターの障害を示すものではありません。同月の更新に伴うWindowsライセンス認証失敗（0x80041008）の報告も含め、OS版、適用したKB、印刷・認証の構成をMicrosoftの既知の問題と照合して影響を判断する必要があります。"
+      ],
+      "comment": "印刷トラブルは小さく見えても、物流ラベル、医療文書、窓口業務のように停止コストが大きい現場があります。月例更新の展開では、印刷を含む代表的な業務テストを残しておくと、影響の把握が速くなります。問題が起きた端末だけを隔離し、公式の修正情報を追うことで、セキュリティ更新を広く戻す判断を避けやすくなります。",
+      "articleDetail": {
+        "conclusion": "11月更新後の印刷問題について、Windows管理者は影響の切り分けと公式回避策の確認が必要です。",
+        "facts": [
+          "BleepingComputerはMicrosoftが11月更新後の印刷問題を認めたと報じました。"
+        ],
+        "background": [
+          "印刷機能はOS更新、ドライバー、ネットワーク設定の組み合わせに依存します。"
+        ],
+        "explanation": [
+          "影響端末を特定すれば、業務継続とセキュリティ更新の両方を判断できます。"
+        ],
+        "implications": [
+          "月例更新の検証項目に業務プリンターを含める必要があります。"
+        ],
+        "caveats": [
+          "症状と影響範囲はWindows版やプリンター構成で異なります。"
+        ],
+        "nextChecks": [
+          "Microsoftの既知問題、修正、回避策を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "月例更新後の広い業務影響につながり得る既知問題だからです。",
+        "currentReaction": "2026年11月14日06時58分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "管理者が展開状況と重要業務を照合する材料です。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:58:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-elevenai",
+      "title": "ElevenLabsが法人向けElevenAIを発表、会議記録と音声入力を統合",
+      "sourceUrl": "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-13T23:44:48+09:00",
+      "collectedAt": "2026-11-14T07:00:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T07:00:00+09:00",
+        "script": [
+          "TechCrunchはElevenLabsのElevenAIを、会議記録と音声入力を統合する法人向けアプリとして報じました。",
+          "会議音声を扱うElevenAIでは、録音の同意、保存先、要約のアクセス権が重要です。",
+          "導入企業はElevenAIのデータ処理条件と会議参加者への通知を確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "会議を自動記録するだけの製品ですか。",
+            "answer": "報道では会議記録に加え、チーム向けの音声入力機能を統合するアプリと説明されています。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams/"
+        ]
+      },
+      "summary": [
+        "TechCrunchはElevenLabsが会議の記録と音声入力を組み合わせる法人向けアプリElevenAIを発表したと報じました。会議の発言を記録・要約するツールは、チームの検索性を高める一方で、情報管理の設計が欠かせません。",
+        "導入時には録音の通知と同意、保存期間、参加者や外部ユーザーのアクセス権、機密会議の対象外設定を確認する必要があります。",
+        "対象はElevenLabsが発表した法人向けElevenAIの紹介であり、すべての会議記録サービスや全地域・全プランへの提供範囲を示すものではありません。導入可否は契約条件、接続する会議基盤、参加者の所在、組織の記録保持規程を確認してから決める必要があります。"
+      ],
+      "comment": "会議要約ツールは、記録を取る負担を減らせる反面、これまで各参加者の手元に散っていた会話を一カ所へ集めます。便利さは検索性から生まれますが、それは閲覧できる人の範囲を明確にして初めて安全に働きます。製品選定では精度だけでなく、録音開始時の通知、データ保持、削除、外部共有の管理を業務ルールと照らす必要があります。",
+      "articleDetail": {
+        "conclusion": "ElevenAIのような会議記録ツールでは、機能評価と同時に録音・保存・権限の設計が必要です。",
+        "facts": [
+          "TechCrunchはElevenAIを会議記録と音声入力を統合するチーム向けアプリとして報じました。"
+        ],
+        "background": [
+          "会議記録サービスは音声、要約、参加者情報を扱う場合があります。"
+        ],
+        "explanation": [
+          "録音通知とアクセス権を整備すれば、利用者は記録の範囲を理解しやすくなります。"
+        ],
+        "implications": [
+          "企業はデータ保持と外部共有を含む導入ルールを決める必要があります。"
+        ],
+        "caveats": [
+          "利用可能な機能やデータ処理条件は契約・地域で異なる場合があります。"
+        ],
+        "nextChecks": [
+          "ElevenLabsの法人向けデータ処理条件と管理機能を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "会議記録と音声入力を一つの法人向け製品に統合する発表だからです。",
+        "currentReaction": "2026年11月14日07時00分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "導入時の情報管理を具体的に検討する機会になります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T07:00:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-comfyui-path-traversal",
+      "title": "ComfyUI-Easy-Use拡張に認証不要のパストラバーサル、JVNが公表",
+      "sourceUrl": "https://jvn.jp/vu/JVNVU99429639/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-13T11:00:00+09:00",
+      "collectedAt": "2026-11-14T06:56:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:56:00+09:00",
+        "script": [
+          "JVNはComfyUI-Easy-Use拡張の認証不要パストラバーサルを、VU#944667として公表しました。",
+          "ComfyUI-Easy-Useのパストラバーサルは1.4.1以前で、攻撃者に認証なしで到達できる公開構成が条件です。",
+          "JVNが公表したComfyUI-Easy-Useの問題は、固定版の案内がなく、mainの修正コミット 8a0f2fc412 または拡張機能の除去、信頼できる利用者へのネットワーク制限が対応になります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "ComfyUI本体だけを使う場合も対象ですか。",
+            "answer": "注意喚起の対象はComfyUI-Easy-Use拡張機能です。導入済み拡張と版を確認します。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://jvn.jp/vu/JVNVU99429639/"
+        ]
+      },
+      "summary": [
+        "CERT/CC と JVN は、ComfyUI-Easy-Use の `save_preview()` ハンドラに認証不要のパストラバーサルがあるとして、VU#944667、CVE-2026-123790 を公表しました。影響を受けるのは 1.4.1 以前です。",
+        "攻撃者は Python ファイルを ComfyUI の input ディレクトリへ送信し、`save_preview()` を使ってインストール済みカスタムノードの `__init__.py` を上書きできます。ComfyUI の再起動時には改変されたノードが import、実行され、任意コード実行に至ります。",
+        "リモート悪用の条件は、影響するルートが攻撃者に認証なしで公開されている構成で、ユーザー操作は必要ありません。脆弱性調整のため保守者と連絡は取れませんでしたが、main にはコミット 8a0f2fc412 があり、CERT/CC は固定版の案内を示していません。拡張機能の除去または信頼できる利用者へのネットワークアクセス制限が回避策です。"
+      ],
+      "comment": "この問題では、アップロード機能とカスタムノードの読み込みが連鎖しています。通常はノードを導入する管理者が信頼の境界になりますが、公開された経路からファイルを差し替えられると、その前提が崩れます。CERT/CC が示す影響は ComfyUI プロセスの権限での Python コードと OS コマンドの実行であり、同プロセスが読めるモデル、ワークフロー、その他のファイルや環境中の認証情報にも及び得ます。対象は本体全体ではなく、当該拡張機能を導入した構成です。",
+      "articleDetail": {
+        "conclusion": "ComfyUI-Easy-Use 1.4.1以前では、公開された `save_preview()` 経路からノードの Python ファイルを上書きされ、再起動時に任意コードを実行され得ます。",
+        "facts": [
+          "識別子は CERT/CC Vulnerability Note VU#944667 と CVE-2026-123790 です。",
+          "影響を受けるのは ComfyUI-Easy-Use 1.4.1 以前です。",
+          "脆弱性調整のため保守者と連絡は取れませんでした。main には修正コミット 8a0f2fc412 がありますが、CERT/CC は固定版の案内を示していません。"
+        ],
+        "background": [
+          "ComfyUI は生成AIワークフローを組み立てるノードベースのインターフェースで、ComfyUI-Easy-Use はカスタムノードとワークフロー用ユーティリティを追加する拡張機能です。",
+          "この脆弱性は `save_preview()` ハンドラにある未認証のパストラバーサルです。"
+        ],
+        "explanation": [
+          "攻撃者は Python ファイルを ComfyUI の input ディレクトリへアップロードし、`save_preview()` でインストール済みカスタムノードの `__init__.py` に上書きできます。",
+          "再起動時、ComfyUI は改変されたノードを import して実行するため、任意の Python コードと ComfyUI プロセス権限での OS コマンド実行につながります。"
+        ],
+        "implications": [
+          "プロセスがアクセスできるモデル、ワークフロー、その他のファイルの読み書きや、環境中の認証情報の取得につながる可能性があります。"
+        ],
+        "caveats": [
+          "リモート悪用には、影響するルートが攻撃者へ認証なしで公開されたデプロイであることが必要で、ユーザー操作は不要です。"
+        ],
+        "nextChecks": [
+          "拡張機能を除去するか、ComfyUI へのネットワークアクセスを信頼できる利用者に限定します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "公開されがちな生成AI用拡張で認証不要とされる注意喚起だからです。",
+        "currentReaction": "2026年11月14日06時56分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "導入状況と公開範囲を具体的に確認できます。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:56:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-haskell-vision",
+      "title": "Haskellコミュニティが技術的ビジョンを公開、エコシステムの優先課題を議論",
+      "sourceUrl": "https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078",
+      "sourceName": "Haskell Discourse",
+      "publishedAt": "2026-11-13T23:43:12+09:00",
+      "collectedAt": "2026-11-14T06:55:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:55:00+09:00",
+        "script": [
+          "HaskellコミュニティはHaskellエコシステムの技術的ビジョンを公開しました。",
+          "ビジョン文書は言語仕様だけでなく、ツール、ライブラリ、教育、保守の優先順位を議論する出発点です。",
+          "Haskellの提案が実装や資金、利用者の合意へどうつながるかを確認します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "この文書でHaskellの仕様が直ちに変わりますか。",
+            "answer": "技術的ビジョンは将来像を示す議論の文書で、個別の仕様変更や実装は別の合意・工程を要します。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078"
+        ]
+      },
+      "summary": [
+        "Haskellコミュニティで、エコシステムの技術的ビジョンを示す文書が公開されました。言語を支えるコンパイラー、ライブラリ、ツール、教育や保守の優先順位を共有する試みです。",
+        "将来像の文書は、すぐに仕様を変更する決定ではありません。提案が実装計画、資金、メンテナーや利用者の合意へどう落とし込まれるかが次の焦点になります。",
+        "対象はHaskellエコシステムの将来像を示す文書で、言語仕様や各実装に即時の変更を強制する決議ではありません。利用者やメンテナーは、自分が使うGHC、ライブラリ、教育環境への具体的な提案と実装状況を追い、文書の理念と確定事項を分けて読む必要があります。"
+      ],
+      "comment": "プログラミング言語の成熟度は、言語機能の多さよりも、初心者が導入し、企業が保守し、研究成果が実装へ戻る循環で決まります。Haskellのように強い技術的個性を持つ言語ほど、どの課題を共有投資の対象にするかを言語コミュニティ全体で明文化する価値があります。ビジョンを評価するには、抽象的な魅力だけでなく、責任者、時間軸、測定可能な成果を見る必要があります。",
+      "articleDetail": {
+        "conclusion": "Haskellの技術的ビジョンは、エコシステムの優先課題を共有するための議論の土台です。",
+        "facts": [
+          "Haskell Discourseでエコシステムの技術的ビジョンが公開されました。"
+        ],
+        "background": [
+          "言語エコシステムは仕様、実装、ライブラリ、教育、保守の相互作用で成り立ちます。"
+        ],
+        "explanation": [
+          "共通の優先順位を示すことで、分散した貢献を同じ方向へ向けやすくなります。"
+        ],
+        "implications": [
+          "実装計画と継続的な合意形成が文書の価値を左右します。"
+        ],
+        "caveats": [
+          "文書は意見・方針の提案であり、仕様変更の決定ではありません。"
+        ],
+        "nextChecks": [
+          "コミュニティの議論と具体的な実装計画を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "言語の機能追加を超え、エコシステム全体の優先順位を示す提案だからです。",
+        "currentReaction": "2026年11月14日06時55分JST時点で、Hacker Newsでの掲載を確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "利用者と保守者が将来の投資先を議論する材料になります。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:55:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-flock-campus-cameras",
+      "title": "米大学でFlockカメラ契約を見直す動き、監視とプライバシーを巡り議論",
+      "sourceUrl": "https://www.theguardian.com/technology/ng-interactive/2026/nov/13/universities-drop-flock-camera-contracts",
+      "sourceName": "The Guardian",
+      "publishedAt": "2026-11-13T23:11:56+09:00",
+      "collectedAt": "2026-11-14T06:59:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "国内・国際",
+        "生活・文化"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "narration": {
+        "sourceCheckedAt": "2026-11-14T06:59:00+09:00",
+        "script": [
+          "The Guardianは、米国の大学でFlockの監視カメラ契約を見直す動きを報じました。",
+          "キャンパス監視では安全対策の期待と、データの保持・共有、移動の追跡への懸念が並びます。",
+          "Flock契約を検討する大学は、カメラの目的、保有期間、警察との共有条件を公開して議論します。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "大学がカメラを外せば安全対策をやめることになりますか。",
+            "answer": "契約見直しは監視の目的と方法を再検討する判断です。照明、警備、緊急連絡など別の安全対策とは区別して評価できます。"
+          }
+        ],
+        "questionResearch": [],
+        "references": [
+          "https://www.theguardian.com/technology/ng-interactive/2026/nov/13/universities-drop-flock-camera-contracts"
+        ]
+      },
+      "summary": [
+        "The Guardianは、米国の大学でFlockの監視カメラ契約を見直す動きが出ていると報じました。安全対策としてのカメラ利用と、学生・地域住民のプライバシーをどう両立するかが論点です。",
+        "監視システムを導入・継続する際は、撮影目的、対象範囲、映像や車両情報の保存期間、第三者提供、異議申立ての仕組みを明確にする必要があります。",
+        "報道は一部の米大学における契約見直しの動きを扱っており、Flockの利用が全大学で終了したことや、個別事件の事実認定を意味するものではありません。各キャンパスの契約、法令、警察との連携、データ保持設定は異なるため、当事者は公開資料と学内の意思決定手続きで状況を確認する必要があります。"
+      ],
+      "comment": "キャンパスは学生、職員、来訪者が日常的に行き交う半公共的な空間です。そこでの監視は、事件発生後の捜査だけでなく、誰の移動がどれだけ長く記録され、どの機関と結び付けられるかという通常時の問題を生みます。契約を継続するか中止するかだけでなく、目的を限定し、保存期間を短くし、利用実績を公開する設計が議論の質を左右します。学生が意思決定へ参加できる手続きも、信頼を築く上で重要です。",
+      "articleDetail": {
+        "conclusion": "Flockカメラ契約を巡る大学の判断は、安全目的とデータ利用の境界を公開して検討する課題です。",
+        "facts": [
+          "The Guardianは米大学でFlock監視カメラ契約を見直す動きを報じました。"
+        ],
+        "background": [
+          "監視カメラは安全対策に使われる一方、保存・共有されたデータが追跡に用いられる懸念があります。"
+        ],
+        "explanation": [
+          "目的、保存期間、第三者共有を定めて公開すれば、利用の範囲を検証しやすくなります。"
+        ],
+        "implications": [
+          "大学は学生・職員を含む統治手続きで監視技術を評価する必要があります。"
+        ],
+        "caveats": [
+          "契約状況や法的条件は大学・地域ごとに異なります。"
+        ],
+        "nextChecks": [
+          "各大学が公表する契約、データ方針、代替安全策を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "監視技術の導入後に、大学がプライバシーと統治を再検討する具体例だからです。",
+        "currentReaction": "2026年11月14日06時59分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "評価が分かれる",
+        "assessmentComment": "安全上の期待とデータ利用への懸念が同時に存在します。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T06:59:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-14-ghostframe-esxi-implant",
+      "title": "GhostFrameがESXiに持続化、Settraと重なるTAG-218の遠隔操作基盤",
+      "sourceUrl": "https://www.recordedfuture.com/blog/ghostframe-esxi-implant-settra-ransomware",
+      "sourceName": "Recorded Future",
+      "publishedAt": "2026-11-10T12:00:00+09:00",
+      "collectedAt": "2026-11-14T08:00:00+09:00",
+      "editionDate": "2026-11-14",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Recorded FutureのInsikt Groupは、VMware ESXiを標的にするポストエクスプロイト／C2フレームワーク「GhostFrame」を公表しました。TAG-218の活動で使われ、Settraランサムウェアの作戦との重なりが確認されたものです。既にESXiホストのroot権限を得た攻撃者が、単一のハイパーバイザーからVM群へ操作を広げるための基盤として位置付けられます。",
+        "インプラントはvmhostd-coreで、自身を`/opt/vmhostd-core`へ複製し、起動スクリプト`/etc/rc.local.d/local.sh`を改変して再起動後も実行します。ESXiファイアウォールと署名なしバイナリーの実行を制限するexecInstalledOnlyを繰り返し無効化します。導入には既存のroot権限が必要で、脆弱性悪用で侵入する仕組みではなく、VMwareのCVEが関与した事案として報告されてはいません。",
+        "機能には接続したESXiホスト上のVMの列挙・電源状態操作・スナップショット操作、VMkatzによるゲストのメモリーや仮想ディスクからの認証情報取得、gfsoxによるネットワークピボットが含まれます。C2では53、2222、3389、4444、8443、9443番ポートに同時接続し、最初に成功した接続を使います。これはESXiを破壊する活動ではなく、持続化した管理・遠隔操作と横展開を扱う報告です。"
+      ],
+      "comment": "この報告で注目すべき境界は、ESXiが侵入の入口ではなく、侵入済みの攻撃者が複数のゲスト環境を扱う運用地点になる点です。通常、ゲストOSの資格情報取得や内部サービスへの接続には各VM側の足場が必要になりますが、GhostFrameはハイパーバイザー側からVMの状態操作、VNC中継、メモリーまたは仮想ディスクの解析を組み合わせます。さらに、local.shの変更だけでなくauto-backup.shで設定を再起動後へ残し、約5秒ごとに保護設定を再度無効化する設計が示されました。単に設定値を戻したかではなく、起動スクリプトと実行ファイルの対応関係を見る必要がある事例です。",
+      "articleDetail": {
+        "conclusion": "GhostFrameは既存のESXi root権限を、再起動後も残る持続化、VM管理、資格情報取得、内部ネットワークへの到達に転換するポストエクスプロイト基盤です。",
+        "facts": [
+          "Insikt GroupはGhostFrameを、侵害済みVMware ESXiで動作するC2およびポストエクスプロイトのフレームワークと説明し、Settraランサムウェアの活動と重なるTAG-218による利用を確認しました。",
+          "vmhostd-coreは`/opt/vmhostd-core`へ複製され、`/etc/rc.local.d/local.sh`の改変と`/sbin/auto-backup.sh`の実行により再起動後も動作します。ESXiファイアウォールとexecInstalledOnlyは約5秒ごとに無効化されます。",
+          "解析されたインプラントはTCPの53、2222、3389、4444、8443、9443番ポートへ並行してC2接続を試み、最初に成功した接続以外を閉じます。",
+          "2026年8月下旬から10月に、TAG-218は米国と欧州のSonicWall、Palo Alto Networks、FortinetのVPN装置を主に標的とし、そのうち4組織が後にSettraのリークサイトへ掲載されました。"
+        ],
+        "background": [
+          "導入・実行にはESXiの既存root権限が必要で、同調査はインプラント自体が脆弱性を悪用してアクセスを得るものではないと説明しています。",
+          "2026年10月12日には、被害組織のFortinet VPN装置が同じ期間にGhostFrameのC2とMeshCentralの双方へビーコンしたことが観測され、GhostFrameをTAG-218の侵入連鎖に置く根拠となりました。"
+        ],
+        "explanation": [
+          "GhostFrameは登録済みVMの名前と電源状態を列挙し、電源状態やスナップショットを操作できます。個別VMへのVNCアクセスを有効化し、C2経由で画面セッションを中継する機能も持ちます。",
+          "gfsoxはESXiホストを経由して通信を中継するSOCKS5プロキシです。VMkatzはVMのメモリースナップショット、仮想ディスク、または両者の解析からNTLMハッシュ、Kerberosチケット、SAM・LSA秘密情報などの認証データを取得する用途として統合されています。"
+        ],
+        "implications": [
+          "ESXiのroot権限が奪われた場合、ゲストごとの直接侵入を伴わずに、複数VMの操作、認証情報へのアクセス、内部サービスへの到達が一つのホストから可能になる範囲が示されています。",
+          "同じ宛先IPへ6本のTCP SYNがほぼ同時に出るC2接続の開始パターンは、C2基盤のIP変更とは別にネットワーク上で観測できる特徴です。"
+        ],
+        "caveats": [
+          "一次資料はGhostFrameがSettra専用であること、または配布モデルを確定していません。観測された関連はTAG-218の活動とSettra作戦の重なりに基づきます。",
+          "報告はVMware製品のCVEを使った侵入を示すものではなく、インプラント配備前にroot権限が得られていることを前提にしています。"
+        ],
+        "nextChecks": [
+          "ESXiホストで`/etc/rc.local.d/local.sh`の変更、`/opt/vmhostd-core`、vmhostdを名乗る不審なプロセス、execInstalledOnlyの無効化を照合します。",
+          "ESXiから同一宛先IPの53、2222、3389、4444、8443、9443番ポートへ並行接続する通信と、Fortinet・SonicWall・Palo Alto NetworksのVPN装置に残る不審な管理者アクセスを確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ハイパーバイザーのroot権限を、複数VMの遠隔操作とゲスト資格情報へのアクセスへ連結する具体的な実装が示されたためです。",
+        "currentReaction": "2026年11月14日08時00分JST時点で、比較可能な公開反響値は確認していません。",
+        "assessment": "妥当",
+        "assessmentComment": "持続化のファイルパス、無効化される設定、C2の接続パターンが示され、侵害済みESXiを調べる観測点が具体化されています。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-14T08:00:00+09:00",
+        "httpStatus": 200
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-14T08:00:00+09:00",
+        "reason": "Recorded Futureが11月10日に公表したESXiインプラントの調査報告で、11-12・11-13版で拾い漏らしていたためです。仮想化基盤への影響が大きく、遅延掲載として再評価しました。",
+        "currentNewsValue": "ESXiへの持続化手法とVM管理・認証情報窃取の具体性に加え、TAG-218とSettraランサムウェアの活動との関連が示されています。"
+      }
+    }
+  ]
+}
