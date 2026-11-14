@@ -89,7 +89,7 @@ describe('media publishing', () => {
   it('rejects a residual Latin or katakana product name followed by a number', () => {
     expect(findUnpronouncedLatinNumberTerms('Microsoft 365とMysteryTool 7', {
       Microsoft: 'マイクロソフト',
-    })).toEqual(['MysteryTool 7', 'マイクロソフト 365']);
+    })).toEqual(['Microsoft 365', 'MysteryTool 7']);
     expect(() => assertLatinNumberPronunciations(['MysteryTool 7'], {}))
       .toThrow(/MysteryTool 7/);
   });
@@ -100,6 +100,17 @@ describe('media publishing', () => {
       .toEqual(['AWS Emulator']);
     expect(() => assertLatinCompoundPronunciations(['AWS Emulatorを公開した。'], individualWords))
       .toThrow(/AWS Emulator/);
+  });
+
+  it('does not fragment an unknown term with short dictionary keys', () => {
+    expect(findUnpronouncedLatinTerms('JetBrainsを更新した。', { e: 'イー', B: 'ビー' }))
+      .toEqual(['JetBrains']);
+  });
+
+  it('allows terms covered by a registered compound reading', () => {
+    expect(findUnpronouncedLatinTerms('JetBrains YouTrackを更新した。', {
+      'JetBrains YouTrack': 'ジェットブレインズユートラック',
+    })).toEqual([]);
   });
 
   it('allows registered Latin compounds, ordinary prose, and Latin-plus-number names', () => {
@@ -117,6 +128,12 @@ describe('media publishing', () => {
     expect(findUnpronouncedLatinCompoundTerms('AWS Emulator 2を使います。', {
       AWS: 'エーダブリューエス',
       Emulator: 'エミュレーター',
+    })).toEqual([]);
+  });
+
+  it('allows a numeric suffix covered by a longer registered compound', () => {
+    expect(findUnpronouncedLatinNumberTerms('Trezor Safe 5を使います。', {
+      'Trezor Safe 5': 'トレザーセーフファイブ',
     })).toEqual([]);
   });
 

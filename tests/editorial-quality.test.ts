@@ -4,6 +4,7 @@ import {
   collectNarrationStyleErrors,
   collectTitleQualityErrors,
 } from '../scripts/editorial-quality-validation';
+import { collectSingleArticleGateErrors } from '../scripts/title-body-guard';
 
 function qualityFixture(date = '2026-11-11'): Edition {
   return {
@@ -24,6 +25,32 @@ function qualityFixture(date = '2026-11-11'): Edition {
 }
 
 describe('新工程の決定的な編集品質ゲート', () => {
+  it('単体ゲートはTop 5の300文字未満のcommentを拒否する', () => {
+    const article = {
+      id: '2026-11-14-top5', title: 'OpenAIの新モデル更新', summary: [`OpenAI${'あ'.repeat(74)}`, 'い'.repeat(80), 'う'.repeat(80)],
+      comment: 'え'.repeat(299), top5Rank: 1,
+    };
+    const errors = collectSingleArticleGateErrors(article, '2026-11-14');
+    expect(errors.some((error) => error.includes('Top 5の独自解説'))).toBe(true);
+  });
+
+  it('単体ゲートは非Top 5の150文字未満のcommentを拒否する', () => {
+    const article = {
+      id: '2026-11-14-other', title: 'OpenAIの新モデル更新', summary: [`OpenAI${'あ'.repeat(74)}`, 'い'.repeat(80), 'う'.repeat(80)],
+      comment: 'え'.repeat(149), top5Rank: null,
+    };
+    const errors = collectSingleArticleGateErrors(article, '2026-11-14');
+    expect(errors.some((error) => error.includes('非Top 5の中立的な分析と補足'))).toBe(true);
+  });
+
+  it('単体ゲートは字数規則を満たす記事を通す', () => {
+    const article = {
+      id: '2026-11-14-valid', title: 'OpenAIの新モデル更新', summary: [`OpenAI${'あ'.repeat(74)}`, 'い'.repeat(80), 'う'.repeat(80)],
+      comment: 'え'.repeat(300), top5Rank: 1,
+    };
+    expect(collectSingleArticleGateErrors(article, '2026-11-14')).toEqual([]);
+  });
+
   it('2026-11-11以降では完全一致の仮置き見出しと重複見出しを拒否する', () => {
     const edition = qualityFixture();
     edition.articles[0].title = '本日の更新';

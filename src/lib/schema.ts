@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { collectWritingLengthErrors } from './writing-validation';
 
 export const categories = [
   '国内・国際', 'テクノロジー', '科学・医療', '生活・文化',
@@ -354,22 +355,8 @@ export const editionSchema = z.object({
       ranks.add(article.top5Rank);
     }
     if (edition.contentCompliance.policyVersion === 2) {
-      if (article.summary.length !== 3) {
-        ctx.addIssue({ code: 'custom', path: ['articles', index, 'summary'], message: '方針v2の概要は結論・主要事実・範囲の3段落が必要です' });
-      }
-      if (edition.date >= '2026-11-01' && article.summary.join('').length < 240) {
-        ctx.addIssue({ code: 'custom', path: ['articles', index, 'summary'], message: '2026-11-01以降の概要は、埋め草や重複を使わず合計240文字以上が必要です' });
-      }
-      const minimumCommentLength = edition.date >= '2026-11-12'
-        ? (article.top5Rank !== null ? 300 : 150)
-        : 300;
-      if (edition.date >= '2026-11-01' && article.comment.length < minimumCommentLength) {
-        const message = edition.date >= '2026-11-12'
-          ? article.top5Rank !== null
-            ? '2026-11-12以降のTop 5の独自解説は、概要の再掲を使わず300文字以上が必要です'
-            : '2026-11-12以降の非Top 5の中立的な分析と補足は、概要の再掲を使わず150文字以上が必要です'
-          : '2026-11-01以降の独自解説は、概要の再掲を使わず300文字以上が必要です';
-        ctx.addIssue({ code: 'custom', path: ['articles', index, 'comment'], message });
+      for (const error of collectWritingLengthErrors(article, edition.date)) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, error.field], message: error.message });
       }
       if (!article.articleDetail) {
         ctx.addIssue({ code: 'custom', path: ['articles', index, 'articleDetail'], message: '方針v2では構造化した詳しい解説が必要です' });

@@ -30,8 +30,14 @@ export function applyPronunciations(text: string, dictionary: Record<string, str
 }
 
 export function findUnpronouncedLatinTerms(text: string, dictionary: Record<string, string>) {
-  const spokenText = applyPronunciations(text, dictionary);
-  return [...new Set(spokenText.match(/[A-Za-z][A-Za-z0-9]*(?:[.+#/_-][A-Za-z0-9]+)*/g) ?? [])];
+  const latinTerm = /[A-Za-z][A-Za-z0-9]*(?:[.+#/_-][A-Za-z0-9]+)*/g;
+  const registeredRanges = findRegisteredLatinRanges(text, dictionary);
+  return [...new Set(
+    [...text.matchAll(latinTerm)]
+      .filter((match) => !dictionary[match[0]])
+      .filter((match) => !isCoveredByRange(match.index!, match.index! + match[0].length, registeredRanges))
+      .map((match) => match[0]),
+  )];
 }
 
 export function assertLatinPronunciations(texts: string[], dictionary: Record<string, string>) {
@@ -73,17 +79,19 @@ export function assertLatinCompoundPronunciations(texts: string[], dictionary: R
 }
 
 export function findUnpronouncedLatinNumberTerms(text: string, dictionary: Record<string, string>) {
-  const spokenText = applyPronunciations(text, dictionary);
   const latinTerm = '[A-Za-z][A-Za-z0-9]*(?:[.+#/_-][A-Za-z0-9]+)*';
   const number = '\\d+(?:[.,]\\d+)*';
-  const latinTerms = [...spokenText.matchAll(new RegExp(`(?<![A-Za-z0-9])${latinTerm} +${number}`, 'g'))]
+  const registeredRanges = findRegisteredLatinRanges(text, dictionary);
+  const latinTerms = [...text.matchAll(new RegExp(`(?<![A-Za-z0-9])${latinTerm} +${number}`, 'g'))]
+    .filter((match) => !dictionary[match[0]])
+    .filter((match) => !isCoveredByRange(match.index!, match.index! + match[0].length, registeredRanges))
     .map((match) => match[0]);
   const readings = [...new Set(Object.entries(dictionary)
     .filter(([surface, reading]) => /[A-Za-z]/.test(surface) && /^[ァ-ヶー]+$/.test(reading))
     .map(([, reading]) => reading))]
     .sort((a, b) => b.length - a.length);
   const katakanaTerms = readings.length
-    ? [...spokenText.matchAll(new RegExp(`(?<![ァ-ヶー])(?:${readings.map(escapeRegExp).join('|')}) +${number}`, 'g'))]
+    ? [...text.matchAll(new RegExp(`(?<![ァ-ヶー])(?:${readings.map(escapeRegExp).join('|')}) +${number}`, 'g'))]
       .map((match) => match[0])
     : [];
   return [...new Set([...latinTerms, ...katakanaTerms])];
@@ -144,6 +152,16 @@ function* findLiteralRanges(text: string, value: string) {
     yield { start, end: start + value.length };
     start = text.indexOf(value, start + value.length);
   }
+}
+
+function findRegisteredLatinRanges(text: string, dictionary: Record<string, string>) {
+  return Object.keys(dictionary)
+    .filter((surface) => /[A-Za-z]/.test(surface))
+    .flatMap((surface) => [...findLiteralRanges(text, surface)]);
+}
+
+function isCoveredByRange(start: number, end: number, ranges: Array<{ start: number; end: number }>) {
+  return ranges.some((range) => range.start <= start && end <= range.end);
 }
 
 function escapeRegExp(value: string) {

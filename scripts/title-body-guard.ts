@@ -2,10 +2,14 @@
  * 見出しと本文の題材対応を確認する、依存なしの決定的ガード。
  * 漢字だけの見出しは形態素解析を行わないため判定不能（警告）に留める。
  */
+import { collectWritingLengthErrors } from '../src/lib/writing-validation';
+
 export interface GuardArticle {
   id: string;
   title: string;
   summary: string[];
+  comment: string;
+  top5Rank: number | null;
   narration?: {
     script?: string[];
     result?: string;
@@ -121,6 +125,13 @@ export function collectTitleBodyErrors(edition: GuardEdition): string[] {
   return errors;
 }
 
+/** 記事完成時の単体ゲートに、記事だけで判定できる版の字数規則を加える。 */
+export function collectSingleArticleGateErrors(article: GuardArticle, editionDate: string): string[] {
+  const writingErrors = collectWritingLengthErrors(article, editionDate)
+    .map((error) => `${editionDate}: 記事 ${article.id} の ${error.field}: ${error.message}`);
+  return [...writingErrors, ...collectTitleBodyErrors({ date: editionDate, articles: [article], strictNarration: true })];
+}
+
 async function main(): Promise<void> {
   const { readFile } = await import('node:fs/promises');
   const args = process.argv.slice(2);
@@ -132,7 +143,9 @@ async function main(): Promise<void> {
   const edition: GuardEdition = single ? { date: parsed.editionDate ?? 'single', articles: [parsed], strictNarration: true } : parsed;
   for (const article of edition.articles) if (verbose) console.log(JSON.stringify(checkArticleAlignment(article), null, 2));
   for (const warning of collectTitleBodyWarnings(edition)) console.warn(`警告: ${warning}`);
-  const errors = collectTitleBodyErrors(edition);
+  const errors = single
+    ? collectSingleArticleGateErrors(parsed, edition.date)
+    : collectTitleBodyErrors(edition);
   if (errors.length) throw new Error(errors.join('\n'));
   console.log(`${edition.date}: 全${edition.articles.length}記事の見出しと本文の題材一致を確認しました。`);
 }
