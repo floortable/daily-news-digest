@@ -1,0 +1,1154 @@
+{
+  "date": "2026-11-15",
+  "generatedAt": "2026-11-15T08:17:06+09:00",
+  "selectionShortfallReason": "候補台帳の26件をすべて分類し、9件を採用、10件をdeferred、7件をnot-relevantとしました。通常の25件には届きませんが、対象期間外、論評・質問・個人告知中心、採用済み事案との重複、または中心事実を一次資料で確認できない候補を、根拠の弱い記事として水増ししていません。Top 5はセキュリティ、テクノロジー、国内・国際、科学・医療、生活・文化の5カテゴリーを横断し、5媒体で構成しています。一般記事9件のうち、テクノロジーまたはセキュリティに属する記事はLovable、Cursor、FaceStealer、KDE、Antigravityの5件で、比率は5/9=55.6%です。目安40%を超えますが、Lovableは情報露出報告、Cursorは広く使われる製品の利用者対応を要するサプライチェーン侵害、FaceStealerは大規模摘発・情報漏えい関連であり、いずれも重要性から超過を認める類型です。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "checkedAt": "2026-11-15T07:20:29+09:00",
+        "status": "checked",
+        "note": "Hacker Newsの候補を収集し、採用候補を確定台帳へ分類しました。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "checkedAt": "2026-11-15T07:20:30+09:00",
+        "status": "checked",
+        "note": "はてなブックマーク、Togetter、GIGAZINEの公開一覧に到達し、対象期間の候補を確認しました。採用基準を満たす追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "checkedAt": "2026-11-15T07:20:32+09:00",
+        "status": "checked",
+        "note": "YouTube、TikTok、ニコニコ動画の公開トレンド一覧に到達し、対象期間の候補を確認しました。採用基準を満たす追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "checkedAt": "2026-11-15T07:20:34+09:00",
+        "status": "checked",
+        "note": "一般報道の候補を台帳で確認し、ReutersとCBCの記事を個別評価しました。",
+        "evidenceUrls": [
+          "https://www.reuters.com/",
+          "https://www.cbc.ca/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "checkedAt": "2026-11-15T07:20:36+09:00",
+        "status": "checked",
+        "note": "OpenAI公式更新を確認し、対象期間の採用基準を満たす追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "checkedAt": "2026-11-15T07:20:37+09:00",
+        "status": "checked",
+        "note": "Anthropic公式更新を確認し、採用基準を満たす追加候補はありませんでした。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "checkedAt": "2026-11-15T07:20:39+09:00",
+        "status": "checked",
+        "note": "GoogleのAI更新を確認し、Antigravity候補は確認不足として保留しました。",
+        "evidenceUrls": [
+          "https://research.google/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "checkedAt": "2026-11-15T07:20:41+09:00",
+        "status": "checked",
+        "note": "Microsoft、Meta、NVIDIAの公式更新を確認し、追加採用はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "checkedAt": "2026-11-15T07:20:42+09:00",
+        "status": "checked",
+        "note": "AI企業の提供条件変更を確認し、記事化する新規公式発表はありませんでした。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "checkedAt": "2026-11-15T07:20:44+09:00",
+        "status": "checked",
+        "note": "CISA KEVとNVDを確認し、対象期間の追加採用案件はありませんでした。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "checkedAt": "2026-11-15T07:20:46+09:00",
+        "status": "checked",
+        "note": "CERT/CC、JPCERT/CC、IPAの公開情報を確認し、高優先の新規案件はありませんでした。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "checkedAt": "2026-11-15T07:20:48+09:00",
+        "status": "checked",
+        "note": "OSSと主要ベンダーの告知を確認し、追加採用案件はありませんでした。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "checkedAt": "2026-11-15T07:20:49+09:00",
+        "status": "checked",
+        "note": "CISA KEV JSONのcatalogVersionと対象期間内の追加を実測し、KEV期限後の既知案件を再確認しました。対象期間内に記事化が必要な新規追加は確認できませんでした。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "checkedAt": "2026-11-15T07:20:51+09:00",
+        "status": "checked",
+        "note": "公開調査フィードを確認し、Lovableの研究報告を採用しました。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "checkedAt": "2026-11-15T07:20:53+09:00",
+        "status": "checked",
+        "note": "主要プロジェクトの告知を確認し、追加採用案件はありませんでした。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "checkedAt": "2026-11-15T07:20:54+09:00",
+        "status": "checked",
+        "note": "Synologyの告知を確認し、新規の高優先案件はありませんでした。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "checkedAt": "2026-11-15T07:20:56+09:00",
+        "status": "checked",
+        "note": "Broadcom VCF Security Advisoriesを再確認し、ESXおよびSDDC Managerの既知案件に対象期間内の新しい公式更新・修正版情報は確認できませんでした。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "checkedAt": "2026-11-15T07:20:58+09:00",
+        "status": "checked",
+        "note": "Application Networking and Securityの告知を確認し、追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "checkedAt": "2026-11-15T07:20:59+09:00",
+        "status": "checked",
+        "note": "Knowledge Baseは403でしたが、公開されているTechDocsの内容を確認しました。対象期間内に運用判断を変えるKB・リリースノート更新は確認できませんでした。",
+        "evidenceUrls": [
+          "https://techdocs.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "checkedAt": "2026-11-15T07:21:01+09:00",
+        "status": "checked",
+        "note": "VCF製品ポートフォリオの公式ブログを確認し、追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "checkedAt": "2026-11-15T07:21:03+09:00",
+        "status": "checked",
+        "note": "国家サイバー統括室の指定ページは404でしたが、IPAの報道発表・セキュリティ一覧は内容を確認しました。対象期間内にインフラ運用の一括対応を要する新規政策公表は確認できませんでした。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "checkedAt": "2026-11-15T07:21:04+09:00",
+        "status": "checked",
+        "note": "Broadcomのサービス状態を確認し、記事化すべき緊急障害はありませんでした。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "checkedAt": "2026-11-15T07:21:06+09:00",
+        "status": "checked",
+        "note": "互換性とライフサイクル情報を確認し、追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "checkedAt": "2026-11-15T07:21:14+09:00",
+        "status": "checked",
+        "note": "Knowledge Baseは403でしたが、公開されているAvi Load Balancer TechDocsを確認しました。対象期間内に記事化すべきAviの新規情報は確認できませんでした。",
+        "evidenceUrls": [
+          "https://techdocs.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "checkedAt": "2026-11-15T07:21:15+09:00",
+        "status": "checked",
+        "note": "vDefendとNSXの公開情報を確認し、追加案件はありませんでした。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/security/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "checkedAt": "2026-11-15T07:21:17+09:00",
+        "status": "checked",
+        "note": "William LamとDuncan Eppingの公開情報を確認し、新規運用情報はありませんでした。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "checkedAt": "2026-11-15T07:21:19+09:00",
+        "status": "checked",
+        "note": "VCFコミュニティを確認し、採用基準を満たす新規報告はありませんでした。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "checkedAt": "2026-11-15T07:21:21+09:00",
+        "status": "checked",
+        "note": "パートナー各社の公開情報を確認し、VCF連携の重要変更はありませんでした。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "checkedAt": "2026-11-15T07:21:22+09:00",
+        "status": "checked",
+        "note": "競合と移行先の公開情報を確認し、移行判断を変える新規情報はありませんでした。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "policyVersion": 1,
+    "checkedAt": "2026-11-15T08:17:06+09:00",
+    "findings": [
+      {
+        "title": "Lovable製アプリの個人情報露出報告",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.crissyfield.de/research/lovable-en/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-15-lovable-data-exposure",
+        "reason": "旅券情報と私信への到達が報告され、公開アプリの認可設定に関する具体的な影響があるため採用しました。"
+      },
+      {
+        "title": "KEV JSONと期限後の既知案件を再確認",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "KEV JSONのcatalogVersionと対象期間内の追加を確認した。SSHole CVE-2026-123158（期限11月12日）、Barracuda CVE-2026-111560/CVE-2026-116606、Ivanti CVE-2026-118527（期限11月13日）について、対象期間内の新規追加・更新は確認できず記事化を見送った。"
+      },
+      {
+        "title": "VCF既知アドバイザリーの続報確認",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "ESX CVE-2026-41709（期限11月11日）とSDDC Manager CVE-2026-111497（期限11月10日）を再確認した。対象期間内に影響範囲、修正版、対応期限を変える公式続報は確認できなかった。"
+      },
+      {
+        "title": "Conductor買収とvSphere Expressの続報確認",
+        "area": "vcf",
+        "sourceId": "vcf-product-portfolio",
+        "url": "https://blogs.vmware.com/cloud-foundation/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "11月4日発表のConductor買収およびvSphere Expressについて、統合計画、提供地域、価格、サポート条件を変える対象期間内の公式続報は確認できなかった。"
+      },
+      {
+        "title": "eMudhra G1 distrust-after期限の再確認",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://bugzilla.mozilla.org/show_bug.cgi?id=2089115",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "eMudhra G1のdistrust-afterは2026年11月16日として継続確認した。対象期間内に期限変更や新たな実質情報は確認できず、記事化を見送った。"
+      },
+      {
+        "title": "日本政府のサイバー政策更新確認",
+        "area": "vcf",
+        "sourceId": "jp-gov-cyber-policy",
+        "url": "https://www.ipa.go.jp/pressrelease/index.html",
+        "severity": "medium",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "国家サイバー統括室の指定URLは404、IPA公開ページは確認可能だった。対象期間内に重要インフラまたは政府機関へ新たな一括対応を求める政策公表は確認できなかった。"
+      },
+      {
+        "title": "Cursorのサプライチェーン侵害",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-15-cursor-breach",
+        "reason": "Cursorの一次報告と報道で、悪性のClaude Code拡張機能につながった侵害と利用者側の対応が確認できたため採用しました。"
+      },
+      {
+        "title": "Starship Flight 15でのShip回収",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://x.com/i/broadcasts/2brajgZlOKRMka",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-15-starship-flight-15",
+        "reason": "Ship 42が約22.5時間の軌道飛行と衛星展開後に上段として初めてタワー回収されたため、当日の大きな宇宙開発の出来事として採用しました。"
+      },
+      {
+        "title": "FaceStealer基盤の摘発",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-15-facestealer-disruption",
+        "reason": "司法省とFBIの公開情報で、FaceStealerの基盤差し押さえと過去18か月で4億ドル超の被害が確認できたため採用しました。"
+      },
+      {
+        "title": "Google Antigravityのteamwork機能",
+        "area": "ai",
+        "sourceId": "ai-google",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-15-antigravity-teamwork",
+        "reason": "HN投稿時刻が対象期間内で、Google Research本文に外部提供範囲と研究での利用例が示されていたため採用しました。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-15-lovable-data-exposure",
+      "title": "Lovable製アプリで旅券情報と私信が露出、公開設定を再点検",
+      "sourceUrl": "https://www.crissyfield.de/research/lovable-en/",
+      "sourceName": "Crissy Field",
+      "publishedAt": "2026-11-15T02:43:10+09:00",
+      "collectedAt": "2026-11-15T06:59:00+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 1,
+      "narration": {
+        "sourceCheckedAt": "2026-11-15T06:59:00+09:00",
+        "script": [
+          "一つ目は、Lovableで作られたアプリのデータ露出です。研究者は、旅券情報を含むデータと20万件を超える私信が、公開状態のアプリから取得できたと報告しました。",
+          "Lovableで問題の中心となるのは生成AIそのものではなく、アプリごとの認可、バックエンド接続、公開前確認が製作者に委ねられることです。画面が完成して見えても、データベース規則が意図どおりかは別に検査しなければなりません。",
+          "Lovableで開発速度が上がるほど、匿名アクセスやテスト用の実データが公開環境へ残ったときに露出が広がります。サービス側の保護機能と、作成者が確認できる診断情報の両方が問われます。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "利用者は何を確認すべきか",
+            "answer": "公開URLだけでなく、認証なしで読めるAPIやストレージ規則を確認し、個人情報を含むテストデータを残さないことが必要です。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "露出は画面の見た目だけで判断できますか。",
+            "findings": [
+              "画面が非公開に見えても、バックエンドの読み取り規則や共有リンクが別に公開され得ます。"
+            ],
+            "references": [
+              "https://www.crissyfield.de/research/lovable-en/"
+            ]
+          }
+        ],
+        "references": [
+          "https://www.crissyfield.de/research/lovable-en/"
+        ]
+      },
+      "summary": [
+        "アプリ作成サービスLovableで作られた複数のアプリについて、研究者が旅券情報を含むデータと20万件超の私信に到達できたと報告しました。個々のアプリの公開設定やデータ接続が、利用者情報の露出につながった可能性があります。",
+        "報告は、生成AIで短時間に画面や機能を組み立てられても、認証・認可とデータベース規則が自動的に安全になるわけではないことを示します。公開URL、共有リンク、バックエンドAPIは、画面とは別に検査対象になります。",
+        "影響はLovableだけに限らず、ローコードやAI支援で外部公開するアプリを持つ組織に及びます。個人情報を扱う場合は、匿名で読める経路、権限の初期値、テストデータの残置を公開前に確認する必要があります。"
+      ],
+      "comment": "この種の事故は、コード生成の品質だけでは防げません。画面の実装とデータへの到達経路は別の層であり、開発者が意図したログイン画面の背後に、直接読めるテーブルやストレージが残ることがあります。特にプロトタイプをそのまま公開へ進める組織では、機能確認と権限確認の担当が分かれないまま進みがちです。公開前のチェックを、URLを開く試験だけで終えず、未認証セッションでAPIと保存領域を確認する工程として扱うことが重要です。さらに、認証済みでも別利用者のレコードをID指定だけで読めないかを確認し、テスト用の実データを削除する責任をリリース手順に組み込む必要があります。サービス提供者には危険な初期設定を減らす設計、作成者にはデータ分類に応じた公開可否の判断が求められます。",
+      "articleDetail": {
+        "conclusion": "Lovable製アプリの公開設定により、個人情報や私信へ到達できたという研究報告です。",
+        "facts": [
+          "研究者は旅券情報を含むデータと20万件超の私信が露出したと報告しました。",
+          "対象はLovableで作られたアプリで、公開設定とデータ接続が調査対象です。"
+        ],
+        "background": [
+          "Webアプリでは画面の認証とは別に、API、データベース、ファイル保管庫ごとのアクセス規則があります。"
+        ],
+        "explanation": [
+          "公開リンクを閉じても、バックエンド規則が匿名読み取りを許せばデータへ到達できる場合があります。"
+        ],
+        "implications": [
+          "AI支援で公開したアプリは、実装速度とは独立に認可設定のレビューが必要です。"
+        ],
+        "caveats": [
+          "報告は調査時点の露出を扱っており、個々のアプリが現在も同じ状態かは別途確認が必要です。"
+        ],
+        "nextChecks": [
+          "Lovable側の対応内容と、影響を受けた作成者への通知範囲を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AI支援のアプリ作成で、公開の速さとデータ保護の境界が具体的に問われたためです。",
+        "currentReaction": "Hacker Newsでは確認時点で482ポイント、173コメントがあり、開発者の関心を集めていました。",
+        "assessment": "妥当",
+        "assessmentComment": "個人情報を含む露出報告であり、設定確認の重要性を示す具体性があります。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 482,
+        "hnComments": 173,
+        "socialMetricsCheckedAt": "2026-11-15T06:59:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-15T06:59:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-15-meta-privacy-fine",
+      "title": "イタリア当局がMetaに巨額制裁、Android上の写真アクセスを争点に",
+      "sourceUrl": "https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/",
+      "sourceName": "Reuters",
+      "publishedAt": "2026-11-14T22:48:06+09:00",
+      "collectedAt": "2026-11-15T06:59:00+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "国内・国際"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-15T06:59:00+09:00",
+        "script": [
+          "二つ目は、イタリアでのMetaへの制裁です。同国当局はAndroid利用者の写真データへのアクセスを巡り、Metaに8億8700万ドル相当の制裁金を科したと報じられました。",
+          "Metaをめぐるスマートフォンの権限は、利用者が一度許可したかだけでなく、どの機能が、どの目的で、どの期間にデータを使うかを問います。写真は位置、時刻、人間関係などを含み得るため、用途の説明と選択肢が重要です。",
+          "Metaへの制裁額は大きいものの、最終的な法的手続きや当事者の対応で結論は変わり得ます。利用者側では、写真へのアクセスを必要なアプリに限定し、OSの権限履歴を定期的に見直す実務が残ります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "これはAndroidの権限そのものの欠陥か",
+            "answer": "報道の争点はOSの機構そのものではなく、Metaによるデータアクセスの適法性と利用者への説明です。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "写真アクセスで何が問題になり得ますか。",
+            "findings": [
+              "写真には画像内容のほか、撮影日時や位置情報などの付随情報が含まれる場合があります。"
+            ],
+            "references": [
+              "https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/"
+            ]
+          }
+        ],
+        "references": [
+          "https://www.reuters.com/world/italy-fines-meta-887-million-over-android-users-data-access-2026-11-14/"
+        ]
+      },
+      "summary": [
+        "イタリアの当局が、Android利用者の写真データへのアクセスを巡ってMetaに8億8700万ドル相当の制裁金を科したとReutersが報じました。写真へのアクセス許可と、そのデータをどの用途で扱ったかが争点になっています。",
+        "スマートフォンの写真ライブラリーには、画像だけでなく撮影時刻や位置情報などが含まれることがあります。アプリが求める権限は、機能に必要な最小範囲か、利用者が理解できる説明になっているかが問われます。",
+        "この判断はMetaとイタリアの手続きに関する報道ですが、モバイルアプリ全般のプライバシー設計にも関係します。利用者はOSの権限設定を、開発側は利用目的と保存範囲を、それぞれ具体的に見直す必要があります。"
+      ],
+      "comment": "制裁金の額だけでは、利用者が何を変えればよいかは分かりません。実務では、写真選択型の共有、限定アクセス、権限を使う直前の説明など、OSが用意する選択肢をどう採るかが重要になります。写真への包括的なアクセスは、投稿機能だけでなく解析や同期の設計にも影響し、説明が短いほど利用者は用途の差を判断しにくくなります。設計レビューでは、権限を取得する画面だけでなく、取得後にどの処理がいつまで利用できるかをデータフローとして追う必要があります。権限を使わない代替経路を提供できるかも、利用者の選択を実質的にする論点です。報道で伝えられた手続きの結論と、各地域の法制度を同一視はできませんが、データ最小化と目的ごとの同意という論点は、国境をまたぐアプリの設計課題として残ります。",
+      "articleDetail": {
+        "conclusion": "MetaのAndroid上の写真アクセスを巡り、イタリア当局が巨額の制裁を科したと報じられました。",
+        "facts": [
+          "Reutersは制裁額を8億8700万ドル相当と報じました。",
+          "争点はAndroid利用者の写真データへのアクセスです。"
+        ],
+        "background": [
+          "モバイルOSでは、写真、位置、連絡先などを機能ごとに許可する仕組みがあります。"
+        ],
+        "explanation": [
+          "権限の許可は一回の操作でも、実際の利用目的と保存範囲はサービス設計によって異なります。"
+        ],
+        "implications": [
+          "プライバシー規制は、アプリ権限の表示と実際のデータ利用の整合性を問う方向にあります。"
+        ],
+        "caveats": [
+          "制裁の執行や不服申立てを含む手続きの最終状況は、報道時点から変化し得ます。"
+        ],
+        "nextChecks": [
+          "Metaの公式説明と、イタリア当局が示す判断理由の全文を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "日常的に許可する写真アクセスが、巨大プラットフォームの規制判断になったためです。",
+        "currentReaction": "Hacker Newsでは確認時点で274ポイント、182コメントがあり、権限設計への議論が見られました。",
+        "assessment": "妥当",
+        "assessmentComment": "制裁額だけでなく、モバイル権限と目的外利用の関係を考える材料になります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 274,
+        "hnComments": 182,
+        "socialMetricsCheckedAt": "2026-11-15T06:59:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-15T06:59:00+09:00",
+        "httpStatus": 401,
+        "note": "Reuters本文は取得制限があり、候補台帳と記事見出しで確認した。"
+      }
+    },
+    {
+      "id": "2026-11-15-nvidia-asia-reaction",
+      "title": "NVIDIAの経営交代にアジア各国が反応、GPU供給計画を注視",
+      "sourceUrl": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-15T01:34:15+09:00",
+      "collectedAt": "2026-11-15T07:28:00+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "narration": {
+        "sourceCheckedAt": "2026-11-15T07:28:00+09:00",
+        "script": [
+          "三つ目は、NVIDIAのJensen Huang氏の退任を受けたアジア各国の反応です。TechCrunchは、日本、韓国、台湾などでGPU供給とAI計画への影響を注視する動きが出たと報じました。",
+          "NVIDIAへの依存は半導体の購入だけではありません。NVIDIAの製品計画や共同事業が変われば、政府が支援する計算基盤の調達時期や、国内企業との連携にも不確実性が生じます。",
+          "ただし今回のNVIDIAを巡る反応は、直ちに供給が止まったという意味ではありません。韓国では先端GPUの供給計画が継続すると伝えられており、各国が見るべきなのは実際の契約、出荷、共同プロジェクトの更新です。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "政府の反応はGPUの供給停止を意味するのか",
+            "answer": "記事は供給停止を報じていません。各国が計画への影響を見極める段階であり、韓国については供給計画継続の再確認が伝えられています。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "経営交代が各国のAI計画にどう波及し得るか。",
+            "findings": [
+              "大口のGPU供給、共同AIプロジェクト、地域拠点の計画は、製品ロードマップと企業の対外約束への信頼に依存します。"
+            ],
+            "references": [
+              "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/"
+            ]
+          }
+        ],
+        "references": [
+          "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/"
+        ]
+      },
+      "summary": [
+        "NVIDIAのJensen Huang氏の退任を受け、日本、韓国、台湾などの政府・当局がAI用半導体の供給計画と地域プロジェクトへの影響を注視しているとTechCrunchが報じました。企業の経営交代が、国家規模の計算基盤計画にも不確実性を持ち込んでいます。",
+        "報道によると、韓国の関係省庁はNVIDIAから先端GPU 26万基の供給計画と共同AIプロジェクトを続けるとの説明を受けました。日本でも経済産業省がNVIDIAの動向を注視する姿勢を示したとされます。",
+        "今回確認できるのは各国の初期反応であり、契約や供給量が変更された事実ではありません。影響を判断するには、実際の出荷予定、共同事業の進捗、各政府とNVIDIAの公式発表を継続して確認する必要があります。"
+      ],
+      "comment": "AI向け計算資源は、企業の製品だけでなく政府の産業政策、大学・研究機関の共同利用、地域のデータセンター投資と結び付いています。そのため経営交代の影響は株価の反応にとどまらず、調達担当者が前提にしていた供給の確度を見直す契機になります。ただし、供給計画の継続表明と実際の出荷・導入は別の段階です。利用側は発表時の約束を能力増強の完了と扱わず、契約、輸出規制、電力・設置計画、ソフトウェア支援の依存関係を分けて追う必要があります。代替調達先の検討は必要でも、移行可能性を判断するには既存のソフトウェア資産と運用技能も考慮しなければなりません。今回の各国の反応は、特定企業への集中が経済政策上のリスクにもなることを示しています。",
+      "articleDetail": {
+        "conclusion": "NVIDIAの経営交代を受け、アジア各国がGPU供給とAIプロジェクトへの影響を注視しているという報道です。",
+        "facts": [
+          "TechCrunchは日本、韓国、台湾、中国、シンガポールでの反応を報じました。",
+          "韓国については先端GPU 26万基の供給計画と共同AIプロジェクトの継続が伝えられました。"
+        ],
+        "background": [
+          "AI計算基盤の整備では、GPUの入手だけでなく、電力、データセンター、ソフトウェア、人材の計画が連動します。"
+        ],
+        "explanation": [
+          "主要供給者の経営変化は、数量そのものが変わらなくても、ロードマップや契約履行への見通しを再評価させます。"
+        ],
+        "implications": [
+          "各国の政策担当者と大口利用者は、供給予定を公式発表と実際の導入進捗の両面で確認する必要があります。"
+        ],
+        "caveats": [
+          "記事は各国の初期反応を扱っており、供給契約や政府方針の最終的な変更を示すものではありません。"
+        ],
+        "nextChecks": [
+          "各国政府とNVIDIAによる供給、共同プロジェクト、地域拠点に関する公式更新を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "一企業の経営交代が、複数国のAI計算基盤と半導体供給の計画に波及し得るためです。",
+        "currentReaction": "各国の政府発言と供給計画に焦点を当てた報道であり、初期段階の状況確認が続いています。",
+        "assessment": "妥当",
+        "assessmentComment": "供給停止の事実と混同せず、政策と調達の依存関係を捉える材料として扱います。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {},
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-15T07:28:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-15-starship-flight-15",
+      "title": "Starship Ship 42、初のタワー回収　Flight 15はブースターを洋上で失う",
+      "sourceUrl": "https://www.floridatoday.com/story/tech/science/space/spacex/2026/11/13/spacex-to-launch-starship-today-from-texas-attempt-double-catch--live/92759273007/",
+      "sourceName": "Florida Today",
+      "publishedAt": "2026-11-14T16:52:00-05:00",
+      "collectedAt": "2026-11-15T07:55:21+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "科学・医療"
+      ],
+      "channels": [
+        "social-other"
+      ],
+      "top5Rank": 4,
+      "narration": {
+        "sourceCheckedAt": "2026-11-15T07:55:21+09:00",
+        "script": [
+          "四つ目は、SpaceXのStarship Flight 15で、Ship 42が約22.5時間、約14周の軌道飛行を終え、Starbaseのタワーアームに初めて回収されました。一方、Super Heavy Booster 22は発射から約6.5分後に回収を中止してメキシコ湾へ向かい、海面直前で爆発しました。狙った両段同時回収ではなく、上段だけが歴史的な回収を成し遂げた飛行です。",
+          "Ship 42は軌道上でStarlink V3衛星26基をすべて展開しました。従来の上段は飛行終盤に海へ着水していたのに対し、今回は再突入後に発射地点へ戻し、機体をタワーで支える方式を実証しました。再使用を速めるには、海上回収後の搬送を省ける可能性がある一方、着陸判定と地上設備の両方が成立しなければ実用化できません。",
+          "ブースター側は、SpaceXの初期説明ではboostback燃焼が燃料量低下の警報で早く終わり、誘導系が位置ずれを検知したため回収を取りやめました。Ship 42の成功は上段回収の大きな節目ですが、二つの段を同じ発射地点で回収する運用の実証とは別です。次の焦点は、今回の飛行データを使ってブースターの帰還余裕と中止判定をどう調整するかになります。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "なぜShip 42の回収は再使用にとって重要ですか。",
+            "answer": "上段を発射地点へ直接戻せれば、海上で回収して陸上へ運ぶ工程を減らせる可能性があります。ただし今回示されたのは回収そのものの成功で、点検・再飛行までの所要時間や再使用回数はまだ実証されていません。"
+          },
+          {
+            "question": "ブースターを失ったのにFlight 15は成功といえますか。",
+            "answer": "目的は分かれます。Ship 42の軌道投入、26基の衛星展開、上段のタワー回収は達成されましたが、Booster 22の回収は失敗しました。両段を回収する運用を一度に成立させる目標には届いていません。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "上段のタワー回収は従来の飛行と何が違いますか。",
+            "findings": [
+              "従来のStarship上段は飛行の終盤に海へ着水しており、タワーによる上段回収はFlight 15が初めてだった。",
+              "Ship 42は約14周、約22.5時間の飛行後にStarbaseへ戻り、タワーアームで回収された。"
+            ],
+            "references": [
+              "https://x.com/SpaceX",
+              "https://www.floridatoday.com/story/tech/science/space/spacex/2026/11/13/spacex-to-launch-starship-today-from-texas-attempt-double-catch--live/92759273007/"
+            ]
+          }
+        ],
+        "references": [
+          "https://x.com/SpaceX",
+          "https://www.floridatoday.com/story/tech/science/space/spacex/2026/11/13/spacex-to-launch-starship-today-from-texas-attempt-double-catch--live/92759273007/"
+        ]
+      },
+      "summary": [
+        "SpaceXのStarship Flight 15で、上段のShip 42が約22.5時間の軌道飛行を終え、Starbaseのタワーアームに回収された。Starship上段をタワーで回収したのは初めてで、SpaceXは11月14日16時21分（米東部時間）にXで成功を確認した。",
+        "Flight 15は11月13日17時47分（米東部時間）に打ち上げられ、Ship 42は約14周の間にStarlink V3衛星26基をすべて展開した。ところが、Super Heavy Booster 22は打ち上げ約6.5分後、予定していたタワー回収を中止してメキシコ湾への着水へ切り替え、海面直前で爆発した。",
+        "SpaceXの初期説明では、ブースターのboostback燃焼が燃料量低下の警報で早期終了し、誘導系が位置ずれを検知したことが中止につながった。つまり今回成立したのは上段回収であり、両段を発射地点で回収する構想の完全な実証ではない。"
+      ],
+      "comment": "今回の技術的な価値は、単に「着陸した」ことではなく、再突入を終えた上段を発射地点の設備へ戻し、タワーが機体を支持する終端条件まで到達した点にある。海上着水を前提にすると、機体の回収、輸送、塩害への対処が次の飛行までの工程に加わる。タワー回収はそれらを短縮し得るが、帰還軌道、誘導、地上アーム、周辺の安全判断が同時に成立する必要がある。今回のBooster 22の中止は、帰還条件を満たさない段階で回収を取りやめる判定が飛行中に働いたことを示した。上段の回収成功とブースターの損失を同じ成果として混ぜず、次段階では回収したShip 42の点検結果と、ブースター側の燃焼終了・位置ずれの原因分析を分けて追う必要がある。回収の可否だけでなく、回収後にどの部位を交換し、どの程度の間隔で再飛行できるかが、この方式の実用上の尺度になる。",
+      "articleDetail": {
+        "conclusion": "Ship 42は軌道飛行後にStarbaseのタワーへ初めて回収されたが、Booster 22のタワー回収は中止され、Flight 15で両段回収は実現しなかった。",
+        "facts": [
+          "Flight 15は2026年11月13日17時47分（米東部時間）にStarbaseから打ち上げられた。",
+          "Ship 42は約14周、約22.5時間の飛行中にStarlink V3衛星26基をすべて展開した。",
+          "Ship 42は11月14日16時20分ごろ（米東部時間）にStarbaseのタワーアームへ回収され、上段として初のタワー回収になった。",
+          "Booster 22は回収を中止してメキシコ湾へ向かい、海面直前で爆発した。"
+        ],
+        "background": [
+          "Flight 15は上段とSuper Heavyブースターの両方をタワーで回収する初めての試みとして計画された。",
+          "SpaceXは上段を海上へ着水させる従来の終端処理から、発射地点へ戻す回収方式へ進めようとしている。"
+        ],
+        "explanation": [
+          "タワー回収では、再突入を終えた機体を発射地点近くへ誘導し、アームで機体を受けるため、飛行制御と地上設備の状態が同時に安全条件を満たす必要がある。",
+          "SpaceXによる初期説明では、Booster 22はboostback燃焼が燃料量低下の警報で早く終わり、誘導系が位置ずれを検知して回収を取りやめた。"
+        ],
+        "implications": [
+          "上段を発射地点で回収できれば、海上からの回収と陸上輸送を減らせる可能性があり、再使用までの地上工程を変え得る。",
+          "ただし今回の結果だけでは、回収機を再飛行へ回すまでの整備時間や、回収方式の運用頻度は分からない。"
+        ],
+        "caveats": [
+          "ブースター中止の原因はSpaceXの初期説明であり、詳細な飛行後解析の公表を待つ必要がある。",
+          "Ship 42の回収成功は両段同時回収の成功を意味せず、ブースター側の帰還余裕は別途実証が必要である。"
+        ],
+        "nextChecks": [
+          "SpaceXが公表するBooster 22のboostback燃焼早期終了と位置ずれ検知の詳細を確認する。",
+          "回収されたShip 42について、熱防護系、推進系、構造の点検結果と再飛行計画が示されるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Starship上段を初めてタワーへ回収した瞬間が対象期間内に起き、巨大再使用ロケットの回収工程を一段進めたため。",
+        "currentReaction": "SpaceXはXでShip 42の回収を告知している。数値を伴う反響は本記事では記録しない。",
+        "assessment": "妥当",
+        "assessmentComment": "初回の上段タワー回収は明確な技術上の節目だが、同じ飛行でブースターを失っており、両段回収の達成としては扱えない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-15T07:55:21+09:00",
+        "httpStatus": 402,
+        "note": "Florida Todayのページは取得時に402で制限され、表示時刻は指定されたライブブログ更新に基づく。"
+      }
+    },
+    {
+      "id": "2026-11-15-kde-documentary",
+      "title": "KDEの歩みを追うドキュメンタリー、自由ソフトの共同作業を記録",
+      "sourceUrl": "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c",
+      "sourceName": "Kockatoo",
+      "publishedAt": "2026-11-14T20:16:22+09:00",
+      "collectedAt": "2026-11-15T06:59:00+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "生活・文化",
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 5,
+      "narration": {
+        "sourceCheckedAt": "2026-11-15T06:59:00+09:00",
+        "script": [
+          "五つ目はKDEを扱ったドキュメンタリーです。デスクトップ環境を長年育ててきた自由ソフトウェアの共同体を、映像でたどる作品が公開されました。",
+          "KDEは単一企業の製品ではなく、開発者、翻訳者、デザイナー、配布元が重なるプロジェクトです。画面の機能だけでなく、意思決定や資金、継続する参加者の仕事が品質を支えています。",
+          "このKDEの映像は完成したソフトを紹介するだけでなく、共同作業の歴史を残す資料にもなります。利用者にとっては、日常的なデスクトップがどのような合意と保守で続くかを知る入口です。"
+        ],
+        "anticipatedQuestions": [
+          {
+            "question": "KDEは会社の製品なのか",
+            "answer": "KDEは自由ソフトウェアの共同体と関連団体が支えるプロジェクトで、単一企業の製品として運営されているわけではありません。"
+          }
+        ],
+        "questionResearch": [
+          {
+            "question": "映像資料が持つ価値は何ですか。",
+            "findings": [
+              "技術仕様だけでは残りにくい参加者の役割や意思決定の背景を、将来の利用者へ伝えられます。"
+            ],
+            "references": [
+              "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c"
+            ]
+          }
+        ],
+        "references": [
+          "https://tube.kockatoo.org/w/fFinNHfanLT7aBEb2B8y4c"
+        ]
+      },
+      "summary": [
+        "KDEの歴史と共同作業を追うドキュメンタリー映像が公開され、Hacker Newsでも共有されました。デスクトップ環境として見える成果だけでなく、長期の自由ソフトウェア開発を支える人々と組織に焦点を当てています。",
+        "KDEのようなプロジェクトでは、コードを書く人だけでなく、翻訳、デザイン、ドキュメント、リリース、配布元との調整が製品体験を形作ります。技術的な変更は、こうした継続的な協力関係の上で利用者へ届きます。",
+        "この映像は新製品発表ではありませんが、日常的に使われるソフトウェアの維持を文化として記録する資料です。自由ソフトウェアを利用する人にとって、参加と統治の仕組みを知る機会になります。"
+      ],
+      "comment": "自由ソフトウェアの価値は、無償で入手できることだけでは測れません。長期に保守されるデスクトップ環境には、互換性を守る判断、翻訳を更新する作業、利用者からの不具合報告を受ける窓口が必要です。映像はソースコードの履歴では表しにくい、人が参加を続ける理由や協力の摩擦を可視化できます。継続性はライセンスだけで決まらず、意思決定を記録し、新規参加者が判断の経緯をたどれることにも左右されます。資金提供者や配布元が変わる局面でも、この記録は役割分担を考える手掛かりになります。企業製品でもコミュニティ製品でも、利用者が当然と思う安定性は保守の蓄積から生まれます。この記録は、技術の成果を個人の英雄譚にせず、共同体の仕事として理解する材料になります。",
+      "articleDetail": {
+        "conclusion": "KDEの開発共同体と長期の自由ソフトウェア作りを記録する映像です。",
+        "facts": [
+          "KDEを扱うドキュメンタリー映像が公開されました。",
+          "Hacker Newsで映像へのリンクが共有されました。"
+        ],
+        "background": [
+          "KDEはデスクトップ環境を中心に、複数の自由ソフトウェアを開発する共同体です。"
+        ],
+        "explanation": [
+          "製品の継続には開発だけでなく翻訳、デザイン、配布、利用者対応が関わります。"
+        ],
+        "implications": [
+          "共同作業の背景を記録することは、将来の参加者がプロジェクトの成り立ちを理解する助けになります。"
+        ],
+        "caveats": [
+          "映像はドキュメンタリーであり、KDEの全ての参加者や技術的経緯を網羅する資料ではありません。"
+        ],
+        "nextChecks": [
+          "制作元が示す出演者、公開条件、追加資料を確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "長期の自由ソフトウェア開発を技術以外の側面から伝える文化的な資料だからです。",
+        "currentReaction": "Hacker Newsでは確認時点で319ポイント、69コメントがあり、利用者と開発者の反応がありました。",
+        "assessment": "妥当",
+        "assessmentComment": "KDE利用者に限らず、共同で維持されるソフトウェアの背景を考える入口になります。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 319,
+        "hnComments": 69,
+        "socialMetricsCheckedAt": "2026-11-15T06:59:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-15T06:59:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-15-cursor-breach",
+      "title": "Cursor侵害、悪意あるClaude Code拡張が最大5,000人へ届く可能性",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/cursor-confirms-security-breach-led-to-malicious-claude-code-extension/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-15T02:27:00+09:00",
+      "collectedAt": "2026-11-15T07:49:56+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "AIコードエディタのCursorは、第三者のAI基盤Fireworks AIに発行したアクセスキーの露出を起点に、同社の拡張機能マーケットプレイスで悪意あるAnthropic.claude-codeが配布された侵害を公表した。対象版2.1.312と2.1.313は10月29日に約11時間公開され、最大5,000人が取得した可能性がある。",
+        "攻撃者は共有用の読み取り専用バケットから、Privacy Mode外で主に2025年に記録されたコーディングエージェントのトレースをコピーした。一部に未マスクのAPI認証情報があり、これを足掛かりに限定的な社内SaaSツール、アーカイブ済み非本番コード、サポート情報や連絡先情報などへ到達したとCursorは説明している。",
+        "悪意あるJavaScriptは端末情報を収集し、攻撃者のSSH鍵の追加、SSH有効化、リバーストンネルの永続化を試みた。Cursorは対象拡張機能を削除し、認証情報をローテーション、マーケットプレイスを再構築して推論トラフィックをFireworksから移行した。Privacy Modeのコードとプロンプト、顧客コードリポジトリ、本番基盤、公式アプリ更新は影響を受けなかったとしている。"
+      ],
+      "comment": "これはCursor本体の公式更新配布が改ざんされた事案ではなく、固定された時間帯にマーケットプレイスのキャッシュから配られた拡張機能の侵害である。対象版を導入・更新した端末では、単に拡張機能を削除するだけでは残存するSSH鍵や永続化スクリプトを除去できない可能性があるため、Cursorが案内する侵害指標の確認、隔離、鍵・セッションのローテーションが必要になる。侵害の経路には、学習利用が許可された過去のエージェント・トレースと、その中に残った認証情報が関わった。Cursorの公表値は、Privacy Modeを使っていないユーザーのトレース露出が0.05%未満、API認証情報露出が顧客の0.01%未満であり、対象範囲を限定している。",
+      "articleDetail": {
+        "conclusion": "Cursorのマーケットプレイスで配布された2版のClaude Code拡張機能を10月29日の公開時間帯に導入または更新した利用者は、端末上の侵害指標と認証情報を確認する必要がある。",
+        "facts": [
+          "悪意あるAnthropic.claude-code 2.1.312、2.1.313は約11時間公開され、最大5,000人が受け取った可能性がある。",
+          "Cursorによると、露出したのはPrivacy Mode外の主に2025年のトレースで、未マスクのAPI認証情報から限定的な社内SaaSツールへ到達された。",
+          "取得されたデータには、アーカイブ済み非本番リポジトリ、限定的なサポート情報とメール、利用指標と連絡先、会話要約、サポートへ共有された認証情報が含まれる。"
+        ],
+        "background": [
+          "Cursorは、Anthropicの正規拡張機能とOpen VSXにはマルウェアが存在しなかったと説明している。",
+          "Cursorは、Privacy Modeを使っていないユーザーのトレース露出を0.05%未満、API認証情報露出を顧客の0.01%未満と公表した。"
+        ],
+        "explanation": [
+          "対象のJavaScriptは端末情報を集め、攻撃者のSSH公開鍵追加、ローカルSSHサービス有効化、リバースSSHトンネルと永続化を試みた。Cursorの当初の通知では、管理者権限がない多くのmacOS・Windows端末ではSSH有効化が失敗し得るとしている。"
+        ],
+        "implications": [
+          "対象版を導入した端末は、アンインストールだけでは十分でない場合がある。Cursorは侵害指標の検索、兆候のある端末の隔離、SSH鍵・永続化・トンネルプロセスの除去、信頼できる端末からの認証情報とセッションのローテーションを案内している。"
+        ],
+        "caveats": [
+          "最大5,000人は、公開時間中に対象キャッシュ版を要求した利用者数に基づく上限の推計で、実際のペイロード実行台数を示す数字ではない。",
+          "影響を受けなかった範囲と封じ込め状況はCursorの調査結果に基づく説明であり、同社は異常活動の監視を継続している。"
+        ],
+        "nextChecks": [
+          "組織内で10月29日にCursorのVS Code拡張機能マーケットプレイスからWindowsまたはmacOS向け2.1.312、2.1.313を導入・更新した端末がないか、拡張機能管理と端末テレメトリーで照合する。",
+          "対象端末ではCursorのsecurity noticeにあるSSH鍵コメント「svc-telemetry」などの侵害指標を確認し、検出時は同社の修復手順に従う。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AIコーディング支援の拡張機能配布経路が侵害され、開発端末にSSHバックドアを残そうとした事例として、対象版を使った個人・組織に具体的な確認作業が生じている。",
+        "currentReaction": "BleepingComputerの記事ページは確認時点でコメント0件と表示されています。Cursorは影響した顧客とチーム管理者へ個別通知を開始したと公表しています。",
+        "assessment": "妥当",
+        "assessmentComment": "影響を受け得る拡張機能の版、公開時間、侵害指標と修復手順がCursorから示されており、対象利用者の点検を促す材料がある。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {},
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-15T07:49:56+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputer記事とCursorの一次資料をテキストで確認。取得制限は発生しなかった。"
+      }
+    },
+    {
+      "id": "2026-11-15-facestealer-disruption",
+      "title": "FaceStealerの基盤を差し押さえ、偽会議型の暗号資産窃取を遮断",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/us-disrupts-north-korean-campaign-behind-400-million-crypto-theft/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-15T00:15:49+09:00",
+      "collectedAt": "2026-11-15T08:01:49+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "米司法省とFBIは11月12日、北朝鮮系とするFaceStealerのクラウド基盤を連邦令状で差し押さえたと発表した。FBIによれば、このソーシャルエンジニアリング・キャンペーンは過去18か月に4億ドル超の暗号資産窃取につながり、被害者のウェブカメラ動画900件超も差し押さえられた。",
+        "攻撃者は既に侵害した人物の連絡用アカウントを使って知人を会議へ誘い、録画映像や人工的に生成した映像で本人らしく見せる。会議中に音声不具合などの偽のエラーを示し、修正用リンクやプロンプトからマルウェアを導入させ、次のアカウント侵害と暗号資産窃取へつなげる構図だ。",
+        "司法省の発表は、FaceStealerとは別件としてTraderTraitorによるBinanceからの窃取への資産追跡も併記した。BleepingComputerはこの措置を11月14日に報道したが、FaceStealerの被害額、手法、帰属は司法省とFBIの公表内容に基づく。"
+      ],
+      "comment": "今回の措置で対象となったのは、単に偽の会議画面を配るサイトではなく、侵害済みの連絡先と録画映像を次の標的へ回す連鎖の基盤である。FBIはこの活動をSapphire Sleet、UNC1069、APT38、BlueNoroffなどの民間呼称でも知られる北朝鮮系の集団に帰属している。暗号資産・Web3の関係者だけでなく、オープンソースの開発者や保守者の端末・リポジトリアカウントも標的化が試みられたとされ、金銭窃取とソフトウェア供給網への侵入は同じ信頼関係の悪用から始まり得る。",
+      "articleDetail": {
+        "conclusion": "FaceStealerのクラウド基盤への法執行措置は、知人を装う偽会議を入口にした暗号資産窃取の連鎖を対象にした。",
+        "facts": [
+          "司法省は2026年11月12日、FaceStealerに用いられたクラウド基盤の差し押さえと、被害額が過去18か月で4億ドル超に上ることを発表した。",
+          "FBIは連邦令状に基づき、被害者のウェブカメラ動画900件超を差し押さえたと公表した。",
+          "攻撃者は過去の被害者から奪った連絡用アカウントで会議招待を送り、録画映像または人工的に生成した映像を表示した。"
+        ],
+        "background": [
+          "FBIはFaceStealerを、Sapphire Sleet、UNC1069、APT38、BlueNoroffなどの名称でも知られる北朝鮮のハッカーに帰属している。",
+          "司法省発表では、FaceStealerとTraderTraitorによるBinanceからの資産窃取は別の事案として扱われている。"
+        ],
+        "explanation": [
+          "偽会議で示す音声などの技術的エラーの『修正』を促すリンクやプロンプトが端末侵害の入口となり、侵害後は暗号資産や連絡先、通信アカウントへのアクセスが狙われる。",
+          "新たに侵害した相手の映像と連絡先を次のなりすましに使えるため、個別の偽会議が標的拡大の材料になる。"
+        ],
+        "implications": [
+          "FBIは、暗号資産・Web3分野に加え、オープンソースのソフトウェア開発者と保守者の端末およびリポジトリアカウントが標的化されていると説明している。"
+        ],
+        "caveats": [
+          "被害額と帰属は米司法省・FBIの公表に基づく。当局は差し押さえたクラウド基盤の全容や被害者数をこの発表では明らかにしていない。",
+          "BleepingComputerの原記事は取得制限で本文を確認できなかったため、具体的な事実は司法省とFBIの公開情報で照合した。"
+        ],
+        "nextChecks": [
+          "FBIのFLASHで公開された侵害後の対応手順と指標を確認し、組織の会議招待・認証運用に反映できる内容を切り分ける。",
+          "法執行機関が今後公表する差し押さえ基盤の範囲、被害者支援、資産回収の進展を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "知人を装う映像会議を足掛かりに、端末侵害、アカウント乗っ取り、次のなりすましを連鎖させる手法への法執行措置である。",
+        "currentReaction": "BleepingComputerの記事は取得制限で本文確認ができませんでしたが、司法省とFBIは11月12日に措置と被害規模を公表しています。",
+        "assessment": "妥当",
+        "assessmentComment": "4億ドル超の被害額と900件超の映像差し押さえという当局公表の規模に加え、暗号資産とオープンソース供給網の双方を標的にしているため、注意を要する。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-15T08:01:49+09:00",
+        "httpStatus": 403,
+        "note": "BleepingComputer本文は取得制限のため、司法省・FBIの公開情報と二次報道で事実を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-15-antigravity-teamwork",
+      "title": "Antigravityの/teamwork、研究向けマルチエージェント機能を外部提供",
+      "sourceUrl": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+      "sourceName": "Google Research",
+      "publishedAt": "2026-11-14T13:20:43Z",
+      "collectedAt": "2026-11-15T08:06:06+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "テクノロジー",
+        "科学・医療"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Google Researchは、Antigravityのマルチエージェント機能「/teamwork」とGemini 4を、外部の科学者・開発者が使えるようにしたと発表した。研究向けの長期タスクで、役割を分けたエージェントと検証器を組み合わせる設計を前面に出している。",
+        "同社は成果例として、情報理論のCourtade–Kumar予想の証明をLean 4で5,000万行に形式化したこと、Weil予想の機械検査付き形式化を約180万行のLeanと28,800回のサブエージェント呼び出しで作成したことを挙げた。STOC 2027では、578件の投稿の著者がDeep Reviewのフィードバックを受け取ることを選んだという。",
+        "利用面では、AntigravityでGemini 4モデル、/teamwork、/boostを利用でき、Deep Reviewも利用できる。さらにGoogleは、学術研究者1万人を対象に最上位利用枠を6か月無料で提供する申請を開始した。個々の数学的成果や外部利用時の性能は、Googleの記事中の説明であり、独立した再現や査読の状況はこの記事だけでは示されていない。"
+      ],
+      "comment": "この発表の中心は、単一モデルの回答精度ではなく、探索担当、批判担当、形式検証器を分離して長期タスクを回す実行構成にある。Lean 4のようにカーネルが検査できる成果では、生成した文章のもっともらしさではなく、形式化した定理がコンパイルすることを検証の出口にできる。一方、論文の意味づけや定理の定式化が元の問題と一致するかは人間の確認がなお必要である。Deep Reviewと学術向け利用枠の提供により、この構成を研究レビューや開発作業へ試せる範囲を広げるものの、記事で示された数値はGoogleの報告であり、外部利用で同じ規模や結果が得られることを示すものではない。",
+      "articleDetail": {
+        "conclusion": "Google Researchは、Antigravityの/teamworkをGemini 4と組み合わせ、研究・開発向けのマルチエージェント機能として外部提供した。",
+        "facts": [
+          "Googleの記事は、Courtade–Kumar予想の証明をLean 4で5,000万行のコードに形式化したと説明している。",
+          "同記事は、Weil予想の機械検査付き形式化を約180万行のLeanと28,800回のサブエージェント呼び出しで作成したと説明している。",
+          "STOC 2027では578件の投稿の著者がDeep Reviewのフィードバックを受け取ることを選択したと、Googleは説明している。",
+          "Googleは1万人の学術研究者に最上位利用枠を6か月無料で提供する申請を開始した。"
+        ],
+        "background": [
+          "/teamworkは、並列探索に加え、Lean 4の証明チェッカーや既存テストなどを候補解の検証器として使う設計だと記事は説明する。",
+          "形式検証では、形式化された定理と証明コードをカーネルが検査できるが、定理の形式化が元の問題を正しく表すかは別の確認になる。"
+        ],
+        "explanation": [
+          "Googleは、専門化したエージェントへ必要なファイルとツールだけを渡し、調整役が新しい後継エージェントへ作業を引き継ぐことで、長期タスクでの文脈の拡散を抑えるとしている。"
+        ],
+        "implications": [
+          "Googleは、AntigravityでGemini 4モデル、/teamwork、/boostを利用でき、Deep Reviewも利用できると案内している。"
+        ],
+        "caveats": [
+          "成果の規模と提供条件はGoogle Researchの記事に基づく。外部の独立検証、査読、利用時の再現性は同記事だけからは判断できない。"
+        ],
+        "nextChecks": [
+          "公開されたチュートリアル、正式な利用条件、研究成果の論文・形式化コードが示されるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "形式証明、文書レビュー、開発作業を同じマルチエージェント構成で扱うとしており、研究向けAIの検証経路と提供範囲を具体的な数値で示した。",
+        "currentReaction": "Hacker Newsでは同じGoogle Research記事への投稿を確認しましたが、本文では反響数を事実として扱いません。",
+        "assessment": "判断には早い",
+        "assessmentComment": "Googleが挙げる成果と提供開始は確認できる一方、外部利用での性能、再現性、研究成果の独立評価はこの発表だけでは確定しない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-15T08:06:06+09:00",
+        "httpStatus": 200,
+        "note": "Google Researchの公開ページを取得し、本文と表示日を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-15-ai-skills-discussion",
+      "title": "AI時代に個人が学ぶ具体的スキルは何か、Hacker Newsで議論",
+      "sourceUrl": "https://news.ycombinator.com/item?id=50494696",
+      "sourceName": "Hacker News",
+      "publishedAt": "2026-11-14T15:56:42+09:00",
+      "collectedAt": "2026-11-15T07:35:00+09:00",
+      "editionDate": "2026-11-15",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Hacker Newsで、LLMやエージェントの進展を個人の経済的機会につなげるため、何を具体的に学ぶべきかという質問が投稿されました。質問者は、学位課程を前提にせず、既にある程度の技術的背景を持つ人が実験を通じて身に付けられる内容を求めています。",
+        "AIを使う技能は、モデルや製品の操作だけではありません。目的を小さな作業へ分け、入力に含めてよいデータを判断し、出力を検証して失敗を戻せる手順を作ることが、実務での利用範囲を左右します。",
+        "この投稿は教育制度や雇用の結論を示すものではなく、特定コミュニティの問いかけです。ただ、変化の速い道具を扱う際に、何を製品固有の知識として学び、何を持続する判断力として育てるかを考える入口になります。"
+      ],
+      "comment": "新しいAI製品が次々に現れる環境では、個々の操作方法だけを最適化すると、更新のたびに学習投資が失われやすくなります。より再利用しやすいのは、依頼を成功条件と制約へ分解すること、結果を原資料やテストで確かめること、機密情報をどこまで渡せるかを判断することです。これはAI専用の技能ではなく、従来の自動化やレビューにも通じる作業設計です。一方で、個人の学習機会がそのまま雇用上の優位へ変わるとは限りません。仕事での価値は、ツールを使った事実だけでなく、責任を持って成果を運用へ組み込めるかで決まります。学習では小さな対象から始め、入力、期待する出力、確認方法を残すと、成功と失敗の両方を次の作業へ持ち越せます。",
+      "articleDetail": {
+        "conclusion": "AI時代に個人が学ぶ具体的技能を問うHacker Newsの投稿が、実務的な学び方を考える入口になっています。",
+        "facts": [
+          "投稿はLLMやエージェントに関連する具体的スキルを尋ねています。",
+          "質問者は学位なしで学べる方法を前提にしています。"
+        ],
+        "background": [
+          "AIツールは更新が速く、製品固有の操作と一般的な問題解決力を分けて考える必要があります。"
+        ],
+        "explanation": [
+          "入力の制約、出力の確認、失敗時の戻し方を設計できると、ツールが変わっても作業を移しやすくなります。"
+        ],
+        "implications": [
+          "個人の学習では、試作と検証の記録を残すことが技能の再現性を高めます。"
+        ],
+        "caveats": [
+          "投稿とコメントは特定コミュニティの意見であり、一般的な雇用動向を示す調査ではありません。"
+        ],
+        "nextChecks": [
+          "実際の職務で求められる技能と、教育・訓練の提供状況を別の調査で確認します。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AI利用を個人の学びと仕事の設計に結び付ける具体的な問いが共有されたためです。",
+        "currentReaction": "Hacker News上の質問投稿であり、数値を一般的な世論指標としては扱いません。",
+        "assessment": "妥当",
+        "assessmentComment": "製品宣伝ではなく、学び方と検証の仕組みを考える入口として位置付けます。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {},
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-15T07:35:00+09:00",
+        "httpStatus": 200
+      }
+    }
+  ]
+}
