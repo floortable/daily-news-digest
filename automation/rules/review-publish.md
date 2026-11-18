@@ -4,6 +4,8 @@
 
 ## 監査、音声、公開
 
+復旧と差し戻しでも執筆工程の完了ゲートは省略しない。各記事を素材抽出、執筆、単体検証、記事単位監査まで完結して凍結してから次の記事へ進み、版全体のassembleへ進むための一括執筆は行わない。
+
 全記事の単体検証と記事単位監査が通過したら、`npm run edition:assemble -- --date YYYY-MM-DD`で版JSONを結合し、`npm run validate:data`を通す。主担当は版JSONを直接編集しない。レビュー指摘の修正は該当する個別記事ファイルだけに行い、assembleと検証を再実行する。続けて`npm run media:script -- --date YYYY-MM-DD --audit-only`を実行する。レビュー専用モードではVOICEVOX設定と発音辞書を読まず、内容確認用の仮話者だけで台本を作る。続けて`npm run media:audit-bundle -- --date YYYY-MM-DD`を実行する。レビューバンドルは全記事の概要と結論を含み、全文精査はTop 5、機械的なリスク記事、その日の年月日から決める非Top 5の5件サンプルに限定する。独立編集レビューは`docs/editorial-audit-rubric.md`だけを基準にする。
 
 assembleの後、公開前に`npm run edition:verify-published-at -- --date YYYY-MM-DD`を実行する。mismatchは一次資料の時刻に合わせて個別記事を修正し、assembleからやり直す。unverifiableはその旨をレビュー記録に残す。
