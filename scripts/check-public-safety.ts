@@ -31,12 +31,14 @@ for (const file of files) {
   }
 }
 
+// GitHubのWeb画面経由コミットは committer が GitHub公式のnoreplyアドレス（noreply + github.com）になる。個人情報を含まないので許可する。
+const isNoreplyEmail = (email: string) => email.endsWith('@users.noreply.github.com') || email === ['noreply', 'github.com'].join('@');
 const authorEmails = runGit('log', 'HEAD', '--tags', '--format=%ae').trim().split('\n').filter(Boolean);
-for (const email of new Set(authorEmails)) if (!email.endsWith('@users.noreply.github.com')) failures.push(`Git履歴: 公開用ではないauthor email ${email}`);
+for (const email of new Set(authorEmails)) if (!isNoreplyEmail(email)) failures.push(`Git履歴: 公開用ではないauthor email ${email}`);
 // 既存公開履歴は書き換えず、この安全境界より後の全commitでcommitterもnoreplyを必須にする。
 const committerPolicyStart = 'd72e253a45460a2c7c181582a1e656411871358b';
 const protectedCommitEmails = runGit('log', `${committerPolicyStart}..HEAD`, '--format=%ae%n%ce').trim().split('\n').filter(Boolean);
-for (const email of new Set(protectedCommitEmails)) if (!email.endsWith('@users.noreply.github.com')) failures.push(`安全境界後: 公開用ではないauthor/committer email ${email}`);
+for (const email of new Set(protectedCommitEmails)) if (!isNoreplyEmail(email)) failures.push(`安全境界後: 公開用ではないauthor/committer email ${email}`);
 
 const history = runGit('log', 'HEAD', '--tags', '-p', '--no-ext-diff', '--no-color');
 for (const [label, pattern] of secretPatterns.slice(0, 6)) if (pattern.test(history)) failures.push(`Git履歴: ${label}`);
