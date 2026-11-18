@@ -22,6 +22,6 @@ jobs:
       - run: npm run check:free-tier
       - run: npm run check:licenses
       - run: npm run check:public-safety
-      - run: npm audit --omit=dev --audit-level=high
+      - run: node scripts/check-audit.mjs
       - run: npm test
       - run: npm run build
