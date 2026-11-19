@@ -107,6 +107,33 @@ export function assertLatinNumberPronunciations(texts: string[], dictionary: Rec
   }
 }
 
+export function findUnpronouncedDigitLetterTerms(text: string, dictionary: Record<string, string>) {
+  // SEC form names such as "8-K" start with a digit, so the Latin-term scans,
+  // which require a leading letter, never see them. Read as-is, VOICEVOX reads
+  // the digit, pauses at the hyphen, and spells the letter, so every
+  // digit-initial hyphenated alphanumeric term needs a registered reading.
+  // Plain dates and ranges (digits joined only by hyphens and digits) and
+  // decimal or version numbers do not match: a letter must follow a hyphen.
+  const digitTerm = /(?<![A-Za-z0-9])\d+(?:-\d+)*-[A-Za-z][A-Za-z0-9]*(?:[.+#/_-][A-Za-z0-9]+)*/g;
+  const registeredRanges = findRegisteredLatinRanges(text, dictionary);
+  return [...new Set(
+    [...text.matchAll(digitTerm)]
+      .filter((match) => !dictionary[match[0]])
+      .filter((match) => !isCoveredByRange(match.index!, match.index! + match[0].length, registeredRanges))
+      .map((match) => match[0]),
+  )];
+}
+
+export function assertDigitLetterPronunciations(texts: string[], dictionary: Record<string, string>) {
+  const terms = [...new Set(texts.flatMap((text) => findUnpronouncedDigitLetterTerms(text, dictionary)))];
+  if (terms.length) {
+    throw new Error(
+      `数字で始まる英数字の固有名詞に確認済みの読みがありません: ${terms.join(', ')}。`
+      + '数字と英字を含む複合形をconfig/pronunciations.jsonへ登録してください。',
+    );
+  }
+}
+
 export function findKatakanaNumberTerms(text: string) {
   // Exclude common counter and currency suffixes so, for example, 「トークン8ドル」
   // remains ordinary prose rather than a product-name false positive.

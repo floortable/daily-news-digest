@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { readVoicevoxConfig } from './config';
 import { getDateArgument, readEdition } from './edition';
 import { buildNarrationPlan } from './narration';
-import { assertLatinPronunciations, readPronunciations } from './pronunciation';
+import { assertDigitLetterPronunciations, assertLatinPronunciations, readPronunciations } from './pronunciation';
 
 const edition = await readEdition(getDateArgument());
 const auditOnly = process.argv.includes('--audit-only');
@@ -22,6 +22,7 @@ const plan = buildNarrationPlan(
 if (!auditOnly) {
   const pronunciations = await readPronunciations();
   assertLatinPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
+  assertDigitLetterPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 }
 const outputDirectory = resolve('generated/media', edition.date);
 await mkdir(outputDirectory, { recursive: true });

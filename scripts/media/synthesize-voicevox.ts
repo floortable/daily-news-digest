@@ -6,6 +6,7 @@ import { getDateArgument, readEdition } from './edition';
 import { buildNarrationPlan } from './narration';
 import {
   applyPronunciations,
+  assertDigitLetterPronunciations,
   assertKatakanaNumberPronunciations,
   assertLatinCompoundPronunciations,
   assertLatinNumberPronunciations,
@@ -27,6 +28,7 @@ const pronunciations = await readPronunciations();
 assertLatinPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 assertLatinCompoundPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 assertLatinNumberPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
+assertDigitLetterPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 assertKatakanaNumberPronunciations(plan.segments.map((segment) => segment.text));
 assertSeparatedKatakanaPronunciations(plan.segments.map((segment) => segment.text), pronunciations);
 const outputDirectory = resolve('generated/media', edition.date, 'voice');

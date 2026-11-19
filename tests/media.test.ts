@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyPronunciations,
+  assertDigitLetterPronunciations,
   assertKatakanaNumberPronunciations,
   assertLatinCompoundPronunciations,
   assertLatinNumberPronunciations,
@@ -8,6 +9,7 @@ import {
   assertPronunciationContinuity,
   assertSeparatedKatakanaPronunciations,
   findKatakanaNumberTerms,
+  findUnpronouncedDigitLetterTerms,
   findUnpronouncedLatinNumberTerms,
   findUnpronouncedLatinCompoundTerms,
   findUnpronouncedLatinTerms,
@@ -140,6 +142,29 @@ describe('media publishing', () => {
   it('allows ordinary numeric expressions', () => {
     expect(() => assertLatinNumberPronunciations(['291ポイント、400億ドル、2027年に確認します。'], {}))
       .not.toThrow();
+  });
+
+  it('rejects digit-initial hyphenated terms without a registered reading', () => {
+    expect(findUnpronouncedDigitLetterTerms('決算資料を8-Kで公表した。', {}))
+      .toEqual(['8-K']);
+    expect(() => assertDigitLetterPronunciations(['決算資料を8-Kで公表した。'], {}))
+      .toThrow(/8-K/);
+  });
+
+  it('allows digit-initial terms with a registered reading or compound coverage', () => {
+    expect(findUnpronouncedDigitLetterTerms('決算資料を8-Kで公表した。', {
+      '8-K': 'エイトケー',
+    })).toEqual([]);
+    expect(findUnpronouncedDigitLetterTerms('決算資料をForm 8-Kに添付した。', {
+      'Form 8-K': 'フォームエイトケー',
+    })).toEqual([]);
+  });
+
+  it('allows dates, numeric ranges, and version numbers in digit-letter scans', () => {
+    expect(findUnpronouncedDigitLetterTerms('2026-11-19に2-3日かけて1.30.7へ更新した。', {}))
+      .toEqual([]);
+    expect(findUnpronouncedDigitLetterTerms('CVE-2026-123633とGPT-6.1を公表した。', {}))
+      .toEqual([]);
   });
 
   it('rejects katakana product names written directly next to a number', () => {
