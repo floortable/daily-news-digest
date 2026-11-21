@@ -330,3 +330,40 @@ describe('editorial compliance', () => {
     expect(editionSchema.safeParse(trendEdition).success).toBe(false);
   });
 });
+
+describe('Top 5 English version gate', () => {
+  const englishVersion = {
+    title: 'Example English title for a Top 5 article',
+    summary: [
+      'The first paragraph of the English summary describes the event itself, the actors involved, and the immediate outcome in plain newspaper English for readers.',
+      'The second paragraph covers the background, the key figures and numbers, and what remains uncertain at this point, matching the structure of the Japanese summary.',
+    ],
+    comment: 'This English editorial comment adds analysis beyond the summary, explaining why the development matters, which assumptions it rests on, and what concrete development to watch next.',
+  };
+
+  const top5Edition = (date: string, withEnglish: boolean) => {
+    const ed = JSON.parse(readFileSync('data/daily/2026-11-21.json', 'utf8'));
+    ed.date = date;
+    for (const article of ed.articles) {
+      article.editionDate = date;
+      article.publishedAt = `${date}T08:00:00+09:00`;
+      if (article.top5Rank !== null) {
+        if (withEnglish) article.englishVersion = structuredClone(englishVersion);
+        else delete article.englishVersion;
+      }
+    }
+    return ed;
+  };
+
+  it('accepts a 2026-11-22 edition whose Top 5 articles carry an English version', () => {
+    expect(editionSchema.safeParse(top5Edition('2026-11-22', true)).success).toBe(true);
+  });
+
+  it('rejects a 2026-11-22 edition whose Top 5 articles lack an English version', () => {
+    expect(editionSchema.safeParse(top5Edition('2026-11-22', false)).success).toBe(false);
+  });
+
+  it('accepts a 2026-11-21 edition without English versions (gate starts on 2026-11-22)', () => {
+    expect(editionSchema.safeParse(top5Edition('2026-11-21', false)).success).toBe(true);
+  });
+});

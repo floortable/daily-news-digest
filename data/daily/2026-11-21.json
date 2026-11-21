@@ -425,6 +425,15 @@
         "checkedAt": "2026-11-21T00:00:00.000Z",
         "httpStatus": 403,
         "note": "取得時はアクセス制限画面となったが、検索インデックスとF5公式アドバイザリで記事の主張を照合した。"
+      },
+      "englishVersion": {
+        "title": "F5 Ships Out-of-Band Fixes for Five BIG-IP Flaws That Could Lead to Unauthenticated RCE",
+        "summary": [
+          "F5 has released out-of-band engineering hotfixes for five serious vulnerabilities in BIG-IP that could allow an unauthenticated remote attacker to cause a denial of service or achieve remote code execution. The flaws are CVE-2026-121805, CVE-2026-120292, CVE-2026-120285, CVE-2026-116953, and CVE-2026-123637.",
+          "All five are stack-based buffer overflows that, under vulnerable configurations, can terminate the Traffic Management Microkernel (TMM). Traffic is interrupted while TMM restarts. For CVE-2026-120292, F5 describes the issue as a data-plane problem with no control-plane exposure.",
+          "The impact is not uniform: the flaws surface only under the configuration conditions spelled out in F5's advisories, such as virtual servers with an HTTP profile and specific iRules, or APM per-request policies that include the Client Information agent and Endpoint Security agents. No exploitation had been reported at the time of coverage, and F5 offered no mitigation, directing users to apply the hotfixes."
+        ],
+        "comment": "What makes triage difficult here is that severity alone does not put every BIG-IP deployment at the same priority. F5's advisories specify trigger conditions: for CVE-2026-120292, an HTTP profile plus an iRule using MR::message routes; for CVE-2026-120285, an HTTP profile plus an iRule containing PSC::ip_address. CVE-2026-123637 likewise requires APM to be provisioned, with a per-request policy containing the specified agents applied to a virtual server. Where those conditions hold, a TMM stoppage translates directly into a traffic outage, with the possibility of RCE on top. F5, meanwhile, offers no mitigation and notes that engineering hotfixes do not receive the same breadth of quality-assurance evaluation as regular scheduled software. Operationally, the first step is therefore not estimating exposed counts but matching your own configurations and affected versions, and weighing the outage risk and the hotfix risk within the same change decision."
       }
     },
     {
@@ -510,6 +519,15 @@
         "checkedAt": "2026-11-20T22:20:27.000Z",
         "httpStatus": 403,
         "note": "取得時はHTTP 403だったが、検索インデックスで記事本文と掲載時刻を照合した。"
+      },
+      "englishVersion": {
+        "title": "Bell Canada Says Corporate Customer Data Was Taken in Maximo Breach",
+        "summary": [
+          "Bell Canada has disclosed that an attacker accessed some of its systems, including a pre-production Maximo environment used for ordering and provisioning lines, in a breach that occurred on November 17, and took corporate customer data. The company says it has contained the breach and that there is no impact on customer services.",
+          "According to the customer notification, the data that may have been taken includes names, job titles, corporate email addresses, phone numbers, work addresses, ticket subjects, some IP addresses, and limited contextual information. Credentials, highly sensitive personal information, PDFs, and attachments were not part of the affected dataset, the company says.",
+          "Bell Canada says it has shared indicators of compromise and threat-hunting information with corporate customers and the Canadian Centre for Cyber Security, but has not published the indicators publicly. Attribution, the number of companies affected, and the total volume of data taken have not been disclosed."
+        ],
+        "comment": "The impact here is not an outage of telecom services; it is the possibility that business-to-business contact and work context accumulated in a pre-production ordering and provisioning environment has left the company. Because the data may include not only names and corporate email addresses but also ticket subjects and some IP addresses tied to network elements, it could be used for impersonation or targeted approaches. The customer notification itself warns recipients to watch for unexpected requests and social engineering from people posing as the carrier. While Bell Canada says customer services are unaffected and that credentials and attachments were not involved, it has not disclosed how many companies were affected, how much data was taken, or who was responsible. The indicators have been shared with corporate customers and the Canadian Centre for Cyber Security but are not public, so for now the organizations that received notifications are the ones best placed to check for related activity in their own environments."
       }
     },
     {
@@ -593,6 +611,15 @@
         "checkedAt": "2026-11-21T08:18:17+09:00",
         "httpStatus": 403,
         "note": "TechCrunch本文は取得環境から403だったため、検索経由で同媒体の記事本文を確認した。"
+      },
+      "englishVersion": {
+        "title": "Two Claims on the Riemann Hypothesis Side by Side: a Lean Formalization and a 12-Year Human Draft",
+        "summary": [
+          "Levent Alpöge, a mathematician at Anthropic, has announced that he found a Lean-compilable solution to the Riemann hypothesis. Around the same time, Ravi Vakil published a draft by Alessandro Masullo, said to represent 12 years of work without AI, on the generalized Riemann hypothesis. On a long-unsolved problem, a formalized claim and a human-written draft now stand side by side.",
+          "Alpöge's claim grew out of a process that included exploration with Claude, and it rests on formal verifiability in Lean. The report notes, however, that mathematicians are still working through the content on Zulip, and that it will take time before the proof can be understood and explained by humans.",
+          "What has been reported so far is not a confirmed resolution, but the publication of two proof claims arrived at by different routes. Alpöge says he is pursuing a human-readable explanation, and Masullo's draft, too, was originally meant to be published only after more thorough review."
+        ],
+        "comment": "The two announcements concern different objects — the Riemann hypothesis and its generalization — and their evidence travels by different paths. In Alpöge's claim, the formal core is that an argument developed through exploration with Claude has been made compilable in Lean. Masullo's draft, by contrast, is said to have taken 12 years without AI, and Vakil himself noted that the plan had been to have more people read it and polish the writing before publication. The question here is not whether AI has beaten humans. A formalization going through, human experts being able to read and explain the argument, and the work being shared in a form others can examine are separate stages. Reporting that experts on Zulip are tracing a large body of theory shows that acceptance does not end with the first of these. The value ahead lies not only in which claim is settled first, but in how formal verification and human-readable proof can be connected."
       }
     },
     {
@@ -672,6 +699,15 @@
         "references": [
           "https://openai.com/index/combatting-adversarial-distillation/"
         ]
+      },
+      "englishVersion": {
+        "title": "OpenAI Defense Cuts Reasoning-Trace Extraction Success from 54.0% to 0.2%",
+        "summary": [
+          "OpenAI has published its defenses against adversarial distillation, in which a model's outputs are used without authorization to train another model, potentially replicating capabilities without the original safeguards. On GPT-6.2 Astra, the company says, the average success rate of extraction attacks against protected reasoning on past requests fell to 0.2%, from 54.0% under the previous defenses on GPT-6 Astra.",
+          "The defenses combine model behavior, input and output classifiers, and API controls with investigation and enforcement against coordinated extraction campaigns. The output classifier inspects assistant messages and tool-call arguments and blocks reasoning leakage before it reaches the caller, according to OpenAI.",
+          "The figures come from an internal adaptive black-box evaluation aggregated across six attack models; they do not directly state a leakage rate in production. OpenAI says it will continue researching what additional capability accurate reasoning traces can transfer to different models and distillation methods."
+        ],
+        "comment": "Distillation transfers capability to a student model using a teacher model's answers and reasoning as training data. The focus here is that if accurate reasoning traces — which can carry information not present in the final answer — are obtained, dual-use capabilities such as cybersecurity knowledge could be transferred without the original usage restrictions. OpenAI places not only per-request blocking but also a layer that detects coordinated extraction from request and account signals. It says it confirmed multiple unauthorized distillation campaigns during 2026, with weekly enforcement reaching thousands to tens of thousands of accounts, positioning this as an operational problem that single-prompt defenses cannot handle. For extraction from current requests, the same metric reportedly fell from 22.9% to 0.9%. On GPT-6.2 Astra and Sol, reasoning is bound to the conversation history in which it was generated, and the API discards subsequent reasoning after earlier messages are rewritten, closing the path of reading reasoning out of older model histories as well."
       }
     },
     {
@@ -766,6 +802,15 @@
         "checkedAt": "2026-11-21T08:13:03+09:00",
         "httpStatus": 200,
         "note": "IPAの一次資料と、同ページが参照するOracleの2026年11月Risk Matrixを確認した。"
+      },
+      "englishVersion": {
+        "title": "Oracle Java November Update Fixes CVE-2026-114938, Exploitable Without Authentication",
+        "summary": [
+          "Japan's IPA called on November 18 for prompt application of Oracle Java security updates. In Oracle's November 2026 Risk Matrix, CVE-2026-114938 is listed as a vulnerability in Java SE's Compiler component that can be exploited over the network without authentication.",
+          "The CVE carries a CVSS v3.1 base score of 8.1, with Oracle marking privileges required as High, user interaction as None, and impacts on confidentiality, integrity, and availability as High. IPA warns that exploitation could crash the application and allow an attacker to take control of the computer.",
+          "Oracle's per-CVE row lists Java SE 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, and 27.0.1.0.3 as affected. IPA's list of versions covered by the update, however, also includes 11.0.33.0.3 and 8 Update 511b33, so the scope of the update as a whole and the scope of CVE-2026-114938 need to be checked separately."
+        ],
+        "comment": "What makes the judgment difficult is that the set of versions covered by the update and the set affected by this individual CVE are not the same. IPA lists several updated releases, including Java SE 11.0.33.0.3 and 8 Update 511b33, while Oracle's row for CVE-2026-114938 names 8u511b33-perf, 17.0.21.0.3, 21.0.13.0.3, 25.0.5.0.3, and 27.0.1.0.3. Ignoring that difference and treating the matter as simply 'the November update has been applied' risks mismatching the exposure assessment and the patch. Oracle also describes all 11 new Java SE patches as remotely exploitable without authentication; CVE-2026-114938 is the one among them that is network-reachable with no user interaction and scores 8.1. Once the affected versions are identified, the update decision for runtime environments that include the Compiler component should come first. Oracle's CVSS notes also assume Java applets or Java Web Start running with administrator privileges, so the actual execution privileges affect the risk judgment as well."
       }
     },
     {

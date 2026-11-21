@@ -188,6 +188,12 @@ export const articleSchema = z.object({
     .refine((paragraphs) => paragraphs.join('').length >= 140, '独自要約は合計140文字以上必要です'),
   comment: z.string().min(20, '独自解説には概要にない具体的な理解を加えてください').max(1000),
   articleDetail: articleDetailSchema.optional(),
+  // Top 5 の英語学習用バージョン（タイトル・要約・編集コメント）。2026-11-22以降の版では Top 5 に必須（版スキーマ側で期日ゲート）。
+  englishVersion: z.object({
+    title: z.string().min(1).max(220),
+    summary: z.array(z.string().min(1).max(1500)).min(2).max(3),
+    comment: z.string().min(100).max(3000),
+  }).strict().optional(),
   vcfReview: vcfReviewSchema.optional(),
   mediaTrend: mediaTrendSchema.optional(),
   attentionAnalysis: z.object({
@@ -277,6 +283,13 @@ export const editionSchema = z.object({
 }).strict().superRefine((edition, ctx) => {
   if (edition.date >= '2026-10-26' && edition.contentCompliance.policyVersion !== 2) {
     ctx.addIssue({ code: 'custom', path: ['contentCompliance', 'policyVersion'], message: '2026-10-26以降は内容充実方針v2が必要です' });
+  }
+  if (edition.date >= '2026-11-22') {
+    for (const [index, article] of edition.articles.entries()) {
+      if (article.top5Rank !== null && !article.englishVersion) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, 'englishVersion'], message: '2026-11-22以降のTop 5記事には英語版（englishVersion）が必要です' });
+      }
+    }
   }
   const ids = new Set<string>();
   const urls = new Set<string>();
