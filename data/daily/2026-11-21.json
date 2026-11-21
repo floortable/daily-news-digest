@@ -1,0 +1,1447 @@
+{
+  "date": "2026-11-21",
+  "generatedAt": "2026-11-21T08:59:26+09:00",
+  "selectionShortfallReason": "候補42件と横断監視を照合し、既報と重複するVMSA・Cisco・N-ableは再掲せず、一次資料または公式資料で中心事実を確認できる19件を採用した。うち4件（third-party-finance-breach、ukraine-fbi-ransomware、windows-11-26h2-auto、windows-kb5132057）は ChatGPT Plus 利用上限（08:48、再開11:57 AM）により記事単位セッションが起動できず未執筆のため、確定台帳で deferred へ変更し、15件で版を完成させる。技術・セキュリティが多いのは、CISA KEV、JVN、F5、IPAの重要な更新が同日に集中したためである。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "checkedAt": "2026-11-21T08:53:17+09:00",
+        "status": "checked",
+        "note": "Hacker Newsの対象期間内の投稿とリンク先を確認した。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "checkedAt": "2026-11-21T08:53:19+09:00",
+        "status": "checked",
+        "note": "国内横断媒体の公開ページを対象期間について確認した。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "checkedAt": "2026-11-21T08:53:21+09:00",
+        "status": "checked",
+        "note": "動画・ネット文化の公開ランキングを対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "checkedAt": "2026-11-21T08:53:23+09:00",
+        "status": "restricted",
+        "note": "ReutersはHTTP 401で本文を確認できなかったため、他の一次資料と媒体で補完した。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "checkedAt": "2026-11-21T08:53:24+09:00",
+        "status": "checked",
+        "note": "OpenAI公式更新を確認し、Adversarial Distillationの公表を記録した。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "checkedAt": "2026-11-21T08:53:26+09:00",
+        "status": "checked",
+        "note": "Anthropic公式更新と稼働状況を確認した。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "checkedAt": "2026-11-21T08:53:28+09:00",
+        "status": "checked",
+        "note": "Google AI・DeepMind公式更新を確認した。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "checkedAt": "2026-11-21T08:53:30+09:00",
+        "status": "checked",
+        "note": "Microsoft、Meta、NVIDIAの公式AI更新を確認した。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "checkedAt": "2026-11-21T08:53:32+09:00",
+        "status": "checked",
+        "note": "AI企業の提供条件・事業更新を確認した。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "checkedAt": "2026-11-21T08:53:33+09:00",
+        "status": "checked",
+        "note": "CISA KEVとNVDの公開情報を確認した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "checkedAt": "2026-11-21T08:53:35+09:00",
+        "status": "checked",
+        "note": "CERT、JPCERT/CC、IPAの注意喚起を確認した。",
+        "evidenceUrls": [
+          "https://www.ipa.go.jp/security/security-alert/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "checkedAt": "2026-11-21T08:53:37+09:00",
+        "status": "checked",
+        "note": "主要ベンダーとOSSのセキュリティ告知を確認した。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "checkedAt": "2026-11-21T08:53:39+09:00",
+        "status": "checked",
+        "note": "KEV JSONと国内脆弱性フィードを確認した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "checkedAt": "2026-11-21T08:53:41+09:00",
+        "status": "checked",
+        "note": "公開セキュリティ調査と侵害報道のフィードを確認した。",
+        "evidenceUrls": [
+          "https://www.bleepingcomputer.com/feed/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "checkedAt": "2026-11-21T08:53:42+09:00",
+        "status": "checked",
+        "note": "主要プロジェクトと製品ベンダーの個別告知を確認した。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "checkedAt": "2026-11-21T08:53:44+09:00",
+        "status": "checked",
+        "note": "Synologyのセキュリティ告知と製品警告を確認した。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "checkedAt": "2026-11-21T08:53:46+09:00",
+        "status": "checked",
+        "note": "VCF向けVMSAを確認し、VMSA-2026-0009の.1改訂は影響版の明確化であることを記録した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "checkedAt": "2026-11-21T08:53:48+09:00",
+        "status": "checked",
+        "note": "Application Networking and Security Advisoriesを確認した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "checkedAt": "2026-11-21T08:53:50+09:00",
+        "status": "restricted",
+        "note": "TechDocsは直接取得が制限された。KB 461219は公式KBで確認し、SRMの包含条件をfindingに記録した。",
+        "evidenceUrls": [
+          "https://techdocs.broadcom.com/",
+          "https://knowledge.broadcom.com/external/article/461219/access-to-vmware-site-recovery-manager-f.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "checkedAt": "2026-11-21T08:53:51+09:00",
+        "status": "checked",
+        "note": "VCF製品・ポートフォリオ公式更新を確認した。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "checkedAt": "2026-11-21T08:53:53+09:00",
+        "status": "checked",
+        "note": "国家サイバー統括室、戦略本部、IPAを確認し、IPAのOracle Java注意喚起を遅延掲載候補として評価した。",
+        "evidenceUrls": [
+          "https://www.ipa.go.jp/security/security-alert/2026/1118-jre.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "checkedAt": "2026-11-21T08:53:55+09:00",
+        "status": "checked",
+        "note": "Broadcomサービス状態の公開ページを確認した。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "checkedAt": "2026-11-21T08:53:57+09:00",
+        "status": "checked",
+        "note": "互換性と製品ライフサイクルの公開情報を確認した。",
+        "evidenceUrls": [
+          "https://compatibilityguide.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "checkedAt": "2026-11-21T08:53:59+09:00",
+        "status": "restricted",
+        "note": "AviのTechDocsは直接取得が制限されたため、確認不能として記録した。",
+        "evidenceUrls": [
+          "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "checkedAt": "2026-11-21T08:54:00+09:00",
+        "status": "restricted",
+        "note": "vDefend関連の公式ブログはHTTP 403で内容を確認できなかった。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/security/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "checkedAt": "2026-11-21T08:54:02+09:00",
+        "status": "checked",
+        "note": "William LamとDuncan Eppingの公開ブログを確認し、公式資料に反する新情報は見つからなかった。",
+        "evidenceUrls": [
+          "https://williamlam.com/",
+          "https://www.yellow-bricks.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "checkedAt": "2026-11-21T08:54:04+09:00",
+        "status": "checked",
+        "note": "運用者コミュニティの公開情報を確認した。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "checkedAt": "2026-11-21T08:54:06+09:00",
+        "status": "checked",
+        "note": "VCF連携ベンダーの公開更新を確認した。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "checkedAt": "2026-11-21T08:54:08+09:00",
+        "status": "checked",
+        "note": "競合・移行先の公式更新を確認した。対象期間の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "policyVersion": 1,
+    "checkedAt": "2026-11-21T08:59:26+09:00",
+    "findings": [
+      {
+        "title": "VMSA-2026-0009 revision .1",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "11月20日の.1改訂はVMware Toolsの影響版を明確化したもの。中心事案は前日版に掲載済みで、新規記事にはしない。"
+      },
+      {
+        "title": "SRM entitlement for VCF and VVF subscribers",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://knowledge.broadcom.com/external/article/461219/access-to-vmware-site-recovery-manager-f.html",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "KB 461219でSRM包含と既存契約者向けの移行条件を確認したが、対象期間内の新規発表ではないため記事化しない。"
+      },
+      {
+        "title": "Oracle Java November security update",
+        "area": "security",
+        "sourceId": "jp-gov-cyber-policy",
+        "url": "https://www.ipa.go.jp/security/security-alert/2026/1118-jre.html",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-21-oracle-java-november",
+        "reason": "IPAがCVE-2026-114938を含む更新の早急な適用を呼びかけており、未掲載の運用対応事項として遅延掲載する。"
+      },
+      {
+        "title": "Reuters の直接確認が不能（HTTP 401）",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.reuters.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Reuters は HTTP 401 で本文を直接確認できなかったため、他の一次資料と媒体で補完した。対象期間の主要ニュースは候補台帳と横断監視で捕捉済み。次版で再確認する。"
+      },
+      {
+        "title": "Avi Load Balancer の TechDocs 直接確認が不能",
+        "area": "vcf",
+        "sourceId": "vcf-avi",
+        "url": "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Avi の TechDocs は直接取得が制限されたため確認不能として記録した。VMSA・製品ブログ経路では対象期間の Avi 新規発表は確認されなかった。次版で再確認する。"
+      },
+      {
+        "title": "vDefend 関連の公式ブログ直接確認が不能（HTTP 403）",
+        "area": "vcf",
+        "sourceId": "vcf-vdefend",
+        "url": "https://blogs.vmware.com/security/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "vDefend 関連の公式ブログは HTTP 403 で内容を確認できなかったため確認不能として記録した。VMSA 経路では対象期間の vDefend 新規発表は確認されなかった。次版で再確認する。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-21-f5-big-ip-patches",
+      "title": "F5、BIG-IPの未認証RCEに至り得る5件を帯域外修正",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-20T10:57:43.000Z",
+      "collectedAt": "2026-11-21T00:00:00.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 1,
+      "narration": {
+        "sourceCheckedAt": "2026-11-21T00:00:00.000Z",
+        "script": [
+          "F5がBIG-IPの重大な脆弱性5件に、帯域外のengineering hotfixを公開しました。未認証のリモート攻撃者が、脆弱な構成ではトラフィック処理を担うTMMを停止させ、サービス妨害やRCEに至る可能性があります。",
+          "影響は全てのBIG-IPではなく、HTTPプロファイルと特定のiRule、PEM::subscriberを使うiRule、またはAPMの特定のper-request policyを仮想サーバーへ適用した構成で生じます。F5は緩和策なしとし、報道時点では悪用を確認していません。構成と対象バージョンをアドバイザリへ照合し、engineering hotfixの適用対象を切り分ける局面です。"
+        ],
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/f5-releases-emergency-patches-for-critical-big-ip-rce-flaws/",
+          "https://my.f5.com/manage/s/article/K000163940"
+        ]
+      },
+      "summary": [
+        "F5はBIG-IPで未認証のリモート攻撃者によるサービス妨害やRCEに至り得る重大な脆弱性5件に、帯域外のengineering hotfixを公開した。対象はCVE-2026-121805、CVE-2026-120292、CVE-2026-120285、CVE-2026-116953、CVE-2026-123637である。",
+        "5件はいずれもスタックベースのバッファオーバーフローで、脆弱な構成ではTraffic Management Microkernel（TMM）を終了させ得る。TMMの再起動中はトラフィックが中断される。CVE-2026-120292についてF5はデータプレーンの問題で、コントロールプレーンの露出はないと説明している。",
+        "影響は一律ではない。HTTPプロファイルと特定のiRuleを備えた仮想サーバー、またはClient Information agentとEndpoint Security agentsを含むAPMのper-request policyを適用した仮想サーバーなど、公式アドバイザリが示す構成条件で発現する。報道時点で悪用確認はなく、F5は緩和策なしとしてhotfix適用を案内した。"
+      ],
+      "comment": "今回の判断を難しくしているのは、重大度だけで全BIG-IPを同じ優先度にできない点だ。公式アドバイザリは、CVE-2026-120292ではHTTPプロファイルとMR::message routeを使うiRule、CVE-2026-120285ではHTTPプロファイルとPSC::ip_addressを含むiRuleという発現条件を示す。CVE-2026-123637も、APMをプロビジョニングし、指定のagentを含むper-request policyを仮想サーバーへ適用していることが条件になる。該当構成ならTMM停止はトラフィック中断に直結し、さらにRCEの可能性が重なる。一方、F5は緩和策を示しておらず、engineering hotfixは通常の予定ソフトウェアほど広範な品質保証評価を受けないとしている。したがって運用上は、外部露出数の推計ではなく、自組織の構成条件と対象バージョンを先に突き合わせ、停止リスクとhotfix適用リスクを同じ変更判断で扱う必要がある。",
+      "articleDetail": {
+        "conclusion": "F5は、条件に該当するBIG-IPで未認証RCEまたはサービス妨害に至り得る5件を帯域外hotfixで修正した。",
+        "facts": [
+          "F5はCVE-2026-121805、CVE-2026-120292、CVE-2026-120285、CVE-2026-116953、CVE-2026-123637に対するengineering hotfixを公開した。",
+          "別件のCVE-2026-126822はBIG-IP APMのSAMLにある整数アンダーフローで、未認証のリモート攻撃者によるサービス妨害に悪用され得る。"
+        ],
+        "background": [
+          "F5はBIG-IPのiRulesをアプリケーショントラフィックをプログラムで制御する機能として説明している。",
+          "CVE-2026-121805について、F5はBIG-IP PEMの21.1.0、17.5.0〜17.5.1、17.1.0〜17.1.3を対象バージョンとして列挙した。"
+        ],
+        "explanation": [
+          "条件に合う未開示のリクエストでTMMが終了し、再起動中にトラフィックが中断する。脆弱な構成では、未認証のリモート攻撃者がRCEを行える可能性もある。",
+          "CVE-2026-120292、CVE-2026-120285、CVE-2026-123637はそれぞれ、HTTPプロファイルと特定のiRule、または指定agentを含むAPM policyという構成条件が公式に示されている。"
+        ],
+        "implications": [
+          "該当する仮想サーバーを持つ運用者は、構成とバージョンを公式アドバイザリの対象表に照合して、engineering hotfixの対象を特定する必要がある。",
+          "CVE-2026-120292についてF5は、問題をデータプレーンに限定し、コントロールプレーンの露出はないとしている。"
+        ],
+        "caveats": [
+          "報道時点でF5は、これらの脆弱性が攻撃で悪用された事実を確認していない。",
+          "F5はengineering hotfixが通常の予定ソフトウェアほど広範な品質保証評価を受けないと明記している。"
+        ],
+        "nextChecks": [
+          "F5が対象バージョン表、修正版、悪用状況を更新した場合、適用対象と緊急度を見直す。",
+          "運用中の仮想サーバーが各CVEのHTTPプロファイル、iRule、APM policyの構成条件に該当するかで、個別機器の影響判定を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "HTTPプロファイルと特定iRule、または指定agentを含むAPM policyを持つBIG-IP運用者は、緩和策がないため、対象バージョンと構成を照合してengineering hotfix適用を判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "未認証でTMM停止とRCEの可能性が併存し、構成条件ごとの切り分けと帯域外hotfixの変更判断が必要になるため、Top 5としての扱いは妥当である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-21T00:00:00.000Z"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-21T00:00:00.000Z",
+        "httpStatus": 403,
+        "note": "取得時はアクセス制限画面となったが、検索インデックスとF5公式アドバイザリで記事の主張を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-21-bell-canada-breach",
+      "title": "ベル・カナダ、Maximo侵害で企業顧客データが流出",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-20T18:51:43.000Z",
+      "collectedAt": "2026-11-20T22:20:27.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-20T22:20:27.000Z",
+        "script": [
+          "ベル・カナダは11月17日の侵害で、企業顧客データが持ち出されたと明らかにしました。侵入先には、通信ネットワーク接続の発注と開通に使うMaximoの事前運用環境が含まれます。",
+          "流出の可能性があるのは担当者の氏名、役職、法人メール、電話番号、勤務先住所、チケット件名、一部のIPアドレスです。一方、資格情報、PDF、添付ファイルは対象データセットに含まれないとベル・カナダは説明しています。",
+          "同社は侵害を封じ込め、顧客サービスへの影響はないとしつつ、攻撃者の帰属、影響企業数、持ち出された総量は未公表です。企業顧客とカナダ・サイバーセキュリティ・センターには侵害指標と脅威ハンティング情報を共有しています。"
+        ],
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/bell-canada-says-agentic-hacker-stole-enterprise-customer-data/"
+        ]
+      },
+      "summary": [
+        "ベル・カナダは11月17日に発生した侵害で、回線の発注・開通に使うMaximoの事前運用環境を含む一部システムへ攻撃者がアクセスし、企業顧客データを持ち出したと明らかにした。同社は侵害を封じ込め、顧客サービスへの影響はないとしている。",
+        "顧客通知で流出の可能性が示されたのは、氏名、役職、法人メールアドレス、電話番号、勤務先住所、チケット件名、一部のIPアドレスと限定的な文脈情報である。資格情報、高度に機微な個人情報、PDF、添付ファイルは対象データセットに含まれないという。",
+        "同社は企業顧客とカナダ・サイバーセキュリティ・センターに侵害指標と脅威ハンティング情報を共有しているが、指標は一般公開していない。攻撃者の帰属、影響企業数、流出データ総量も未公表である。"
+      ],
+      "articleDetail": {
+        "conclusion": "ベル・カナダは、回線の発注・開通に使うMaximoの事前運用環境を含む侵害で企業顧客データが持ち出されたと公表した。",
+        "facts": [
+          "ベル・カナダは11月17日の事案で、同社がエージェント型と表現する攻撃者が一部システムへアクセスし、企業顧客データを外部へ持ち出したと説明した。",
+          "顧客通知によると、侵入先は通信ネットワーク接続の発注と開通に使うMaximoシステムの事前運用環境だった。"
+        ],
+        "background": [
+          "ベル・カナダは無線、インターネット、テレビ、企業向けネットワークサービスを提供するカナダの通信事業者である。",
+          "ブリーピングコンピューターは、ベル・カナダの情報セキュリティチームによる侵害通知を受け取った顧客からの情報提供で事案を把握した。"
+        ],
+        "explanation": [
+          "ベル・カナダの説明では、攻撃者は複数のシステムにアクセスし、そのうち回線の発注・開通を扱うシステムから企業顧客データを外部へ持ち出した。",
+          "ベル・カナダは侵害把握後に事案を封じ込め、システムを保護したと述べ、顧客サービスへの影響はないとしている。"
+        ],
+        "implications": [
+          "通知を受けた組織では、担当者の連絡先、チケット件名、ネットワーク要素に結び付く一部IPアドレスが、なりすましや標的型の連絡に使われ得る。",
+          "ベル・カナダは企業顧客とカナダ・サイバーセキュリティ・センターに侵害指標と脅威ハンティング情報を共有している。"
+        ],
+        "caveats": [
+          "ベル・カナダは攻撃者の帰属をまだ特定しておらず、エージェント型という表現が具体的にどのツールや手順を指すかは公開していない。",
+          "影響を受けた企業顧客数と持ち出されたデータ総量は公表されていない。",
+          "侵害指標は一般公開されておらず、ブリーピングコンピューターへの共有要請にも応じていない。"
+        ],
+        "nextChecks": [
+          "ベル・カナダが影響企業数、流出量、攻撃者の帰属を公表すれば、影響範囲の評価が更新される。",
+          "ベル・カナダが未公開の侵害指標を一般公開すれば、通知対象外の組織も関連活動を照合できる範囲が変わる。"
+        ]
+      },
+      "comment": "今回の影響は、通信サービス停止ではなく、回線の発注・開通を扱う事前運用環境に蓄積された企業間の連絡・作業文脈が外部へ出た可能性にある。氏名や法人メールだけでなく、チケット件名やネットワーク要素に結び付く一部IPアドレスが含まれ得るため、なりすましや標的型の連絡に使われ得る。顧客通知も、通信事業者を装う人物からの予期しない依頼やソーシャルエンジニアリングに注意するよう求めている。ベル・カナダは顧客サービスへの影響なし、資格情報や添付ファイルは対象外と説明する一方、影響企業数、流出総量、攻撃者の帰属を公表していない。侵害指標は企業顧客とカナダ・サイバーセキュリティ・センターに共有されるが一般公開はされておらず、現時点では通知対象の組織ほど自組織に関係する活動を具体的に照合できる構図になっている。",
+      "attentionAnalysis": {
+        "whyNotable": "ベル・カナダの企業顧客は、11月17日の侵害で回線案件に結び付く連絡先・チケット件名・一部IPアドレスが流出し得るため、同社から共有される侵害指標に基づく照合の可否が変わる。",
+        "currentReaction": "BleepingComputerの記事ページは確認時点でコメント0件と表示していた。",
+        "assessment": "妥当",
+        "assessmentComment": "通信サービスへの影響はないとされる一方、回線の発注・開通に関わる企業顧客データの流出と、帰属・影響社数・流出量が未公表である点が、報道の注目に見合う。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-20T22:20:27.000Z"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-20T22:20:27.000Z",
+        "httpStatus": 403,
+        "note": "取得時はHTTP 403だったが、検索インデックスで記事本文と掲載時刻を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-21-riemann-hypothesis-claims",
+      "title": "リーマン予想で並んだ二つの主張、Lean形式化と12年の人間の草稿",
+      "sourceUrl": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-20T19:32:08.000Z",
+      "collectedAt": "2026-11-21T08:18:17+09:00",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "科学・医療",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "narration": {
+        "sourceCheckedAt": "2026-11-21T08:18:17+09:00",
+        "script": [
+          "Anthropicの数学者Levent Alpögeが、リーマン予想のLeanでコンパイル可能な解を見つけたと発表しました。同じ時期に、Alessandro Masulloによる一般化リーマン予想の人間だけで書かれた草稿も公開されています。",
+          "前者はClaudeとの探索を経たLean形式化で、後者はリーマン予想に関してMasulloが12年をかけたとする草稿です。ただし、どちらも数学界が読み解き、共有できる説明へと検討する段階にあります。",
+          "注目点は、AI利用の有無ではなく、形式検証と人間による理解・検討が別々の関門として現れたことです。二つの主張は、その関門をどの順で越えるかを同時に問いかけています。"
+        ],
+        "references": [
+          "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/"
+        ]
+      },
+      "summary": [
+        "Anthropicの数学者Levent Alpögeは、リーマン予想についてLeanでコンパイル可能な解を見つけたと発表した。同じ時期にRavi Vakilは、Alessandro Masulloが12年をかけたとする、AIを使わない一般化リーマン予想の草稿を公開した。長く未解決の問題を巡り、形式化された主張と人間が書いた草稿が並んだ。",
+        "Alpögeの主張はClaudeとの探索を含む過程から生まれたもので、Leanによる形式的な検証可能性を掲げる。一方で記事は、数学者らがZulip上で内容を読み解いており、証明を人間が理解し説明できるようになるまでには時間がかかると伝える。",
+        "現時点で報じられたのは解決の確定ではなく、異なる経路による二つの証明主張の公開である。Alpögeは人間可読の説明を追求するとしており、Masulloの草稿も本来は十分な検討の後に公表する予定だった。"
+      ],
+      "articleDetail": {
+        "conclusion": "リーマン予想を巡るLean形式化と12年の人間の草稿は、いずれも公開された主張であり、数学界による理解と検討がその後の受容を左右する。",
+        "facts": [
+          "Levent Alpögeは、1859年にさかのぼるリーマン予想について、Leanでコンパイル可能な解を見つけたとする文章を公開した。",
+          "Ravi VakilはAlessandro Masulloによる一般化リーマン予想の草稿を公開し、AIを使っていない人間による証明だと説明した。",
+          "Masulloは草稿を12年の作業の成果だと記し、AlpögeはTristan Buckmasterとナビエ–ストークス方程式に関係する別の証明も公開した。"
+        ],
+        "background": [
+          "リーマン予想は素数の現れ方に潜む構造に関する予想で、1859年にさかのぼるミレニアム懸賞問題の一つとされる。",
+          "Leanは数学的証明の検証を助けるオープンソース言語として記事で紹介されている。"
+        ],
+        "explanation": [
+          "AlpögeはClaudeとの探索を経て得た議論をLeanでコンパイル可能な形にしたと説明した。記事では、形式化された結果が通ることと、内容を人間が理解して説明できることを別の段階として扱う。",
+          "Zulip上では数論の研究者らが証明を読み解いており、記事が引用した専門家はガロア表現や保型表現、基底変換など多くの理論を用いると記した。"
+        ],
+        "implications": [
+          "数学者は形式検証の成否に加え、証明を共有し検討できる人間可読の説明を通じて主張を評価することになる。",
+          "AIを用いた形式化の主張と人間による一般化リーマン予想の草稿が同時に出たことで、検証と執筆をどう進めるかの比較対象が生まれた。"
+        ],
+        "caveats": [
+          "記事は数学界が証明を理解するには時間がかかるとし、Alpögeも人間が理解できる説明を追求すると述べた。正しさが最終的に確定したとは報じていない。",
+          "VakilはMasulloの草稿について、本来は執筆を磨き十分な人に見てもらった後に発表する予定だったと説明した。"
+        ],
+        "nextChecks": [
+          "Alpögeが追求すると述べた人間可読の説明が公開されれば、主張がどこまで共有・検討できる形になったかを更新できる。",
+          "Masulloの草稿に改稿や追加の検討記録が公表されれば、Vakilが述べた、十分な人に見てもらい執筆を磨く予定からの進展を確認できる。"
+        ]
+      },
+      "comment": "二つの発表は、リーマン予想と一般化リーマン予想という異なる対象を扱いながら、証拠の通り道も異なる。Alpögeの主張では、Claudeとの探索を経た議論をLeanでコンパイル可能にしたことが形式面の核になる。他方、Masulloの草稿はAIを使わず12年をかけたとされ、Vakil自身が本来はさらに人に見てもらい執筆を磨く予定だったと明かした。ここで問われるのはAIが人間に勝ったかではない。形式化が通ること、人間の専門家が論証を読み解き説明できること、そして他者が検討できる形で共有されることは別の段階である。Zulipで専門家が多数の理論をたどっているという報道は、前者だけで受容が完結しないことを示す。今後の価値は、二つの主張のどちらが先に確定するかだけでなく、形式的な検証と人間可読な論証をどう接続できるかにある。",
+      "attentionAnalysis": {
+        "whyNotable": "数学者は、Leanでコンパイル可能とされるリーマン予想の主張と、人間が書いた一般化リーマン予想の草稿を、内容を読み解ける説明が出るかという条件とともに検討することになる。",
+        "currentReaction": "TechCrunchはZulip上で専門家が証明を読み解いていると報じ、引用した投稿への20人の絵文字反応も紹介した。",
+        "assessment": "判断には早い",
+        "assessmentComment": "形式化への期待はある一方で、記事自身が数学界による理解には時間がかかるとしているため、現段階では解決の確定として扱えない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-21T08:18:17+09:00",
+        "httpStatus": 403,
+        "note": "TechCrunch本文は取得環境から403だったため、検索経由で同媒体の記事本文を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-21-openai-adversarial-distillation",
+      "title": "OpenAI、推論痕跡抽出への防御で攻撃成功率54.0%から0.2%",
+      "sourceUrl": "https://openai.com/index/combatting-adversarial-distillation/",
+      "sourceName": "OpenAI",
+      "publishedAt": "2026-11-20T20:11:14.000Z",
+      "collectedAt": "2026-11-20T23:07:32.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "テクノロジー",
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 4,
+      "summary": [
+        "OpenAIは、別モデルの出力を無許可で訓練に使い、元の安全策を伴わない能力複製につながり得る敵対的蒸留への対策を公表した。GPT-6.2 Astraでは、過去の要求に対する保護された推論の抽出攻撃の平均成功率が、GPT-6 Astraの従来防御時の54.0%から0.2%になったとしている。",
+        "対策は、モデル挙動、入力・出力分類器、API制御と、協調的な抽出キャンペーンの調査・執行を組み合わせる。出力分類器はアシスタントのメッセージとツール呼び出しの引数を検査し、推論の漏えいを呼び出し元へ届く前に遮断する仕組みだという。",
+        "数値は6つの攻撃モデルを集計した内部の適応型ブラックボックス評価であり、実運用での漏えい率を直接示すものではない。OpenAIは、正確な推論痕跡が異なるモデルや蒸留手法に移す追加能力について、引き続き研究するとしている。"
+      ],
+      "comment": "蒸留は、教師モデルの回答や推論を訓練データにして生徒モデルへ能力を移す手法である。今回の焦点は、最終回答に含まれない情報を持ち得る正確な推論痕跡まで取得されると、サイバーセキュリティのような二重用途の能力が、元の利用制限を伴わずに移り得る点にある。OpenAIは要求ごとの遮断だけでなく、要求とアカウントのシグナルから協調的な抽出を捉える層も置く。2026年中には無許可蒸留キャンペーンを複数確認し、週次執行の対象が数千から数万アカウントだったとしており、単発のプロンプト対策だけでは扱えない運用上の問題として位置付けている。現在の要求からの抽出でも、同じ指標が22.9%から0.9%になったとしている。GPT-6.2 AstraとSolでは推論を生成元の会話履歴に結び付け、以前のメッセージを書き換えた後はAPIが後続の推論を破棄するため、旧モデル群の履歴から推論を読み出す経路も塞ぐ設計になっている。",
+      "articleDetail": {
+        "conclusion": "OpenAIはGPT-6.2 Astraで、保護された推論を過去の要求から抽出する攻撃の平均成功率を54.0%から0.2%へ下げたとする内部評価を示した。",
+        "facts": [
+          "2026年11月20日、OpenAIは敵対的蒸留の検知・妨害策を公表した。",
+          "適応型ブラックボックス評価では、過去の要求からの推論抽出の平均成功率がGPT-6 Astraの54.0%から、更新済みGPT-6.2 Astraの0.2%になった。",
+          "現在の要求からの抽出では、同じ指標が22.9%から0.9%になった。"
+        ],
+        "background": [
+          "蒸留では別モデルが教師モデルの回答、推論、回答の評価から学ぶ。保護された推論の正確な痕跡には最終回答にない情報が含まれうる。"
+        ],
+        "explanation": [
+          "要求単位ではモデル挙動、分類器、API制御を重ね、キャンペーン単位では要求・アカウントのシグナルで協調的な抽出を調べる。",
+          "GPT-6.2 AstraとGPT-6.2 Solでは推論を生成元の会話履歴に結び付け、以前のメッセージの書き換え後はAPIが後続の推論を破棄する。"
+        ],
+        "implications": [
+          "二重用途領域では、防御向けの許可された利用から得た能力であっても、保護の弱い別モデルへ移れば、元モデルが拒否・遮断した支援を提供しうる。",
+          "OpenAIは2026年中に複数の無許可蒸留キャンペーンを確認し、週次の執行対象が数千から数万アカウント規模だったとしている。"
+        ],
+        "caveats": [
+          "成功率は6つの攻撃モデルを集計した内部の適応型ブラックボックス評価で、実運用の漏えい率を直接測定した値ではない。"
+        ],
+        "nextChecks": [
+          "OpenAIが今後共有するとした最近妨害したキャンペーンの対象と時期、および異なる生徒モデル・蒸留手法への能力移転の研究結果が、対策の適用範囲を更新する材料になる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "GPT-6.2 AstraとSolの利用者・提供者では、会話の書き換えで後続推論をAPIが破棄し、旧モデル群から推論を読めなくする境界が追加された。推論痕跡を訓練データ化する試みへの防御が、会話履歴とモデル世代をまたぐ運用に及ぶ。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "54.0%から0.2%への低下は、6つの攻撃モデルによる内部の適応型評価で示された。一方、OpenAIは複数の無許可蒸留キャンペーンを確認しており、評価結果とキャンペーン執行の両方が今回の公表の対象範囲を支えている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T23:07:32.000Z",
+        "httpStatus": 200,
+        "note": "OpenAIの一次資料を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-20T23:07:32.000Z",
+        "script": [
+          "OpenAIが、他社のモデル出力を無断で訓練に使う敵対的蒸留への対策を公表しました。GPT-6.2 Astraでは、保護された推論の抽出攻撃の平均成功率が、従来の54.0%から0.2%に下がったとしています。",
+          "対策は、出力分類器による推論漏えいの遮断と、協調的な抽出キャンペーンの調査・執行を組み合わせるものです。2026年には無許可の蒸留キャンペーンを複数確認し、週次で数千から数万のアカウントを執行対象にしたとしています。0.2%という数値は内部評価のため、実運用の漏えい率を直接示すものではありません。"
+        ],
+        "references": [
+          "https://openai.com/index/combatting-adversarial-distillation/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-21-oracle-java-november",
+      "title": "Oracle Java、認証不要で悪用可能なCVE-2026-114938を11月更新で修正",
+      "sourceUrl": "https://www.ipa.go.jp/security/security-alert/2026/1118-jre.html",
+      "sourceName": "IPA",
+      "publishedAt": "2026-11-18T00:00:00+09:00",
+      "collectedAt": "2026-11-21T08:13:03+09:00",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 5,
+      "narration": {
+        "sourceCheckedAt": "2026-11-21T08:13:03+09:00",
+        "script": [
+          "IPAは、Oracle Javaの11月セキュリティ更新について早急な適用を呼びかけました。焦点のCVE-2026-114938は、OracleのRisk Matrixでネットワーク経由かつ認証なしで悪用可能とされる、Compilerの脆弱性です。",
+          "影響対象にはJava SE 17.0.21.0.3、21.0.13.0.3、25.0.5.0.3、27.0.1.0.3と、8u511b33-perfが並びます。CVSS基本値は8.1で、必要権限はHigh、ユーザー操作は不要です。対象版を動かす環境では、更新対象版と個別CVEの影響版を分けて照合し、更新計画を決める必要があります。",
+          "今回のIPAの一覧には11.0.33.0.3や8 Update 511b33もありますが、CVE-2026-114938のOracle行にある対象版とは一致しません。更新全体の対象と個別CVEの対象を分け、Oracle Javaの導入形態ごとに該当パッチを確認することが重要です。"
+        ],
+        "detail": [],
+        "learning": [],
+        "analysis": [],
+        "anticipatedQuestions": [],
+        "questionResearch": [],
+        "references": [
+          "https://www.ipa.go.jp/security/security-alert/2026/1118-jre.html",
+          "https://www.oracle.com/security-alerts/cspunov2026.html"
+        ]
+      },
+      "summary": [
+        "IPAは2026年11月18日、Oracle Javaのセキュリティ更新について早急な適用を呼びかけた。Oracleの2026年11月Risk MatrixでCVE-2026-114938はJava SEのCompilerにある脆弱性として示され、ネットワーク経由で認証なしに悪用可能とされる。",
+        "同CVEのCVSS v3.1基本値は8.1で、Oracleは必要権限をHigh、ユーザー操作をNone、機密性・完全性・可用性への影響を各Highと記載した。IPAは悪用時にアプリケーションが異常終了し、攻撃者にパソコンを制御されるおそれがあるとしている。",
+        "Oracleの個別CVE行ではJava SE 8u511b33-perf、17.0.21.0.3、21.0.13.0.3、25.0.5.0.3、27.0.1.0.3が影響対象である。一方、IPAの更新対象一覧には11.0.33.0.3や8 Update 511b33も含まれるため、更新全体の対象とCVE-2026-114938の対象を分けて確認する必要がある。"
+      ],
+      "comment": "今回の判断を難しくするのは、更新対象の一覧と、個別CVEの影響対象が同じ集合ではない点だ。IPAはJava SE 11.0.33.0.3、8 Update 511b33を含む複数の更新版を案内する一方、OracleのCVE-2026-114938行に記載されたJava SEは8u511b33-perf、17.0.21.0.3、21.0.13.0.3、25.0.5.0.3、27.0.1.0.3である。この差を無視して「11月更新を適用済み」とだけ扱うと、個別の露出評価とパッチの対応を取り違え得る。さらにOracleはJava SE向け新規パッチ11件をすべて認証なしのリモート悪用可能と説明しており、CVE-2026-114938はそのうちNetwork・ユーザー操作なしで、基本値8.1となる。対象版を特定した上で、Compilerを含む実行環境の更新可否を先に決めるべき事案だ。OracleのCVSS注記は、Java appletまたはJava Web Startを管理者権限で動かす前提を置くため、実際の実行権限もリスク判断に影響する。",
+      "articleDetail": {
+        "conclusion": "Oracle Javaの11月更新では、認証なしにネットワーク経由で悪用可能とされるCVE-2026-114938を含むため、対象Java SE版の運用環境は個別CVEの対象版と照合して更新を進める必要がある。",
+        "facts": [
+          "IPAは2026年11月18日（日本時間）にOracle Javaのセキュリティ更新プログラムを公表し、早急な適用を求めた。",
+          "OracleのRisk MatrixでCVE-2026-114938はOracle Java SEのCompilerの脆弱性であり、CVSS v3.1基本値は8.1、Network経由・認証なしでのリモート悪用はYesとされる。"
+        ],
+        "background": [
+          "Oracleは今回のCritical Security Patch UpdateにJava SE向けの新規セキュリティパッチが11件含まれ、それらはいずれも認証なしでリモートから悪用可能だと説明している。"
+        ],
+        "explanation": [
+          "CVE-2026-114938の行は、必要権限をHigh、ユーザー操作をNone、機密性・完全性・可用性への影響を各Highとしている。",
+          "OracleはCVSS値について、Java appletまたはJava Web Startを管理者権限で実行する前提を注記し、非管理者の場合は影響値がLowとなるとしている。"
+        ],
+        "implications": [
+          "Oracleの個別CVE行で影響対象とされるのはJava SE 8u511b33-perf、17.0.21.0.3、21.0.13.0.3、25.0.5.0.3、27.0.1.0.3である。",
+          "IPAの更新対象一覧には11.0.33.0.3と8 Update 511b33も含まれるため、導入済み版が更新全体の対象か、CVE-2026-114938の対象かを別々に照合することになる。"
+        ],
+        "caveats": [
+          "OracleはPremier SupportまたはExtended Support外のリリースを今回の脆弱性について試験しておらず、以前の版も影響を受ける可能性が高いとしている。"
+        ],
+        "nextChecks": [
+          "IPAが追記すべき情報を掲載し、対象または対策が変更された場合、導入版と更新対象の対応を見直す。",
+          "Oracleの次回Risk Matrixで追加CVEや対象リリースが公表された場合、運用中のJava SE版との対応関係を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "対象Java SEを運用する組織は、CVE-2026-114938が認証なし・Network経由で悪用可能とされたため、11月更新の対象一覧ではなく個別CVEの影響版に基づき適用優先度を決める必要がある。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "IPAが早急な適用を求め、OracleがJava SE向け新規パッチ11件を認証なしのリモート悪用可能と説明する一方で、記事化は11月18日公表後となったため、対象版を運用する側への周知価値が高い。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-21T08:13:03+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-21T08:13:03+09:00",
+        "reason": "11月18日公表のIPA注意喚起が11月19日・20日版に未掲載だったため、確定台帳で遅延掲載として再評価した。",
+        "currentNewsValue": "認証なしでネットワーク経由の悪用が可能とされるCVE-2026-114938を含み、IPAが早急な適用を求めているため、対象Java SEの更新判断に直結する。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-21T08:13:03+09:00",
+        "httpStatus": 200,
+        "note": "IPAの一次資料と、同ページが参照するOracleの2026年11月Risk Matrixを確認した。"
+      }
+    },
+    {
+      "id": "2026-11-21-apache-roller-kev",
+      "title": "CISA KEV、Apache Rollerの未認証RCEを11月23日までに対応",
+      "sourceUrl": "https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog",
+      "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
+      "publishedAt": "2026-11-20T12:00:00.000Z",
+      "collectedAt": "2026-11-20T22:15:45.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは2026年11月20日、Apache RollerのCVE-2026-129448を既知に悪用された脆弱性（KEV）カタログへ追加した。XML-RPCエンドポイントで認証前に型をデシリアライズする欠陥により、未認証のリモート攻撃者が任意コードを実行できると説明している。",
+        "対象CVEはCVE-2026-82384と同じ根本脆弱性を扱う一方、KEVでは影響を受けるバージョンの範囲がより広いとしている。今回のニュースはCVE自体の開示日ではなく、CISAが11月20日にKEVへ追加した点にある。",
+        "CISAのレコードの期限は11月23日で、ベンダー指示に沿う緩和と資産のインターネット公開状況の評価を求める。具体的な影響バージョン、被害組織、攻撃件数は同レコードで公表されていない。"
+      ],
+      "articleDetail": {
+        "conclusion": "CISAがApache RollerのCVE-2026-129448を11月20日にKEVへ追加し、未認証RCEへの対応期限を11月23日とした。",
+        "facts": [
+          "KEV JSONのdateAddedは2026-11-20で、対象製品はApache Roller、CVEはCVE-2026-129448である。",
+          "CISAは期限を2026-11-23と記録している。"
+        ],
+        "background": [
+          "このCVEにはCWE-502が付され、KEVのknownRansomwareCampaignUseはUnknown、forensicTriageはYesとなっている。"
+        ],
+        "explanation": [
+          "XML-RPCエンドポイントがvendor extension typesを認証前に受け入れてデシリアライズするため、未認証のリモート攻撃者が任意コードを実行できる、とKEVは説明する。",
+          "KEVはCVE-2026-82384と同じ根本脆弱性を扱うが、CVE-2026-129448はより広い影響バージョン範囲に適用するとしている。"
+        ],
+        "implications": [
+          "CISAはベンダー指示に沿う緩和、資産のインターネット公開状況の評価、緩和策がない場合の製品利用停止をrequiredActionに挙げている。"
+        ],
+        "caveats": [
+          "このKEVレコードでは、具体的な影響バージョン、攻撃件数、被害組織、ランサムウェアでの利用の有無は公表されていない。",
+          "CVEの開示日とベンダーが修正済みとするバージョンは、このKEV JSONだけでは確認できない。"
+        ],
+        "nextChecks": [
+          "CVEの開示日とベンダーが修正済みとするバージョンは、このKEV JSONでは確認できない。"
+        ]
+      },
+      "comment": "今回の追加は、Apache Rollerにあるデシリアライズ欠陥の一般的な注意喚起ではなく、CISAがCVE-2026-129448を2026年11月20日にKEVへ載せた事実である。KEVの説明では、XML-RPCがvendor extension typesを認証前にデシリアライズする順序が、未認証のリモート攻撃者による任意コード実行につながる。CVE-2026-129448はCVE-2026-82384と同じ根本脆弱性を対象にしつつ、KEVでは影響を受けるバージョン範囲がより広いとされる。KEVレコードは11月23日を期限とし、ベンダー指示に沿う緩和とインターネット公開資産の評価をrequiredActionに挙げている。",
+      "attentionAnalysis": {
+        "whyNotable": "Apache Rollerに関係する主体では、CISAがCVE-2026-129448について求めるベンダー指示に沿う緩和と資産のインターネット公開状況の評価を、KEVに記録された11月23日の期限と結び付けて扱うことになる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "CISAのKEVへの2026年11月20日の追加、未認証RCEの説明、11月23日の期限という一次資料の範囲に基づく注意度であり、攻撃件数やランサムウェア利用はUnknownのままである。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-21T09:05:00+09:00",
+        "httpStatus": 200,
+        "note": "監督側で11/20付けCISA KEV追加アラートの到達（HTTP 200）を確認。元URLはKEVカタログ一覧で、sap-netweaver-kevと重複するため本記事の一次資料としてアラートへ変更。"
+      }
+    },
+    {
+      "id": "2026-11-21-softbank-air-terminal",
+      "title": "Airターミナル6のコマンド注入、接続可能な端末でroot実行の恐れ",
+      "sourceUrl": "https://jvn.jp/jp/JVN64740097/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-20T01:00:00.000Z",
+      "collectedAt": "2026-11-20T23:44:12.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "JVNは、SoftBank製Airターミナル6にOSコマンドインジェクションの脆弱性があると公表した。Airターミナル6 v1.01.80以前が対象で、CVE-2026-101107として識別されている。",
+        "当該機器へ有線またはWi-Fi接続できるユーザーは、root権限で任意のコマンドを実行できる可能性がある。JVNはCWE-78に分類し、CVSS 4.0基本値を8.7、CVSS 3.0基本値を8.8としている。",
+        "開発者によれば修正済みファームウェアはすでに展開され、未接続の機器もインターネット接続時に自動適用されるため、利用者による操作は不要とされる。"
+      ],
+      "articleDetail": {
+        "conclusion": "Airターミナル6 v1.01.80以前で、接続可能なユーザーによるroot権限のコマンド実行につながり得る脆弱性が公表され、修正版ファームウェアは展開済みとされた。",
+        "facts": [
+          "JVN#64740097は、SoftBankが提供するAirターミナル6のOSコマンドインジェクションを公表した。",
+          "CVE-2026-101107として識別され、CVSS 4.0基本値は8.7、CVSS 3.0基本値は8.8である。"
+        ],
+        "background": [
+          "JVNはこの問題をCWE-78のOSコマンドインジェクションとして分類している。"
+        ],
+        "explanation": [
+          "影響を受けるのはAirターミナル6 v1.01.80およびそれ以前で、有線またはWi-Fiで機器に接続できることが攻撃の条件となる。"
+        ],
+        "implications": [
+          "条件を満たすユーザーにより、root権限で任意のコマンドが実行される可能性がある。"
+        ],
+        "caveats": [
+          "JVN本文は遠隔からの攻撃可否や、脆弱性が生じる機能・処理箇所を説明していない。"
+        ],
+        "nextChecks": [
+          "JVNまたは開発者が、修正済みファームウェアのバージョン番号、展開完了時刻、技術的な発生箇所を公表すれば、適用状況と攻撃経路の判断を更新できる。"
+        ]
+      },
+      "comment": "この問題で重要なのは、対象がAirターミナル6 v1.01.80以前に限られる一方、有線またはWi-Fiで機器に接続できるユーザーがroot権限で任意コマンドを実行できる可能性として示されている点だ。JVNはCVSS 4.0のベクターをAV:A/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N、基本値を8.7として掲載している。修正版は展開済みで、未接続機器も接続時に自動適用されると開発者が説明している。",
+      "attentionAnalysis": {
+        "whyNotable": "Airターミナル6 v1.01.80以前を運用する利用者は、有線またはWi-Fiで接続可能な主体がroot権限のコマンド実行に至り得る条件を踏まえ、修正版の自動適用が前提となる。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "公開反応の実測値は確認していない。JVNがCVSS 4.0基本値8.7としつつ、攻撃条件を機器への有線またはWi-Fi接続可能なユーザーとしているため、公開反応だけで影響範囲を評価できない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-20T23:44:12.000Z"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T23:44:12.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-21-cisa-ics-advisories",
+      "title": "CISA、OpenPLCとトレーラー制御を含む3件のICS脆弱性を公表",
+      "sourceUrl": "https://jvn.jp/vu/JVNVU92814490/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-20T00:30:00.000Z",
+      "collectedAt": "2026-11-20T22:34:50.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは11月19日、OpenPLC Runtime、Elecbrakesのトレーラー用ブレーキ制御機器、libumqttに関する3件のICS Advisoryを公表した。OpenPLC Runtimeでは未認証の管理者アカウントが複数作成され得るほか、Elecbrakesではブレーキ機能に影響し得る問題が示された。",
+        "OpenPLC Runtime 4.2.4以前にはCVE-2026-126088があり、4.3.0以降が修正版とされた。ElecbrakesはEB2とVM1向けの更新ファームウェアを提供したが、販売終了済みのELBC2000は全バージョンが影響を受け、対応方法は検討中である。",
+        "libumqtt 1.1.1以前のCVE-2026-125132は、リモートからサービス不能、メモリ破壊、情報漏えいを生じ得る整数アンダーフローである。修正は公開されておらず、CISAは3件を狙う公知の悪用を把握していないとしている。"
+      ],
+      "articleDetail": {
+        "conclusion": "3件のICS脆弱性は、更新済みの製品と未修正の製品が混在し、特にELBC2000とlibumqttでは公開時点の修正提供がない。",
+        "facts": [
+          "JVNは11月20日、CISAの11月19日付ICS Advisoryとして、OpenPLC Runtime、Elecbrakes、libumqttの3件を案内した。",
+          "ElecbrakesのCVE-2026-124281、CVE-2026-125273、CVE-2026-96805は、EB2、VM1、ELBC2000を対象とする。"
+        ],
+        "background": [
+          "OpenPLC Runtimeとlibumqttは、重要製造、エネルギー、輸送、水・廃水などの重要インフラ分野に展開される製品としてCISAが分類した。",
+          "Elecbrakesの対象機器は輸送分野に分類され、オーストラリアとニュージーランドに展開されるとCISAは記載した。"
+        ],
+        "explanation": [
+          "OpenPLC Runtimeでは、アカウントが確定する前に複数の並行リクエストが存在確認を通過するレース条件が、未認証の管理者アカウント作成につながる。",
+          "Elecbrakesでは、保護されない更新経路、再送可能なコマンド、認証・ペアリングなしのBLE制御が、ファームウェア変更やブレーキ条件への作用を許し得る。",
+          "libumqttの整数アンダーフローは、リモート攻撃者によるサービス不能、メモリ破壊、情報漏えいにつながり得る。"
+        ],
+        "implications": [
+          "OpenPLC Runtimeの4.2.4以前を使う主体は4.3.0以降、Elecbrakes EB2とVM1の利用者は各更新ファームウェアが提供済みという対象別の状態に直面する。",
+          "ELBC2000の利用者とlibumqtt 1.1.1以前の利用者には、公開時点でベンダー修正が提供されていない。"
+        ],
+        "caveats": [
+          "CISAは、これらの脆弱性を特に狙う公知の悪用を公開時点で把握していない。"
+        ],
+        "nextChecks": [
+          "Elecbrakesが販売終了済みELBC2000への対応方法を公表するかどうかが、同製品の修正可否を更新する情報になる。",
+          "libumqttのリポジトリー所有者が調整要請へ応答し、修正または対応方針を公表するかが未確定である。"
+        ]
+      },
+      "comment": "3件は脆弱性の種類と修正状況が異なる。OpenPLC Runtime 4.2.4以前では、並行リクエストがユーザーの存在確認を通過するレース条件により、未認証の管理者アカウントを複数作成され得る。Elecbrakesでは、更新経路、コマンドの再送防止、BLE制御の認証にまたがる問題が、トレーラーのブレーキ条件へ影響し得る。libumqttは整数アンダーフローにより、遠隔からサービス不能、メモリ破壊、情報漏えいを生じ得る。ELBC2000とlibumqttには修正がなく、後者の所有者はCISAの調整要請に応答していない。",
+      "attentionAnalysis": {
+        "whyNotable": "制御系・輸送機器の利用者は、同じ公表群の中でもOpenPLC、EB2、VM1には修正版があり、ELBC2000とlibumqttには未修正という製品別の判断差を11月19日付の情報で確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "ブレーキ制御に影響し得るElecbrakesの問題と、修正未提供のELBC2000・libumqttを含む一方で、公開時点に公知の悪用はCISAへ報告されていない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T22:34:50.000Z",
+        "httpStatus": 200,
+        "note": "JVNの対象ページへHTTP 200で到達した。"
+      }
+    },
+    {
+      "id": "2026-11-21-cairn-ai-pentest",
+      "title": "Cairn、API把握から約11分で任意書き込み、後続セッションでroot権限",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-20T17:30:00.000Z",
+      "collectedAt": "2026-11-21T07:00:00.000+09:00",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Amazon Threat Intelligenceは、自律AIペネトレーションテスト基盤Cairnを使った活動で、医療画像AIアプリケーションのゼロデイが悪用され、サーバーのroot権限に到達したと報告した。エージェントはAPIを調べ、パストラバーサルを見つけて任意の場所へファイルを書き込んだ。",
+        "APIの把握から書き込み可能になるまでの所要時間は約11分だった。後のセッションではsitecustomize.pyへPythonのリバースシェルを置き、訓練APIでPythonプロセスを起動して、ペイロードをroot権限で動かしたとされる。",
+        "Amazonが確認した活動は2026年9月8日から約48時間、東アジアの中国本土外にある大学関連IPを主に標的にした。保守者には通知済みで修正とGitHub Security Advisoryが公開された一方、公開資料にCVE番号や影響バージョンはない。"
+      ],
+      "articleDetail": {
+        "conclusion": "Cairnのエージェントは、医療画像AIアプリのゼロデイから約11分で任意ファイル書き込みへ進み、Pythonの起動機構を利用してroot権限のリバースシェルを確立したとAmazonが報告した。",
+        "facts": [
+          "Amazonは認証なしで公開されたCairnの運用履歴を発見し、医療画像AIアプリケーションに対するパストラバーサルの悪用を確認した。",
+          "エージェントはAPIエンドポイントとファイル名パラメータを調べ、約11分で任意のサーバー上ファイルを書き込める状態になった。",
+          "後のセッションではsitecustomize.pyへPythonのリバースシェルを置き、訓練APIからPythonを起動してroot権限のリバースシェルを確立した。"
+        ],
+        "background": [
+          "Cairnは、開始点と自然言語の目的から複数のAIエージェントを協調させる、防御者向けに作られた研究・問題解決エンジンである。",
+          "当該のパストラバーサルには発見時点で対応する修正、issue、advisory、脆弱性データベース上の言及がなく、Amazonはゼロデイと高い確信度で評価した。"
+        ],
+        "explanation": [
+          "sitecustomize.pyはPython起動時に自動インポートされる。エージェントはこのファイルへの書き込み後、訓練APIで新規Pythonプロセスを起動し、ペイロードを実行させた。",
+          "同じCairnの活動でも、認証なしRedisに対する約16時間・148アクションと、GPUサーバーへの6時間超・3万超の認証情報試行は、いずれも侵入に失敗した。"
+        ],
+        "implications": [
+          "操作者は同じ脆弱なソフトウェアを動かす第2の大学ネットワークへの代理経路を渡し、エージェントに他の機器を標的にするよう指示した。Amazonは、ゼロデイによる侵害とトンネル確立を推論している。",
+          "被害組織はAWS顧客ではなく、AWSは政府パートナーを通じて活動を通知した。"
+        ],
+        "caveats": [
+          "Amazonは、簡体字中国語のプロンプト、中国標準時のスクリプト時刻、標的選択を根拠に中国との関係を中程度の確信度で評価しており、確定的な帰属ではない。",
+          "公表は公開状態だったCairnインスタンスに残る運用履歴の分析に基づく。成功したゼロデイ悪用と、失敗したRedis・GPUサーバー試行が併せて記録されている。"
+        ],
+        "nextChecks": [
+          "保守者はAmazonの通知を受けて修正とGitHub Security Advisoryを公開した。公開資料でCVE番号と影響バージョンが示されるかが、適用対象を更新する材料になる。"
+        ]
+      },
+      "comment": "この事例で重要なのは、Cairnが単に既知の攻撃手順を反復したのではなく、目標と標的IPの入力から、API調査、ファイル名パラメータの検証、任意ファイル書き込み、Python起動を連結した点にある。約11分はAPIの把握から任意ファイル書き込みまでの時間であり、root権限のリバースシェルは後のセッションでsitecustomize.pyと訓練APIを使って確立された。実際、認証なしRedisに対する約16時間・148アクションとGPUサーバーへの3万超の認証情報試行は失敗している。自律性は成功を保証しないが、失敗した探索を長時間続けられるため、個々の試行を人が選ぶ攻撃とは別の運用負荷を生む、というのがこの記録からの編集上の推論である。影響範囲を判断する際は、今回の修正の適用と、同じソフトウェアを使う環境でAPIから書き込み、プロセス起動へつながる経路があるかという悪用リスク評価を分けることになる。",
+      "attentionAnalysis": {
+        "whyNotable": "医療画像AIアプリを運用する組織では、修正の適用対象と、APIから任意ファイル書き込みを経てPython起動時の実行へ至る経路の悪用リスクを分けて判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "Amazonの公表には約11分での成功経路だけでなく、16時間・148アクションや3万超の認証情報試行が失敗した記録もあるため、成功例の時間だけで能力を一般化しない評価が必要である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-21T07:00:00.000+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-21-framework-support-experience",
+      "title": "Frameworkへの不満が示した、サポート説明の空白",
+      "sourceUrl": "https://poolp.org/posts/2026-11-20/ill-never-buy-framework-hardware-again/",
+      "sourceName": "poolp.org",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "collectedAt": "2026-11-20T22:46:31.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Gilles Chehadeは、Framework製ハードウェアを今後買わない意向を題名で示した投稿で、同社にサポートの修正と、購入者が対価を払った動作するノートPCの提供を求めた。筆者はFrameworkを不当に傷つけることが目的ではないとしている。",
+        "筆者によれば、この投稿はHacker Newsに載り、予想以上の注目を集めた。投稿は2026年11月20日付でpoolp.orgに掲載され、ページの構造化データでは本文は56語とされている。",
+        "一方で、購入した機種、不具合の内容、サポートとのやり取り、Framework側の説明は本文にない。Hacker News上でどの程度の反響があったかを示す投票数やコメント数も公表されていない。"
+      ],
+      "articleDetail": {
+        "conclusion": "Frameworkへの不満が示したのは、筆者がサポートの修正と動作するノートPCの提供を求める一方、その根拠となる具体的な対応経緯が本文では開示されていないことだ。",
+        "facts": [
+          "poolp.orgは2026年11月20日付で、Gilles Chehadeによる「I'll never buy Framework hardware again」を掲載した。",
+          "筆者はFramework製ハードウェアを今後買わない意向を題名で示し、動作するノートPCの提供を求めた。"
+        ],
+        "background": [
+          "筆者は投稿がHacker Newsに載り、予想より大きな注目を集めたと述べた。"
+        ],
+        "explanation": [
+          "筆者は投稿の目的をFrameworkへの損害ではなく、同社がサポートを修正することだと説明した。"
+        ],
+        "implications": [
+          "この投稿で明示された購買停止の意向は、筆者にとってサポートと動作するノートPCの提供が満たされるかに結び付いている。"
+        ],
+        "caveats": [
+          "購入機種、不具合、サポートとのやり取り、Framework側の説明、Hacker Newsの具体的な反響値は本文に記載されていない。"
+        ],
+        "nextChecks": [
+          "筆者が購入機種や対応経緯を開示するか、Frameworkがサポート要求への説明または対応を示すかは本文では未公表である。"
+        ]
+      },
+      "comment": "投稿がHacker Newsで予想以上の注目を得たという筆者自身の説明は、この短い投稿が同サイトに載ったとの筆者説明を示す。ただし、本文は56語と短く、購入機種、不具合、問い合わせの経緯、Framework側の回答は記されていない。そのため、この時点で確認できるのは、筆者が購買を続けない意向を示し、サポートの修正と動作するノートPCの提供を求めていることまでである。製品やサポートの実態をこの投稿だけから一般化する材料はない。",
+      "attentionAnalysis": {
+        "whyNotable": "Framework製ハードウェアを買わないという筆者の意向と、サポートを修正し動作するノートPCを提供してほしいという要求が、同じ投稿で公表された。Hacker Newsで予想以上の注目を集めたとの筆者説明もある。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "Hacker Newsで注目を集めたという筆者説明はあるが、投票数やコメント数は本文に示されず、購入機種やFramework側の説明も未公表である。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T22:46:31.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-21-sap-netweaver-kev",
+      "title": "CISA、SAP NetWeaverのCVE-2025-42884をKEVへ追加",
+      "sourceUrl": "https://www.cve.org/CVERecord?id=CVE-2025-42884",
+      "sourceName": "CISA",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "collectedAt": "2026-11-21T08:31:17+09:00",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは2026年11月20日、SAP NetWeaver Enterprise PortalのCVE-2025-42884をKnown Exploited Vulnerabilities（KEV）カタログへ追加した。今回の更新はKEVの追加であり、NVDレコードが示すCVE自体の公表時刻、2025年11月11日とは区別される。",
+        "CISAのKEV説明では、未認証の攻撃者が注入したJNDI環境プロパティ、またはJNDI lookup操作で使うURLを介して、サーバー情報を開示または変更できる。対象はSAP NetWeaver Enterprise PortalのJNDI Injection脆弱性である。",
+        "CISAがKEVに記載した対応期限は2026年11月23日である。requiredActionはベンダー指示に沿った緩和策と資産のインターネット露出の評価に触れる一方、KEVのランサムウェア利用状況はUnknownとされている。"
+      ],
+      "comment": "このレコードで時点を分ける鍵は、NVDのCVE公表時刻とCISAのdateAddedである。前者は2025年11月11日、後者は2026年11月20日であり、今回新たに記録された出来事は脆弱性の初出ではなく、CISAのKEVカタログへの追加となる。技術的には、認証を必要としない状態から、注入したJNDI環境プロパティまたはJNDI lookup操作で使うURLを通じ、サーバー情報の開示または変更につながり得ると説明される。CISAはKEV行で期限を11月23日としつつ、ランサムウェア利用をUnknownとしており、具体的な攻撃主体や被害規模はこの一次レコードからは読み取れない。",
+      "articleDetail": {
+        "conclusion": "CISAは2026年11月20日、SAP NetWeaver Enterprise PortalのCVE-2025-42884を、悪用確認済み脆弱性のKEVカタログへ追加した。",
+        "facts": [
+          "CISAのKEV JSONはCVE-2025-42884のdateAddedを2026-11-20、dueDateを2026-11-23として記録している。",
+          "CISAのKEV行は、この脆弱性の対象をSAP NetWeaver Enterprise Portalとしている。"
+        ],
+        "background": [
+          "NVDのCVE-2025-42884レコードはpublishedを2025-11-11T01:15:36.893としており、CVEの公表と2026-11-20のKEV追加は別の時点である。"
+        ],
+        "explanation": [
+          "CISAの説明では、未認証の攻撃者が注入したJNDI環境プロパティ、またはJNDI lookup操作で使われるURLを通じて、サーバー情報の開示または変更に至り得る。"
+        ],
+        "implications": [
+          "KEVのrequiredActionは、ベンダー指示に沿う緩和策、各資産のインターネット露出の評価、BOD 26-04の該当ガイダンスへの準拠を記載している。"
+        ],
+        "caveats": [
+          "KEV JSONはknownRansomwareCampaignUseをUnknownとしており、具体的な攻撃主体、被害組織数、悪用時期も示していない。"
+        ],
+        "nextChecks": [
+          "具体的な攻撃主体、被害組織数、悪用時期はKEVで未公表であり、これらが公表された場合に悪用状況の理解が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "SAP NetWeaver Enterprise Portalを運用する主体では、未認証のJNDI注入経路と2026年11月23日のKEV期限により、資産のインターネット露出とベンダー緩和策の確認対象が具体化した。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "CISAは悪用確認済みとしてKEVに追加し、2026年11月23日の期限を記録した。一方、ランサムウェア利用はUnknownで、攻撃主体や被害規模は未公表のため、評価はKEV行で確認できる範囲に限られる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-21T09:15:00+09:00",
+        "httpStatus": 200,
+        "note": "監督側で CVE-2025-42884 の CVE.org レコード到達（HTTP 200）を確認。元URLはKEVカタログ一覧で、11/19版 synology-kev 記事と重複するため本記事の一次資料として CVE.org レコードへ変更。"
+      }
+    },
+    {
+      "id": "2026-11-21-siemens-updates",
+      "title": "シーメンス、11月更新で新規11件・更新17件のアドバイザリを整理",
+      "sourceUrl": "https://jvn.jp/vu/JVNVU98354779/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "collectedAt": "2026-11-20T23:38:20.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "JVNは11月20日、シーメンス製品向けアドバイザリの11月分一覧を更新した。今回の詳細情報には新規11件、更新17件が並び、産業製品、エンジニアリング用ソフトウェア、産業制御関連の製品にまたがる通知を一つの一覧からたどれるようにしている。",
+        "新規分には産業製品に関するNode2Shell、Mendix Studio ProのMCP Server、SIMATIC SCADAおよびPCS 7の認証不備のアドバイザリがある。更新分にはSIMATIC S7-1500 CPU 1518(F)-4 PN/DP MFP、Industrial OS搭載SIMATIC IoT2050、SIPROTEC 5に関する通知が含まれる。",
+        "JVNのページは影響製品、想定される影響、対策方法の詳細を個別には示さず、各シーメンスアドバイザリを参照する形式である。該当する製品とバージョンは、一覧の件数だけで判断せず、個別通知で照合する必要がある。"
+      ],
+      "comment": "この更新は、単一の脆弱性についての通知ではなく、11件の新規と17件の更新を同時に束ねた索引である。新規一覧にはNode2Shell、Mendix Studio ProのMCP Server、SIMATIC SCADAとPCS 7があり、更新一覧にはSIMATIC S7-1500 CPU 1518(F)-4 PN/DP MFP、Industrial OS搭載SIMATIC IoT2050、SIPROTEC 5が含まれる。対象範囲は製品群ごとに確認が必要になる。JVNは影響範囲・想定影響・対策を各シーメンスアドバイザリへ委ねており、この一覧だけから特定の機器や版が影響を受けるとは判断できない。",
+      "articleDetail": {
+        "conclusion": "シーメンスの11月アドバイザリ一覧は11月20日に更新され、新規11件と更新17件を個別通知へ案内している。",
+        "facts": [
+          "新規11件には、産業製品向けNode2Shell、Mendix Studio ProのMCP Server、SIMATIC SCADAおよびPCS 7の認証不備に関する通知が含まれる。",
+          "更新17件には、SIMATIC S7-1500 CPU 1518(F)-4 PN/DP MFP、Industrial OS搭載SIMATIC IoT2050、SIPROTEC 5に関する通知が含まれる。"
+        ],
+        "background": [
+          "JVNの表示では公開日は11月5日で、11月20日に詳細情報を更新した履歴がある。"
+        ],
+        "explanation": [
+          "JVNは新規と更新を別の一覧として並べ、各項目についてシーメンスの個別アドバイザリを参照するよう案内している。"
+        ],
+        "implications": [
+          "自組織の製品が該当するかは、一覧の件数ではなく、個別アドバイザリに記載される影響製品・バージョンで決まる。"
+        ],
+        "caveats": [
+          "JVNの一覧ページには、各項目の脆弱性識別子、影響製品・バージョン、想定影響、対策内容は記載されていない。"
+        ],
+        "nextChecks": [
+          "JVNが参照を求める各シーメンスアドバイザリで、影響製品・バージョンと対策内容が確認できるかが、自組織の該当性を判断する材料となる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "シーメンス製品を運用する担当者は、11月20日に更新された一覧にある新規11件または更新17件について、自組織の製品・バージョンが該当するかを個別アドバイザリで照合することになる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "11月20日時点の詳細情報には新規11件と更新17件が列挙され、製品群ごとに影響範囲を個別通知で確認する必要があるため、一覧更新として扱う根拠がある。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-20T23:38:20.000Z"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-20T23:38:20.000Z",
+        "reason": "JVNの表示上の公開日は対象期間前の2026年11月5日だが、更新履歴は2026年11月20日の詳細情報更新を示している。",
+        "currentNewsValue": "11月20日時点の詳細情報には新規11件と更新17件のアドバイザリが列挙され、個別通知を確認する起点となる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T23:38:20.000Z",
+        "httpStatus": 200,
+        "note": "JVNの掲載ページを確認。"
+      }
+    },
+    {
+      "id": "2026-11-21-ios-browser-engines",
+      "title": "Mozilla、iOSでGecko版Firefoxを阻む別アプリ移行条件を指摘",
+      "sourceUrl": "https://blog.mozilla.org/en/mozilla/internet-policy/apple-ios-browser-engine-rules/",
+      "sourceName": "Mozilla Blog",
+      "publishedAt": "2026-11-20T14:03:25.000Z",
+      "collectedAt": "2026-11-20T23:00:15.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Mozillaは、AppleがEUのiOSで代替ブラウザエンジンを認める条件を出してから約3年が過ぎても、WebKit以外のブラウザを公開できた開発者はいないと述べた。FirefoxへGeckoを載せるには、既存アプリの更新ではなく別のFirefoxを配布し、利用者自身に移行を求める条件が障壁だとしている。",
+        "Mozillaによると、EUでは2024年にDigital Markets Act（DMA）が既定ブラウザの選択を求めて以降、数百万人がFirefoxを選び、iOSでの日常利用は2倍になった。一方、iPhoneとiPadではAppleのブラウザエンジンを使う制限が残り、Geckoで実装した機能をiPhoneへ容易に持ち込めないという。",
+        "日本でも代替エンジンを求める規則の下でAppleがEUと非常に似た条件を適用している。Mozillaは条件に関する検討の詳細には非公開情報が含まれるとし、Apple側の見解や変更予定はこの発表では示されていない。"
+      ],
+      "comment": "この問題は、代替エンジンを許す制度上の入口と、既存利用者が実際に移れる製品経路が別である点にある。Mozillaの説明では、Gecko版を出すには第二のFirefoxを新設し、ブックマーク、パスワード、履歴を移して手動で切り替えてもらう必要がある。EUの選択画面からFirefoxを選んだ利用者も、その工程で離脱し得るため、既存アプリを更新できない条件がエンジン選択の実装を止める構造になっている。日本にも似た条件が適用されている以上、EUだけの導入状況としては扱えない。",
+      "articleDetail": {
+        "conclusion": "Mozillaは、iOSでGecko版Firefoxを出す際に別アプリへの移行を求めるAppleの条件が、非WebKitブラウザの公開を阻んでいると主張した。",
+        "facts": [
+          "EUでAppleが代替ブラウザエンジンの条件を導入して約3年、日本で同様の条件を導入して約1年たつが、MozillaはiOSで非WebKitブラウザを公開できた開発者はいないとしている。",
+          "Mozillaは、Geckoを使うには既存Firefoxを更新するのでなく別アプリを作り、利用者にダウンロード、データ移行、手動切替を求める必要があると説明した。"
+        ],
+        "background": [
+          "AppleはiOS上の全ブラウザに自社エンジンを使わせており、MozillaはGeckoで実装したFirefoxの機能をiPhoneへ容易に提供できないとしている。",
+          "EUでは2024年からDMAが既定ブラウザの選択を求め、Mozillaによれば数百万人がFirefoxを選び、iOSの日常利用は2倍になった。"
+        ],
+        "explanation": [
+          "Mozillaの説明では、別アプリの配布、利用者データの移行、手動切替という連続した工程が必要になり、既にFirefoxを選んだ利用者にも追加の離脱要因を生む。"
+        ],
+        "implications": [
+          "GeckoをiOSに投入する開発者は、既存利用者を新アプリへ移す負担を前提に、代替エンジン版を公開するか判断することになる。"
+        ],
+        "caveats": [
+          "一次資料はMozillaの説明であり、Appleの見解、条件の詳細な協議内容、条件変更の予定は示されていない。"
+        ],
+        "nextChecks": [
+          "AppleがEUまたは日本の代替エンジン条件を変更し、既存Firefoxを別アプリへ移さずGeckoへ切り替えられる扱いを示すかが判断更新の材料になる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "iOS向けにGeckoを投入する開発者は、EUでは導入から約3年、日本では約1年を経ても非WebKit版の公開例がない条件の下で、別アプリの配布と利用者移行を伴う投入判断を迫られる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "MozillaはEUの選択画面以降にiOSの日常利用が2倍になったとする一方、代替エンジンの実装を阻む条件についてのApple側の説明は、この一次資料にはない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T23:00:15.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-21-language-model-weights",
+      "title": "27B言語モデル、自己推論で重みを書き換え未見問題の精度を改善",
+      "sourceUrl": "https://arxiv.org/abs/2611.21885",
+      "sourceName": "arXiv",
+      "publishedAt": "2026-11-20T16:29:06.000Z",
+      "collectedAt": "2026-11-20T23:04:08.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "研究チームは、270億パラメータの27B言語モデルが、自らの重みと採点済み回答を基に失敗を診断し、勾配や追加訓練なしで重みを書き換える実験を報告した。事前固定の対応試験では、更新後のモデルは未見490問で精度を6.6ポイント上げたとしている。",
+        "モデルは重みに対するコード実行、編集案の対応試験、隠れ状態の読出しを選び、予約済みの練習問題で通った更新だけを提出する。改善を推論時の外部計算に残さず重みに保存する点が、プロンプトや推論時計算拡張と異なる。",
+        "結果は同一系列で比較され、2Bは更新せず、4Bと9Bは性能を損ねた一方、27Bだけが改善と損傷重みの修復を示した。arXiv公開論文であり、他系列や実運用での再現性は示されていない。"
+      ],
+      "articleDetail": {
+        "conclusion": "27B言語モデルが自己推論で重みを更新し、未見490問で精度を6.6ポイント改善したとする実験報告である。",
+        "facts": [
+          "27Bのオープンモデルは、自身の重み、採点済み回答、自身を実行する手段を与えられ、勾配や追加訓練なしに重みを書き換えた。",
+          "事前固定の対応試験で、更新後のモデルは未見490問の精度を6.6ポイント上げたと著者らは報告した。"
+        ],
+        "background": [
+          "論文は、再訓練または推論時だけ有効なプロンプト・外部の仕組み・追加計算を、従来の改善手段として位置付けている。"
+        ],
+        "explanation": [
+          "モデルは失敗を診断し、重み用コード、編集の対応試験、隠れ状態の読出しを1ターンに一つ選ぶ。勾配、最適化器、より強いモデルは使わない。",
+          "予約済み練習問題で確認した編集だけを提出し、最初の8セッションでは提出済み更新が前の更新を上回ったと報告している。"
+        ],
+        "implications": [
+          "改善を重みに保存するため、更新後の回答ごとに追加計算を要しない方式として試験された。"
+        ],
+        "caveats": [
+          "arXiv公開論文であり、査読状況は一次資料では示されていない。",
+          "改善と修復はこのモデル系列では27Bに限って示され、他系列や実運用への再現性は未公表である。"
+        ],
+        "nextChecks": [
+          "他のモデル系列、規模、タスクでの再現性と、更新後の性能低下や安全性の評価は一次資料で未公表である。"
+        ]
+      },
+      "comment": "この実験の要点は、モデルを改善する手順を外部の訓練処理ではなく、モデル自身が重みに対して行う操作として試験したことにある。27Bモデルは採点済み回答から失敗を診断し、コードで重みを更新する案を作る。予約済み練習問題の対応試験を通った案だけを提出するため、最初の8セッションで採用された更新は前の更新を上回ったとされる。未見490問で6.6ポイントという結果は、事前に試験を固定した条件でのものだ。一方、同一系列の2Bは更新せず、4Bと9Bは改変で性能を損ねた。したがって、示されたのは汎用的な自己改良ではなく、27Bを含むこの比較条件で成立した現象である。",
+      "attentionAnalysis": {
+        "whyNotable": "重みを読んで実行できる27Bモデルでは、追加訓練なしの更新案をモデル自身の対応試験で選別する実験設計が成立したと報告された。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "未見490問の事前固定試験では改善を示す一方、比較した小型モデルは更新に失敗しており、他系列への一般化はまだ示されていない。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T23:04:08.000Z",
+        "httpStatus": 200,
+        "note": "arXivの要旨ページとHTML本文を確認。"
+      }
+    },
+    {
+      "id": "2026-11-21-inkling-2-mini",
+      "title": "Inkling 2 Mini、中間12層を3巡させる約20GBの公開重みモデル",
+      "sourceName": "Thinking Machines Lab",
+      "sourceUrl": "https://thinkingmachines.ai/news/inkling-2-mini/",
+      "publishedAt": "2026-11-20T20:12:19.000Z",
+      "collectedAt": "2026-11-20T22:55:44.000Z",
+      "editionDate": "2026-11-21",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Thinking Machines Labは、公開重みモデル「Inkling 2 Mini」を公開した。24層のうち中間12層を重み共有のまま3回通し、1トークン当たり48回の層適用を行う。総パラメータ数は26.4B、有効パラメータ数は3.4Bで、ループ込みの重み活性化は1トークン当たり5.4Bとされる。",
+        "同社によると、重みは20層をNVFP4、最後の4層をMXFP8で配置し、総メモリ使用量は約20GBである。Ollama経由では、少なくとも32GBのRAMを持つMacでの推論を提供する。固定回数ループ版と可変ループ版の重みはHugging Faceで公開した。",
+        "同社報告の比較では、100B未満の公開重みモデル群に対し、DeepSWE v1.1で48.2%、Vals Index v2.2で46.5%を記録した。ただし図表の注記は、モデルごとに評価セットアップが異なるとしている。"
+      ],
+      "comment": "本モデルは、層数を増やすのではなく、中間の2ブロックを3巡させて逐次計算の深さを増やす。第2、第3巡では前巡の出力メッセージも受け取り、学習済みのゲートがそれをプレリュード出力などと混合するため、24層を格納したまま1トークンで48回の層適用になる。公開元の可変ループ実験では、Think Fastの一部タスクにおけるCoTなしの50%到達時間が1巡の16秒から3巡の37秒へ伸びた一方、3巡を超えると概ね横ばいだった。GPQA Diamondで全パス数を正答した問題に限った比較では、平均CoTは1巡の3,703トークンから5巡の1,661トークンへ短縮し、同社は文長と英語辞書語の割合は変わらなかったと報告している。約20GBという配置と32GB以上のMacという実行境界は、推論深度を変えたアーキテクチャをローカル環境で扱える形にした点に対応する。",
+      "attentionAnalysis": {
+        "whyNotable": "ローカル推論を行う開発者は、少なくとも32GBのRAMを持つMacでは、約20GBのInkling 2 MiniをOllama経由で動かせる。中間12層を3回通すため、格納パラメータを増やさずに1トークン当たりの逐次計算を増やすモデルを、固定版と可変ループ研究版の両方で検証できる。",
+        "currentReaction": "一次資料には外部反応の実測値・確認時刻は掲載されていません。",
+        "assessment": "妥当",
+        "assessmentComment": "重み公開とローカル実行の条件が明示され、ループ回数を変える研究用モデルも同時に提供された。性能値は公開元の報告であり、図表が示す評価セットアップ差を含めて読む必要がある。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-20T22:55:44.000Z"
+      },
+      "articleDetail": {
+        "conclusion": "Inkling 2 Miniは、中間12層を3巡させる24層・約20GBの公開重みモデルとして、32GB以上のMacでのOllama推論を掲げて公開された。",
+        "facts": [
+          "Thinking Machines Labは2026年11月20日にInkling 2 Miniを公開し、固定ループ版と可変ループ版の重みをHugging Faceで提供した。",
+          "モデルは26.4B総パラメータ、3.4B有効パラメータのMixture-of-Expertsで、ループ込みの重み活性化は1トークン当たり5.4Bである。",
+          "公開元はDeepSWE v1.1で48.2%、Vals Index v2.2で46.5%を報告した。"
+        ],
+        "background": [
+          "非ループ型トランスフォーマーでは各トークンが固定の層スタックを1回通るのに対し、ループ型は格納パラメータを増やさずにトークン内の逐次計算を増やす。",
+          "同社はモデル縮小のため、中間学習中に各層の384エキスパートから使用頻度の高い128を残し、その後に大規模内部モデルから蒸留した1Tトークンで性能回復を行ったとしている。"
+        ],
+        "explanation": [
+          "24層は6層ずつ4ブロックに分かれ、先頭と末尾は各1回、中間2ブロックは重みを共有して3回実行する。第2、第3巡は前巡のメッセージも読み、学習済みゲートでプレリュード出力などと混合する。",
+          "可変ループモデルでは、GPQA Diamondで全パス数を正答した問題に限ると、平均CoTは1巡の3,703トークンから5巡の1,661トークンへ短縮した。公開元は文長と英語辞書語の割合は変わらなかったと報告している。"
+        ],
+        "implications": [
+          "20層をNVFP4、4層をMXFP8で配置した総メモリ約20GBのモデルとして、起動時点では32GB以上のRAMを持つMacでOllama経由の推論をサポートする。",
+          "研究者向けには、ループ深度を1〜5回で学習したTML-d24-varloop-researchも公開され、内部計算とCoTの関係を比較できる。"
+        ],
+        "caveats": [
+          "性能図表はモデルごとに評価セットアップが異なるため、公開元が掲げる比較値を同一条件の直接比較とは扱えない。",
+          "可変ループ版は中間学習で1〜5回、強化学習では3回のみを使ったため、より深い回数で強化学習したモデルの挙動はこの実験からは分からない。"
+        ],
+        "nextChecks": [
+          "比較可能なハーネスとハードウェアで、公開元報告のコーディング・ツール利用ベンチマークが第三者にも再現されるか。",
+          "3回を超えるループ回数で強化学習した場合に、CoTの圧縮がどう変わるか。"
+        ]
+      }
+    }
+  ]
+}
