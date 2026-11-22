@@ -1,0 +1,1574 @@
+{
+  "date": "2026-11-22",
+  "generatedAt": "2026-11-22T08:10:25+09:00",
+  "selectionShortfallReason": "生成セッションは候補27件のうち中心事実を再確認できた5件に絞った短縮版としたが、公開前チェックの復旧で繰越4件・当日候補6件・拾い漏れ1件を追加し、最終的に16件とした。未確認の候補は無理に掲載せず、次版の候補台帳で再評価する。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "policyVersion": 1,
+    "checkedAt": "2026-11-22T08:10:25+09:00",
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:10:00+09:00",
+        "note": "海外ソーシャル発見の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:11:00+09:00",
+        "note": "国内ソーシャル・横断媒体の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:12:00+09:00",
+        "note": "動画・ネット文化の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "status": "restricted",
+        "checkedAt": "2026-11-22T06:13:00+09:00",
+        "note": "discovery-general-reporting: HTTP 403または取得制限のため内容を直接確認できず、公開の代替資料で確認した。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:14:00+09:00",
+        "note": "OpenAI公式更新・安全情報・稼働状況の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:15:00+09:00",
+        "note": "Anthropic公式更新・研究・稼働状況の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:16:00+09:00",
+        "note": "Google AI・DeepMind公式更新の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:17:00+09:00",
+        "note": "Microsoft・Meta・NVIDIA AI公式更新の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:18:00+09:00",
+        "note": "AI企業の買収・終了・提供条件変更の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:19:00+09:00",
+        "note": "CISA KEV・NVDの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:20:00+09:00",
+        "note": "CERT/CC・JPCERT/CC・IPAの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:21:00+09:00",
+        "note": "OSS・クラウド・主要ベンダーセキュリティ告知の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:22:00+09:00",
+        "note": "悪用確認・国内脆弱性の機械可読フィードの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:23:00+09:00",
+        "note": "公開セキュリティ調査・侵害報道の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:24:00+09:00",
+        "note": "主要プロジェクト・製品ベンダーの個別告知の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:25:00+09:00",
+        "note": "Synologyセキュリティ告知・製品警告の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:26:00+09:00",
+        "note": "Broadcom VCF Security Advisoriesの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:27:00+09:00",
+        "note": "Broadcom Application Networking and Security Advisoriesの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "status": "restricted",
+        "checkedAt": "2026-11-22T06:28:00+09:00",
+        "note": "vcf-kb-release-notes: HTTP 403または取得制限のため内容を直接確認できず、公開の代替資料で確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:29:00+09:00",
+        "note": "Broadcom・VMware公式の製品・ポートフォリオ発表（新エディション、ライセンス、販売・サポート期限）の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:30:00+09:00",
+        "note": "日本政府のサイバー政策・要請（国家サイバー統括室・サイバーセキュリティ戦略本部・IPA）の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:31:00+09:00",
+        "note": "Broadcom Service Status・緊急障害の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:32:00+09:00",
+        "note": "相互運用性・互換性・HCL・ライフサイクルの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "status": "restricted",
+        "checkedAt": "2026-11-22T06:33:00+09:00",
+        "note": "vcf-avi: HTTP 403または取得制限のため内容を直接確認できず、公開の代替資料で確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "status": "restricted",
+        "checkedAt": "2026-11-22T06:34:00+09:00",
+        "note": "vcf-vdefend: HTTP 403または取得制限のため内容を直接確認できず、公開の代替資料で確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:35:00+09:00",
+        "note": "William Lam・Duncan Eppingの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:36:00+09:00",
+        "note": "運用者コミュニティ・実機検証者の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:37:00+09:00",
+        "note": "バックアップ・GPU・サーバー・ストレージ連携ベンダーの公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "status": "checked",
+        "checkedAt": "2026-11-22T06:38:00+09:00",
+        "note": "競合・移行先の公開情報を対象期間について確認した。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "findings": [
+      {
+        "title": "VMSA-2026-0009のBack-in-Time制限を再評価",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "対象vCenterのパッチ適用順はVCF 9.1.1への更新可否に直結するが、今回は専門枠の本文を追加せず次版で再評価する。"
+      },
+      {
+        "title": "TechDocsの直接取得制限",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://techdocs.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "公開ページの取得制限で11月19日のリリースノート本文を直接確認できず、代替の公式資料を参照した。"
+      },
+      {
+        "title": "discovery-general-reporting の直接確認が制限された",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.reuters.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "取得制限のため中心事実を直接確認できず、代替の公開情報で補完したが記事化は見送った。"
+      },
+      {
+        "title": "vcf-avi の直接確認が制限された",
+        "area": "vcf",
+        "sourceId": "vcf-avi",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "取得制限のため中心事実を直接確認できず、代替の公開情報で補完したが記事化は見送った。"
+      },
+      {
+        "title": "vcf-vdefend の直接確認が制限された",
+        "area": "vcf",
+        "sourceId": "vcf-vdefend",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "取得制限のため中心事実を直接確認できず、代替の公開情報で補完したが記事化は見送った。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-22-nvidia-sec-accounting",
+      "title": "NVIDIA、SECの会計調査報道で焦点が明らかになりました",
+      "sourceUrl": "https://www.investing.com/news/economy-news/exclusiveus-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-5042460",
+      "sourceName": "Reuters",
+      "publishedAt": "2026-11-20T14:16:00.000Z",
+      "collectedAt": "2026-11-22T07:00:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 1,
+      "summary": [
+        "Reutersは11月20日、事情を知る2人の話として、SEC執行部門がNVIDIAの会計慣行に関する問題を調べていると報じました。調査は違法行為の認定や提訴を意味するものではありません。",
+        "Wall Street Journalは火曜日にSECの調査そのものを報じていましたが、焦点を特定していませんでした。Reutersは会計を焦点として初めて報じ、SECはコメントを拒み、NVIDIAは直ちに応答していません。",
+        "報道後、NVIDIA株はLSEGデータで約13%下落しました。会計上のどの項目をSECが調べているか、調査が執行措置に進むかは公表されておらず、匿名情報の報道と今後の正式手続き・会社開示は分けて読む必要があります。"
+      ],
+      "comment": "Reutersが11月20日に報じたのは、事情を知る2人によればSEC執行部門がNVIDIAの会計慣行に関する問題を調べている、という段階です。Wall Street Journalは火曜日にSEC調査の存在を報じていましたが焦点を示しておらず、今回の報道は会計を焦点として初めて伝えました。SECはコメントを拒み、NVIDIAも直ちに応答していません。したがって、約13%下落したというLSEGデータの市場反応と、匿名情報に基づく会計焦点の報道を、調査対象の確定や執行措置の予告として扱うことはできません。会計上のどの項目を調べているかも未公表であり、SECの正式手続きとNVIDIAの追加開示は別個に確認する必要があります。",
+      "articleDetail": {
+        "conclusion": "NVIDIA、SECの会計調査報道で焦点が明らかには、対象と判断条件を切り分けて読む必要がある。",
+        "facts": [
+          "Reutersは11月20日、SEC執行部門がNVIDIAの会計慣行を調べていると報じた。"
+        ],
+        "background": [
+          "SEC調査は提訴や違法認定と同じ意味ではない。"
+        ],
+        "explanation": [
+          "会計調査の報道は、開示と規制手続きが後から事実関係を明らかにする構造にある。"
+        ],
+        "implications": [
+          "投資家は当局・会社・監査の各開示を区別して評価する必要がある。"
+        ],
+        "caveats": [
+          "SECとNVIDIAは報道時点で調査の詳細を公表していない。"
+        ],
+        "nextChecks": [
+          "SECの手続き、NVIDIAの追加開示、定期報告書の変更を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Reutersが11月20日に会計を焦点として初めて報じたため、投資家はSEC調査の存在だけではなく、対象項目が未公表の間は匿名情報、正式手続き、NVIDIAの追加開示を分けて判断する必要があります。",
+        "currentReaction": "公開ページと関連報道の掲載状況を確認した。",
+        "assessment": "妥当",
+        "assessmentComment": "nvidia-sec-accountingは、固有の数値・対象・前提を分けて扱うことで評価できる。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "公開URLを候補確認時に参照した。"
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:00:00+09:00",
+        "reason": "前日版の拾い漏れ照合で、対象期間前の重要な公開・報道を再評価した。",
+        "currentNewsValue": "当日の続報または運用判断に結び付くため、遅延掲載として扱う。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-22T07:00:00+09:00",
+        "script": [
+          "NVIDIA、SECの会計調査報道で焦点が明らかになりました。公開された中心事実をお伝えします。",
+          "NVIDIA、SECの会計調査報道で焦点が明らかになりましたでは、公開された条件によって影響の範囲が変わります。",
+          "NVIDIA、SECの会計調査報道で焦点が明らかになりましたは、追加の公式説明で評価が更新されます。"
+        ],
+        "references": [
+          "https://www.investing.com/news/economy-news/exclusiveus-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-5042460"
+        ],
+        "detail": [
+          "NVIDIA、SECの会計調査報道で焦点が明らかにです"
+        ],
+        "learning": [
+          "NVIDIA、SECの会計調査報道で焦点が明らかにです"
+        ],
+        "analysis": [
+          "NVIDIA、SECの会計調査報道で焦点が明らかにです"
+        ]
+      },
+      "englishVersion": {
+        "title": "NVIDIA accounting becomes the reported focus of SEC inquiry",
+        "summary": [
+          "On November 20, Reuters reported, citing two people briefed on the matter, that the SEC enforcement division is examining potential issues in NVIDIA's accounting practices. An inquiry does not establish wrongdoing or mean that a lawsuit will follow.",
+          "The Wall Street Journal had reported on Tuesday that an SEC inquiry existed, without identifying its focus. Reuters was the first to report accounting as the focus; the SEC declined to comment and NVIDIA did not immediately respond.",
+          "NVIDIA shares fell about 13% after the report, according to LSEG data. The accounting items under examination and whether the inquiry will lead to enforcement remain undisclosed, so the anonymous report should be separated from later formal SEC action and company disclosures."
+        ],
+        "comment": "Reuters reported on November 20 that, according to two people briefed on the matter, SEC enforcement staff are examining potential accounting issues at NVIDIA. The Wall Street Journal had reported the existence of an inquiry on Tuesday without identifying its focus; Reuters first reported accounting as that focus. The SEC declined to comment and NVIDIA did not immediately respond. LSEG data showed NVIDIA shares down about 13% after the report, but that reaction does not establish the scope of the inquiry or an enforcement outcome. The accounting items at issue and whether the inquiry will proceed are undisclosed, leaving future formal SEC action and NVIDIA disclosures as the evidence that can resolve those questions."
+      }
+    },
+    {
+      "id": "2026-11-22-anthropic-greenshoe",
+      "title": "Anthropic、グリーンシュー行使でIPO調達額は935億ドルになりました",
+      "sourceUrl": "https://www.investing.com/news/economy-news/anthropic-ipo-haul-rises-to-935-billion-after-underwriters-exercise-greenshoe-5041607",
+      "sourceName": "Reuters",
+      "publishedAt": "2026-11-20T21:00:00.000Z",
+      "collectedAt": "2026-11-22T07:00:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "その他"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 2,
+      "summary": [
+        "Anthropicは11月20日、引受会社が追加株式を購入するグリーンシューを行使し、IPOの総調達額が約935億ドルになったと発表しました。Reutersが11月19日に報じた813億ドルからは約122億ドル増えています。",
+        "グリーンシューは、引受会社がIPO時に追加株式を購入できるオプションです。Reutersによると引受会社は通常IPO後30日以内に行使でき、今回の増額はこの追加株式の購入によるものです。",
+        "935億ドルはグリーンシュー行使後のIPO総額です。AI企業の資金調達規模を比較する際は、当初の813億ドル、追加購入後の935億ドル、別途の私募を同じ調達額として混ぜず、この記事で示されていない資金使途の内訳も区別する必要があります。"
+      ],
+      "comment": "Anthropicが11月20日に示した約935億ドルは、引受会社が追加株式を購入するグリーンシューを行使した後のIPO総額です。Reutersが11月19日に報じた当初の813億ドルと比べると、増額分は約122億ドルになります。グリーンシューは、引受会社がIPO時に追加株式を購入できるオプションで、Reutersによれば通常はIPO後30日以内に行使できます。このため、935億ドルを読む際には当初IPOの813億ドルと追加購入後の額を一つの時点の数字として扱わず、どの取引が増額を生んだかを分ける必要があります。また、別途の私募はIPOと同じ欄に合算せず、資金使途の内訳はこの記事では示されていない点も残ります。",
+      "articleDetail": {
+        "conclusion": "Anthropic、グリーンシュー行使でIPO調達額を935億ドルへは、対象と判断条件を切り分けて読む必要がある。",
+        "facts": [
+          "Anthropicは引受会社による追加株式取得で総調達額が約935億ドルになったと明らかにした。"
+        ],
+        "background": [
+          "グリーンシューは需要超過時に引受会社が追加株式を取得できる契約上の選択肢である。"
+        ],
+        "explanation": [
+          "追加株式の行使はIPOで設定された供給枠を実際の需要へ配分する仕組みである。"
+        ],
+        "implications": [
+          "市場参加者は会社の手取りと既存株主の売却額を分けて資金調達を比較する。"
+        ],
+        "caveats": [
+          "935億ドルの内訳と将来の資金使途は別の開示で確認する必要がある。"
+        ],
+        "nextChecks": [
+          "IPO目論見書と会社の資金配分に関する追加開示を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "IPO後30日以内に行使できるグリーンシューでAnthropicの総額が813億ドルから約935億ドルへ増えたため、AI企業の調達額を比較する投資家は、当初IPO、追加株式購入、別途の私募を取引別に記録する必要があります。",
+        "currentReaction": "Hacker Newsで対象記事への議論とリンク先を確認した。",
+        "assessment": "妥当",
+        "assessmentComment": "anthropic-greenshoeは、固有の数値・対象・前提を分けて扱うことで評価できる。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "公開URLを候補確認時に参照した。"
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:00:00+09:00",
+        "reason": "前日版の拾い漏れ照合で、対象期間前の重要な公開・報道を再評価した。",
+        "currentNewsValue": "当日の続報または運用判断に結び付くため、遅延掲載として扱う。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-22T07:00:00+09:00",
+        "script": [
+          "Anthropic、グリーンシュー行使でIPO調達額は935億ドルになりました。公開された中心事実をお伝えします。",
+          "Anthropic、グリーンシュー行使でIPO調達額は935億ドルになりましたでは、公開された条件によって影響の範囲が変わります。",
+          "Anthropic、グリーンシュー行使でIPO調達額は935億ドルになりましたは、追加の公式説明で評価が更新されます。"
+        ],
+        "references": [
+          "https://www.investing.com/news/economy-news/anthropic-ipo-haul-rises-to-935-billion-after-underwriters-exercise-greenshoe-5041607"
+        ],
+        "detail": [
+          "Anthropic、グリーンシュー行使でIPO調達額を935億ドルへです"
+        ],
+        "learning": [
+          "Anthropic、グリーンシュー行使でIPO調達額を935億ドルへです"
+        ],
+        "analysis": [
+          "Anthropic、グリーンシュー行使でIPO調達額を935億ドルへです"
+        ]
+      },
+      "englishVersion": {
+        "title": "Anthropic's greenshoe exercise raises IPO proceeds to $93.5 billion",
+        "summary": [
+          "On November 20, Anthropic said its underwriters had exercised a greenshoe option to buy additional shares, bringing total IPO proceeds to about $93.5 billion. That is about $12.2 billion above the $81.3 billion Reuters reported for the IPO on November 19.",
+          "A greenshoe is an option that lets underwriters buy additional shares in an IPO. Reuters explains that underwriters typically have up to 30 days after an IPO to exercise it, and the added proceeds came from that additional share purchase.",
+          "The $93.5 billion figure is the total after the greenshoe exercise. Comparisons of AI-company fundraising should separate the initial $81.3 billion IPO, the $93.5 billion total after the additional purchase, and any separate private placement; this report does not give a breakdown of how the proceeds will be used."
+        ],
+        "comment": "The roughly $93.5 billion Anthropic disclosed on November 20 is the total IPO amount after underwriters exercised a greenshoe option to buy additional shares. Compared with the $81.3 billion Reuters reported on November 19, the increase is about $12.2 billion. Reuters describes a greenshoe as an option underwriters can typically exercise within 30 days after an IPO. The two totals therefore represent different transaction points, rather than interchangeable measures of the same initial offering. A separate private placement should not be folded into the IPO figure, and this report does not provide a use-of-proceeds breakdown."
+      }
+    },
+    {
+      "id": "2026-11-22-signal-screenshot",
+      "title": "Signal、モバイル版でスクリーンショット制限を拡大しました",
+      "sourceUrl": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-21T21:37:10.000Z",
+      "collectedAt": "2026-11-22T07:00:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "summary": [
+        "Signalは11月20日、iOS 27のアプリでスクリーンショットを防ぎ、AndroidではAIアシスタントが画面データを取得しようとする場合にブロックすると発表しました。狙いはAIによる画面内容の取得を抑えることです。",
+        "iOSでは「Block Siri AI」、Androidでは「Screen security」の設定で画面取得を抑えます。Signalは、OSがAIのデータアクセスを制限する十分な手段を開発者へ提供していないため、この方法を取ったと説明しています。",
+        "この保護は完全ではありません。Signalは端末のファイルシステムに既にある内容へのアクセスを阻止できず、macOSには同等の自動保護もないとしています。iOS 27またはAndroidの利用者は、設定がどの画面取得を対象にするかを端末別に確認する必要があります。"
+      ],
+      "comment": "Signalの変更は、iOS 27ではアプリ内のスクリーンショットを防ぎ、AndroidではAIアシスタントが画面データを取得しようとする場面をブロックするものです。iOSの設定名は「Block Siri AI」、Androidは「Screen security」で、暗号化プロトコルを変更する発表ではなく、端末画面からAIへ渡る経路に追加する制御です。SignalはOS提供者が開発者に十分な制限手段を渡していないと述べています。一方で、端末のファイルシステムに既にある内容へのアクセスは防げず、macOSには同等の自動保護がありません。したがってiOS 27またはAndroidの利用者は、設定の有無だけでなく、自分の端末で対象になる画面取得経路を確認する必要があります。",
+      "articleDetail": {
+        "conclusion": "Signal、モバイル版でスクリーンショット制限を拡大は、対象と判断条件を切り分けて読む必要がある。",
+        "facts": [
+          "SignalはAndroidとiOSで画面キャプチャーを抑止する機能を導入したと報じられた。"
+        ],
+        "background": [
+          "端末上の閲覧内容は暗号化された転送経路とは別のリスク面を持つ。"
+        ],
+        "explanation": [
+          "スクリーンショット抑止はOSの共有経路を制約しても物理的な撮影を防ぐものではない。"
+        ],
+        "implications": [
+          "利用者はアプリ設定に加え、端末ロックと相手側の閲覧環境も検討する。"
+        ],
+        "caveats": [
+          "OSや端末の挙動により制限の実効性は異なり得る。"
+        ],
+        "nextChecks": [
+          "Signalの公式仕様と各OS版での制限範囲を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Signalが11月20日にiOS 27とAndroidでAIによる画面取得を制限したため、対象端末の利用者は「Block Siri AI」または「Screen security」が有効な範囲と、ファイルシステムやmacOSに残る例外を分けて運用する必要があります。",
+        "currentReaction": "公開ページと関連報道の掲載状況を確認した。",
+        "assessment": "妥当",
+        "assessmentComment": "signal-screenshotは、固有の数値・対象・前提を分けて扱うことで評価できる。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "公開URLを候補確認時に参照した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-22T07:00:00+09:00",
+        "script": [
+          "Signal、モバイル版でスクリーンショット制限を拡大しました。公開された中心事実をお伝えします。",
+          "Signal、モバイル版でスクリーンショット制限を拡大しましたでは、公開された条件によって影響の範囲が変わります。",
+          "Signal、モバイル版でスクリーンショット制限を拡大しましたは、追加の公式説明で評価が更新されます。"
+        ],
+        "references": [
+          "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/"
+        ],
+        "detail": [
+          "Signal、モバイル版でスクリーンショット制限を拡大です"
+        ],
+        "learning": [
+          "Signal、モバイル版でスクリーンショット制限を拡大です"
+        ],
+        "analysis": [
+          "Signal、モバイル版でスクリーンショット制限を拡大です"
+        ]
+      },
+      "englishVersion": {
+        "title": "Signal blocks selected AI screen capture on iOS 27 and Android",
+        "summary": [
+          "On November 20, Signal said it would prevent screenshots in its iOS 27 app and block attempts by AI assistants to capture screen data on Android. The stated aim is to limit AI access to what appears on screen.",
+          "On iOS, the control is called Block Siri AI; on Android, it is Screen security. Signal says it adopted these controls because operating systems do not give developers sufficient tools to restrict AI data access.",
+          "The protection is incomplete: Signal says it cannot prevent access to content already in a device's filesystem, and macOS has no equivalent automatic protection. People using iOS 27 or Android need to check which screen-capture paths their device settings cover."
+        ],
+        "comment": "Signal's change prevents screenshots inside the iOS 27 app and blocks cases in which an AI assistant tries to capture screen data on Android. Block Siri AI on iOS and Screen security on Android are controls over a route from the device screen to AI, not a change to Signal's encryption protocol. Signal says operating-system vendors do not provide developers with sufficient restrictions. It also calls the protection incomplete: it cannot block access to content already in the filesystem, and macOS has no equivalent automatic protection. Users should therefore confirm which screen-capture route their own device setting covers."
+      }
+    },
+    {
+      "id": "2026-11-22-lean-riemann",
+      "title": "Leanによるリーマン予想の検証ファイルが公開されました",
+      "sourceUrl": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+      "sourceName": "Lean Prover Community",
+      "publishedAt": "2026-11-21T14:36:45.000Z",
+      "collectedAt": "2026-11-22T07:00:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "科学・医療"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 4,
+      "summary": [
+        "LeanとMathlibのコミュニティは11月21日、Levent Alpögeが11月20日に公開した1700万行のLeanライブラリによるリーマン予想の証明を正しいと認証する共同声明を出しました。",
+        "数十人が正常コンパイルと同じraw proof exportの再現を報告し、Lean公式カーネル、con-leche、con-ronなど複数のproof checkerがexportを検査しました。検査対象はproof sourceから切り離したinert exportです。",
+        "共同声明は、MathlibのRiemannHypothesisとライブラリの定理をcomparatorとcon-leche --compareで照合したと説明します。一方、新しい証明のアイデアを説明する活動は今後に委ねられており、命題の一致、コンパイル、export検査を同じ判断として混同しない必要があります。"
+      ],
+      "comment": "共同声明が検証したのは、1700万行のLeanライブラリが正しい命題を証明しているかを複数の層で確かめる作業です。数十人が同じraw proof exportを再現し、Lean公式カーネル、con-leche、con-ronなどのproof checkerがそのexportを検査しました。さらに、MathlibのRiemannHypothesisとライブラリの定理をcomparatorとcon-leche --compareで突き合わせています。ここで重要なのは、ライブラリのコンパイル、命題の一致、proof exportの有効性が別の確認であることです。検査はproof sourceから切り離したinert exportに対して行われましたが、共同声明自身は新しい証明のアイデアを説明する活動がこれから必要だとしています。",
+      "articleDetail": {
+        "conclusion": "Leanで検証されたリーマン予想の主張、検証範囲をめぐる議論は、対象と判断条件を切り分けて読む必要がある。",
+        "facts": [
+          "Lean Prover Communityはリーマン予想に関する検証ファイルと説明を公開した。"
+        ],
+        "background": [
+          "形式証明は定理と前提を機械可読な言語で表した範囲を検査する。"
+        ],
+        "explanation": [
+          "検証器は形式化された推論を再計算するが、問題設定の妥当性は別の検討対象となる。"
+        ],
+        "implications": [
+          "研究者はファイル公開と独立再実行、専門家の読解を組み合わせて主張を検討する。"
+        ],
+        "caveats": [
+          "公開ファイルが数学界全体の査読を終えたことを意味するわけではない。"
+        ],
+        "nextChecks": [
+          "独立した専門家による検証結果と形式化の対象範囲を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "11月21日の共同声明により、リーマン予想の証明を評価する数学者と形式手法の利用者は、命題照合、1700万行ライブラリのコンパイル、複数checkerによるinert export検査を別々の確認結果として扱う必要があります。",
+        "currentReaction": "Hacker Newsで対象記事への議論とリンク先を確認した。",
+        "assessment": "妥当",
+        "assessmentComment": "lean-riemannは、固有の数値・対象・前提を分けて扱うことで評価できる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "公開URLを候補確認時に参照した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-22T07:00:00+09:00",
+        "script": [
+          "Leanによるリーマン予想の検証ファイルが公開されました。公開された中心事実をお伝えします。",
+          "Leanによるリーマン予想の検証ファイルが公開されましたでは、公開された条件によって影響の範囲が変わります。",
+          "Leanによるリーマン予想の検証ファイルが公開されましたは、追加の公式説明で評価が更新されます。"
+        ],
+        "references": [
+          "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+        ],
+        "detail": [
+          "Leanで検証されたリーマン予想の主張、検証範囲をめぐる議論です"
+        ],
+        "learning": [
+          "Leanで検証されたリーマン予想の主張、検証範囲をめぐる議論です"
+        ],
+        "analysis": [
+          "Leanで検証されたリーマン予想の主張、検証範囲をめぐる議論です"
+        ]
+      },
+      "englishVersion": {
+        "title": "Lean and Mathlib communities certify a Riemann Hypothesis proof export",
+        "summary": [
+          "On November 21, the Lean and Mathlib communities issued a joint statement certifying a Riemann Hypothesis proof in a 17-million-line Lean library released by Levent Alpöge on November 20.",
+          "Dozens of people reported reproducing a successful compilation and the same raw proof export. Several proof checkers, including Lean's official kernel, con-leche, and con-ron, checked that export, which was separated from the proof source as an inert export.",
+          "The statement says comparator and con-leche --compare matched Mathlib's RiemannHypothesis against the theorem in the library. Explaining the proof's new ideas remains future work, so statement matching, compilation, and export checking should be read as distinct results."
+        ],
+        "comment": "The joint statement describes separate checks of a 17-million-line Lean library: dozens reproduced the raw proof export, and Lean's official kernel, con-leche, con-ron, and other checkers examined that inert export. Comparator and con-leche --compare also matched the theorem in the library with Mathlib's RiemannHypothesis. These are different checks—successful compilation, statement matching, and proof-export validation—not a single undifferentiated result. The communities say that explaining the proof's new ideas is still work for the mathematical community."
+      }
+    },
+    {
+      "id": "2026-11-22-adult-toy-sales",
+      "title": "成人のみの世帯、玩具売上の55%を占めたとの調査です",
+      "sourceUrl": "https://www.bloomberg.com/news/articles/2026-11-18/jellycats-squishmallows-and-lego-sets-for-adults-drive-holiday-traffic",
+      "sourceName": "Bloomberg",
+      "publishedAt": "2026-11-18T10:00:13.628Z",
+      "collectedAt": "2026-11-22T07:00:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 5,
+      "summary": [
+        "Bloombergは11月18日、成人のみで暮らす世帯が2026年前半の米国玩具売上の55%を占め、前年比16%増えたとするCircanaデータを紹介しました。Jellycat、Squishmallows、Legoセットなどが成人向けの品ぞろえに入っています。",
+        "55%は2026年前半の売上構成であり、購入者数の割合や通年の市場比率ではありません。成人のみ世帯の売上が前年比16%増えたという変化率も別の指標であり、両者を同じ意味には扱えません。",
+        "Bloombergはblind-box figurinesを含む成人向けの棚づくりも紹介しています。米国の小売・メーカーがこのデータを使う場合は、子どものいる世帯向けだけでなく成人のみ世帯向けの品ぞろえを判断対象にし、記事にないCircanaの小売チャネル別内訳を補わないよう注意が必要です。"
+      ],
+      "comment": "Bloombergが11月18日に紹介したCircanaデータでは、成人のみで暮らす世帯が2026年前半の米国玩具売上の55%を占め、同世帯の売上は前年比16%増えました。55%は売上構成、16%は同じ世帯群の前年比変化であり、購入者数や通年の市場比率を示す数値ではありません。記事が挙げるJellycat、Squishmallows、Legoセット、blind-box figurinesは、成人を対象に棚へ置かれている商品です。このため小売・メーカーが品ぞろえを判断する際には、子どものいる世帯向けと成人のみ世帯向けを同じ顧客区分として扱わず、期間が2026年前半、地域が米国であることを併記する必要があります。Circanaの小売チャネル別内訳は記事に示されていません。",
+      "articleDetail": {
+        "conclusion": "大人だけの世帯、2026年前半の玩具売上の55%を占めるとの調査は、対象と判断条件を切り分けて読む必要がある。",
+        "facts": [
+          "業界データでは成人のみの世帯が2026年前半の玩具売上の55%を占めた。"
+        ],
+        "background": [
+          "玩具市場には子ども向け以外に収集・趣味・贈答の購買が含まれる。"
+        ],
+        "explanation": [
+          "販売額比率は価格と購入頻度を含むため、購入者人口の比率と一致しない。"
+        ],
+        "implications": [
+          "小売とメーカーは年齢以外の購買動機を商品・在庫計画へ反映できる。"
+        ],
+        "caveats": [
+          "調査対象の小売・地域・価格帯が異なれば55%という比率は変動し得る。"
+        ],
+        "nextChecks": [
+          "調査会社が母数と市場区分を追加公表するか確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "2026年前半の米国玩具売上で成人のみ世帯が55%、同世帯売上が前年比16%増だったため、小売・メーカーは次の品ぞろえ判断で、Jellycat、Squishmallows、Legoセットなどの成人向け需要を子どものいる世帯向けと分けて集計する必要があります。",
+        "currentReaction": "Hacker Newsで対象記事への議論とリンク先を確認した。",
+        "assessment": "妥当",
+        "assessmentComment": "adult-toy-salesは、固有の数値・対象・前提を分けて扱うことで評価できる。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "公開URLを候補確認時に参照した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-22T07:00:00+09:00",
+        "script": [
+          "成人のみの世帯、玩具売上の55%を占めたとの調査です。公開された中心事実をお伝えします。",
+          "成人のみの世帯、玩具売上の55%を占めたとの調査ですでは、公開された条件によって影響の範囲が変わります。",
+          "成人のみの世帯、玩具売上の55%を占めたとの調査ですは、追加の公式説明で評価が更新されます。"
+        ],
+        "references": [
+          "https://www.bloomberg.com/news/articles/2026-11-18/jellycats-squishmallows-and-lego-sets-for-adults-drive-holiday-traffic"
+        ],
+        "detail": [
+          "大人だけの世帯、2026年前半の玩具売上の55%を占めるとの調査です"
+        ],
+        "learning": [
+          "大人だけの世帯、2026年前半の玩具売上の55%を占めるとの調査です"
+        ],
+        "analysis": [
+          "大人だけの世帯、2026年前半の玩具売上の55%を占めるとの調査です"
+        ]
+      },
+      "englishVersion": {
+        "title": "Adult-only households account for 55% of US toy sales in early 2026",
+        "summary": [
+          "On November 18, Bloomberg cited Circana data showing that adult-only households accounted for 55% of US toy sales in the first half of 2026 and that their sales rose 16% year over year. Jellycat, Squishmallows, and Lego sets are among the adult-oriented assortment.",
+          "The 55% figure is a sales mix for the first half of 2026, not a share of buyers or a full-year market share. The 16% year-over-year increase for adult-only-household sales is a separate measure and should not be treated as the same statistic.",
+          "Bloomberg also describes shelves aimed at adults that include blind-box figurines. US retailers and manufacturers using this data should treat adult-only households as a distinct assortment input while not filling in Circana's retail-channel breakdown, which the article does not provide."
+        ],
+        "comment": "Bloomberg's November 18 Circana data put adult-only households at 55% of US toy sales in the first half of 2026, with sales by those households up 16% year over year. The 55% is a sales-mix measure and the 16% is a growth rate; neither establishes buyer counts or a full-year market share. The reported adult-oriented assortment includes Jellycat, Squishmallows, Lego sets, and blind-box figurines. Retailers and manufacturers should keep the first-half-2026 US scope alongside this segmentation, because the article does not provide Circana's retail-channel breakdown."
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:00:00+09:00",
+        "reason": "前日版の拾い漏れ照合で、対象期間前に公開された市場データを再評価した。",
+        "currentNewsValue": "当日の発見経路で広く議論され、消費動向を示す具体的な数値がある。"
+      }
+    },
+    {
+      "id": "2026-11-22-third-party-finance-breach",
+      "title": "Chaseの第三者侵害、Visa・Mastercardは影響範囲を限定",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/vendor-data-breach-exposes-chase-visa-mastercard-customer-info/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-20T10:58:06-05:00",
+      "collectedAt": "2026-11-22T07:00:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "J.P. Morgan Chaseは、第三者サービス提供者へのサイバー攻撃で、顧客の個人情報とマーケティング情報が露出したと警告した。報道では、VisaとMastercardも関連する第三者事案を確認しているが、各社が説明する影響範囲は同じではない。",
+        "Visaはアジア太平洋地域の第三者提供者の事案だとし、自社システムは関与・影響を受けておらず、カード番号などの決済データにも影響はないと説明した。Mastercardは、特定の特典プログラムに登録したカード会員の小さな部分集合で、限定的なメールアドレスが露出したとした。",
+        "攻撃者はQuboleへの攻撃を主張し、顧客が事前に設定したIAMロールを通じて顧客AWS環境へアクセスしたと述べている。Quboleは報道時点でこの主張に回答しておらず、影響人数、全対象データ、侵入経路は未公表である。"
+      ],
+      "comment": "今回の情報は「決済ネットワークが侵害された」と一括りにはできない。Chaseは個人情報とマーケティング情報の露出を認めた一方、Visaは決済データと自社システムへの影響を否定し、Mastercardの説明は特定特典プログラムの一部メールアドレスに限られる。報道上の経路は、顧客側であらかじめQuboleへ与えたAWS IAMロールへのアクセスであり、攻撃者の主張とQuboleからの確認は分けて扱う必要がある。",
+      "articleDetail": {
+        "conclusion": "第三者提供者に与えたアクセス境界が争点だが、各金融・決済会社で確認済みの露出範囲は異なる。",
+        "facts": [
+          "Chaseは第三者サービス提供者へのサイバー攻撃により、顧客の個人情報とマーケティング情報が露出したと警告した。",
+          "Visaは第三者提供者の事案を認めつつ、カード番号などの決済データとVisaのシステムは影響を受けていないと説明した。",
+          "Mastercardは特定特典プログラム登録者の小さな部分集合で、限定的なメールアドレスが露出したと説明した。"
+        ],
+        "background": [
+          "Quboleはクラウドデータ分析、処理自動化、リアルタイム分析、レポートに使われるクラウドデータ分析企業だと報じられている。"
+        ],
+        "explanation": [
+          "攻撃者は、顧客がQuboleへアクセスを許可するために設定したAWS IAMロールを、侵害したQubole認証情報で利用したと主張している。"
+        ],
+        "implications": [
+          "QuboleにAWS IAMロールを設定した顧客環境では、第三者認証情報への依存が顧客環境への到達可能性に結び付く。"
+        ],
+        "caveats": [
+          "Quboleは報道時点で攻撃者の主張へのコメントを出しておらず、侵入経路と攻撃者が主張するデータ量は独立に確認されていない。"
+        ],
+        "nextChecks": [
+          "Quboleおよび各社が、影響人数、対象データ、顧客AWS環境へのアクセス経路を正式に公表するかが更新点となる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "第三者のクラウド分析基盤へ設定したIAMロールが、金融・決済各社の顧客環境への到達経路になったとの主張であり、各社の公表範囲が異なるまま侵害の境界が問われている。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "Chase、Visa、Mastercardがそれぞれ異なる範囲を公表しており、攻撃者のQubole経由という主張には未確認部分も残るため、確定情報と主張を分けて追う必要がある。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:00:00+09:00",
+        "reason": "前日版で未執筆の繰越候補であり、報道の表示時刻は対象期間開始前だった。",
+        "currentNewsValue": "Chase、Visa、Mastercardの説明で露出範囲が分かれ、第三者クラウド基盤への委任アクセスが焦点となっている。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "AMP版で本文と構造化公開時刻を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-22-ukraine-fbi-ransomware",
+      "title": "ウクライナとFBI、4,050万ドル規模のランサムウェア組織を捜査",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/ukraine-fbi-arrest-ransomware-gang-members-tied-to-40m-in-ransoms/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-18T23:08:33Z",
+      "collectedAt": "2026-11-22T07:05:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "ウクライナ当局とFBIは、少なくとも28社から4,050万ドル超の身代金支払いに結び付く国際ランサムウェア組織の容疑者4人を拘束した。捜査は2年に及び、当局は複数国にまたがる組織として扱っている。",
+        "報道によると、組織はウクライナ、カザフスタン、ロシアなどの少なくとも27人で構成され、8法域にまたがる60人超のより広いネットワークとも結び付く。元Contiランサムウェア集団の関係者が含まれるとされる。",
+        "標的は石油・ガス、製薬、製造、物流、金融、重要インフラに及んだ。当局説明では、財務状況やIT脆弱性を調べた後に企業データを盗み、システムを暗号化して暗号資産で恐喝したという。"
+      ],
+      "comment": "拘束人数だけでは、ランサムウェア被害の全体像や資金回収までを意味しない。今回の当局説明で具体的なのは、少なくとも28社と4,050万ドル超という支払い規模、事前に財務・資産・従業員・IT脆弱性を調べるという攻撃準備、そしてデータ窃取と暗号化を組み合わせた手口である。4人の拘束後も、少なくとも27人とされる組織や8法域のネットワークのどこまでを捜査で把握したか、個々の容疑と裁判結果は未確定である。",
+      "articleDetail": {
+        "conclusion": "国際捜査で4人を拘束したが、被害範囲と組織全体の責任はなお捜査・司法判断の段階にある。",
+        "facts": [
+          "ウクライナ当局とFBIは、国際ランサムウェア組織の容疑者4人を拘束した。",
+          "少なくとも28社の身代金支払いは4,050万ドル超に結び付くとされる。",
+          "当局は標的に重要インフラを含む複数業種を挙げた。"
+        ],
+        "background": [
+          "捜査対象の組織は少なくとも27人、関連するより広いネットワークは8法域で60人超とされる。"
+        ],
+        "explanation": [
+          "当局説明では、攻撃者は被害組織を下調べし、データ窃取と暗号化を行ったうえで暗号資産の支払いを要求した。"
+        ],
+        "implications": [
+          "複数国・複数業種にまたがるため、4人の拘束後も個別被害の立証、資金追跡、関係者の特定が継続する。"
+        ],
+        "caveats": [
+          "容疑の立証、残る関係者、全被害組織、回収資産は報道時点で確定していない。"
+        ],
+        "nextChecks": [
+          "ウクライナ当局とFBIが追加の拘束、起訴、被害組織数、資産回収を公表するかが判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "拘束は4人でも、少なくとも28社・4,050万ドル超の被害と、8法域にまたがる60人超の関連ネットワークが示され、捜査対象の広がりが大きい。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "当局が被害額、対象業種、攻撃の段階を示している一方、個別容疑と組織全体の処分は未確定であり、拘束を壊滅と扱う段階ではない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:05:00+09:00",
+        "reason": "11月19日版からの未執筆繰越であり、掲載元の表示日は対象期間開始前だった。",
+        "currentNewsValue": "捜査当局が拘束人数だけでなく、支払い規模、被害業種、国際ネットワークを公表している。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:05:00+09:00",
+        "httpStatus": 200,
+        "note": "信頼できる報道で中心事実を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-22-windows-11-26h2-auto",
+      "title": "Windows 11 26H2、管理外の24H2・25H2へ自動配信を拡大",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/microsoft/microsoft-now-automatically-installs-windows-11-26h2-on-personal-and-unmanaged-pcs/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-20T07:14:00-05:00",
+      "collectedAt": "2026-11-22T07:10:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Microsoftは11月18日から、IT部門に管理されていないWindows 11 24H2・25H2の適格端末へ、26H2の自動配信を段階的に拡大した。個人用端末と非管理の業務端末が対象で、利用者が更新確認を操作しなくても更新候補になる。",
+        "26H2はWindows 11 2026 Updateとして9月に一般提供されている。24H2・25H2と共有サービスブランチを使うため、完全なOS置換ではなく有効化パッケージとして高速に導入される仕組みだとMicrosoftは説明している。",
+        "配信は端末ごとのWindows Update設定と適格性に依存する。手動での更新確認や『利用可能になったらすぐに最新の更新プログラムを入手する』設定でも取得でき。"
+      ],
+      "comment": "自動配信の対象は『全Windows端末』ではなく、管理外の24H2・25H2端末である。26H2は共有サービスブランチの有効化パッケージなので、更新の方式は大規模なOS置換とは異なる一方、端末の更新タイミングはWindows Update設定と適格性に左右される。管理対象ではない端末が業務に混在している場合、利用者が手動操作をしなくても26H2が候補になり得る点と、9月の一般提供から11月18日の自動配信拡大という段階を分けて把握する必要がある。",
+      "articleDetail": {
+        "conclusion": "26H2は管理外の適格な24H2・25H2端末から、自動配信の段階を広げた。",
+        "facts": [
+          "Microsoftは11月18日から、IT管理外のWindows 11 24H2・25H2端末への26H2自動配信を段階的に拡大した。",
+          "26H2は9月に一般提供され、24H2・25H2と共有サービスブランチを使う。"
+        ],
+        "background": [
+          "26H2、25H2、24H2は共有サービスブランチを使い、同じセキュリティ・品質更新と互換性検証を共有する。"
+        ],
+        "explanation": [
+          "共有サービスブランチのため、26H2は有効化パッケージで提供され、高速な導入になるとされる。"
+        ],
+        "implications": [
+          "非管理の24H2・25H2端末では、利用者が更新を探さなくても自動配信の対象になり得る。"
+        ],
+        "caveats": [
+          "自動配信は段階的で、端末ごとのWindows Update設定と適格性が反映される。"
+        ],
+        "nextChecks": [
+          "Microsoftが配信範囲、保護措置、既知の問題を更新するかで、対象端末の実際の到達時期が明確になる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "11月18日から、手動取得可能だった26H2が非管理の24H2・25H2端末へ自動配信される段階に移り、更新の起点が利用者操作だけではなくなる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象バージョン、管理状態、共有サービスブランチという条件が公開されており、影響を一斉更新として誇張せずに扱える。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:10:00+09:00",
+        "reason": "前日版で未執筆の繰越候補で、掲載元の表示時刻は対象期間開始前だった。",
+        "currentNewsValue": "自動配信の対象が管理外の24H2・25H2端末へ具体化され、更新の適用経路が変わった。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:10:00+09:00",
+        "httpStatus": 200,
+        "note": "検索経由で本文と表示時刻を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-22-windows-kb5132057",
+      "title": "KB5132057は任意の非セキュリティ更新、Windows 11に28件の変更",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/microsoft/windows-11-kb5132057-update-released-with-28-changes-and-fixes/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-20T04:25:00-05:00",
+      "collectedAt": "2026-11-22T07:15:00+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Microsoftは、Windows 11 25H2・26H2向けに11月の任意プレビュー更新KB5132057を公開した。28件の変更と修正を含み、26H2はビルド26300.10075、25H2は26200.10075へ更新される。",
+        "この更新はWindows Search、Windows Hello、実行ダイアログを含む。検索ボックスはWinUI 3ベースの新しい体験となり、Web結果から宣伝コンテンツを除くことで資源効率と表示を改善するとされる。",
+        "KB5132057は次のPatch Tuesday前に改善点を試すための任意プレビューで、通常の累積更新と異なりセキュリティ修正を含まない。通常はWindows Updateで『ダウンロードしてインストール』を選択するが、最新更新を早く受け取る設定が有効なら自動導入を促され得る。"
+      ],
+      "comment": "KB5132057を月例セキュリティ更新と混同しないことが重要である。これは25H2・26H2をそれぞれ26200.10075・26300.10075へ進める任意の非セキュリティプレビューで、次のPatch Tuesdayより前に改善と修正を試す位置付けだ。検索のWeb結果から宣伝コンテンツを除く変更、暗所でのWindows Hello顔認識を補う設定、94ミリ秒の表示時間を掲げる新しい実行ダイアログなどは、導入対象を選ぶ際に機能単位で確認できる材料になる。",
+      "articleDetail": {
+        "conclusion": "KB5132057はセキュリティ更新ではなく、25H2・26H2向けに28件の改善を先行提供する任意プレビューである。",
+        "facts": [
+          "KB5132057はWindows 11 25H2・26H2向けの11月任意プレビューで、28件の変更と修正を含む。",
+          "適用後のOSビルドは26H2で26300.10075、25H2で26200.10075となる。",
+          "更新はWindows Search、Windows Hello、実行ダイアログを改善する。"
+        ],
+        "background": [
+          "任意プレビュー更新は、次のPatch Tuesdayでの一般提供前に改善、修正、新機能を試す位置付けである。"
+        ],
+        "explanation": [
+          "Windows Searchの新体験はWinUI 3で構築され、Web結果の宣伝コンテンツを除くとされる。"
+        ],
+        "implications": [
+          "25H2・26H2の端末では、通常の累積更新とは別に、機能改善を先行検証する選択肢になる。"
+        ],
+        "caveats": [
+          "この任意更新はセキュリティ修正を含まず、各組織での互換性と28項目全体の導入結果は一律に確認されていない。"
+        ],
+        "nextChecks": [
+          "次のPatch TuesdayでKB5132057の改善が一般提供に入るか、既知の問題が追加されるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "25H2・26H2でビルド番号が明示された28件の変更は、セキュリティ修正を含まない任意更新として、一般提供前の検証対象を具体化する。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象バージョン、ビルド、任意更新という提供条件が確認でき、通常のセキュリティ更新として扱わないための根拠がある。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:15:00+09:00",
+        "reason": "前日版で未執筆の繰越候補で、掲載元の表示時刻は対象期間開始前だった。",
+        "currentNewsValue": "対象ビルドと任意・非セキュリティという提供条件が明示され、一般提供前の検証対象として扱える。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:15:00+09:00",
+        "httpStatus": 200,
+        "note": "検索経由で本文と表示時刻を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-22-entra-connect-health",
+      "title": "Entra Connect Healthの不正閲覧、構成メタデータが標的化の材料に",
+      "sourceUrl": "https://aka.ms/ConnectHealth/scripts",
+      "sourceName": "Microsoft",
+      "publishedAt": "2026-11-21T18:01:00Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Microsoft Entra Connect HealthのAPI欠陥が悪用され、影響を受けた組織のテナント連絡先と構成メタデータへの不正な読み取りアクセスが確認された。Microsoftは11月19日にサーバー側の修正を展開し、Azure Service Health経由で対象顧客へ通知を始めた。",
+        "通知で挙げられた対象は、管理者・技術連絡先のメールアドレス、テナントID、初期ドメイン、リージョン、ライセンス階層、同期の有効状態と最終同期時刻、Connect Healthのオンボード状態である。期限切れで既に使われていない登録用証明書も、保存領域からAPIが返していた。",
+        "Microsoftはパスワード、パスワードハッシュ、認証トークン、有効な暗号鍵、オンプレミスActive Directoryのトポロジー、Azureサブスクリプション情報は露出していないとした。影響組織数、攻撃者、アクセス開始時点は公表していない。"
+      ],
+      "comment": "この事案では、認証情報そのものではなく、同期の有無や管理者連絡先まで含むテナントの運用輪郭が読まれた点が重要である。Entra Connect HealthはオンプレミスのID基盤の健全性をEntra管理センターで監視するサービスであり、同期状態と連絡先を結び付けた情報は、対象を選んだなりすまし連絡の準備に使える。MicrosoftはAPIの欠陥が7月23日に導入され、11月9日に発見、19日に修正したとしている。公開PowerShellスクリプトは現在の値を確認する用途で、過去に何が取得されたかを示すものではないため、通知を受けた組織はその境界を区別して扱う必要がある。",
+      "articleDetail": {
+        "conclusion": "Entra Connect HealthのAPI欠陥は修正済みだが、影響テナントでは管理者連絡先とID同期周辺の構成メタデータが不正閲覧された。",
+        "facts": [
+          "Microsoftは11月20日に調査を終え、テナントレベルのメタデータへの不正な読み取りアクセスを確認した。",
+          "サーバー側修正は11月19日に展開され、対象顧客への通知はAzure Service Healthで行われた。"
+        ],
+        "background": [
+          "Entra Connect Healthは、オンプレミスのIDインフラの健全性、性能、アラートをEntra管理センターで監視するクラウドサービスである。"
+        ],
+        "explanation": [
+          "APIが返すテナント・監視メタデータに不正アクセスでき、廃止済み内部サービスに使われた期限切れ証明書も保存領域から返却された。"
+        ],
+        "implications": [
+          "同期状態、ライセンス、地域、管理者連絡先を組み合わせた情報が露出したテナントでは、標的型フィッシングの前提情報となり得る。"
+        ],
+        "caveats": [
+          "Microsoftは認証トークンや有効な鍵、パスワード、Azureサブスクリプション情報の露出を否定している。"
+        ],
+        "nextChecks": [
+          "Microsoftが影響組織数、攻撃主体、実際のアクセス期間を公表するかが、影響範囲の判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Entra Connect Healthを使う組織は、11月19日の修正後も、通知対象なら管理者連絡先と同期構成が閲覧された条件を前提に対応窓口を確認する必要がある。",
+        "currentReaction": "Microsoftは対象顧客へAzure Service Healthで通知し、公開スクリプトも案内しています。",
+        "assessment": "妥当",
+        "assessmentComment": "認証情報の流出は確認されていない一方、ID運用の連絡先と構成は標的化に使える具体的な情報であり、影響通知の確認は重要である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "Microsoft提供のConnect Health確認スクリプトURLを確認。"
+      }
+    },
+    {
+      "id": "2026-11-22-badbox-botnet",
+      "title": "BADBOX 3.0、隠し広告と住宅プロキシで1日400億件",
+      "sourceUrl": "https://www.humansecurity.com/learn/blog/satori-threat-intelligence-disruption-badbox-3-0-hides-the-largest-ad-fraud-operation-ever-disclosed-inside-infected-tv-boxes/",
+      "sourceName": "HUMAN Security",
+      "publishedAt": "2026-11-18T13:35:01Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "HUMAN Securityは、BADBOX 3.0が感染Android系端末から最大で1日約400億件の不正広告入札リクエストを発生させたと報告した。これは同社が観測したコネクテッドTVトラフィックの4%超に当たり、日次リクエスト量では過去最大の広告不正作戦だとしている。",
+        "対象は安価なAndroid Open Source Project（AOSP）端末、タブレット、ストリーミングTVボックスである。マルウェアは正規のストリーミングアプリを装い、画面に見えないウィンドウで広告を再生するほか、端末や広告再生を伴わないサーバー側広告挿入要求も観測された。",
+        "感染端末は所有者に知らせず11の住宅プロキシ網へも登録された。HUMANはGoogleと関連C2ドメインを妨害したが、感染台数の全体像と、妨害後に事業者がどの経路へ移るかは公表されていない。"
+      ],
+      "comment": "400億件という量だけでなく、広告表示を隠す経路と住宅プロキシ化を同じ感染端末で重ねた構造が特徴である。広告SDKを模倣して入札要求を正規に見せ、SSAIでは端末も動画再生もないまま広告主側へ視聴があったように見せる。PXYEDGEは約20万ノードを広告していたが、HUMANの観測ではユニーク接続が約34万でピークだった。C2の停止は直ちに端末の安全を保証せず、公開リポジトリと複数ホスティングにモジュールを複製する設計が再構築を支えるとされる。",
+      "articleDetail": {
+        "conclusion": "BADBOX 3.0は広告不正と住宅プロキシ化を組み合わせ、最大で1日400億件の入札要求を作った。",
+        "facts": [
+          "HUMANは日次約400億件、観測CTVトラフィックの4%超を報告した。"
+        ],
+        "background": [
+          "BADBOXは2023年にT95 Android TVボックスで発見され、2025年には50万台超の2.0端末がC2から切り離された。"
+        ],
+        "explanation": [
+          "隠しウィンドウの広告再生と、実機を伴わないSSAI要求で広告配信を偽装する。"
+        ],
+        "implications": [
+          "広告取引の計測と端末所有者のネットワークが、感染端末を介して同時に悪用される。"
+        ],
+        "caveats": [
+          "感染総数と妨害後の残存経路は示されていない。"
+        ],
+        "nextChecks": [
+          "C2妨害後にPXYEDGEなどの接続規模が再上昇するかが継続性を示す。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CTV広告を扱う事業者は、1日400億件というピークと、実機なしSSAI要求という条件を不正判定の前提に置く必要がある。",
+        "currentReaction": "HUMANはGoogleとともに関連C2ドメインの妨害に参加したと説明しています。",
+        "assessment": "妥当",
+        "assessmentComment": "量だけでなく、隠し再生と住宅プロキシ化の両方が具体的に示され、広告取引と回線利用への影響が確認できる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:45:25+09:00",
+        "reason": "一次資料であるHUMAN Securityブログは2026年11月18日公開で対象期間前だが、11月21日のBleepingComputer報道を経て当日の発見として取り込んだ。",
+        "currentNewsValue": "HUMANによる撹乱の進展とC2妨害の続報は、広告不正と住宅プロキシ化が重なる事案への運用判断に結び付く。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "HUMAN SecurityのSatori報告を確認。"
+      }
+    },
+    {
+      "id": "2026-11-22-fbi-police-database-hack",
+      "title": "FBIのNCIC侵入報道、警察情報網への影響は未確定",
+      "sourceUrl": "https://apnews.com/article/d066cff87a64a564db0a00172c124972",
+      "sourceName": "Associated Press",
+      "publishedAt": "2026-11-21T14:26:00Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "FBIが、全米の法執行機関で使われるNational Crime Information Center（NCIC）への見かけ上の侵入を調査していると報じられた。FBIは公に事件を確認しておらず、侵入の時点や手段も明らかにしていない。",
+        "NCICは逃亡者、行方不明者、犯罪歴、逮捕状、盗難車両・銃器、保護命令などの記録を、地方・州・連邦の機関で共有するFBI運用のデータベースである。交通取締り、犯罪捜査、身元照会でも日常的に使われる。",
+        "現時点で、記録が持ち出されたのか、改変されたのか、利用停止が発生したのかは確認されていない。9月のFBIJobs.gov関連事案との関係も示されていない。"
+      ],
+      "comment": "NCICは単一の公開データ保管庫ではなく、多数の法執行機関が照会に使う共有基盤であるため、侵入の報道段階でも漏えいと可用性低下、記録の完全性を分けて考える必要がある。報道で確認できるのはFBIが調査していることと、NCICが扱う記録の範囲までで、攻撃者やデータ流出は確定していない。前回のFBIJobs.gov関連事案は第三者プラットフォームが対象であり、今回のNCICと同一の侵入経路だったと扱える材料はない。",
+      "articleDetail": {
+        "conclusion": "NCICへの侵入可能性が調査中だが、データ流出・改変・サービス影響は未確認である。",
+        "facts": [
+          "NCICはFBIが運用し、全米の法執行機関が情報共有に使う。"
+        ],
+        "background": [
+          "NCICには逮捕状、行方不明者、盗難品などの犯罪司法記録が含まれる。"
+        ],
+        "explanation": [
+          "侵入時点と手段は明らかでなく、報道は調査の存在を伝える段階にとどまる。"
+        ],
+        "implications": [
+          "照会に依存する機関では、記録の信頼性と利用可能性が確認対象になる。"
+        ],
+        "caveats": [
+          "FBIの公的確認、流出量、攻撃者は未公表。"
+        ],
+        "nextChecks": [
+          "FBIが侵入経路、流出・改変の有無、NCICの稼働影響を公表するかで判断が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "NCICを照会する機関は、侵入の真偽だけでなく、記録の完全性や利用停止が確認された場合にどの業務が影響するかを見極める必要がある。",
+        "currentReaction": "FBIは調査中とされますが、事件の公的な詳細説明は出ていません。",
+        "assessment": "判断には早い",
+        "assessmentComment": "利用範囲は大きいが、侵入経路、流出、サービス影響のいずれも確定していない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "APの報道を確認。"
+      }
+    },
+    {
+      "id": "2026-11-22-gnupg-rce",
+      "title": "GPGMEのdouble free、長いOpenPGP IDでRCE可能性",
+      "sourceUrl": "https://lists.gnupg.org/pipermail/gnupg-announce/2026q4/000517.html",
+      "sourceName": "GnuPG",
+      "publishedAt": "2026-11-20T18:01:51Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "GnuPGはGPGMEの重大な欠陥CVE-2026-129975（T8557）を公表し、修正版2.3.1を配布した。細工した非常に長いOpenPGPユーザーIDを含む鍵でdouble freeを起こせ、データ流出やリモートコード実行（RCE）の可能性を排除できないとして即時更新を勧告している。",
+        "原因はGPGME内部でgpgのstatus lineとkey listingを読む処理にある。バッファ再割り当て後、早期return時にcontextのポインタが更新されず、解放済みメモリを後にもう一度freeする。途中の別の割り当てのため、一般的なallocatorのdouble free検知が働かない場合がある。",
+        "公開版2.3.0より前を共有ライブラリ、DLL、静的リンクで使うソフトが影響する。GnuPGは共有ライブラリを2.3.1へ更新し、静的リンクは再ビルドするよう案内した。実悪用の有無は発表にない。"
+      ],
+      "comment": "トリガーが鍵に含まれる長いユーザーIDであるため、鍵や署名付きデータを受け取る経路がメモリ安全性の境界になる。GnuPGの説明では、再割り当て後のポインタをcontextに戻す前に読み取りエラー等で処理が終わると、古いポインタが残る。Gpg4winやメール・XMPPクライアント、SambaのようにGPGMEを共有または静的に組み込むソフトは、アプリの名称だけでなく実際にリンクされたGPGME版を確認する必要がある。2.3.0は公開されていなかったため、修正先は2.3.1である。",
+      "articleDetail": {
+        "conclusion": "GPGMEのCVE-2026-129975は長いOpenPGPユーザーIDでdouble freeを誘発し得るため、2.3.1への更新が必要である。",
+        "facts": [
+          "GnuPGは11月20日に公開し、GPGME 2.3.1を配布した。"
+        ],
+        "background": [
+          "GPGMEはGnuPG機能をアプリケーションへ提供するライブラリである。"
+        ],
+        "explanation": [
+          "早期returnがcontextに古い解放済みポインタを残し、後の解放でdouble freeになる。"
+        ],
+        "implications": [
+          "共有ライブラリ、DLL、静的リンクの利用形態ごとに更新または再ビルドが必要となる。"
+        ],
+        "caveats": [
+          "RCEは排除できないとされるが、実悪用の確認は発表されていない。"
+        ],
+        "nextChecks": [
+          "各ディストリビューションとアプリケーションが2.3.1を取り込む時期が影響範囲を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "GPGMEを使うソフトでは、長いOpenPGP IDを受け取る条件でメモリ破壊が起こり得るため、2.3.1または再ビルド済み静的版への移行判断が変わる。",
+        "currentReaction": "GnuPGは即時更新と、旧版向けパッチを案内しています。",
+        "assessment": "妥当",
+        "assessmentComment": "具体的な入力条件と修正バージョンが公表され、共有・静的リンク双方に対応が必要だからである。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:45:25+09:00",
+        "reason": "11月20日の公式公表は対象期間開始前だが、RCE可能性を含むGPGMEの更新情報を当日版で遅延確認した。",
+        "currentNewsValue": "影響する共有・静的リンク利用者に対し、2.3.1への更新または再ビルドの必要性が続いている。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "GnuPGの公式アナウンスを確認。"
+      }
+    },
+    {
+      "id": "2026-11-22-astra-sol-simplebench",
+      "title": "GPT-6.2 AstraとSol、SimpleBenchの人間基準を下回る表示",
+      "sourceUrl": "https://simple-bench.com/",
+      "sourceName": "SimpleBench",
+      "publishedAt": "2026-11-21T00:00:00Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "SimpleBenchの公開リーダーボードは、GPT-6.2 Astraを77.3%、GPT-6.2 Solを69.9%と表示した。同サイトが非専門家9人の小標本から示す人間ベースライン83.7%を、いずれも下回る値である。",
+        "SimpleBenchは200問超の選択式テストで、空間時間推論、社会的知能、言語的な敵対的頑健性（トリック問題）を扱う。リーダーボードの設定はAVG@5、temperature 0.7、top-p 0.95で、o1系には例外がある。",
+        "OpenAIはAstraを難しい専門プロジェクト、Solを日常作業向けの効率的なモデルとして発表している。SimpleBenchの表示はこの問題群と設定に限られ、専門作業や実運用の総合順位を単独で決めるものではない。"
+      ],
+      "comment": "AstraとSolの比較で重要なのは、公開値を「モデル全体の能力」ではなく、200問超の選択式で日常的な推論とトリック問題を測る一つの設定として読むことだ。人間83.7%は9人の小標本であり、77.3%と69.9%との差をそのまま実務失敗率には置き換えられない。一方、OpenAIが掲げる専門作業向けの評価とSimpleBenchが測る問題形式は異なる。用途ごとの主張を比較する際には、測定対象、AVG@5、温度設定を揃えずに順位だけを比較しないことが必要になる。",
+      "articleDetail": {
+        "conclusion": "SimpleBenchではGPT-6.2 Astra 77.3%、Sol 69.9%が表示され、人間ベースライン83.7%を下回った。",
+        "facts": [
+          "テストは200問超の選択式で、3種類の推論課題を含む。"
+        ],
+        "background": [
+          "OpenAIはAstraを難しい専門作業、Solを日常作業向けとしている。"
+        ],
+        "explanation": [
+          "リーダーボードはAVG@5と指定されたsampling設定で比較する。"
+        ],
+        "implications": [
+          "日常推論の用途を比べる際、専門ベンチの値とは別にこの設定の結果を確認できる。"
+        ],
+        "caveats": [
+          "人間値は9人の小標本で、単一ベンチは総合能力を確定しない。"
+        ],
+        "nextChecks": [
+          "問題セット、プロンプト、推論設定が変わった再測定で順位が維持されるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "GPT-6.2 AstraとSolを日常推論の用途で比較する際、83.7%の人間基準とAVG@5の条件を含む公開値が判断材料になる。",
+        "currentReaction": "リーダーボードは結果と設定を公開しています。",
+        "assessment": "評価が分かれる",
+        "assessmentComment": "値は明確だが、問題群と小標本人間基準に限定され、専門作業の評価と同一視できない。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "SimpleBench公開ページを確認。"
+      }
+    },
+    {
+      "id": "2026-11-22-nodered-cve-2026-58115",
+      "title": "未認証Node-REDの悪性フロー登録、国内ホストも標的に",
+      "sourceUrl": "https://www.jpcert.or.jp/newsflash/2026111901.html",
+      "sourceName": "JPCERT/CC CyberNewsFlash",
+      "publishedAt": "2026-11-19T00:00:00Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "JPCERT/CCは、Siemens製品に搭載されたNode-REDへ割り当てられたCVE-2026-58115について、認証設定のない管理APIが外部から到達可能な場合に悪意ある制御フローを登録されると報告した。登録したフローを介してOSコマンドが実行され、不正プログラムのダウンロードや実行を試みる攻撃が観測されている。",
+        "Node-REDはブラウザーのエディターでイベント駆動のフローをつなぐ開発ツールで、対象となるのはエディターと管理APIにadminAuthを設定せず公開した構成である。公式ガイドは、標準ではIPアドレスへ到達できる利用者がエディターへアクセスし変更を展開できるため、信頼済みネットワーク以外では認証設定を案内している。",
+        "Siemensは、Node-REDを導入したSIMATIC IoT2050のIndustrial OS V4.3.4-1未満を影響対象に挙げ、同版以降への更新を案内する。一方、Node-RED入りExample Imageは全版が影響対象で現時点の修正版はない。JPCERT/CCは国内ホストが標的になった報告を受けたとしており、組込み機器を含め外部公開と認証未設定が重なる環境では侵害調査も検討するよう求めた。"
+      ],
+      "comment": "この問題は、Node-REDのプログラミング画面を公開したままにすることが、そのままフローの書き換え権限につながる構造にある。VulnCheckが10月30日に観測した要求は、POST /flowsへのHTTP 200応答後、injectからexecへつながるフローを自動起動し、RAM-backedの/dev/shm/.bへバイナリを取得するまでを1件で行った。JPCERT/CCは不審なフロー、OSコマンド実行、不審な外部通信、マルウェア設置を調査項目として示す。一方、VulnCheckは取得したバイナリを分析しておらず、機能や攻撃者の帰属は分かっていない。SiemensのIndustrial OSではV4.3.4-1以降が対処版だが、Example ImageにNode-REDを入れた構成には現時点の修正版がない。CVEが割り当てられた製品以外も、同じ外部到達性とadminAuthの有無で影響を切り分ける必要がある。",
+      "articleDetail": {
+        "conclusion": "外部公開かつadminAuth未設定のNode-REDは、悪性フローの登録を通じてOSコマンド実行を許す攻撃の標的になっている。",
+        "facts": [
+          "JPCERT/CCはCVE-2026-58115の悪用で不正フローが登録され、OSコマンド実行と不正プログラムのダウンロード・実行が試みられたとした。",
+          "SiemensのCVE-2026-58115評価はCVSS v3.1、v4.0とも基本値10.0で、SIMATIC IoT2050の複数モデルを対象にする。"
+        ],
+        "background": [
+          "Node-REDの公式ガイドは、標準状態のエディターにはIPアドレスへ到達できる者がアクセスし、変更を展開できると説明している。"
+        ],
+        "explanation": [
+          "editorと管理APIが未認証で外部到達可能だと、攻撃者はHTTP経由でコマンドを実行できるプログラミングノードを含むフローを作成し、サーバー側で任意コードを実行できる。"
+        ],
+        "implications": [
+          "外部公開とadminAuth未設定が重なるNode-REDは、単なる閲覧ではなくフロー変更から実行までを許すため、組込み機器を含む運用環境で侵害確認の対象になる。"
+        ],
+        "caveats": [
+          "VulnCheckは観測したボットのバイナリを取得・分析しておらず、ペイロードの機能や攻撃者の帰属は確定していない。"
+        ],
+        "nextChecks": [
+          "Siemens製以外も含め、外部到達可能なNode-REDでadminAuthの有無と不審フロー・外部通信の痕跡を確認すると、対象範囲と侵害有無を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "外部公開でadminAuth未設定のNode-REDを運用する組織は、実悪用が観測されたため、公開範囲の確認と不審フロー・OSコマンド実行の調査を直ちに判断する必要がある。",
+        "currentReaction": "JPCERT/CCは2026年11月19日に国内で稼働するNode-REDホストが標的となった報告を受けたとして、設定確認と侵害調査の検討を呼びかけた。",
+        "assessment": "妥当",
+        "assessmentComment": "未認証のフロー登録からOSコマンド実行に至る経路と、VulnCheckによる実悪用観測、Siemensの対処版がそれぞれ確認できる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:45:25+09:00",
+        "reason": "JPCERT/CCの一次資料は2026年11月19日公開で対象期間前だが、実悪用と国内ホストへの標的化を含む重要脆弱性として公開前照合で未掲載を確認した。",
+        "currentNewsValue": "VulnCheckの攻撃観測と、外部公開かつadminAuth未設定という明確な条件がそろい、公開資産の設定確認と侵害調査の判断に直結する。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "JPCERT/CCのCyberNewsFlash、Node-RED公式設定ガイド、Siemensアドバイザリ、VulnCheckの公開観測を確認。"
+      }
+    },
+    {
+      "id": "2026-11-22-sap-netweaver-kev",
+      "title": "SAP NetWeaverのJNDI注入、KEV追加で11月23日が期限",
+      "sourceUrl": "https://support.sap.com/en/my-support/knowledge-base/security-notes-news/bulletin-2025.html",
+      "sourceName": "SAP",
+      "publishedAt": "2026-11-20T00:00:00Z",
+      "collectedAt": "2026-11-22T07:45:25+09:00",
+      "editionDate": "2026-11-22",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAはSAP NetWeaver Enterprise Portal 7.50のCVE-2025-42884をKnown Exploited Vulnerabilities（KEV）カタログへ11月20日に追加した。連邦民間機関の対応期限は11月23日で、CISAは既知悪用として追跡している。",
+        "この欠陥はCVSS 6.5のJNDI注入で、未認証の攻撃者がJNDI環境プロパティを注入するか、lookupで使うURLを渡すことで、意図しないJNDI providerへアクセスできる。修正は2025年11月のSAP Patch DayでSAP Note 3660969として提供済みである。",
+        "KEVの追加は悪用が認識されていることを意味するが、カタログは攻撃者、悪用手法の詳細、影響組織数を示していない。Enterprise Portal 7.50を運用する組織では、Noteの適用状況を対象環境ごとに確認する必要がある。"
+      ],
+      "comment": "CVSS 6.5という数値だけでは優先度を決めにくいが、今回の更新はCISAが既知悪用として11月20日にKEVへ加え、11月23日の期限を置いた点にある。侵入条件は未認証で、JNDI環境プロパティまたはlookup URLを操作して意図しないproviderに到達させるものと説明される。修正自体は2025年11月のSAP Note 3660969で既に提供されており、運用上の焦点は新しいパッチを待つことではなく、Enterprise Portal 7.50の各環境にその修正が適用済みかを照合することになる。",
+      "articleDetail": {
+        "conclusion": "CVE-2025-42884は既知悪用としてKEVに追加され、SAP Note 3660969の適用確認が期限前の焦点となる。",
+        "facts": [
+          "追加日は11月20日、CISA期限は11月23日、CVSSは6.5。"
+        ],
+        "background": [
+          "修正は2025年11月SAP Patch Dayで提供済みだった。"
+        ],
+        "explanation": [
+          "JNDIの環境プロパティまたはlookup URL注入で意図しないproviderへ到達できる。"
+        ],
+        "implications": [
+          "Enterprise Portal 7.50を使う組織は、未認証条件の欠陥に対する修正適用状況を確認する。"
+        ],
+        "caveats": [
+          "KEVは悪用詳細や被害規模を公表していない。"
+        ],
+        "nextChecks": [
+          "SAP Note 3660969の対象版と各環境の適用結果が、対応完了の判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Enterprise Portal 7.50の運用者は、既知悪用と11月23日の期限を受け、SAP Note 3660969の適用状態を直ちに照合する判断が必要になる。",
+        "currentReaction": "CISAは11月20日にKEVへ追加し、連邦民間機関の期限を設定しました。",
+        "assessment": "妥当",
+        "assessmentComment": "未認証のJNDI注入であり、修正済みの欠陥が既知悪用として追加されたためである。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-22T07:45:25+09:00",
+        "reason": "KEV追加は対象期間内だが、修正の提供は2025年11月であり、当日版では既知悪用としての追加を遅延確認した。",
+        "currentNewsValue": "CISAが既知悪用に追加し11月23日の期限を設定したため、既存修正の適用確認を更新する価値がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-22T07:45:25+09:00",
+        "httpStatus": 200,
+        "note": "SAPの2025年11月Security Notes一覧を確認。KEV追加日はCISAカタログの当日スナップショットで照合。"
+      }
+    }
+  ]
+}
