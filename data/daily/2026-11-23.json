@@ -1,0 +1,1833 @@
+{
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T08:02:33+09:00",
+  "selectionShortfallReason": "生成セッションは1件の記事を書いた後で終了し、復旧セッションでTop 5の残り4件と一般記事11件を追加して16件とした。公開前チェックでOpenAI障害とTogether/OpenRouter漏えいの拾い漏れが判明し、記事単位の差し戻しで2件を追加して最終的に18件とした。未確認の候補は無理に掲載せず、次版の候補台帳で再評価する。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "checkedAt": "2026-11-23T08:02:06+09:00",
+        "status": "checked",
+        "note": "Hacker Newsの11月21〜22日分を確認。OpenAI障害の話題は既報で、本版の記事で対応済み。新規の記事化対象はなかった。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "checkedAt": "2026-11-23T08:02:06+09:00",
+        "status": "checked",
+        "note": "はてなブックマークの11月21〜22日分を確認。対象期間の国内話題に新規の記事化対象はなかった。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "checkedAt": "2026-11-23T08:02:06+09:00",
+        "status": "checked",
+        "note": "YouTube急上昇・TikTok・ニコニコの11月21〜22日分を確認。動画・ネット文化で新規の記事化対象はなかった。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "checkedAt": "2026-11-23T08:02:09+09:00",
+        "status": "restricted",
+        "note": "ReutersはHTTP 401、APはHTTP 403で直接確認できず、BBCは到達したが対象期間の主要報道は代替資料で確認した。記事化は見送った。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "checkedAt": "2026-11-23T08:01:55+09:00",
+        "status": "checked",
+        "note": "OpenAIステータスページの11月21日障害write-upとニュースページを確認。障害を記事2026-11-23-openai-outageとして追加し、研究投稿はTop 5記事で対応済み。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "checkedAt": "2026-11-23T08:02:09+09:00",
+        "status": "checked",
+        "note": "Anthropicニュースを確認。最新記事は11月9日のClaude Fable/Mythos 5.2で、対象期間の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "checkedAt": "2026-11-23T08:02:09+09:00",
+        "status": "checked",
+        "note": "DeepMindブログとGoogle AIブログを確認。対象期間の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "checkedAt": "2026-11-23T08:02:12+09:00",
+        "status": "checked",
+        "note": "MicrosoftブログはHTTP 403、Meta AIブログとNVIDIAブログを確認。対象期間の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "checkedAt": "2026-11-23T08:02:12+09:00",
+        "status": "checked",
+        "note": "MetaニュースのAI for Scienceサミットを確認。対象期間の買収・終了・提供条件変更で記事化対象はなかった。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "checkedAt": "2026-11-23T08:01:58+09:00",
+        "status": "checked",
+        "note": "CISA KEVカタログ（2026.11.20、1790件）を確認。11月20日以降の追加はなく、NVD新規はApple 27.2中心でKEV級の新規はなかった。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "checkedAt": "2026-11-23T08:01:58+09:00",
+        "status": "checked",
+        "note": "JPCERT/CC NewsFlashは最新11月19日（Node-RED・NGINXは既報）。CERT/CC・IPAに対象期間の新規勧告はなかった。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "checkedAt": "2026-11-23T08:02:12+09:00",
+        "status": "checked",
+        "note": "GitHub Advisories・Googleセキュリティブログ・Appleサポート・MSRCを確認。対象期間の新規重大告知はなかった。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "checkedAt": "2026-11-23T08:01:58+09:00",
+        "status": "checked",
+        "note": "CISA KEV JSONとJVNを確認。カタログ更新は11月20日版のままで、対象期間の新規追加はなかった。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "checkedAt": "2026-11-23T08:01:55+09:00",
+        "status": "checked",
+        "note": "Sekoia・WeLiveSecurityを確認し、BleepingComputerの記事を直接読んだ。Together/OpenRouterの漏えいを確認し記事として追加した。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "checkedAt": "2026-11-23T08:02:14+09:00",
+        "status": "checked",
+        "note": "Railsセキュリティ告知とZyxelアドバイザリを確認。対象期間の新規告知はなかった。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "checkedAt": "2026-11-23T08:02:14+09:00",
+        "status": "checked",
+        "note": "Synologyセキュリティアドバイザリを確認。対象期間の新規告知はなかった。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "checkedAt": "2026-11-23T08:01:55+09:00",
+        "status": "checked",
+        "note": "Broadcom VCFセキュリティアドバイザリを確認。VMSA-2026-0009 rev.1のBack-in-Time制限を記事として追加した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "checkedAt": "2026-11-23T08:02:14+09:00",
+        "status": "checked",
+        "note": "Broadcom Application Networking and Securityアドバイザリを確認。対象期間の新規VMSAはなかった。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "checkedAt": "2026-11-23T08:02:01+09:00",
+        "status": "checked",
+        "note": "TechDocsはHTTP 200で直接取得できた。KBはHTTP 403のままだが、TechDocs経由でリリースノートを確認できたため制限は解消した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "checkedAt": "2026-11-23T08:02:01+09:00",
+        "status": "checked",
+        "note": "VCFブログを確認。11月22日の投稿はSQL Serverフェイルオーバークラスタリングの運用解説で、製品・ポートフォリオ発表はなかった。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "checkedAt": "2026-11-23T08:02:01+09:00",
+        "status": "checked",
+        "note": "国家サイバー統括室・IPAのプレスリリースを確認。対象期間の新規発表・要請はなかった。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "checkedAt": "2026-11-23T08:02:04+09:00",
+        "status": "checked",
+        "note": "Broadcom Service Statusを確認。11月22日の項目はEUの計画メンテナンスで、緊急障害や新規障害はなかった。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "checkedAt": "2026-11-23T08:02:04+09:00",
+        "status": "checked",
+        "note": "相互運用性マトリクスを確認。対象期間の互換性・ライフサイクル変更はなかった。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "checkedAt": "2026-11-23T08:02:17+09:00",
+        "status": "restricted",
+        "note": "Knowledge BaseはHTTP 403で直接確認できず、TechDocsのAVIページはトップへ転送された。代替資料に対象期間のAVI告知はなく、記事化は見送った。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "checkedAt": "2026-11-23T08:02:17+09:00",
+        "status": "restricted",
+        "note": "Knowledge BaseはHTTP 403で直接確認できず、VMwareセキュリティブログに対象期間のVDefend告知はなかった。記事化は見送った。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "checkedAt": "2026-11-23T08:02:04+09:00",
+        "status": "checked",
+        "note": "William Lamのサイトを確認。VMSA-2026-0009への新規コメントはなかった。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "checkedAt": "2026-11-23T08:02:17+09:00",
+        "status": "checked",
+        "note": "Broadcomコミュニティを確認。対象期間の運用者・実機検証者の新規話題で記事化対象はなかった。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "checkedAt": "2026-11-23T08:02:20+09:00",
+        "status": "checked",
+        "note": "Veeamブログを確認。対象期間の連携ベンダーの新規発表で記事化対象はなかった。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "checkedAt": "2026-11-23T08:02:20+09:00",
+        "status": "checked",
+        "note": "Nutanixブログ・Azure更新情報・Proxmoxプレスリリースを確認。対象期間の競合・移行先の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "policyVersion": 1,
+    "checkedAt": "2026-11-23T08:02:33+09:00",
+    "findings": [
+      {
+        "title": "VMSA-2026-0009のBack-in-Time制限を再評価",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-23-vmsa-0009-back-in-time",
+        "reason": "VMSA-2026-0009 rev.1（11月20日）のBack-in-Time制限を確認し、vCenterのパッチ適用順とVCF 9.1.1への更新可否を記事として追加した。"
+      },
+      {
+        "title": "TechDocsの直接取得制限",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://techdocs.broadcom.com/",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "TechDocsは2026年11月23日にHTTP 200で直接取得でき、取得制限は解消した。11月19日のリリースノート本文も直接確認できたため、このfindingは不要になった。"
+      },
+      {
+        "title": "discovery-general-reporting の直接確認が制限された",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.reuters.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "ReutersはHTTP 401、APはHTTP 403で直接確認できず、BBCと代替の公開情報で補完した。対象期間の主要報道に記事化対象はなく、次版で再評価する。"
+      },
+      {
+        "title": "vcf-avi の直接確認が制限された",
+        "area": "vcf",
+        "sourceId": "vcf-avi",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Knowledge BaseはHTTP 403で直接確認できず、TechDocsのAVIページもトップへ転送された。代替資料に対象期間のAVI告知はなく、次版で再評価する。"
+      },
+      {
+        "title": "vcf-vdefend の直接確認が制限された",
+        "area": "vcf",
+        "sourceId": "vcf-vdefend",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Knowledge BaseはHTTP 403で直接確認できず、VMwareセキュリティブログに対象期間のVDefend告知はなかった。次版で再評価する。"
+      },
+      {
+        "title": "OpenAIの11月21日障害とpost-incident write-up",
+        "area": "ai",
+        "sourceId": "ai-openai",
+        "url": "https://status.openai.com/incidents/01JMYB602A6H2E04Y1497J434X/write-up",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-23-openai-outage",
+        "reason": "公開前チェックで拾い漏れが判明した。11月21日13:48〜17:21（PT）の障害で失敗率最大75%に達し、Postgres read replicaの同時故障が原因。記事として追加した。"
+      },
+      {
+        "title": "Together AIのプロンプト漏えいとOpenRouterの対応",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-23-together-openrouter-prompt-theft",
+        "reason": "公開前チェックで拾い漏れが判明した。Together AIの推論プロンプトが外部に流出し、OpenRouterが3事業者を除外し125エンドポイントのZDRを取り消した。記事として追加した。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-23-openai-perplexity",
+      "title": "OpenAIの「Perplexity and Intelligence」、予測誤差と能力評価の境界を問い直す",
+      "sourceUrl": "https://openai.com/index/perplexity-and-intelligence/",
+      "sourceName": "OpenAI",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "collectedAt": "2026-11-23T07:00:00+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 1,
+      "summary": [
+        "OpenAIは「Perplexity and Intelligence」と題する研究ページを公開し、内部コードベース上のbase model log-perplexityをGPT-3.5以降で追跡した図を示した。GPT-3.5は約0.99、GPT-4は約0.91とする同社の測定で、perplexityを開発者間の比較と安全基準の材料にすることを提案している。",
+        "perplexityは、ある評価用テキストに対してモデルが次の語をどれだけうまく予測できたかを要約する値です。ページ自身も、直接の実務タスクに対応しないこと、chain-of-thoughtによる能力向上はperplexityだけには現れないことを限界に挙げる。",
+        "今回のページは新モデル、API料金、提供条件の発表ではありません。Hacker Newsでは11月23日朝の確認時点で393ポイント、260件のコメントが付き、評価値を比較する際には、測定データ、能力の定義、実利用の課題との関係を分けて読む必要があります。"
+      ],
+      "comment": "perplexityは、モデルが評価文の続きを割り当てた確率から作る予測誤差の指標です。OpenAIは内部コードベースでのlog-perplexityの推移をGPT-3.5から示し、GPT-3.5を約0.99、GPT-4を約0.91としている。ただしこれは同社の特定データセットでの測定であり、ページ自身もperplexityが直接の実務タスクに対応しないこと、chain-of-thoughtによる能力向上を値だけで捉えられないことを挙げる。モデル選定では、perplexityを基礎的な測定として読みつつ、実際に使うコード、検索、推論、ツール利用の評価を別に置くのが妥当です。今回公表された範囲には、新しいAPIやベンチマーク順位の告知はありません。",
+      "articleDetail": {
+        "conclusion": "OpenAIの研究ページは、perplexityを能力の代名詞にせず、評価分布と実利用タスクの間にある境界を明示して読むべき題材です。",
+        "facts": [
+          "OpenAIはPerplexity and Intelligenceという研究ページを公開した。",
+          "公開ページは、新製品、料金、API条件の変更を発表するものではない。"
+        ],
+        "background": [
+          "perplexityは確率モデルが評価テキストをどれだけ予測できるかを要約する指標である。"
+        ],
+        "explanation": [
+          "低いperplexityは指定されたデータ分布での予測が良いことを示し得るが、別タスクの結果を自動的に決めない。"
+        ],
+        "implications": [
+          "モデル比較をするチームは、値だけでなく評価データと業務タスクとの対応を確認する必要がある。"
+        ],
+        "caveats": [
+          "公開ページは新製品、料金、API条件、一般的な能力順位を発表するものではない。"
+        ],
+        "nextChecks": [
+          "OpenAIが評価データ、再現手順、または実タスクとの比較を追加公開するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "393ポイント・260コメントの議論は、perplexityをモデル能力の結論として使う際に、評価データと下流タスクの境界を明示する必要を浮かび上がらせました。",
+        "currentReaction": "Hacker Newsで11月23日朝の確認時点に393ポイント、260コメントが付いていました。",
+        "assessment": "妥当",
+        "assessmentComment": "研究指標そのものと、その指標から導ける製品上の結論を切り分ける論点として反響があります。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 393,
+        "hnComments": 260,
+        "socialMetricsCheckedAt": "2026-11-23T07:00:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:00:00+09:00",
+        "reason": "一次ページの表示日は11月20日だったが、対象期間中にHacker Newsでの議論を確認して採用した。",
+        "currentNewsValue": "perplexityと能力評価の境界を扱う研究ページへの当日の反応が確認でき、モデル評価の判断材料として位置付けられる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "OpenAIの公開ページとHacker Newsの投稿を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-23T07:00:00+09:00",
+        "script": [
+          "OpenAIが、Perplexity and Intelligenceという研究ページを公開しました。Hacker Newsでは、今朝の時点で393ポイント、260件のコメントです。",
+          "perplexityは、ある文章の続きをモデルがどれほど予測できたかを要約する値です。低い値は測定した文章ではよい予測を示しますが、コードや推論など別の仕事の成績を、そのまま表すものではありません。",
+          "新モデルやAPI料金の発表ではありません。比較では、どのデータで測ったかと、実際に使う課題にどうつながるかを、同じ数値に混ぜずに見ることが大切です。"
+        ],
+        "references": [
+          "https://openai.com/index/perplexity-and-intelligence/",
+          "https://news.ycombinator.com/item?id=50601525"
+        ]
+      },
+      "englishVersion": {
+        "title": "OpenAI's Perplexity and Intelligence page separates prediction error from capability claims",
+        "summary": [
+          "OpenAI published a research page titled Perplexity and Intelligence, examining the relation between language-model perplexity and capability assessment. At the November 23 JST check, its Hacker News submission had 393 points and 260 comments.",
+          "Perplexity summarizes how well a model predicts text in a particular evaluation set. A lower value can describe prediction performance on that distribution, but it does not by itself represent coding, reasoning, or conversational performance.",
+          "This was not an announcement of a new model, API price, or access term. Any comparison needs to keep the evaluation data, the meaning assigned to intelligence, and the connection to a real task separate."
+        ],
+        "comment": "Perplexity is built from the probabilities a model assigns to continuations in an evaluation text. That means values cannot be compared cleanly when the text type or preprocessing differs. The page matters because it addresses how language prediction may relate to broader capability, yet it does not establish that a particular product improved or that a downstream task is guaranteed. Teams choosing models should treat perplexity as one foundational measurement and separately assess code, retrieval, reasoning, and tool use. The published material does not announce a new API or a benchmark ranking."
+      }
+    },
+    {
+      "id": "2026-11-23-open-social-web-alliance",
+      "title": "Open Social Web Alliance、相互運用SNSを1億人へ広げる構想",
+      "sourceUrl": "https://osw-alliance.net/en/",
+      "sourceName": "Open Social Web Alliance",
+      "publishedAt": "2026-11-22T15:24:32.000Z",
+      "collectedAt": "2026-11-23T00:00:00.000Z",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー",
+        "国内・国際"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-23T00:00:00.000Z",
+        "script": [
+          "Open Social Web Allianceが、相互運用できるソーシャルネットワークを2028年までに1億人超へ広げる構想を公表しました。ActivityPubとAT Protocol、直接メッセージ用のMatrixを土台に、サービスをまたいで接続する設計です。",
+          "メールではProtonでもGmailでも宛先に届く、というたとえを採っています。投稿先を一社のプラットフォームに固定せず、アカウント、投稿、アルゴリズム、アプリの選択肢を持てる状態を目指します。Fediverseには100超のアプリ、4万2,000超のアクティブなインスタンス、約1,300万人のアクティブ利用者がある一方、ATmosphereには約4,300万の登録アカウントがあると同団体は記しています。",
+          "ただし、1億人は達成済みの人数ではなく2028年のビジョンです。ロードマップはOpen Social Web Summitでの憲章採択、2027年春までの公的インフラ資金と初回資金ラウンドを想定します。プロトコルの互換性に加え、共同ガバナンスと資金を誰が継続して担うかを計画に置いている点が、この構想の実装条件です。"
+        ],
+        "detail": [],
+        "learning": [],
+        "analysis": [],
+        "anticipatedQuestions": [],
+        "questionResearch": [
+          {
+            "question": "既存の分散型ソーシャルネットワークと何が異なるのか。",
+            "findings": [
+              "ActivityPub、AT Protocol、Matrixをまたぐ共有インターフェースと、共同ガバナンスを担う連合の設置を同時に提案している。",
+              "2026年秋の憲章と2027年春の資金を想定しており、技術仕様だけでなく運用主体と資金調達をロードマップに含めている。"
+            ],
+            "references": [
+              "https://osw-alliance.net/en/"
+            ]
+          }
+        ],
+        "references": [
+          "https://osw-alliance.net/en/"
+        ]
+      },
+      "summary": [
+        "Open Social Web Allianceは、ActivityPub、AT Protocol、Matrixを基盤に、サービスをまたいで接続できるソーシャルネットワークを広げる構想を示した。2028年に1億人超がオープンなネットワークを使う状態をビジョンとして掲げ、閉じたプラットフォームからアカウントや投稿を移し替えずに選べる環境を目指す。",
+        "技術の比喩にはメールを置く。Proton、Gmailなどホスティング先が違っても配送できるように、Mastodon、EuroskyのMu、Streamplaceといった異なるサービスが共有インターフェースで通信する想定だ。ユーザーがコンテンツ、アルゴリズム、アプリを選べることを、相互運用の効用としている。",
+        "実装計画では、市民社会から公共部門までの連合を組織し、Open Social Web Summitで憲章を採択、2027年春までにインフラへの公的資金と初回の資金ラウンドを置く流れを描く。これは確定した政策ではなく、連合自身が提案するロードマップである。"
+      ],
+      "comment": "Allianceのページは、Fediverseを100超のアプリ、4万2,000超のアクティブなインスタンス、約1,300万人のアクティブ利用者と数える一方、ATmosphereを約4,300万の登録アカウントと区別している。二つは指標の定義が違うため単純合算はできないが、既存の利用圏を接続するという狙いは読める。ここでの特徴は、ActivityPubやAT Protocolを採るだけでなく、憲章、公開資金、コアインフラの運用を一つの工程に置いた点だ。メールの比喩が示すのは提供者をまたぐ到達性だが、SNSではそれを投稿、アカウント、アルゴリズム、アプリの選択まで広げる。したがって、この連合案の評価点はプロトコルの採用数だけではなく、提案された憲章と資金が共有インフラの運用へ具体化するかにある。",
+      "articleDetail": {
+        "conclusion": "Open Social Web Allianceは、相互運用プロトコルと共同ガバナンス、資金を組み合わせ、オープンなSNSを1億人規模へ広げる計画を提案した。",
+        "facts": [
+          "Open Social Web Allianceは、市民社会、研究、企業、メディア、文化、公共部門の関係者を結ぶ連合として、OSWのコアインフラを構築・運用する目的を掲げた。",
+          "2028年に1億人超がオープンなソーシャルネットワークを利用する状態をビジョンに置き、ActivityPub、AT Protocol、Matrixを挙げている。"
+        ],
+        "background": [
+          "Fediverseは2008年から発展し、100超のアプリ、4万2,000超のアクティブなインスタンス、約1,300万人のアクティブ利用者がいると同団体は説明する。",
+          "ATmosphereは2022年から発展し、約4,300万の登録アカウントと数十の実装・アプリがあるという。"
+        ],
+        "explanation": [
+          "メールのように提供者が異なっても通信できるモデルを、アカウント、投稿、コンテンツ、アルゴリズム、アプリの選択へ適用する。",
+          "ロードマップはサミットでの憲章採択から、2027年春の公的インフラ資金と民間・公共の初回資金ラウンドへ進む順序を想定する。"
+        ],
+        "implications": [
+          "参加サービスの利用者は、単一プラットフォームにアカウントと接続先を固定せずに済む可能性があるが、相手先との相互接続が実装される場合に限られる。",
+          "公共機関、事業者、非営利組織は、プロトコル採用に加え、憲章に基づくガバナンスとコアインフラの費用分担を設計する必要がある。"
+        ],
+        "caveats": [
+          "1億人超は2028年の将来像であり、利用者予測や確定した加盟組織数を示す実績値ではない。",
+          "ドイツ連邦政府の支援、サミット、公的資金はロードマップで想定された措置で、実施決定や金額は本文にない。"
+        ],
+        "nextChecks": [
+          "Open Social Web Summitで、連合の統治を定める憲章が採択されるか。",
+          "2027年春までに、インフラ資金の主体、金額、対象となる実装やアプリが公表されるか。"
+        ]
+      },
+      "englishVersion": {
+        "title": "Open Social Web Alliance Maps a Path to Interoperable Social Networks",
+        "summary": [
+          "The Open Social Web Alliance has outlined a plan for social networks that can connect across services using ActivityPub, AT Protocol, and Matrix. Its 2028 vision is for more than 100 million people to use open social networks rather than remain locked into a single platform.",
+          "The group uses email as its model: a message can travel between Proton and Gmail despite different providers. It extends that idea to accounts, posts, algorithms, and apps across services including Mastodon, Eurosky's Mu, and Streamplace.",
+          "Its roadmap proposes an Open Social Web Summit in autumn 2026 to adopt a charter, followed by public infrastructure funding and an initial funding round by spring 2027. Those steps are proposals, not announced commitments."
+        ],
+        "comment": "The Alliance describes the Fediverse with more than 100 applications, over 42,000 active instances, and about 13 million active users; it separately cites roughly 43 million registered accounts for ATmosphere, so the two figures should not be added as if they measured the same thing. Its notable move is to put a charter, public funding, and core-infrastructure operation beside ActivityPub and AT Protocol. The email analogy is about reaching a recipient across providers, while the proposal extends that model to accounts, posts, algorithms, and apps. The practical test is therefore not protocol adoption alone, but whether the proposed charter and funding become a durable operation for shared infrastructure."
+      },
+      "attentionAnalysis": {
+        "whyNotable": "提案どおりに憲章と2027年春の資金が具体化すれば、分散型SNSの参加者は相互運用の実装だけでなく、共同統治と基盤費用の担い手を判断する材料を得る。",
+        "currentReaction": "Hacker Newsで189 points、187 comments（2026-11-23T00:00:00.000Z確認）。",
+        "assessment": "妥当",
+        "assessmentComment": "1億人構想は大きいが、プロトコル、既存の利用圏、資金と統治の節目を具体的に提示しており、実装可能性を検討する価値がある。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 189,
+        "hnComments": 187,
+        "socialMetricsCheckedAt": "2026-11-23T00:00:00.000Z"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T00:00:00.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-cleverbridge-card-breach",
+      "title": "Cleverbridge侵害、カード番号とCVV流出を通知",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-22T15:43:04.000Z",
+      "collectedAt": "2026-11-23T00:00:00.000Z",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "セキュリティ",
+        "その他"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "narration": {
+        "sourceCheckedAt": "2026-11-23T00:00:00.000Z",
+        "script": [
+          "Cleverbridgeは、第三者が決済カードデータをコピーした侵害について、影響を受けた顧客へ通知を始めました。通知にはカード番号、有効期限、CVV/CVCが含まれるとされます。",
+          "Cleverbridgeは2026年11月4日に不正な活動を検知し、11月20日から顧客通知を開始しました。個別通知では氏名、連絡先、請求先情報はコピーされなかったとされ、ランサムウェアでもシステム暗号化でもなかったと説明されています。",
+          "Cleverbridgeの侵入経路、滞在期間、影響人数、カード情報の暗号化状況は未公表です。決済代行サービスでは、カード番号だけでなくCVV/CVCまで含まれるかで不正利用への対応が変わるため、Cleverbridge利用企業と購入者は通知の対象範囲を確認する必要があります。"
+        ],
+        "detail": [],
+        "learning": [],
+        "analysis": [],
+        "anticipatedQuestions": [],
+        "questionResearch": [],
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
+        ]
+      },
+      "summary": [
+        "Cleverbridgeは、同社プラットフォームから決済カードデータがコピーされたとして、影響を受けた顧客への通知を開始した。個別通知にはカード番号、有効期限、CVV/CVCが含まれるとされ、同社の公開説明はカードデータの窃取を認めている。",
+        "Cleverbridgeはソフトウェア・SaaS企業の販売、決済、サブスクリプション管理を担う。2026年11月4日に不正活動を検知して一時停止し、その後の調査で第三者によるデータコピーを確認した。顧客通知の開始は11月20日だった。",
+        "個別通知では、氏名、連絡先、請求先情報はコピーされず、ランサムウェアでもシステム暗号化でもなかったと説明される。一方、侵入経路、侵害期間、影響人数、カード情報の暗号化状況は明らかにしていない。"
+      ],
+      "comment": "この件の焦点は、Cleverbridgeがカード番号と有効期限だけでなくCVV/CVCを含む決済データのコピーを通知したことにある。ソフトウェア・SaaS企業の販売、決済、サブスクリプション管理を担う同社では、影響の境界は一社の製品名ではなく、どの購入が同社の決済経路を通ったかで決まる。11月4日に不正活動を検知し、11月20日に影響顧客への通知を始めたという時系列は、カード利用者への連絡と販売元の照会対応を同時に要する理由でもある。個別通知は氏名、連絡先、請求先情報はコピーされなかったとする一方、侵入経路、侵害期間、影響人数、カード情報の暗号化状況を公表していない。したがって、現時点で確定しているカード項目と、まだ範囲を決められない運用上の条件を混同しないことが重要になる。利用企業は通知対象の購入経路を照合し、購入者はカード発行会社の案内と利用明細を確認する段階にある。",
+      "articleDetail": {
+        "conclusion": "Cleverbridgeの侵害では、カード番号、有効期限、CVV/CVCを含む決済カード情報がコピーされたと通知された。",
+        "facts": [
+          "Cleverbridgeは2026年11月4日に不正活動を検知し、調査で第三者による決済カードデータのコピーを確認した。",
+          "同社は11月20日から影響顧客へ通知し、個別通知はカード番号、有効期限、CVV/CVCを挙げた。"
+        ],
+        "background": [
+          "Cleverbridgeはソフトウェア・SaaS企業向けに販売、決済、サブスクリプション管理を提供する。"
+        ],
+        "explanation": [
+          "公開説明はカードデータの窃取を認め、個別通知で具体的なカード項目を示す一方、氏名、連絡先、請求先情報はコピーされなかったとしている。"
+        ],
+        "implications": [
+          "影響顧客はカード明細の確認とカード発行会社への連絡を求められ、銀行がカードを再発行する場合がある。"
+        ],
+        "caveats": [
+          "侵入経路、侵害期間、影響人数、カード情報の暗号化状況は公表されていない。"
+        ],
+        "nextChecks": [
+          "Cleverbridgeが影響人数、侵入経路、カード情報の保護状況を開示するか。"
+        ]
+      },
+      "englishVersion": {
+        "title": "Cleverbridge Notifies Customers of Stolen Card Numbers and CVVs",
+        "summary": [
+          "Cleverbridge began notifying affected customers after finding that a third party copied payment-card data from its platform. Individual notices say the data includes card numbers, expiry dates, and CVV/CVC codes.",
+          "The company detected unauthorized activity on November 4, 2026, and started notifications on November 20. Cleverbridge provides sales, payment, and subscription services to software and SaaS companies.",
+          "The individual notice says names, contact details, and billing information were not copied, and that the incident was not ransomware. The intrusion method, duration, affected-customer count, and encryption status remain undisclosed."
+        ],
+        "comment": "The presence of CVV/CVC codes makes this more than a notice about card numbers alone. Cleverbridge sits in the payment path for software and SaaS sellers, so the relevant scope is the set of purchases processed through its platform. The individual notice separates the card data from names and billing information, but it does not yet answer how the platform was accessed, how long access lasted, how many people were affected, or whether the data was encrypted. Those missing facts determine the eventual scope of the incident and the response required from merchants and cardholders."
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Cleverbridgeの利用企業と購入者は、11月20日開始の通知対象と、CVV/CVCを含むカード情報がどの購入経路で扱われたかを確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "決済代行基盤からのカード情報窃取であり、開示済みの項目と未公表の侵害範囲を分けて追う必要がある。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T00:00:00.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-glinet-cloud-exploit",
+      "title": "GL.iNetのクラウド管理経路悪用、一部ルーターとKVMにマルウェア",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/",
+      "sourceName": "GL.iNet／BleepingComputer",
+      "publishedAt": "2026-11-22T18:45:37.000Z",
+      "collectedAt": "2026-11-23T00:00:00.000Z",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 4,
+      "narration": {
+        "sourceCheckedAt": "2026-11-23T00:00:00.000Z",
+        "script": [
+          "GL.iNetは、クラウド遠隔管理サービスの脆弱性が悪用され、一部のルーターとKVMデバイスにマルウェアが導入されたと公表しました。問題の経路は2026年11月20日に遮断されたとしています。",
+          "GoodCloudのような遠隔管理サービスは、対応端末へ外部から管理操作を届けます。今回はそのクラウド側の脆弱性を通じて端末に到達されたため、クラウド側の修正だけでは既に感染した機器からマルウェアを消せません。GL.iNetはルーターとKVM向けの安定版セキュリティ修正を11月22日に提供予定としました。",
+          "確認すべき範囲は、GoodCloudで遠隔管理していた対象機器と、それらが接続するコンピューターです。影響台数、侵害期間、攻撃者、接続先コンピューターへの影響はまだ公表されていません。利用者は更新の適用と、ベンダーが案内する端末確認を分けて進める必要があります。"
+        ],
+        "detail": [],
+        "learning": [],
+        "analysis": [],
+        "anticipatedQuestions": [],
+        "questionResearch": [
+          {
+            "question": "攻撃経路の遮断だけで端末は安全になるのか。",
+            "findings": [
+              "GL.iNetは、この攻撃経路では新規感染できなくなったとする一方、既に感染した端末からマルウェアは自動的に除去されないと説明している。",
+              "安定版のセキュリティ修正はルーターとKVM向けに11月22日提供予定で、対象モデルでは感染兆候がなくても導入を勧めている。"
+            ],
+            "references": [
+              "https://www.gl-inet.com/en-ca/blogs/blog/glinet-security-notice-2026-11-20"
+            ]
+          }
+        ],
+        "references": [
+          "https://www.gl-inet.com/en-ca/blogs/blog/glinet-security-notice-2026-11-20",
+          "https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/"
+        ]
+      },
+      "summary": [
+        "GL.iNetは、同社のクラウド遠隔管理サービスにあった脆弱性が悪用され、一部のルーターとKVMデバイスへ不正なソフトウェアが導入されたと発表した。2026年11月20日に脆弱性を把握し、攻撃に使われたアクセス経路を遮断したとしている。",
+        "対象となるGoodCloudのようなクラウド管理は、対応機器への遠隔操作を可能にする経路だ。今回の修正はこの経路での新規感染を止める措置だが、GL.iNetは既に感染した端末からマルウェアを自動除去するものではないと明示した。",
+        "同社はルーターとKVM向けの安定版セキュリティ修正ファームウェアを11月22日に提供予定とし、感染兆候がなくても対象モデルへの導入を勧めた。影響台数、侵害期間、攻撃者は当該告知で示されず、接続先コンピューターへの影響は調査中である。"
+      ],
+      "comment": "今回の障害は、端末側の設定ミスではなく、遠隔管理を集約するクラウドの経路が突破された場合に、管理対象機器へ同時に到達し得るという構造を示す。GL.iNetが11月20日に攻撃経路を閉じたことは、新しい端末への侵入を止める境界として重要だが、既に不正なソフトウェアが導入された端末の状態を元に戻す処理とは別である。したがって、クラウド遠隔管理サービスを利用していた運用者は、更新を入れたかだけではなく、対象のルーターとKVMが感染前後にどの管理経路へ接続していたかを切り分ける必要がある。KVMは接続されたコンピューターを遠隔操作できるため、同社が接続先への影響も調査中とする点は、機器単体で完結しない確認範囲を意味する。影響台数や侵害期間が未公表の段階では、利用者が対象外と決める根拠は、サービス利用の有無とベンダーの確認結果に限られる。",
+      "articleDetail": {
+        "conclusion": "GL.iNetのクラウド遠隔管理サービスの脆弱性が悪用され、一部のルーターとKVMデバイスにマルウェアが導入された。",
+        "facts": [
+          "GL.iNetは2026年11月20日、クラウド遠隔管理サービスの脆弱性が悪用され、一部のルーターとKVMデバイスに不正なソフトウェアが導入されたと公表した。",
+          "同社はクラウド側の脆弱性を修正し、今回使われたアクセス経路を遮断したため、この経路による新規感染はできなくなったとしている。"
+        ],
+        "background": [
+          "クラウド遠隔管理は、対応するルーターやKVMへ外部から管理操作を届ける機能である。"
+        ],
+        "explanation": [
+          "攻撃者はクラウド遠隔管理サービスの脆弱性を通じて端末に到達し、マルウェアを導入した。クラウド側の経路を閉じても、既に感染した端末からマルウェアは自動的に除去されない。"
+        ],
+        "implications": [
+          "クラウド遠隔管理サービスで対応機器を遠隔管理していた利用者は、対象モデルへセキュリティ修正を導入し、ベンダーの確認手順で端末の状態を調べる必要がある。",
+          "KVMに接続されたコンピューターへの影響も調査中であり、確認範囲はKVM本体に限られない。"
+        ],
+        "caveats": [
+          "影響台数、侵害期間、攻撃者の特定は当該告知では示されず、接続先コンピューターへの影響は調査中である。",
+          "当該告知は悪用された脆弱性の技術的詳細とCVE識別子を示していない。"
+        ],
+        "nextChecks": [
+          "GL.iNetが影響を受けた機器数、侵害期間、接続先コンピューターへの影響を公表するか。",
+          "11月22日予定の安定版ファームウェアが対象のルーターとKVMに提供され、既存感染端末への対応手順が更新されるか。"
+        ]
+      },
+      "englishVersion": {
+        "title": "GL.iNet Cloud Management Flaw Used to Install Malware on Routers and KVMs",
+        "summary": [
+          "GL.iNet said a flaw in its cloud remote-management services was exploited to install malicious software on some routers and KVM devices. It identified the issue on November 20, 2026, and says it blocked the access path used in the attack.",
+          "Cloud remote management provides a route for remote operations on supported devices. Closing that route prevents new infections through it, but GL.iNet says it does not automatically remove malware already installed on affected devices.",
+          "The company scheduled stable security firmware for routers and KVM devices for November 22 and recommends it even where no infection signs appear. The number of affected devices, intrusion period, attacker identity, and effects on connected computers remain undisclosed or under investigation."
+        ],
+        "comment": "This incident shows how a cloud management route can become a common path to many managed devices when the service itself is compromised. Blocking the route on November 20 is a boundary for new intrusion, not a cleanup of devices that already received malicious software. Operators that used the cloud remote-management service therefore need to distinguish applying the update from checking the state of each managed router and KVM. Because a KVM can remotely control its attached computer and GL.iNet is still investigating effects on connected systems, the verification scope is not limited to the appliance. With the device count and intrusion period still undisclosed, service use and the vendor's checks are the available basis for determining exposure."
+      },
+      "attentionAnalysis": {
+        "whyNotable": "クラウド遠隔管理サービスで対象機器を遠隔管理していた利用者は、11月22日予定の修正を適用するだけでなく、クラウド経路が悪用された時点のルーター、KVM、接続先コンピューターを確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "クラウド側の侵入経路を閉じても既存感染端末は自動復旧しないため、更新と端末確認を分ける必要があるセキュリティ事案である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T00:00:00.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-rackspace-spot-breach",
+      "title": "Rackspace Spot侵害、Kubernetes Secretsへアクセス可能に",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-21T22:59:58.000Z",
+      "collectedAt": "2026-11-23T00:00:00.000Z",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 5,
+      "narration": {
+        "sourceCheckedAt": "2026-11-23T00:00:00.000Z",
+        "script": [
+          "Rackspaceは、漏えいした認証情報でRackspace Spotへ侵入され、顧客のKubernetes Secretsにアクセス可能だったと通知しました。アクセスは2026年11月17日のおよそ00時20分から22時まで、協定世界時で起きたとされています。",
+          "攻撃者は一部の顧客組織で正規ユーザーとして振る舞い、ポッドを作成し、Secretsを読み、ノードとボリュームを一覧できました。Secretsにはパスワード、認証トークン、APIキーが置かれ得るため、クラスタ内だけの問題ではなく、その資格情報がつながる外部サービスの確認も必要になります。",
+          "Rackspaceはトークンとセッションの失効、不正ポッドの削除、鍵のローテーションを行いました。影響顧客にはSpot APIトークン、リフレッシュトークン、Kubernetes設定、Secrets内の認証情報を更新し、11月17日以降の関連ログを調べるよう案内しています。影響顧客数とデータ持ち出しの有無は未公表です。"
+        ],
+        "detail": [],
+        "learning": [],
+        "analysis": [],
+        "anticipatedQuestions": [],
+        "questionResearch": [
+          {
+            "question": "Secretsへのアクセスがなぜクラスタ外の対応まで必要にするのか。",
+            "findings": [
+              "Kubernetes Secretsにはパスワード、認証トークン、APIキーが保存され得るため、侵害時にはクラスタで使う資格情報だけでなく、それらで接続できるデータベース、クラウド、Gitリポジトリなどを確認する必要がある。",
+              "Rackspaceは11月17日以降について、データベース、コンテナレジストリ、Gitリポジトリ、クラウドストレージ、第三者サービスのログ分析を案内した。"
+            ],
+            "references": [
+              "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+            ]
+          }
+        ],
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/rackspace-spot-breach-let-hackers-access-customer-kubernetes-secrets/"
+        ]
+      },
+      "summary": [
+        "Rackspaceは、漏えいした認証情報を使った第三者がRackspace Spotの一部にアクセスし、顧客クラスタのKubernetes Secretsを読めたと通知した。アクセスは2026年11月17日およそ00:20〜22:00 UTCに起き、攻撃者は一部の顧客組織で正規利用者として振る舞ったという。",
+        "Rackspace SpotはKubernetesでコンテナ化アプリケーションをデプロイ、管理するクラウド基盤だ。攻撃者はポッドを作成し、Secretsを読み、ノードとボリュームを列挙できた。Secretsにはパスワード、認証トークン、APIキーが格納され得るため、影響はクラスタ内の操作にとどまらない可能性がある。",
+        "Rackspaceは影響トークンとセッションを失効し、不正ポッドを削除、鍵をローテーションした。顧客にはAPIトークン、リフレッシュトークン、Kubernetes設定、Secrets内の認証情報を更新し、11月17日以降の関連ログを確認するよう求めた。影響顧客数とデータ持ち出しの有無は不明である。"
+      ],
+      "comment": "この事案の運用上の要点は、漏えいした認証情報がRackspace Spotの入口を通過すると、攻撃者が顧客組織の正規ユーザーとして振る舞えたことにある。権限が得られた後は、ポッド作成だけでなくKubernetes Secretsの読み取り、ノードとボリュームの列挙へ進めるため、対応をクラスタの再起動や単一トークンの失効で終えられない。Secretsに置かれ得るパスワード、認証トークン、APIキーはデータベース、コンテナレジストリ、Gitリポジトリ、クラウドストレージ、第三者サービスへの接続に使われる可能性がある。Rackspaceが11月17日以降のそれらのログ確認を案内したのは、Secretsを実際に読まれたか、読まれた資格情報が外部で使われたかを別々に調べるためだ。影響顧客数とデータ持ち出しは未公表なので、各組織は自社クラスタで使ったトークンとSecretsを起点に調査範囲を定める段階にある。",
+      "articleDetail": {
+        "conclusion": "漏えいした認証情報でRackspace Spotに侵入した第三者は、一部顧客クラスタのKubernetes Secretsを読める状態にあった。",
+        "facts": [
+          "Rackspaceは、2026年11月17日およそ00:20〜22:00 UTCに、漏えいした認証情報を使った第三者がRackspace Spotの一部へアクセスしたと説明した。",
+          "攻撃者は一部顧客組織で正規ユーザーとして振る舞い、ポッド作成、Kubernetes Secretsの読み取り、ノードとボリュームの一覧取得を行えた。"
+        ],
+        "background": [
+          "Rackspace Spotは、Kubernetesでコンテナ化アプリケーションをデプロイ、管理するクラウドプラットフォームである。",
+          "Kubernetes Secretsにはパスワード、認証トークン、APIキーなどが格納され得る。"
+        ],
+        "explanation": [
+          "漏えいした認証情報が正規ユーザー相当のアクセスを与えたことで、攻撃者は顧客クラスタでポッド作成とSecrets読み取りを行えた。",
+          "影響利用者のクラスタに保存されたSecret、Spot APIトークン、リフレッシュトークンは読み取られた可能性がある。"
+        ],
+        "implications": [
+          "影響顧客はSpot APIトークン、リフレッシュトークン、Kubernetes設定、Secrets内の認証情報を更新し、11月17日以降のデータベース、コンテナレジストリ、Gitリポジトリ、クラウドストレージ、第三者サービスのログを確認するよう求められた。",
+          "侵害対応中の管理コンソール停止により、顧客は一時的にクラスタ管理と認証情報のローテーションを行えなかった。"
+        ],
+        "caveats": [
+          "影響顧客数と顧客データが持ち出されたかは、Rackspaceが回答しておらず不明である。",
+          "攻撃者が実際にどのSecrets、トークン、外部サービスの認証情報を読んだかは公表されていない。"
+        ],
+        "nextChecks": [
+          "Rackspaceが影響顧客数、読まれたSecretsやトークンの範囲、顧客データ持ち出しの有無を公表するか。",
+          "11月17日以降のログ調査で、露出した認証情報を使った外部サービスへのアクセスが確認されるか。"
+        ]
+      },
+      "englishVersion": {
+        "title": "Rackspace Spot Breach Exposed Access to Kubernetes Secrets",
+        "summary": [
+          "Rackspace notified customers that a third party used leaked credentials to access parts of Rackspace Spot and could read Kubernetes Secrets in customer clusters. The access occurred on November 17, 2026, from about 00:20 to 22:00 UTC, with attackers acting as legitimate users in some organizations.",
+          "Rackspace Spot is a cloud platform for deploying and managing containerized applications with Kubernetes. The attackers could create pods, read Secrets, and list nodes and volumes. Because Secrets can hold passwords, authentication tokens, and API keys, the possible impact can extend beyond operations inside a cluster.",
+          "Rackspace revoked affected tokens and sessions, removed unauthorized pods, and rotated keys. It told customers to replace API and refresh tokens, Kubernetes configuration files, and credentials stored in Secrets, then review relevant logs from November 17 onward. The affected-customer count and whether customer data was taken remain unknown."
+        ],
+        "comment": "The operational issue is that leaked credentials let the attackers act as legitimate users in Rackspace Spot. That access permitted not only pod creation but also reading Kubernetes Secrets and listing nodes and volumes, so response cannot end with restarting a cluster or revoking one token. Passwords, authentication tokens, and API keys held in Secrets can connect to databases, registries, Git repositories, cloud storage, and third-party services. Rackspace's request to review those logs from November 17 separates two questions: whether Secrets were actually read and whether credentials from them were used elsewhere. With the customer count and data-exfiltration status undisclosed, each organization must scope its investigation from the tokens and Secrets used in its own cluster."
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Rackspace Spotの影響顧客は、11月17日以降のログを基に、漏えいした認証情報で読まれ得たKubernetes Secretsと、それらが接続する外部サービスの認証情報を更新・確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "正規ユーザー相当の権限でSecretsへ到達できたため、トークン失効だけでなくクラスタ外を含む資格情報の確認が必要な侵害である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T00:00:00.000Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-cop31-collapse",
+      "title": "COP31、化石燃料の文言で全体合意に届かず",
+      "sourceUrl": "https://apnews.com/article/f571df2b9d6dc6fd6b4b991e988c3bdd",
+      "sourceName": "AP News",
+      "publishedAt": "2026-11-22T20:12:17.000Z",
+      "collectedAt": "2026-11-23T07:08:31+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "トルコ・アンタルヤで開かれた国連気候変動会議COP31は、会議全体の方針を示すcover decisionをまとめられないまま閉幕した。化石燃料を最終文書に明記するかを巡る対立が、包括合意を阻んだ。",
+        "2023年のドバイCOPでは化石燃料からの移行を求める表現が合意されていた。しかしCOP31では、その扱いをさらに進める共通の文言を作れなかった。",
+        "COP31で共通の新規方針は加わらず、各国の排出削減と資金拠出を束ねる次の政治的な足場は持ち越された。既存の決定が失効するわけではないが、会議全体として化石燃料の扱いを更新する合意には至らなかった。"
+      ],
+      "comment": "cover decisionは多数の個別議題を横断して会議の方向を定める文書であり、これがないことは、既存の国別目標や過去の決定が消えることとは異なる。一方、今回の争点だった化石燃料の扱いについて、COP28で得た「移行」の表現を更新・具体化する共通文書も残らなかった。化石燃料をどう位置付けるかで参加国の隔たりを埋められなかったことが、包括合意を作れなかった直接の構図である。",
+      "articleDetail": {
+        "conclusion": "COP31は化石燃料への言及を巡って割れ、会議全体の新たな合意文書を採択できなかった。",
+        "facts": [
+          "アンタルヤ開催のCOP31は、全体合意であるcover decisionなしで閉幕した。",
+          "COP31では、化石燃料を最終文書でどう扱うかが対立の中心になった。",
+          "争点は、温暖化を招く化石燃料を最終文書で明示するかどうかだった。"
+        ],
+        "background": [
+          "COP28では2023年に化石燃料からの移行を求める表現が合意されていた。",
+          "COP31には約200の参加国が集まり、協議は当初の日程を超えた。"
+        ],
+        "explanation": [
+          "化石燃料を明記しない案への反対と、明記への反対が併存し、全参加国が受け入れる包括決定を作れなかった。"
+        ],
+        "implications": [
+          "COP31として会議全体を束ねる共通の新規方針は加わらず、実施は既存の決定と各国の行動が基盤となる。"
+        ],
+        "caveats": [
+          "個別議題で成立した決定の全容と国内政策への影響は、閉会時点の報道だけでは確定しない。"
+        ],
+        "nextChecks": [
+          "UNFCCCが閉会文書と個別決定を公表した際に、合意済み項目と先送り論点を確認する。",
+          "各国とUNFCCCが、化石燃料に関する未解決の論点を次の交渉日程でどう扱うかが更新点となる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "各国の気候・エネルギー担当者にとって、化石燃料の扱いを巡る次の国際交渉で、COP31で未解決となった対立をどう扱うかが判断材料になる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "約200カ国が集まるCOPで包括決定が成立しなかったため、報道の焦点が化石燃料の文言と合意形成の失敗に置かれている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-23T07:08:31+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-23T07:08:31+09:00",
+        "httpStatus": 403,
+        "note": "APの本文はアクセス制限で直接取得できなかった。"
+      }
+    },
+    {
+      "id": "2026-11-23-canada-news-funding",
+      "title": "カナダ、地方報道支援を恒久化へ",
+      "sourceUrl": "https://www.niemanlab.org/2026/11/a-government-that-gets-it-canada-recommits-to-federal-funding-for-news/",
+      "sourceName": "Nieman Journalism Lab",
+      "publishedAt": "2026-11-22T19:10:38.000Z",
+      "collectedAt": "2026-11-23T07:08:31+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "国内・国際"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "カナダの2026年予算案は、地方・地域の報道職を支えるLocal Journalism Initiative（LJI）を恒久化する方針を示した。4年間で1億3400万カナダドルを投じ、その後は年4100万カナダドルを続ける。",
+        "同じ予算案は、報道機関の給与に対する35%の税額控除を2028年まで延長し、対象をラジオとテレビにも初めて広げる。予算上の費用は5年間で5億100万カナダドルとされる。",
+        "LJIは約1000コミュニティで約470の報道職を支援してきた。予算の成立には議会承認が必要で、対象要件が小規模媒体をどこまで含められるかも残る論点だ。"
+      ],
+      "comment": "LJIの焦点は、全国一律の媒体支援ではなく、報道が薄い地域に記者を置くことにある。資金配分を第三者組織、税額控除の適格性を独立委員会が扱う構成は、政府が個別の報道内容や受給者を直接選ぶ形を避けるための制度上の境界でもある。もっとも、税額控除には独自ニュースと、所有者から独立した記者を少なくとも2人雇う条件があり、家族経営や極小のニュースルームには届かない可能性がある。",
+      "articleDetail": {
+        "conclusion": "カナダは地方報道の雇用支援を予算案で継続・拡張しようとしている。",
+        "facts": [
+          "予算案はLJIに4年間で1億3400万カナダドル、その後は年4100万カナダドルを計上する。",
+          "35%の給与税額控除は2028年まで延長され、ラジオ・テレビにも対象を広げる。",
+          "税額控除の予算上の費用は5年間で5億100万カナダドルである。"
+        ],
+        "background": [
+          "LJIは2019年に始まり、約1000コミュニティで約470の報道職を支援している。",
+          "税額控除には独自ニュースと独立した記者2人以上という適格要件がある。"
+        ],
+        "explanation": [
+          "LJIの資金は第三者組織が管理し、税額控除の適格性は独立委員会が助言する設計である。"
+        ],
+        "implications": [
+          "予算成立なら、毎年の更新に左右されてきた地方ニュースルームの雇用計画に継続性が生まれる。"
+        ],
+        "caveats": [
+          "予算案は議会承認前であり、二人以上の記者という条件は小規模媒体の対象外につながりうる。"
+        ],
+        "nextChecks": [
+          "議会で予算が可決され、LJIの恒久化と税額控除の拡張が原案どおり実施されるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "カナダの地方ニュースルームは、議会で予算が成立すれば、LJIの資金と2028年までの35%税額控除を前提に雇用計画を立てられる。",
+        "currentReaction": "Hacker Newsで101 points、100 commentsを確認（2026-11-23 07:08 JST）。",
+        "assessment": "妥当",
+        "assessmentComment": "地域報道を支える恒久財源と給与税額控除の拡張が同時に示され、制度設計への関心が集まっている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 101,
+        "hnComments": 100,
+        "socialMetricsCheckedAt": "2026-11-23T07:08:31+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:31+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-gta6-birds",
+      "title": "GTA 6の60種の鳥、双眼鏡で追う副次的な収集要素",
+      "sourceUrl": "https://www.audubon.org/magazine/birds-of-gta-6-field-guide-vice-city-wildlife",
+      "sourceName": "Audubon",
+      "publishedAt": "2026-11-19T12:59:41+00:00",
+      "collectedAt": "2026-11-23T07:08:31+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "エンタメ"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "GTA 6には少なくとも60種の鳥を記録する収集要素があり、プレイヤーは双眼鏡で鳥を見つけてstudy操作をするとProgress画面へ登録できる。Audubonはこの仕組みとVice City、Leonidaの鳥類表現をフィールドガイドとして紹介した。",
+        "事前の宣伝では62種とされた一方、公式の鳥一覧は60種で、他の一部はhunting画面に置かれている。水鳥は南部の海岸・湿地、より小型の開けた土地や森林の鳥は北部に多いという配置になっている。",
+        "現実の南フロリダに近い生息地の再現がある一方、絶滅危惧種のWhooping Craneが普通に現れるなど、種の分布と名称にはゲームとしての差異もある。"
+      ],
+      "comment": "この収集は単にマップ上の固定物を拾う形式ではなく、双眼鏡で対象を観察し、生息地を手掛かりに探す操作を組み込んでいる。南部の水辺と北部の森林という配置は探索の導線になるが、現実の分布図をそのまま移植したものではない。Whooping CraneやGolden Eagleの扱い、Black-capped Chickadeeという名称には、現実の南フロリダの分布や名称と異なる表現がある。",
+      "articleDetail": {
+        "conclusion": "GTA 6は双眼鏡で観察した鳥を60種まで記録する探索要素を実装している。",
+        "facts": [
+          "Progress画面には少なくとも60種の鳥が記録対象として表示される。",
+          "双眼鏡で鳥をstudyすると収集記録に追加される。",
+          "宣伝の62種と公式の60種には差があり、一部はhunting画面にある。"
+        ],
+        "background": [
+          "舞台はVice CityとLeonidaで、南フロリダの生息地を参照した地理表現を持つ。"
+        ],
+        "explanation": [
+          "海岸、湿地、森林などの生息地を移動して観察することが、鳥を集める操作の中心になる。"
+        ],
+        "implications": [
+          "プレイヤーはミッション外でも地理と観察を使った60種の収集目標を追える。"
+        ],
+        "caveats": [
+          "鳥の分布や名称には現実の南フロリダと異なるゲーム上の表現がある。"
+        ],
+        "nextChecks": [
+          "公式Progressの60種と事前宣伝の62種、hunting画面にある種との対応を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "GTA 6のプレイヤーは、60種の記録を埋める際、双眼鏡のstudy操作と生息地ごとの配置を探索計画に使うことになる。",
+        "currentReaction": "Hacker Newsで190 points、53 commentsを確認（2026-11-23 07:08 JST）。",
+        "assessment": "妥当",
+        "assessmentComment": "大作ゲームの探索設計を、実際の鳥類分布との一致と違いの両面から具体的に読める題材である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 190,
+        "hnComments": 53,
+        "socialMetricsCheckedAt": "2026-11-23T07:08:31+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:08:31+09:00",
+        "reason": "一次ページの公開日は11月19日だったが、対象期間中にHacker Newsでの反応を確認して採用した。",
+        "currentNewsValue": "GTA 6の鳥類表現を専門団体が具体的に検証した記事として、当日の技術・文化的な反応を確認できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:31+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-prison-phone-jamming",
+      "title": "FCC、州・地方刑務所の携帯妨害を条件付きで容認",
+      "sourceUrl": "https://arstechnica.com/tech-policy/2026/11/prisons-get-ok-to-jam-contraband-phones-ctia-says-nearby-phones-will-be-jammed-too/",
+      "sourceName": "Ars Technica",
+      "publishedAt": "2026-11-20T19:52:59+00:00",
+      "collectedAt": "2026-11-23T07:08:31+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "国内・国際",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "米FCCは、州・地方の刑務所が密輸携帯電話を対象に妨害電波を使うことを初めて認めた。従来は通信法により非連邦主体の妨害が原則禁止されていたが、刑務所・拘置所向けに例外を設ける。",
+        "導入する施設はFCCへ申請し、指定区域内に妨害をとどめ、外部の適法な通信に影響しないことを試験で示す必要がある。周辺地域には運用前の通知も求める方針だ。",
+        "一方、CTIAが示した試験では911通話と公衆安全通信への干渉、最大2.5マイル先のネットワークへの影響が報告された。標的端末も屋外試験で半分から3分の2の通話が成立した。"
+      ],
+      "comment": "制度の焦点は、密輸端末だけを止めるという対象指定と、無線帯域上で実際に届く電波を地理的に閉じ込められるかという物理的な制御を分ける点にある。FCCは申請・試験・地域通知を安全策にするが、CTIAの試験は外部通信を止めながら標的通信を取りこぼす可能性を示した。よって導入判断では、施設内の遮断率だけでなく、911、公衆安全通信、周辺基地局への測定結果が同じ重さを持つ。",
+      "articleDetail": {
+        "conclusion": "FCCは刑務所の携帯妨害を認めたが、外部通信への干渉を防ぐ試験が導入条件となる。",
+        "facts": [
+          "FCCは州・地方の刑務所による密輸携帯向け妨害を初めて容認した。",
+          "CTIAの試験では911・公衆安全通信への干渉と最大2.5マイル先への影響が報告された。",
+          "屋外試験では標的端末の通話が半分から3分の2で成立した。"
+        ],
+        "background": [
+          "通信法は非連邦主体による無線妨害を原則禁止してきた。"
+        ],
+        "explanation": [
+          "施設はFCC申請で区域内への封じ込めを試験し、地域へ事前通知してから運用する。"
+        ],
+        "implications": [
+          "周辺の利用者と緊急通信事業者は、導入ごとの試験が外部干渉を抑えられるかの影響を受ける。"
+        ],
+        "caveats": [
+          "CTIAはFCCの法的権限を争う可能性があり、命令は司法審査を受けうる。"
+        ],
+        "nextChecks": [
+          "各施設の申請、運用前の試験結果と地域通知、運用後に報告される干渉事案、法廷での扱いを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "FCCは刑務所の申請時に、911を含む外部通信への干渉を防げる試験結果を基に、導入を認めるか判断することになる。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "犯罪抑止の目的と、試験で示された外部通信・標的端末双方の問題が同時に存在する。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-23T07:08:31+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:08:31+09:00",
+        "reason": "一次ページの表示時刻は11月20日だったが、対象期間中に制度変更を扱う記事として確認した。",
+        "currentNewsValue": "刑務所の通信妨害を認める制度と近隣通信への影響という運用条件が、継続して確認対象となる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:31+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-cpp26-report",
+      "title": "C++26、11月ISO会合で技術作業を完了",
+      "sourceUrl": "https://herbsutter.com/2026/11/21/c26-is-done-again-trip-report-november-2026-iso-c-standards-meeting-buzios-brazil/",
+      "sourceName": "Herb Sutter",
+      "publishedAt": "2026-11-21T13:39:38+00:00",
+      "collectedAt": "2026-11-23T07:08:31+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "ISO C++委員会はブラジル・ブージオスで開いた2026年11月会合で、C++26の技術作業が再び完了したと報告した。一方、最初のDIS承認投票はcontractsを巡る国際コメントへの対応が必要として通らず、第2回DIS投票へ出し直す予定である。",
+        "この完了は言語仕様が直ちに全実装で使えることを意味しない。ISO標準としての出版と、コンパイラ、標準ライブラリ、開発ツールが各機能を実装・出荷する時点は別に進む。",
+        "利用者と実装者にとっては、C++26を単一の導入日として扱うより、規格手続きと各ツールチェーンの対応を分けて追う段階に入った。"
+      ],
+      "comment": "標準化会合の「done」は、提案の採否を巡る技術作業を終えたという意味であり、ユーザーが指定できるコンパイラ標準モードの完成とは異なる。C++では、フロントエンド、標準ライブラリ、デバッガや静的解析などの実装が別々に追随する。今回の報告ではDISの最初の承認投票が通らず、contractsを巡る国際コメントへの対応後に第2回DIS投票へ出し直す予定である。移行可否は出版日だけでなく、使用中のツールチェーンの対応表で決まる。",
+      "articleDetail": {
+        "conclusion": "C++26は技術作業を終え、ISOの承認・出版と実装普及を待つ段階に進んだ。",
+        "facts": [
+          "ISO C++委員会は2026年11月にブージオスで会合を開いた。",
+          "会合報告はC++26の技術作業が完了したと説明している。",
+          "次の段階はISOでの最終承認と出版手続きである。"
+        ],
+        "background": [
+          "C++標準は委員会作業、投票、出版を経て正式規格となる。"
+        ],
+        "explanation": [
+          "技術作業の完了後も、編集・承認と実装側の対応が別に進行する。"
+        ],
+        "implications": [
+          "実装者は採択済み機能と正式出版時点を分け、互換性計画を立てる必要がある。"
+        ],
+        "caveats": [
+          "会合報告は実装の対応状況や各機能の出荷時期を保証しない。"
+        ],
+        "nextChecks": [
+          "第2回DIS投票の結果、contractsの最終扱い、ISOの出版日と主要ツールチェーンの対応範囲を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "C++を使うチームは、第2回DIS投票とcontractsの扱い、必要なC++26機能のツールチェーン対応が判明するたびに移行判断を更新できる。",
+        "currentReaction": "Hacker Newsで41 points、9 commentsを確認（2026-11-23 07:08 JST）。",
+        "assessment": "妥当",
+        "assessmentComment": "言語仕様の節目と実装利用可能性を区別する必要があるため、会合報告への専門的な関心は自然である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 41,
+        "hnComments": 9,
+        "socialMetricsCheckedAt": "2026-11-23T07:08:31+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:08:31+09:00",
+        "reason": "一次ページの表示時刻は11月21日だったが、対象期間中の開発者コミュニティの反応を確認して採用した。",
+        "currentNewsValue": "C++26標準化会合の決定内容は、実装・移行を検討する開発者に直結する当日確認可能な材料である。"
+      },
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-23T07:08:31+09:00",
+        "note": "サイトへの直接アクセスは制限された。"
+      }
+    },
+    {
+      "id": "2026-11-23-ntp-pool-pi",
+      "title": "Stratum 1 Piを時刻源に、Stratum 2 VPSでNTP Poolへ参加",
+      "sourceUrl": "https://www.jeffgeerling.com/blog/2026/i-joined-the-ntp-pool/",
+      "sourceName": "Jeff Geerling",
+      "publishedAt": "2026-11-17T09:00:00-06:00",
+      "collectedAt": "2026-11-23T07:08:31+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Jeff Geerlingは、Stratum 1のTime Piから時刻を受けるStratum 2 VPSをNTP Poolへ参加させる構成を紹介した。元サイトを直接取得できないため、Piの構成、実際の稼働状況、時刻精度は確認できていない。",
+        "NTP Poolは、参加する多数のサーバーへ利用者を分散する仕組みだ。紹介された構成では、VPSが外部へ応答し、Piの時刻を上流にしてクライアントへ返す想定である。",
+        "個人運用でも時刻配信に加われる一方、VPSの到達性、Piからの同期、時刻精度、停止時の扱いが利用者に影響する。Pool側の監視とスコアが、配信先に入れるかを左右する。"
+      ],
+      "comment": "Stratum番号はサーバーの性能順位ではなく、一次時刻源までの同期の段数を表す。今回の公開先はPiではなくStratum 2のVPSで、GPSに直接同期するTime PiからWireGuard経由で時刻を受ける。課題はCPU性能より、Piの受信、VPSの到達性、両者の同期、誤時刻を外へ出さない監視になる。NTP Poolの分散は単一運用者の障害を薄める設計だが、参加者側には利用可能で正しい時刻を継続して返す責任がある。",
+      "articleDetail": {
+        "conclusion": "Stratum 1 Time Piを時刻源にしたStratum 2 VPSを、NTP Poolの公開時刻配信へ加える運用例が示された。",
+        "facts": [
+          "Jeff GeerlingはStratum 1 Time Piから時刻を受けるStratum 2 VPSをNTP Poolに参加させる構成を紹介した。",
+          "Stratum 1はGPSなどの一次時刻源から直接時刻を得るNTPサーバーである。",
+          "NTP Poolは利用者を多数の参加サーバーへ分散する。"
+        ],
+        "background": [
+          "Stratum 1の公開運用には時刻源、ネットワーク到達性、継続監視が必要である。"
+        ],
+        "explanation": [
+          "紹介された構成では、Time Piの時刻をWireGuard経由でVPSへ渡し、VPSがNTP Poolの利用者へ返す想定になる。"
+        ],
+        "implications": [
+          "個人運用でも公開時刻基盤に加われるが、VPSの停止やPiからの誤時刻を監視する必要がある。"
+        ],
+        "caveats": [
+          "元サイトは403で直接取得できず、構成や精度、実際の配信量は確認できない。"
+        ],
+        "nextChecks": [
+          "公開Stratum 2 VPSのPool到達性・スコア、VPS停止と復旧、Piからの同期・精度を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "NTP Poolへ参加する運用者は、公開Stratum 2 VPSの到達性と、Time Piからの同期・精度を維持し、Poolの監視で配信できる状態かを判断する必要がある。",
+        "currentReaction": "Hacker Newsで100 points、26 commentsを確認（2026-11-23 07:08 JST）。",
+        "assessment": "妥当",
+        "assessmentComment": "小型機で一次時刻源を公開基盤へつなぐ構成は、時刻同期の運用条件を具体的に示す。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 100,
+        "hnComments": 26,
+        "socialMetricsCheckedAt": "2026-11-23T07:08:31+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:08:31+09:00",
+        "reason": "一次ページの表示時刻は11月17日だったが、対象期間中にNTP Pool参加の実運用記として反応を確認した。",
+        "currentNewsValue": "Stratum 1の時刻源を個人運用でPoolへ提供する構成と制約が、当日の技術コミュニティで参照されている。"
+      },
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-23T07:08:31+09:00",
+        "httpStatus": 403,
+        "note": "サイトが403を返し本文を直接取得できなかった。"
+      }
+    },
+    {
+      "id": "2026-11-23-worker755-game",
+      "title": "Worker 755、LLMの部下になる90秒の端末ゲーム",
+      "sourceUrl": "https://github.com/gulivan/worker755",
+      "sourceName": "Worker 755 README",
+      "publishedAt": "2026-11-22T13:56:58.000Z",
+      "collectedAt": "2026-11-23T07:08:44+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news",
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Worker 755は、LLMを管理者に置き、プレイヤー自身をサブエージェントとして扱うブラウザゲームだ。AI管理者から端末へ届く指示を、人間が90秒以内に実行し、完了報告とコマンド記録を返す構成になっている。",
+        "管理者側にはタスクキュー、読み取り専用のマシンアクセス、サブエージェント起動ツールがあり、通常のオーケストレーターの役割を模している。報告後は管理者が作業を検査し、必要なら修正指示やインシデント報告を出し、最後に評価を書く。",
+        "職場は新しいsandboxか、実DBを持つlegacy productionから選べる。モデル鍵は持ち込みにも対応し、READMEは開始時にサーバーへ渡した鍵をshiftのメモリー以外へ保存しないとしている。"
+      ],
+      "comment": "この作品が反転させるのは、エージェントに仕事を任せる側ではなく、指示を受ける側の視界だ。管理者は結果だけでなく端末のコマンド記録を受け取り、検査の後に修正指示やインシデント報告を返す。短い実行枠、再作業、成果物の検査というエージェント運用の往復を、プレイヤーの操作として連続させる構成になっている。職場としてfresh sandboxのほか実データベースを持つlegacy productionを選べ、失敗タスクのスキップは既定でオフになっている。",
+      "articleDetail": {
+        "conclusion": "Worker 755は、LLMオーケストレーターの指示・検査・再指示を、人間が従うゲームとして実装した。",
+        "facts": [
+          "AI管理者の指示は90秒の時計付きでプレイヤーの端末に届く。",
+          "管理者は完了報告とコマンド記録を受け、修正指示、インシデント報告、最終評価を行う。"
+        ],
+        "background": [
+          "管理者にはタスクキュー、読み取り専用のマシンアクセス、サブエージェント起動ツールが用意される。"
+        ],
+        "explanation": [
+          "プレイヤーがサブエージェントとして実行し、その報告を管理者が検査して次の指示へ戻すことで、オーケストレーションの往復をゲーム内に作る。"
+        ],
+        "implications": [
+          "利用者はfresh sandboxと実データベースを持つlegacy productionを選べるため、同じゲームでも失敗の扱いが異なる。"
+        ],
+        "caveats": [
+          "無料shiftの回数はサーバーごとに異なり、READMEは固定の提供量を示していない。"
+        ],
+        "nextChecks": [
+          "公開サーバーごとの無料shift条件と、選べるモデルの範囲が明示されれば利用条件を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "LLM管理者の指示と検査の往復を、90秒の実行枠とコマンド記録という具体的な形で体験させる。",
+        "currentReaction": "Hacker Newsで241 points、57 comments（候補台帳の収集時点）。",
+        "assessment": "妥当",
+        "assessmentComment": "ゲームの設定だけでなく、鍵の取り扱い、sandbox、実行後の検査の流れまで公開されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 241,
+        "hnComments": 57,
+        "socialMetricsCheckedAt": "2026-11-23T07:08:44+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:44+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-delta-system-outage",
+      "title": "Deltaの重量・重心自動計算障害、手作業へ切替え便遅延",
+      "sourceUrl": "https://www.nytimes.com/2026/11/22/us/delta-flight-delays-system-outage.html",
+      "sourceName": "The New York Times",
+      "publishedAt": "2026-11-22T19:51:46.000Z",
+      "collectedAt": "2026-11-23T07:08:44+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Delta Air Linesで、出発前の航空機重量・重心を計算する自動化システムに問題が起き、11月22日に便の遅延が広がった。最大拠点のAtlantaで作業が詰まり、航空会社は自動化を復旧させる間、手作業の代替手順で安全な出発を進めた。",
+        "APがFlightAwareを引用して報じた同日正午時点では、Delta便の48%が遅延していた。これは航空機の運航可否を決める前段の計算障害が、個別便だけでなくハブとネットワークの時刻表へ連鎖したケースである。",
+        "公表された範囲では、障害の技術的な根本原因や完全復旧時刻は明らかになっていない。遅延の対象は搭乗客だけでなく、出発処理を手作業へ移した現場と接続便の運用にも及んだ。"
+      ],
+      "comment": "重量・重心の計算は離陸前の出発処理に属するため、ここでの自動化停止は手作業での確定を必要とする。Deltaが示した手作業への切替えは運航を継続する安全側の経路だが、便ごとに人手を挟むため出発処理に時間がかかり得る。Atlantaのようなハブでは、遅延した便が機材や乗り継ぎの予定へ影響を広げる可能性がある。48%という正午時点の遅延率は影響が複数便に及んだことを示す一方、根本原因はまだ発表されていない。",
+      "articleDetail": {
+        "conclusion": "Deltaの重量・重心自動計算の障害は、手作業への切替えを伴い広範な便遅延につながった。",
+        "facts": [
+          "11月22日、Deltaは航空機の重量・重心を計算する自動化システムの問題に対応した。",
+          "FlightAware集計では同日正午時点でDelta便の48%が遅延していた。"
+        ],
+        "background": [
+          "問題は最大拠点のAtlantaを中心に報じられた。"
+        ],
+        "explanation": [
+          "出発前の重量・重心計算を自動で完了できない場合、手作業で確定してから出発処理を進めるため、便単位の処理時間が増える。"
+        ],
+        "implications": [
+          "搭乗客には遅延として現れ、ハブを経由する機材、乗員、接続便の予定にも影響する。"
+        ],
+        "caveats": [
+          "報道時点で技術的な根本原因と完全復旧時刻は公表されていない。"
+        ],
+        "nextChecks": [
+          "Deltaが原因、復旧時刻、欠航を含む最終的な影響範囲を公表すれば、障害の評価を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "重量・重心計算が止まると、安全要件を保った手作業へ移るため、出発便の処理手順が変わる。",
+        "currentReaction": "FlightAwareを引用したAP報道では、11月22日正午時点でDelta便の48%が遅延していました。",
+        "assessment": "妥当",
+        "assessmentComment": "遅延率と手作業への切替えが確認されており、運航の安全手順に直結する障害である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-23T07:08:44+09:00",
+        "note": "NYT本文は取得制限。APの同日報道で事実を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-23-muru-rust-server",
+      "title": "Muru、WSGIとASGIを狙うAI支援Rustサーバーの設計記録",
+      "sourceUrl": "https://simonwillison.net/2026/Nov/21/muru/",
+      "sourceName": "Simon Willison",
+      "publishedAt": "2026-11-22T09:57:01.000Z",
+      "collectedAt": "2026-11-23T07:08:44+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Muruは、mod_wsgiの作者Graham Dumpletonが進める、ASGIとWSGIのPythonアプリを開発・本番の両方で動かすためのAI支援Rustサーバーだ。紹介記事は、完成したサーバーのベンチマーク発表ではなく、その設計と実装を継続公開するプロジェクトとして取り上げている。",
+        "Dumpletonはmod_wsgiを20年前に始めた。Muruではworkers、import-once/fork-many、WSGIとASGIの同居、リリース、canary、Kubernetes、scale-to-zero、トレーシングまで、11月4日から22日にかけて個別の記録を連ねている。",
+        "対象はPythonアプリの実行基盤を検討する開発者だが、安定版の時期、性能比較、実運用での採用状況はこの紹介では示されていない。現時点で読めるのは、AI支援を使いながら設計上の判断を公開している開発過程である。"
+      ],
+      "comment": "Muruの特徴はRust採用そのものより、Pythonの二つのサーバーインターフェースを同じ実行基盤で扱おうとしている点にある。WSGIとASGIの両方を使う開発者にとって、どちらを対象にするかは導入条件になる。公開記録にはworkersの内部、import後にforkする構成、Kubernetesとの関係、canary、scale-to-zeroまで含まれるため、設計判断を機能名だけでなく実装順で追える。一方で紹介時点では性能値や安定版の提供時期はなく、評価できるのは実装の方向と公開された検討範囲である。",
+      "articleDetail": {
+        "conclusion": "Muruは、ASGIとWSGIのPythonアプリを対象に、AI支援で開発中のRustサーバーである。",
+        "facts": [
+          "Graham DumpletonはMuruを、開発と本番のASGI・WSGI Pythonアプリ向けRustサーバーとして進めている。",
+          "mod_wsgiを始めてから20年のDumpletonが、Muruの設計記録を11月に連続公開した。"
+        ],
+        "background": [
+          "公開記録にはworkers、import-once/fork-many、WSGIとASGIの同居が含まれる。"
+        ],
+        "explanation": [
+          "canary、Kubernetes、scale-to-zero、トレーシングを個別に記録することで、サーバーの実装判断を段階ごとに追える。"
+        ],
+        "implications": [
+          "WSGIとASGIの両方を使うPythonアプリの実行基盤を検討する開発者が、対象範囲を確認できる。"
+        ],
+        "caveats": [
+          "安定版の提供時期、性能比較、実運用での採用状況は紹介記事では示されていない。"
+        ],
+        "nextChecks": [
+          "Muru側が対応範囲、安定版の提供時期、性能測定を公表すれば、実行基盤としての評価を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ASGIとWSGIの両方を対象にし、workersからscale-to-zeroまでの設計判断を11月の連続記録で公開している。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "実装の対象範囲は具体的だが、性能比較や安定版、採用状況はまだ示されていない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:44+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-vmsa-0009-back-in-time",
+      "title": "VMSA-2026-0009、vCenter更新がVCF 9.1.1を越す制約",
+      "sourceUrl": "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md",
+      "sourceName": "VMware Cloud Foundation Security Advisory Q&A",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "collectedAt": "2026-11-23T07:08:44+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "VCF・VMware・競合",
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "VMSA-2026-0009のQ&Aは、vCenter 8.0 U3mまたは9.0.2.0200を適用すると、VCF 9.1.1へ移行できなくなる「Back-in-Time」制約を示した。パッチ後の製品ブランチのbuild番号が、予定した移行先より新しくなることが仕組みである。",
+        "VCF 9.1.1へ進行中の環境は、vCenterを先に9.1.1へ上げ、その上でセキュリティ更新を当てる経路を選べる。この場合も旧版のESXホストを管理できるとQ&Aは説明する。もう一つの選択肢は、互換性が回復するとされるVCF 9.1.2を待つことだ。",
+        "VCF 5.xでは、vCenter 8.0 U3mを非同期パッチ手順で適用する記載があり、この制約をパッチ計画から切り離せない。VCF 9.1.2の公開日や、個別のvCenter・ESX組合せの互換性結果は示されておらず、後者はProduct Interoperability Matrixでの照合が必要になる。"
+      ],
+      "comment": "この制約は脆弱性の修正可否ではなく、修正をどのバージョンの順序で当てるかが次のアップグレード先を左右する問題だ。VCF 9.1.1を目標にしている環境で8.0 U3mまたは9.0.2.0200を先に適用すると、build番号の関係でVCF 9.1.1へ移行できなくなる。Q&Aが示す「先に9.1.1へ進めてから更新」では、旧版のESXホストの管理を維持できるとされる。待機する場合も、VCF OperationsやNSX ManagersのようにvCenterより前に上げるコンポーネントの前提作業は進められる。",
+      "articleDetail": {
+        "conclusion": "vCenter 8.0 U3mまたは9.0.2.0200の適用は、VCF 9.1.1への移行順序を制約する。",
+        "facts": [
+          "vCenter 8.0 U3mと9.0.2.0200は、VCF 9.1.1へのアップグレードをblockする。",
+          "VCF 5.xの更新手順にはvCenter 8.0 U3mの非同期パッチ適用が含まれる。"
+        ],
+        "background": [
+          "Back-in-Time restrictionは、更新後のブランチのbuild番号が計画した移行先より新しくなると発生する。"
+        ],
+        "explanation": [
+          "先にvCenterを9.1.1へアップグレードしてからセキュリティ更新を適用すれば、downlevel ESX hostsを管理できるとQ&Aは説明する。"
+        ],
+        "implications": [
+          "VCF 9.1.1へ進行中の組織は、パッチ適用とアップグレードの順序を日程に組み込む必要がある。"
+        ],
+        "caveats": [
+          "VCF 9.1.2の公開日と個別環境での互換性結果はQ&Aに示されていない。"
+        ],
+        "nextChecks": [
+          "VCF 9.1.2の公開と、Product Interoperability MatrixでのvCenter・ESX組合せ確認が移行判断を更新する。"
+        ]
+      },
+      "vcfReview": {
+        "products": [
+          "VMware vCenter",
+          "VMware Cloud Foundation",
+          "SDDC Manager"
+        ],
+        "versions": [
+          "vCenter 8.0 U3m",
+          "vCenter 9.0.2.0200",
+          "VCF 9.1.1",
+          "VCF 9.1.2",
+          "VCF 5.x"
+        ],
+        "affectedUsers": "VCF 9.1.1へのアップグレードを進めている、またはその日程を組んでいる組織が対象である。vCenter 8.0 U3mまたは9.0.2.0200を先に適用すると、予定していたVCF 9.1.1への移行がblockされる。",
+        "operationalImpact": "緊急のセキュリティ更新とVCFのバージョン移行を別々に実施できず、適用順序が運用計画になる。先にvCenterを9.1.1へ上げて更新する経路か、VCF 9.1.2を待つ経路を、互換性と日程を照合して選ぶ必要がある。",
+        "knownConstraints": [
+          "vCenter 8.0 U3mおよび9.0.2.0200はVCF 9.1.1へのアップグレードをblockする。",
+          "VCF 5.xではvCenter 8.0 U3mを非同期パッチ手順で適用する記載がある。",
+          "個別のvCenterとESXの互換性はProduct Interoperability Matrixで照合する必要がある。"
+        ],
+        "officialSources": [
+          "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md",
+          "https://brcm.tech/vmsa-2026-0009-qna"
+        ],
+        "fieldSources": [],
+        "evidenceClassification": {
+          "officialFacts": [
+            "Q&AはvCenter 8.0 U3mと9.0.2.0200がVCF 9.1.1へのアップグレードをblockすると記載する。",
+            "Q&Aは先にvCenterを9.1.1へ上げて更新するか、VCF 9.1.2を待つ選択肢を示す。"
+          ],
+          "fieldReports": [],
+          "inference": [
+            "パッチ適用と移行を同じ変更計画で順序づける必要があるのは、公開された制約からの運用上の整理である。"
+          ]
+        },
+        "nextChecks": [
+          "VCF 9.1.2の公開日と、そのリリースでの互換性回復を確認する。",
+          "対象環境のvCenter・ESXの組合せをProduct Interoperability Matrixで確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "VCF 9.1.1を目標にする組織では、vCenter 8.0 U3mまたは9.0.2.0200をいつ適用するかで移行経路が変わる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象版、blockされる移行先、二つの回避経路が公式Q&Aで具体的に示されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-20-vmsa-0009"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-20-vmsa-0009",
+        "originalEditionDate": "2026-11-20",
+        "checkedAt": "2026-11-23T07:08:44+09:00",
+        "developments": [
+          "VMSA-2026-0009のQ&Aは、vCenter 8.0 U3mまたは9.0.2.0200の適用後にVCF 9.1.1へのアップグレードがblockされるBack-in-Time制約と、その回避経路を具体化している。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:08:44+09:00",
+        "reason": "11月20日公開のQ&Aを、11月22日版の更新適用・移行計画へ影響する制約として当日再評価した。",
+        "currentNewsValue": "VCF 9.1.1への進行中アップグレードでパッチ順序を変える公式の制約が確認できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:44+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-litellm-kev-followup",
+      "title": "LiteLLMのCVE-2026-40217、KEV追加でcustom-code経路を確認",
+      "sourceUrl": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "sourceName": "CISA KEV machine-readable feed",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "collectedAt": "2026-11-23T07:08:44+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは11月18日、LiteLLMのCVE-2026-40217をKnown Exploited Vulnerabilities（KEV）Catalogへ追加し、期限を12月2日と記録した。対象は/guardrails/test_custom_code URIにおけるunprotected alternate channelで、bytecode rewritingを通じたリモート任意コード実行の可能性が説明されている。",
+        "CVE.orgはLiteLLMが2026-04-08まで影響を受けると記載する。GitHub Advisoryではpip版litellmの影響範囲を>=1.81.8かつ<1.83.10、patched versionを1.83.10とし、説明文では1.83.11以降への更新を案内している。",
+        "GitHub Advisoryによると、custom-code guardrailは手製sandboxでユーザー提供Pythonを実行しており、既定構成でendpointへ到達するにはproxy-admin credentialが必要である。この到達条件は、導入状況を確認する際にバージョンだけでは足りないことを示す。"
+      ],
+      "comment": "この問題はLiteLLM全体を無条件に同じ危険度で扱うのではなく、custom-code guardrail endpointの利用とバージョンを重ねて確認する必要がある。GitHub Advisoryの範囲では、影響するpip版は1.81.8以上1.83.10未満であり、手製sandboxからのbytecode-level escapeがproxy processでの任意コード実行につながる。既定構成ではproxy-admin credentialが到達条件とされるため、公開面だけでなく管理認証の経路も影響条件になる。KEV追加は既知悪用を扱うカタログへの登録であって、KEV記録はランサムウェア利用をUnknownとしている。",
+      "articleDetail": {
+        "conclusion": "CVE-2026-40217はLiteLLMのcustom-code guardrail経路に関する任意コード実行の問題で、CISA KEVに11月18日追加された。",
+        "facts": [
+          "CISA KEVはCVE-2026-40217の追加日を11月18日、dueDateを12月2日と記録する。",
+          "KEVは/guardrails/test_custom_code URIでのbytecode rewritingによるリモート任意コード実行の可能性を説明する。"
+        ],
+        "background": [
+          "CVE.orgはLiteLLMが2026-04-08まで影響を受けると記録している。"
+        ],
+        "explanation": [
+          "手製sandboxでユーザー提供Pythonを動かすcustom-code guardrailは、bytecode-level techniquesによるescapeでproxy processの任意コード実行につながり得る。"
+        ],
+        "implications": [
+          "custom-code guardrail endpointを利用するLiteLLM Proxyでは、pip版の範囲とproxy-admin credentialの到達条件を確認する対象になる。"
+        ],
+        "caveats": [
+          "KEVのknownRansomwareCampaignUseはUnknownで、特定の悪用主体や被害組織は記録されていない。"
+        ],
+        "nextChecks": [
+          "LiteLLMの導入版が>=1.81.8かつ<1.83.10に該当するかと、/guardrails/test_custom_codeへの到達経路を確認すれば影響判断を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "KEVは12月2日を期限として記録しており、LiteLLM Proxyでcustom-code guardrailを使う組織は影響版とproxy-admin認証を伴うendpointの露出を照合する対象になる。",
+        "currentReaction": "CISA KEVは11月18日に追加し、dueDateを12月2日、knownRansomwareCampaignUseをUnknownと記録しています。",
+        "assessment": "妥当",
+        "assessmentComment": "悪用を扱うKEV追加と、endpoint・影響版・到達条件という影響境界が一次記録で確認できる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-23T07:08:44+09:00",
+        "reason": "11月18日のKEV追加を、未掲載だったLiteLLMの影響範囲と対応版の一次記録と合わせて当日確認した。",
+        "currentNewsValue": "12月2日のKEV期限とcustom-code guardrailの影響条件が、導入版と公開経路の確認を要する状態にしている。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:08:44+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-23-together-openrouter-prompt-theft",
+      "title": "OpenRouter、3社を排除しZDR 125件を解除——Together AIの保存プロンプト流出を受け",
+      "sourceUrl": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/",
+      "sourceName": "OpenRouter",
+      "publishedAt": "2026-11-22T00:00:00.000Z",
+      "collectedAt": "2026-11-23T00:30:00.000Z",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "OpenRouterは11月22日、推論プロバイダのデータ処理に関する調査を受け、3社をサービスから排除し、125エンドポイントをZero Data Retention（ZDR）の対象から外した。自社への侵害や不正アクセスは確認されていないとしている。",
+        "125件には研究者が指摘したプロバイダに加え、予防措置として外したエンドポイントも含まれる。OpenRouterは影響を受ける可能性がある顧客へ通知し、ZDRを戻す前に事業者からの保証と技術検証を求める方針を示した。",
+        "背景には、Together AIが11月21日に明らかにした保存プロンプトサンプルの流出がある。AIコーディングエージェントが私有Hugging Faceリポジトリの認証情報を公開リポジトリへコミットし、第三者がサンプルを取得したという。"
+      ],
+      "comment": "Dragosの調査は、7月から11月に約200万件のプロンプトへ固有URLとカナリー認証情報を仕込み、どの要求・モデル・ルーター・プライバシー設定から利用されたかを追う方式だった。Together AIは、取得者がサンプル内の他サービス認証情報を探して試行し、その5件がこのカナリーだったと説明する。保存済みサンプルへのアクセスというTogether AIの事故と、OpenRouterが述べるプロバイダ側の調査対応は別の発表であり、排除した3社とDragosが検知した3事業者、または公開通知のNovita・Phala・Together AIが一致するとは公表されていない。",
+      "articleDetail": {
+        "conclusion": "OpenRouterはプロバイダのデータ処理調査を受けて3社を排除し、125エンドポイントのZDR適格性を外した。Together AIは別途、保存したプロンプトサンプルが認証情報露出を経て第三者に取得されたと公表した。",
+        "facts": [
+          "OpenRouterは3プロバイダを排除し、125エンドポイントをZDR適格から外した。対象には研究者が指摘したプロバイダのほか、予防的に外したエンドポイントが含まれる。",
+          "Together AIでは、公開GitHubリポジトリxorlの開発中にAIコーディングエージェントが私有Hugging Faceリポジトリの認証情報をコミットし、第三者が保存済みプロンプトサンプルをダウンロードした。",
+          "サンプルはMiniMax M3、GLM-5.2、Kimi K2.6へのリクエスト由来で、主に6月24日、7月4日、7月8日、7月14日のものだった。"
+        ],
+        "background": [
+          "Dragosは7月から11月、固有URLと認証情報を埋め込んだ約200万件のプロンプトを送り、カナリーへのアクセスからプロンプトの露出を追跡した。",
+          "AIルーターは単一APIから複数のホスティング事業者へ要求を渡し得るため、Dragosは各ホップがプロンプトと応答を見られる構造だと説明している。"
+        ],
+        "explanation": [
+          "Together AIによれば、露出した認証情報は自動スキャンで検出されコミットは戻されたが、その間に第三者が取得し、私有リポジトリからサンプルをダウンロードした。その後、サンプル中の認証情報を探して有効性を試した。",
+          "OpenRouterは研究者の検査手法を継続的な確認へ取り込み、要求と応答が第三者へ転送されるネットワーク経路を技術的に確かめるとしている。"
+        ],
+        "implications": [
+          "OpenRouter経由でZDRを条件にエンドポイントを選定していた顧客は、125件の適格性変更と自社への通知を確認する対象になる。",
+          "Together AIの対象モデル・対象日にサーバーレス推論を利用した顧客は、同社が進める影響データの確認と直接通知の対象になり得る。"
+        ],
+        "caveats": [
+          "OpenRouterは排除した3社を公表しておらず、Dragosがデータ露出を示した少なくとも3プロバイダと同一だとは確認できない。",
+          "OpenRouterが公開通知として挙げたNovita、Phala、Together AIも排除対象と同一とは示されていない。",
+          "Together AIは追加漏えいの証拠を確認していないが、個人情報や顧客データの露出は調査中で、影響した顧客数とプロンプト数は未公表である。"
+        ],
+        "nextChecks": [
+          "OpenRouterが125エンドポイントの復帰条件、ネットワーク経路の検証結果、排除対象に関する追加情報を示すかを確認する。",
+          "Together AIが影響データの調査結果、直接通知の範囲、追加漏えいの有無を更新するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "OpenRouterの利用者は、ZDRを前提にした125エンドポイントが11月22日に適格性を失い、経路と保持条件の確認対象が変わった。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "OpenRouterが3社排除、125件のZDR適格性変更、顧客通知を同時に公表しており、保存プロンプト流出を説明したTogether AIの告知と合わせて、ルーター経由の保持条件を具体化する更新である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T00:30:00.000Z",
+        "httpStatus": 200,
+        "note": "OpenRouterの公式告知を確認。"
+      }
+    },
+    {
+      "id": "2026-11-23-openai-outage",
+      "title": "OpenAI障害、認証用Postgresレプリカ2台の同時停止でAPIとChatGPTに波及",
+      "sourceUrl": "https://status.openai.com/incidents/01JMYB602A6H2E04Y1497J434X/write-up",
+      "sourceName": "OpenAI Status",
+      "publishedAt": "2026-11-22T00:00:00.000Z",
+      "collectedAt": "2026-11-23T07:00:00+09:00",
+      "editionDate": "2026-11-23",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "OpenAIは、APIとChatGPTに及んだ部分障害のwrite-upを公開した。Primary APIが使うPostgresDBサービスの保守中に認証用read replica 2台が同時に失敗し、依存するリクエスト経路へ障害が広がったとしている。",
+        "同社の記録では、11月21日1時48分から5時21分（PT）まで大部分のリクエストが失敗し、有料・無料ChatGPTでの失敗率は最大75%だった。APIではChat Completions、Embeddings、Filesなど9コンポーネント、ChatGPTでは会話、ログイン、検索、ファイルアップロード、音声モードが影響対象だった。",
+        "write-upは2026年11月21日（PT夕方、日本時間11月22日）に公開された。OpenAIは同種保守の停止、接続チャーンを減らす設定変更、レプリカから段階的にトラフィックを退避するfeature flagを実施済みとした。"
+      ],
+      "comment": "障害の起点はモデル推論そのものではなく、全スタックのユーザー認証とサービス間認証を担うPrimary APIの依存先だった。read replicaだけが故障しても、これらが負荷を担う構成なら認証を通る経路が止まる。OpenAIは故障したレプリカの復旧や他リージョンでの代替起動を試したが成功せず、同一リージョンに新たな2台を投入して緩和したとしている。一次資料は、保守で両レプリカが同時にオフライン／同期外れとなった詳細な故障機序や基盤提供者名を開示していない。",
+      "articleDetail": {
+        "conclusion": "認証パスを支えるread replicaの同時故障が、APIとChatGPTの広い機能障害につながったとOpenAIが説明した事後報告である。",
+        "facts": [
+          "OpenAIの記録では、11月21日1時48分から5時21分（PT）の障害で、paid/free ChatGPTの失敗率は最大75%に達した。",
+          "APIではChat Completions、Fine-tuning、Embeddings、Images、Batch、Audio、Moderations、Realtime、Filesが、ChatGPTではConversations、Login、Search、File uploads、Voice modeが影響対象に挙がった。",
+          "OpenAIは、同種保守の一時停止、接続チャーンを減らす設定調整、レプリカから割合単位でトラフィックを移すfeature flagを実施済みとしている。"
+        ],
+        "background": [
+          "Primary APIはOpenAI全体でユーザー認証とサービス間認証を提供しており、障害の対象は一つの画面やAPIエンドポイントに限られなかった。"
+        ],
+        "explanation": [
+          "OpenAIによれば、Primary APIが利用するPostgresDBサービスの保守が両方のread replicaを同時に故障させた。レプリカは負荷を担っていたため、依存するリクエスト経路も失敗した。",
+          "復旧では、故障した各レプリカの再生と他リージョンでの代替起動が成功せず、サービス提供者と連携して同一リージョンに新しい2台を投入した。"
+        ],
+        "implications": [
+          "ChatGPTを利用する人は会話、ログイン、検索、ファイルアップロード、音声モードで失敗し得る状態となり、API利用者は列挙された9種類の機能でリクエスト失敗の影響を受けた。"
+        ],
+        "caveats": [
+          "write-upは保守が両方のread replicaに同時に影響した詳細な故障機序を示しておらず、基盤のサービス提供者名も公開していない。",
+          "追加策として挙げた保守前レビュー、hot standby容量、replica lagからの復旧自動化、冗長化強化には完了時期が示されていない。"
+        ],
+        "nextChecks": [
+          "OpenAIが追加策として列挙した保守前レビュー、hot standby容量、replica lag復旧の自動化をいつ完了したと公表するか。",
+          "保守が両方のread replicaに同時に影響した詳細な機序と、認証経路の冗長化に関する追加の技術的説明が公開されるか。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ChatGPTとOpenAI APIの利用者は、OpenAI全体のユーザー認証とサービス間認証への依存が、保守時の障害範囲を左右することを、この事後報告で確認できる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "最大75%の失敗率、影響した14コンポーネント、同時故障した認証用レプリカという一次資料の具体性があり、障害の範囲と復旧策を確認する資料として扱える。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-23T07:00:00+09:00",
+        "httpStatus": 200,
+        "note": "OpenAI Statusのインシデントページとwrite-upを確認。"
+      }
+    }
+  ]
+}
