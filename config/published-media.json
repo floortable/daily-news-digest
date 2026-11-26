@@ -1,184 +1,190 @@
 {
- "editions": [
-  {
-   "date": "2026-10-25",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-25/top5.m4a",
-   "audioBytes": 18296044,
-   "durationSeconds": 888
-  },
-  {
-   "date": "2026-10-26",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-26/top5.m4a",
-   "audioBytes": 10624892,
-   "durationSeconds": 514
-  },
-  {
-   "date": "2026-10-27",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-27/top5.m4a",
-   "audioBytes": 12895835,
-   "durationSeconds": 624
-  },
-  {
-   "date": "2026-10-28",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-28/top5.m4a",
-   "audioBytes": 10115602,
-   "durationSeconds": 490
-  },
-  {
-   "date": "2026-10-29",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-29/top5.m4a",
-   "audioBytes": 11412885,
-   "durationSeconds": 552
-  },
-  {
-   "date": "2026-10-30",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-30/top5.m4a",
-   "audioBytes": 8118219,
-   "durationSeconds": 392
-  },
-  {
-   "date": "2026-10-31",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-31/top5.m4a",
-   "audioBytes": 8119797,
-   "durationSeconds": 393
-  },
-  {
-   "date": "2026-11-01",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-01/top5.m4a",
-   "audioBytes": 6592847,
-   "durationSeconds": 318
-  },
-  {
-   "date": "2026-11-02",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-02/top5.m4a",
-   "audioBytes": 6704108,
-   "durationSeconds": 323
-  },
-  {
-   "date": "2026-11-03",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-03/top5.m4a",
-   "audioBytes": 10952444,
-   "durationSeconds": 529
-  },
-  {
-   "date": "2026-11-04",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-04/top5.m4a",
-   "audioBytes": 8792412,
-   "durationSeconds": 425
-  },
-  {
-   "date": "2026-11-05",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-05/top5.m4a",
-   "audioBytes": 6632629,
-   "durationSeconds": 322
-  },
-  {
-   "date": "2026-11-06",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-06/top5.m4a",
-   "audioBytes": 6757690,
-   "durationSeconds": 327
-  },
-  {
-   "date": "2026-11-07",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-07/top5.m4a",
-   "audioBytes": 6414769,
-   "durationSeconds": 310
-  },
-  {
-   "date": "2026-11-08",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-08/top5.m4a",
-   "audioBytes": 4898369,
-   "durationSeconds": 237
-  },
-  {
-   "date": "2026-11-09",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-09/top5.m4a",
-   "audioBytes": 5572816,
-   "durationSeconds": 269
-  },
-  {
-   "date": "2026-11-10",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-10/top5.m4a",
-   "audioBytes": 8254352,
-   "durationSeconds": 399
-  },
-  {
-   "date": "2026-11-11",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-11/top5.m4a",
-   "audioBytes": 6560424,
-   "durationSeconds": 318
-  },
-  {
-   "date": "2026-11-12",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-12/top5.m4a",
-   "audioBytes": 5627169,
-   "durationSeconds": 272
-  },
-  {
-   "date": "2026-11-13",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-13/top5.m4a",
-   "audioBytes": 7409095,
-   "durationSeconds": 358
-  },
-  {
-   "date": "2026-11-14",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-14/top5.m4a",
-   "audioBytes": 5134810,
-   "durationSeconds": 248
-  },
-  {
-   "date": "2026-11-15",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-15/top5.m4a",
-   "audioBytes": 5421046,
-   "durationSeconds": 262
-  },
-  {
-   "date": "2026-11-16",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-16/top5.m4a",
-   "audioBytes": 4553982,
-   "durationSeconds": 220
-  },
-  {
-   "date": "2026-11-17",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-17/top5.m4a",
-   "audioBytes": 4415155,
-   "durationSeconds": 213
-  },
-  {
-   "date": "2026-11-18",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-18/top5.m4a",
-   "audioBytes": 5467601,
-   "durationSeconds": 263
-  },
-  {
-   "date": "2026-11-19",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-19/top5.m4a",
-   "audioBytes": 6649107,
-   "durationSeconds": 322
-  },
-  {
-   "date": "2026-11-20",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-20/top5.m4a",
-   "audioBytes": 5045901,
-   "durationSeconds": 245
-  },
-  {
-   "date": "2026-11-21",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-21/top5.m4a",
-   "audioBytes": 5233750,
-   "durationSeconds": 252
-  },
-  {
-   "date": "2026-11-22",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-22/top5.m4a",
-   "audioBytes": 2899374,
-   "durationSeconds": 140
-  },
-  {
-   "date": "2026-11-23",
-   "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-23/top5.m4a",
-   "audioBytes": 5659223,
-   "durationSeconds": 274
-  }
- ]
+  "editions": [
+    {
+      "date": "2026-10-25",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-25/top5.m4a",
+      "audioBytes": 18296044,
+      "durationSeconds": 888
+    },
+    {
+      "date": "2026-10-26",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-26/top5.m4a",
+      "audioBytes": 10624892,
+      "durationSeconds": 514
+    },
+    {
+      "date": "2026-10-27",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-27/top5.m4a",
+      "audioBytes": 12895835,
+      "durationSeconds": 624
+    },
+    {
+      "date": "2026-10-28",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-28/top5.m4a",
+      "audioBytes": 10115602,
+      "durationSeconds": 490
+    },
+    {
+      "date": "2026-10-29",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-29/top5.m4a",
+      "audioBytes": 11412885,
+      "durationSeconds": 552
+    },
+    {
+      "date": "2026-10-30",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-30/top5.m4a",
+      "audioBytes": 8118219,
+      "durationSeconds": 392
+    },
+    {
+      "date": "2026-10-31",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-10-31/top5.m4a",
+      "audioBytes": 8119797,
+      "durationSeconds": 393
+    },
+    {
+      "date": "2026-11-01",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-01/top5.m4a",
+      "audioBytes": 6592847,
+      "durationSeconds": 318
+    },
+    {
+      "date": "2026-11-02",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-02/top5.m4a",
+      "audioBytes": 6704108,
+      "durationSeconds": 323
+    },
+    {
+      "date": "2026-11-03",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-03/top5.m4a",
+      "audioBytes": 10952444,
+      "durationSeconds": 529
+    },
+    {
+      "date": "2026-11-04",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-04/top5.m4a",
+      "audioBytes": 8792412,
+      "durationSeconds": 425
+    },
+    {
+      "date": "2026-11-05",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-05/top5.m4a",
+      "audioBytes": 6632629,
+      "durationSeconds": 322
+    },
+    {
+      "date": "2026-11-06",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-06/top5.m4a",
+      "audioBytes": 6757690,
+      "durationSeconds": 327
+    },
+    {
+      "date": "2026-11-07",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-07/top5.m4a",
+      "audioBytes": 6414769,
+      "durationSeconds": 310
+    },
+    {
+      "date": "2026-11-08",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-08/top5.m4a",
+      "audioBytes": 4898369,
+      "durationSeconds": 237
+    },
+    {
+      "date": "2026-11-09",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-09/top5.m4a",
+      "audioBytes": 5572816,
+      "durationSeconds": 269
+    },
+    {
+      "date": "2026-11-10",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-10/top5.m4a",
+      "audioBytes": 8254352,
+      "durationSeconds": 399
+    },
+    {
+      "date": "2026-11-11",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-11/top5.m4a",
+      "audioBytes": 6560424,
+      "durationSeconds": 318
+    },
+    {
+      "date": "2026-11-12",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-12/top5.m4a",
+      "audioBytes": 5627169,
+      "durationSeconds": 272
+    },
+    {
+      "date": "2026-11-13",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-13/top5.m4a",
+      "audioBytes": 7409095,
+      "durationSeconds": 358
+    },
+    {
+      "date": "2026-11-14",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-14/top5.m4a",
+      "audioBytes": 5134810,
+      "durationSeconds": 248
+    },
+    {
+      "date": "2026-11-15",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-15/top5.m4a",
+      "audioBytes": 5421046,
+      "durationSeconds": 262
+    },
+    {
+      "date": "2026-11-16",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-16/top5.m4a",
+      "audioBytes": 4553982,
+      "durationSeconds": 220
+    },
+    {
+      "date": "2026-11-17",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-17/top5.m4a",
+      "audioBytes": 4415155,
+      "durationSeconds": 213
+    },
+    {
+      "date": "2026-11-18",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-18/top5.m4a",
+      "audioBytes": 5467601,
+      "durationSeconds": 263
+    },
+    {
+      "date": "2026-11-19",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-19/top5.m4a",
+      "audioBytes": 6649107,
+      "durationSeconds": 322
+    },
+    {
+      "date": "2026-11-20",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-20/top5.m4a",
+      "audioBytes": 5045901,
+      "durationSeconds": 245
+    },
+    {
+      "date": "2026-11-21",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-21/top5.m4a",
+      "audioBytes": 5233750,
+      "durationSeconds": 252
+    },
+    {
+      "date": "2026-11-22",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-22/top5.m4a",
+      "audioBytes": 2899374,
+      "durationSeconds": 140
+    },
+    {
+      "date": "2026-11-23",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-23/top5.m4a",
+      "audioBytes": 5659223,
+      "durationSeconds": 274
+    },
+    {
+      "date": "2026-11-26",
+      "audio": "https://github.com/floortable/daily-news-digest/releases/download/media-2026-11-26/top5.m4a",
+      "audioBytes": 5538806,
+      "durationSeconds": 268
+    }
+  ]
 }

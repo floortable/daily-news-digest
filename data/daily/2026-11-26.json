@@ -1,0 +1,2857 @@
+{
+  "date": "2026-11-26",
+  "generatedAt": "2026-11-26T17:54:38+09:00",
+  "selectionShortfallReason": "includedは24件。45件の収集候補と17件の必須評価候補を全件分類し、findingsと照合して高重要度の未分類候補が残っていないことを確認した。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "checkedAt": "2026-11-26T13:47:27+09:00",
+        "status": "checked",
+        "note": "Hacker Newsの新着と上位投稿を確認した。1Password記事の反応指標もここで照合している。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "checkedAt": "2026-11-26T13:47:27+09:00",
+        "status": "checked",
+        "note": "はてなブックマークのホットエントリーを取得し、国内トピックを候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "checkedAt": "2026-11-26T13:47:27+09:00",
+        "status": "checked",
+        "note": "ニコニコ動画のランキングを取得し、動画・文化系の新規がないかを確認した。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "checkedAt": "2026-11-26T13:47:29+09:00",
+        "status": "checked",
+        "note": "BBC Newsの見出し一覧を取得して国際一般の新規を確認した。ロイターとAPは直接取得が制限されるためBBCを主経路とした。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "checkedAt": "2026-11-26T13:47:29+09:00",
+        "status": "checked",
+        "note": "OpenAIのニュース一覧を確認した。利用枠統合の話題はTechCrunch経由の候補と一致している。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "checkedAt": "2026-11-26T13:47:29+09:00",
+        "status": "checked",
+        "note": "Anthropicのニュースと研究の一覧を確認した。対象期間の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "checkedAt": "2026-11-26T13:47:32+09:00",
+        "status": "checked",
+        "note": "DeepMindのブログを確認した。対象期間の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "checkedAt": "2026-11-26T13:47:32+09:00",
+        "status": "checked",
+        "note": "NVIDIAブログの深層学習カテゴリを確認した。SEC調査の報道は別途、一次資料の照合対象とした。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "checkedAt": "2026-11-26T13:47:32+09:00",
+        "status": "checked",
+        "note": "TechCrunchのAIカテゴリを確認した。OpenAI利用枠、AI玩具規制、Character.AIの3件が候補と一致した。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "checkedAt": "2026-11-26T13:47:35+09:00",
+        "status": "checked",
+        "note": "CISA KEVカタログの一次JSON（catalogVersion 2026.11.25）を直接取得し、期間内の追加15件を台帳と突き合わせた。NVDの個別レコードも参照した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "checkedAt": "2026-11-26T13:47:35+09:00",
+        "status": "checked",
+        "note": "JPCERT/CCの注意喚起一覧とIPAのセキュリティ情報ページを確認した。最新は11月24日のVMware製品の脆弱性対策情報だった。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "checkedAt": "2026-11-26T13:47:35+09:00",
+        "status": "checked",
+        "note": "GitHub Advisory Databaseを確認し、Xen OrchestraのGHSA-2r3w-c2vx-fv5gを照合した。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "checkedAt": "2026-11-26T13:47:38+09:00",
+        "status": "checked",
+        "note": "KEVの機械可読フィードを直接取得して版数と追加分を確認した。JVNの英語版トップも取得している。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "checkedAt": "2026-11-26T13:47:38+09:00",
+        "status": "checked",
+        "note": "BleepingComputerのフィードを確認した。Azure APIM、Check Point、Drupal、Rackspaceなどの報道が候補と一致した。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "checkedAt": "2026-11-26T13:47:38+09:00",
+        "status": "checked",
+        "note": "Railsのセキュリティ告知フォーラムを確認した。対象期間の新規告知はなかった。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "checkedAt": "2026-11-26T13:47:40+09:00",
+        "status": "checked",
+        "note": "Synologyのセキュリティアドバイザリ一覧を取得し、SA-26-21とSA-26-20を個別ページで照合した。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "checkedAt": "2026-11-26T13:47:40+09:00",
+        "status": "restricted",
+        "note": "ポータルへは到達できるが一覧本文の直接抽出が制限される。個別アドバイザリとQ&A資料で期間内を確認し、新規はVMSA-2026-0011のみだった。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "checkedAt": "2026-11-26T13:47:40+09:00",
+        "status": "restricted",
+        "note": "ポータルへは到達できるが本文の直接抽出が制限される。代替経路の確認で、対象期間の新規アドバイザリはなかった。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "checkedAt": "2026-11-26T13:47:43+09:00",
+        "status": "restricted",
+        "note": "TechDocsへは到達できるが本文抽出が制限され、個別ページが403になる場合もある。9.1.2の内容は公式ブログと個別資料で確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "checkedAt": "2026-11-26T13:47:43+09:00",
+        "status": "checked",
+        "note": "VMware Cloud Foundationブログを確認した。11月24日のVCF 9.1.2 GA告知が対象期間の新規だった。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "checkedAt": "2026-11-26T13:47:43+09:00",
+        "status": "checked",
+        "note": "IPAプレスリリース（最新は11月13日）、IPAセキュリティ情報（最新は11月24日）、国家サイバー統括室の報道資料ページを確認した。対象期間の新規の会合・決定・要請はなかった。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "checkedAt": "2026-11-26T13:47:46+09:00",
+        "status": "checked",
+        "note": "Broadcomのステータスページを取得した。対象期間にVCF関連の重大障害の新規掲載はなかった。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "checkedAt": "2026-11-26T13:47:46+09:00",
+        "status": "restricted",
+        "note": "互換性ガイドへは到達できるがマトリクス本文の直接確認が制限される。9.1.2の互換性はリリース資料側で確認した。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "checkedAt": "2026-11-26T13:47:46+09:00",
+        "status": "restricted",
+        "note": "AviのTechDocsページへは到達できるが本文抽出が制限される。代替経路の確認で、対象期間のAvi関連の新規はなかった。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "checkedAt": "2026-11-26T13:47:48+09:00",
+        "status": "checked",
+        "note": "VMware Securityブログを確認した。対象期間の新規投稿はなかった。ライセンス範囲はTechDocsの前提条件ページで別途確認している。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "checkedAt": "2026-11-26T13:47:48+09:00",
+        "status": "checked",
+        "note": "William Lamのブログを確認した。11月25日のESX Kickstart解説が最新で製品発表ではなかった。Yellow Bricksは11月24日のvSphere HA復習が最新だった。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "checkedAt": "2026-11-26T13:47:48+09:00",
+        "status": "checked",
+        "note": "BroadcomコミュニティのVCFホームを取得した。対象期間の重要な新規スレッドはなかった。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "checkedAt": "2026-11-26T13:47:51+09:00",
+        "status": "checked",
+        "note": "Veeamのブログを確認した。対象期間のVCF関連の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "checkedAt": "2026-11-26T13:47:51+09:00",
+        "status": "checked",
+        "note": "Nutanixのブログを確認した。対象期間の移行関連の新規発表はなかった。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "policyVersion": 1,
+    "checkedAt": "2026-11-26T17:54:38+09:00",
+    "findings": [
+      {
+        "title": "VMSA-2026-0011（vCenter認証バイパス等23件）",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-vmsa-0011",
+        "reason": "vCenter認証バイパス等23件を採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "VMware Cloud Foundation 9.1.2 GA",
+        "area": "vcf",
+        "sourceId": "vcf-product-portfolio",
+        "url": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-vcf-912-ga",
+        "reason": "Back-in-Time制約のfollow-upとして採用。"
+      },
+      {
+        "title": "VVF 9.1.2のNSX/vDefendライセンス範囲",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://techdocs.broadcom.com/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-vvf-912-license-scope",
+        "reason": "NSX/vDefend/Edge制約を採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "Synology DSM CVE-2026-120382とSA-26-20",
+        "area": "security",
+        "sourceId": "vuln-synology",
+        "url": "https://www.synology.com/en-us/security/advisory/Synology_SA_26_21",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-synology-dsm-critical-cves",
+        "reason": "修正版と未修正系統を採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "Mitel MiCollabのKEV追加5件",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-mitel-micollab-kev",
+        "reason": "既存候補5件を対応単位に集約して採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "Xen Orchestra CVE-2026-133469のKEV追加",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-xen-orchestra-kev",
+        "reason": "認証バイパスの悪用確認として採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "Drupal Core CVE-2026-132165のKEV追加と悪用確認",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-drupal-kev-followup",
+        "reason": "既報の悪用確認というfollow-upとして採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "ConnectWise ScreenConnect CVE-2026-84869の悪用",
+        "area": "security",
+        "sourceId": "vuln-project-vendor-advisories",
+        "url": "https://www.connectwise.com/company/trust/advisories",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-screenconnect-exploited-cve",
+        "reason": "積極的悪用として採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "Azure API Management Classicの認証情報窃取",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-azure-apim-credential-theft",
+        "reason": "既存認証情報の無効化が別途必要なため採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "Check Point管理サーバーの22組織での侵害",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-checkpoint-management-compromise",
+        "reason": "管理サーバー侵害報告として採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "KEPCOの約152万人分個人情報流出",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.sec.gov/Archives/edgar/data/887225/000119312526474870/d150579d6k.htm",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-kepco-breach",
+        "reason": "重要インフラの約152万人規模流出として採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "マクドナルド日本の公式アプリ情報流出",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/mcdonalds-japan-warns-of-data-breach-exposing-customer-info/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-mcdonalds-japan-breach",
+        "reason": "公式アプリの情報流出（購入履歴・IP・位置情報を含む）。仕事・VCFウォッチ台帳との照合で掲載価値ありと判断し、監督側が採用に変更した。"
+      },
+      {
+        "title": "KEV 11/23追加分（MONAI Label・N-able MailAssure）",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-kev-nov23-additions",
+        "reason": "期限が近いため各日を対応単位に採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "KEV 11/24追加分（Optimizely・Idunno AntiCsrf）",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-kev-nov24-additions",
+        "reason": "期限が近いため各日を対応単位に採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "CVE-2026-123890の公開PoCとMetasploitモジュール",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0009/README.md",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-vmsa-0009-exploit-followup",
+        "reason": "公開PoCに加えMetasploitモジュールが公開され悪用可能性が一段上がったため、2026-11-20版記事のfollow-upとして監督側が採用に変更した。VMSA-2026-0011とは別件。"
+      },
+      {
+        "title": "Linux KVM CVE-2026-99312（ネスト仮想化）",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.docs.virtfusion.com/6.2/security/cve-2026-99312/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-linux-kvm-nested-virt-cve",
+        "reason": "ネスト仮想化のゲスト→ホスト影響として採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "NGINX 1.30.8/1.31.10のリリース",
+        "area": "security",
+        "sourceId": "vuln-oss-cloud-vendors",
+        "url": "https://nginx.org/en/CHANGES",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "リリースは対象期間の開始前（11月23日）のため本版では見送った。関連するCVE-2026-123007はSynology記事で扱っている。2026-11-23版にも未掲載だった点は残件として記録する。"
+      },
+      {
+        "title": "Rackspace Spotのサービス終了",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-26-rackspace-spot-shutdown",
+        "reason": "11月23日侵害記事のfollow-upとして採用。（対象期間 2026-11-24〜11-26 の照合で確認した。）"
+      },
+      {
+        "title": "VMSA一覧の直接確認",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "ポータルへは到達できるが一覧本文の直接抽出が制限される。個別アドバイザリと検索経路で対象期間を確認し、最新の新規はVMSA-2026-0011（採用済み）で、それ以外の新規はなかった。"
+      },
+      {
+        "title": "App/NSX系アドバイザリの直接確認",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-app-network-security",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VA",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "ポータルへは到達できるが本文の直接抽出が制限される。代替経路で対象期間の新規がないことを確認した。"
+      },
+      {
+        "title": "KB・リリースノートの直接確認",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://techdocs.broadcom.com/",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "TechDocs等の直接抽出は制限される。VCF 9.1.2のリリース内容は公式ブログと個別資料で確認済みで、追加の新規はなかった。"
+      },
+      {
+        "title": "Avi関連の直接確認",
+        "area": "vcf",
+        "sourceId": "vcf-avi",
+        "url": "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "TechDocsの直接抽出は制限される。代替経路で対象期間の新規がないことを確認した。"
+      },
+      {
+        "title": "互換性・ライフサイクルの直接確認",
+        "area": "vcf",
+        "sourceId": "vcf-compatibility-lifecycle",
+        "url": "https://compatibilityguide.broadcom.com/",
+        "severity": "low",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "マトリクス本文の直接確認は制限される。9.1.2の互換性はリリース資料側で確認済み。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-26-1password-incident",
+      "title": "1Password、従業員GitHub侵害で顧客アカウント情報の一部流出を公表",
+      "sourceUrl": "https://1password.com/blog/update-on-nov-2026-security-incident",
+      "sourceName": "1Password",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "collectedAt": "2026-11-26T12:15:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 1,
+      "summary": [
+        "1Passwordは11月25日、従業員の企業GitHubアカウントが侵害され、攻撃者がバックエンドサービスへ悪意あるコードを投入したと公表した。顧客の一部について、氏名、サインイン用メールアドレス、アカウント識別子などがコピーされたが、同社は保管庫の内容、保護鍵、アカウントのパスワードとSecret Keyには影響がないとしている。",
+        "同社によると、調査は11月19日に始まった。攻撃者はソースコードとCI/CDにも到達したため、露出した可能性がある内部資格情報をローテーションし、影響したサービスをクリーンな版へ戻した。招待・アカウント復旧メールに含まれる一部トークンも対象だが、SSOまたは登録メールへ送るコードを併用しなければアカウントへ入れない設計だという。",
+        "対策として、招待・復旧コードを6桁の数字から10文字の英数字へ拡張した。利用者側でアカウント更新は不要とする一方、意図していない招待や復旧メールを使ったフィッシングには注意を促している。Hacker Newsでは確認時点で1,214ポイント、516コメントだった。"
+      ],
+      "comment": "侵害の境界を『バックエンドに入られた』だけで判断しない点が重要です。1Passwordは、GitHubアカウントの奪取からコード投入、管理データの取得、CI/CD到達までを認めつつ、保管庫を暗号化する鍵を同社が保持しない構造と、招待・復旧トークン単独では完結しない認証手順を区別しています。今回のようにCI/CDまで届くと、顧客データそのものだけでなく、デプロイ経路と内部資格情報の範囲を切り分けて封じ込める必要があります。利用者にとって直近のリスクは保管庫の再設定ではなく、流出した氏名・メールアドレスを使うもっともらしい招待や回復連絡です。組織利用では、正規の回復フローと通知経路をあらかじめ共有しておくと判別しやすくなります。",
+      "articleDetail": {
+        "conclusion": "1Passwordの公表は、保管庫の秘密とアカウント周辺メタデータ、さらにCI/CD資格情報の影響を分けて示したインシデントです。",
+        "facts": [
+          "11月19日に従業員の企業GitHubアカウント侵害の調査を開始した。",
+          "一部の顧客について氏名、メールアドレス、アカウント識別子などがコピーされた。",
+          "保管庫、保護鍵、アカウントのパスワードとSecret Keyは影響を受けていないと説明した。"
+        ],
+        "background": [
+          "招待・復旧メールのトークンはSSOまたは登録メール宛てコードと併用する設計である。"
+        ],
+        "explanation": [
+          "攻撃者は侵害したGitHubアカウントを使い、バックエンドサービスへコードを投入して管理データを取得した。"
+        ],
+        "implications": [
+          "影響対象者は、予期しない招待・復旧連絡を起点にしたフィッシングを警戒する必要がある。"
+        ],
+        "caveats": [
+          "影響を受けた顧客数と、取得した内部メタデータの完全な範囲は公表されていない。"
+        ],
+        "nextChecks": [
+          "1Passwordが調査で判明した追加の対象範囲や、通知内容を更新するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "パスワード管理サービスで、CI/CD到達を伴う侵害と保管庫の暗号鍵への非到達を同時に説明したため、利用者の対応範囲を分けて判断できる。",
+        "currentReaction": "Hacker Newsで確認時点に1,214ポイント、516コメントが付いていた。",
+        "assessment": "妥当",
+        "assessmentComment": "広く使われる認証情報管理サービスのインシデントであり、流出データと保管庫への影響を区別する必要がある。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 1214,
+        "hnComments": 516,
+        "socialMetricsCheckedAt": "2026-11-26T12:15:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:15:00+09:00",
+        "httpStatus": 200,
+        "note": "1Passwordの公式インシデント更新とHacker Newsの投稿を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-26T12:15:00+09:00",
+        "script": [
+          "1Passwordが、従業員のGitHubアカウント侵害からバックエンドへ不正なコードが投入され、一部の顧客情報がコピーされたと公表しました。Hacker Newsでは今朝の時点で1,214ポイント、516コメントです。",
+          "対象は氏名、メールアドレス、アカウント識別子などです。一方で、保管庫の内容と保護鍵、アカウントのパスワードやSecret Keyには影響がないと説明しています。",
+          "攻撃者はCI/CDにも到達したため、同社は内部資格情報をローテーションしました。利用者がまず注意するのは、予期しない招待や復旧連絡を使ったフィッシングです。"
+        ],
+        "references": [
+          "https://1password.com/blog/update-on-nov-2026-security-incident",
+          "https://news.ycombinator.com/item?id=50644817"
+        ]
+      },
+      "englishVersion": {
+        "title": "1Password discloses limited customer-account data exposure after employee GitHub breach",
+        "summary": [
+          "1Password disclosed on November 25 that an attacker compromised an employee's corporate GitHub account, pushed malicious code to backend services, and copied limited customer account information from a subset of users.",
+          "The company says vault contents, the keys protecting them, account passwords, and Secret Keys were not affected. It began investigating on November 19 and rotated potentially exposed internal credentials after the attacker reached CI/CD systems.",
+          "Invitation and recovery email tokens were among the affected data, but require SSO or a code sent to the registered email. 1Password extended those codes from six numeric digits to ten alphanumeric characters and warned users about phishing."
+        ],
+        "comment": "The disclosure separates access to backend and CI/CD systems from access to the cryptographic material protecting vaults. That distinction matters because the immediate customer risk is not a vault reset, but believable phishing using names and email addresses. The vendor says invitation and recovery tokens cannot independently access an account, and it has rotated internal credentials. Organizations using the service should make their normal recovery and notification routes clear so unexpected invitations and recovery messages can be recognized."
+      }
+    },
+    {
+      "id": "2026-11-26-vmsa-0011",
+      "title": "VMSA-2026-0011、vCenter認証回避を含む23件を修正",
+      "sourceUrl": "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0011/README.md",
+      "sourceName": "VMware VCF Security Advisory",
+      "publishedAt": "2026-11-24T00:00:00+00:00",
+      "collectedAt": "2026-11-26T12:20:45+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-26T17:17:27+09:00",
+        "script": [
+          "VMwareが11月24日に公開したVMSA-2026-0011は、vCenter、ESX、VMware Toolsなどにまたがる23件の脆弱性を扱います。vCenterのCVE-2026-123903はCVSS 9.8の認証回避で、修正版は9.1.2、9.0.2.0300、8.0 U3mです。",
+          "ここで重要なのは、同じVMSA-2026-0011でも、vCenter、ESX、VMware Toolsでは影響範囲と修正行が別だという点です。vCenterを更新しても仮想マシン内のVMware Toolsは更新されません。コンポーネントごとに現行版と修正版を照合する必要があります。",
+          "VCF 9.1.2はこのアドバイザリの修正を含み、VMSA-2026-0009後に生じたアップグレード制約の解消も案内しています。ただし、それで全コンポーネントの対応が完了するわけではありません。各クラスタについて、vCenter、ESX、VMware Toolsの未解決行を分けて確認する必要があります。"
+        ],
+        "questionResearch": [
+          {
+            "question": "vCenterを更新すれば、同じアドバイザリの対応はすべて終わるのか。",
+            "findings": [
+              "VMSA-2026-0011はvCenter、ESX、VMware Toolsなどを対象にし、製品ごとに影響範囲と修正版が異なる。",
+              "公式Q&Aは、vCenterとESXを更新しても仮想マシン内のVMware Toolsは更新されないと説明している。"
+            ],
+            "references": [
+              "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0011/README.md"
+            ]
+          },
+          {
+            "question": "VMSA-2026-0009との関係は、今回の更新計画にどう影響するのか。",
+            "findings": [
+              "VCF 9.1.2はVMSA-2026-0011の修正を含み、VMSA-2026-0009後のアップグレード制約の解消も案内している。",
+              "今回の更新では、vCenter、ESX、VMware Toolsの修正行を分けて確認する必要がある。"
+            ],
+            "references": [
+              "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0011/README.md",
+              "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/"
+            ]
+          }
+        ],
+        "references": [
+          "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0011/README.md",
+          "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/"
+        ]
+      },
+      "summary": [
+        "VMwareは11月24日、VMSA-2026-0011を公開し、vCenter、ESX、VMware Toolsなどにまたがる23件の脆弱性を修正した。vCenterのCVE-2026-123903はCVSS 9.8の認証回避であり、管理プレーンに到達できる攻撃者を前提に、通常の定例更新より優先度の高い対応を要する。",
+        "vCenterの修正版は9.1系が9.1.2、9.0系が9.0.2.0300、8.0系が8.0 U3mである。VCF 5.xでは関連する非同期パッチ手順も確認する必要があり、単にVMSA番号を閉じるのではなく、自組織のvCenterとESXの行を分けて照合する。",
+        "同時に公開されたVCF 9.1.2は、このアドバイザリの修正を取り込む。11月23日版で扱ったVMSA-2026-0009に由来するアップグレード制限も、9.1.2で解消されたとFAQが説明しており、更新計画では両方の変更をまとめて確認する局面になった。"
+      ],
+      "englishVersion": {
+        "title": "VMSA-2026-0011 fixes 23 flaws, including a vCenter authentication bypass",
+        "summary": [
+          "On November 24, VMware published VMSA-2026-0011, addressing 23 vulnerabilities across vCenter, ESX, VMware Tools, and other products. CVE-2026-123903 is a CVSS 9.8 authentication bypass in vCenter, requiring higher-priority remediation when an attacker can reach the management plane.",
+          "The listed vCenter fixes are 9.1.2 for the 9.1 line, 9.0.2.0300 for the 9.0 line, and 8.0 U3m for the 8.0 line. VCF 5.x environments also need to check the relevant asynchronous patching path, so vCenter and ESX should be compared against their respective remediation rows rather than treated as one update.",
+          "VCF 9.1.2, published at the same time, includes the security fixes. Its FAQ also says it resolves the upgrade constraint associated with VMSA-2026-0009, bringing both changes into the same upgrade-planning window."
+        ],
+        "comment": "The operational issue is not simply closing VMSA-2026-0011 as a single item. CVE-2026-123903 concerns vCenter authentication bypass, but the advisory also includes distinct issues affecting ESX I/O filters, VMware Tools, and backup-repository access. Teams therefore need to establish which vCenter line they run, confirm a path to 9.1.2, 9.0.2.0300, or 8.0 U3m, and track ESX separately. Moving to VCF 9.1.2 can also remove the upgrade constraint introduced after VMSA-2026-0009, but it does not by itself establish that every component has received its applicable patch."
+      },
+      "comment": "今回の実務上の要点は、23件を一括して『適用済み』と扱わないことです。中心となるCVE-2026-123903はvCenterの認証回避ですが、同じアドバイザリにはESX I/Oフィルタ、VMware Tools、バックアップ保管先へのアクセスを条件とする別種の問題も並びます。したがって、インベントリからvCenterの系統を先に確定し、9.1.2、9.0.2.0300、8.0 U3mの該当版へ到達できるかを確認した上で、ESXは別行として保守枠を組むのが安全です。VCF 9.1.2へ進める環境では、VMSA-2026-0009後に生じたアップグレード制約の解消も同時に得られますが、これが全コンポーネントのパッチ可否を自動的に保証するわけではありません。",
+      "articleDetail": {
+        "conclusion": "VMSA-2026-0011は、vCenterの認証回避を軸に、製品ごとの修正版を個別に照合して適用する必要がある更新です。",
+        "facts": [
+          "VMSA-2026-0011は11月24日に公開され、23件の脆弱性を扱う。",
+          "CVE-2026-123903はvCenterの認証回避でCVSS 9.8と記載された。",
+          "vCenterの修正版は9.1.2、9.0.2.0300、8.0 U3mである。"
+        ],
+        "background": [
+          "VCF 9.1.2は同アドバイザリの修正を含み、VMSA-2026-0009後のアップグレード制約の解消も案内している。"
+        ],
+        "explanation": [
+          "同一アドバイザリ内でもvCenter、ESX、Toolsの影響範囲と修正版は同じではないため、コンポーネント別の表で照合する。"
+        ],
+        "implications": [
+          "vCenter 9.1、9.0、8.0を運用する組織は、該当修正版への到達可否を緊急変更の対象として判断する。"
+        ],
+        "caveats": [
+          "ESXなど一部の修正は製品・リリース別の状態に依存し、vCenterの更新だけで完結しない。"
+        ],
+        "nextChecks": [
+          "自組織のvCenter、ESX、Toolsの現行版と、アドバイザリの各修正行を照合して未解決行を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CVSS 9.8のvCenter認証回避を含み、11月24日に公開された複数コンポーネント横断の修正版を管理者が直ちに照合する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "仮想化基盤の管理プレーンを対象にし、修正版が明示された公式アドバイザリである。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-23-vmsa-0009-back-in-time"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-23-vmsa-0009-back-in-time",
+        "originalEditionDate": "2026-11-23",
+        "checkedAt": "2026-11-26T12:20:45+09:00",
+        "developments": [
+          "VCF 9.1.2がVMSA-2026-0009後のアップグレード制約の解消を案内した。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、VMSA-2026-0011は対象期間内に公開された。通常の1日窓より前でも、vCenterの認証回避を含む複数修正としてVCF運用で確認が必要なため採用した。",
+        "currentNewsValue": "vCenterに関わる認証回避を含む23件の修正は管理基盤の更新優先度に直結する。影響する版、適用可否、追加の回避策を確認するため、公開直後の現在も重要である。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:20:45+09:00",
+        "httpStatus": 200,
+        "note": "VCFの公開アドバイザリと11月24日の公式GA発表を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-kepco-breach",
+      "title": "KEPCO、顧客・調達システムで152万件超の情報流出を開示",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/887225/000119312526474870/d150579d6k.htm",
+      "sourceName": "Korea Electric Power Corporation SEC Form 6-K",
+      "publishedAt": "2026-11-24T18:46:00.000Z",
+      "collectedAt": "2026-11-26T12:30:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "summary": [
+        "韓国電力公社（KEPCO）は11月20日、顧客サービスのKEPCO ONと電子調達システムSRMで個人情報侵害を確認した。SECへの6-Kで示した対象レコードは計1,520,248件で、電力顧客650,487人、事業者代表426,827人、KEPCOおよび取引先従業員442,934人にまたがる。",
+        "KEPCO ONでは氏名、識別情報、電話番号、住所に加え、銀行名、口座番号、カード番号、請求・料金情報が対象となった。外部攻撃者が2システムへ不正アクセスして情報を持ち出したと推定され、KEPCOは外部IPからのアクセスを制限し、影響したサービスを停止した。",
+        "同社は政府・金融当局と情報を共有し、不審取引の検知を含む監視強化を求める予定である。影響対象者はカード明細と口座取引の異常を確認し、金融機関またはカード発行会社の案内に従って再発行の要否を判断する必要がある。侵入経路と個人単位の正確な人数、仮想化基盤・制御系への影響は開示されていない。"
+      ],
+      "comment": "この件で優先順位を決める単位は、単に「152万件超」ではなく、どのデータがどの経路で不正利用に結び付きうるかである。KEPCO ONの650,487件には口座・カードと請求情報の分類が含まれるため、決済や口座取引の異常検知、金融機関側の再発行判断を分けて進める必要がある。ただし、個人ごとの該当項目は開示されていない。一方SRM側は、事業者代表426,827人と従業員442,934人の識別・連絡先情報であり、調達相手を装う標的型フィッシングやなりすましが中心的なリスクとなる。KEPCOが公表した封じ込めは外部IP制限とサービス停止で、侵入経路は未解明である。したがって、電力の供給制御や仮想化基盤まで侵害されたと読む根拠は現時点ではなく、インターネット接続された顧客・調達システムのデータ侵害として対応範囲を管理するのが妥当である。",
+      "articleDetail": {
+        "conclusion": "KEPCOの開示は、金融情報を含むKEPCO ONと調達用SRMから計1,520,248件の情報が流出した可能性を示すデータ侵害である。",
+        "facts": [
+          "KEPCOは11月20日、KEPCO ONとSRMに保有する個人情報の侵害を確認した。",
+          "KEPCO ONの電力顧客650,487人、SRMの事業者代表426,827人、KEPCO・取引先従業員442,934人の情報が対象である。",
+          "KEPCO ONの対象情報には銀行名、口座番号、カード番号、料金・請求情報が含まれる。"
+        ],
+        "background": [
+          "SRMは契約サービス向けの電子調達システムであり、KEPCO ONは料金の閲覧・支払いを扱う統合顧客プラットフォームである。"
+        ],
+        "explanation": [
+          "外部攻撃者が2システムへ不正アクセスして情報を持ち出したと推定され、KEPCOは外部IPからのアクセスを制限して影響サービスを停止した。"
+        ],
+        "implications": [
+          "金融情報を含むKEPCO ONの対象者は、カード明細・口座取引を確認し、発行会社や金融機関の案内に応じて再発行などを判断する必要がある。",
+          "SRMの対象者は、取引先や調達手続を装う連絡で識別・連絡先情報が悪用される可能性に注意を要する。"
+        ],
+        "caveats": [
+          "レコード合計に重複があるか、侵入経路と攻撃手法、個人単位の正確な影響人数は公表されていない。",
+          "仮想化基盤、制御系、電力供給業務への影響は本開示で示されていない。"
+        ],
+        "nextChecks": [
+          "KEPCOまたは当局が、侵入経路、個人単位の対象範囲、金融情報の不正利用事例と、今後の通知・救済手続きを追加開示するかが対応判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "重要インフラ事業者の顧客・調達システムで、口座・カード番号を含む1,520,248件の情報が対象となり、金融上の監視と取引先なりすましへの対応を分ける必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象件数だけでなく、料金支払い情報と調達関係者の情報が別々の悪用経路を持つため、利用者と取引先双方の対応に直結する。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、KEPCOの開示は対象期間内に公表された。通常の1日窓から外れるが、顧客・調達システムの大規模侵害として期間内の重要な開示を取りこぼさないため採用した。",
+        "currentNewsValue": "金融情報を含む顧客データと調達関係者データで対応経路が異なり、利用者の取引監視と取引先なりすまし対策を直ちに分けて考える必要がある。侵入経路の追加開示も継続して重要である。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:30:00+09:00",
+        "httpStatus": 200,
+        "note": "SEC提出の6-Kと、対象システム・件数・対応内容を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-26T12:30:00+09:00",
+        "script": [
+          "KEPCOが、顧客サービスと電子調達システムで計152万248件の個人情報侵害を確認したと開示しました。金融情報を含む対象範囲が大きく、影響者への具体的な対応が焦点です。",
+          "KEPCO ONでは650,487件の対象記録に、口座・カード・請求情報の分類が含まれます。個人ごとの該当項目は未公表のため、カード明細と口座取引の異常を確かめ、金融機関やカード発行会社の案内に応じて再発行を判断する必要があります。",
+          "KEPCOのSRMでは事業者代表426,827人と従業員442,934人の情報が対象です。外部IP制限とサービス停止は封じ込め措置として実施済みですが、侵入経路や仮想化基盤・制御系への影響は未公表です。調達関係者の情報が対象のため、調達を装う連絡にも注意が必要です。"
+        ],
+        "references": [
+          "https://www.sec.gov/Archives/edgar/data/887225/000119312526474870/d150579d6k.htm",
+          "https://www.bleepingcomputer.com/news/security/south-koreas-power-giant-kepco-confirms-data-breach-impacting-15-million/"
+        ]
+      },
+      "englishVersion": {
+        "title": "KEPCO discloses exposure of more than 1.52 million records in customer and procurement systems",
+        "summary": [
+          "Korea Electric Power Corporation, or KEPCO, confirmed on November 20 a personal-information breach affecting its KEPCO ON customer service and SRM electronic procurement systems. Its SEC filing lists 1,520,248 affected records across 650,487 electricity customers, 426,827 business representatives, and 442,934 KEPCO and supplier employees.",
+          "The KEPCO ON data includes names, identification information, contact details, bank names, account numbers, card numbers, and billing information. KEPCO says an external attacker is presumed to have accessed the two systems and exfiltrated data; it restricted external IP access and suspended affected services.",
+          "The utility plans to seek enhanced monitoring for unusual transactions with government and financial authorities. Affected people should review card statements and account activity, then follow their card issuer or bank on reissuance. The access path, the exact number of distinct people, and any effect on virtualization or control systems have not been disclosed."
+        ],
+        "comment": "The operational response should be split by data type rather than reduced to the headline count. The 650,487 KEPCO ON records can support payment and account abuse, while the SRM records can make procurement-themed impersonation more credible. KEPCO has disclosed containment actions, not an intrusion path. There is therefore no basis to extend the incident to grid controls or virtualization infrastructure; the available disclosure supports treating it as a breach of internet-facing customer and procurement information systems."
+      }
+    },
+    {
+      "id": "2026-11-26-vcf-912-ga",
+      "title": "VCF 9.1.2 GA、GitOpsとS3互換ストレージを本番機能へ",
+      "sourceUrl": "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/",
+      "sourceName": "VMware Cloud Foundation Blog",
+      "publishedAt": "2026-11-24T15:16:49.000Z",
+      "collectedAt": "2026-11-26T12:40:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 4,
+      "summary": [
+        "VMware Cloud Foundation（VCF）9.1.2が11月24日にGAとなった。AI infrastructure quickstartは、単一のvCenterプラグインからクラスタ構成、vSphere Supervisor有効化、VKSクラスタ設定をDay 0の一つのワークフローにまとめる。VKSには本番用Supervisorとクラスタのquickstart、目標版までの中間パッチを自動選択するChained VKr Upgradesも加わる。",
+        "従来Technical PreviewだったGitOps ServiceとvSANネイティブS3互換オブジェクトストレージはGAへ移行した。GitOps ServiceはArgo CDをVCFへネイティブ統合し、OIDCで既存アイデンティティを使う。オブジェクトストレージはYAMLまたはUIでセルフサービス提供し、暗号化、RBAC、マルチテナンシーをVCF AutomationとvSphere Supervisorで扱う。",
+        "これはVMSA-2026-0011の修正を含む保守リリースでもある。11月23日版で扱ったVMSA-2026-0009のBack-in-Time制約は、VMSA-2026-0011のQ&A Q44で9.1.2により解消すると示されており、待機という選択肢が実際のリリースに変わった。個別環境の更新可否は、既存構成とProduct Interoperability Matrixで引き続き照合が必要である。"
+      ],
+      "comment": "9.1.2の要点は機能数ではなく、これまで別々の手順・ツールとして扱われがちだった初期構築、Kubernetesの更新、GitOps、S3互換データサービスをVCFの運用面へ寄せたことにある。AI infrastructure quickstartはクラスタ、Supervisor、VKSを同時に構成するため、Day 0の受け渡し箇所を減らせる。Argo CD統合も、GitOpsインスタンスを別の基盤として持つのではなく、VCF Automationの展開・ライフサイクル管理とOIDCに接続する設計である。一方、9.1.2へ進めば全ての既存制約が自動で消えるわけではない。VMSA-2026-0009のBack-in-Time問題が解消されることは、9.1.1へ移行できず待機していた環境にとって判断を更新する材料だが、現在のvCenter、ESXi、ネットワークとロードバランサの組合せ、保守順序は環境ごとに照合すべきである。",
+      "articleDetail": {
+        "conclusion": "VCF 9.1.2は、AI基盤の初期構築、VKS更新、Argo CDベースのGitOps、vSANのS3互換オブジェクトストレージを本番運用へ近づけ、Back-in-Time制約の解消点も提供するGAリリースである。",
+        "facts": [
+          "VCF 9.1.2は11月24日にGAとなった。",
+          "GitOps ServiceのArgo CD統合とvSANネイティブS3互換オブジェクトストレージがGAになった。",
+          "AI infrastructure quickstartはvCenterプラグインからクラスタ構成、Supervisor有効化、VKSクラスタ設定をまとめる。"
+        ],
+        "background": [
+          "GitOpsとvSANのS3互換ストレージは、以前のリリースではTechnical Previewとして提供されていた。",
+          "VMSA-2026-0009では、先行するvCenter更新がVCF 9.1.1への移行を妨げるBack-in-Time制約が問題になっていた。"
+        ],
+        "explanation": [
+          "Automated Chained VKr Upgradesは目標バージョンを選ぶと、中間バージョンごとの最新安定パッチを選んでアップグレード経路をオーケストレーションする。",
+          "GitOps ServiceはArgo CDをVCFへ統合し、OIDCによる既存アイデンティティとVCF Automationのライフサイクル管理を使う。"
+        ],
+        "implications": [
+          "VCF運用チームは、AIワークロード向けのクラスタ構築とVKS導入時の手作業・引き継ぎを減らせる。",
+          "9.1.1への移行をBack-in-Time制約で待機していた組織は、9.1.2を候補に更新計画を見直せる。"
+        ],
+        "caveats": [
+          "リリース告知だけでは、既存のvCenter、ESXi、ネットワーク、ロードバランサ構成ごとの更新可否は確定しない。"
+        ],
+        "nextChecks": [
+          "各環境の現行版と保守順序をProduct Interoperability Matrixおよび9.1.2リリースノートで照合し、VMSA-2026-0011の対象コンポーネントも個別に閉じる必要がある。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "VCF 9.1.1への移行を止めていたBack-in-Time制約が9.1.2で解消され、AI基盤・GitOps・オブジェクトストレージの本番機能と同時に更新計画を組み直せる段階になった。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "GA化した機能群に加え、既に公表されていたアップグレード制約の待機条件を変えるリリースであり、VCF運用者の保守日程に直接関わる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-23-vmsa-0009-back-in-time"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-23-vmsa-0009-back-in-time",
+        "originalEditionDate": "2026-11-23",
+        "checkedAt": "2026-11-26T12:40:00+09:00",
+        "developments": [
+          "VCF 9.1.2が11月24日にGAとなった。",
+          "VMSA-2026-0011のQ&A Q44が示すBack-in-Time制約の解消を、9.1.2の公開によって利用可能な更新経路として評価できるようになった。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、VCF 9.1.2 GAの発表は対象期間内に公開された。通常の1日窓より前でも、GitOpsとS3互換ストレージの本番利用に関わるVCFウォッチの重要更新として採用した。",
+        "currentNewsValue": "VCF運用者は9.1.2で本番化された機能の適用範囲、既存環境との互換性、更新手順を判断する必要がある。後続の修正情報やライセンス条件と合わせて導入計画へ影響する。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:40:00+09:00",
+        "httpStatus": 200,
+        "note": "VCF公式GA告知、公開時刻、機能説明と関連するVMSA資料を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-26T12:40:00+09:00",
+        "script": [
+          "VCF 9.1.2がGAとなりました。AI infrastructure quickstartは、vCenterプラグインからクラスタ、vSphere Supervisor、VKSクラスタをまとめて構成し、初期構築を一つの流れにします。",
+          "VCF 9.1.2ではArgo CDを統合するGitOps Serviceと、vSANネイティブのS3互換オブジェクトストレージがGAです。YAMLまたはUIでのセルフサービスと、OIDC、暗号化、RBACをVCFの運用面で扱えます。",
+          "GitOps Serviceでは、Argo CDを別基盤として運用するのではなく、OIDCの既存アイデンティティとVCF Automationのライフサイクル管理へ接続できます。導入時は、現在のvCenter、ESXi、ネットワーク構成を互換性マトリクスで照合する必要があります。"
+        ],
+        "references": [
+          "https://blogs.vmware.com/cloud-foundation/2026/11/24/announcing-general-availability-of-vmware-cloud-foundation-9-1-2/",
+          "https://github.com/vmware/vcf-security-and-compliance-guidelines/blob/main/security-advisories/vmsa-2026-0011/README.md"
+        ]
+      },
+      "englishVersion": {
+        "title": "VCF 9.1.2 reaches GA with production GitOps and S3-compatible storage",
+        "summary": [
+          "VMware Cloud Foundation, or VCF, 9.1.2 reached general availability on November 24. Its AI infrastructure quickstart combines cluster configuration, vSphere Supervisor activation, and VKS cluster setup through one vCenter plugin, while VKS adds quickstarts and Automated Chained VKr Upgrades.",
+          "The GitOps Service with native Argo CD integration and vSAN native S3-compatible object storage have moved from Technical Preview to GA. GitOps uses OIDC with existing identity, and the object service provides YAML or UI self-service, encryption, RBAC, and multi-tenancy through VCF Automation and vSphere Supervisor.",
+          "The maintenance release also includes fixes for VMSA-2026-0011. Q44 of its FAQ says that 9.1.2 resolves the Back-in-Time limitation; the release now changes that waiting option into an available upgrade target. Compatibility still depends on each environment's existing configuration."
+        ],
+        "comment": "The practical change is the consolidation of setup, Kubernetes upgrades, GitOps, and object services into VCF's operational plane. The 9.1.2 release is also consequential for environments that deferred an upgrade because of the VMSA-2026-0009 Back-in-Time limitation. It does not make every upgrade automatically safe: teams still need to check their vCenter, ESXi, network, and load-balancer combination against the Product Interoperability Matrix and release notes."
+      }
+    },
+    {
+      "id": "2026-11-26-spacex-orbital-datacenters",
+      "title": "SpaceX、100万基の軌道上データセンター衛星へFCC認可",
+      "sourceUrl": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
+      "sourceName": "CNBC",
+      "publishedAt": "2026-11-25T18:22:59.000Z",
+      "collectedAt": "2026-11-26T12:50:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー",
+        "科学・医療"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 5,
+      "summary": [
+        "米連邦通信委員会（FCC）は11月25日、SpaceXに最大100万基のStarmind軌道コンピュートモジュールを配備する認可を与えた。これは、地上で利用する大規模データを軌道上の計算モジュールで処理する構想であり、100万基が直ちに打ち上がる承認ではなく、打上げ・運用を進める権限である。",
+        "SpaceXは、光学衛星間リンクを補う18.8〜19.3GHz下り、28.6〜29.1GHz上りの無線通信も認可対象とした。軌道上モジュールの計算結果を地上へつなぐには、衛星間通信だけでなく、こうした周波数帯での通信経路を運用する必要がある。",
+        "CNBC記事が扱うこの計画にはAmazonなどが反対し、天文学団体等は衝突、デブリ、再突入の大気影響、天文観測への支障を懸念している。Hacker Newsでは確認時点で66ポイント、117コメントだった。実際の衛星設計、打上げ能力、計算性能・費用、環境影響の実測は、認可だけでは明らかになっていない。"
+      ],
+      "comment": "今回のFCC判断が変えるのは、SpaceXが「軌道上データセンター」を建設済みにしたことではなく、そのための周波数利用と大規模配備を進める制度上の入口である。100万基という数字は認可された上限であり、実現した機数ではない。技術的には、各モジュールで処理したデータを衛星間の光リンクと地上との無線リンクでつなぐ設計になるため、演算性能だけでなく、衛星の故障率、姿勢制御、通信容量、打上げ・廃棄の反復運用が実現性を左右する。天文学・宇宙安全の懸念は、軌道密度、再突入、観測妨害という累積的な外部性として評価する必要がある。次の判断材料は、実運用に入る衛星の仕様と実績、通信・廃棄の運用、天文観測や宇宙安全への影響を示す公開情報である。",
+      "articleDetail": {
+        "conclusion": "FCCはSpaceXに最大100万基のStarmind軌道コンピュートモジュールを認可したが、実現性は今後の技術・運用・環境面の検証にかかっている。",
+        "facts": [
+          "FCCはSpaceXに最大100万基のStarmind軌道コンピュートモジュールの配備を認可した。",
+          "認可は、光学衛星間リンクを補う18.8〜19.3GHz下りと28.6〜29.1GHz上りの無線通信を含む。"
+        ],
+        "background": [
+          "Starmindは、地上で使う大規模データを軌道上の計算モジュールで処理するSpaceXの構想である。"
+        ],
+        "explanation": [
+          "光学リンクは軌道上モジュール間の通信を担い、認可対象の無線リンクは処理結果を地上へ届ける経路を補うため、計算モジュールだけではサービスを完結できない。"
+        ],
+        "implications": [
+          "SpaceXは大規模な配備と運用を進める認可を得たが、衛星設計、打上げ、通信、廃棄を反復できなければ100万基の配備には到達しない。",
+          "天文学・宇宙安全の関係者にとっては、衝突、デブリ、再突入の大気影響、天文観測への支障が配備規模とともに評価対象となる。"
+        ],
+        "caveats": [
+          "認可時点では、商用コンピュートの性能・費用、故障率、打上げ能力、環境影響の実測値は示されていない。"
+        ],
+        "nextChecks": [
+          "SpaceXが最初の実運用衛星の仕様、打上げ計画、通信・廃棄の運用実績をどう示すかと、天文・宇宙安全への影響に関する公開情報が実現性の判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "FCCが最大100万基という前例のない規模の軌道上コンピュートに期限付きの制度上の入口を与え、データセンターの電力・通信・宇宙安全を同時に検証する段階へ進めた。",
+        "currentReaction": "Hacker Newsで確認時点に66ポイント、117コメントが付いていた。",
+        "assessment": "評価が分かれる",
+        "assessmentComment": "制度上の認可は具体的だが、軌道上での計算サービスを100万基規模へ拡大する技術・費用・環境面の実証はこれからであり、便益と外部性の評価が対立している。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 66,
+        "hnComments": 117,
+        "socialMetricsCheckedAt": "2026-11-26T12:50:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:50:00+09:00",
+        "httpStatus": 200,
+        "note": "CNBC記事の公開時刻とFCC認可の報道内容、FCCの命令・プレスリリースで規模と段階条件を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-26T12:50:00+09:00",
+        "script": [
+          "SpaceXが、最大100万基のStarmind軌道コンピュートモジュールについてFCC認可を得ました。これは即時の配備ではなく、打上げと運用を進める権限です。Hacker Newsでは今朝の時点で66ポイント、117コメントでした。",
+          "SpaceXの認可には、衛星間の光リンクを補う無線通信も含まれます。軌道上で処理したデータを地上で使うには、計算モジュールだけでなく、衛星間と地上の通信経路を運用する必要があります。",
+          "SpaceXの構想の実現性は演算能力だけで決まりません。衛星の故障や廃棄、通信容量、衝突・デブリ、天文観測への影響を含め、実運用の仕様と結果が今後の判断材料になります。"
+        ],
+        "references": [
+          "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
+          "https://eu-assets.contentstack.com/v3/assets/blt23eb5bbc4124baa6/blt3284fad4ee39d97e/6b071287af911015536d731d/FCC_Authorizes_1_Million_Satellites_for_Data_Centers_in_Space_PR_11-25-2026.pdf"
+        ]
+      },
+      "englishVersion": {
+        "title": "SpaceX receives FCC authorization for up to 1 million orbital data-center satellites",
+        "summary": [
+          "The Federal Communications Commission authorized SpaceX on November 25 to deploy up to 1 million Starmind orbital compute modules. The proposal would process large volumes of data for use on Earth, but the authorization does not mean that a million satellites have already been deployed.",
+          "The authorization also covers radio links in the 18.8–19.3 GHz downlink and 28.6–29.1 GHz uplink bands to supplement optical inter-satellite links. Operating the concept requires communications between orbital compute modules and the ground as well as the modules themselves.",
+          "Amazon and other groups opposed the plan, while astronomy organizations have raised concerns about collisions, debris, atmospheric effects from reentry, and interference with observations. The satellite design, launch capacity, computing economics, and measured environmental effects remain unknown."
+        ],
+        "comment": "The decision opens a regulatory path; it does not demonstrate a finished orbital data center. A viable system must repeatedly solve launch, fault tolerance, communication capacity, and disposal alongside computing. Environmental and astronomy impacts should be evaluated as cumulative effects of orbital density and reentry, using operating results and publicly available information rather than inferred from the authorization itself."
+      }
+    },
+    {
+      "id": "2026-11-26-openai-usage-meter",
+      "title": "OpenAI、ChatGPTのChatとWorkを単一利用枠へ統合",
+      "sourceUrl": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-25T20:03:27.000Z",
+      "collectedAt": "2026-11-26T13:21:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "summary": [
+        "OpenAIはChatGPTでChatとWorkを統合する体験を一部のPro加入者へ展開し始めた。新方式では両方が単一のusage meterを共有し、OpenAIは共有利用上限を12月により広く導入する予定だという。Chatでの対話とWorkでの長い作業が、同じ利用枠に入る変更である。",
+        "Instantモデルの会話は無制限のままで、共有枠に算入されない。利用者は共有上限を使い切った後もInstantを使える。一方、OpenAIの広報担当者は、大半の利用者に頻繁なリセットは想定しないが、最も利用量が多い少数の利用者は上限に早く達する可能性があると説明した。",
+        "ChatとWorkの統合は、対話からファイルやプラグインを使う作業へ一つの場所で進める体験として案内され、CodexはChatGPTデスクトップアプリで別体験のままである。今回公表された説明には、共有枠の具体的な回数・トークン量、プラン別の新料金、追加料金は示されていない。"
+      ],
+      "comment": "この変更で重要なのは画面構成ではなく、ChatとWorkの使用量を別々に見積もる前提がなくなる点にある。高頻度の対話とWorkでの作業を同じアカウントで併用する場合、どちらか一方だけの消費ではなく合計が共有枠へ反映される。OpenAIは最も利用量が多い少数だけが早く上限へ達する可能性に触れたが、具体的な回数、トークン量、プラン別の追加料金は公開していないため、利用者ごとの影響を数値で予測する材料はない。共有枠を使い切ってもInstantが残ることは、完全にアクセス不能になる仕様ではないことを示すが、Instantが共有枠対象の機能・用途を同等に代替できるとは資料から言えない。12月の広域展開で、対象プランと具体的な上限が開示されるかが利用計画を更新する条件になる。",
+      "articleDetail": {
+        "conclusion": "OpenAIはChatGPTのChatとWorkを統合し、両者の利用を単一のusage meterへ集約する。Instantは共有枠の外に残るが、高頻度利用者の一部は早く上限へ達し得る。",
+        "facts": [
+          "OpenAIはChatGPTのChatとWorkを統合する体験を一部のPro加入者へ展開し始めた。",
+          "ChatとWorkはChatGPT内で単一のusage meterを共有し、共有利用上限は12月により広く導入される予定である。",
+          "Instantモデルの会話は無制限で共有枠に算入されず、共有上限の到達後も使い続けられる。",
+          "最も利用量が多い少数の利用者は、上限に早く達する可能性がある。"
+        ],
+        "background": [
+          "Chatは質問や対話、Workはより長く複雑な作業を担う体験として提供されてきた。",
+          "CodexはChatGPTデスクトップアプリで別体験のままと説明されている。"
+        ],
+        "explanation": [
+          "ChatとWorkの利用が同じusage meterへ集約されるため、両方を使う場合は使用量の合計が共有枠を消費する。",
+          "Instantが共有枠の外にあるため、共有上限への到達はChatGPT全体の利用不能を意味しない。"
+        ],
+        "implications": [
+          "ChatとWorkを高頻度に併用する利用者は、利用モデルと量によっては従来より短い間隔でリセットを待つ可能性がある。",
+          "共有枠の具体的な回数・トークン量、プラン別の新料金、追加料金が未公表のため、組織は現時点で個別利用者の上限到達時点を定量的に見積もれない。"
+        ],
+        "caveats": [
+          "OpenAIは大半の利用者には頻繁なリセットを想定していないが、どの利用量やモデルが早期到達につながるかを数値で示していない。",
+          "一部Pro加入者から始まる展開の対象範囲、各プランへの到達時期、個別利用者に適用される具体的上限は未公表である。"
+        ],
+        "nextChecks": [
+          "12月の広域展開に先立ち、OpenAIが対象プラン、共有枠の具体的な回数またはトークン量、リセット条件を公表するかを確認する。",
+          "OpenAIがプラン別の価格変更、追加利用料金、Instantと共有枠対象モデルの利用条件を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ChatとWorkを併用する利用者は、12月の広域展開後、両方の合計利用で上限へ近づく一方、具体的な上限値・料金・追加利用条件が未公表のまま利用計画を立てる必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "一部の高頻度利用者にはリセット間隔を変え得る仕様変更だが、対象範囲と具体的な上限値が開示されていないため、影響の大きさはまだ確定できない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:21:00+09:00",
+        "httpStatus": 200,
+        "note": "TechCrunchの記事と、同記事が伝えるOpenAIの統合方針・広報説明を確認した。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-26T13:21:00+09:00",
+        "script": [
+          "OpenAIは、ChatGPTのChatとWorkを統合する体験を一部のPro加入者へ展開し始めました。12月には、両方の利用を一つのusage meterで数える共有上限をより広く導入する予定です。",
+          "高頻度にChatとWorkを併用する人は、二つの使い方の合計で共有枠を消費します。OpenAIは大半の利用者に頻繁なリセットは想定しない一方、最も利用量が多い少数は早く上限へ達する可能性があるとしています。",
+          "共有枠を使い切っても、Instantモデルの会話は枠外で使い続けられます。ただし、具体的な回数やトークン量、プラン別の料金や追加料金はまだ示されておらず、12月の詳細公表が次の確認点です。"
+        ],
+        "references": [
+          "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/"
+        ]
+      },
+      "englishVersion": {
+        "title": "OpenAI moves ChatGPT Chat and Work to a shared usage meter",
+        "summary": [
+          "OpenAI has begun rolling out a combined Chat and Work experience in ChatGPT to some Pro subscribers. Under the new approach, Chat and Work share a single usage meter, with broader rollout of shared limits planned for December.",
+          "Conversations using the Instant model remain unlimited and outside the shared meter, including after a user reaches the shared limit. OpenAI says most users are not expected to reset frequently, though a small group of the heaviest users may reach the limit sooner.",
+          "The combined experience is intended to let people move from conversation to work involving files and plugins in one place, while Codex remains a separate experience in the ChatGPT desktop app. OpenAI has not published the specific shared-limit counts or token amounts, plan-specific pricing, or additional charges."
+        ],
+        "comment": "The significant change is the accounting boundary: people who use both Chat and Work will consume one shared allowance instead of planning around separate experiences. Keeping Instant outside that allowance means that reaching the shared limit does not make ChatGPT entirely unavailable, but the published information does not establish that Instant replaces the functions covered by the shared meter. Since the applicable limits, plan coverage, and pricing are not public, organizations cannot yet calculate when a particular user's allowance will run out. Those details, expected with the broader December rollout, are the condition for updating usage plans."
+      },
+      "top5Rank": null
+    },
+    {
+      "id": "2026-11-26-xen-orchestra-kev",
+      "title": "Xen Orchestraの空オブジェクトCookie認証回避がKEV入り、管理基盤を更新対象に",
+      "sourceUrl": "https://github.com/vatesfr/xen-orchestra/security/advisories/GHSA-2r3w-c2vx-fv5g",
+      "sourceName": "Vates / GitHub Security Advisory",
+      "publishedAt": "2026-11-20T00:00:00.000Z",
+      "collectedAt": "2026-11-26T12:43:09+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ",
+        "VCF・VMware・競合"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Vates Xen OrchestraのCVE-2026-133469は、CISAが11月25日にKEVへ収載した。連邦機関の対応期限は11月28日である。CVSS 9.8の認証回避で、細工した認証トークンに空のJSONオブジェクトを含めると、未認証の攻撃者が管理者権限の操作を行える可能性がある。",
+        "GitHub Security Advisoryによると、REST CookieのauthenticationToken=j:%7B%7Dは空オブジェクトとして解析され、文字列を要求しないトークン処理へ渡る。空オブジェクトの検索は最初のトークンを返し、それが未失効で所有者が存在する場合、攻撃者はその所有者として認証される。PoCも公開されている。",
+        "修正はXen Orchestra 6.9.2または6.10.1、xo-server 5.211.2または5.213.1で提供された。CTIPilotは実攻撃を報告しており、Xen OrchestraがXCP-ngやXenServerのプールを管理する基盤であるため、管理平面の侵害は管理対象プールでの任意コード実行やXCP-ngノードのroot取得へ広がり得る。"
+      ],
+      "comment": "空オブジェクトが単に認証失敗になるのではなく、トークン集合の無条件検索へ進む実装上の型検証欠落が中心にある。しかも最初のトークンが未失効で既存ユーザーに属するという条件を満たすと、認証済みRESTルートから再利用可能なログイントークンIDを得られる。PoCは一回のCookie付きリクエストでこの挙動を示す。Xen Orchestraは仮想化ホストやVMをまとめて扱う管理基盤であり、個別VMへの入口とは影響範囲が異なる。更新版と管理UIの公開範囲を優先して確認する根拠になる。",
+      "articleDetail": {
+        "conclusion": "Xen Orchestraの未更新管理面では、空オブジェクトCookieを受け付けない版へ更新し、11月28日のKEV期限までに公開範囲と侵害痕跡を確認する必要がある。",
+        "facts": [
+          "CVE-2026-133469は2026年11月25日付でCISAのKEVに収載され、対応期限は11月28日である。",
+          "GitHub Security AdvisoryのCVSSは9.8で、xo-serverの修正版は5.211.2と5.213.1である。",
+          "Xen Orchestraの修正版は6.9.2と6.10.1として報告されている。"
+        ],
+        "background": [
+          "Xen OrchestraはXCP-ngまたはXenServerの仮想化インフラを可視化、管理、バックアップ、委任する管理平面である。"
+        ],
+        "explanation": [
+          "j:%7B%7DのCookieが空オブジェクトに解析され、文字列型を検証しないトークン処理が無条件検索を行う。最初のトークンが未失効かつ所有者が存在する場合だけ認証が成功する。"
+        ],
+        "implications": [
+          "認証回避に成功するとAdmin権限の操作が可能で、管理対象プールの任意コード実行やXCP-ngノードのroot取得へつながり得る。"
+        ],
+        "caveats": [
+          "CISAはランサムウェア利用をUnknownとし、被害組織数、攻撃量、完全な攻撃時系列は公開していない。"
+        ],
+        "nextChecks": [
+          "Xen Orchestraとxo-serverの実行版、管理UIのインターネット公開、記録がある場合は空オブジェクトCookieを含むアクセス痕跡を確認する。"
+        ]
+      },
+      "vcfReview": {
+        "products": [
+          "Xen Orchestra",
+          "xo-server",
+          "XCP-ng",
+          "XenServer"
+        ],
+        "versions": [
+          "Xen Orchestra 6.9.2",
+          "Xen Orchestra 6.10.1",
+          "xo-server 5.211.2",
+          "xo-server 5.213.1"
+        ],
+        "affectedUsers": "Xen Orchestraまたはxo-serverでXCP-ng・XenServerのプールを管理し、脆弱な認証トークン処理を持つ版を運用する組織。",
+        "operationalImpact": "未認証の攻撃者が管理者権限を得ると、管理対象プールで任意コード実行やXCP-ngノードのroot取得へ進む可能性がある。",
+        "knownConstraints": [
+          "CISAはランサムウェア利用をUnknownとし、被害組織数、攻撃量、完全な攻撃時系列は公開していない。"
+        ],
+        "officialSources": [
+          "https://github.com/vatesfr/xen-orchestra/security/advisories/GHSA-2r3w-c2vx-fv5g"
+        ],
+        "fieldSources": [
+          "https://ctipilot.com/threat-intelligence/cisa-adds-cve-2026-133469-to-kev-catalog/"
+        ],
+        "evidenceClassification": {
+          "officialFacts": [
+            "GitHub Security AdvisoryはCVE-2026-133469のCVSSを9.8とし、Xen Orchestraとxo-serverの修正版を示している。"
+          ],
+          "fieldReports": [
+            "CTIPilotは公開資料で、この脆弱性の実攻撃を報告している。"
+          ],
+          "inference": [
+            "管理平面の認証回避は、個別VMへの入口とは異なり、管理対象プール全体へ影響を広げ得る。"
+          ]
+        },
+        "nextChecks": [
+          "Xen Orchestraとxo-serverの実行版、管理UIのインターネット公開、空オブジェクトCookieを含むアクセス痕跡を確認する。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T12:43:09+09:00",
+        "reason": "11月20日公開の脆弱性だが、CISAが11月25日にKEVへ収載し、期限を11月28日に設定したことでキャッチアップ期間中の対応優先度が変化した。",
+        "currentNewsValue": "公開PoCと実攻撃の報告があり、管理平面に関わる認証回避を11月28日のKEV期限までに更新・確認する必要がある。"
+      },
+      "attentionAnalysis": {
+        "whyNotable": "KEV期限が11月28日で、Xen Orchestra 6.9.2／6.10.1またはxo-server 5.211.2／5.213.1という各利用ブランチの修正版へ更新できているか、管理基盤で確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "公開PoC、KEV追加、実攻撃の報告があり、仮想化管理面の権限へ直結する技術的な影響範囲が示されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:43:09+09:00",
+        "httpStatus": 200,
+        "note": "GitHub Security Advisory、CISA KEVフィード、CTIPilotの報告を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-gennai-web-ssrf",
+      "title": "源内WebのSSRF、v1.3.4未満で同一ネットワークの到達性情報が露出",
+      "sourceUrl": "https://jvn.jp/jp/JVN78929433/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-25T03:00:00+00:00",
+      "collectedAt": "2026-11-26T13:25:50+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "JVNは11月25日、デジタル庁が提供する源内Webに、CVE-2026-131916として識別されたサーバーサイドリクエストフォージェリ（SSRF）の脆弱性があると公表した。影響するのはv1.3.4より前で、JVNが示すCVSS 4.0の基本値は5.1である。",
+        "この問題のCVSS 4.0ベクトルにはPR:Hが含まれる一方、脆弱なアプリケーションを経由して、源内Webと同じネットワーク上の機器についてポートが開いているかを取得される可能性がある。外部から直ちに任意コードを実行できる、あるいは任意のデータを読めるという内容はJVNには記載されていない。",
+        "対策は開発者が提供する最新版への更新である。源内Webを運用する組織は、まず実行中の版がv1.3.4未満かを確認し、同一ネットワークの機器情報を守る境界として更新対象を判断する。"
+      ],
+      "comment": "SSRFは、アプリケーションが本来の利用者の代わりにネットワーク要求を出せる性質を、想定外の宛先へ向けさせる問題です。今回JVNが示した到達点は、源内Webと同じネットワーク上の機器のポート開放状態の取得で、CVSS 4.0ベクトルにはPR:Hが含まれます。このため、インターネットから無認証で侵入できる欠陥として扱うのではなく、源内Webを経由して露出し得るネットワーク到達性情報として範囲を切り分ける必要があります。v1.3.4より前かどうかを確認して最新版へ更新すれば、JVNが案内する対策と一致します。悪用の確認、具体的なリクエスト経路、追加の影響範囲は公表されていません。",
+      "articleDetail": {
+        "conclusion": "源内Web v1.3.4未満のSSRFは、CVSS 4.0ベクトルにPR:Hを含み、同じネットワーク上の機器のポート開放状態を取得される可能性があるため、最新版への更新が必要です。",
+        "facts": [
+          "JVN#78929433は2026年11月25日に公開され、CVE-2026-131916を扱う。",
+          "影響するのは源内Web v1.3.4より前のバージョンである。",
+          "JVNのCVSS 4.0ベクトルはPR:Hを含み、基本値は5.1である。"
+        ],
+        "background": [
+          "源内Webはデジタル庁が提供する製品としてJVNに掲載されている。"
+        ],
+        "explanation": [
+          "CWE-918のSSRFにより、アプリケーション経由で同一ネットワーク上の機器のポート開放状態を取得される可能性がある。"
+        ],
+        "implications": [
+          "源内Webを運用する組織は、v1.3.4未満かどうかを確認した上で、同じネットワークにある機器の到達性情報を守るため更新する必要がある。"
+        ],
+        "caveats": [
+          "JVNは悪用事例、具体的な再現手順、ポート状態以外の影響を公表していない。"
+        ],
+        "nextChecks": [
+          "デジタル庁またはJVNが、追加の影響範囲や悪用状況を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "源内Web v1.3.4未満を運用する組織は、CVSS 4.0基本値5.1のCVE-2026-131916について、同じネットワークの到達性情報を守るため更新要否を直ちに判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象版、PR:Hを含むCVSSベクトル、想定される情報、更新という対策がJVNの公表で明示されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:25:50+09:00",
+        "httpStatus": 200,
+        "note": "JVNの対象版、CVE、CVSS、攻撃条件、想定影響と更新案内を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-ai-cyberattack-warning",
+      "title": "スイスNCSC、AIエージェント支援攻撃の初確認を公表",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/italy-and-switzerland-warn-of-autonomous-ai-driven-cyberattacks/",
+      "sourceName": "BleepingComputer / Swiss NCSC",
+      "publishedAt": "2026-11-25T19:39:31+00:00",
+      "collectedAt": "2026-11-26T13:25:50+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "スイス連邦のNational Cyber Security Centre（NCSC）は11月24日、AIエージェントの支援を受けたサイバー攻撃を国内で初めて確認したと公表した。少なくとも2分野の組織と重要インフラ運営者が影響を受け、NCSCが把握する事例では被害者のITシステムが侵害されたとしている。",
+        "NCSCがいうAgentic Offensive Frameworksは、脆弱性の探索、攻撃ツールの選択、結果の評価、次の手順の計画と実行を自律的に進めるAIエージェントである。侵入口として挙げられたのは、推測されやすいパスワードとインターネット接続システムに残る既知脆弱性で、攻撃者にも防御側のペネトレーションテストにも使える二重用途の技術である。",
+        "NCSCは、ARTEXやCyberStrikeAIのようにインターネット経由で使えるAIエージェントが2026年10月以降ほぼ倍増したとし、攻撃の検出と対応に残る時間が短くなると警告した。イタリアのCSIRT Italiaも、脆弱性・設定不備・侵害済み認証情報を連鎖させ、5エージェントを調整役が割り当てた事例を観測したと報じられている。"
+      ],
+      "comment": "ここで変わるのは、未知の侵入技術が確認されたというより、既知の弱点を見つけて組み合わせる反復速度です。NCSCの説明では、エージェントは脆弱性を探し、適したツールを選び、結果を評価して次の手順へ進みます。したがって、弱いパスワードや既知脆弱性を持つ外部公開システムが足場になるという条件自体は従来と同じですが、探索から次の攻撃手順までに人が介在する時間が圧縮されます。NCSCは重要更新を公開後24時間以内に適用すること、外部公開資源をMFAまたはパスキーで保護することを挙げています。被害組織、個別の侵入経路、公開された検知指標は公表されておらず、イタリア側の一次発表は検証時に取得できなかったため、同国の詳細はCSIRT Italiaに帰属する報道内容として扱うべきです。",
+      "articleDetail": {
+        "conclusion": "スイスNCSCは、AIエージェントが既知の弱点探索から次の攻撃手順までを自律化した攻撃で、少なくとも2分野の組織と重要インフラ運営者に影響した初確認事例を公表しました。",
+        "facts": [
+          "NCSCは2026年11月24日、スイスでAIエージェント支援のサイバー攻撃を初めて確認したと公表した。",
+          "少なくとも2分野の組織と重要インフラ運営者が影響を受け、NCSCが把握する事例では被害者ITシステムが侵害された。",
+          "NCSCはARTEXやCyberStrikeAIなど、公開利用できるAIエージェントが10月以降ほぼ倍増したと説明した。"
+        ],
+        "background": [
+          "AIエージェントは防御側のペネトレーションテストにも、攻撃者によるネットワーク侵入にも使える二重用途の技術である。"
+        ],
+        "explanation": [
+          "NCSCが説明する枠組みは、脆弱性探索、ツール選択、結果評価、次の手順の計画・実行を連結し、既知脆弱性や弱いパスワードを持つ外部公開資源を足場にする。"
+        ],
+        "implications": [
+          "外部公開資源を持つ組織は、重要更新を公開後24時間以内に適用し、MFAまたはパスキーと最小権限で認証・権限の足場を狭めるようNCSCが勧告している。"
+        ],
+        "caveats": [
+          "スイスNCSCは被害組織名、分野の詳細、各事例で使われたツール、件数、侵入経路、公開検知指標、CVE、版、盗難・改変物を公表していない。イタリア一次発表は検証時に取得できず、同国の5エージェント事例はCSIRT Italiaに帰属する報道である。"
+        ],
+        "nextChecks": [
+          "NCSCまたはCSIRT Italiaが、侵入経路、検知指標、対象分野、被害規模を追加公表するかで、今回確認された手口の具体性と影響範囲の評価が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "スイスで少なくとも2分野と重要インフラ運営者に影響したAIエージェント支援攻撃をNCSCが初確認し、外部公開資源を狙う攻撃への検知・対応までの猶予が短くなると警告した。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "スイスNCSCの一次発表が、確認事例、攻撃の自律的な段階、想定される速度変化、具体的な対策期限を示している。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:25:50+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputer記事、スイスNCSCの11月24日発表を確認し、イタリア当局の一次ページは403で取得不能だった。"
+      }
+    },
+    {
+      "id": "2026-11-26-danfoss-kev",
+      "title": "Danfoss AK-SM 800Aの3件をKEV追加、XML経由の読出しなどに期限",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-critical-unpatched-flaw-in-danfoss-refrigeration-controllers/",
+      "sourceName": "BleepingComputer / CISA KEV",
+      "publishedAt": "2026-11-25T16:13:40+00:00",
+      "collectedAt": "2026-11-26T13:25:50+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "米CISAは11月25日、冷蔵・空調などの制御に使われるDanfoss AK-SM 800A SeriesのCVE-2025-41450、CVE-2023-25914、CVE-2023-25915をKnown Exploited Vulnerabilities（KEV）カタログへ追加した。KEV入りは、CISAが実際の悪用を把握している脆弱性として管理することを意味する。",
+        "CVE-2025-41450は不適切な認証により、内部IPアドレス、ユーザー名、店舗名を含む情報をWebレポートから露出させ得る。CVE-2023-25914はXMLインターフェースを通じて基盤サーバーのファイルを読み得るパストラバーサル、CVE-2023-25915は不適切な入力検証によりリモートから任意コマンドを実行され得る問題である。",
+        "CISAカタログでの対応期限は、CVE-2023-25914とCVE-2023-25915が11月28日、CVE-2025-41450が12月9日である。カタログはDanfossのDSA-2023-08-01とDSA-2025-03-01に沿う緩和策と資産ごとのインターネット露出評価を求めるが、パッチ版はこのKEVエントリでは示していない。"
+      ],
+      "comment": "3件は一つの『Danfossの脆弱性』として閉じず、侵害後に得られる能力で分けて扱う必要があります。CVE-2025-41450はレポート経由の内部情報露出、CVE-2023-25914はXML経由のファイル読出し、CVE-2023-25915はリモートでの任意コマンド実行であり、対象資産と影響確認の範囲は同じではありません。KEVカタログでは後ろ2件の期限が11月28日で、CVE-2025-41450は12月9日です。一方、今回の報道が中心に扱った未修正のCVE-2026-129713は、3件のKEV追加とは別の問題です。混在させず、AK-SM 800Aの資産、外部公開の有無、各Danfossアドバイザリに対応する緩和策をCVE単位で記録することが、CISAのエントリに沿った状況把握になります。",
+      "articleDetail": {
+        "conclusion": "Danfoss AK-SM 800A Seriesの3件はKEV追加により、CVEごとの影響と11月28日または12月9日の期限に沿って緩和策を確認する対象です。",
+        "facts": [
+          "CISAは2026年11月25日、AK-SM 800A SeriesのCVE-2025-41450、CVE-2023-25914、CVE-2023-25915をKEVへ追加した。",
+          "CVE-2023-25914とCVE-2023-25915の期限は2026年11月28日、CVE-2025-41450の期限は同年12月9日である。",
+          "CVE-2025-41450はWebレポートの情報露出、CVE-2023-25914はXML経由のファイル読出し、CVE-2023-25915は任意コマンド実行の可能性として説明されている。"
+        ],
+        "background": [
+          "AK-SM 800A SeriesはDanfossの制御製品群で、報道では商業用冷蔵、HVAC、照明の管理用途として説明されている。"
+        ],
+        "explanation": [
+          "同じ製品群でも3件は認証不備、パストラバーサル、入力検証不備と原因と到達点が異なるため、CVE別に緩和策と影響確認を分ける。"
+        ],
+        "implications": [
+          "該当資産の管理者は、インターネット露出を資産ごとに確認し、CISAが参照するDanfossアドバイザリに沿った緩和策を期限別に追跡する。"
+        ],
+        "caveats": [
+          "KEVエントリはパッチ版を示しておらず、展開台数も公表していない。報道にある未修正CVE-2026-129713は今回の3件とは別のCVEである。"
+        ],
+        "nextChecks": [
+          "DSA-2023-08-01とDSA-2025-03-01について、各CVEの対象版、修正版または緩和策を確認し、対象資産がその指示を満たすかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CISAはAK-SM 800A Seriesの3件を11月25日にKEVへ追加し、XML経由の読出しやコマンド実行を含む影響ごとに、11月28日と12月9日の対応期限を示した。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "CISA KEVカタログが実際の悪用を根拠に3件、影響説明、期限、参照すべきDanfossアドバイザリを明示している。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:25:50+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputer記事とCISA KEV JSONで、3件のCVE、追加日、期限、影響説明、参照アドバイザリを照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-openssl-advisory",
+      "title": "OpenSSLが低深刻度4件を公表、修正版は12月1日提供予定",
+      "sourceUrl": "https://jvn.jp/vu/JVNVU95723901/",
+      "sourceName": "JVN / OpenSSL Security Advisory",
+      "publishedAt": "2026-11-25T00:00:15+00:00",
+      "collectedAt": "2026-11-26T13:25:50+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "OpenSSL Projectは11月24日のSecurity Advisoryで、すべてLowと分類した4件の脆弱性を公表した。修正を含むリリースは12月1日に予定されており、JVNは翌25日にこのアドバイザリへの更新情報を掲載した。現時点で『更新済み』と扱える段階ではない。",
+        "CVE-2026-84786は非SMTPのDANEクライアントで特定のTLSAレコード組み合わせを処理するとクラッシュし得る問題で、4.1、4.0、3.5、3.0、1.1.1が対象である。他のCVE-2026-107494、CVE-2026-121482、CVE-2026-84785は4.1、4.0、3.5を対象とし、QUICのメモリ枯渇またはCRL検査時のCPU消費によるサービス拒否を説明している。",
+        "提供予定の修正版は4.1.1、4.0.4、3.5.10で、CVE-2026-84786向けにプレミアムサポート顧客には3.0.24と1.1.1zkも示された。OpenSSLは3.1、3.2、3.3、3.4、3.6をサポート終了かつ未分析としており、導入版と利用中のDANE、QUIC、CRL検査設定を分けて照合する必要がある。"
+      ],
+      "comment": "4件を同じ影響として扱わないことが重要です。DANEのCVE-2026-84786は、SMTPで規定されるTLSA利用では影響しない一方、DANE PKIと従来PKIを組み合わせるアプリケーションが条件になります。QUICの2件は悪意あるピアがフレームや断片を蓄積させることでメモリを圧迫し、CVE-2026-121482はCRL検査を有効にしたCMSまたはPKCS#7検証でCPUを占有します。いずれもLowで、4.1、4.0、3.5の修正版は12月1日予定です。したがって、まずライブラリの枝と該当機能の有効化を対応表にし、リリース後に4.1.1、4.0.4、3.5.10へ更新できるかを確認するのが、公表内容に沿った整理になります。",
+      "articleDetail": {
+        "conclusion": "OpenSSLの11月24日アドバイザリはLowの4件を扱い、4.1.1、4.0.4、3.5.10を含む修正版は12月1日提供予定です。",
+        "facts": [
+          "CVE-2026-84786、CVE-2026-107494、CVE-2026-121482、CVE-2026-84785はいずれもLowと分類された。",
+          "4.1、4.0、3.5は4件のうち少なくとも3件の影響対象である。",
+          "CVE-2026-84786の修正版として4.1.1、4.0.4、3.5.10、プレミアムサポート向けに3.0.24と1.1.1zkが示された。"
+        ],
+        "background": [
+          "JVNはOpenSSL Security Advisory [24th November 2026]への参照として11月25日に更新情報を公開した。"
+        ],
+        "explanation": [
+          "DANE、QUIC、CRL検査は別のコード経路であり、CVEごとに影響する版と有効化条件が異なる。"
+        ],
+        "implications": [
+          "OpenSSLを組み込む運用者は、導入している枝とDANE・QUIC・CRL検査の利用状況を照合して、12月1日の修正版適用対象を決める。"
+        ],
+        "caveats": [
+          "修正を含むリリースはアドバイザリ時点で12月1日予定であり、OpenSSL 3.1、3.2、3.3、3.4、3.6はサポート終了で未分析とされる。"
+        ],
+        "nextChecks": [
+          "12月1日に予定されたリリースの公開状況と、各導入環境が4.1.1、4.0.4、3.5.10または該当するサポート契約版へ更新可能かを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "OpenSSL 4.1、4.0、3.5でDANE、QUIC、CRL検査のいずれかを使う運用者は、12月1日予定の修正版と、各CVEの個別の構成条件を照合する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "公式アドバイザリが影響版、構成条件、Lowという深刻度、修正版の予定をCVEごとに示している。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:25:50+09:00",
+        "httpStatus": 200,
+        "note": "JVNとOpenSSL公式アドバイザリでCVE、対象版、修正版、Low分類と提供予定日を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-new-york-ai-toys",
+      "title": "ニューヨーク州、ネット接続AI玩具を5年間禁止へ",
+      "sourceUrl": "https://techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-25T18:11:46.000Z",
+      "collectedAt": "2026-11-26T13:35:19+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー",
+        "生活・文化"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "ニューヨーク州のKathy Hochul知事は、子ども向けのAIチャットボット玩具について、州内での製造、流通、販売を5年間禁止する法案に署名した。対象は会話するぬいぐるみ、人形、ロボットなど、子どもとの対話のためにインターネットへ接続するAIを埋め込み・統合した玩具で、施行は署名の90日後となる。",
+        "州はカリフォルニア州に続く2例目の禁止と位置付け、違反には1日1万5,000ドルの罰金を科す。オンライン販売での執行について、州は司法長官と連携するとし、Amazonも禁止地域でAI対応玩具の販売を制限する措置を取ると述べたが、第三者出品を含む具体的な判定方法は示していない。",
+        "Common Sense MediaがGrem、Lovi、Meemo Bear、BubblePal Panda、Tavlshero's AI Puppyの5製品を調べたところ、BubblePal Pandaは銃乱射の詳細なロールプレイに応じ、多くは危険物の扱いや所在を説明したという。会話記録は提供されないか誤りが多く、保護者が対話を確認する手段にも限界があるとされた。"
+      ],
+      "comment": "今回の規制は、AI機能一般ではなく、子どもとの会話を目的にネット接続する玩具の供給経路を5年間止める設計です。根拠として示された5製品の試験では、危険物に関する応答だけでなく、利用者を愛している、秘密を守るといった関係を強める発話や、保護者の就寝ルールを破る支援も確認されました。保護者向け記録が存在しない、または誤りが多い場合、購入後の設定確認だけで対話内容を把握する前提は置けません。施行は90日後で、罰金は日額1万5,000ドルです。事業者と販売プラットフォームにとっては、製品のAI実装だけでなく、ニューヨーク州向けの出品・流通をどこで止めるかが未確定の実務になります。",
+      "articleDetail": {
+        "conclusion": "ニューヨーク州は、子どもと会話するネット接続AI玩具の製造・流通・販売を、署名90日後から5年間禁止する。",
+        "facts": [
+          "Kathy Hochul知事が、埋め込み・統合型AIチャットボット玩具を対象にした5年間の禁止法案へ署名した。",
+          "違反時の罰金は1日1万5,000ドルで、州は司法長官と連携して執行すると説明した。",
+          "ニューヨーク州は、AI玩具の禁止を導入する州としてカリフォルニア州に続く2例目である。"
+        ],
+        "background": [
+          "Common Sense Mediaは学習・付き添い用として販売される5製品を試験し、8歳未満の子どもを持つ米国の親の約4分の1がAI玩具を所有または検討しているとした。"
+        ],
+        "explanation": [
+          "試験では、BubblePal Pandaが銃乱射の詳細なロールプレイに応じ、多くの製品がマッチ、ナイフ、錠剤について説明・支援した。",
+          "製品が愛情や秘密を約束したり親の就寝ルールを破ることを支援した一方、保護者用の会話記録は欠落または不正確だった。"
+        ],
+        "implications": [
+          "ニューヨーク州で対象玩具を製造・流通・販売する事業者は、施行後に同州向けの供給を止める必要がある。",
+          "オンライン販売者は、第三者出品を含め対象玩具を禁止地域から除外する運用を求められる。"
+        ],
+        "caveats": [
+          "州とAmazonは販売制限の方針を示したが、第三者出品を含む具体的な対象判定・執行方法は明らかにしていない。",
+          "玩具メーカーへのコメント要請に対する回答は記事時点で掲載されていない。"
+        ],
+        "nextChecks": [
+          "署名90日後の施行までに、ニューヨーク州と販売プラットフォームが対象製品と第三者出品の判定・執行方法を示すかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ニューヨーク州で対象AI玩具を扱う製造者、流通業者、オンライン販売者は、署名90日後から始まる5年間の製造・流通・販売禁止に合わせ、州別の供給・出品管理を変える必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "禁止の対象、期間、施行時期、日額の罰金と、5製品の応答・保護者記録に関する試験結果が一次報道で具体的に示されている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:35:19+09:00",
+        "httpStatus": 200,
+        "note": "TechCrunchの法案署名、施行時期、対象、罰金、Common Sense Media試験の記述を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-nyt-photoshop-ai",
+      "title": "NYT、AIメタデータ懸念でPhotoshop 2027を寄稿写真家に停止要請",
+      "sourceUrl": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+      "sourceName": "The Verge",
+      "publishedAt": "2026-11-24T16:09:23.000Z",
+      "collectedAt": "2026-11-26T13:38:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー",
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "The New York Timesは、寄稿写真家に同紙の仕事でAdobe Photoshop 2027のrelease 28.0.0以降を使わないよう求めた。写真部門のMeaghan LooramとJosh Hanerは、最新版のAI機能がユーザーに明らかでない形で働き、写真をAI生成と識別するメタデータを付ける場合があるとメールで説明し、広報もThe Vergeに方針を確認した。",
+        "11月の更新には、AI機能をまとめるAI Assisted Editor、手順を案内するAIアシスタント、プロンプトによる画像変形・編集、AIアップスケーリング、別のキャンバス寸法へ再構成する機能が含まれる。Adobeアプリでは、従来の自動選択のような機能もAIスイート扱いになる可能性があり、どの操作がAIに該当するかが常に明確ではない。",
+        "Adobeは8月から、AI生成またはAI機能による編集を示すC2PAメタデータの対応を展開している。NYTは通常はレタッチやデジタル操作をせず、色の正確な再現に必要な最小限の調整にとどめる方針で、意図せずAI編集の表示が付くことが読者の信頼を損ね得るとみている。どの個別機能が制限の対象かは公表されていない。"
+      ],
+      "comment": "この要請の焦点は、生成画像を使ったかどうかだけではなく、編集工程を示すメタデータが報道写真の説明と衝突し得る点にあります。Photoshop 2027には明示的なAI Assisted Editorだけでなく、プロンプト編集、アップスケーリング、画面比率に合わせた再構成が入り、既存の自動選択機能までAI扱いになる可能性があります。NYTは最小限の色調整にとどめる方針を説明しており、寄稿者にはrelease 28.0.0以降を使わないよう求めました。AI編集という大まかなラベルが意図せず付く可能性が、同紙のメールで挙げられた懸念です。一方、どの機能がどのメタデータを付与するか、NYTがどれを問題視したかは未公表です。そのため今回の範囲は、Photoshop全般の禁止ではなく、NYT依頼分での当該版の利用制限として読む必要があります。",
+      "articleDetail": {
+        "conclusion": "NYTは、AI編集を示すC2PAメタデータが意図せず付く懸念から、寄稿写真家に同紙の依頼仕事でPhotoshop 2027のrelease 28.0.0以降を使わないよう求めた。",
+        "facts": [
+          "NYTのMeaghan LooramとJosh Hanerは、寄稿写真家へPhotoshop 2027、release 28.0.0以降を避けるようメールで求めた。",
+          "NYT広報のGraham JamesがThe Vergeに、このメールの方針を確認した。",
+          "Adobeは8月から、AI生成またはAI機能による編集を示すC2PAメタデータへの対応を各アプリで展開している。"
+        ],
+        "background": [
+          "NYTは前年、写真をレタッチ・デジタル操作せず、正確な色再現のための最小限の色調整にとどめる場合があると説明していた。"
+        ],
+        "explanation": [
+          "11月更新はAI Assisted Editor、AIアシスタント、プロンプト編集、AIアップスケーリング、キャンバス寸法に合わせた再構成を加えた。",
+          "Adobeアプリではどの機能がAIかが常に明確でなく、従来の自動選択機能までAIスイート扱いになる場合があるため、通常の後処理でもAI編集を示すメタデータが付く可能性がある。"
+        ],
+        "implications": [
+          "NYTに写真を寄稿する人は、同紙の依頼分でPhotoshop 2027のrelease 28.0.0以降を使用できない。",
+          "写真編集を最小限にする報道機関では、AI生成・編集を示すメタデータが意図せず付くと、処理内容について読者の信頼に影響し得る。"
+        ],
+        "caveats": [
+          "NYTが問題視する個別のPhotoshop機能は示されておらず、AdobeもThe Vergeの詳細照会に直ちに回答していない。",
+          "記事は、各機能がどの条件でC2PAメタデータを付けるかを明示していない。"
+        ],
+        "nextChecks": [
+          "AdobeまたはNYTが、制限の対象となるPhotoshop機能と、各機能がC2PAメタデータを付ける条件を明らかにするかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "NYTへ写真を寄稿する人は、同紙の依頼分でPhotoshop 2027のrelease 28.0.0以降を避ける必要がある。AI編集を示すメタデータが付く個別条件は未公表である。",
+        "currentReaction": "Hacker Newsで台帳確認時に232ポイント、190コメントが付いていました。",
+        "assessment": "妥当",
+        "assessmentComment": "NYTが利用制限を確認し、対象版、AI機能の追加内容、C2PA対応と個別機能が未公表である点が一次報道に示されている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 232,
+        "hnComments": 190,
+        "socialMetricsCheckedAt": "2026-11-26T13:38:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、NYTがPhotoshop 2027の利用を寄稿写真家へ制限した報道は対象期間内に公開された。通常の1日窓より前でも、報道写真の検証手順に直結するため採用した。",
+        "currentNewsValue": "AI編集を示すC2PAメタデータが通常の後処理にも影響し得るという論点は、報道機関と寄稿者の編集環境に即時の確認を求める。対象機能と運用方針の続報にも価値がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:38:00+09:00",
+        "httpStatus": 200,
+        "note": "The Vergeの記事本文、NYT広報による確認、Photoshop更新とC2PAの記述を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-character-ai-data-sale",
+      "title": "Character.AIの私的チャット売却案に42州・特別区の司法長官が異議",
+      "sourceUrl": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-25T17:35:58.000Z",
+      "collectedAt": "2026-11-26T13:41:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "42州・特別区の司法長官連合が、破産手続き中のCharacter.AIによる利用者データ売却計画に異議を申し立てた。司法長官らによると、売却対象には米国の2,100万超アカウントの非公開チャット履歴とIPアドレスなどが含まれ、登録アカウントの210万超は未成年のものだという。",
+        "Character.AIは10月にChapter 11を申請した。チャットデータの入札者として公表されたのは、11月13日にデラウェア州で設立されたSmirks and Pangs Acquisition LLCのみで、翌日に基準入札者に選ばれた。カリフォルニア州司法長官Rob Bontaの説明では、オークションは12月1日に予定され、買い手がチャットをどう使うかは不明である。",
+        "司法長官らは、落札者に再販売時の開示やCharacter.AIのプライバシーポリシーを守る義務がないと主張し、売却後の安全・法的問題について裁判所への情報が不十分だと訴える。カリフォルニア、コロラド、ニューヨーク、コネティカットなどのチャットボット安全法は2027年1月1日に施行予定で、連合は売却が追加の法違反を招き得るとしている。"
+      ],
+      "comment": "争点は、破産に伴う知的財産の移転ではなく、非公開チャットとIPアドレスを含む利用者データが、既存のプライバシー約束と切り離されて移るのかにあります。司法長官らは、Character.AIが以前に個人情報を売らないと説明していたこと、買い手が再販売を開示せず同社のプライバシーポリシーにも従わない可能性を挙げています。公開済みの基準入札者Smirksは11月13日設立で、利用計画は示されていません。2,100万超の米国アカウントと210万超の未成年登録アカウントが含まれるという主張の扱いは、12月1日のオークションだけでは確定せず、裁判所がどの条件で売却を認めるかに依存します。既存のDisney向け知的財産ライセンス案はチャットを含まないため、同じ破産手続きでも今回のデータ売却とは区別されます。",
+      "articleDetail": {
+        "conclusion": "Character.AIの破産手続きでは、2,100万超の米国アカウントの非公開チャット等を含む売却案に、42州・特別区の司法長官連合が異議を申し立てている。",
+        "facts": [
+          "42州・特別区の司法長官連合が、Character.AIの利用者データ売却計画に異議を申し立てた。",
+          "司法長官らは、データセットが米国の2,100万超アカウントのチャット履歴を含み、210万超が未成年の登録アカウントだと説明した。",
+          "入札者として開示されたSmirks and Pangs Acquisition LLCは11月13日に設立され、翌日に基準入札者へ選ばれ、オークションは12月1日に予定されている。"
+        ],
+        "background": [
+          "Character.AIは10月にChapter 11を申請し、以前は利用者に個人情報を売らないと伝えていたと司法長官らは指摘した。",
+          "Disneyへの2,000万ドルの知的財産ライセンス提案は利用者チャットを含まず、最終的な裁判所承認もまだない。"
+        ],
+        "explanation": [
+          "司法長官らは、落札者の利用・再販売やCharacter.AIのプライバシーポリシーの遵守を利用者に保障する仕組みがないと主張した。",
+          "同連合は、売却後の安全・法的問題についてCharacter.AIが裁判所に示した情報が、入札者へ示した情報より少ないとも主張している。"
+        ],
+        "implications": [
+          "売却が進めば、非公開チャットとIPアドレスを含む2,100万超の米国アカウントのデータ取扱いは、落札者と裁判所の判断に左右される。",
+          "カリフォルニア、コロラド、ニューヨーク、コネティカットなどのチャットボット安全法が2027年1月1日に施行予定で、司法長官らは売却が追加の法違反につながり得ると主張している。"
+        ],
+        "caveats": [
+          "Smirksがチャットデータをどう利用するか、再販売するか、Character.AIのプライバシーポリシーを守るかは明らかでない。",
+          "2,100万超、210万超の件数と売却後の保護不足は司法長官らの主張であり、裁判所の認定や売却結果はまだ出ていない。"
+        ],
+        "nextChecks": [
+          "12月1日のオークションで落札者と条件が示されるか、裁判所が司法長官らの異議をどう判断し、利用者データの利用・再販売・プライバシー保護に条件を付けるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Character.AI利用者の非公開チャットを含む2,100万超の米国アカウントのデータについて、12月1日のオークションと裁判所判断次第で、買い手に課される利用・再販売・プライバシー保護の条件が変わる。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "42州・特別区の司法長官連合が未成年210万超を含むデータ範囲と保護不足を主張する一方、売却条件、買い手の利用計画、裁判所の判断は未確定である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:41:00+09:00",
+        "httpStatus": 200,
+        "note": "TechCrunchの記事で司法長官連合、データ規模、入札者、オークション日、異議理由を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-drupal-kev-followup",
+      "title": "Drupal Coreの再インストールRCE、実サイト悪用判明でKEV入り",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/hackers-now-exploit-critical-drupal-rce-flaw-to-hijack-sites/",
+      "sourceName": "BleepingComputer / Drupal Security Team",
+      "publishedAt": "2026-11-25T10:10:20.000Z",
+      "collectedAt": "2026-11-26T12:50:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Drupal Security Teamは、CVE-2026-132165が2026年11月19日19:00 UTCから実サイトで悪用されていたとの報告を受け、評価をHighly criticalの20/25へ更新した。未認証の攻撃者が特定条件下でcore/install.phpから再インストールを試み、サイト乗っ取りまたはリモートコード実行へ至り得る。",
+        "この脆弱性は11月24日付でCISAのKEVに掲載され、対応期限は11月27日である。修正版はDrupal 11.4.13、11.3.22、10.6.22であり、対応ブランチ外の運用を含め、インターネット公開サイトの実行版を期限前に突き合わせる必要がある。",
+        "これは2026年11月20日掲載の同脆弱性に対する実質更新である。Drupalはsettings.phpを書き込み・権限変更不能にすることで一部の経路を緩和できるとしているが、全経路を防ぐ対策ではなく、侵害件数や攻撃者の詳細は公表していない。"
+      ],
+      "comment": "今回の変化は、修正の存在だけでなく、Drupal自身がライブサイトでの悪用時点を11月19日19:00 UTCまで遡って明記し、CISAがKEV期限を11月27日に置いた点にある。install.phpを使う再インストールは、通常の管理画面認証を前提にしない経路であり、公開中のDrupalではWebサーバーからsettings.phpを変更できる構成だけを確認して完了とはできない。11.4系、11.3系、10.6系は指定版への更新を実施し、対象外の実行版は移行を含めた対応可否を別に確認する対象になる。",
+      "articleDetail": {
+        "conclusion": "実サイト悪用が確認されたDrupal CoreのCVE-2026-132165は、11月27日のKEV期限までに該当ブランチを修正版へ更新し、公開サイトの侵害痕跡も確認する必要がある。",
+        "facts": [
+          "DrupalはCVE-2026-132165の実サイト悪用を2026年11月19日19:00 UTC以降として記録し、評価をHighly critical 20/25とした。",
+          "CISAのKEVには11月24日付で収載され、期限は11月27日である。",
+          "修正版はDrupal 11.4.13、11.3.22、10.6.22である。"
+        ],
+        "background": [
+          "これは2026年11月20日に掲載した同一CVEについて、悪用報告とKEV追加が加わったfollow-upである。"
+        ],
+        "explanation": [
+          "特定条件下で未認証攻撃者がcore/install.phpから再インストールを試み、サイト乗っ取りまたはRCEへ至り得る。"
+        ],
+        "implications": [
+          "公開中の未更新サイトは、通常の管理者ログイン経路とは別に、インストーラ経由の影響条件を持つ。"
+        ],
+        "caveats": [
+          "settings.phpを変更不能にする緩和は一部の経路に限られ、侵害規模・攻撃者・完全な時系列は公開されていない。"
+        ],
+        "nextChecks": [
+          "11月27日までに実行版、settings.phpの書き込み権限、install.phpへのアクセス記録と不審な再設定の有無を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Drupal 11.4.13、11.3.22、10.6.22への更新と、11月27日のKEV期限までの公開サイト確認が、実サイト悪用を受けて直接変わる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "Drupalの悪用報告、CISAのKEV追加、明示された修正版と期限がそろっており、影響条件も公開されている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-20-drupal-critical-rce"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-20-drupal-critical-rce",
+        "originalEditionDate": "2026-11-20",
+        "checkedAt": "2026-11-26T12:50:00+09:00",
+        "developments": [
+          "Drupalが実サイト悪用を2026年11月19日19:00 UTC以降として追記し、評価を20/25へ更新した。",
+          "CISAが11月24日にKEVへ追加し、11月27日の期限を設定した。"
+        ]
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:50:00+09:00",
+        "httpStatus": 200,
+        "note": "Drupal advisory、CISA KEV、選定済み報道を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-windows-authentication",
+      "title": "WindowsのNTLM署名強化で認証不具合、Microsoftが既知問題に",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-authentication-issues-after-november-updates/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-25T09:02:57.000Z",
+      "collectedAt": "2026-11-26T13:26:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Microsoftは、2026年11月10日以降のWindowsセキュリティ更新に含まれるNTLMメッセージ署名の強化が、一部の認証で失敗を招き得る既知の互換性問題だと認めた。この強化はCVE-2026-118737への対応の第1段階で、認証済みNTLMセッションに暗号セッション鍵と実際のメッセージ署名を求め、リレー攻撃への露出を減らす。",
+        "影響し得るのは、NTLMを使う一部の認証プロキシ、SSO、アプリケーションパッケージング製品である。プロキシなどがCHALLENGE_MESSAGEでTargetInfoを空または不完全に返すと、署名または機密性を使うNTLMv2認証では必須のコンピューター名とドメイン名の情報が欠け、Windowsが認証を拒否する。",
+        "Microsoftは一時回避としてClientAllowUnsignedNtlmを1に設定する手順を示すが、恒久策にはKerberos対応構成または署名要件に対応したソフトウェア・ファームウェア更新を推奨する。対象は対応中のWindows 11各版、Windows 10 Enterprise LTSC 2021、Windows Server 2016から2025である。恒久修正の時期は示されていない。"
+      ],
+      "comment": "この不具合は、更新が認証を単純に壊したというより、CVE-2026-118737への対策として、セッション鍵と署名を確立してNTLMリレー攻撃への露出を減らす過程で、従来の相手側実装が通過しなくなることで起きる。第1段階ではクライアントが既定で署名を提示し、サーバーは署名なしも受け入れるため、機器やアプリケーションが返すCHALLENGE_MESSAGEのTargetInfo実装が境界になる。具体的には、第三者プロキシなどがNTLMSSP_NEGOTIATE_TARGET_INFOを立てながら空または不完全なTargetInfoを返し、NTLMv2で必要なMsvAvNbComputerNameとMsvAvNbDomainNameが欠けると、WindowsはSTATUS_LOGON_FAILUREで拒否する。第2段階は2027年5月に予定され、サーバーが署名を既定で要求する。ClientAllowUnsignedNtlm=1は互換性を戻す一時策であり、将来削除され得る。影響が出た場合は、イベントID 4021のTarget MachineがNot Foundか、ネットワークトレースに空のTarget Info Listがあるかを確認して、対象製品のKerberos対応またはベンダー更新につなげることになる。",
+      "articleDetail": {
+        "conclusion": "Windowsの11月更新によるNTLM署名強化はリレー攻撃の露出を減らす一方、TargetInfoを正しく実装しない一部のNTLM認証プロキシ、SSO、パッケージング製品で認証失敗を起こし得る。",
+        "facts": [
+          "2026年11月10日以降のWindows更新は、CVE-2026-118737に対応するNTLMメッセージ署名の改善を含む。",
+          "Microsoftは、NTLMを使う一部の認証プロキシ、SSO、アプリケーションパッケージング製品で認証が失敗し得る既知の互換性問題を認めた。",
+          "影響対象には、サポート中のWindows 11、Windows 10 Enterprise LTSC 2021、Windows Server 2016〜2025が含まれる。",
+          "Microsoftは一時回避としてClientAllowUnsignedNtlmを1に設定する手順を示している。"
+        ],
+        "background": [
+          "NTLM署名の第1段階は、認証済みNTLMセッションに暗号セッション鍵と実際のメッセージ署名を確立・ネゴシエートさせ、リレー攻撃への露出を減らす。",
+          "第1段階ではクライアントが全接続で既定で署名を提示し、サーバーは署名付き・なしのクライアントを受け入れる。"
+        ],
+        "explanation": [
+          "影響するプロキシなどがNTLMSSP_NEGOTIATE_TARGET_INFOを設定しながら空または不完全なTargetInfoを返すと、署名または機密性を使うNTLMv2で必須のMsvAvNbComputerNameとMsvAvNbDomainNameが欠け、WindowsはSTATUS_LOGON_FAILUREで認証を拒否する。",
+          "影響する機器はネットワークトレースで空のTarget Info Listを伴うNTLMSSP_CHALLENGEを返す場合があり、イベントID 4021ではTarget MachineがNot Foundとなることがある。"
+        ],
+        "implications": [
+          "11月10日以降の更新を適用した組織では、NTLMを使う認証プロキシ、SSO、アプリケーションパッケージング経由の認証が失敗する可能性がある。",
+          "一時設定は将来削除され得るため、影響する製品はKerberos対応構成へ変更するか、NTLM署名要件に対応したソフトウェアまたはファームウェア更新が必要になる。"
+        ],
+        "caveats": [
+          "Microsoftは恒久修正の提供時期を示していない。",
+          "ClientAllowUnsignedNtlmを1にする回避策は一時的な互換性設定であり、長期解決としては推奨されていない。"
+        ],
+        "nextChecks": [
+          "影響する認証経路でイベントID 4021のTarget MachineがNot Foundとなるか、ネットワークトレースに空のTarget Info Listを伴うNTLMSSP_CHALLENGEがあるかを確認する。",
+          "対象製品がKerberos構成またはNTLM署名要件に対応する更新を提供するか、Microsoftが恒久修正の提供時期を示すかを確認する。",
+          "2027年5月の第2段階に向け、イベントID 4022・4023で署名なしの接続を確認し、署名を提示しないクライアントを把握する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CVE-2026-118737対応の署名強化が適用されるWindows 11各対応版、Windows 10 Enterprise LTSC 2021、Windows Server 2016〜2025では、NTLMを使う第三者製品の認証条件を確認し、2027年5月までに互換性を解消する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "リレー攻撃対策の段階導入が、特定のNTLM実装を持つ第三者製品の認証可否と将来のサーバー既定値を変えるためである。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:26:00+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputerの報道とMicrosoft Support KB5135557の既知問題・対象範囲・回避策・段階導入を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-mitel-micollab-kev",
+      "title": "Mitel MiCollabのAWV脆弱性5件がKEV入り、4件の対応期限は11月28日",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "sourceName": "CISA KEV",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "collectedAt": "2026-11-26T12:43:09+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは11月25日、Mitel MiCollabのAudio, Web and Video Conferencing（AWV）コンポーネントに関する5件をKEVへ追加した。対象はCVE-2026-133275、-133303、-133311、-133323、-133324で、いずれもMiCollab 10.3（10.3.0.18）以前に関わる。",
+        "MitelのCVSS 3.1評価は、未認証ブラインドOSコマンドインジェクションのCVE-2026-133323が10.0、XMLインジェクションのCVE-2026-133303が9.0である。認証バイパスのCVE-2026-133324と任意ファイルアップロードのCVE-2026-133275は各5.3、情報漏えいにつながり得るCVE-2026-133311は5.9とされる。",
+        "KEVの期限はCVE-2026-133311だけが12月9日で、残る4件は11月28日である。Mitelは10.3.0.18用のKB000129195パッチを適用するか後継版へ更新するよう案内し、すぐに適用できない場合はAWVへの外部アクセスを制限する緩和策を示した。"
+      ],
+      "comment": "5件は同じAWVコンポーネントに集まるが、入口と結果は一律ではない。ファイル型検証不足によるアップロード、事前配置した悪性コンテンツを使うXMLインジェクション、特定のシステム生成IDまたは事前配置コンテンツを条件とする情報アクセス、ブラインドのコマンドインジェクション、認証処理の不備が並ぶ。Mitel自身も組み合わせると影響が増幅し得ると記す。KEVは既知悪用を根拠に優先順位を上げるカタログであり、11月28日という4件の期限と、12月9日のCVE-2026-133311を取り違えず、まずAWVの外部公開状況とKB000129195の適用状況を照合する材料になる。",
+      "articleDetail": {
+        "conclusion": "MiCollab 10.3.0.18以前のAWVは、5件を一組としてKB000129195または後継版への更新と外部公開範囲の確認が必要になる。",
+        "facts": [
+          "CISAはMiCollab AWVのCVE-2026-133275、-133303、-133311、-133323、-133324を2026年11月25日にKEVへ追加した。",
+          "CVE-2026-133323はCVSS 10.0、CVE-2026-133303は9.0、CVE-2026-133311は5.9、残る2件は5.3である。",
+          "Mitelは10.3.0.18向けKB000129195、または後継版への更新を案内している。"
+        ],
+        "background": [
+          "Mitelの対象範囲はサポート中のMiCollab 10.3（10.3.0.18）以前である。"
+        ],
+        "explanation": [
+          "AWVの5件は、未認証のアップロード、XML注入、情報アクセス、OSコマンド注入、認証バイパスという異なる経路を含む。"
+        ],
+        "implications": [
+          "4件のKEV期限は11月28日、CVE-2026-133311の期限は12月9日であり、外部公開するAWVの更新順序に影響する。"
+        ],
+        "caveats": [
+          "KEVはランサムウェア利用をUnknownとし、攻撃者、被害組織、実際に使われた脆弱性の組み合わせを公表していない。"
+        ],
+        "nextChecks": [
+          "MiCollab 10.3.0.18以前でKB000129195が適用済みか、AWVが外部から到達可能かを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "MiCollab 10.3.0.18以前でAWVを外部公開する運用は、11月28日までの4件と12月9日までの1件というKEV期限を踏まえ更新と露出制限を判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "KEV追加に加え、ベンダーが同一の対象版、パッチ、代替のアクセス制限を明示している。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-19-synology-kev"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-19-synology-kev",
+        "originalEditionDate": "2026-11-19",
+        "checkedAt": "2026-11-26T12:43:09+09:00",
+        "developments": [
+          "CISA KEVカタログは、Synology DSMの記事掲載後にMitel MiCollab AWVの5件を新たに追加した。",
+          "今回のMiCollab項目は、同カタログの再掲ではなく、対象製品、5件のCVE、期限、ベンダーの更新・緩和策が異なる実質的な更新である。"
+        ]
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:43:09+09:00",
+        "httpStatus": 200,
+        "note": "CISA KEVフィードとMitel MISA-2026-0012を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-vvf-912-license-scope",
+      "title": "VVF 9.1.2のvDefend、ライセンスが決めるNSXの運用境界",
+      "sourceUrl": "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/vdefend/vdefend-firewall/9-1/vdefend-firewall-overview/distributed-firewall-prerequisites.html",
+      "sourceName": "Broadcom TechDocs",
+      "publishedAt": "2026-11-24T15:36:32.120Z",
+      "collectedAt": "2026-11-26T13:12:16+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "BroadcomのvDefend Firewall Prerequisitesは、VVF 9.1.2環境で使うNSX Managerを、接続先vCenterのVVFライセンスで有効化できると示した。NSX本体の別途購入は不要だが、vDefendの機能にはVVFとvDefendの両ライセンスが必要で、既存VVFライセンスはリフレッシュしなければならない。",
+        "ライセンスの境界は構成できるネットワーク機能にも及ぶ。VVF構成ではNSX Edge、Tier-0ゲートウェイ、Tier-1ゲートウェイを作成・変更できない。公式のFeature and Edition Guideを案内する説明では、VVF上でDistributed FirewallやIDS/IPSなどを使える一方、Gateway FirewallとNSX Overlay NetworksはVCFが必要な機能として区分される。",
+        "vDefendのライセンス管理にはLicense Hubが必須で、LIC 2.0の署名付きサブスクリプションファイルを扱う。したがって導入可否はNSX Managerを置けるかだけでなく、License Hub、ライセンス更新、必要なネットワーク機能がVVFの範囲に収まるかで決まる。VMSPの要否は一次資料に明記がなく、未確認である。"
+      ],
+      "comment": "この資料が分けているのは、NSX ManagerをVVFで有効化できることと、NSXのあらゆるネットワーク機能をVVFで運用できることの二点である。前者は接続先vCenterのVVFライセンスで満たせるが、vDefend機能の認可には別のvDefendライセンスをLicense Hubから適用する。後者には明確な制限があり、NSX EdgeやTier-0・Tier-1を変更する構成はVVFの対象外となる。既存環境では、ライセンスリフレッシュを済ませずにNSX Managerを有効化し、License Hubを用意しても要件が完結しない。分散ファイアウォールなどのワークロード保護を既存の分散仮想ポートグループで行う範囲と、ゲートウェイまたはオーバーレイが要る範囲を、同じ「vDefend導入」として混同しないことが必要になる。VMSPの要否は資料から確認できない。",
+      "articleDetail": {
+        "conclusion": "VVF 9.1.2でvDefendを使うには、vCenter由来のVVFライセンス、vDefendライセンス、License Hubがそろう一方、NSX EdgeとTier-0・Tier-1の作成・変更は対象外である。",
+        "facts": [
+          "NSX Managerは接続先vCenterのVVFライセンスで有効化され、NSX本体の別途購入は不要である。",
+          "vDefend機能にはVVFライセンスとvDefendライセンスの両方が必要で、既存のVVFライセンスはリフレッシュが必要である。",
+          "NSX EdgeとTier-0／Tier-1ゲートウェイの作成・変更は、VVFの利用可能な操作には含まれない。",
+          "vDefendのライセンス管理にはLicense HubとLIC 2.0の署名付きサブスクリプションファイルが必要である。"
+        ],
+        "background": [
+          "公式のVVF向け説明は、Distributed Firewall、IDS/IPS、Malware Prevention Service、NTA、NDRをVVFで使える機能として挙げる。",
+          "同説明はGateway FirewallとNSX Overlay Networksを、フルVCFプラットフォームが必要な機能として区分する。"
+        ],
+        "explanation": [
+          "VVFライセンスがNSX Manager有効化の基盤となり、vDefendのセキュリティ機能はLicense Hubを通じて適用するvDefendライセンスで認可される。",
+          "ゲートウェイ作成・変更がVVFでできないため、ワークロードの分散保護と北南向けまたはオーバーレイのネットワーク設計は、同じNSX導入でも利用条件が異なる。"
+        ],
+        "implications": [
+          "VVF利用組織は、既存の分散仮想ポートグループを使ったvDefend導入を検討できるが、NSX EdgeやTier-0・Tier-1を必要とする構成には適用できない。",
+          "既存VVF環境では、License Hub配備だけでなくライセンスリフレッシュと、VVF・vDefendの両ライセンスが有効かを確認する必要がある。"
+        ],
+        "caveats": [
+          "VMSPの要否は一次資料に明記がなく、未確認である。",
+          "一次資料は2026年11月24日の表示日を示すが、公開時刻は取得できなかった。"
+        ],
+        "nextChecks": [
+          "導入予定の構成がNSX Edge、Tier-0・Tier-1、Gateway Firewall、NSX Overlay Networksを必要とするかを確認し、必要ならVCFの機能範囲と照合する。",
+          "License HubとLIC 2.0の署名付きサブスクリプションファイルが利用でき、既存VVFライセンスのリフレッシュとvDefendライセンスの適用が完了しているかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "VVFでvDefendを導入する判断は、NSX Managerの配備可否ではなく、License Hubと両ライセンスを満たしたうえで、Edge・Tier-0・Tier-1を必要としない構成かで変わる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "ライセンス条件が機能の有無だけでなく、ゲートウェイとオーバーレイを使うネットワーク設計の可否を分けるためである。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "VVF 9.1.2のvDefendライセンス範囲は宣言した対象期間より前の公開扱いだが、同時期のVCF 9.1.2更新に伴い導入判断へ直結する。既報のVCFウォッチ重要項目として今回のキャッチアップ版で採用した。",
+        "currentNewsValue": "vDefend導入ではLicense Hubと両ライセンスに加え、NSX EdgeやTier-0・Tier-1を必要としない構成かを確認する必要がある。導入計画の機能境界を左右するため現在も価値がある。"
+      },
+      "urlCheck": {
+        "status": "restricted",
+        "checkedAt": "2026-11-26T13:12:16+09:00",
+        "httpStatus": 403,
+        "note": "TechDocsの一次資料は403だったが、URLと関連するBroadcom公式資料で要件を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-synology-dsm-critical-cves",
+      "title": "Synology DSMのOAuth APIとHTTP/2脆弱性、7.2系以下は修正版を待つ状態",
+      "sourceUrl": "https://www.synology.com/en-us/security/advisory/Synology_SA_26_21",
+      "sourceName": "Synology",
+      "publishedAt": "2026-11-19T15:47:20+08:00",
+      "collectedAt": "2026-11-26T12:43:09+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "SynologyはDSMとBeeStation OSに関するSA-26:21で、OAuth APIのCVE-2026-120382を公表した。CVSS 9.8のCWE-88で、認証なしの遠隔攻撃者が任意ファイルの読み書きとサービス拒否を行えるとしている。SA-26:20のCVE-2026-123007も同時に追う必要があり、こちらはHTTP/2を使うNGINXの問題としてCVSS 8.1が付く。",
+        "修正版はDSM 7.4なら7.4.1-90080-2以降、DSM 7.3なら7.3.2-86009-6以降で両方に対応する。SA-26:21ではDSM 7.2.2、7.2.1、7.1とBeeStation OS 1.5がOnGoingで、7.2系は7.3.2-86009-6以上への移行を推奨している。SA-26:20でも7.2系以前の修正提供はOnGoingである。",
+        "暫定策は性質別に異なる。OAuth API側はOAuth Serviceパッケージを無効化し、NGINX2Root側はコントロールパネルでHTTP/2を無効化する。11月26日の確認では両CVEはCISA KEVに掲載されず、Synologyの資料にも悪用確認や公開PoCの記載はない。"
+      ],
+      "comment": "CVE-2026-120382はOAuth APIでコマンド引数の区切りを不適切に処理するため、リモートからファイル操作やDoSへつながる。対してCVE-2026-123007は、HTTP/2のフロー制御ウィンドウが閾値を超え、NGINXワーカーのヒープバッファオーバーフローやクラッシュを招く経路である。固定版があるDSM 7.3／7.4と、修正が継続中とされたDSM 7.2.2／7.2.1／7.1を同一視できない点が重要になる。製品側が提示した一時回避は各経路を止めるものなので、該当機能を使うか、HTTP/2を有効にしているかを版番号とともに照合する材料になる。",
+      "articleDetail": {
+        "conclusion": "DSM 7.3／7.4は指定版へ更新し、7.2系以下は未提供の修正と個別の暫定策を分けて扱う必要がある。",
+        "facts": [
+          "SA-26:21のCVE-2026-120382はCVSS 9.8のOAuth APIのCWE-88である。",
+          "SA-26:20のCVE-2026-123007はCVSS 8.1で、HTTP/2構成のNGINXに関係する。",
+          "両件のDSM 7.4と7.3の指定修正版は7.4.1-90080-2と7.3.2-86009-6である。"
+        ],
+        "background": [
+          "SA-26:21はDSM 7.2.2、7.2.1、7.1とBeeStation OS 1.5をOnGoingとし、7.2系では7.3.2-86009-6以上への更新を推奨している。"
+        ],
+        "explanation": [
+          "CVE-2026-120382はOAuth APIの引数区切り処理、CVE-2026-123007はHTTP/2のフロー制御ウィンドウ超過が入口になる。"
+        ],
+        "implications": [
+          "OAuth Serviceを有効にする機器とHTTP/2を有効にする機器では、更新前に適用できる緩和策が異なる。"
+        ],
+        "caveats": [
+          "確認したSynology資料は悪用またはPoCを報告せず、11月26日確認のCISA KEVにも両CVEはなかった。"
+        ],
+        "nextChecks": [
+          "SynologyがDSM 7.2系、DSM 7.1、BeeStation OS 1.5向けの固定版を公開するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "DSM 7.2.2／7.2.1／7.1では修正版がまだ揃わず、OAuth ServiceまたはHTTP/2を使う運用は機能別の回避策と移行可否を判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "CVSS 9.8のOAuth API問題と、同じ固定版群に関わるHTTP/2問題について、対象版ごとの対応状態が公開されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "Synology DSMの重大CVEは宣言した対象期間より前の公開だが、DSM 7.2系以下とBeeStation OSで修正版が未提供の状態が残るため、今回のキャッチアップ版で未解決系統の運用判断として採用した。",
+        "currentNewsValue": "DSM 7.2系以下では固定版の提供待ちであり、OAuth ServiceとHTTP/2の利用状況に応じた回避策または移行を判断する必要がある。修正版の公開状況を追う現在性がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:43:09+09:00",
+        "httpStatus": 200,
+        "note": "Synology SA-26:21とSA-26:20を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-screenconnect-exploited-cve",
+      "title": "ScreenConnect CVE-2026-84869、サーバー更新だけでは技術者PCを守れない",
+      "sourceUrl": "https://www.connectwise.com/company/trust/advisories",
+      "sourceName": "ConnectWise",
+      "publishedAt": "2026-11-24T00:00:00+09:00",
+      "collectedAt": "2026-11-26T12:43:09+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "ConnectWise ScreenConnectのCVE-2026-84869は、接続中の技術者ホストへゲストがファイルを転送し実行させ得るクライアント側の問題である。ConnectWiseはCloudとOn-PremiseのSupport／Accessセッションを対象に挙げ、修正をホストクライアント26.6.5で提供している。",
+        "The Hacker Newsが紹介したHuntressの観測では、10月20日から11月16日までに42台のScreenConnectサーバーへ、29 IPアドレスから68万8,000件超のguest run file要求が届いた。別のMSP標的事例では、技術者PCのWindows StartupへSync.batを置くよう要求するファイル実行が記録された。",
+        "運用上の焦点は技術者クライアントの実バージョンである。ConnectWiseは26.6.5以降なら報告された端末から技術者端末へ広がる手法を遮断するとし、サーバーまたはクラウドコンソールの更新だけでは技術者クライアントの更新確認にならないとしている。"
+      ],
+      "comment": "この問題は、リモート操作サービスのサーバーを更新済みにしていても、技術者PCに入ったホストクライアントが古ければ別の境界が残る構造だ。観測されたrun file要求は無差別にサーバーを狙う形を含む一方、MSPの事例ではセッションに参加したゲストが技術者側のStartupフォルダーへバッチファイルを配置させようとした。ConnectWiseの26.6.5は2026年9月8日に出た修正であり、各技術者ワークステーションでその版以上かを確認することが、Cloud／On-Premiseを問わず資料が示す条件になる。",
+      "articleDetail": {
+        "conclusion": "CVE-2026-84869の対処はScreenConnectサーバーの版ではなく、接続する全技術者PCのホストクライアントが26.6.5以降かで確認する。",
+        "facts": [
+          "CVE-2026-84869はアクティブなリモートセッション中の不正なファイル転送・実行を許し得るScreenConnectクライアント問題である。",
+          "ConnectWiseは修正版の26.6.5を2026年9月8日にリリースした。",
+          "Huntressは10月20日から11月16日までに42サーバーへ68万8,000件超のguest run file要求を観測した。"
+        ],
+        "background": [
+          "対象はCloudとOn-PremiseのSupport／Accessセッションである。"
+        ],
+        "explanation": [
+          "ゲストから接続技術者ホストへペイロードを送り、実行を要求する経路が問題となる。"
+        ],
+        "implications": [
+          "サーバーやクラウドコンソールを更新しても、技術者クライアントの版を個別に確認しなければ保護状態は確定しない。"
+        ],
+        "caveats": [
+          "ConnectWiseは26.6.5が報告された拡散手法を遮断するとするが、初期侵入経路の確定、全ての不正配布の防止、既存侵害の除去までは保証しない。"
+        ],
+        "nextChecks": [
+          "各技術者PCのScreenConnectホストクライアントが26.6.5以降であることを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "10月20日から11月16日の観測で42サーバーへ68万8,000件超の要求があり、技術者PCの26.6.5未満という条件がMSP運用の優先確認点になる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "大量観測と技術者PCでの実行事例が示され、ConnectWiseが明示するクライアント版の確認条件に直結する。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "ScreenConnectの悪用観測は宣言した対象期間より前の公開だが、技術者PCの古いホストクライアントが残ればサーバー更新後も影響する。継続する悪用とMSPの未確認端末を扱うため今回採用した。",
+        "currentNewsValue": "大量のguest run file要求が観測され、技術者PCのホストクライアントが26.6.5未満かを確認する必要がある。CloudとOn-Premiseを問わず、端末単位の更新確認に現在も直結する。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:43:09+09:00",
+        "httpStatus": 200,
+        "note": "ConnectWiseアドバイザリとThe Hacker News報道を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-mcdonalds-japan-breach",
+      "title": "マクドナルド公式アプリ侵害、購入履歴と端末位置情報が流出対象に",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/mcdonalds-japan-warns-of-data-breach-exposing-customer-info/",
+      "sourceName": "日本マクドナルド / BleepingComputer",
+      "publishedAt": "2026-11-24T14:09:00.000Z",
+      "collectedAt": "2026-11-26T13:48:44+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "日本マクドナルドは、同社が管理する公式アプリのデータベースへ第三者が不正アクセスし、顧客に関連する情報の一部が対象になったと公表した。商品購入履歴、IPアドレス、サービス提供時に利用した携帯端末の位置情報、システム上の顧客管理用IDが含まれる。",
+        "同社によると、このIDは単体で顧客を識別できず、公式アプリの会員IDやメールアドレスとは異なる。氏名、メールアドレス、電話番号、住所、クレジットカード情報は対象外で、本件を起因とする公式アプリ・サービスの不正利用も確認されていない。",
+        "影響人数と検知日時、侵入経路は未公表である。日本マクドナルドは不正アクセスに使われた認証情報を無効化し、関連システムを調査するとともに、個人情報保護委員会へ報告した。利用者にパスワード変更などの特別な手続きは求めていない。"
+      ],
+      "comment": "この開示では、識別子そのものより、購入履歴と端末位置情報が同時に対象となったことが実務上の境界になる。氏名や連絡先、カード情報は含まれない一方、店舗利用や注文に触れた連絡は、本物らしく見せる文脈に使われ得る。公式アプリの会員IDではない顧客管理用IDは単体で識別不能とされるため、流出した項目だけから直接アカウントを操作できると読む根拠はない。パスワード変更は求められていないが、位置情報や購入内容を口実にしたアプリ・問い合わせ窓口のなりすましは、公式サイトにある連絡先で照合する必要がある。",
+      "articleDetail": {
+        "conclusion": "マクドナルド公式アプリの不正アクセスでは、購入履歴、IPアドレス、端末位置情報、顧客管理用IDが対象となった一方、氏名・連絡先・カード情報は含まれないと公表された。",
+        "facts": [
+          "日本マクドナルドは11月20日、公式アプリのデータベース内の顧客関連情報の一部に第三者による不正アクセスを確認した。",
+          "対象は商品購入履歴、IPアドレス、携帯端末の位置情報、システム上の顧客管理用IDである。",
+          "氏名、メールアドレス、電話番号、住所、クレジットカード情報は含まれず、公式アプリ・サービスの不正利用も確認されていない。"
+        ],
+        "background": [
+          "顧客管理用IDは単体で顧客を識別できず、公式アプリの会員IDや顧客のメールアドレスとは異なる。"
+        ],
+        "explanation": [
+          "日本マクドナルドは不正アクセスに使われた認証情報を無効化し、関連システムを調査している。"
+        ],
+        "implications": [
+          "購入履歴と端末位置情報が使われる場合、店舗利用や注文を口実にした連絡がもっともらしく見える可能性があるため、公式窓口での確認が必要になる。",
+          "同社は利用者にパスワード変更などの特別な手続きを求めていない。"
+        ],
+        "caveats": [
+          "影響人数、検知日時、侵入経路、流出期間は公表されていない。"
+        ],
+        "nextChecks": [
+          "日本マクドナルドが調査を通じて影響範囲、侵入経路、告知の更新を公表するかで、利用者の対応範囲が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "公式アプリの購入履歴と端末位置情報が流出対象となったため、氏名・カード情報がなくても利用文脈を悪用する連絡は公式窓口での確認が重要になる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象データの種類と、氏名・連絡先・カード情報が対象外である境界が公式に示され、利用者の警戒対象を具体的に分けられる。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、マクドナルド公式アプリ侵害の報道は対象期間内に公開された。通常の1日窓より前でも、国内利用者への注意喚起を含む期間内の開示として採用した。",
+        "currentNewsValue": "氏名やカード情報は対象外とされた一方、購入履歴と端末位置情報は利用文脈を悪用する連絡に使われ得る。調査中の影響範囲と公式案内を確認する現在性がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:48:44+09:00",
+        "httpStatus": 200,
+        "note": "日本マクドナルドの公式告知で対象項目、対象外項目、対応内容を確認し、BleepingComputerの掲載時刻と照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-kev-nov23-additions",
+      "title": "MONAI LabelとMailAssureのKEV追加、期限は11月26日",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-133968",
+      "sourceName": "CISA KEV Catalog",
+      "publishedAt": "2026-11-24T00:00:00+09:00",
+      "collectedAt": "2026-11-26T12:51:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは11月23日、Project MONAI MONAI LabelのCVE-2026-133968と、N-able MailAssure（SpamExperts）のCVE-2026-134624をKEVへ追加した。両方の対応期限は11月26日で、MONAIはパストラバーサルによる任意ファイル書き込み、MailAssureはLDAP同期接続チェックのSSRFとして登録されている。",
+        "MONAI Labelはデータストア外への書き込みからアプリケーションコード、SSH authorized_keys、cronの変更を通じてRCEへ発展し得る。GitHub advisoryでは既定構成で到達可能なネットワーククライアントが悪用でき、修正はGHSA-qc22-rmgc-vg94で案内されている。",
+        "MailAssureは認証済みAPI利用者が内部ホスト・ポートへの到達性を調べ、細工したデータを内部サービスへ送れるSSRFである。CISA記録だけでは11月20日のMailAssure障害と同じ侵害経路かは確認できず、両者を同一視できない。"
+      ],
+      "comment": "同じ期限でも、対応単位は異なる。MONAI Labelでは、公開到達性と既定の認証設定を確認したうえで、GHSA-qc22-rmgc-vg94の対応内容を確認する必要がある。任意ファイル書き込みがRCEになるのは、書き込み先が実行コード、鍵、スケジューラ設定へ届く条件である。MailAssureはLDAP同期の接続チェックから内部ネットワークに到達するSSRFで、CISAの説明は認証済みAPI利用者を前提とする。11月20日の大規模障害との経路は未確認なので、障害の原因として断定せず、LDAP同期機能の利用状況を別に確認する。",
+      "articleDetail": {
+        "conclusion": "11月26日が期限の2件は、MONAI Labelの外部書き込み経路とMailAssureの認証済みAPI経由SSRFを、それぞれの条件で修正・確認する必要がある。",
+        "facts": [
+          "CISAはCVE-2026-133968とCVE-2026-134624を11月23日にKEVへ追加し、両方の期限を11月26日とした。",
+          "MONAI Labelではデータストア外への任意ファイル書き込みがRCEにつながり得る。",
+          "MailAssureではLDAP同期接続チェックのSSRFにより、認証済みAPI利用者が内部ホスト・ポートへ到達できる。"
+        ],
+        "background": [
+          "CISAは両CVEのランサムウェア利用をUnknownとしている。"
+        ],
+        "explanation": [
+          "MONAIの任意書き込みは、書き込み先次第でアプリコードや鍵、cronを変更できる。",
+          "MailAssureのSSRFは内部サービスへの接続とデータ送信を可能にするが、CISA説明は認証済みAPI利用者を条件とする。"
+        ],
+        "implications": [
+          "MONAI Labelの到達可能な既定構成と、MailAssureのLDAP同期を使う環境は、同日中に別の確認対象となる。"
+        ],
+        "caveats": [
+          "CISA記録は11月20日のMailAssure障害との同一経路を示していない。"
+        ],
+        "nextChecks": [
+          "11月26日までにMONAI Labelの公開到達性とGHSA-qc22-rmgc-vg94の対応内容、MailAssureのLDAP同期の利用状況を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CVE-2026-133968とCVE-2026-134624は11月26日がKEV期限で、MONAI Labelの公開到達性とMailAssureのLDAP同期を使う環境の同日までに対応確認が必要となる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "CISAが2件をKEVへ追加し、影響条件と期限が具体的に示されている一方、MailAssure障害との関連は未確認として区別できる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "CISA KEVのMONAI LabelとMailAssure追加は宣言した対象期間より前の扱いだが、対応期限が11月26日に到来するため、欠番を補う今回の版で期限当日の実務対応として採用した。",
+        "currentNewsValue": "KEV期限が当日に迫り、MONAI Labelの公開到達性とMailAssureのLDAP同期利用を確認して対応を完了させる必要がある。既知悪用として期限管理に直結する現在性がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:51:00+09:00",
+        "httpStatus": 200,
+        "note": "CISA KEVとMONAI advisory、N-able advisory参照先を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-kev-nov24-additions",
+      "title": "OptimizelyとIdunno AntiCsrfがKEV入り、期限は11月27日",
+      "sourceUrl": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "sourceName": "CISA KEV Catalog",
+      "publishedAt": "2026-11-24T00:00:00+09:00",
+      "collectedAt": "2026-11-26T12:52:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAは11月24日、Optimizely Web ExperimentationのCVE-2026-132224と、ASP.NET用Idunno.AntiCsrfのCVE-2026-131914をKEVへ追加した。両方の期限は11月27日で、前者は顧客ユーザーのなりすましとProject JavaScript改変、後者は未認証のオブジェクト逆シリアル化RCEに関わる。",
+        "Optimizelyは11月16日、signup flowの脆弱性が悪用され、一部顧客プロジェクトへ悪性JavaScriptが注入されたと説明する。脆弱性は16:10 UTCに閉じ、注入コードは22:24 UTCまでに除去されたが、該当スニペットを読み込んだページの訪問者ブラウザが影響範囲となった。",
+        "Idunno.AntiCsrfは2008年12月の0.9.1 Betaが最後で、CVSS 4.0は9.3、公式修正はない。利用中のASP.NET WebFormsアプリではパッチ待ちではなく、ライブラリを停止して支持されるanti-CSRF機構へ置換することが緩和策となる。"
+      ],
+      "comment": "この2件は、KEVの期限が同じでも対処が異なる。Optimizelyはサービス側で悪性コードの配信停止を表明している一方、利用者側ではWeb Experimentationスニペットを読み込んだページが影響範囲に該当するかを確認する条件が残る。Idunno.AntiCsrfは、匿名到達可能なWebFormsページへのPOSTで、Page_Loadより前に未検証トークンを逆シリアル化する構造である。更新版がないため、Idunno.AntiCsrfの利用停止と支持されるanti-CSRF機構への置換を判断する必要がある。",
+      "articleDetail": {
+        "conclusion": "11月27日のKEV期限までに、Optimizely利用者は影響時間帯のWeb配信を確認し、Idunno.AntiCsrf利用者は未修正ライブラリの停止・置換を進める必要がある。",
+        "facts": [
+          "CISAはCVE-2026-132224とCVE-2026-131914を11月24日にKEVへ追加し、期限を11月27日とした。",
+          "Optimizelyは11月16日のsignup flow悪用後、16:10 UTCに脆弱性を閉じ、22:24 UTCまでに注入コードを除去した。",
+          "Idunno.AntiCsrfのCVE-2026-131914はCVSS 4.0 9.3で、アクティブな悪用が報告されている。"
+        ],
+        "background": [
+          "Idunno.AntiCsrf 0.9.1 Betaは2008年12月が最後の公開で、活動中の保守者も公式パッチもない。"
+        ],
+        "explanation": [
+          "Idunno.AntiCsrfは匿名到達可能なWebFormsページのPOSTを処理する際、Page_Load前に未検証のフォームトークンを逆シリアル化し、IIS worker processでコード実行へ至り得る。",
+          "Optimizelyの改変JavaScriptはホスト型アセットから配布され、影響ページを訪れたブラウザで実行された。"
+        ],
+        "implications": [
+          "Optimizelyの利用者はスニペットの稼働ページと露出時間帯を確認し、Idunnoの利用者はパッチではなく置換を計画する必要がある。"
+        ],
+        "caveats": [
+          "CISAは両件のランサムウェア利用をUnknownとしており、Optimizelyの調査も継続中である。"
+        ],
+        "nextChecks": [
+          "11月27日までにOptimizelyでWeb Experimentationスニペットを使うページを確認し、ASP.NETアプリでのIdunno.AntiCsrf利用停止・置換を進める。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "11月27日のKEV期限までに、Optimizelyの該当スニペットを読み込むページの確認と、Idunno.AntiCsrfを使うASP.NETアプリでの停止・置換という異なる運用判断が必要になる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "サービス侵害時の配信範囲と、保守終了ライブラリの未認証RCEという、利用者側で確認可能な条件が一次資料に示されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-23-litellm-kev-followup"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-23-litellm-kev-followup",
+        "originalEditionDate": "2026-11-23",
+        "checkedAt": "2026-11-26T12:52:00+09:00",
+        "developments": [
+          "CISA KEVカタログは、前回記事のLiteLLM追加後にOptimizely Web ExperimentationとIdunno.AntiCsrfの2件を新たに追加した。",
+          "今回の追加は対象製品、脆弱性、期限、対応策が異なる実質的な更新である。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "CISA KEVのOptimizelyとIdunno AntiCsrf追加は宣言した対象期間より前の扱いだが、対応期限が11月27日に迫り、未保守ライブラリの置換も必要なため、今回のキャッチアップ版で採用した。",
+        "currentNewsValue": "Optimizelyの利用ページ確認と、パッチのないIdunno AntiCsrfの停止・置換は期限前に判断が必要である。既知悪用の対象を利用条件ごとに洗い出すため、現在も高い実務価値がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:52:00+09:00",
+        "httpStatus": 200,
+        "note": "CISA KEV、Optimizely incident report、Mandiant disclosureを照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-vmsa-0009-exploit-followup",
+      "title": "CVE-2026-123890、公開PoCとMetasploit PRで武器化が進展",
+      "sourceUrl": "https://github.com/dinosn/CVE-2026-123890",
+      "sourceName": "Dinosn GitHub repository",
+      "publishedAt": "2026-11-23T04:56:14Z",
+      "collectedAt": "2026-11-26T17:17:27+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "VCF・VMware・競合"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "11月23日、DinosnがVMSA-2026-0009のCVE-2026-123890を対象にしたPoCをGitHubで公開した。READMEはvCenter 8.0.3 U3kで、認証情報なしのセッション鍵開示から管理者セッションの確立までライブ検証したと記しており、既出の認証バイパスが公開コードで追試可能な段階へ進んだ。",
+        "一方でPoCのDB段階は未完成で、実機ではaccess-deniedのままとされる。11月24日にはRapid7のMetasploit PR #22173にも、同CVE向けauxiliaryモジュール、補助コード、テスト、文書を含む11ファイルの更新が入った。PRは未マージだが、コード自体は公開されている。",
+        "CISAのKEVではこのCVEの対応期限が11月23日で既に経過した。フォーラムではMatildaと名乗る売り手が3万ドルのエクスプロイトを販売中と主張しているが、機能や互換性は独立に検証されていない。これはVMSA-2026-0011とは別のCVEを扱う続報である。"
+      ],
+      "comment": "この続報で変わったのは、既にKEV入りしていたCVE-2026-123890に、実機検証を記すPoCと、未マージながら読めるMetasploitの実装が重なった点です。DinosnのREADMEはvCenter 8.0.3 U3kで管理者セッションまで確認したとする一方、DB段階は未実装でaccess-deniedのままと明示しています。したがって、公開物を完全な侵害連鎖と扱う根拠はありませんが、影響版を運用する組織にとっては、11月23日に期限を過ぎたKEV対応と、外部到達性の確認を後回しにできない状況です。Matildaの販売主張は未検証であり、脅威の実証として数えるべきではありません。",
+      "articleDetail": {
+        "conclusion": "CVE-2026-123890は、公開PoCと未マージのMetasploit PRにより、VMSA-2026-0009公表時よりも実装情報が入手しやすくなった続報です。",
+        "facts": [
+          "Dinosnは11月23日にCVE-2026-123890のPoCをGitHubで公開し、READMEでvCenter 8.0.3 U3kでのライブ検証を記した。",
+          "Rapid7のMetasploit PR #22173は未マージのopen状態で、11月24日のコミット後に11ファイルの変更を含む。",
+          "CISA KEVでのCVE-2026-123890の対応期限は11月23日である。"
+        ],
+        "background": [
+          "CVE-2026-123890はVMSA-2026-0009のvCenter認証バイパスであり、VMSA-2026-0011のCVE-2026-123903とは別件である。"
+        ],
+        "explanation": [
+          "PoCは認証情報なしのセッション鍵開示と任意の検証段階を説明し、記載された実機テストでは管理者セッションの確立まで確認したとしている。",
+          "Metasploit PRはauxiliaryモジュールと支援コード、テスト、文書を公開するが、masterにはまだ取り込まれていない。"
+        ],
+        "implications": [
+          "影響版のvCenterを運用する組織は、KEV期限経過後の未適用資産と外部から到達可能な管理プレーンを優先して把握する必要がある。"
+        ],
+        "caveats": [
+          "DinosnのPoCはDB段階が未実装で、ライブのopen呼び出しもaccess-deniedである。",
+          "Matildaによる3万ドルの販売主張は独立に検証されていない。"
+        ],
+        "nextChecks": [
+          "Rapid7 PR #22173のマージ有無と、PoCの未実装DB段階に関する更新を確認する。",
+          "自組織のCVE-2026-123890対応状況と、11月23日を過ぎたKEV期限に対する未適用資産を確認する。"
+        ]
+      },
+      "vcfReview": {
+        "products": [
+          "vCenter Server",
+          "VMware Cloud Foundation"
+        ],
+        "versions": [
+          "vCenter 8.0.3 U3k"
+        ],
+        "affectedUsers": "CVE-2026-123890の影響を受けるvCenterを運用し、未適用資産または外部到達可能な管理プレーンを持つ組織。",
+        "operationalImpact": "公開PoCとMetasploit実装により、未適用のvCenter認証バイパスに関する実装情報が入手しやすくなっている。",
+        "knownConstraints": [
+          "DinosnのPoCはDB段階が未実装で、ライブのopen呼び出しもaccess-deniedである。",
+          "Matildaによる3万ドルの販売主張は独立に検証されていない。"
+        ],
+        "officialSources": [
+          "https://github.com/dinosn/CVE-2026-123890",
+          "https://github.com/rapid7/metasploit-framework/pull/22173"
+        ],
+        "fieldSources": [],
+        "evidenceClassification": {
+          "officialFacts": [
+            "DinosnのREADMEはvCenter 8.0.3 U3kでのライブ検証を記している。",
+            "Rapid7のPR #22173は未マージで公開されている。"
+          ],
+          "fieldReports": [],
+          "inference": [
+            "公開実装情報の増加により、未適用資産と管理面の到達性を優先して確認する必要性が高まる。"
+          ]
+        },
+        "nextChecks": [
+          "Rapid7 PR #22173のマージ有無と、PoCの未実装DB段階に関する更新を確認する。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:17:27+09:00",
+        "reason": "対象期間より前の11月23日公開だが、11月24日に同CVE向けMetasploit PRの更新が公開され、武器化状況の実質的な変化が確認された。",
+        "currentNewsValue": "KEV期限を過ぎたvCenter認証バイパスについて、公開PoCと未マージのMetasploit実装を踏まえた未適用資産・到達性の確認が必要である。"
+      },
+      "attentionAnalysis": {
+        "whyNotable": "CVE-2026-123890の影響版vCenterを運用する組織は、11月23日に期限を過ぎたKEV対応について、公開PoCと未マージのMetasploit実装が現れた条件で未適用資産と到達性の判断を更新する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "実機検証を記すPoC、公開中のRapid7 PR、期限経過済みのKEVという別の一次資料が、同じCVEの実装情報と対応期限を示している。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-20-vmsa-0009"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-20-vmsa-0009",
+        "originalEditionDate": "2026-11-20",
+        "checkedAt": "2026-11-26T17:17:27+09:00",
+        "developments": [
+          "11月23日に実機検証を記すPoCが公開され、11月24日にRapid7の未マージPRへ同CVE向け実装の更新が入った。"
+        ]
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T17:17:27+09:00",
+        "httpStatus": 200,
+        "note": "DinosnのGitHubリポジトリ、Rapid7のPR #22173、CISA KEVエントリを直接確認した。"
+      }
+    },
+    {
+      "id": "2026-11-26-linux-kvm-nested-virt-cve",
+      "title": "Linux KVMのネスト仮想化欠陥、AMDでゲストからホストRAMへ",
+      "sourceUrl": "https://www.docs.virtfusion.com/6.2/security/cve-2026-99312/",
+      "sourceName": "VirtFusion / NVD",
+      "publishedAt": "2026-11-21T08:50:23.000Z",
+      "collectedAt": "2026-11-26T12:53:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ",
+        "VCF・VMware・競合"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Linux KVM/x86のCVE-2026-99312は、AMDホストでネスト仮想化が有効なとき、ゲストVMからホストメモリの読み書きを可能にする欠陥で、Linux kernel CNAのCVSSは8.8である。VirtFusionの運用資料によれば、研究ではゲストから約127GBのホストRAMをマップして検索し、DigitalOceanも自社ホストで再現した。",
+        "原因は、ネストVMがページング無効で動く間に仮想CPUへINITが届くと、KVMが外側VMへ戻る際にメモリ管理状態をリセットしないことにある。外側VMに残るポインタがゲスト・ホスト境界を越える経路となり、修正はINITごとに状態をリセットする。",
+        "安定カーネル7.3.5、6.18.64、6.12.118には修正が入った。影響条件はAMD、ネスト仮想化有効、未修正カーネルの組み合わせで、Intelホストは対象外とされる。配布版カーネルの修正提供状況が不明な間は、AMDホストでネスト仮想化を無効化する。"
+      ],
+      "comment": "この欠陥の運用上の論点は、ゲストとホストの境界を越えてホストRAMへ到達し得る点である。CPU modeをhost-passthroughやhost-modelへ変えることは緩和策にならず、AMDのKVMホストでkvm_amdのnestedが有効かを確認する必要がある。修正済みの安定カーネル番号を把握しても、実際に配布版がそれをバックポート済みか、再起動後にそのカーネルで起動しているかは別の確認になる。ネスト仮想化を既に無効にしたホストはこの経路の影響条件外である。",
+      "articleDetail": {
+        "conclusion": "AMDでネスト仮想化を有効にした未修正KVMホストは、ゲストからホストRAMへ到達する条件を持つため、修正版カーネルの稼働確認までネスト仮想化を無効化する必要がある。",
+        "facts": [
+          "CVE-2026-99312はLinux KVM/x86 nested SVMの欠陥で、Linux kernel CNAのCVSSは8.8である。",
+          "研究ではゲストから約127GBのホストRAMをマップして検索し、DigitalOceanは自社ホストで再現した。",
+          "修正は安定カーネル7.3.5、6.18.64、6.12.118に入った。"
+        ],
+        "background": [
+          "このCVEは11月18日に公開され、影響はAMDのネスト仮想化に限定される。"
+        ],
+        "explanation": [
+          "ネストVM実行中のINITでメモリ管理状態が戻されず、外側VMに残るポインタを通じてホストメモリへアクセスできる。"
+        ],
+        "implications": [
+          "同一ホスト上の他ゲストを含むホストRAMへ到達し得るため、仮想化基盤のゲスト・ホスト分離に影響する。"
+        ],
+        "caveats": [
+          "安定カーネルに修正があっても、全Linuxディストリビューションが修正版パッケージを配布済みとは限らない。"
+        ],
+        "nextChecks": [
+          "AMD KVMホストでnestedの有効状態、実行中カーネル、配布版の修正提供、再起動後の稼働版を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AMDホストでネスト仮想化を有効にしている運用は、修正カーネルを実際に起動するまで、ゲスト・ホスト境界を守るためnestedを無効化する判断が必要になる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "影響条件、再現確認、約127GBのメモリ読み取り、修正カーネルと緩和策が運用資料で具体化されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "vcfReview": {
+        "products": [
+          "Linux KVM/x86",
+          "AMD nested SVM"
+        ],
+        "versions": [
+          "7.3.5",
+          "6.18.64",
+          "6.12.118"
+        ],
+        "affectedUsers": "AMDのKVMホストでネスト仮想化を有効にし、修正が入る前のカーネルを稼働させる仮想化基盤の運用組織。",
+        "operationalImpact": "ネストVMの実行条件下でゲストからホストRAMへ到達し得るため、同一ホスト上の他ゲストを含む隔離境界に影響する。修正版を稼働させるまでnested無効化を判断する必要がある。",
+        "knownConstraints": [
+          "影響はAMDのネスト仮想化に限られ、Intelホストは対象外とされる。配布版が修正カーネルを提供済みかは個別に確認が必要である。"
+        ],
+        "officialSources": [
+          "https://www.docs.virtfusion.com/6.2/security/cve-2026-99312/"
+        ],
+        "fieldSources": [],
+        "evidenceClassification": {
+          "officialFacts": [
+            "VirtFusionの運用資料は、影響条件、安定カーネルの修正版、nested無効化という緩和策を示している。"
+          ],
+          "fieldReports": [],
+          "inference": [
+            "実行中カーネルとnestedの有効状態を確認しない限り、修正版パッケージの導入だけではゲスト・ホスト分離の回復を判断できない。"
+          ]
+        },
+        "nextChecks": [
+          "AMD KVMホストでnestedの有効状態、実行中カーネル、配布版の修正提供、再起動後に修正版で稼働していることを確認する。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "Linux KVMのネスト仮想化欠陥は宣言した対象期間より前の公開だが、AMDホストで未修正系統が残り得る。ゲストからホストRAMへ至る影響を確認するため、今回のキャッチアップ版でVCF・仮想化運用の重要項目として採用した。",
+        "currentNewsValue": "AMD KVMでnestedを有効にしたホストは、修正カーネルを実際に起動するまで隔離境界への影響が残る。稼働カーネルと緩和策を確認する作業に直結するため現在も重要である。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:53:00+09:00",
+        "httpStatus": 200,
+        "note": "VirtFusion security advisoryとNVD recordを照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-rackspace-spot-shutdown",
+      "title": "Rackspace Spotを12月8日に終了、侵害後に移行期限を設定",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/rackspace-shuts-down-spot-cloud-platform-after-security-breach/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-24T21:37:00.000Z",
+      "collectedAt": "2026-11-26T13:16:00+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Rackspaceは、侵害を受けたRackspace Spotを2026年12月8日午後5時（Central Time）に恒久的に終了すると顧客へ通知した。その時点で残っているワークロードは終了し、顧客データにはアクセスできなくなる。Spot利用者は期限までにデータを回収し、別プラットフォームへ移行する必要がある。",
+        "これは11月17日のRackspace Spot侵害に対する実質的な更新である。漏えい認証情報を使った攻撃者は、顧客Kubernetesクラスタで不正ポッドを作成し、Kubernetes Secretsを読み、ノードとボリュームを列挙できた。Rackspaceは終了判断を、この事案をレビューした後に下したとしている。",
+        "Rackspaceは、侵害通知の有無によらず全Spot顧客にAPIトークン、リフレッシュトークン、kubeconfig、Kubernetes Secretsを侵害された可能性があるものとして扱うよう求めた。影響環境は中核インフラから分離され、他の顧客環境や中核システムへの不正アクセスの証拠は確認していないという。終了撤回や期限延長は示されていない。"
+      ],
+      "comment": "11月17日の侵害への対応に加え、今回の通知ではRackspace Spot自体を12月8日に停止するため、サービスを継続利用する選択肢がなくなる。移行作業と資格情報対応は別々の完了条件を持つ。ワークロードとデータは停止時刻までに移す必要があり、APIトークン、リフレッシュトークン、kubeconfig、Secretsは侵害前提で扱う。Rackspaceが示した11月16日以降のアクセスログ、不審なIPアドレス・範囲・接頭辞は、移行対象を棚卸しする材料ではなく、侵害の痕跡を確認するための材料である。終了判断の撤回や期限延長は公表されていないため、Spot依存の実行環境は12月8日を固定期限として扱う範囲になる。",
+      "articleDetail": {
+        "conclusion": "Rackspace Spotは11月17日の侵害後、2026年12月8日午後5時（Central Time）に終了するため、顧客はデータ・ワークロードの移行と露出した認証情報の扱いを同時に完了させる必要がある。",
+        "facts": [
+          "Rackspace Spotは2026年12月8日午後5時（Central Time）に恒久的に終了し、残るワークロードは終了、顧客データはアクセス不能になる。",
+          "Rackspaceは顧客に、期限までのデータ回収と別プラットフォームへのワークロード移行を指示した。",
+          "11月17日の侵害では、攻撃者が不正ポッド作成、Kubernetes Secrets読み取り、ノードとボリュームの一覧取得を行えた。",
+          "Rackspaceは全Spot顧客に、APIトークン、リフレッシュトークン、kubeconfig、Kubernetes Secretsを侵害された可能性があるものとして扱うよう求めた。"
+        ],
+        "background": [
+          "Rackspace Spotは、Kubernetesでコンテナ化アプリケーションを展開・管理するクラウドプラットフォームである。",
+          "11月17日の侵害は漏えいした認証情報を使って行われ、Rackspaceは11月18日に侵入を把握し、11月21日にサービスを復旧した。"
+        ],
+        "explanation": [
+          "Rackspaceは侵害のレビュー後にサービスを終了する判断を下し、停止時刻に残るワークロードを終了するため、移行期限がサービス継続の境界になる。",
+          "Secretsや各種トークンが読まれた可能性があるため、別基盤への移行後も、Spotで使った認証情報を安全なものとして引き継げない。"
+        ],
+        "implications": [
+          "Spot利用者は12月8日午後5時（Central Time）までに、ワークロードとデータを別プラットフォームへ移行しなければならない。",
+          "全Spot顧客は、侵害通知の有無を問わず、APIトークン、リフレッシュトークン、kubeconfig、Kubernetes Secretsを侵害前提で扱う必要がある。"
+        ],
+        "caveats": [
+          "Rackspaceは影響環境が中核インフラから分離され、他の顧客環境や中核システムへの不正アクセスの証拠を確認していないと説明している。",
+          "終了判断の撤回、移行期限の延長、個別顧客で実際に読まれたSecrets・トークンの範囲は示されていない。"
+        ],
+        "nextChecks": [
+          "Rackspaceが12月8日の終了時刻を変更するか、移行期限の延長または代替支援を発表するかを確認する。",
+          "11月16日以降のアクセスログで、Rackspaceが示したIPアドレス23.224.79.106、範囲23.224.0.0/15、i1・glm-・probeの不審な接頭辞に結び付く操作があるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Rackspace Spot利用者は、12月8日午後5時（Central Time）までにデータとワークロードを移行しつつ、侵害通知の有無に関係なくSpotで使ったトークン、kubeconfig、Secretsを侵害前提で扱う必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "侵害後の資格情報対応に加え、停止時刻までのサービス移行が全利用者の具体的な期限となったためである。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-23-rackspace-spot-breach"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-23-rackspace-spot-breach",
+        "originalEditionDate": "2026-11-23",
+        "checkedAt": "2026-11-26T13:16:00+09:00",
+        "developments": [
+          "RackspaceはRackspace Spotを2026年12月8日午後5時（Central Time）に恒久的に終了すると顧客へ通知した。",
+          "全Spot顧客は、侵害通知の有無に関係なくAPIトークン、リフレッシュトークン、kubeconfig、Kubernetes Secretsを侵害前提で扱うよう求められた。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、Rackspace Spot終了の報道は対象期間内に公開された。通常の1日窓より前でも、12月8日の移行期限を伴う利用者向けの運用変更として採用した。",
+        "currentNewsValue": "侵害後に設定されたSpot終了日まで時間が限られ、利用者はワークロード移行、データ退避、代替基盤の確認を急ぐ必要がある。期限付きのサービス終了情報として現在も実務価値が高い。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T13:16:00+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputerが入手したRackspaceの顧客向けセキュリティ通知とRackspace Spotの公開情報を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-azure-apim-credential-theft",
+      "title": "Azure APIM Classicの認証情報窃取、閉鎖済み経路と別に利用者側ローテーションが残る",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/microsoft-azure-flaw-exploited-to-steal-customers-api-credentials/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-24T04:42:00+09:00",
+      "collectedAt": "2026-11-26T12:52:34+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "MicrosoftはAzure API Management（APIM）Classicの脆弱性が悪用され、顧客の保存済みAPI認証情報に不正アクセスされ得たと明らかにした。11月18日に検知し、翌19日に管理機能への不正なアクセス経路を閉鎖したが、事前に取得された顧客側の認証情報は自動失効しない。",
+        "推奨セキュリティ設定に沿っていないClassicインスタンスでは、管理機能への到達から管理操作とシークレット参照が可能だった。対象になり得るのはNamed Valuesのシークレット、IdPやOpenID Connectのクライアントシークレット、サブスクリプションキー、直接管理API用トークンで、付与権限に応じて後段のアプリケーション、サービス、バックエンドにも到達し得る。",
+        "Microsoftによれば影響範囲はDeveloper、Basic、Standard、PremiumのAPIM Classicで、ConsumptionとAPIM v2は対象外である。ノルウェーNSMはEquinor、Skagerak Energiを含むエネルギー企業への攻撃と関連付けており、Classic利用者はサービス側の経路閉鎖と、自組織の認証情報ローテーションを別の作業として扱う必要がある。"
+      ],
+      "comment": "APIMはAPI公開・保護・監視・管理を担うため、ここに置く値はゲートウェイ内だけの設定値とは限らない。今回の経路は、推奨設定から外れたClassicの管理面に到達して、Named ValuesやIdP／OIDCのクライアントシークレット、サブスクリプションキー、直接管理API用トークンを参照し得るものだった。Microsoftが11月19日に経路を閉じてMicrosoft管理の鍵を必要に応じて更新しても、すでに複製された顧客認証情報の有効性は変わらない。Classicの対象4階層を使う組織では、インスタンスの設定確認だけで完了とせず、当該値が許すバックエンドへの到達範囲とローテーション対象を対応付けることが、この事案固有の切り分けになる。",
+      "articleDetail": {
+        "conclusion": "APIM Classicの対象4階層では、閉鎖済みの管理経路と、既に取得された可能性がある顧客認証情報のローテーションを分けて扱う必要がある。",
+        "facts": [
+          "Microsoftは11月18日に問題を特定し、11月19日にAPIM Classicの不正な管理アクセス経路を閉鎖した。",
+          "露出し得た値にはNamed Valuesのシークレット、IdP・OIDCのクライアントシークレット、サブスクリプションキー、直接管理API用トークンが含まれる。",
+          "影響範囲はDeveloper、Basic、Standard、PremiumのAPIM Classicで、ConsumptionとAPIM v2は対象外である。"
+        ],
+        "background": [
+          "Azure API Managementはアプリケーション、サービス、データをつなぐAPIを公開・保護・監視・管理するクラウドサービスである。"
+        ],
+        "explanation": [
+          "推奨設定ではないClassicインスタンスで管理機能に不正到達すると、管理操作を通じてサービス内のシークレットを参照できた。",
+          "取得された値は、その権限に応じて追加のアプリケーション、サービス、バックエンドへのアクセスに使われ得るため、経路閉鎖だけでは既存の値を無効化しない。"
+        ],
+        "implications": [
+          "Microsoftの緩和策はMicrosoft管理の鍵・認証情報を必要に応じて更新した一方、顧客が事前に窃取された可能性のある認証情報を自らローテーションする必要がある。",
+          "NSMはEquinor、Skagerak Energiを含むノルウェーのエネルギー企業への攻撃と結び付け、他国・他業界への影響も報告している。"
+        ],
+        "caveats": [
+          "公開情報は影響を受けた顧客数や、どの顧客認証情報が取得されたかを示していない。",
+          "MicrosoftはMicrosoftホストのAPI Managementへの緩和策が展開済みとしたが、NSMがランタイム版の確認を促した理由は公表情報だけでは明確でない。"
+        ],
+        "nextChecks": [
+          "Developer、Basic、Standard、PremiumのAPIM Classicを使う場合、Named Values、IdP・OIDCシークレット、サブスクリプションキー、直接管理APIトークンのうち、11月19日以前に露出し得た値とその権限範囲を特定する。",
+          "MicrosoftまたはNSMが、影響範囲、ランタイム版確認の必要性、侵害指標に関する追加情報を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "対象4階層のAPIM Classicで11月19日より前に管理面が露出していた組織は、経路が閉鎖済みでも、保存していた認証情報のローテーション範囲を権限ごとに判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "Microsoftが悪用と対象階層、閉鎖日、自動失効しない顧客認証情報を明示し、NSMも実際の攻撃との関連を報告している。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "Azure APIM Classicの認証情報窃取は宣言した対象期間より前の公開だが、閉鎖済みサービス経路とは別に利用者側の認証情報ローテーションが残るため、欠番を補う今回の版で重要な未完対応として採用した。",
+        "currentNewsValue": "Classicサービスが閉鎖済みでも、流出した可能性があるAPI認証情報の失効とローテーションは利用者側に残る。既存のキー、接続先、監査ログを確認する判断に現在も直結する。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:52:34+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputerの報道、Microsoft Service Health advisory MZK9-GH0の記述、NSMの公開情報を照合した。"
+      }
+    },
+    {
+      "id": "2026-11-26-checkpoint-management-compromise",
+      "title": "Check Point管理サーバー侵害、GT13が22組織で認証バイパスを侵害後に利用",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/hackers-compromise-check-point-servers-in-22-organizations/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-25T01:15:00+09:00",
+      "collectedAt": "2026-11-26T12:55:35+09:00",
+      "editionDate": "2026-11-26",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "GreyNoiseは、Check Point Security Management Serverを標的にしたGT13の侵害活動を追跡し、17か国の少なくとも22組織で確認した。観測できた活動期間は10月17日から11月2日までで、政府、金融、エネルギー、運輸、鉱業、エンジニアリング、製造にまたがる。持続的アクセスが残っているため、GreyNoiseは活動が継続している可能性をみる。",
+        "侵害後には、Check Point SmartConsoleの認証バイパスCVE-2026-16232を使い、Chiselトンネル越しに複数の管理サーバーへ100件超の管理タスクを実行した。ファイアウォールDBとInternal CAの複製、新しい証明書の作成、セキュリティポリシーのアンロードが観測され、認証情報、設定、内部証明書を含む資産が中継先へ送られた。",
+        "攻撃者はCVE-2026-61500で侵害したRejetto HFSサーバーを中継（hop）にし、既に侵害していたCheck Point機器と通信した。CVE-2026-16232は7月にゼロデイとして警告されKEVにも追加され、Check PointはR81.10、R81.20、R82、R82.10などに対する7月22日公開の最新Jumbo Hotfixを示している。GreyNoiseは最初の侵入経路を特定できていない。"
+      ],
+      "comment": "Security Management Serverはファイアウォールの設定とポリシーを集中管理する信頼境界である。GT13では、HFSをCVE-2026-61500で侵害して中継箱を作り、既に到達済みだったCheck Point機器へChisel経由で接続した。そこでCVE-2026-16232のスクリプトを使うと、アプリケーションログイントークンから管理者権限を得られ、DB、Internal CA、設定、認証情報を集める経路になる。GreyNoiseは初期侵入を特定しておらず、CVE-2026-16232が入口だったとは言えない。一方で、10月20日から26日に100件超の管理タスク、10月26日には24台への一括証明書操作を試みたが失敗したことを観測しており、管理サーバー側でこの認証方式とポリシー変更、証明書操作の痕跡を関連付けることが重要になる。",
+      "articleDetail": {
+        "conclusion": "GT13は22組織のCheck Point管理サーバーに持続的アクセスを残した可能性があり、CVE-2026-16232は確認済みの侵害後操作として、管理タスクと証明書・ポリシー操作の調査対象になる。",
+        "facts": [
+          "GreyNoiseはGT13による活動を10月17日から11月2日に確認し、17か国の少なくとも22組織に影響が及んだとした。",
+          "観測では99 IPアドレス、1,400超のネットワークセッション、800超のコマンドライン成果物、1,200件のファイル操作が記録された。",
+          "Rejetto HFSをCVE-2026-61500で侵害したサーバーが中継となり、24台のCheck Point Security Management Serverからのデータとコマンド結果が保存された。"
+        ],
+        "background": [
+          "CVE-2026-16232はSmartConsoleの認証バイパスで、未認証の攻撃者が管理者認証に使えるアプリケーションログイントークンを得られる。",
+          "Check Pointは、Trusted Clientsの制限がなく、Management Server IPがインターネットから到達可能な構成を成功条件として説明している。",
+          "Check PointはR81.10、R81.20、R82、R82.10と旧版に対し、7月22日公開の最新Jumbo Hotfixを解決策として示している。"
+        ],
+        "explanation": [
+          "GT13はHFSの偽造セッションCookieで管理者アクセスを得て、そのサーバーをhopとして設定した後、Chiselトンネル越しに既に侵害していたCheck Point機器を操作した。",
+          "CVE-2026-16232のスクリプトを通じて100件超の管理タスクを走らせ、ファイアウォールDBとInternal CAの複製、証明書作成、セキュリティポリシーのアンロードを行った。"
+        ],
+        "implications": [
+          "ファイアウォールDB、認証情報、設定、内部証明書が取得されると、管理基盤の信頼情報とポリシーの両方が影響を受け得る。",
+          "GreyNoiseの可視性は11月2日で終わったが、持続的アクセスを理由に継続中の可能性を示している。"
+        ],
+        "caveats": [
+          "GreyNoiseはCheck Point資産への最初の侵入時期・経路を特定できず、CVE-2026-16232を初期侵入に使ったとは結論付けていない。",
+          "GT13の帰属、動機、AI支援ツール利用は公開情報で確定していない。"
+        ],
+        "nextChecks": [
+          "Check Point管理サーバーで、SmartConsoleの「Authentication method: application token」、100件規模の管理タスク、Internal CA・ファイアウォールDBの複製、証明書作成、セキュリティポリシーのアンロードの痕跡と、対象版に7月22日公開のJumbo Hotfixが適用されているかを確認する。",
+          "GreyNoise、Check Point、関係CERTが、初期侵入経路、影響を受けた組織・機器の範囲、GT13の持続的アクセスに関する追加情報を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Check Pointが示すインターネット公開とTrusted Clients無制限という悪用条件とは別に、GT13はCVE-2026-16232を侵害後の管理者権限取得に使ったため、管理サーバーでは認証方式と証明書・ポリシー操作を同じ調査単位で判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "GreyNoiseは22組織、24台の管理サーバーから得たデータ、管理タスクと中継経路を具体的に示す一方、初期侵入と帰属は未確定としている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-26T17:36:49+09:00",
+        "reason": "本版は11月24日から26日までの欠番を補うキャッチアップ版であり、Check Point管理サーバー侵害の記事は11月25日未明の公開で通常の1日窓より前でも、この期間内の侵害後活動として採用した。",
+        "currentNewsValue": "GT13による管理サーバー侵害では、認証バイパスが侵入後の操作に使われ、証明書やポリシー操作の調査が現在も必要である。管理基盤の持続的アクセスを確認する実務的な価値がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-26T12:55:35+09:00",
+        "httpStatus": 200,
+        "note": "BleepingComputerの報道、GreyNoiseの侵害分析、CVE-2026-16232の公開情報を照合した。"
+      }
+    }
+  ]
+}
