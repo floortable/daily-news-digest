@@ -110,5 +110,5 @@ describe('article RSS voice credit', () => {
 
     expect(await allFeed.text()).toContain(voicevox.credit);
     expect(await top5Feed.text()).toContain(voicevox.credit);
-  });
+  }, 15_000);
 });

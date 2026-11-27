@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { collectWritingLengthErrors } from './writing-validation';
+import { collectArticleQualityErrors, collectWritingLengthErrors } from './writing-validation';
 
 export const categories = [
   '国内・国際', 'テクノロジー', '科学・医療', '生活・文化',
@@ -371,7 +371,10 @@ export const editionSchema = z.object({
       for (const error of collectWritingLengthErrors(article, edition.date)) {
         ctx.addIssue({ code: 'custom', path: ['articles', index, error.field], message: error.message });
       }
-      if (!article.articleDetail) {
+      for (const error of collectArticleQualityErrors(article, edition.date)) {
+        ctx.addIssue({ code: 'custom', path: ['articles', index, ...error.field.split('.')], message: error.message });
+      }
+      if (edition.date < '2026-11-27' && !article.articleDetail) {
         ctx.addIssue({ code: 'custom', path: ['articles', index, 'articleDetail'], message: '方針v2では構造化した詳しい解説が必要です' });
       }
       const prose = [

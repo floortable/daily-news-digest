@@ -1,11 +1,12 @@
 /** 個別記事、確定台帳、版メタから日次版を決定的に組み立てる。 */
-import { access, readFile, readdir, writeFile } from 'node:fs/promises';
+import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 import { articleSchema, editionSchema } from '../src/lib/schema';
 import { monitoringRegistrySchema, validateMonitoringCoverage } from './monitoring-validation';
 import { collectTitleBodyErrors } from './title-body-guard';
+import { collectAnchorContentErrors } from '../src/lib/anchor-validation';
 
 const finalLedgerSchema = z.object({
   version: z.number().int().positive(),
@@ -84,16 +85,6 @@ async function main(): Promise<void> {
   }
   if (!order.size) throw new Error(`${ledgerPath}: included の候補がありません`);
 
-  // anchors は生成時の根拠メモであり、公開データ検証ではなく結合前に必須とする。
-  for (const id of order.keys()) {
-    const anchorPath = resolve(articlesDir, 'anchors', `${id}.json`);
-    try {
-      await access(anchorPath);
-    } catch {
-      throw new Error(`台帳で included の ${id} に対応するアンカー事実がありません: ${anchorPath}`);
-    }
-  }
-
   const rawMeta = JSON.parse(await readFile(resolve(articlesDir, 'edition-meta.json'), 'utf8'));
   const meta = metaSchema.parse(rawMeta);
   rejectFutureMonitoringEntries(meta.monitoringReview, assembledAt);
@@ -109,6 +100,20 @@ async function main(): Promise<void> {
     byId.set(article.id, { parsed: article, raw });
   }
   for (const id of order.keys()) if (!byId.has(id)) throw new Error(`台帳で included の ${id} に対応する記事ファイルがありません`);
+  // anchors は生成時の根拠メモであり、公開データ検証ではなく結合前に必須とする。
+  for (const id of order.keys()) {
+    const anchorPath = resolve(articlesDir, 'anchors', `${id}.json`);
+    let anchorText: string;
+    try {
+      anchorText = await readFile(anchorPath, 'utf8');
+    } catch {
+      throw new Error(`台帳で included の ${id} に対応するアンカー事実がありません: ${anchorPath}`);
+    }
+    let rawAnchor: unknown;
+    try { rawAnchor = JSON.parse(anchorText); } catch { throw new Error(`${id}: アンカー内容がJSONとして読めません: ${anchorPath}`); }
+    const anchorErrors = collectAnchorContentErrors(rawAnchor, byId.get(id)!.parsed, date);
+    if (anchorErrors.length) throw new Error(`${id}: アンカー内容が不十分です: ${anchorErrors.join('、')}`);
+  }
 
   const entries = [...byId.values()];
   const sourceErrors = sourceNameCountErrors(entries.map(({ parsed }) => parsed));

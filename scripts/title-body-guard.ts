@@ -2,7 +2,7 @@
  * 見出しと本文の題材対応を確認する、依存なしの決定的ガード。
  * 漢字だけの見出しは形態素解析を行わないため判定不能（警告）に留める。
  */
-import { collectWritingLengthErrors } from '../src/lib/writing-validation';
+import { collectArticleQualityErrors, collectWritingLengthErrors } from '../src/lib/writing-validation';
 
 export interface GuardArticle {
   id: string;
@@ -10,6 +10,13 @@ export interface GuardArticle {
   summary: string[];
   comment: string;
   top5Rank: number | null;
+  attentionAnalysis?: { whyNotable: string };
+  articleDetail?: {
+    facts: string[];
+    explanation: string[];
+    implications: string[];
+    nextChecks: string[];
+  };
   narration?: {
     script?: string[];
     result?: string;
@@ -129,7 +136,9 @@ export function collectTitleBodyErrors(edition: GuardEdition): string[] {
 export function collectSingleArticleGateErrors(article: GuardArticle, editionDate: string): string[] {
   const writingErrors = collectWritingLengthErrors(article, editionDate)
     .map((error) => `${editionDate}: 記事 ${article.id} の ${error.field}: ${error.message}`);
-  return [...writingErrors, ...collectTitleBodyErrors({ date: editionDate, articles: [article], strictNarration: true })];
+  const qualityErrors = collectArticleQualityErrors(article, editionDate)
+    .map((error) => `${editionDate}: 記事 ${article.id} の ${error.field}: ${error.message}`);
+  return [...writingErrors, ...qualityErrors, ...collectTitleBodyErrors({ date: editionDate, articles: [article], strictNarration: true })];
 }
 
 async function main(): Promise<void> {

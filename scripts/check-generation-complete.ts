@@ -3,6 +3,9 @@ import { access, readFile } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { resolve } from 'node:path';
 import { z } from 'zod';
+import { articleSchema } from '../src/lib/schema';
+import { collectAnchorContentErrors } from '../src/lib/anchor-validation';
+import { collectSingleArticleGateErrors } from './title-body-guard';
 
 export type Missing = { kind: string; detail: string };
 export type CompleteResult = { date: string; complete: boolean; missing: Missing[] };
@@ -44,8 +47,33 @@ export async function checkGenerationComplete(
   for (const articleId of articleIds) {
     const articlePath = resolve(root, `generated/articles/${date}/${articleId}.json`);
     const anchorPath = resolve(root, `generated/articles/${date}/anchors/${articleId}.json`);
-    if (!await exists(articlePath)) missing.push({ kind: 'article', detail: articlePath });
-    if (!await exists(anchorPath)) missing.push({ kind: 'anchor', detail: anchorPath });
+    let article: z.infer<typeof articleSchema> | undefined;
+    if (!await exists(articlePath)) {
+      missing.push({ kind: 'article', detail: articlePath });
+    } else {
+      try {
+        const parsed = articleSchema.safeParse(JSON.parse(await readFile(articlePath, 'utf8')));
+        if (!parsed.success) {
+          missing.push({ kind: 'article-gate', detail: `${articleId}: 記事形式が不正です: ${parsed.error.issues[0].message}` });
+        } else {
+          article = parsed.data;
+          const errors = collectSingleArticleGateErrors(article, date);
+          if (errors.length) missing.push({ kind: 'article-gate', detail: `${articleId}: ${errors.join(' / ')}` });
+        }
+      } catch {
+        missing.push({ kind: 'article-gate', detail: `${articleId}: 記事JSONを読み取れません` });
+      }
+    }
+    if (!await exists(anchorPath)) {
+      missing.push({ kind: 'anchor', detail: anchorPath });
+    } else if (article) {
+      try {
+        const errors = collectAnchorContentErrors(JSON.parse(await readFile(anchorPath, 'utf8')), article, date);
+        if (errors.length) missing.push({ kind: 'anchor-content', detail: `${articleId}: ${errors.join(' / ')}` });
+      } catch {
+        missing.push({ kind: 'anchor-content', detail: `${articleId}: アンカーJSONを読み取れません` });
+      }
+    }
   }
   const assembled = (options.assembleCheck ?? runAssembleCheck)(date, root);
   if (!assembled.ok) missing.push({ kind: 'assemble-check', detail: assembled.detail || `${date}: assemble --check failed` });
