@@ -31,6 +31,20 @@ describe('記事単体の内容充足ゲート', () => {
     expect(errors).toContain('nextChecksは判断を更新する確認点を1件以上');
     expect(collectSingleArticleGateErrors(healthyArticle(), '2026-11-27')).toEqual([]);
   });
+
+  it('articleSchema の列挙外 assessment と categories をパス付きで止める', () => {
+    const invalidAssessment = healthyArticle();
+    invalidAssessment.attentionAnalysis.assessment = '注意を要する';
+    expect(collectSingleArticleGateErrors(invalidAssessment, '2026-11-27').join('\n'))
+      .toContain('attentionAnalysis.assessment');
+
+    const invalidCategory = healthyArticle();
+    invalidCategory.categories[0] = 'AI';
+    expect(collectSingleArticleGateErrors(invalidCategory, '2026-11-27').join('\n'))
+      .toContain('categories[0]');
+
+    expect(collectSingleArticleGateErrors(healthyArticle(), '2026-11-27')).toEqual([]);
+  });
 });
 
 describe('アンカー内容ゲート', () => {

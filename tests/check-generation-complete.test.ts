@@ -39,6 +39,24 @@ describe('edition:complete-check', () => {
     } finally { await rm(test.root, { recursive: true, force: true }); }
   });
 
+  it('articleId が null の deferred 候補を含む台帳を読み取る', async () => {
+    const test = await completeFixture();
+    try {
+      const ledgerPath = join(test.root, `generated/candidates/${date}.final.json`);
+      await writeFile(ledgerPath, JSON.stringify({
+        candidates: [
+          { decision: 'included', articleId: test.articleId },
+          { decision: 'deferred', articleId: null },
+        ],
+      }));
+
+      const result = await checkGenerationComplete(date, { root: test.root, assembleCheck: () => ({ ok: true }) });
+      expect(result.missing).not.toEqual(expect.arrayContaining([
+        expect.objectContaining({ kind: 'final-ledger' }),
+      ]));
+    } finally { await rm(test.root, { recursive: true, force: true }); }
+  });
+
   it('記事とバンドルの欠落を報告する', async () => {
     const test = await completeFixture();
     try {

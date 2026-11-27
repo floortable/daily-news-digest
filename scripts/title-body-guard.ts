@@ -3,6 +3,7 @@
  * 漢字だけの見出しは形態素解析を行わないため判定不能（警告）に留める。
  */
 import { collectArticleQualityErrors, collectWritingLengthErrors } from '../src/lib/writing-validation';
+import { articleSchema } from '../src/lib/schema';
 
 export interface GuardArticle {
   id: string;
@@ -134,11 +135,16 @@ export function collectTitleBodyErrors(edition: GuardEdition): string[] {
 
 /** 記事完成時の単体ゲートに、記事だけで判定できる版の字数規則を加える。 */
 export function collectSingleArticleGateErrors(article: GuardArticle, editionDate: string): string[] {
+  const schemaResult = articleSchema.safeParse(article);
+  const schemaErrors = schemaResult.success ? [] : schemaResult.error.issues.map((issue) => {
+    const path = issue.path.length ? issue.path.map((segment) => typeof segment === 'number' ? `[${segment}]` : segment).join('.').replace(/\.\[/g, '[') : '(root)';
+    return `${editionDate}: 記事 ${article.id} の ${path}: ${issue.message}`;
+  });
   const writingErrors = collectWritingLengthErrors(article, editionDate)
     .map((error) => `${editionDate}: 記事 ${article.id} の ${error.field}: ${error.message}`);
   const qualityErrors = collectArticleQualityErrors(article, editionDate)
     .map((error) => `${editionDate}: 記事 ${article.id} の ${error.field}: ${error.message}`);
-  return [...writingErrors, ...qualityErrors, ...collectTitleBodyErrors({ date: editionDate, articles: [article], strictNarration: true })];
+  return [...schemaErrors, ...writingErrors, ...qualityErrors, ...collectTitleBodyErrors({ date: editionDate, articles: [article], strictNarration: true })];
 }
 
 async function main(): Promise<void> {

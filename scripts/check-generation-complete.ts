@@ -11,7 +11,7 @@ export type Missing = { kind: string; detail: string };
 export type CompleteResult = { date: string; complete: boolean; missing: Missing[] };
 
 const ledgerSchema = z.object({
-  candidates: z.array(z.object({ decision: z.string(), articleId: z.string().optional() }).passthrough()),
+  candidates: z.array(z.object({ decision: z.string(), articleId: z.string().nullish() }).passthrough()),
 }).passthrough();
 
 async function exists(path: string): Promise<boolean> {

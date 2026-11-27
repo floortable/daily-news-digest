@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import type { Edition } from '../src/lib/schema';
 import {
@@ -5,6 +6,17 @@ import {
   collectTitleQualityErrors,
 } from '../scripts/editorial-quality-validation';
 import { collectSingleArticleGateErrors } from '../scripts/title-body-guard';
+
+function validSingleArticle() {
+  const article = JSON.parse(readFileSync('data/daily/2026-11-14.json', 'utf8')).articles[0];
+  article.id = '2026-11-14-valid';
+  article.title = 'OpenAIの新モデル更新';
+  article.summary = [`OpenAI${'あ'.repeat(74)}`, 'い'.repeat(80), 'う'.repeat(80)];
+  article.comment = 'え'.repeat(300);
+  article.top5Rank = 1;
+  delete article.narration;
+  return article;
+}
 
 function qualityFixture(date = '2026-11-11'): Edition {
   return {
@@ -44,11 +56,7 @@ describe('新工程の決定的な編集品質ゲート', () => {
   });
 
   it('単体ゲートは字数規則を満たす記事を通す', () => {
-    const article = {
-      id: '2026-11-14-valid', title: 'OpenAIの新モデル更新', summary: [`OpenAI${'あ'.repeat(74)}`, 'い'.repeat(80), 'う'.repeat(80)],
-      comment: 'え'.repeat(300), top5Rank: 1,
-    };
-    expect(collectSingleArticleGateErrors(article, '2026-11-14')).toEqual([]);
+    expect(collectSingleArticleGateErrors(validSingleArticle(), '2026-11-14')).toEqual([]);
   });
 
   it('2026-11-11以降では完全一致の仮置き見出しと重複見出しを拒否する', () => {

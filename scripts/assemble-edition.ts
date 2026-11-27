@@ -13,7 +13,7 @@ const finalLedgerSchema = z.object({
   date: z.iso.date(),
   candidates: z.array(z.object({
     decision: z.enum(['included', 'deferred', 'not-relevant']),
-    articleId: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/).optional(),
+    articleId: z.string().regex(/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+$/).nullish(),
   }).passthrough()),
 }).passthrough();
 

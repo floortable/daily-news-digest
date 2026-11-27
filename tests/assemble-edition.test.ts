@@ -17,7 +17,10 @@ async function fixture() {
   await writeFile(ledgerPath, JSON.stringify({
     version: 1,
     date,
-    candidates: edition.articles.map((article: { id: string }) => ({ decision: 'included', articleId: article.id })),
+    candidates: [
+      ...edition.articles.map((article: { id: string }) => ({ decision: 'included', articleId: article.id })),
+      { decision: 'deferred', articleId: null },
+    ],
   }));
   await mkdir(articlesDir);
   await writeFile(join(articlesDir, 'edition-meta.json'), JSON.stringify({
