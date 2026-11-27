@@ -158,6 +158,8 @@ export const articleSchema = z.object({
   collectedAt: isoDateTime,
   editionDate: z.iso.date(),
   categories: z.array(z.enum(categories)).min(1),
+  // 過去の公開版との互換性のため任意。必須化は monitoring-validation の期日ゲートで行う。
+  frame: z.enum(['general', 'work']).optional(),
   channels: z.array(z.enum([
     'hatena', 'hacker-news', 'togetter', 'reddit', '4chan', 'social-other', 'other',
   ])).min(1),

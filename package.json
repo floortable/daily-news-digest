@@ -21,6 +21,7 @@
     "edition:verify-published-at": "tsx scripts/verify-published-at.ts",
     "edition:stamp-monitoring": "tsx scripts/stamp-monitoring-check.ts",
     "edition:complete-check": "tsx scripts/check-generation-complete.ts",
+    "edition:frame-stats": "tsx scripts/frame-stats.ts",
     "advisory:verify": "tsx scripts/verify-advisory-ids.ts",
     "edition:guard": "tsx scripts/title-body-guard.ts",
     "check:all": "tsx scripts/run-required-checks.ts",

@@ -25,13 +25,49 @@ export const monitoringRegistrySchema = z.object({
 export type MonitoringRegistry = z.infer<typeof monitoringRegistrySchema>;
 // Published editions before this rule was introduced remain read-only historical records.
 const statusEvidenceEnforcementStartDate = '2026-11-10';
+export const frameEnforcementStartDate = '2026-11-28';
+
+export function summarizeFrames(edition: Edition): {
+  generalCount: number;
+  workCount: number;
+  generalTechSecurityCount: number;
+  generalTechSecurityRatio: number;
+  top5WorkCount: number;
+  legacy: boolean;
+} {
+  const legacy = edition.date < frameEnforcementStartDate;
+  const isWork = (article: Edition['articles'][number]) => legacy
+    ? article.categories.includes('VCF・VMware・競合')
+    : article.frame === 'work';
+  const general = edition.articles.filter((article) => !isWork(article));
+  const work = edition.articles.filter(isWork);
+  const generalTechSecurityCount = general.filter((article) =>
+    article.categories.includes('テクノロジー') || article.categories.includes('セキュリティ')).length;
+  return {
+    generalCount: general.length,
+    workCount: work.length,
+    generalTechSecurityCount,
+    generalTechSecurityRatio: general.length ? generalTechSecurityCount / general.length : 0,
+    top5WorkCount: work.filter((article) => article.top5Rank !== null).length,
+    legacy,
+  };
+}
 
 export function validateMonitoringCoverage(edition: Edition, registry: MonitoringRegistry): string[] {
   if (edition.date < registry.enforcementStartDate) return [];
 
   const errors: string[] = [];
+  const legacy = edition.date < frameEnforcementStartDate;
+  if (!legacy) {
+    for (const article of edition.articles) {
+      if (!article.frame) errors.push(`${edition.date}: 記事 ${article.id} に frame がありません`);
+      if (article.categories.includes('VCF・VMware・競合') && article.frame !== 'work') {
+        errors.push(`${edition.date}: VCF・VMware・競合カテゴリの記事 ${article.id} は frame を work にしてください`);
+      }
+    }
+  }
   const review = edition.monitoringReview;
-  if (!review) return [`${edition.date}: monitoringReview がありません`];
+  if (!review) return [...errors, `${edition.date}: monitoringReview がありません`];
   if (review.policyVersion !== registry.version) {
     errors.push(`${edition.date}: monitoringReview.policyVersion が監視設定と一致しません`);
   }
@@ -70,7 +106,10 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
     }
   }
 
-  const general = edition.articles.filter((article) => !article.categories.includes('VCF・VMware・競合'));
+  // 期日より前は公開済み版のカテゴリ基準をそのまま維持する。
+  const general = legacy
+    ? edition.articles.filter((article) => !article.categories.includes('VCF・VMware・競合'))
+    : edition.articles.filter((article) => article.frame === 'general');
   const vcf = edition.articles.filter((article) => article.categories.includes('VCF・VMware・競合'));
   if (!general.length) errors.push(`${edition.date}: 一般ニュースがありません`);
   if (edition.date >= '2026-11-01' && general.length < 25 && !edition.selectionShortfallReason) {
@@ -84,7 +123,7 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
       if (count > 3) errors.push(`${edition.date}: ${count}件の監視元が同一確認時刻 ${checkedAt} です。各監視元の実確認時刻を記録してください`);
     }
   }
-  if (vcf.length > 5) errors.push(`${edition.date}: VCF専門枠は5件以下にしてください`);
+  if (legacy && vcf.length > 5) errors.push(`${edition.date}: VCF専門枠は5件以下にしてください`);
 
   const technologyOrSecurity = general.filter((article) =>
     article.categories.includes('テクノロジー') || article.categories.includes('セキュリティ'));

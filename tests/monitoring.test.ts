@@ -3,7 +3,9 @@ import { resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { editionSchema, type Edition } from '../src/lib/schema';
 import {
+  frameEnforcementStartDate,
   monitoringRegistrySchema,
+  summarizeFrames,
   validateMonitoringCoverage,
   type MonitoringRegistry,
 } from '../scripts/monitoring-validation';
@@ -43,6 +45,12 @@ function futureEdition(date = registry.enforcementStartDate): Edition {
     findings: [],
   };
   return editionSchema.parse(raw);
+}
+
+function frameEdition(date: string): Edition {
+  const edition = editionSchema.parse(JSON.parse(readFileSync(resolve('data/daily/2026-11-27.json'), 'utf8')));
+  edition.date = date;
+  return edition;
 }
 
 function registryWithStart(enforcementStartDate: string): MonitoringRegistry {
@@ -229,6 +237,66 @@ describe('監視証跡の検証', () => {
     expect(() => editionSchema.parse(raw)).not.toThrow();
     vcf.top5Rank = 5;
     expect(() => editionSchema.parse(raw)).toThrow(/Top 5/);
+  });
+
+  it('枠別の件数、一般枠の技術・セキュリティ比率、仕事枠Top 5を集計する', () => {
+    const edition = frameEdition(frameEnforcementStartDate);
+    for (const article of edition.articles) {
+      article.frame = 'general';
+      article.categories = ['生活・文化'];
+    }
+    edition.articles[0].categories = ['テクノロジー'];
+    edition.articles[1].categories = ['セキュリティ'];
+    edition.articles[2].frame = 'work';
+    edition.articles[2].top5Rank = 1;
+
+    expect(summarizeFrames(edition)).toMatchObject({
+      generalCount: edition.articles.length - 1,
+      workCount: 1,
+      generalTechSecurityCount: 2,
+      generalTechSecurityRatio: 2 / (edition.articles.length - 1),
+      top5WorkCount: 1,
+      legacy: false,
+    });
+  });
+
+  it('施行日前はVCFカテゴリから枠を派生する', () => {
+    const edition = frameEdition('2026-11-27');
+    for (const article of edition.articles) article.categories = ['生活・文化'];
+    edition.articles[0].categories = ['VCF・VMware・競合'];
+    edition.articles[0].frame = 'general';
+
+    expect(summarizeFrames(edition)).toMatchObject({
+      generalCount: edition.articles.length - 1,
+      workCount: 1,
+      legacy: true,
+    });
+  });
+
+  it('施行日以降はframeを要求し、VCFカテゴリを仕事枠へ置く', () => {
+    const missingFrame = frameEdition(frameEnforcementStartDate);
+    expect(validateMonitoringCoverage(missingFrame, registry).some((error) => error.includes('frame がありません'))).toBe(true);
+
+    const vcfInGeneral = frameEdition(frameEnforcementStartDate);
+    for (const article of vcfInGeneral.articles) article.frame = 'general';
+    vcfInGeneral.articles[0].categories = ['VCF・VMware・競合'];
+    expect(validateMonitoringCoverage(vcfInGeneral, registry).some((error) => error.includes('frame を work'))).toBe(true);
+  });
+
+  it('施行日以降の仕事枠VCF記事は6件でも上限を設けず、施行日前は従来どおり検出する', () => {
+    const current = frameEdition(frameEnforcementStartDate);
+    for (const article of current.articles) article.frame = 'general';
+    for (const article of current.articles.filter((article) => article.top5Rank === null).slice(0, 6)) {
+      article.categories = ['VCF・VMware・競合'];
+      article.frame = 'work';
+    }
+    expect(validateMonitoringCoverage(current, registry).filter((error) => error.includes('VCF専門枠')).length).toBe(0);
+
+    const legacy = frameEdition('2026-11-27');
+    for (const article of legacy.articles.filter((article) => article.top5Rank === null).slice(0, 6)) {
+      article.categories = ['VCF・VMware・競合'];
+    }
+    expect(validateMonitoringCoverage(legacy, registry).some((error) => error.includes('VCF専門枠は5件以下'))).toBe(true);
   });
 
   it('設定ファイルの監視元ID重複を拒否する', () => {

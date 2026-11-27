@@ -10,6 +10,8 @@
 
 assembleの後、公開前に`npm run edition:verify-published-at -- --date YYYY-MM-DD`を実行する。mismatchは一次資料の時刻に合わせて個別記事を修正し、assembleからやり直す。unverifiableはその旨をレビュー記録に残す。
 
+assemble後に`npm run edition:frame-stats -- --date YYYY-MM-DD`を実行し、一般枠件数、仕事枠件数、一般枠のテクノロジー＋セキュリティ比率、Top 5の仕事枠件数をレビューの機械チェック結果へ記録する。
+
 監視元を再確認したら、`npm run edition:stamp-monitoring -- --date YYYY-MM-DD --source SOURCE_ID`（全件なら`--all`）で実測時刻を記録し、`checkedAt`を手書きしない。
 
 監査側が差し戻し等の指示にCVE／VU／KEV期限の事実主張を含める場合は、発行前に`npm run advisory:verify -- --claims claims.json`で一次情報と照合する。
