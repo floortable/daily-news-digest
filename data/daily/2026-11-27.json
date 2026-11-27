@@ -1,0 +1,3275 @@
+{
+  "date": "2026-11-27",
+  "generatedAt": "2026-11-27T18:41:15+09:00",
+  "selectionShortfallReason": "補完後のincludedは31件（一般28件、VCF follow-up 3件相当）。技術・セキュリティが多いのは、京王・文科省の大規模漏えい、PolinRiderのサプライチェーン汚染、実悪用またはプローブ観測されたHex.pm・Drupal・GeoServer、Jenkinsのコントローラ実行リスク、vCenter/VCFの実質更新を確認したためである。弱い候補で件数を水増しせず、SYS010はRemusと統合、NGINXは悪用根拠不足でdeferredとした。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "checkedAt": "2026-11-27T18:09:13+09:00",
+        "status": "checked",
+        "note": "グローバルな公開ソーシャル一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため一覧内の代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/",
+          "https://www.reddit.com/",
+          "https://lobste.rs/",
+          "https://bsky.app/",
+          "https://mastodon.social/explore"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "checkedAt": "2026-11-27T18:09:14+09:00",
+        "status": "checked",
+        "note": "日本語圏の公開ソーシャル一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため一覧内の代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all",
+          "https://togetter.com/",
+          "https://gigazine.net/"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "checkedAt": "2026-11-27T18:09:14+09:00",
+        "status": "checked",
+        "note": "動画・カルチャーの公開一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため一覧内の代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending",
+          "https://www.tiktok.com/",
+          "https://www.nicovideo.jp/ranking/genre/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "checkedAt": "2026-11-27T18:09:15+09:00",
+        "status": "checked",
+        "note": "一般報道の公開一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため一覧内の代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.reuters.com/",
+          "https://apnews.com/",
+          "https://www.bbc.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "checkedAt": "2026-11-27T18:09:16+09:00",
+        "status": "checked",
+        "note": "OpenAIの公式発表・更新一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://openai.com/news/",
+          "https://platform.openai.com/docs/changelog",
+          "https://status.openai.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "checkedAt": "2026-11-27T18:09:16+09:00",
+        "status": "checked",
+        "note": "Anthropicの公式発表・研究一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news",
+          "https://www.anthropic.com/research",
+          "https://status.anthropic.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "checkedAt": "2026-11-27T18:09:17+09:00",
+        "status": "checked",
+        "note": "Google AIの公式発表・稼働状況一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/",
+          "https://blog.google/technology/ai/",
+          "https://status.cloud.google.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "checkedAt": "2026-11-27T18:09:18+09:00",
+        "status": "checked",
+        "note": "Microsoft・Meta・NVIDIAのAI公式一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/",
+          "https://ai.meta.com/blog/",
+          "https://blogs.nvidia.com/blog/category/deep-learning/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "checkedAt": "2026-11-27T18:09:18+09:00",
+        "status": "checked",
+        "note": "AI事業者・業界報道の公開一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/",
+          "https://techcrunch.com/category/artificial-intelligence/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "checkedAt": "2026-11-27T18:09:19+09:00",
+        "status": "checked",
+        "note": "CISA KEVとNVDの脆弱性一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "https://nvd.nist.gov/vuln"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "checkedAt": "2026-11-27T18:09:20+09:00",
+        "status": "checked",
+        "note": "CERTと国内注意喚起の公開一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/",
+          "https://www.jpcert.or.jp/at/",
+          "https://www.ipa.go.jp/security/security-alert/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "checkedAt": "2026-11-27T18:09:20+09:00",
+        "status": "checked",
+        "note": "OSS・クラウド提供者の脆弱性一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://github.com/advisories",
+          "https://msrc.microsoft.com/update-guide/",
+          "https://security.googleblog.com/",
+          "https://support.apple.com/en-us/100100"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "checkedAt": "2026-11-27T18:09:21+09:00",
+        "status": "checked",
+        "note": "機械可読な脆弱性フィードを実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "https://jvn.jp/en/"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "checkedAt": "2026-11-27T18:09:21+09:00",
+        "status": "checked",
+        "note": "公開セキュリティ研究フィードを実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/",
+          "https://www.welivesecurity.com/en/",
+          "https://www.bleepingcomputer.com/feed/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "checkedAt": "2026-11-27T18:09:22+09:00",
+        "status": "checked",
+        "note": "プロジェクト・ベンダーのアドバイザリ一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9",
+          "https://github.com/airbytehq/airbyte/security/advisories",
+          "https://www.zyxel.com/global/en/support/security-advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "checkedAt": "2026-11-27T18:09:23+09:00",
+        "status": "checked",
+        "note": "Synologyのセキュリティ・告知一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory",
+          "https://www.synology.com/en-global/company/news"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "checkedAt": "2026-11-27T18:09:23+09:00",
+        "status": "checked",
+        "note": "VCF Cloud FoundationのVMSA一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "checkedAt": "2026-11-27T18:09:24+09:00",
+        "status": "checked",
+        "note": "VCFアプリ・ネットワーク製品のVMSA一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "checkedAt": "2026-11-27T18:09:25+09:00",
+        "status": "checked",
+        "note": "VCFのナレッジベース・リリースノートを実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/",
+          "https://techdocs.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "checkedAt": "2026-11-27T18:09:25+09:00",
+        "status": "checked",
+        "note": "VCF製品ポートフォリオの公式ブログ一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/",
+          "https://blogs.vmware.com/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "checkedAt": "2026-11-27T18:09:26+09:00",
+        "status": "checked",
+        "note": "日本政府のサイバー政策一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html",
+          "https://www.cyber.go.jp/council/cs/index.html",
+          "https://www.ipa.go.jp/pressrelease/index.html",
+          "https://www.ipa.go.jp/security/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "checkedAt": "2026-11-27T18:09:27+09:00",
+        "status": "checked",
+        "note": "VCFのサービス稼働状況ページを実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "checkedAt": "2026-11-27T18:09:27+09:00",
+        "status": "checked",
+        "note": "VCFの互換性・ライフサイクル資料を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability",
+          "https://compatibilityguide.broadcom.com/",
+          "https://support.broadcom.com/group/ecx/productlifecycle"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "checkedAt": "2026-11-27T18:09:28+09:00",
+        "status": "checked",
+        "note": "VCF Aviの公式資料一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/",
+          "https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/avi-load-balancer.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "checkedAt": "2026-11-27T18:09:29+09:00",
+        "status": "checked",
+        "note": "VCF vDefendの公式資料一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/",
+          "https://blogs.vmware.com/security/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "checkedAt": "2026-11-27T18:09:29+09:00",
+        "status": "checked",
+        "note": "VCFエンジニアWilliam Duncanの公開情報を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://williamlam.com/",
+          "https://x.com/lamw",
+          "https://www.yellow-bricks.com/",
+          "https://x.com/DuncanYB"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "checkedAt": "2026-11-27T18:09:30+09:00",
+        "status": "checked",
+        "note": "VCFコミュニティ技術者の公開情報を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home",
+          "https://www.reddit.com/r/vmware/",
+          "https://blogs.vmware.com/code/"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "checkedAt": "2026-11-27T18:09:30+09:00",
+        "status": "checked",
+        "note": "VCFパートナーの公開情報を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/",
+          "https://docs.nvidia.com/datacenter/tesla/drivers/",
+          "https://www.dell.com/support/product-details/en-us/product/vmware-esxi-8.x/overview",
+          "https://support.hpe.com/",
+          "https://mysupport.netapp.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "checkedAt": "2026-11-27T18:09:31+09:00",
+        "status": "checked",
+        "note": "競合製品・移行情報の公開一覧を実測で取得し、対象期間の更新を照合。一部URLは制限されたため代替公開URLで確認。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog",
+          "https://azure.microsoft.com/en-us/updates/",
+          "https://www.proxmox.com/en/about/press-releases",
+          "https://www.redhat.com/en/blog/channel/openshift"
+        ]
+      }
+    ],
+    "policyVersion": 1,
+    "checkedAt": "2026-11-27T18:41:15+09:00",
+    "findings": [
+      {
+        "title": "海外ソーシャル発見の当日巡回",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://news.ycombinator.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "国内ソーシャル・横断媒体の当日巡回",
+        "area": "general",
+        "sourceId": "discovery-japan-social",
+        "url": "https://b.hatena.ne.jp/hotentry/all",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "動画・ネット文化の当日巡回",
+        "area": "general",
+        "sourceId": "discovery-video-culture",
+        "url": "https://www.youtube.com/feed/trending",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "一般報道と一次発表の当日巡回",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.reuters.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "OpenAI公式更新・安全情報・稼働状況の当日巡回",
+        "area": "ai",
+        "sourceId": "ai-openai",
+        "url": "https://openai.com/news/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Anthropic公式更新・研究・稼働状況の当日巡回",
+        "area": "ai",
+        "sourceId": "ai-anthropic",
+        "url": "https://www.anthropic.com/news",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Google AI・DeepMind公式更新の当日巡回",
+        "area": "ai",
+        "sourceId": "ai-google",
+        "url": "https://deepmind.google/discover/blog/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Microsoft・Meta・NVIDIA AI公式更新の当日巡回",
+        "area": "ai",
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "url": "https://blogs.microsoft.com/ai/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "AI企業の買収・終了・提供条件変更の当日巡回",
+        "area": "ai",
+        "sourceId": "ai-industry-operations",
+        "url": "https://about.fb.com/news/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "CISA KEV・NVDの当日巡回",
+        "area": "security",
+        "sourceId": "vuln-cisa-nvd",
+        "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "CERT/CC・JPCERT/CC・IPAの当日巡回",
+        "area": "security",
+        "sourceId": "vuln-cert-japan",
+        "url": "https://www.kb.cert.org/vuls/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "OSS・クラウド・主要ベンダーセキュリティ告知の当日巡回",
+        "area": "security",
+        "sourceId": "vuln-oss-cloud-vendors",
+        "url": "https://github.com/advisories",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "悪用確認・国内脆弱性の機械可読フィードの当日巡回",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "公開セキュリティ調査・侵害報道の当日巡回",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://blog.sekoia.io/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "主要プロジェクト・製品ベンダーの個別告知の当日巡回",
+        "area": "security",
+        "sourceId": "vuln-project-vendor-advisories",
+        "url": "https://discuss.rubyonrails.org/c/security-announcements/9",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Synologyセキュリティ告知・製品警告の当日巡回",
+        "area": "security",
+        "sourceId": "vuln-synology",
+        "url": "https://www.synology.com/en-global/security/advisory",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Broadcom VCF Security Advisoriesの当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Broadcom Application Networking and Security Advisoriesの当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-app-network-security",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VA",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Broadcom KB・TechDocs・製品別リリースノートの当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Broadcom・VMware公式の製品・ポートフォリオ発表（新エディション、ライセンス、販売・サポート期限）の当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-product-portfolio",
+        "url": "https://blogs.vmware.com/cloud-foundation/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "日本政府のサイバー政策・要請（国家サイバー統括室・サイバーセキュリティ戦略本部・IPA）の当日巡回",
+        "area": "vcf",
+        "sourceId": "jp-gov-cyber-policy",
+        "url": "https://www.cyber.go.jp/news/press/index.html",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Broadcom Service Status・緊急障害の当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-status",
+        "url": "https://status.broadcom.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "相互運用性・互換性・HCL・ライフサイクルの当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-compatibility-lifecycle",
+        "url": "https://interopmatrix.vmware.com/Interoperability",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Avi Load Balancer専用監視の当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-avi",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "vDefend・NSX・SSP専用監視の当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-vdefend",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "William Lam・Duncan Eppingの当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-engineers-william-duncan",
+        "url": "https://williamlam.com/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "運用者コミュニティ・実機検証者の当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-community-engineers",
+        "url": "https://community.broadcom.com/vmware-cloud-foundation/home",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "バックアップ・GPU・サーバー・ストレージ連携ベンダーの当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-partners",
+        "url": "https://www.veeam.com/blog/",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "競合・移行先の当日巡回",
+        "area": "vcf",
+        "sourceId": "vcf-competitors-migration",
+        "url": "https://www.nutanix.com/blog",
+        "severity": "informational",
+        "disposition": "not-relevant",
+        "articleId": null,
+        "reason": "当日窓の重要な新規候補を本文で独立確認できなかったため、一般記事としては採用しない。取得制限は記録し、候補フィードと公開検索で補完した。"
+      },
+      {
+        "title": "Androidアプリ「東京消防庁公式アプリ」におけるパストラバーサルの脆弱性",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://jvn.jp/jp/JVN16383801/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-tokyo-fire-app-path-traversal",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "OpenAI warns GPT-6.2 Astra will hit usage limits 40% faster because it fixed a bug",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-openai-gpt-usage-limits",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+        "area": "ai",
+        "sourceId": "ai-industry-operations",
+        "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-nvidia-sea-shipments",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Nextcloud Office Desktop app",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://nextcloud.com/blog/euro-office-comes-to-your-desktop-with-the-nextcloud-office-desktop-app/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-nextcloud-office-desktop",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "baserCMSにおける複数の脆弱性",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://jvn.jp/jp/JVN25972114/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-basercms-vulnerabilities",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Grand Theft Auto VI proves why efficiency isn&#8217;t a virtue",
+        "area": "ai",
+        "sourceId": "ai-industry-operations",
+        "url": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-gta-vi-efficiency",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Tracking Diseases Cured by AI",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://diseasescuredbyai.com/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-ai-cured-diseases-tracker",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Fake paid expert interviews impersonate brands to steal Google logins",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-goodguys-phishing",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "S&#038;P considers Nvidia credit downgrade over governance and &#8216;key man&#8217; risks",
+        "area": "ai",
+        "sourceId": "ai-industry-operations",
+        "url": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-nvidia-credit-rating",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Remus malware steals Gmail messages via fake Google Sheets extension",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/remus-malware-steals-gmail-messages-via-fake-google-sheets-extension/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-remus-gmail-extension",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "45°C inlets just killed the chiller. Most people haven't noticed yet",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://www.theregister.com/hpc/2026/11/26/45c-inlets-just-killed-the-chiller-most-people-havent-noticed-yet/5311831",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-data-center-cooling",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Palo Alto Networks warns of Fragnesia flaw exploited in PAN-OS attacks",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-fragnesia-flaw-exploited-in-pan-os-attacks/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-palo-alto-fragnesia",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "AMD-specific fork of llama.cpp",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://devnull.land/amd-specific-llama-cpp",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-amd-llamacpp-fork",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Kagi Watch",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://kagi.com/watch",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "一次ページが製品予告と通知登録のみで、仕組み・影響条件・未確定事項を裏付ける素材が不足したため未執筆とした。"
+      },
+      {
+        "title": "CTO of 'RansomwareHelp' Indicted for Wire Fraud",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-ransomwarehelp-indictment",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Show HN: Fuck_data_brokers.py",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://github.com/gary23w/f-ck_data_brokers",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-data-brokers-script",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "The USA as a Civilizations-esque map",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://karpathy.ai/usaciv/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-us-civilizations-map",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Show HN: Three Linux VMs in a browser tab, each running a different browser",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://michidk.github.io/sidebyside/",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-browser-vms",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "IBM gives H-1B, green card holders 3 weeks to relocate from US or leave company",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://economictimes.indiatimes.com/nri/work/ibm-gives-h-1b-green-card-holders-3-weeks-to-relocate-from-us-or-leave-company-december-31-deadline-set/articleshow/136180168.cms?from=mdr",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-ibm-immigration-relocation",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "Kamil Khan Mumtaz: Pakistani architect, admired at home, almost invisible abroad",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://worksinprogress.co/issue/the-greatest-architect-youve-never-heard-of-is-in-pakistan/",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "記事単位監査で期間を個別工法へ断定的に割り当てた表現が不正確と判明し、未執筆とした。"
+      },
+      {
+        "title": "Rvoip 0.5 the complete VoIP stack in Rust",
+        "area": "general",
+        "sourceId": "discovery-global-social",
+        "url": "https://github.com/eisenzopf/rvoip",
+        "severity": "medium",
+        "disposition": "included",
+        "articleId": "2026-11-27-rvoip-rust",
+        "reason": "確定台帳で前日版との重複を除外し、当日窓の候補として記事化した。"
+      },
+      {
+        "title": "vCenter認証バイパスの公開PoC",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-vcenter-auth-bypass-poc-followup",
+        "reason": "窓外だが前日版後の公開PoCという実質更新。実攻撃・KEV掲載は未確認。"
+      },
+      {
+        "title": "PolinRiderのGitHubローダー混入",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-polinrider-github-loader",
+        "reason": "対象窓内のサプライチェーン汚染であり、開発環境への影響が大きい。"
+      },
+      {
+        "title": "文科省政府調達情報システムへの不正アクセス",
+        "area": "security",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.mext.go.jp/a_menu/mext_00012.html",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-mext-procurement-system-breach",
+        "reason": "公式が最大件数と不正利用未確認を公表し、対象者への影響を確認できるため。"
+      },
+      {
+        "title": "京王グループのランサムウェア侵害",
+        "area": "security",
+        "sourceId": "discovery-japan-social",
+        "url": "https://www.keio.co.jp/news/update/news_release/news_release2026/pdf/nr20261124_newsrelease.pdf",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-keio-ransomware-breach",
+        "reason": "窓外だが前日版未掲載の大規模侵害で、公式発表により可能性範囲を確認。"
+      },
+      {
+        "title": "SYS010メール窃取",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.bleepingcomputer.com/news/security/sys010-malware-abuses-browser-management-to-spy-on-gmail-outlook/",
+        "severity": "high",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "RemusおよびGoogleログイン詐取と同一テーマのため、独立掲載せず統合。"
+      },
+      {
+        "title": "Jenkins Security Advisory 2026-11-25",
+        "area": "security",
+        "sourceId": "vuln-project-vendor-advisories",
+        "url": "https://www.jenkins.io/security/advisory/2026-11-25/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-jenkins-plugin-advisory",
+        "reason": "窓外だがCIコントローラ上のコード実行に至り得る修正群で、前日版未掲載。"
+      },
+      {
+        "title": "政府サイバーセキュリティ緊急対策パッケージ",
+        "area": "general",
+        "sourceId": "jp-gov-cyber-policy",
+        "url": "https://www.kantei.go.jp/jp/105/actions/202611/06kaigi_cyber.html",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-japan-cyber-emergency-package",
+        "reason": "窓外だが、重要インフラの報告・救援体制に運用変更を伴う未掲載政策。"
+      },
+      {
+        "title": "VMSA-2026-0008.3改訂",
+        "area": "vcf",
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "url": "https://support.broadcom.com/web/ecx/security-advisory?segment=VC",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-vmsa-0008-3-vcf-912-followup",
+        "reason": "VCF 9.1.2追加という、前日版後に確認された運用上の実質更新である。"
+      },
+      {
+        "title": "NGINXの追加修正",
+        "area": "security",
+        "sourceId": "vuln-project-vendor-advisories",
+        "url": "https://nginx.org/en/CHANGES",
+        "severity": "medium",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "窓外かつ積極的悪用・KEV掲載を確認できず、独立記事の緊急性は低い。"
+      },
+      {
+        "title": "GeoServerへのプローブ観測",
+        "area": "security",
+        "sourceId": "vuln-public-research-feeds",
+        "url": "https://www.geoserver.org/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-27-geoserver-probes",
+        "reason": "窓外の脆弱性だが、プローブ観測という実質更新と公開PoCがある。"
+      },
+      {
+        "title": "Hex.pm RCE悪用",
+        "area": "security",
+        "sourceId": "vuln-oss-cloud-vendors",
+        "url": "https://github.com/hexpm/hexpm/security/advisories/GHSA-9pmm-hf4r-27pg",
+        "severity": "critical",
+        "disposition": "included",
+        "articleId": "2026-11-27-hexpm-rce-breach",
+        "reason": "窓外だが積極的悪用とレジストリ侵害を含むため、影響を優先して採用した。"
+      },
+      {
+        "title": "Drupal SA-CORE-2026-019",
+        "area": "security",
+        "sourceId": "vuln-project-vendor-advisories",
+        "url": "https://www.drupal.org/sa-core-2026-019",
+        "severity": "critical",
+        "disposition": "included",
+        "articleId": "2026-11-27-drupal-installer-access-bypass",
+        "reason": "窓外だが公式が実悪用とupdate.phpを含む対応を示す。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-27-keio-ransomware-breach",
+      "title": "京王のランサムウェア侵害、約1,063万人分に漏えい可能性",
+      "sourceUrl": "https://www.keio.co.jp/news/update/news_release/news_release2026/pdf/nr20261124_newsrelease.pdf",
+      "sourceName": "京王電鉄",
+      "publishedAt": "2026-11-24T00:00:00+09:00",
+      "collectedAt": "2026-11-27T12:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 1,
+      "narration": {
+        "sourceCheckedAt": "2026-11-27T17:48:00+09:00",
+        "references": [
+          "https://www.keio.co.jp/news/update/news_release/news_release2026/pdf/nr20261124_newsrelease.pdf"
+        ],
+        "questionResearch": [
+          {
+            "question": "約1,063万人は漏えい確認済みですか。",
+            "findings": [
+              "約1,063万人は漏えい可能性の区分で、確認済み区分とは別である。"
+            ],
+            "references": [
+              "https://www.keio.co.jp/news/update/news_release/news_release2026/pdf/nr20261124_newsrelease.pdf"
+            ]
+          },
+          {
+            "question": "対象者は何を確認すべきですか。",
+            "findings": [
+              "会社の個別案内で情報項目と確度を確認し、不審な連絡に注意する。"
+            ],
+            "references": [
+              "https://www.keio.co.jp/news/update/news_release/news_release2026/pdf/nr20261124_newsrelease.pdf"
+            ]
+          }
+        ],
+        "script": [
+          "第1位は京王です。京王電鉄は、ランサムウェア攻撃について、顧客・取引先など約1,063万人を含む複数の区分で個人情報が漏えいした可能性があると公表しました。これは確定被害人数ではありません。",
+          "このランサムウェア攻撃で確認済みなのは、賃貸契約者など約150人、採用応募者約160人、従業員ら約12,000人です。可能性の区分にはクレジットカード番号、パスポート写し、本人確認書類も含まれ得ます。",
+          "会社はランサムウェア攻撃後にネットワークを遮断して調査し、11月24日に確報を提出しました。対象者は個別案内で自分に該当する情報を確かめ、不審な連絡に注意する必要があります。"
+        ]
+      },
+      "summary": [
+        "京王電鉄は、9月26日に検知したランサムウェア攻撃について、グループ全体の調査結果を11月24日に公表した。顧客・取引先など約1,063万人を含む複数の区分で個人情報の漏えい可能性があり、漏えい確認分も賃貸契約者など約150人、採用応募者約160人、従業員ら約12,000人に及ぶ。",
+        "可能性がある情報は氏名、住所、電話番号、メールアドレスなどで、対象者によってマイナンバー、パスポート、クレジットカード番号、本人確認書類を含む。約1,063万人の区分には、約20,000件のクレジットカード番号、海外からの宿泊客など約160万件のパスポート写し、約46,000件の本人確認書類が含まれる場合がある。",
+        "京王電鉄は攻撃検知直後にネットワークを遮断し、外部専門家と漏えい範囲を調べたうえで個人情報保護委員会へ確報を提出した。二次被害は11月24日時点で未確認だが、京王プレッソインの新規予約受付はシステム障害で停止中であり、対象者への個別案内と12月中の予約再開見込みが次の確認点になる。"
+      ],
+      "comment": "この公表で重要なのは、漏えい確認分と漏えい可能性分を同じ確度で扱えない点だ。確認分は賃貸契約者など約150人、採用応募者約160人、従業員ら約12,000人という区分別の人数であり、可能性分は顧客・取引先など約1,063万人、採用応募者約36万人、従業員ら約7.7万人という調査上の母集団である。各区分には同一人物が複数含まれ得るため、どちらも単純合算できない。とはいえ可能性分にはクレジットカード番号やパスポート写しのように悪用時の影響が重い情報が混在する。攻撃検知から約2か月をかけて範囲調査と確報提出に至った経緯は、ネットワーク遮断だけでは個人情報への到達・流出範囲を直ちに確定できないことを示す。京王グループや関係先を装うメール、SMS、電話への注意を会社が呼びかけており、個別案内で自分の情報項目と確度が明らかになるまで、可能性の人数を確定被害人数として読むべきではない。",
+      "articleDetail": {
+        "conclusion": "京王グループはランサムウェア攻撃後の調査で、約1,063万人の顧客・取引先などを含む個人情報の漏えい可能性を公表した。",
+        "facts": [
+          "2026年9月26日に京王グループのネットワークへのランサムウェア攻撃を検知し、ネットワーク遮断などの措置を講じた。",
+          "漏えい確認分は、賃貸物件の契約者など約150人、採用応募者約160人、従業員・退職者と扶養家族約12,000人である。",
+          "漏えい可能性分は、顧客・取引先など約1,063万人、採用応募者約36万人、従業員・退職者と扶養家族約7.7万人である。"
+        ],
+        "background": [
+          "京王電鉄は攻撃検知時に個人情報漏えいの可能性もあるとみて、個人情報保護委員会へ速報を提出していた。",
+          "対象人数には同一人物が複数含まれる場合があり、区分ごとの人数は単純合算できないと会社は注記している。"
+        ],
+        "explanation": [
+          "ネットワーク遮断後、外部専門家の支援を受けて漏えい範囲を調査し、その結果を11月24日に個人情報保護委員会へ確報として提出した。",
+          "公表は、調査で漏えいを確認できた区分と、漏えいの可能性が残る区分を分け、対象者ごとに含まれ得る情報項目を示す方式を取っている。"
+        ],
+        "implications": [
+          "顧客・取引先などの可能性対象にはクレジットカード番号、パスポート写し、本人確認書類が含まれ得るため、対象者は京王グループや関係先を装う不審な連絡に注意が必要になる。",
+          "京王プレッソインはシステム障害により新規予約受付を停止しており、侵害の影響は個人情報調査と並行してサービス復旧にも及んでいる。"
+        ],
+        "caveats": [
+          "11月24日時点で本件に起因する金銭被害その他の不正利用などの二次被害は確認されていない。",
+          "公表資料は攻撃者、侵入経路、データが外部へ持ち出されたかどうかを明らかにしていない。"
+        ],
+        "nextChecks": [
+          "会社が事実関係を確認でき次第、漏えいまたは漏えい可能性を確認した対象者へ個別案内を行うとしており、その案内開始が次の確認点となる。",
+          "京王プレッソインの新規予約受付が会社の見込みどおり12月中に再開するかで、システム復旧の進捗を確認できる。"
+        ]
+      },
+      "englishVersion": {
+        "title": "Keio ransomware breach may have exposed data on about 10.63 million people",
+        "summary": [
+          "Keio Corporation published the results of a group-wide investigation into a ransomware attack detected on September 26. The company said personal data may have been exposed across several groups, including about 10.63 million customers and business partners; confirmed disclosures include about 150 rental-property tenants and others, about 160 job applicants, and about 12,000 employees or former employees and their dependents.",
+          "The potentially affected data includes names, addresses, phone numbers, and email addresses. Depending on the person, it may also include My Number information, passports, credit-card numbers, or identity documents; the 10.63-million group can include about 20,000 credit-card numbers, about 1.6 million passport copies from overseas hotel guests and others, and about 46,000 identity documents.",
+          "Keio said it isolated networks immediately after detecting the attack, investigated the scope with outside specialists, and submitted a final report to Japan's Personal Information Protection Commission on November 24. No secondary harm had been confirmed as of that date, while Keio Presso Inn was still suspending new reservations because of a system outage and expected to resume them during December."
+        ],
+        "comment": "The key distinction in Keio's disclosure is between confirmed and possible data exposure. The confirmed groups are about 150 rental-property tenants and others, about 160 job applicants, and about 12,000 employees or former employees and their dependents; the possible-scope groups are about 10.63 million customers and business partners, about 360,000 job applicants, and about 77,000 employees or former employees and their dependents. Keio says the category counts cannot simply be added because the same person may appear more than once. The possible-scope group nevertheless contains data with materially different abuse risks, including credit-card numbers and passport copies. The interval from the September 26 detection to the November 24 final report also shows why network isolation does not immediately establish whether personal data was reached or what data left the environment. Keio has warned about suspicious email, SMS, and phone calls claiming to be from the group or related organizations; until individual notices identify the affected item and confidence level, the possible-scope count should not be interpreted as a confirmed victim count."
+      },
+      "attentionAnalysis": {
+        "whyNotable": "京王グループの顧客・取引先など約1,063万人と、採用応募者・従業員らが対象になり得るため、会社が注意喚起した不審なメール、SMS、電話への警戒と個別案内の開始時期が重要になる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "公式発表は可能性対象の規模、情報の種類、予約停止中のサービスを具体的に示しており、二次被害未確認という時点情報も併記されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-27T12:35:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:35:00+09:00",
+        "reason": "11月24日公表で対象窓外かつ前日版未掲載。大規模な可能性範囲と交通事業者グループへの影響を公式発表で確認した。",
+        "currentNewsValue": "対象者への通知、二次被害の有無、停止中の予約受付の復旧状況を追う判断材料になる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:35:00+09:00",
+        "httpStatus": 200,
+        "note": "京王電鉄が公開した2026年11月24日付PDFを確認。"
+      }
+    },
+    {
+      "id": "2026-11-27-nvidia-sea-shipments",
+      "title": "NVIDIA、東南アジア4か国向けサーバー出荷を輸出要件の確認まで停止",
+      "sourceUrl": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-26T20:03:54+00:00",
+      "collectedAt": "2026-11-27T12:40:38+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "国内・国際",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-27T17:48:00+09:00",
+        "references": [
+          "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+          "https://media.bis.gov/sites/default/files/documents/BIS%20Issues%20Rule%20Addressing%20Remote%20Access%20to%20American%20Super%20Intelligence%20Technology.pdf"
+        ],
+        "questionResearch": [
+          {
+            "question": "規制は物理的な出荷だけに関係しますか。",
+            "findings": [
+              "BISの規則は第三国データセンター経由のリモートアクセスも対象にする。"
+            ],
+            "references": [
+              "https://media.bis.gov/sites/default/files/documents/BIS%20Issues%20Rule%20Addressing%20Remote%20Access%20to%20American%20Super%20Intelligence%20Technology.pdf"
+            ]
+          },
+          {
+            "question": "既存設備への影響は確定していますか。",
+            "findings": [
+              "停止の解除時期と既存設備への適用は公表されていない。"
+            ],
+            "references": [
+              "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/"
+            ]
+          }
+        ],
+        "script": [
+          "第2位はNVIDIAです。NVIDIAが東南アジアの4か国向けのサーバー出荷を、輸出要件の評価が終わるまで停止したと報じられました。解除時期は未公表です。",
+          "米商務省が今月、第三国のデータセンター経由の遠隔利用に関わる抜け道を閉じたと報じられています。",
+          "利用者と運営者は、既存の容量と調達中のサーバーを分け、注文ごとに必要な適合確認を確かめる段階です。"
+        ]
+      },
+      "summary": [
+        "NVIDIAがマレーシア、シンガポール、タイ、インドネシア向けのサーバー出荷を一時停止したとTechCrunchが報じた。製造パートナーが米国の輸出要件を満たすかを評価するまで、停止の終期は定めないという。",
+        "4か国のデータセンターは中国企業がNVIDIAチップを遠隔利用する経路になっていたとされる。米商務省が今月この利用形態に関わる抜け道を閉じた後、出荷段階から地域の要件順守を確認する対応になる。",
+        "Institute for Progressは同種のリモート・データセンターが中国のAI計算能力の約24%を供給していたと推計する。解除時期、国別の条件、稼働済み設備への影響は示されていない。"
+      ],
+      "comment": "今回の停止は、チップを売る瞬間だけでなく、サーバーの設置先と遠隔利用者までを輸出管理の境界に置く動きだ。4か国向けの供給を、製造パートナーの適合確認が終わるまで期間未定で止める。地域データセンター経由の利用が中国のAI計算能力の約24%を担ったとの推計が方向として正しければ、単なる納入遅延ではなく、代替リージョンや既存容量への需要移動を促す可能性がある。米商務省が閉じたとされるのは地域経由の遠隔利用という経路であり、停止はその後に供給網からかけられた制約である。ただしこれは推計であり、停止範囲や既存設備への適用は開示されていない。利用者と事業者は、既存設備と調達中のサーバーを分け、どの要件確認が注文に適用されるかを確認する必要がある。",
+      "articleDetail": {
+        "conclusion": "NVIDIAの東南アジア4か国向けサーバー停止は、輸出管理の確認を地域の供給網に反映する措置であり、解除条件が未公表のまま調達計画を不確実にしている。",
+        "facts": [
+          "対象はマレーシア、シンガポール、タイ、インドネシア向けのサーバー出荷。",
+          "停止は期間未定で、製造パートナーの米国輸出要件への適合を評価するためとされる。"
+        ],
+        "background": [
+          "米商務省は今月、中国企業の対象地域データセンター経由のリモート利用に関わる経路を閉じたと報じられた。"
+        ],
+        "explanation": [
+          "出荷停止とパートナー評価を組み合わせ、利用者側のアクセス制御ではなく供給段階から地域経由の利用経路を抑える。"
+        ],
+        "implications": [
+          "4か国で新規にサーバーを調達する事業者と遠隔利用顧客は、評価完了まで納入時期や容量計画を確定しにくい。"
+        ],
+        "caveats": [
+          "約24%はInstitute for Progressの推計であり、NVIDIAが開示した対象別の出荷量や停止範囲ではない。"
+        ],
+        "nextChecks": [
+          "NVIDIAまたは製造パートナーが解除時期と国別・顧客別の要件を示すか、既存データセンターの利用に変更が出るかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "東南アジアでNVIDIAサーバーを調達・運用する事業者は、4か国向け出荷が要件評価の完了まで止まるため、設備導入と容量配分を見直す必要がある。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "停止対象は報じられたが、既存設備への適用と解除条件が未公表で、供給量への実効的な影響はまだ測れない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:40:38+09:00",
+        "httpStatus": 200
+      },
+      "englishVersion": {
+        "title": "NVIDIA pauses server shipments to four Southeast Asian countries pending export checks",
+        "summary": [
+          "TechCrunch reported that NVIDIA has paused server shipments to Malaysia, Singapore, Thailand, and Indonesia. The pause has no stated end date while it assesses whether manufacturing partners meet U.S. export requirements.",
+          "The report says data centers in those countries enabled Chinese companies to use NVIDIA chips remotely. After the U.S. Commerce Department reportedly closed that route this month, the pause moves compliance checks upstream into regional supply.",
+          "Institute for Progress estimates that this kind of remote data center supplied about 24% of China’s AI compute. The end date, country-specific conditions, and effect on operating facilities remain undisclosed."
+        ],
+        "comment": "The action extends export control beyond the point of sale to the location of servers and the parties able to use their compute remotely. The pause covers four countries and lasts while partner compliance is assessed. If the roughly 24% estimate is directionally right, the result could be demand shifting to alternative regions or existing capacity, rather than only delayed deliveries. That estimate is not a disclosure of NVIDIA shipment volume, and the scope of the pause has not been published. Operators should separate existing capacity from servers still in procurement and identify which compliance review governs each order."
+      }
+    },
+    {
+      "id": "2026-11-27-ai-cured-diseases-tracker",
+      "title": "AI創薬で「治癒」はまだ0件――候補数と臨床成果を分ける公開カウンター",
+      "sourceUrl": "https://diseasescuredbyai.com/",
+      "sourceName": "Diseases Cured by AI",
+      "publishedAt": "2026-11-26T17:16:41+00:00",
+      "collectedAt": "2026-11-27T12:40:38+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "科学・医療",
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 3,
+      "narration": {
+        "sourceCheckedAt": "2026-11-27T17:48:00+09:00",
+        "references": [
+          "https://diseasescuredbyai.com/"
+        ],
+        "questionResearch": [
+          {
+            "question": "候補が多くても治癒が0件なのはなぜですか。",
+            "findings": [
+              "標的・分子のAI選定、承認、持続的な疾患逆転を全て満たす場合だけ治癒に数える。"
+            ],
+            "references": [
+              "https://diseasescuredbyai.com/"
+            ]
+          },
+          {
+            "question": "Rentosertibで次に何を見ますか。",
+            "findings": [
+              "320人・52週間のPhase IIIの結果と承認判断は未確定である。"
+            ],
+            "references": [
+              "https://www.prnewswire.com/news-releases/insilico-initiates-phase-iii-clinical-trial-for-rentosertib-its-ai-empowered-tnik-inhibitor-for-idiopathic-pulmonary-fibrosis-302819553.html"
+            ]
+          }
+        ],
+        "script": [
+          "第3位はDiseases Cured by AIです。AI創薬で治癒した疾患は、公開カウンターではまだ0件です。確認時点のHacker Newsでは309ポイント、189コメントでした。",
+          "候補数や診断AIの実績と治癒を分けます。治癒には、AIが標的と分子を選び、承認を得て、疾患を持続的に逆転させることが必要です。",
+          "Rentosertibは320人、52週間のPhase IIIへ進んでいますが、結果も承認も未確定です。"
+        ]
+      },
+      "summary": [
+        "公開カウンター「Diseases Cured by AI」は11月26日時点で、AIが発見した治療で治癒した疾患を0件、AI発見薬の規制承認を0件と記録した。診断や研究支援の実績を、治療による治癒とは数えない定義である。",
+        "数に入るには、AIが標的と分子の両方を選び、規制承認を得たうえで、疾患を消失または持続的に逆転させる必要がある。63社の117候補が臨床試験入りした一方で、Phase III到達はRentosertibの1件としている。",
+        "Rentosertibは特発性肺線維症向けで、Phase IIaの71人・12週間の試験では最高用量で肺機能シグナル+98.4mLを示した。320人・52週間のPhase IIIは2026年9月9日に始まり、結果も治癒性もまだ確定していない。"
+      ],
+      "comment": "このページの価値は、AIを使った医療成果を一つの数字に縮めることではなく、何を分母に入れないかを明示している点にある。認可済みのAI機器1,614件、臨床入り117候補、Phase IIIの薬剤という数字は、画像読影や候補選定、治験進行の前進を表すが、治療薬の承認や治癒を意味しない。Rentosertibは最も先行した例として扱われるものの、71人・12週間のPhase IIaシグナルから、320人・52週間のPhase IIIを通じて承認と治癒判定へ進む必要がある。AI創薬を評価する際は、速度や候補数の主張と、患者アウトカム・承認・疾患の持続的逆転という別の到達点を混ぜないことが重要になる。",
+      "articleDetail": {
+        "conclusion": "AI創薬の候補と臨床開発は進んでいるが、AIが発見した薬で規制承認を得て疾患を治癒した実例は、11月26日時点のこのカウンターでは0件である。",
+        "facts": [
+          "同ページはAI発見薬の規制承認0件、AI発見治療による治癒疾患0件と記録する。",
+          "63社の117候補が臨床入りし、Phase IIIに到達したものはRentosertibの1件としている。"
+        ],
+        "background": [
+          "診断用AI機器の認可や、AIを補助に使う創薬作業は、標的・分子をAIが選ぶ治癒薬とは別の成果である。"
+        ],
+        "explanation": [
+          "標的と分子のAI選定、規制承認、持続的治癒の3条件を全て満たすことを、カウンターが加算条件にしている。"
+        ],
+        "implications": [
+          "AI創薬の投資家、研究者、医療提供者は、候補数・治験段階・承認済みの治療効果を同じ成功指標として扱えない。"
+        ],
+        "caveats": [
+          "これはページ作成者の定義と静的スナップショットであり、規制当局をリアルタイム監視する仕組みではない。"
+        ],
+        "nextChecks": [
+          "Rentosertibの320人・52週間のPhase IIIの結果、規制判断、治療が特発性肺線維症を持続的に逆転させるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AI創薬を評価する研究者と医療・投資の意思決定者は、117候補や診断AIの数ではなく、承認と持続的治癒がそろう時点まで成果の種類を分ける必要がある。",
+        "currentReaction": "Hacker Newsで309 points、189 commentsを2026-11-27T17:48:00+09:00に確認。",
+        "assessment": "評価が分かれる",
+        "assessmentComment": "臨床候補やAI機器の進展を重視する見方と、治癒・承認を唯一の到達点とする定義の違いが、同じAI医療の評価を分ける。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:40:38+09:00",
+        "httpStatus": 200
+      },
+      "englishVersion": {
+        "title": "AI-discovered cures remain at zero: a public tracker separates candidates from outcomes",
+        "summary": [
+          "The public tracker Diseases Cured by AI recorded zero diseases cured by an AI-discovered treatment and zero approved AI-discovered drugs as of November 26. It does not count diagnostic tools or research assistance as cures.",
+          "Its counter requires all three: AI selected both the target and molecule, regulators approved the therapy, and patients were cured or durably reversed. It lists 117 clinical candidates from 63 companies, while only Rentosertib has reached Phase III.",
+          "For Rentosertib, the tracker cites a 71-patient, 12-week Phase IIa study with a +98.4 mL lung-function signal at the top dose. Its 320-patient, 52-week Phase III began September 9, 2026; neither its result nor curative effect is known."
+        ],
+        "comment": "The useful part of this tracker is the boundary it draws around its count. It distinguishes 1,614 authorized AI devices, 117 clinical candidates, and a Phase III drug from an approved treatment that durably reverses disease. Rentosertib is the leading example, but a 71-patient, 12-week Phase IIa signal must still pass a 320-patient, 52-week Phase III and then regulatory review. Claims about discovery speed or candidate volume should not be conflated with patient outcomes, approval, or cure."
+      }
+    },
+    {
+      "id": "2026-11-27-polinrider-github-loader",
+      "title": "PolinRider、EthereumウォレットをC2参照に使うPythonローダーをGitHubへ挿入",
+      "sourceUrl": "https://thehackernews.com/2026/11/north-korea-linked-polinrider-poisons.html",
+      "sourceName": "The Hacker News",
+      "publishedAt": "2026-11-26T20:43:00+05:30",
+      "collectedAt": "2026-11-27T12:40:38+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 4,
+      "narration": {
+        "sourceCheckedAt": "2026-11-27T17:48:00+09:00",
+        "references": [
+          "https://safedep.io/blog/polinrider-python-loader-ethereum-calldata"
+        ],
+        "questionResearch": [
+          {
+            "question": "どの通常操作でローダーが動く可能性がありますか。",
+            "findings": [
+              "Pythonのimportやpytestのconftest.py収集が実行契機になり得る。"
+            ],
+            "references": [
+              "https://safedep.io/blog/polinrider-python-loader-ethereum-calldata"
+            ]
+          },
+          {
+            "question": "なぜウォレット参照型C2が問題ですか。",
+            "findings": [
+              "固定IPでなく取引データから接続先を得るため、リポジトリ内のローダーを除去する必要がある。"
+            ],
+            "references": [
+              "https://safedep.io/blog/polinrider-python-loader-ethereum-calldata"
+            ]
+          }
+        ],
+        "script": [
+          "第4位はPolinRiderです。SafeDepは、EthereumウォレットをC2参照に使うPythonローダーを、260アカウントの375公開GitHubリポジトリで見つけたと報告しました。",
+          "Pythonのimportやpytestの収集が実行の契機になり得ます。ローダーは取引データからJavaScriptを復号し、別のウォレットからC2接続先を取得します。",
+          "375件は検出数で、すべてで実行経路が動くとは確認されていません。感染が見つかったチームは、植え付けられたファイルとimport行を調べ、端末と認証情報も調査する必要があります。"
+        ]
+      },
+      "summary": [
+        "SafeDepは、PolinRiderに関連する58行のPythonローダーを260アカウントの375公開GitHubリポジトリで見つけたと報告した。ローダーはutilsやconftest.pyに隠れ、Pythonがインポートした時点で実行される。",
+        "ローダーはEthereumウォレットの最新トランザクションからJavaScriptを復号し、さらに別のウォレットからC2の接続先を取り出す。ビルド、テスト設定の読み込み、あるいはVS Codeでフォルダーを開くことが発火条件になり得る。",
+        "Apiiroの推計では少なくとも7,609リポジトリ、2,330アカウントにPolinRiderが検出され、2,040件には10月27日から11月6日に挿入された。次段階の正確なペイロードは未解明である。"
+      ],
+      "comment": "このローダーの厄介さは、C2の宛先を固定ドメインや固定IPとしてコードに置かず、Ethereum上の取引データから組み立てる点にある。サーバーを止めても、攻撃者がウォレットへの1回の取引で参照先を変えられるため、リポジトリに残ったローダーを個別に除去しない限り経路は残る。しかも実行契機は明示的なインストールに限られず、Pythonのインポート、npm run build、テスト設定、VS Codeでのフォルダー開封まで広がる。375公開リポジトリというSafeDepの検出と、7,609リポジトリというApiiroの推計は観測対象が異なるため単純合算できないが、開発者アカウント侵害がソース履歴を使って配布面へ転換するリスクを示す。",
+      "articleDetail": {
+        "conclusion": "PolinRiderのローダーは、通常の開発操作で実行され得るコードとEthereum取引を組み合わせ、C2の変更に耐える供給網侵害の経路を作っている。",
+        "facts": [
+          "SafeDepは58行ローダーを260アカウントの375公開リポジトリで確認した。",
+          "Apiiroは少なくとも7,609リポジトリと2,330アカウントを推計し、2,040件の挿入期間を10月27日から11月6日とした。"
+        ],
+        "background": [
+          "PolinRiderは北朝鮮関連とされ、侵害した開発者アカウントを使ってリポジトリを配布経路へ変える活動として報告されている。"
+        ],
+        "explanation": [
+          "Pythonインポートがローダーを起動し、2段階のEthereumウォレット参照でJavaScriptとC2を得て、Node.jsで次段階を実行する。"
+        ],
+        "implications": [
+          "汚染コミットを取得してビルド、テスト、またはVS Codeで開く開発者は、依存取得前でも攻撃コードを起動し得る。"
+        ],
+        "caveats": [
+          "記事はPyPI・npm経由の配布証拠なしとし、次段階ペイロードの正確な性質も未解明としている。"
+        ],
+        "nextChecks": [
+          "SafeDepまたは影響を受けたプロジェクトが次段階の内容、除去済みコミット、375件と7,609件の観測範囲を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "GitHubリポジトリをビルド、テスト、またはVS Codeで開く開発者は、ウォレット参照型C2を使う58行ローダーが通常操作で動く条件を確認する必要がある。",
+        "currentReaction": "Hacker Newsの観測値は台帳に記録されていない。",
+        "assessment": "妥当",
+        "assessmentComment": "375公開リポジトリの検出と、実行契機・C2参照方式が具体的に示され、開発環境で確認すべき経路が明確である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:40:38+09:00",
+        "httpStatus": 200
+      },
+      "englishVersion": {
+        "title": "PolinRider inserts a Python loader into GitHub repositories and resolves C2 through Ethereum",
+        "summary": [
+          "SafeDep reported finding a 58-line Python loader linked to PolinRider in 375 public GitHub repositories across 260 accounts. Hidden in utils or conftest.py, it runs when Python imports the file.",
+          "The loader decodes JavaScript from an Ethereum wallet transaction, then uses another wallet to obtain a C2 endpoint. Builds, test-configuration loading, or opening a folder in VS Code can trigger it.",
+          "Apiiro estimated PolinRider in at least 7,609 repositories owned by 2,330 accounts, with 2,040 insertions from October 27 to November 6. The exact second-stage payload remains unknown."
+        ],
+        "comment": "The C2 design is notable because it does not leave a fixed domain or IP in the repository. An attacker can change the reference through one wallet transaction, so blocking a server does not remove the route while the loader remains. The trigger surface also includes import, build, test configuration, and opening a folder in VS Code. SafeDep’s 375 repositories and Apiiro’s 7,609-repository estimate have different scopes and cannot be added together, but both show how compromised developer access can turn source history into a distribution channel."
+      }
+    },
+    {
+      "id": "2026-11-27-palo-alto-fragnesia",
+      "title": "PAN-OSのFragnesia悪用、公開管理面での二段階侵入を警告",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/palo-alto-networks-warns-of-fragnesia-flaw-exploited-in-pan-os-attacks/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-25T22:05:09Z",
+      "collectedAt": "2026-11-27T12:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 5,
+      "narration": {
+        "sourceCheckedAt": "2026-11-27T17:48:00+09:00",
+        "references": [
+          "https://security.paloaltonetworks.com/PAN-SA-2026-0015"
+        ],
+        "questionResearch": [
+          {
+            "question": "Fragnesiaだけを修正すれば連鎖は止まりますか。",
+            "findings": [
+              "観測された経路は先にPHP2Shellを悪用してからFragnesiaで権限を上げる。"
+            ],
+            "references": [
+              "https://security.paloaltonetworks.com/PAN-SA-2026-0015"
+            ]
+          },
+          {
+            "question": "管理者の優先確認は何ですか。",
+            "findings": [
+              "公開管理面を信頼済み内部IPへ制限し、PAN-OSの正確な修正ビルドを照合する。"
+            ],
+            "references": [
+              "https://security.paloaltonetworks.com/PAN-SA-2026-0015"
+            ]
+          }
+        ],
+        "script": [
+          "第5位はPalo Alto NetworksのFragnesiaです。Palo Alto Networksは、公開された管理インターフェースを持つPAN-OS機器で、CVE-2026-46300の悪用を観測したと警告しました。",
+          "把握されている経路では、先にPHP2Shellでコード実行を得てから、Fragnesiaでroot権限へ進みます。",
+          "管理面がインターネットから到達可能なら、信頼済み内部IPへ制限し、PAN-OSの正確な修正ビルドを確認することが優先です。侵害台数は公表されていません。"
+        ]
+      },
+      "summary": [
+        "Palo Alto Networksは、インターネットに公開された管理インターフェースを持つPAN-OS機器で、Fragnesia（CVE-2026-46300）の悪用を観測した。単独のカーネル欠陥ではなく、PHP2Shellと組み合わせて外部からrootへ至る連鎖として扱う必要がある。",
+        "PHP2ShellのCVE-2026-109618とCVE-2026-109619はPHPウェブワーカー権限で未認証のリモートコード実行を許し、FragnesiaはLinuxカーネルのXFRM ESP-in-TCPで低権限からrootへ昇格させる。同社はこの連鎖以外のFragnesia悪用経路を把握していないとした。",
+        "PAN-OS 10.2、11.1、11.2、12.1、12.2には修正版がある。PHP2Shellを修正済みならこの連鎖攻撃から保護されるが、公開管理面を持つ環境では版とアクセス制限を確認する必要があり、侵害台数や攻撃手順の詳細は未公表である。"
+      ],
+      "comment": "Palo Alto Networks機器を境界に置く組織にとって重要なのは、FragnesiaだけをLinuxのローカル権限昇格として切り分けないことだ。観測された連鎖では、先にPHP2ShellのCVE-2026-109618またはCVE-2026-109619で、公開された管理インターフェースからPHPウェブワーカー権限のコード実行を得る。その後、CVE-2026-46300のXFRM ESP-in-TCPの欠陥がroot権限へ進む段になる。つまり、インターネット公開の有無とPHP2Shellの修正状態が、Fragnesiaの実用的な攻撃可能性を左右する。対象リリースは10.2から12.2までで、必要なパッチビルドはリリースごとに異なる。遠隔管理を必要とする場合も、同社が示す信頼済み内部IPへの制限を先に満たせるかが、更新までの露出を決める判断軸になる。侵害規模は公表されていないため、観測済みという事実を台数推定に読み替えるべきではない。",
+      "articleDetail": {
+        "conclusion": "公開管理面を持つPAN-OSでは、PHP2Shell修正とFragnesia修正を連鎖対策として確認し、管理アクセスを制限する。",
+        "facts": [
+          "Palo Alto Networksは公開管理インターフェースを標的にしたCVE-2026-46300の悪用を観測した。",
+          "PAN-OS 10.2、11.1、11.2、12.1、12.2に修正版が提供された。"
+        ],
+        "background": [
+          "FragnesiaはLinuxカーネルのXFRM ESP-in-TCPにあるCVE-2026-46300である。",
+          "PHP2ShellはCVE-2026-109618とCVE-2026-109619の呼称である。"
+        ],
+        "explanation": [
+          "PHP2ShellでPHPウェブワーカー権限のコード実行を得た後、Fragnesiaで低権限からrootへ昇格する。",
+          "同社はこの連鎖以外のFragnesia悪用経路を把握していないと説明した。"
+        ],
+        "implications": [
+          "公衆インターネットに管理インターフェースを公開したPAN-OS機器が観測対象の条件である。",
+          "遠隔管理を残す場合は信頼済み内部IPからだけアクセスできるよう制限する必要がある。"
+        ],
+        "caveats": [
+          "攻撃連鎖の技術詳細や侵害台数は公表されていない。",
+          "リリースごとの正確なパッチビルドは記事本文に列挙されていない。"
+        ],
+        "nextChecks": [
+          "各PAN-OSリリースに対応するパッチビルドと、管理インターフェースの公開設定を確認し、追加の悪用経路が公表された場合に評価を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "公開管理インターフェースを運用するPAN-OS管理者は、PHP2Shellで外部実行を許す条件があるなら、Fragnesiaによるroot昇格までを一連の更新・アクセス制御判断として扱う必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "Palo Alto Networksが実際の悪用を観測し、未認証RCEからrootへ進む連鎖を示した。公開範囲と修正済みかどうかが影響条件として明確である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:35:00+09:00",
+        "reason": "対象窓外で前日版未掲載だが、公開管理面を標的にする実悪用と連鎖条件が確認された。",
+        "currentNewsValue": "公開管理面の有無とPHP2Shell修正状況を直ちに照合できる。"
+      },
+      "englishVersion": {
+        "title": "Fragnesia exploitation on PAN-OS creates a two-stage path through exposed management planes",
+        "summary": [
+          "Palo Alto Networks observed exploitation of Fragnesia, CVE-2026-46300, against PAN-OS devices whose management interfaces were exposed to the internet. The issue must be handled as a chain with PHP2Shell, not as an isolated local kernel flaw.",
+          "CVE-2026-109618 and CVE-2026-109619, known as PHP2Shell, allow unauthenticated remote code execution as the PHP web worker. Fragnesia affects Linux XFRM ESP-in-TCP and can elevate that low-privilege access to root; Palo Alto Networks knows of no other exploitation path.",
+          "Fixes are available for PAN-OS 10.2, 11.1, 11.2, 12.1, and 12.2. Updating PHP2Shell protects against this chain, but exposed management planes require version and access checks; victim counts and technical details remain undisclosed."
+        ],
+        "comment": "For organizations operating Palo Alto Networks appliances at the edge, Fragnesia should not be treated only as a local Linux privilege-escalation issue. The observed chain first uses PHP2Shell, CVE-2026-109618 or CVE-2026-109619, to obtain PHP web-worker code execution through an exposed management interface. CVE-2026-46300 in XFRM ESP-in-TCP then supplies the step to root. Internet exposure and PHP2Shell patch status therefore determine practical exploitability. The affected PAN-OS releases span 10.2 through 12.2, and patch builds vary by release. Where remote management must remain available, restricting it to trusted internal IP addresses determines exposure before updates are complete. The scale of compromise is not public, so observed exploitation should not be read as a victim-count estimate."
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-tokyo-fire-app-path-traversal",
+      "title": "東京消防庁公式アプリのCVE-2026-133530、修正版1.3.13へ更新を案内",
+      "sourceUrl": "https://jvn.jp/jp/JVN16383801/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-26T00:00:00+09:00",
+      "collectedAt": "2026-11-27T13:00:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "JVNは、東京消防庁公式アプリのAndroid版にパストラバーサルの脆弱性CVE-2026-133530があると公表した。影響を受けるのは1.3.12以前で、開発者が公開済みの1.3.13へ更新するよう案内している。",
+        "分類はCWE-22で、JVNの基本値はCVSS v4が1.8、CVSS v3が3.3である。端末にインストールされた悪意あるアプリが経路を利用すると、公式アプリ内の機微な情報を取得される可能性があるという。修正版は2026年11月6日に提供された。",
+        "影響は旧版を残すAndroid端末で、かつ悪意あるアプリが同じ端末に存在する条件で生じる。JVNは情報の具体的な種類、悪用の確認状況、攻撃側アプリに必要な権限を示しておらず、これらは現時点で判断できない。"
+      ],
+      "comment": "この問題は、ネットワーク越しに誰でも到達できる欠陥ではなく、端末内に別の悪意あるアプリがあることが出発点になる。したがって、リスクの境界は公式アプリのインストールだけでは決まらず、旧版1.3.12以前と端末上のアプリの組み合わせにある。CWE-22として公開されたことから、アプリ間で受け渡すパスの扱いが問題になったことは分かる一方、JVNは実際に読めるファイルや必要権限を開示していない。CVSS v4の1.8とv3の3.3は深刻度の目安だが、利用者側で確認できる対処は1.3.13へ更新済みかどうかである。修正版の公開日は2026年11月6日と示されている。組織管理端末では、更新対象の版を棚卸しし、未更新端末だけを切り分けることになる。",
+      "articleDetail": {
+        "conclusion": "東京消防庁公式アプリの旧版は、CVE-2026-133530への対処として1.3.13への更新対象である。",
+        "facts": [
+          "JVNはAndroid版の1.3.12以前を影響対象とし、CVE-2026-133530をCWE-22のパストラバーサルとして掲載した。",
+          "CVSS基本値はv4で1.8、v3で3.3であり、開発者は2026年11月6日に修正版1.3.13を公開した。"
+        ],
+        "background": [
+          "JVNの掲載は、IPAへの届出とJPCERT/CCによる開発者との調整を経た脆弱性情報として公開されている。"
+        ],
+        "explanation": [
+          "悪意あるアプリが端末上でパストラバーサルを利用することで、公式アプリの内部にある機微な情報を取得し得る、とJVNは想定している。"
+        ],
+        "implications": [
+          "1.3.12以前を利用し、同じAndroid端末に悪意あるアプリが入る場合に、公式アプリ内の情報が窃取される可能性がある。"
+        ],
+        "caveats": [
+          "JVNは対象情報の種類、実悪用の有無、攻撃を成立させる権限や操作を明らかにしていない。"
+        ],
+        "nextChecks": [
+          "東京消防庁またはJVNが、影響を受ける情報の範囲や悪用事例、追加の緩和策を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "東京消防庁公式アプリの利用者と端末管理者は、旧版1.3.12以前が残っていないかを確認し、1.3.13への更新を完了する必要がある。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "一般的な反響の実測値は示されていないが、修正版が既に提供され、旧版の範囲が明示されたため利用者への周知が必要である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "一次資料は2026年11月26日の日付のみを表示し、対象期間開始時刻より前として扱われるため、当日版の選定時に遅れて収録した。",
+        "currentNewsValue": "修正版1.3.13が既に公開され、影響を受ける旧版1.3.12以前が具体的に示されたため、利用者が更新対象を判断できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T13:00:00+09:00",
+        "httpStatus": 200
+      },
+      "englishVersion": {
+        "title": "Tokyo Fire Department app: update for CVE-2026-133530",
+        "summary": [
+          "JVN disclosed path traversal vulnerability CVE-2026-133530 in the Android Tokyo Fire Department official app. Versions 1.3.12 and earlier are affected, and users are directed to update to 1.3.13.",
+          "The issue is CWE-22, scored 1.8 under CVSS v4 and 3.3 under CVSS v3. A malicious app installed on the same device could use the path traversal to obtain sensitive information in the official app. Version 1.3.13 was released on November 6, 2026.",
+          "The stated scenario requires both an affected old version and a malicious application on the Android device. JVN does not disclose the exact information at risk, confirmed exploitation, or the permissions required by the malicious app."
+        ],
+        "comment": "This is a device-local scenario rather than an unauthenticated remote flaw: the relevant boundary is the combination of an old app version and a malicious application on the handset. The JVN entry identifies the weakness as CWE-22 but leaves the reachable files, permissions, and exploitation evidence undisclosed. For users and managed-device operators, the actionable fact is the version boundary—1.3.12 and earlier—and the available fixed release, 1.3.13."
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-27T13:00:00+09:00",
+        "script": [
+          "東京消防庁公式アプリのAndroid版で、パストラバーサルCVE-2026-133530が公表されました。影響対象は1.3.12以前で、修正版1.3.13への更新が案内されています。",
+          "CVE-2026-133530は、端末内の悪意あるアプリがAndroidアプリ内の機微な情報を取得し得る問題です。悪意あるアプリの存在が条件で、対象情報や必要権限、実悪用の有無は公開されていません。"
+        ],
+        "references": [
+          "https://jvn.jp/jp/JVN16383801/"
+        ]
+      }
+    },
+    {
+      "id": "2026-11-27-openai-gpt-usage-limits",
+      "title": "GPT-6.2の利用量修正で上限到達が早まる、Astraは40%・Solは25%",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/artificial-intelligence/openai-warns-gpt-62-astra-will-hit-usage-limits-40-percent-faster-because-it-fixed-a-bug/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-26T21:06:00Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "OpenAIは、GPT-6.2 AstraとGPT-6.2 Solで利用量を誤って割り引いていた不具合を修正した。BleepingComputerが伝えたOpenAI側の説明によると、同じ作業でも利用枠の消費が増え、前週比でAstraは上限へ40%早く、Solは25%早く到達する。",
+        "これは新しい従量課金の導入ではなく、プランの利用枠に対する計上を正しい量へ戻す変更だ。OpenAIは両モデルの利用効率は前世代のGPT-6 Astra、GPT-6.1 Solより良いとしているが、性能ベンチマーク、トークン消費式、各プランの具体的な上限は今回の資料では示していない。",
+        "対象はGPT-6.2 AstraとSolで、他モデルの計算は変わらないとされる。Go、Plus、Pro、Businessにはbanked resetが1回追加され、確認例では追加から1カ月で失効するが、不具合が続いた期間や個別プランへの実際の影響量は未公表だ。"
+      ],
+      "comment": "今回変わるのはモデルの能力値ではなく、既存の利用枠へ使用量をどう計上するかだ。修正前に割り引かれていたGPT-6.2の消費が正しく数えられるようになるため、同一タスクでも上限へ着く時点が前倒しになる。Astraの40%、Solの25%は「使える量がその率だけ減った」という直接の料金改定ではなく、前週の誤計上を基準にした到達速度の比較である。前世代より利用効率が高いというOpenAIの説明はあるものの、計測条件やベンチマーク値は公表されていない。Go、Plus、Pro、Businessへの1回のbanked resetは中断への補償だが、通常の利用量計算を元に戻すものではない。利用枠に依存してAstraまたはSolを使う場面では、対象モデルかどうかとresetの失効時期が運用上の境界になる。",
+      "articleDetail": {
+        "conclusion": "GPT-6.2の誤った利用量割引が修正され、Astraは40%、Solは25%早く上限に達する計算へ変わった。",
+        "facts": [
+          "OpenAIはGPT-6.2 AstraとGPT-6.2 Solの利用量を誤って割り引いていた不具合を修正した。",
+          "前週と比べて利用上限への到達はAstraで40%、Solで25%早くなると説明された。",
+          "Go、Plus、Pro、Businessの利用者にはbanked resetが1回加えられた。"
+        ],
+        "background": [
+          "OpenAIは、今回の2モデルの利用効率はGPT-6 AstraとGPT-6.1 Solより良いとしている。"
+        ],
+        "explanation": [
+          "同一タスクの利用量が本来より少なく計上されていたため、修正後はプランの利用枠から引かれる量が増え、上限に達する時点が早まる。"
+        ],
+        "implications": [
+          "GPT-6.2 AstraまたはSolをGo、Plus、Pro、Businessで使う利用者が利用枠の変化を受ける。他モデルの利用量計算は変わらないと報じられた。"
+        ],
+        "caveats": [
+          "プラン別の上限、トークン消費式、不具合の開始時期、ベンチマークと競合比較は開示されていない。前世代より効率的という点はOpenAIの説明であり、第三者評価ではない。"
+        ],
+        "nextChecks": [
+          "OpenAIが各プランの上限、消費式、不具合の対象期間、GPT-6.2と前世代・競合の比較可能な性能値を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "GPT-6.2 AstraまたはSolを利用枠内で使うGo、Plus、Pro、Businessの利用者は、同じ作業でも上限への到達が早まるため、対象モデルかどうかと、確認例で追加から1カ月後に失効したresetの時期が利用可能性に関わる。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "Astra 40%、Sol 25%という対象別の差分と、追加resetの提供条件は示されたが、プラン別の上限と消費式が未公表のため、個別の利用可能量は算出できない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      },
+      "englishVersion": {
+        "title": "GPT-6.2 usage accounting now reaches limits sooner: 40% for Astra, 25% for Sol",
+        "summary": [
+          "OpenAI fixed an error that had incorrectly discounted usage for GPT-6.2 Astra and GPT-6.2 Sol. According to OpenAI's explanation reported by BleepingComputer, the same work now consumes more of a plan allowance, reaching the limit 40% sooner for Astra and 25% sooner for Sol than in the previous week.",
+          "This is a correction to how usage is counted against a plan allowance, not a newly announced metered-pricing scheme. OpenAI says both models remain more usage-efficient than GPT-6 Astra and GPT-6.1 Sol, but the material does not disclose benchmarks, token-consumption formulas, or plan-specific limits.",
+          "The change applies to GPT-6.2 Astra and Sol, while other models retain their existing calculations. Go, Plus, Pro, and Business users receive one banked reset, which the reported ChatGPT example says expires a month after it is added; the duration of the error and the actual impact by plan remain undisclosed."
+        ],
+        "comment": "The change concerns accounting against an existing allowance, not a model-capability score. Because previously discounted GPT-6.2 work is now counted correctly, the same task reaches the limit sooner. The 40% figure for Astra and 25% for Sol describe faster arrival at a limit relative to the prior week's mistaken accounting; they do not directly announce an equal percentage reduction in available usage or a price change. OpenAI says the two models are more usage-efficient than the preceding GPT-6 Astra and GPT-6.1 Sol, but it has not published measurement conditions or benchmark values. One banked reset for Go, Plus, Pro, and Business addresses the disruption, while the corrected accounting remains in effect. For allowance-dependent use of Astra or Sol, model eligibility and the one-month reset expiry are the operational boundaries."
+      }
+    },
+    {
+      "id": "2026-11-27-nextcloud-office-desktop",
+      "title": "Nextcloud Office Desktop、端末編集と複数クラウド接続を提供",
+      "sourceUrl": "https://nextcloud.com/blog/euro-office-comes-to-your-desktop-with-the-nextcloud-office-desktop-app/",
+      "sourceName": "nextcloud.com",
+      "publishedAt": "2026-11-13T00:00:00Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Nextcloudは11月13日、Euro-Officeを基盤とするNextcloud Office Desktop appのダウンロード提供を告知した。Windows、macOS、Linux上で、ローカルの文書を扱いつつNextcloud Hubのファイルにも接続するデスクトップ版である。",
+        "同社の説明では、DOCX、XLSX、PPTXに加えODT、ODS、ODPを編集できる。1つのアプリから複数のNextcloudインスタンスへ接続でき、端末上でのオフライン作業と、接続時のリアルタイム共同編集を使い分ける。",
+        "Windowsはx64とARM64、Linuxは.debと.rpm、macOSはApple Silicon向けを掲げる。既存サーバーとの互換性や競合時の扱いは告知からは判断できず、共同編集ではフォント不一致時に代替フォントが表示される。"
+      ],
+      "comment": "これはブラウザのOffice機能を単に端末へ移したというより、ローカル編集とサーバー上の共同作業を同じクライアントで往復できるようにした提供である。利用者は接続先URLと認証情報を登録してクラウドのファイルを開き、接続がない間は選んだファイルを端末上で編集する。複数インスタンスを扱うチームでは接続先を切り替えられるが、表示の再現性は共同編集者の端末フォントに依存する。発表はパッケージ種別を示すにとどまるため、導入前に自組織のHubとの組み合わせとオフライン変更の扱いを確かめる必要がある。",
+      "articleDetail": {
+        "conclusion": "Nextcloud Office Desktopは、端末でのオフライン編集とNextcloud Hub上の共同編集を、複数インスタンスに接続できる1つのクライアントへまとめる。",
+        "facts": [
+          "Nextcloudは11月13日にNextcloud Office Desktop appのダウンロード提供を告知した。",
+          "対応OSはWindows、macOS、Linuxで、Microsoft Office形式とOpenDocument形式を扱う。",
+          "1つのアプリは複数のNextcloudインスタンスへ接続できる。"
+        ],
+        "background": [],
+        "explanation": [
+          "端末に残したファイルはオフラインで編集でき、Nextcloudインスタンスへ接続するとクラウド上のファイルにアクセスしてチームとリアルタイム編集できる。"
+        ],
+        "implications": [
+          "Nextcloud Hubの利用者はブラウザと端末アプリの間を移動できるが、共同編集者の端末に同じフォントがなければ代替フォントで表示される。"
+        ],
+        "caveats": [
+          "告知は既存のNextcloud Hubとの互換性要件、オフラインの変更が競合したときの扱い、配布版の更新方法を説明していない。"
+        ],
+        "nextChecks": [
+          "Nextcloudが対応するHubの版、同期・競合処理、デスクトップ版の更新方針を公表した時点で、既存環境への導入可否を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Nextcloud Hubを運用する組織は、ローカル編集とクラウド共同編集を結ぶクライアントの導入対象となる。複数インスタンス接続とフォント不一致時の表示を前提に、既存Hubとの互換性が明らかになった時点で判断が変わる。",
+        "currentReaction": "Hacker Newsで381 points / 190 commentsを2026-11-27T06:35:00+09:00に確認しました。",
+        "assessment": "判断には早い",
+        "assessmentComment": "Hacker Newsで381 points、190 commentsという反応はあるが、11月13日の公式告知であり、互換性や競合処理の記載がないため、利用範囲は反応値だけでは判断できない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T06:35:00+09:00",
+        "reason": "11月13日に公開された公式告知が、11月26日にHacker Newsの新着項目として台帳へ取り込まれたため。",
+        "currentNewsValue": "ダウンロード可能になったデスクトップ版の対応OS、ファイル形式、複数Nextcloudインスタンス接続を公式に確認でき、Hub利用者の導入判断に直接関係する。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-basercms-vulnerabilities",
+      "title": "baserCMSの4件の脆弱性、MCP利用条件と更新版を明示",
+      "sourceUrl": "https://jvn.jp/jp/JVN25972114/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-26T00:00:00+09:00",
+      "collectedAt": "2026-11-27T13:10:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "JVNはbaserCMSに4件の脆弱性を掲載した。MCP機能のURL指定ファイル取り込みに関わるSSRF、MCP引数による操作者偽装、検索結果とメールフォームのリダイレクトURLに関わるXSSが対象である。",
+        "CVE-2026-116089とCVE-2026-120268は5.4.0から5.4.1、CVE-2026-120962とCVE-2026-134903は5.4.1以前に影響する。前者ではサーバから到達可能な内部ネットワークの情報漏えい、操作者IDの偽装が想定され、後者ではサイト訪問者のブラウザで任意スクリプトが実行され得る。",
+        "ベンダー情報は、MCP機能を有効にしているか、管理画面を不特定多数に利用させている場合に対応が必要とする。5.4系は5.4.2以降、5.3系は5.3.2以降への更新が案内されているが、悪用実績や詳細な成立条件は公開されていない。"
+      ],
+      "comment": "4件を同じ優先度で扱うと、設定による境界が見えにくい。SSRFと操作者偽装はMCP機能で、しかも管理画面を不特定多数に使わせる構成が条件になる。一方、XSSの二件は検索結果とメールフォーム送信後のURLという利用者に近い経路だが、同じく管理画面の公開条件が示されている。管理者はまず稼働版を5.4.0〜5.4.1、または5.4.1以前のどちらに当てはめるかを確認し、次にBcMcpプラグインの有効化と管理画面の利用者範囲を突き合わせる。更新先は5.4系なら5.4.2以降、5.3系なら5.3.2以降であり、公開情報には悪用確認の記載はない。",
+      "articleDetail": {
+        "conclusion": "baserCMSの管理者は、版とMCP・管理画面の公開条件を確認し、対象系統を指定された更新版へ移行する必要がある。",
+        "facts": [
+          "CVE-2026-116089とCVE-2026-120268は5.4.0から5.4.1、CVE-2026-120962とCVE-2026-134903は5.4.1以前が対象である。",
+          "ベンダー情報は5.4系を5.4.2以降、5.3系を5.3.2以降へ更新する対策を案内した。"
+        ],
+        "background": [
+          "baserCMSは国内のオープンソースCMSで、今回の4件はJVNにより2026年11月26日付で公表された。"
+        ],
+        "explanation": [
+          "MCPのURL指定ファイル取り込みはSSRF、MCP引数は操作者偽装に結び付く。検索結果と送信後リダイレクトURLは、利用者のブラウザでのスクリプト実行につながり得る。"
+        ],
+        "implications": [
+          "条件に当てはまるサイトでは、内部ネットワーク情報、操作ログの利用者ID、サイト訪問者のブラウザがそれぞれ影響を受ける可能性がある。"
+        ],
+        "caveats": [
+          "ベンダー情報は悪用実績や具体的な攻撃入力を示さず、MCP機能または管理画面を不特定多数に使わせる構成を対応条件としている。"
+        ],
+        "nextChecks": [
+          "運用中の系統、BcMcpプラグインの有効状態、管理画面の利用者範囲を確認し、5.4.2または5.3.2以降への更新可否を判断する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "baserCMSのサイト管理者は、MCP機能や管理画面を不特定多数に利用させる構成なら、対象版を5.4.2または5.3.2以降へ更新する判断が必要になる。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "4件は同日に公開されたが、対象版と設定条件を照合しなければ影響範囲を判断できないため、運用者が確認すべき情報量が多い。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "一次資料は2026年11月26日の日付のみを表示し、対象期間開始時刻より前として扱われるため、当日版の選定時に遅れて収録した。",
+        "currentNewsValue": "4件ごとの対象版と、MCP機能・管理画面の公開条件、更新先の系統が同時に明示され、運用中のサイトで直ちに照合できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T13:10:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-gta-vi-efficiency",
+      "title": "GTA VIの長期制作を、AI時代の効率化と対比した意見記事",
+      "sourceUrl": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-26T16:00:00Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー",
+        "エンタメ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "TechCrunchは、GTA VIの発売を、AI産業が掲げる効率化とは異なる制作プロセスの例として論じた。同記事によれば、Rockstar Gamesは生成AIを使わず約5,000人が10年以上を費やして制作し、発売日の売上は37億9000万ドル、Metacritic史上最高評価に達したという。",
+        "記事は、景観や物体を手続き的に生成するのが一般的なオープンワールド作品に対し、GTA VIでは世界の細部を手作業で作り込み、外見と性格が異なるノンプレイヤーキャラクターを3万種類用意したと説明する。試行錯誤、削除、再制作を含む長い工程が、作品の精密さにつながったというのが筆者の主張である。",
+        "同じ週にAnthropicが813億ドルのIPOを行ったことを置き、記事はAIで作業を圧縮する期待と対照させる。ただしこれはゲーム制作の一般則を示す検証ではなく、一つの大型作品を材料にした文化・産業評論である。人数、売上の集計範囲、生成AIを使わなかった工程の詳細は本文では明らかでない。"
+      ],
+      "comment": "この記事の中心は、GTA VIの売上や評価をAI批判の証明にすることではなく、制作工程で何を最適化したのかを対照させる点にある。筆者が示すのは、5,000人規模で10年以上かけ、細部を試しては削除し直す工程を保持した作品と、入力から出力までの時間短縮を価値に置くAI産業の並置だ。3万種類のノンプレイヤーキャラクターという記述も、量だけでなく個別差を作るコストを強調するために使われている。もっとも、37億9000万ドルの発売日売上には13年の待機期間やシリーズの知名度も関わるため、長期制作や非AI制作だけの効果とは分けられない。生成AIを使ったゲームとの同条件比較もこの記事にはない。したがって、開発自動化の可否を結論づける資料ではなく、評価対象を制作速度だけに置いた場合にこぼれる工程を指摘する意見として読むべき内容である。",
+      "articleDetail": {
+        "conclusion": "GTA VIの商業的成功を材料に、TechCrunchは効率化で測れない試行・削除・細部制作の価値を論じたが、AI利用との因果比較を示した記事ではない。",
+        "facts": [
+          "記事はGTA VIがMetacritic史上最高評価となり、発売日に37億9000万ドルを売り上げたと報じた。",
+          "Rockstar Gamesは約5,000人が10年以上をかけ、生成AIを使わずに同作を制作したと記事は記す。",
+          "記事によれば、GTA VIには外見と性格の異なるノンプレイヤーキャラクターが3万種類ある。",
+          "Anthropicは同週に813億ドルのIPOを行ったと記事は対比材料として挙げた。"
+        ],
+        "background": [
+          "GTAシリーズの新作を待つ期間は13年に及び、発売前から大きな期待が形成されていたと記事は説明する。",
+          "記事は、AIが入力への応答を速く出すことを売りにする産業と、大型ゲームの制作慣行を比較している。"
+        ],
+        "explanation": [
+          "筆者の説明では、景観や物体を手続き生成する一般的な方法とは異なり、GTA VIは世界の各要素を作り込む。試作の削除や作り直しを繰り返すため、細部の制作は費用と時間を消費する。",
+          "このため記事は、完成までの時間を縮めることと、制作中に選択肢を捨てながら仕上げることが同じ最適化基準ではないと位置づける。"
+        ],
+        "implications": [
+          "ゲーム開発者と投資家は、生成AI導入で短縮できる工程と、作品ごとの表現・調整に残る工程を別々に見積もる必要があるという論点を得る。",
+          "ただしシリーズの既存人気、13年の待機、販売規模が同時に作用しているため、この作品の売上を制作手法の単独効果として扱うことはできない。"
+        ],
+        "caveats": [
+          "37億9000万ドルの売上について、対象地域、販売形態、集計期間の詳細は記事本文で示されていない。",
+          "生成AIを用いた同規模ゲームとの比較や、生成AIを使わなかった制作工程の範囲も報じられていない。"
+        ],
+        "nextChecks": [
+          "Rockstar Gamesが制作人数、生成AI不使用の対象工程、売上の集計範囲を公表するか、同規模のAI利用作品との比較データが出るかで、この対比の検証可能性が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ゲーム開発者と投資家は、GTA VIの約5,000人・10年以上の制作と発売日37億9000万ドルという規模を、AI導入で短縮できる工程の範囲を考える材料にできる。ただし売上の集計条件と制作工程の詳細は未公表である。",
+        "currentReaction": null,
+        "assessment": "評価が分かれる",
+        "assessmentComment": "具体的な売上、制作規模、AnthropicのIPOを結んだ意見記事だが、AIを使った比較対象や因果を測るデータはない。制作自動化の是非ではなく、効率化だけを評価軸にすることへの論評として範囲を限る必要がある。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-goodguys-phishing",
+      "title": "報酬付き招待で企業認証を狙うGoodGuys、MFAも偽画面で中継",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/apple/fake-paid-expert-interviews-impersonate-brands-to-steal-google-logins/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-26T17:15:00Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Push Securityが追跡するフィッシング「GoodGuys」は、Google CloudやNvidiaなどのブランドを装い、有償の専門家インタビューやウェビナーへ招く形で企業アカウントを狙う。BleepingComputerは、同社が10月13日から追跡し、8社を装う例を確認したと報じた。",
+        "受信者はCAPTCHAの後、ブランド別の偽サイトへ移り、Googleアカウントで招待を確認するよう求められる。攻撃側は45分の面談に最大600ドルを掲げ、資格情報の入力後にはSMS、認証アプリ、端末上の番号照合など、実際のログイン時に現れるMFA課題を偽画面に表示するという。",
+        "対象は個人用メールではなく、Gmail、Yahoo、Outlookのアドレスを拒否する企業向けの設計だ。被害組織数や侵害件数、攻撃者の特定は公表されておらず、別のCoca-Colaなりすましとの関係も同一犯とは確認されていない。"
+      ],
+      "comment": "この手口で重要なのは、メールの到達経路だけを偽装するのではなく、正規のHireVueなどを使って招待らしさを作り、その後の認証画面とMFA課題まで一続きに偽装する点だ。通常の中間者型フィッシングのように正規ログイン画面をリレーするのではなく、GoodGuysは攻撃者管理下のフォームを使い、窃取した資格情報での手動ログインに応じて被害者へ課題を出すとみられる。個人用メールを拒否して企業用Googleアカウントでの確認を求める設計のため、報酬付き招待から企業アカウントへのログインへ進む遷移が、組織の利用者にとって確認対象になる。",
+      "articleDetail": {
+        "conclusion": "報酬付きの外部招待を入口に、企業アカウントの資格情報とMFA応答を同時に奪うGoodGuysが確認された。",
+        "facts": [
+          "Push Securityは10月13日以降、Google Cloud、Nvidia、Accenture、SpaceXを含む8社を装うGoodGuysを追跡している。",
+          "攻撃メールは45分のインタビューに最大600ドルを提示し、Nvidiaを装う例では500ドルのAIフィードバック調査を掲げた。"
+        ],
+        "background": [
+          "誘導にはHireVue、SendGrid、Mandrill、Cventなど、正規のメール・イベント基盤が悪用されている。"
+        ],
+        "explanation": [
+          "リンク先はCAPTCHAを経て偽のブランドサイトを表示し、企業用Googleアカウントでの確認を要求する。資格情報取得後、攻撃者のログイン試行に合わせてGoogleまたはOktaのMFA課題を偽ページに出すと推定される。"
+        ],
+        "implications": [
+          "Gmail、Yahoo、Outlookのアドレスを拒否するため、組織のGoogleまたはOktaアカウントを使う受信者が、外部招待で認証を求められた場合に影響を受ける。"
+        ],
+        "caveats": [
+          "報道時点で被害組織数、奪取済みアカウント数、攻撃者は公表されていない。Coca-Colaを装う別キャンペーンとの関連も断定されていない。"
+        ],
+        "nextChecks": [
+          "Push Securityまたは被害組織が、侵害件数、観測したドメイン、攻撃者の帰属を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "企業用Googleアカウントを使う組織は、外部インタビューの招待でログインとMFA応答を求められる場合、個人用メールを除外して企業アカウントへ誘導する設計を前提に、遷移先を確認する局面が生じる。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "企業アカウントだけを選別し、認証情報の後にMFA課題まで扱う具体的な手順が報じられた一方、実被害の規模はまだ示されていない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-nvidia-credit-rating",
+      "title": "S&PがNvidiaをCreditWatch Negativeに、90日以内にAA-への格下げを検討",
+      "sourceUrl": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+      "sourceName": "TechCrunch",
+      "publishedAt": "2026-11-25T22:44:00Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "その他",
+        "テクノロジー"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "S&P Global Ratingsは、Nvidiaの「AA」格付けをCreditWatch Negativeに置き、90日以内にレビューを終える見込みだ。TechCrunchによると、S&PはAAからAA-へ下げる可能性を示し、CEO Jensen Huangの解任と復帰を受けた経営監督、後継計画、key man riskを理由に挙げた。",
+        "検討対象は収益性ではなく、経営体制が信用力へ及ぼすリスクだ。Nvidiaは8月にAIインフラ向け5000億ドルの資金調達組成を発表しており、当初は融資の25%を保証する条件だった。S&Pの見直しが実現すれば、貸し手は同社への依存を改めて契約条件へ織り込むことになる。",
+        "AA-になっても投資適格は維持する見通しだが、信用力の弱いneocloudなどをNvidiaが支える場合、融資コスト、追加担保、保証要求に影響する可能性がある。最終格付け、レビュー完了日、実際の保証比率はまだ決まっておらず、格下げは確定していない。"
+      ],
+      "comment": "格付け見直しの焦点は、Nvidiaの経営監督とJensen Huangへの依存を、S&Pが債務返済能力に関わる信用リスクとして扱った点にある。AAからAA-への変更は格付け表で1段階であり、投資適格を外すものではない。それでも、Nvidiaが信用力の弱いneocloudなどの資金調達を後ろ盾としている構造では、同社の格付けが貸し手のリスク判断に入る。TechCrunchが伝えた5000億ドルのAIインフラ融資計画では当初25%の保証が想定され、貸し手はJensen Huangの解任と復帰以前からより大きな保証を求めていたとされる。90日以内のレビューで格下げが実行されるか、保証・担保条件が実際に変わるかが、影響の大きさを分ける未確定点となる。",
+      "articleDetail": {
+        "conclusion": "S&Pは経営監督とkey man riskを理由にNvidiaのAA格付けを見直し、90日以内にAA-へ下げる可能性を検討している。",
+        "facts": [
+          "S&P Global RatingsはNvidiaのAA格付けをCreditWatch Negativeに置いた。",
+          "レビューは90日以内に完了する見込みで、AA-への1段階の格下げが検討されている。",
+          "NvidiaはAIインフラ向け5000億ドルの融資計画で、当初25%の保証を想定していた。"
+        ],
+        "background": [
+          "S&PはCEO Jensen Huangの解任と復帰を受け、経営監督の弱さ、後継者計画の不足、CEOへの依存を懸念として挙げた。"
+        ],
+        "explanation": [
+          "信用格付けの見直しでは経営体制も信用リスクの要素になる。Nvidiaの信用力を背景に資金調達する企業では、格付け低下が貸し手の保証・担保要求へ伝わる可能性がある。"
+        ],
+        "implications": [
+          "格下げ後も投資適格は維持する見込みだが、Nvidiaが支えるneocloudなどは借入コスト上昇や追加担保を求められる可能性がある。"
+        ],
+        "caveats": [
+          "AA-への格下げは確定していない。最終判断、完了日、各融資の保証比率、追加担保の条件は公表されていない。"
+        ],
+        "nextChecks": [
+          "S&Pが90日以内に出す最終格付けと、Nvidiaまたは貸し手が5000億ドル計画の保証比率・担保条件を変更するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Nvidiaの保証を前提に資金調達するneocloudなどのインフラ企業と、その貸し手は、90日以内の格付け判断で保証や担保の条件が変わり得るため、AA-への格下げが実行されるかを注視する局面にある。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "CreditWatch Negative入り、90日というレビュー期間、AAからAA-への候補は具体的だが、最終格付けも個別融資の条件変更も未確定である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-remus-gmail-extension",
+      "title": "RemusのGmail傍受はゼロデイではなく、Chrome拡張機能を悪用",
+      "sourceUrl": "https://www.gendigital.com/blog/insights/research/remus-stealer-email-interception-analysis",
+      "sourceName": "Gen Digital",
+      "publishedAt": "2026-11-24T00:00:00Z",
+      "collectedAt": "2026-11-27T13:25:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Gen Threat Labsは、情報窃取マルウェアRemusがうたうGmailの「ゼロデイ」機能を解析し、Gmailの脆弱性ではなく、被害者のGoogle Chromeへ悪性拡張機能を導入する仕組みだと報告した。拡張機能が残れば、利用者の再ログイン後にメール傍受を再開できる。",
+        "RemusはChromeプロファイルの設定を改変して拡張機能を登録し、Developer Modeも有効にする。拡張機能は1分ごとにGmailの未読メールを調べ、最大10個のログイン済みアカウントから件名、本文、送信者、メールアドレスをC2サーバへ送信する。",
+        "セッションの取り消しまたはログアウト時には既存セッションを使えないため窃取は止まる。だが拡張機能そのものは除去されず、再ログインで新しい有効セッションを使う。Genはこのモジュールが一部のRemusビルドに限られるとしており、感染規模や提供範囲は不明である。"
+      ],
+      "comment": "今回の重要点は、パスワード変更やセッション取り消しが無効だったのではなく、その後に被害者がChromeへ再ログインするまでの間だけ傍受が止まることにある。Remusの拡張機能は、正規のGmailセッションに付随する認証情報でAtom feedとメッセージ取得用エンドポイントへアクセスする。したがって、認証情報の更新と端末上の拡張機能の除去は別の作業になる。Genの解析では、拡張機能はGoogle Sheetsを名乗り、すべてのURLへの権限を要求していた。Chromeの拡張機能一覧で身に覚えのない項目とDeveloper Modeの有効化を確認することが、再ログイン前に見つけられる端末側の兆候になる。",
+      "articleDetail": {
+        "conclusion": "RemusのGmail傍受はGmailのゼロデイではなく、Chromeに残した悪性拡張機能が有効なログインセッションを利用する方式である。",
+        "facts": [
+          "Genは、RemusがChrome設定を改変して悪性拡張機能を登録し、Developer Modeを有効化すると報告した。",
+          "拡張機能は1分間隔で未読メールを調べ、最大10アカウントから件名、本文、送信者、メールアドレスをC2へ送信する。"
+        ],
+        "background": [
+          "Remusの開発者は2026年11月8日から、パスワード変更とセッション取り消し後も使えるGmailのゼロデイだとこの機能を売り込んでいた。"
+        ],
+        "explanation": [
+          "拡張機能はGmailのAtom feedで未読メールを見つけ、既存セッションでメッセージ表示エンドポイントを呼び出して本文を取得し、C2へ送信する。"
+        ],
+        "implications": [
+          "感染端末でGmailへログインする利用者は、拡張機能が残る限り、再ログイン後に未読メールの内容とアカウント情報を送信される可能性がある。"
+        ],
+        "caveats": [
+          "Genはこの機能がRemusの一部ビルドにしか含まれないとし、実際の感染数、配布規模、利用可能な契約階層を確定していない。"
+        ],
+        "nextChecks": [
+          "GenまたはGoogleが、拡張機能の配布規模、対象ビルド、検出・削除方法の追加情報を公表するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ChromeでGmailを使う利用者と組織の端末管理者は、パスワード変更後でも悪性拡張機能が残る場合、再ログイン前に拡張機能とDeveloper Modeを確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "ゼロデイとの売り文句を技術解析で否定しつつ、拡張機能が残れば再ログイン後に傍受が再開する条件を具体的に示している。"
+      },
+      "informationType": "研究",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "一次資料は2026年11月24日の日付のみを表示し、対象期間より前の公開だったため、11月27日の選定時に遅れて収録した。",
+        "currentNewsValue": "Gmailのゼロデイという主張を否定し、拡張機能の導入からメール送信までの実装と、再ログインで傍受が戻る条件を一次解析で示した。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T13:25:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-data-center-cooling",
+      "title": "液冷の45°C入口がチラー不要設計を近づける条件",
+      "sourceUrl": "https://www.theregister.com/hpc/2026/11/26/45c-inlets-just-killed-the-chiller-most-people-havent-noticed-yet/5311831",
+      "sourceName": "The Register",
+      "publishedAt": "2026-11-26T10:15:00.000Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "The Registerは、Nvidiaが示した液体入口温度45°Cを前提にすると、新設データセンターではチラーを省く液冷構成が現実味を増すと報じた。従来の液冷システムは30〜35°Cの入口温度で運用されることが多かったという。",
+        "構成は、サーバー側の熱を受けるループと、屋上のドライクーラーへ運ぶ別ループを熱交換器でつなぐものだ。45°Cまで許容できれば外気で放熱しやすくなり、記事が引用する見積りでは冷却エネルギーは従来のチラー・冷却塔構成より50〜70%少なくなり得る。",
+        "ただし全体電力の10〜20%減という換算値はPUEと気候に依存する。既存施設では配管、ポンプ、熱交換器の流量・圧力損失を確認する必要があり、AMD、Intel、Armが同じ入口温度を公表した情報はない。"
+      ],
+      "comment": "焦点は45°Cという数字そのものではなく、許容入口温度が上がると冷却設備の境界が変わる点にある。サーバーの熱を第二ループへ渡し、屋上のドライクーラーで戻す構成なら、低い温度まで水を冷やすチラーを置かずに済む可能性が出る。記事の50〜70%という冷却エネルギー削減は公表見積りとベンダーモデリングであり、サイト固有の結果ではない。また既設建屋は低温液冷や空冷向けの配管・ポンプ・熱交換器をそのまま使えるとは限らない。新設の設備選定と既設改修を同じ前提で比較しないことが重要になる。",
+      "articleDetail": {
+        "conclusion": "液体入口を45°Cまで許容できるなら、新設データセンターではドライクーラー中心にしてチラーを省く設計が可能になるが、効果と改修可否は施設条件に左右される。",
+        "facts": [
+          "記事はNvidiaの45°C（113°F）液体入口温度を取り上げ、従来の液冷は30〜35°Cが一般的だったと説明する。",
+          "高温液冷ループの公表見積り・ベンダーモデリングでは、従来構成比で冷却エネルギーを50〜70%削減し得るとされる。",
+          "従来の蒸発式冷却塔は中規模サイトで年間数百万ガロンの水を消費し得る一方、ドライクーラーは通常運転時に外部水をほぼ使わないと記事は述べる。"
+        ],
+        "background": [
+          "チラーはドライクーリングの後に水をさらに冷やす機械式冷凍設備で、設備投資、保守、電力を要する。"
+        ],
+        "explanation": [
+          "サーバーから熱を受ける閉ループと、屋上まで熱を運んで戻す別の閉ループを熱交換器でつなぐ。入口温度が高ければドライクーラーで外気へ放熱でき、チラーへの依存を減らせる。"
+        ],
+        "implications": [
+          "新設計画では冷却設備の資本費と水・電力使用を減らせる可能性があるが、全体電力への寄与は開始時のPUEと気候で変わる。"
+        ],
+        "caveats": [
+          "50〜70%の削減は記事が引用する見積りとベンダーモデリングであり、個別の実測保証ではない。既存施設は流量、圧力損失、熱交換器能力を検証しなければ移行できない。"
+        ],
+        "nextChecks": [
+          "AMD、Intel、Armが45°C級の入口温度を公表するか、各気候・PUE条件での実測電力と水使用が示されるかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "新設データセンターの設計者と既存施設の運用者は、45°Cの入口温度を受け入れられる機器が揃う場合に、チラーと冷却塔を含む機械設備の規模を見直すことになる。既設側では流量・圧力損失・熱交換器能力を満たせるかが判断条件になる。",
+        "currentReaction": "Hacker Newsで238 points / 121 commentsを2026-11-27T06:35:00+09:00に確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "反応は238 pointsと121 commentsに及ぶ。45°Cによりチラーを外せるという主張は設備構成に直結するが、削減値は気候とPUE依存で、他社チップの対応も未公表である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-amd-llamacpp-fork",
+      "title": "AMD向けllama.cppパッチ、筆者環境でprefillを約1.9倍に",
+      "sourceUrl": "https://devnull.land/amd-specific-llama-cpp",
+      "sourceName": "devnull.land",
+      "publishedAt": "2026-11-26T14:59:36Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "devnull.landの筆者は、AMD GPU向けパッチ集llama-cpp-rdna-boostsを使い、llama.cppのローカル推論を測定した。筆者のAMD R9700をeGPU接続したノートPCでは、prefillが約700から約1300 tokens/sへ、生成が約35から約55 tokens/sへ上がったという。",
+        "このリポジトリは固定したllama.cppのコミットに最小限のAMD向け変更を重ね、新しい本体版へも同じ変更を再適用する方式を取る。ROCmを導入済みなら自前ビルドでき、筆者は公開されているserver-rocm-10.1のコンテナイメージで動かした。",
+        "測定はMTPを有効にした特定の27Bモデルでの単一環境の結果であり、他のGPU、モデル、量子化、ROCm・ドライバーの組み合わせでの再現性は示されていない。筆者自身もイメージ更新によるアップグレードは未検証としている。"
+      ],
+      "comment": "このforkの特徴は、AMD専用の別推論エンジンを大きく育てるのではなく、llama.cppの特定コミットに小さなパッチを重ねるところにある。本体を固定した上で変更を新しいコミットへ再適用するため、パッチの範囲を絞りながらAMD向けのprefillと生成速度を狙う構成だ。提示された約1.9倍のprefillと約1.6倍の生成速度は、R9700をeGPU接続し、特定の27BモデルとMTPを用いた筆者の測定値にすぎない。AMD GPUのローカル推論環境で採否を決めるには、同じモデル・量子化・ROCm版で測り、イメージ更新時にパッチが追随するかも別に確認する必要がある。",
+      "articleDetail": {
+        "conclusion": "llama-cpp-rdna-boostsはllama.cppにAMD向けの小規模パッチを重ねる方式で、筆者のR9700 eGPU環境ではprefill約1.9倍、生成約1.6倍という測定結果が出たが、結果は単一構成に限られる。",
+        "facts": [
+          "筆者の測定ではprefillは約700から約1300 tokens/s、トークン生成は約35から約55 tokens/sになった。",
+          "測定環境はeGPU接続のAMD R9700、MTPを有効にした特定の27Bモデルだった。",
+          "ROCmがあれば自前ビルドでき、筆者はserver-rocm-10.1の公開済みコンテナイメージを用いた。"
+        ],
+        "background": [
+          "記事は汎用のllama.cppを幅広いハードウェア互換性を持つ基盤と位置付け、ハードウェアに絞った推論実装が増えている状況を説明する。"
+        ],
+        "explanation": [
+          "llama-cpp-rdna-boostsは固定したllama.cppコミットに小さなAMD向け変更を適用し、本体が更新されるたびにその変更を再適用する。独立した大規模forkを保守するより、変更セットを限定する方式である。"
+        ],
+        "implications": [
+          "AMD GPUでローカル推論を行う利用者は、既存のllama.cppを基盤にしたまま速度改善を試せる可能性がある。ただし自分のROCm、ドライバー、GPU、モデル構成で測定しなければ導入効果は判断できない。"
+        ],
+        "caveats": [
+          "数値は筆者の単一環境による比較で、他のGPU、モデル、量子化、ソフトウェア版に一般化できない。パッチの記述は一部不透明だと筆者自身が述べている。"
+        ],
+        "nextChecks": [
+          "llama.cppの新しいコミットに対してパッチが追随するか、別のAMD GPUとモデルでprefill・生成速度が再現するか、筆者が未検証としたイメージ更新が成立するかを確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "AMD GPUでローカル推論を運用する利用者は、既存のllama.cppを維持しつつ速度を改善できる候補として評価できる。R9700 eGPU、特定27Bモデル、MTPという測定条件を自分の環境で再現できるかが導入判断の境界になる。",
+        "currentReaction": "Hacker Newsで220 points / 54 commentsを2026-11-27T06:35:00+09:00に確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "220 pointsと54 commentsの反応がある。小さな変更セットを本体へ再適用する設計は保守対象を絞るが、改善値は1台のR9700 eGPU環境での測定であり、適用範囲は未検証である。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-ransomwarehelp-indictment",
+      "title": "RansomwareHelp共同創業者を起訴、復号鍵の仲介を隠したとする通信詐欺事件",
+      "sourceUrl": "https://krebsonsecurity.com/2026/11/cto-of-ransomwarehelp-indicted-for-wire-fraud/",
+      "sourceName": "Krebs on Security",
+      "publishedAt": "2026-11-20T00:00:00Z",
+      "collectedAt": "2026-11-27T12:37:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "米ロードアイランド州で返された起訴状を巡り、ランサムウェア復旧を掲げたRansomwareHelpの共同創業者が通信詐欺で起訴された。検察は、同社が攻撃者との交渉や身代金支払いをしないと説明しつつ、実際には復号鍵を買って被害者へ上乗せ請求したと主張している。",
+        "FBIのおとり捜査では、偽の被害企業に復号費用13,260ドルを示した一方、偽の攻撃者側には復号ツールを4,000ドルへ下げるよう求めたとされる。起訴状では、被害企業へは診断料2,750ドルを含む16,010ドルを請求し、攻撃者側との合意はビットコインで約6,000ドルだったと記される。",
+        "被害企業にとって重要なのは、復旧支援会社が攻撃者との接触と支払いをどのように扱うかの透明性である。ただし、起訴は有罪判決ではなく、被告側の答弁、裁判で認定される事実、実在顧客に関する範囲は現時点で確定していない。"
+      ],
+      "comment": "ランサムウェア対応では、暗号化されたデータを攻撃者の復号鍵なしに戻せるか、交渉で鍵を得るのかによって、技術作業と資金の流れが異なる。この事件で検察が問題にしているのは、攻撃者との交渉・支払いをしないという説明と、実際に主張される取引経路のずれだ。被害側が復旧委託の見積もりを評価する際は、復号の方法、攻撃者との連絡の有無、診断料と復号費用の内訳が説明されているかが、支払額だけでは見えない判断材料になる。起訴状の主張と裁判で確定する事実は区別する必要がある。",
+      "articleDetail": {
+        "conclusion": "RansomwareHelpを巡る起訴は、復号支援の説明と実際に主張される攻撃者との取引経路が食い違ったとする事件である。",
+        "facts": [
+          "ロードアイランド州で返された起訴状により、RansomwareHelp共同創業者が通信詐欺で起訴されたと報じられた。",
+          "FBIのおとり捜査では、偽被害企業への請求16,010ドルに診断料2,750ドルと復号費用13,260ドルが含まれていたとされる。",
+          "同じ捜査で、攻撃者役のFBI側との復号ツールの合意額はビットコインで約6,000ドルだったと起訴状は記す。"
+        ],
+        "background": [
+          "同社のウェブサイトは、攻撃者への支払いを仲介せず、高度な暗号技術でデータを復旧すると説明していたと報じられた。"
+        ],
+        "explanation": [
+          "検察の描く仕組みでは、被害者には非交渉の復旧サービスとして料金を提示し、裏で攻撃者から鍵を取得して、その経路を開示せずに診断料と上乗せ額を請求する。"
+        ],
+        "implications": [
+          "ランサムウェア被害企業は、委託先が攻撃者との連絡や支払いを隠すと、復旧方法・費用・交渉の選択肢を比較できず、対応判断を委託先に依存することになる。"
+        ],
+        "caveats": [
+          "起訴状は検察の主張であり、有罪は未確定である。報道時点では被告側の答弁や、顧客ごとにどこまで同様の行為が認定されるかは示されていない。"
+        ],
+        "nextChecks": [
+          "被告側の答弁と裁判所の手続きで、偽装とされる説明、実際の支払い経路、被害者への請求の範囲がどこまで立証・認定されるかが次の確認点となる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "ランサムウェア被害企業は復旧委託先の交渉・支払いの扱いを把握できなければ、16,010ドルの請求額の内訳を比較できない。",
+        "currentReaction": "Hacker Newsでは2026年11月27日12:37 JSTの確認時点で、155ポイント、63コメントでした。",
+        "assessment": "妥当",
+        "assessmentComment": "起訴状が示す請求額と鍵の取得額の具体的な差があり、インシデント対応の委託関係で説明責任が問われる事案として反応は理解できる。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 155,
+        "hnComments": 63,
+        "socialMetricsCheckedAt": "2026-11-27T12:37:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "一次資料の表示日は2026年11月20日で対象期間開始より前だが、11月27日版のHacker News候補として後から検出された。",
+        "currentNewsValue": "FBIのおとり捜査における請求額と復号鍵取得額が示され、ランサムウェア復旧委託で交渉経路の説明を確認する具体的な事案となっている。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:37:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-data-brokers-script",
+      "title": "f*ck_data_brokers.py、削除依頼を追跡する個人向けPythonスクリプト",
+      "sourceUrl": "https://github.com/gary23w/f-ck_data_brokers",
+      "sourceName": "GitHub",
+      "publishedAt": "2026-11-26T17:01:54-05:00",
+      "collectedAt": "2026-11-27T12:37:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "f*ck_data_brokers.pyは、データブローカーに対する削除・オプトアウト依頼を利用者の端末で作成し、送信後の状態を追跡する依存関係なしのPythonスクリプトとして公開された。氏名、メールアドレス、居住地を入力すると、居住地の法令を引用した依頼文を生成する。",
+        "READMEによれば、登録簿にある600社超のブローカーを対象に、依頼文を20通ずつ作成できる。ブラウザーで開く送信ページから利用者のメールソフトへ文面を渡す方法と、利用者自身のメールボックスを通じて送る方法があり、同じ依頼を同じブローカーへ二重送信しないよう状態を管理する。",
+        "ただし、フォームのCAPTCHAは利用者が解く必要があり、受信箱も自動では読まない。また削除依頼には情報を渡すトレードオフがあり、READMEも、元々データを持たないブローカーに自分の存在を知らせる場合があると説明する。削除済みかどうかは事業者の回答以上には確認できない。"
+      ],
+      "comment": "このスクリプトの対象は「削除を実行すること」ではなく、依頼文の作成、送信の補助、回答の分類、催促と苦情申立ての準備という手続きの連鎖である。送信ページを使う場合でも、最終的な送信操作は利用者のメール環境で行う。CAPTCHAを伴うフォームでは、リンクと入力内容を提示するところで自動化が止まり、利用者が確認して送る設計だ。依頼文に渡す情報は氏名・メールアドレス・市区町村に絞るとしているが、保有確認前の一斉送信は新たな照合材料を渡す可能性がある。したがって対象事業者を選べることと、実際の削除は回答だけでは立証できないことが、このツールの利用条件になる。",
+      "articleDetail": {
+        "conclusion": "f*ck_data_brokers.pyは削除依頼の作成と追跡を自動化するが、送信の判断、CAPTCHA、削除結果の検証までは利用者に残す設計である。",
+        "facts": [
+          "依存関係なしのPythonスクリプトとして、削除・オプトアウト依頼の文面作成と状態追跡を利用者の端末で行う。",
+          "READMEは600社超の登録済みデータブローカーを扱い、依頼文を20通ずつ作る機能を説明している。",
+          "ウェブフォームがCAPTCHAを要求する場合、スクリプトはフォームへのリンクと貼り付け用の内容を示し、CAPTCHAと送信は利用者が行う。"
+        ],
+        "background": [
+          "依頼文は居住地に応じた法令を引用し、送信後は回答、無回答、拒否などを状態として扱う設計になっている。"
+        ],
+        "explanation": [
+          "登録簿から相手先を集め、依頼を作成して送信済み状態を記録し、返答に応じて催促や苦情申立て用の次の文面を出すことで、多数の個別手続きを連結する。"
+        ],
+        "implications": [
+          "データブローカーの削除依頼を多数出す個人は文面と追跡の負担を減らせるが、依頼先の選択を誤ると、保有していなかった事業者にも氏名・メールアドレス・市区町村を提供し得る。"
+        ],
+        "caveats": [
+          "スクリプトは削除済みという事実を検証できず、事業者が削除したと答えたことを記録するにとどまる。CAPTCHAと受信メールの確認も利用者側の作業である。"
+        ],
+        "nextChecks": [
+          "削除済みとの回答後にブローカーがデータを再収集していないかを確認する仕組みが追加されるかで、依頼追跡から結果検証までの範囲が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "削除依頼を出す個人は、600社超へ送る前に、氏名・メールアドレス・市区町村を渡す対象を選ばなければ新たな照合材料を増やし得る。",
+        "currentReaction": "Hacker Newsでは2026年11月27日12:37 JSTの確認時点で、148ポイント、25コメントでした。",
+        "assessment": "評価が分かれる",
+        "assessmentComment": "20通単位での文面作成と追跡は実務負担を減らす一方、削除依頼そのものが情報提供になる条件があり、利用者が対象を選ぶ必要があるため評価が分かれる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 148,
+        "hnComments": 25,
+        "socialMetricsCheckedAt": "2026-11-27T12:37:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:37:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-us-civilizations-map",
+      "title": "usaciv、公開統計を4X地図に変換する米国ビュー",
+      "sourceUrl": "https://karpathy.ai/usaciv/",
+      "sourceName": "karpathy.ai",
+      "publishedAt": "2026-11-26T19:53:58.000Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "usacivは、米国本土48州を六角形タイル、都市、資源、指標レンズで見せる、4X戦略ゲーム風の対話型地図として公開された。実在の米国の経済・人口などを、地形図の上で場所ごとに探索できる形へ置き換えている。",
+        "データ出典表によると、都市・州・全国の人口、所得、雇用にはACS 2025年1年推計、郡レンズにはACS 2024年5年推計を利用する。経済の金収量と産業別GDPはBEAの2024年CAGDP2に基づき、機密保護で非開示の郡産業値はゼロではなく「no data」として扱う。",
+        "地域差を素早く眺める用途では、異なる公開統計を同じ地図操作で比べられる。ただし指標により年次と地理単位が異なり、制作過程、更新周期、外部分析に再利用する際の検証手順は公開ページからは分からない。"
+      ],
+      "comment": "usacivの要点は、ゲーム風の見た目そのものではなく、公開統計をどの地理単位で重ねたかにある。ACS 2025年1年推計はおおむね人口6万5千人以上の地域を対象に都市・州・全国の表示へ使われ、郡の比較にはACS 2024年5年推計が使われる。さらにBEAの郡別GDPは産業値の一部を機密保護で伏せるため、地図側も欠損をゼロにしない。したがって4X地図としての色やアイコンを地域の総合順位と読まず、レンズごとの出典年次、集計範囲、欠損の有無を対応づけて見る作りである。",
+      "articleDetail": {
+        "conclusion": "usacivは、米国本土48州の公開統計を六角形タイルと指標レンズで探索できる4X戦略ゲーム風の対話型地図として公開された。",
+        "facts": [
+          "usacivは米国本土48州を六角形タイル、都市、資源、指標レンズで表示する。",
+          "都市・州・全国の人口、所得、雇用などにはACS 2025年1年推計、郡レンズにはACS 2024年5年推計を使う。",
+          "経済の金収量と産業別GDPにはBEAの2024年CAGDP2を使う。"
+        ],
+        "background": [
+          "ACS 1年推計の対象はおおむね人口6万5千人以上の地域で、5年推計は複数年をプールして郡を含む地域の推計を提供する。"
+        ],
+        "explanation": [
+          "公開統計を地理単位ごとに集計し、地形・都市・資源と重ねて描画する。利用者はレンズを切り替え、同じ地図上で場所ごとの値を見る。"
+        ],
+        "implications": [
+          "地域差を探索する利用者は人口やGDPなどを一つの操作系で比較できるが、指標ごとの年次と地理単位が同じではない条件を踏まえる必要がある。"
+        ],
+        "caveats": [
+          "BEAは機密保護のため一部の郡産業値を非開示にしており、usacivはそれをゼロではなく「no data」と表示する。地図上の空白を産業活動ゼロとは解釈できない。"
+        ],
+        "nextChecks": [
+          "制作者が更新周期、制作過程、またはレンズ別の集計・表示方法を公開すれば、各指標を比較・再利用できる範囲を改めて確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "地域統計を比較する利用者は、usacivでACSとBEAの値を地図上から探索できる一方、郡産業値が非開示の場所ではゼロと比較しないという条件で判断が変わる。",
+        "currentReaction": "Hacker Newsで66 points / 49 commentsを2026-11-27T06:35:00+09:00に確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "66 points / 49 commentsという反応があり、単一の統計表ではなく、年次や欠損条件の異なる公開データを4X地図で探索する実装に関心が集まっている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-browser-vms",
+      "title": "Side by Side、3種類の実ブラウザーをタブ内Linux VMで比較",
+      "sourceUrl": "https://michidk.github.io/sidebyside/",
+      "sourceName": "Side by Side",
+      "publishedAt": "2026-11-26T21:08:55Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Side by Sideは、Firefox、Chromium、Epiphanyという異なるエンジンの実ブラウザーを、同じタブ内の別々のLinux VMで起動し、1つのURLを横並びで開く比較ツールを公開した。静的ページとして配布され、利用者側でソフトウェアを導入せずにレンダリング差を操作して確かめられる。",
+        "LinuxカーネルをWebAssembly化したunkernel上で各VMを動かし、Nixのブラウザーストアは必要なファイルを初回アクセス時に取得する。既定の3ブラウザーでは初回に約800MiB、1〜3分を要するが、取得物はCache StorageでVM間に共有され、再訪時にはキャッシュ済みデータを再利用する。",
+        "利用にはデスクトップと8GiB以上のRAMが案内され、既定の3ペインはブラウザーごとに約2GiB、合計約6GiBのメモリーを必要とする。VMはエミュレーションのため低速で、Epiphanyの応答停止も起こり得る。LadybirdとServoは現時点で実用的に動作せず、対応時期は示されていない。"
+      ],
+      "comment": "この構成の要点は、単に画面を模倣するのではなく、各エンジンを独立したLinux VM内で走らせることにある。FirefoxはGecko、ChromiumはBlink、EpiphanyはWebKitを使うため、同じURLへの操作、スクロール、入力を各ペインで行いながら差を観察できる。Nixストアを遅延取得し、NARのハッシュを検証してからCache Storageに置く設計は、複数VMで共通するライブラリーを重複転送しないためのものだ。一方で初回の800MiBと既定構成の約6GiBは、軽量なクロスブラウザーテスト環境とは言いにくい。公開のWispリレーを使う場合は接続先ホストがリレーから見え、サイト側にはそのIPが見えるため、ログイン済み状態やネットワーク条件の検証はローカルリレーとの違いも含めて扱う必要がある。",
+      "articleDetail": {
+        "conclusion": "Side by Sideは実ブラウザーをVM化して比較できるが、ローカル導入を省く代わりに大きな初回転送量とメモリーを利用者側へ引き受けさせる。",
+        "facts": [
+          "Firefox、Chromium、Epiphanyは各々のLinux VMで起動し、1つのURLを別ペインへ読み込む。",
+          "既定の3ブラウザーの初回起動は約800MiBを取得して1〜3分かかり、タブの必要メモリーはブラウザー1台あたり約2GiBとされる。",
+          "再開用に保存されたVMはブラウザーごとに約0.3〜0.7GBを使い、Chromiumは再開なら約20秒、起動し直す場合は約1分と説明されている。"
+        ],
+        "background": [
+          "互換性確認ではブラウザーの描画エンジンだけでなく、実際の実装と操作状態を同条件で比べる必要がある。",
+          "このページはサーバー処理を持たない静的SPAとして配布され、ブラウザー実行環境は利用者のタブに置かれる。"
+        ],
+        "explanation": [
+          "各VMはWebAssembly化したLinuxカーネル上で動き、ブラウザーのNixストアは最初に必要なファイルが読まれた時点で取得する。NARはNarHashで確認され、Cache Storageを共有するので、共通ライブラリーは一度のダウンロードで済む。",
+          "外部ネットワークはVMからWebSocket経由でWispリレーへTCPを渡す。ChromiumはDevTools protocol、FirefoxはWebDriver BiDiでページ側から制御される。"
+        ],
+        "implications": [
+          "Web開発者は自前で3種のブラウザーをインストールせず比較を始められるが、8GiB以上のRAMと初回の大容量取得を許容できるデスクトップ環境が必要になる。",
+          "公開リレー利用時はリレー運営者がVMの接続先ホストを見られ、サイトにはリレーのIPが見えるため、実ネットワークを前提にした挙動確認には条件差が残る。"
+        ],
+        "caveats": [
+          "VMはエミュレーション動作であり、ページ表示は遅く、Epiphanyでは応答停止表示が出ることがある。",
+          "Ladybirdはアドレス空間、ServoはソフトウェアOpenGLで描画できないことを理由に、現時点では利用できない。"
+        ],
+        "nextChecks": [
+          "LadybirdとServoを実行可能にする変更、対応ブラウザーの追加、VMイメージ更新の運用方針が公開されれば、比較対象と実用範囲の判断を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "クロスブラウザー不具合を調べるWeb開発者は、Firefox・Chromium・Epiphanyを同じURLで操作比較できる。ただし既定の3ペインだけで約6GiBを必要とし、公開リレー利用では接続元の見え方も変わる条件付きの手段である。",
+        "currentReaction": "Hacker Newsでは2026年11月27日06:35 JST確認時点で96ポイント、25コメントでした。",
+        "assessment": "判断には早い",
+        "assessmentComment": "実ブラウザーとVM分離を組み合わせた設計は具体的だが、公開資料だけでは対応サイト範囲や互換性問題の再現実績が定量化されていない。大容量の初回取得とメモリー要件が利用対象を絞る。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 96,
+        "hnComments": 25,
+        "socialMetricsCheckedAt": "2026-11-27T06:35:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-ibm-immigration-relocation",
+      "title": "IBM Consulting、米国の一部ビザ保有者に海外異動か退職かの選択を提示",
+      "sourceUrl": "https://economictimes.indiatimes.com/nri/work/ibm-gives-h-1b-green-card-holders-3-weeks-to-relocate-from-us-or-leave-company-december-31-deadline-set/articleshow/136180168.cms?from=mdr",
+      "sourceName": "The Economic Times",
+      "publishedAt": "2026-11-26T12:05:29+05:30",
+      "collectedAt": "2026-11-27T12:37:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "国内・国際",
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "IBMは、米国で働くH-1B保有者とグリーンカード保有者の一部に対し、海外の職を受け入れるか退職するかを3週間で決めるよう通知した。対象は同社全体ではなく、米国でのビザ・グリーンカード支援を大半の職種で打ち切るIBM Consultingが中心だ。",
+        "異動を選ばない人には3か月分の退職金を提示し、最終勤務日は2026年12月31日とされた。IBM Consultingの世界の従業員数は15万人超で、11月19日時点の米国外求人1,278件のうち1,125件はインドにあり、海外異動の受け皿は地域的に偏っている。",
+        "これは雇用主スポンサーが在留・永住手続に結び付く従業員に直接作用する人員配置の変更である。一方、対象人数、転勤を提示される比率、職務・報酬などの異動条件はIBMが公表していないため、求人件数だけから影響規模を決めることはできない。"
+      ],
+      "comment": "IBMが示した理由は、高技能ビザ制度への参加が数年にわたり減っており、スキル供給と顧客需要が変化したためというものだ。従来のスポンサー継続なら米国内での採用・配置と移民手続が並行するが、今回の方針では対象者が海外の職を受け入れるか、雇用を離れるかを選ぶことになる。インドの求人が米国外求人の大半を占めるため、単なる勤務地変更ではなく、生活拠点とキャリアの選択を伴う。IBM Consulting以外までスポンサー停止が広がる措置ではない点も、報道で明記されている。",
+      "articleDetail": {
+        "conclusion": "IBM Consultingの米国ビザ支援縮小は、対象従業員に海外異動の可否と雇用継続を同時に決めさせる措置になっている。",
+        "facts": [
+          "米国勤務のH-1B保有者とグリーンカード保有者の一部は、3週間以内に海外異動か退職かを決めるよう通知された。",
+          "異動を選ばない従業員の最終勤務日は2026年12月31日で、提示される退職金は3か月分とされた。",
+          "11月19日時点の米国外のIBM Consulting求人1,278件中、インドが1,125件、シンガポールが23件、英国が18件だった。"
+        ],
+        "background": [
+          "IBMは今月、IBM Consultingの大半の職種で米国のビザとグリーンカードのスポンサーを終了すると表明しており、全事業部に及ぶ終了ではない。"
+        ],
+        "explanation": [
+          "スポンサー終了で米国内の対象職に必要だった雇用主支援が継続しないため、会社側は海外ポストを提示し、従業員はその受諾または退職を選ぶ段取りになる。"
+        ],
+        "implications": [
+          "雇用主スポンサーに依存する外国人専門職は、転居を受け入れない場合に12月31日で雇用を失い得るため、勤務継続だけでなく在留・永住計画にも影響する。"
+        ],
+        "caveats": [
+          "IBMは影響人数、異動提案を受ける人数、海外ポストの職務条件を開示していないため、求人所在地の内訳は移動先の選択肢を示すにとどまる。"
+        ],
+        "nextChecks": [
+          "IBMが対象人数と異動条件を示すか、12月31日までにどの地域・職種へ実際の配置が行われるかで、措置の規模と運用が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "IBM Consultingの米国勤務のH-1B・グリーンカード保有者は、3週間以内に海外異動の受諾可否を決めなければ12月31日の雇用継続に影響する。",
+        "currentReaction": "Hacker Newsでは2026年11月27日12:37 JSTの確認時点で、56ポイント、26コメントでした。",
+        "assessment": "妥当",
+        "assessmentComment": "対象人数は未公表だが、スポンサー終了と12月31日の最終勤務日という具体的な条件があり、雇用と移民手続が交差する変更として注目に値する。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 56,
+        "hnComments": 26,
+        "socialMetricsCheckedAt": "2026-11-27T12:37:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:37:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-rvoip-rust",
+      "title": "rvoip 0.5.1、Rustの通話スタックを一依存関係で提供",
+      "sourceUrl": "https://github.com/eisenzopf/rvoip",
+      "sourceName": "GitHub",
+      "publishedAt": "2026-11-26T01:19:36Z",
+      "collectedAt": "2026-11-27T06:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "テクノロジー"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Rust向けリアルタイム通信ライブラリrvoipの0.5.1が、2026年11月26日01時19分36秒UTCにGitHubで公開された。SIP、RTP、WebRTC、QUIC/WebTransport/WebSocketの会話を一つの呼制御モデルで扱い、外部のSIPサーバーやメディアサーバーを別途導入しない構成を掲げる。",
+        "READMEによれば、シグナリング、メディア、コーデック、NAT越え、セキュリティをRust crate群に収め、利用側は用途に応じて一つのcrateを依存関係に加える。ワークスペースは47 crateだが、SIP電話やPBXにはrvoip-sip、SIPとブラウザーをつなぐ用途には機能フラグ付きrvoipを選ぶ。",
+        "公表済みの0.5.0性能値は、AWS c8i.4xlarge上の単一プロセス・終端エンドポイントで、TLS上のSIPシグナリングが最大毎秒8,348呼、TLS+SRTP・G.711の10秒通話が毎秒1,124呼という条件付きの値である。長時間通話の最大同時接続数や中継モードなどは未測定で、0.5.1での再測定も示されていない。"
+      ],
+      "comment": "rvoipはSIPだけを包むSDKではなく、呼制御の周囲にあるメディア、コーデック、NAT越え、セキュリティを同じRustワークスペースへ収める設計を採る。利用側が47 crateを個別に接続するのではなく、電話・PBXならrvoip-sip、SIPとWebRTCの接続なら機能フラグ付きrvoipという入口を選ぶため、外部SIPプロキシやRTPエンジンを先に配備しないローカル実行例を用意できる。一方、READMEの性能表は単一AWS VM、終端、10秒通話、G.711パススルーという試験条件の値であり、長時間通話、B2BUA中継、トランスコード、DTLS-SRTPは未測定である。導入時には、使う呼の形態がその測定条件に入るかを分けて読む必要がある。",
+      "articleDetail": {
+        "conclusion": "rvoip 0.5.1は、SIPからWebRTCまでを一つの呼制御モデルで扱うRust通信ライブラリとして2026年11月26日に公開された。",
+        "facts": [
+          "rvoip 0.5.1は2026年11月26日01時19分36秒UTCにGitHubで公開された。",
+          "rvoipはSIP、RTP、WebRTC、QUIC/WebTransport/WebSocketの会話を一つの呼制御モデルで扱う。",
+          "ワークスペースは47 crateで構成され、利用者は用途に応じて一つのcrateを依存関係に加える。"
+        ],
+        "background": [
+          "rvoipは外部SIPサーバー、メディアサーバー、RTPエンジンを別途導入せず、アプリケーションのコードから通信路までをRust crate群で扱う設計を説明している。"
+        ],
+        "explanation": [
+          "電話・PBXにはrvoip-sip、SIPとブラウザーをつなぐ用途には機能フラグ付きrvoipを選び、選んだcrateが必要な内部層を依存関係として取り込む。"
+        ],
+        "implications": [
+          "RustでSIP電話、PBX、WebRTCゲートウェイを構築する開発者は、外部サーバーを組み合わせずに呼制御とメディアを試せる。ただし性能値を容量計画へ使う場合は試験条件との一致が必要になる。"
+        ],
+        "caveats": [
+          "性能表はAWS c8i.4xlargeの単一プロセスを終端として測った値で、G.711はトランスコードしていない。長時間通話の最大同時接続数は算出値であり、実測最大値ではない。"
+        ],
+        "nextChecks": [
+          "rvoipの公開資料が、長時間通話、B2BUA中継、登録、トランスコード、DTLS-SRTPの測定値、または0.5.1での再測定結果を出すか確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "RustでSIP電話やWebRTCゲートウェイを作る開発者は、rvoip 0.5.1を一つのcrateから試せるが、容量計画では単一AWS VM・終端・10秒通話という公表ベンチマーク条件に自分の構成が合うかで判断が変わる。",
+        "currentReaction": "Hacker Newsで32 points / 11 commentsを2026-11-27T06:35:00+09:00に確認しました。",
+        "assessment": "妥当",
+        "assessmentComment": "32 points / 11 commentsの反応があり、SIP、RTP、WebRTCを一つの呼制御モデルへ収め、用途別に一つのcrateを選ばせる構成と、明示された測定条件が確認できる。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T06:35:00+09:00",
+        "reason": "rvoip 0.5.1は対象期間の開始である2026年11月26日07時00分JSTより前に公開されたが、Hacker Newsで後から把握した。外部サーバーを別途導入しない通信スタックという構成と、用途別の依存関係が一次資料で具体的に示されているため採用した。",
+        "currentNewsValue": "RustでSIPまたはWebRTCの通信機能を構築する際、外部サーバーの配備有無と依存するcrateを選ぶ判断に直結する。性能値の適用条件と未測定の呼形態も明示されており、現在の設計検討に使える。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T06:35:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-vcenter-auth-bypass-poc-followup",
+      "title": "vCenter認証バイパス、公開PoCの検証で更新適用を急ぐ段階に",
+      "sourceUrl": "https://www.rapid7.com/blog/post/etr-cve-2026-123903-critical-vmware-directory-service-authentication-bypass-affects-vcenter/",
+      "sourceName": "Rapid7",
+      "publishedAt": "2026-11-25T21:00:00Z",
+      "collectedAt": "2026-11-27T12:33:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Rapid7は、11月26日版で扱ったVMSA-2026-0011のCVE-2026-123903について、公開された概念実証コードを検証した。vCenterのVMware Directory Serviceにある認証バイパスであり、修正版への更新確認が今回の実質的な追加情報となる。",
+        "同社によれば、CVSS v3.1は9.8で、影響を受けるvCenterのvmdirへネットワーク越しに到達できる攻撃者は認証なしでアクセスを得られる。公開PoCは利用可能で検証済みだが、11月25日時点で実環境悪用の公開報告はないとしている。",
+        "修正版はVCF／vSphere Foundation 9.1.2、9.0.2.0300、vCenter 8.0 U3m、VCF 5.2.5などに示された。vmdirの到達性と各環境の版を照合する必要があり、実際にどの組織が露出しているかは公開されていない。"
+      ],
+      "comment": "今回の更新点は、認証バイパスそのものの公表から、第三者が使える公開PoCが検証済みになったことだ。CVE-2026-123903はLDAP経由でvmdirに届く条件で成立するとされ、旧CVE-2026-123890のRPC経由とは到達経路が異なる。したがって、前回の対応で8.0 U3mを導入した環境は追加更新が不要な場合がある一方、VCF／vSphere Foundation 9.1.x.xでは9.1.2、9.0.x.xでは9.0.2.0300という版の確認が要る。Rapid7は回避策なし、Quick Patch対象外と記しており、通常の更新機構を前提にしている。実環境悪用の公開報告はないが、vmdirのネットワーク到達性を持つ運用では、公開PoCの存在によって更新の優先度を再評価する材料になる。",
+      "articleDetail": {
+        "conclusion": "公開PoCが検証済みとなったCVE-2026-123903では、vmdirの到達性と修正版への更新状況を環境ごとに確認する。",
+        "facts": [
+          "Rapid7は公開PoCを検証済みとし、CVE-2026-123903のCVSS v3.1を9.8と記載した。",
+          "11月25日時点で、同社は実環境悪用の公開報告を把握していないとした。"
+        ],
+        "background": [
+          "この脆弱性は2026年11月24日に公表されたVMSA-2026-0011に含まれる。",
+          "旧CVE-2026-123890もvCenterのVMware Directory Serviceに関する別の欠陥である。"
+        ],
+        "explanation": [
+          "CVE-2026-123903はLDAP経由で到達するvmdirの認証バイパスで、認証を通さずアクセスを得る可能性がある。",
+          "旧CVE-2026-123890の到達経路はRPCであり、同じコンポーネントでも区別される。"
+        ],
+        "implications": [
+          "ネットワークからvmdirへ到達可能なvCenter運用者は、露出状況と修正版を照合する必要がある。",
+          "Quick Patchでは適用できず、通常の更新機構を使う条件である。"
+        ],
+        "caveats": [
+          "Rapid7の記事には実環境悪用の公開報告はない。",
+          "各組織のvmdir露出範囲や修正版適用率は記事からは分からない。"
+        ],
+        "nextChecks": [
+          "Broadcomが示す対象版・修正版の更新、またはCVE-2026-123903の実環境悪用に関する公表があれば優先度を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "vCenter運用者は、vmdirがネットワークから到達可能で公開PoCが検証済みという条件なら、通常の更新機構で修正版を適用する判断を急ぐ必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "CVSS v3.1が9.8で認証不要のアクセスにつながり得る一方、Rapid7は11月25日時点の実環境悪用を把握していない。公開PoCの検証済みという追加材料を重く見た。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-26-vmsa-0011"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-26-vmsa-0011",
+        "originalEditionDate": "2026-11-26",
+        "checkedAt": "2026-11-27T12:33:00+09:00",
+        "developments": [
+          "Rapid7が公開PoCを検証済みとし、LDAP経由の到達条件と修正版を整理した。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:33:00+09:00",
+        "reason": "公開時刻は対象窓の直前だが、前日版後に公開PoCの検証という実質更新を確認した。",
+        "currentNewsValue": "公開PoCが検証済みとなり、vmdirの到達性と指定修正版の照合が直ちに必要になった。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:33:00+09:00"
+      }
+    },
+    {
+      "id": "2026-11-27-mext-procurement-system-breach",
+      "title": "文科省調達システムへの不正アクセス、最大16万3953件の事業者情報が漏えいの可能性",
+      "sourceUrl": "https://www.mext.go.jp/a_menu/mext_00012.html",
+      "sourceName": "文部科学省",
+      "publishedAt": "2026-11-25T00:00:00+09:00",
+      "collectedAt": "2026-11-27T12:35:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ",
+        "国内・国際"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "文部科学省は11月25日、政府調達情報システムを構成するサーバーへの不正アクセスにより、データベース内の事業者情報とメールアドレスが外部へ漏えいした可能性があると公表した。検知は10月1日だった。",
+        "漏えい可能性があるのは、事業者の会社名と代表者氏名等が最大163,953件、メールアドレスが最大1,778件である。文科省は外部専門機関と調査を進め、当該システムの内外通信は既に遮断したとしている。",
+        "不特定多数への公開や情報の不正利用による被害は、発表時点で確認されていない。ただし実際に取得された情報、対象者の確定数、侵入経路は示されておらず、関係機関と連携した調査が続く。"
+      ],
+      "comment": "公表値は確定した漏えい件数ではなく、データベースに格納されていた情報のうち漏えいした可能性がある最大件数である。会社名・代表者氏名等とメールアドレスで桁が大きく違うため、登録テーブルや情報の保有形態が同一だったと決めつけることはできない。通信遮断は外部とのやり取りを止める初動措置だが、10月1日の検知から11月25日の公表までに何が取得・持ち出されたかは明らかにされていない。対象事業者側では、文科省からの個別連絡や調査結果で自社情報の種類が確定するまでは、公開・不正利用が未確認という発表と、漏えい可能性そのものを区別して扱う必要がある。",
+      "articleDetail": {
+        "conclusion": "文科省の政府調達情報システムで、最大163,953件の事業者情報と最大1,778件のメールアドレスが漏えいした可能性があり、確定範囲は継続調査に委ねられている。",
+        "facts": [
+          "文部科学省は10月1日に、政府調達情報システムを構成するサーバーへの第三者による不正アクセスを検知した。",
+          "漏えい可能性がある情報は、メールアドレスが最大1,778件、事業者の会社名と代表者氏名等が最大163,953件とされた。",
+          "11月25日の公表時点で、システムの内外通信は遮断済みで、情報の公開や不正利用の被害は確認されていない。"
+        ],
+        "background": [
+          "対象は文部科学省の政府調達情報システムを構成するサーバーであり、データベースには連絡先と事業者情報が保存されていた。",
+          "文科省は個人情報保護委員会へ報告し、関係機関および外部専門機関と連携している。"
+        ],
+        "explanation": [
+          "不正アクセスを検知した後の調査で、サーバーのデータベースに保存された情報が外部へ漏えいした可能性が判明し、通信を遮断して調査を継続する流れとなった。"
+        ],
+        "implications": [
+          "情報を登録していた事業者とメールアドレスの保有者は影響候補となるが、実際に流出したデータと対象者の確定は調査結果を待つ必要がある。",
+          "公開や不正利用が未確認であっても、会社名・代表者氏名等を含む可能性のある情報が最大16万件超に及ぶため、調達に関わる組織の連絡・照合負担が生じ得る。"
+        ],
+        "caveats": [
+          "最大件数は漏えい可能性のある範囲であり、実際に外部へ持ち出された件数ではない。",
+          "侵入経路、攻撃者、情報の公開先、対象者への通知方法は公表されていない。"
+        ],
+        "nextChecks": [
+          "文科省の継続調査で実際の漏えい範囲、対象者への連絡、侵入原因、不正利用の有無が公表されれば、影響と対応の判断を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "政府調達情報システムに情報を登録した事業者と連絡先の保有者は、最大件数ではなく実際の漏えい範囲が確定し、個別連絡が始まる時点で対応を判断することになる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "対象候補が最大16万件超に及ぶ一方で、公開と不正利用は未確認であり、確定情報と可能性のある件数を分けて追う必要がある。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:35:00+09:00",
+        "reason": "11月25日公表で対象期間外かつ前日版に未掲載だったが、政府調達システムに登録された事業者情報の大規模な漏えい可能性を公式発表で確認した。",
+        "currentNewsValue": "対象事業者と連絡先の保有者は、調査による範囲確定、個別連絡、不正利用の有無を追う必要がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:35:00+09:00",
+        "httpStatus": 200,
+        "note": "文部科学省の公式発表を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-27-jenkins-plugin-advisory",
+      "title": "Jenkinsの11プラグイン修正、サンドボックス回避とXXEの適用条件を確認",
+      "sourceUrl": "https://www.jenkins.io/security/advisory/2026-11-25/",
+      "sourceName": "Jenkins",
+      "publishedAt": "2026-11-25T00:00:00Z",
+      "collectedAt": "2026-11-27T12:36:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Jenkinsは11月25日付のSecurity Advisoryで、Configuration as Code、Gradle、Pipeline: Groovy、Script Securityを含む11プラグインの脆弱性と修正版を公開した。今回の対象には、サンドボックスを回避してJenkinsコントローラJVMで任意コードを実行し得る問題が含まれる。",
+        "Pipeline: Groovy Plugin 4403.v471713a_cea_19以前では、interface field initializerの検査漏れが原因となる。修正版4403.4405.va_b_cdb_b_d0b_89fはこの初期化子にもサンドボックス保護を適用する。Script Securityにも、部分修飾した@Builder名を使うコンパイル時の回避を塞ぐ1436.1438.v3dc5ef7d16f2が示された。",
+        "Gradle PluginのXXEは、Develocity Maven auto-injectionを有効にしたコントローラで、攻撃者がワークスペース内容を制御できる場合に限って影響する。全環境の一律判断ではなく、導入済みプラグイン、版、機能有効化、利用者権限を照合する必要があり、実環境での悪用状況や適用率は一次資料では公表されていない。"
+      ],
+      "comment": "同じアドバイザリでも、更新優先度はプラグイン名の数では決まらない。Pipeline: Groovyの問題は、サンドボックス付きPipelineを定義して実行できる権限を持つ利用者が、検査対象外だった非定数のinterface field initializerを経由してコントローラJVMの文脈でコードを走らせ得る点にある。一方、Gradle PluginのXXEは、Develocity Maven auto-injectionを有効にし、さらに攻撃者がワークスペース内の.mvn/extensions.xmlを操作できる構成で成立する。前者は権限設計、後者は機能有効化とワークスペース供給元が確認の境界になる。対象プラグインと条件をコントローラごとに対応付け、該当する修正版へ更新する必要がある。",
+      "articleDetail": {
+        "conclusion": "Jenkinsコントローラごとに対象11プラグインの版と有効化条件を照合し、該当する修正版へ更新する。",
+        "facts": [
+          "Jenkinsは2026年11月25日、11プラグインについて影響を受ける版と修正版を列挙した。",
+          "Pipeline: Groovy Plugin 4403.v471713a_cea_19以前では、サンドボックスPipelineを定義・実行できる攻撃者が任意コードを実行できる可能性がある。",
+          "Gradle Plugin 2.21.1282.v024680ce00a_b_以前のXXEは、Develocity Maven auto-injectionを有効にしたコントローラが対象である。"
+        ],
+        "background": [
+          "アドバイザリはConfiguration as Code、Gradle、Nested View、Performance、Pipeline系などのプラグインを対象にしている。",
+          "各修正版には、入力の検査、XML外部エンティティの無効化、権限確認など個別の対策が含まれる。"
+        ],
+        "explanation": [
+          "Pipeline: Groovyでは非定数のinterface field initializerがサンドボックス検査から漏れたため、修正版はその初期化子にも保護を適用する。",
+          "Gradle Pluginはワークスペースの.mvn/extensions.xmlをXML解析する際に外部エンティティを許していたため、修正版は外部エンティティ解決を無効化する。"
+        ],
+        "implications": [
+          "サンドボックスPipelineを作成・実行できる利用者を持つコントローラは、Pipeline: Groovyの対象版ならコントローラJVMでの実行リスクを評価する必要がある。",
+          "Develocity Maven auto-injectionを有効にし、信頼できないワークスペースを処理するコントローラは、Gradle PluginのXXEにより秘密情報の抽出やSSRFの条件を持つ。"
+        ],
+        "caveats": [
+          "Jenkinsの一次資料は各組織での導入規模、修正版の適用率、実環境での悪用の有無を記載していない。",
+          "全ての過去版が影響対象とされる一方、個別の脆弱性には権限や機能有効化などの成立条件がある。"
+        ],
+        "nextChecks": [
+          "各コントローラで対象プラグインの導入版、Develocity Maven auto-injectionの有効化、Pipelineの作成・実行権限を確認し、Jenkinsが示した修正版の適用完了を照合する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Jenkinsコントローラの運用者は、サンドボックスPipelineの作成・実行権限、またはDevelocity Maven auto-injectionの有効化とワークスペース内容を制御される条件がある環境で、対象プラグインの修正版を照合する必要がある。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "11プラグインに高深刻度のサンドボックス回避やXXEが含まれるが、一次資料には実環境悪用や導入組織の反応は示されていない。構成依存のため、影響範囲の確認が先行する。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:36:00+09:00",
+        "reason": "11月25日付で対象期間より前に公開され、前日版で未掲載だった。サンドボックス回避とXXEを含む複数プラグインの修正版を、当日巡回で確認した。",
+        "currentNewsValue": "導入済みプラグイン、機能有効化、利用者権限をコントローラ単位で照合し、指定修正版の適用対象を決められる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:36:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-japan-cyber-emergency-package",
+      "title": "政府のサイバー緊急対策、基幹インフラ被害報告を最短数時間へ",
+      "sourceUrl": "https://www.kantei.go.jp/jp/105/actions/202611/06kaigi_cyber.html",
+      "sourceName": "首相官邸",
+      "publishedAt": "2026-11-06T00:00:00+09:00",
+      "collectedAt": "2026-11-27T12:36:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "国内・国際",
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "政府は11月6日、サイバーセキュリティに関する関係閣僚会議で、早期実施施策をまとめた緊急対策パッケージを策定した。基幹インフラ事業者から攻撃を受けた旨の情報を、できれば数時間、少なくとも同日中に国家サイバー統括室へ伝えることを目指す。",
+        "パッケージは、AIも活用する基本対策、情報収集・集約、捜査・分析体制、戦略的な対処、被害者支援と被害拡大防止を柱に据える。同日の閣議では直ちに必要な約100億円の予備費を措置し、全体に必要な財政措置は追加で検討・調整する。",
+        "会議資料は報告目標を示すが、対象事業者の具体的範囲、開始時期、報告内容や法的根拠は定まっていない。サイバー対処能力強化法の改正、民間企業への不審通信を把握・分析する仕組みも、今後の検討事項に置かれた。"
+      ],
+      "comment": "今回の変化は、被害が判明した後の政府内集約を、日単位ではなく数時間単位へ寄せようとしている点にある。資料上の対象は基幹インフラ事業者で、攻撃を受けた旨を同日中、可能なら数時間で伝える目標が示された。しかし、これは会議時点では目標であり、対象セクター、どの検知段階で誰が何を報告するか、未達時の扱いは示されていない。約100億円は直ちに必要な予備費で、パッケージ全体の費用ではない。事業者の実務への影響は、法改正や制度・体制面の検討で、報告要件と適用時期が具体化して初めて判定できる。",
+      "articleDetail": {
+        "conclusion": "政府は被害情報の早期集約を中心とするサイバー緊急対策を決めたが、基幹インフラ事業者に求める報告の具体的要件と開始時期は未確定である。",
+        "facts": [
+          "11月6日の第2回関係閣僚会議で、早期に実施すべき施策をまとめたサイバーセキュリティ緊急対策パッケージが策定された。",
+          "同日の閣議で直ちに必要となる約100億円の予備費を措置し、パッケージ全体の財政措置は更に検討・調整するとされた。",
+          "基幹インフラ事業者からの被害情報は、できれば数時間、少なくとも同日中に国家サイバー統括室へ届くことを目指すとされた。"
+        ],
+        "background": [
+          "会議資料は、深刻なサイバー攻撃の状況を踏まえ、サイバーレジリエンスの向上と国民の不安の払拭を実行目標に掲げた。",
+          "情報収集・集約、捜査・分析、戦略的対処、被害者支援と被害拡大防止を含む施策群として対策を構成する。"
+        ],
+        "explanation": [
+          "攻撃を受けたという情報を基幹インフラ事業者から国家サイバー統括室へ短時間で集め、政府が機動的に把握・分析・対処できる状態を目指す設計である。",
+          "政府システムの点検と、ITシステム・機器のサプライチェーンリスクを低減する制度の検討も、同じ対処能力強化の流れに位置付けられた。"
+        ],
+        "implications": [
+          "基幹インフラ事業者は、報告要件が具体化すれば、検知・エスカレーション・対外連絡の時間設計を数時間単位で見直すことになり得る。",
+          "政府機関と民間企業は、情報集約、サプライチェーン点検、民間への不審通信の把握・分析に関する制度設計の対象となり得る。"
+        ],
+        "caveats": [
+          "会議資料は報告を目指す時間を示すにとどまり、対象事業者の範囲、開始時期、報告項目、法的義務を確定していない。",
+          "民間企業への不審通信を国家サイバー統括室が把握・分析する仕組みは主要国の例を参照して検討する段階であり、実施方法は公表されていない。"
+        ],
+        "nextChecks": [
+          "法改正、予算措置、所管省庁の制度設計で、基幹インフラの報告対象・期限・内容と、民間通信の把握・分析の仕組みが示されれば、事業者への実務影響を判断できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "基幹インフラ事業者は、攻撃検知から国家サイバー統括室への連絡を最短数時間へ縮める目標が、制度としていつどの範囲に適用されるかで初動運用を判断することになる。",
+        "currentReaction": null,
+        "assessment": "判断には早い",
+        "assessmentComment": "約100億円の予備費と迅速報告の目標は決まったが、報告義務の具体的な対象・期限・手続が未公表であり、直ちに一律の運用変更とは評価できない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:36:00+09:00",
+        "reason": "11月6日の決定で対象期間外かつ前日版に未掲載だったが、基幹インフラの被害報告と政府の集約運用を変え得る公式決定として確認した。",
+        "currentNewsValue": "対象事業者は報告の対象・期限・内容と、関連する法改正・予算・制度設計が具体化する時点を追う必要がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:36:00+09:00",
+        "httpStatus": 200,
+        "note": "首相官邸の会議資料を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-27-vmsa-0008-3-vcf-912-followup",
+      "title": "VMSA-2026-0008.3、VCF 9.1.1のSDDC Manager修正版に9.1.2を追加",
+      "sourceUrl": "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39445",
+      "sourceName": "Broadcom",
+      "publishedAt": "2026-11-24T00:00:00Z",
+      "collectedAt": "2026-11-27T12:36:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "VCF・VMware・競合",
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "11月26日掲載のVCF 9.1.2一般提供の続報として、BroadcomはVMSA-2026-0008.3のResponse Matrixに、SDDC Manager 9.1.1向けCVE-2026-111497のFixed VersionとしてVCF 9.1.2を追加した。これにより9.1.1系には、暫定回避策だけでなく指定修正版が示された。",
+        "CVE-2026-111497はSDDC Managerで使われるNode.jsのBrotli decoderのout-of-bounds writeに起因するリモートコード実行脆弱性である。Broadcomはネットワークアクセスを持つ攻撃者による任意コード実行の可能性を示し、SDDC Manager 9.1.1ではCVSS v3 9.8、Criticalとしている。",
+        "9.0.xと9.1.0は引き続きPatch pendingで、KB460734の回避策がResponse Matrixに残る。5.2.xは5.2.5がFixed Versionである。各環境でどの更新経路を取れるか、9.1.2への互換性、実環境悪用の有無は一次資料からは分からず、版と運用条件の照合が必要になる。"
+      ],
+      "comment": "今回の実質更新は、9.1.1系のSDDC Managerについて「回避策を選ぶ」状態から、VCF 9.1.2という固定版を選べる状態へResponse Matrixが変わったことにある。CVE-2026-111497はNode.jsのBrotli decoderにおけるout-of-bounds writeで、ネットワークアクセスを持つ攻撃者がSDDC Manager上で任意コードを実行し得る。9.1.1ではCVSS v3が9.8だが、9.0.xと9.1.0は7.5で固定版もPatch pendingのまま、同じ対応を当てはめられない。したがって、9.1.1の環境は9.1.2への更新可否を確認し、9.0.x・9.1.0はKB460734の暫定手順を維持するという版別の判断が必要になる。",
+      "articleDetail": {
+        "conclusion": "SDDC Manager 9.1.1のVCF環境は9.1.2を指定修正版として評価し、9.0.x・9.1.0はPatch pendingとして別の回避策を扱う。",
+        "facts": [
+          "Broadcomは2026年11月24日のVMSA-2026-0008.3で、SDDC Manager 9.1.1のFixed VersionにVCF 9.1.2を追加した。",
+          "CVE-2026-111497は、SDDC ManagerのNode.js Brotli decoderにおけるout-of-bounds writeによるリモートコード実行脆弱性である。",
+          "Response MatrixではSDDC Manager 9.0.x・9.1.0はPatch pending、5.2.xは5.2.5がFixed Versionとされる。"
+        ],
+        "background": [
+          "VMSA-2026-0008は2026年10月27日に初出し、11月19日の.2でVCF 5.2.5をFixed Versionに追加していた。"
+        ],
+        "explanation": [
+          "Brotli decoderの範囲外書き込みがSDDC ManagerのNode.jsで起きるため、ネットワークアクセスを持つ攻撃者が任意コードを実行する経路になり得る。",
+          "VMSAはSDDC Managerの版ごとに修正版またはKBの回避策を割り当て、.3で9.1.1の修正版欄を9.1.2へ更新した。"
+        ],
+        "implications": [
+          "SDDC Manager 9.1.1を運用するVCF利用者は、9.1.2が指定修正版となったため、暫定回避策だけでなく更新経路を検討できる。",
+          "SDDC Manager 9.0.xまたは9.1.0の利用者は固定版が未提示のため、KB460734の回避策を適用する前提が継続する。"
+        ],
+        "caveats": [
+          "VMSAは各環境の9.1.2への互換性、更新の実施状況、実環境での悪用の有無を示していない。",
+          "9.0.xと9.1.0の恒久パッチの時期はResponse MatrixでPatch pendingとされ、日程は公表されていない。"
+        ],
+        "nextChecks": [
+          "Broadcomが9.0.x・9.1.0向けFixed VersionをResponse Matrixへ追加するか、またはCVE-2026-111497の悪用情報を公表した時点で、版別の対応優先度を更新する。"
+        ]
+      },
+      "vcfReview": {
+        "products": [
+          "VMware Cloud Foundation",
+          "SDDC Manager"
+        ],
+        "versions": [
+          "VCF 9.1.2",
+          "SDDC Manager 9.1.1",
+          "SDDC Manager 9.1.0",
+          "SDDC Manager 9.0.x",
+          "VCF 5.2.5"
+        ],
+        "affectedUsers": "SDDC Manager 9.1.1を含むVCF環境の運用者が対象で、CVE-2026-111497はネットワークアクセスを持つ攻撃者による任意コード実行の可能性を持つ。9.1.1のResponse MatrixはCVSS v3 9.8、Criticalとし、9.0.x・9.1.0・5.2.xでは7.5、Importantを示す。",
+        "operationalImpact": "9.1.1の運用者は、VCF 9.1.2をFixed Versionとして更新経路に載せられる。9.0.x・9.1.0はPatch pendingでKB460734の回避策が必要なままであり、版を誤認して9.1.2向けの対応を適用しないよう、SDDC Managerの実バージョンを先に照合する必要がある。",
+        "knownConstraints": [
+          "BroadcomのResponse MatrixではSDDC Manager 9.0.xと9.1.0はPatch pendingで、恒久パッチの提供時期は示されていない。",
+          "VMSAは各VCF環境が9.1.2へ更新可能か、互換性確認や更新の実施状況、実環境悪用の有無を記載していない。"
+        ],
+        "officialSources": [
+          "https://support.broadcom.com/web/ecx/support-content-notification/-/external/content/SecurityAdvisories/0/39445"
+        ],
+        "fieldSources": [],
+        "evidenceClassification": {
+          "officialFacts": [
+            "VMSA-2026-0008.3の変更履歴は2026年11月24日にVCF 9.1.2をFixed VersionとしてResponse Matrixへ追加したと記載する。",
+            "Response MatrixはSDDC Manager 9.1.1のFixed Versionを9.1.2、9.0.x・9.1.0をPatch pending、5.2.xを5.2.5としている。"
+          ],
+          "fieldReports": [],
+          "inference": []
+        },
+        "nextChecks": [
+          "Broadcomが9.0.xおよび9.1.0向けのFixed Versionと提供時期をResponse Matrixへ掲載するかを確認する。",
+          "CVE-2026-111497の実環境悪用、または9.1.2への更新条件をBroadcomが公表した場合に運用判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "SDDC Manager 9.1.1を運用するVCF利用者は、ネットワーク到達可能な脆弱性に対し、VCF 9.1.2がFixed Versionとして初めて明示されたため、対応版を照合する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "9.1.1のCVSS v3 9.8、Criticalに対する指定修正版が追加された一方、9.0.xと9.1.0はPatch pendingであり、全VCF環境を同じ更新判断にはできない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-26-vcf-912-ga"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-26-vcf-912-ga",
+        "originalEditionDate": "2026-11-26",
+        "checkedAt": "2026-11-27T12:36:00+09:00",
+        "developments": [
+          "VMSA-2026-0008.3は、SDDC Manager 9.1.1のCVE-2026-111497に対するFixed VersionとしてVCF 9.1.2をResponse Matrixへ追加した。",
+          "9.0.xと9.1.0はPatch pendingのままで、KB460734の回避策が継続している。"
+        ]
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:36:00+09:00",
+        "reason": "VMSA-2026-0008.3の最終更新日は11月24日で対象期間より前だが、11月26日掲載のVCF 9.1.2一般提供に対する、9.1.1の指定修正版追加という実質更新を当日巡回で確認した。",
+        "currentNewsValue": "9.1.1ではVCF 9.1.2がFixed Versionとして明示され、9.0.x・9.1.0のPatch pendingと区別して版別の対応を判断できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:36:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-geoserver-probes",
+      "title": "GeoServerのWFS欠陥2件、実環境悪用報告で公開設定を点検へ",
+      "sourceUrl": "https://github.com/geoserver/geoserver/security/advisories/GHSA-rv5g-g2r9-58rj",
+      "sourceName": "GeoServer",
+      "publishedAt": "2026-11-23T22:08:51Z",
+      "collectedAt": "2026-11-27T12:37:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "カナダのCyber Centreは11月25日、GeoServerのCVE-2026-120705とCVE-2026-129243について、オープンソース報告が実環境での悪用を示すと記載した。両者はWFSの保存済みクエリを足掛かりにする連鎖の一部で、匿名WFSを公開する旧版は設定と更新状況を同時に点検する対象となる。",
+        "CVE-2026-129243ではservice=x/WFSのような接頭辞付き名がWFSに解決されても、認可規則が元の名前を照合していたため、匿名者が本来は管理者向けの保存済みクエリを作成・削除できた。CVE-2026-120705はGetFeatureByIdのIDをXMLへ未エスケープで挿入し、匿名要求からローカルテキスト読出しやサーバー側リクエストを可能にする。",
+        "GeoServerは後者を含む5段階のリモートコード実行チェーンを説明し、3.0.2、2.28.6、2.27.7を修正版としている。実悪用報告はあるものの、プローブが連鎖のどこまで使われたか、成功侵害の件数や対象組織は公開されていない。"
+      ],
+      "comment": "今回の焦点は、CVE-2026-129243とCVE-2026-120705を単体の脆弱性として扱わず、WFSの公開条件と保存済みクエリの痕跡を組で見る点にある。前者では、ディスパッチャがx/WFSをWFSとして実行するのに、認可側がx/WFSのまま規則照合した不一致が入口になる。前者で作成されたクエリは公表された連鎖に組み込まれ得るが、後者のXML注入はカスタム保存済みクエリやCreateStoredQuery権限なしでも成立する。後者はIDをXMLテンプレートへ文字列置換していたため、外部参照を含むXMLを注入でき、GeoServerプロセスの読めるテキストやサーバー側取得結果が匿名公開レイヤーではエラー応答に現れる。GeoServerはこの先に管理者セッション偽造とJDBCユーザーサービスのデシリアライズを置く連鎖を公表した。したがって、影響版で匿名WFSを提供する運用では、更新だけでなくデータディレクトリ内のwfs/queryとworkspaces配下の同名ディレクトリに、作成記録のない保存済みクエリがないかを確認する必要がある。公表資料は実際の侵害規模を示していない。",
+      "articleDetail": {
+        "conclusion": "GeoServerの影響版で匿名WFSを公開している運用は、修正版への更新と保存済みクエリの確認を連鎖対策として進める。",
+        "facts": [
+          "カナダのCyber Centreは11月25日、CVE-2026-120705とCVE-2026-129243について実環境悪用を示すオープンソース報告があると記載した。",
+          "CVE-2026-129243では、匿名者が通常は管理者に制限されるWFS保存済みクエリの作成と削除を行える。",
+          "CVE-2026-120705は、匿名のWFS要求1回でGeoServerプロセスが読めるローカルテキストを読み出し得る。",
+          "GeoServerは3.0.2、2.28.6、2.27.7を両欠陥の修正版として公表した。"
+        ],
+        "background": [
+          "GeoServerは地理空間データを公開するオープンソースサーバーで、WFSを含む複数のOGC標準を実装する。",
+          "両CVEは、データディレクトリのパス漏えい、管理者セッション偽造、JDBCユーザーサービスのデシリアライズと組み合わさる連鎖の中間段階である。"
+        ],
+        "explanation": [
+          "x/WFSという接頭辞付きのservice値をディスパッチャがWFSへ正規化する一方、認可規則が未正規化値で照合したため、保存済みクエリを守るロール検査が一致しなかった。",
+          "GetFeatureByIdはIDをXMLテンプレートへ未エスケープで差し込み、エンティティリゾルバなしで解析していたため、注入したXIncludeからローカルファイルやHTTP/HTTPS URLを参照できた。"
+        ],
+        "implications": [
+          "匿名WFSを公開し、2.27.6以前、2.28.0〜2.28.5、または3.0.0〜3.0.1を運用する組織が、更新と公開範囲の見直しを要する。",
+          "匿名公開レイヤーがある構成では、読み出した内容がエラー応答で返り得るため、ファイル読出しの影響が外部へ露出する条件になる。"
+        ],
+        "caveats": [
+          "Cyber Centreの記載はオープンソース報告に基づくもので、GeoServerの公式資料は観測された攻撃の完遂段階や被害件数を公表していない。",
+          "匿名公開レイヤーがない場合もファイル読出し自体は起こり得るが、内容が応答へ返るかは公式説明上、公開設定に依存する。"
+        ],
+        "nextChecks": [
+          "GeoServer運用者は3.0.2、2.28.6、2.27.7以上への更新状況、匿名WFSの要否、wfs/queryとworkspaces配下に未承認の保存済みクエリがないかを確認し、侵害成功の公表があれば影響評価を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "匿名WFSを公開するGeoServer運用者は、影響版なら保存済みクエリの権限制約を越える条件があり、修正版への更新とクエリ痕跡の確認を急ぐ必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "実環境悪用を示す報告があり、認可回避とXML注入が公開WFSという具体的な設定条件で接続する。一方で侵害成功の件数や連鎖全体の利用状況は未公表である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "公表は対象期間より前で、当日までの候補収集では拾えていなかった。実環境悪用を示す報告と、WFS公開条件に結び付く影響が確認できたため追加した。",
+        "currentNewsValue": "影響版と匿名WFSの公開設定、保存済みクエリの痕跡を同時に確認でき、単なるCVE一覧では見落としやすい連鎖条件を運用判断へ反映できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:37:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-hexpm-rce-breach",
+      "title": "Hex.pmのErlang本文パーサーRCE、積極的悪用を受け修正版へ",
+      "sourceUrl": "https://github.com/hexpm/hexpm/security/advisories/GHSA-9pmm-hf4r-27pg",
+      "sourceName": "Hex.pm",
+      "publishedAt": "2026-11-24T13:48:55Z",
+      "collectedAt": "2026-11-27T12:37:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Hex.pmは、Erlang形式の要求本文を処理するCVE-2026-129514が11月23日に同サービスへ積極的に悪用されたと開示した。認証前のパーサーを通じて未認証の遠隔コード実行へ至る欠陥で、影響するレジストリ実装は2026年11月23日版へ修正された。",
+        "application/vnd.hex+erlangの本文は、__struct__キーを持つmapを受け入れた後にルーターや認証より先で要求パラメータになる。細工した構造体はエラー報告時のElixirプロトコル分配を悪用し、Ecto.Query.DynamicExprとDBConnection.Streamを経由して、本文が指定する値をapply/3へ渡しOSコマンドを実行させる。",
+        "対象は2016年2月23日以降2026年11月23日より前のhex.pmで、CVSS v4は10.0である。コマンドはBEAMプロセスのユーザーとして動くため、アプリケーション環境を読める構成ではデータベースURL、ストレージ認証情報、レジストリ署名鍵に影響し得るが、取得・変更された情報や利用者への影響範囲は未公表である。"
+      ],
+      "comment": "この欠陥の危険性は、Erlang外部項目形式のデコードそのものが直ちにコードを起動する点ではなく、デコード結果が認証前にconn.paramsへ入った後、例外処理が構造体として扱う値を通じて実行パスへ流れる点にある。Plug.Crypto.non_executable_binary_to_term/2は関数や新規atomを拒むが、__struct__付きmapは受理していた。POSTではPlug.MethodOverrideがその値を参照して例外を起こし、エラーをinspectする過程でEctoのInspect実装とDBConnectionのEnumerable実装が呼ばれる。最終的にDBConnectionのログフックが要求本文から来たmodule、function、argsの組をapply/3へ渡すため、BEAM実行ユーザーでOSコマンドが走る。修正はデコードした項目中の__struct__キーを拒否して400を返すものだ。レジストリ運用者にとっては、修正版コミット379b0a29bcc95164249f38ad7d772a37a8ff9533が導入済みかだけでなく、BEAMプロセスが読めるアプリケーション環境に接続先、ストレージ認証情報、署名鍵があったかを、侵害調査の対象として切り分けることになる。",
+      "articleDetail": {
+        "conclusion": "Hex.pmの影響版は認証前の要求本文処理からOSコマンド実行に至るため、11月23日修正版への更新とBEAM実行環境に置かれた認証情報の影響確認が必要である。",
+        "facts": [
+          "Hex.pmはCVE-2026-129514が2026年11月23日に同サービスへ積極的に悪用されたと開示した。",
+          "影響するhex.pmは2016年2月23日以降2026年11月23日より前で、修正版は2026年11月23日版である。",
+          "CVE-2026-129514のCVSS v4総合スコアは10.0で、攻撃ベクトルはネットワーク、必要権限と利用者操作はいずれもなしと評価されている。",
+          "未認証の攻撃者はBEAMプロセスのユーザーとしてOSコマンドを実行できる。"
+        ],
+        "background": [
+          "Hex.pmはElixir/Erlangのパッケージレジストリであり、脆弱な本文パーサーはapplication/vnd.hex+erlangというコンテンツ型を扱う。",
+          "修正対象のhexpm/hexpmでは、修正コミット379b0a29bcc95164249f38ad7d772a37a8ff9533が示されている。"
+        ],
+        "explanation": [
+          "認証より前の本文パーサーが__struct__キー付きmapを要求パラメータとして受理し、POST時の例外処理でその構造体に対応するInspectとEnumerableの実装が選ばれる。",
+          "Ecto.Query.DynamicExprからDBConnection.Streamへ連なる処理は、要求本文が持つmodule、function、argsをログフックのapply/3へ渡し、OSコマンド実行に至る。",
+          "修正版はデコード結果のどのmapにも__struct__キーがあればエラーにし、パーサーが400応答を返すよう変更した。"
+        ],
+        "implications": [
+          "11月23日以前のhex.pmサービスへネットワーク到達できる未認証者が、BEAM実行ユーザーの権限でOSコマンドを実行できる条件にある。",
+          "そのユーザーがアプリケーション環境を読める構成では、データベースURL、ストレージ認証情報、レジストリ署名鍵が露出し得る。"
+        ],
+        "caveats": [
+          "公式アドバイザリは積極的悪用を明記するが、攻撃者が取得・変更したデータ、侵害件数、影響を受けた利用者を公表していない。",
+          "実際に取得可能な認証情報は、BEAMプロセスの実行ユーザーがアプリケーション環境を読める配置かどうかに依存する。"
+        ],
+        "nextChecks": [
+          "Hex.pm運用者は11月23日修正版または修正コミット379b0a29bcc95164249f38ad7d772a37a8ff9533の導入状況、当時BEAMプロセスが読めたアプリケーション環境にあった接続情報・ストレージ認証情報・署名鍵、侵害範囲の追加公表を確認する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Hex.pmレジストリ運用者は、11月23日以前の実装を外部から受け付けていた条件なら、未認証RCEの修正とBEAM実行環境の認証情報確認を同時に行う必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "公式が積極的悪用とCVSS 10.0を開示し、認証前の本文処理からBEAM実行ユーザーのOSコマンド実行へ至る経路を説明している。一方、侵害規模と取得済み情報は未公表である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "公表は対象期間より前で前日版には含まれなかったが、公式が積極的悪用と認証前のRCE経路を具体的に開示しているため追加した。",
+        "currentNewsValue": "11月23日修正版への更新確認に加え、BEAM実行環境から読める接続情報、ストレージ認証情報、レジストリ署名鍵を侵害調査の対象として直ちに整理できる。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:37:00+09:00",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-27-drupal-installer-access-bypass",
+      "title": "Drupalの未保護インストーラーを狙うCVE-2026-136716、野外悪用を公表",
+      "sourceUrl": "https://www.drupal.org/sa-core-2026-019",
+      "sourceName": "Drupal",
+      "publishedAt": "2026-11-25T00:00:00Z",
+      "collectedAt": "2026-11-27T12:37:00+09:00",
+      "editionDate": "2026-11-27",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Drupalは11月25日、インストーラーへのアクセス回避でサイト乗っ取りにつながり得るCVE-2026-136716をSA-CORE-2026-019として公表した。深刻度はHighly criticalで、公式は野外で悪用されているとしている。",
+        "対象は10.6.23未満、11.0.0以上11.3.23未満、11.4.0以上11.4.14未満のDrupal coreである。11.4系は11.4.14、11.3系は11.3.23、10.6系は10.6.23へ更新し、既存の本番サイトではupdate.phpの実行も必要になる。",
+        "すでにインストーラーを保護したサイトは脆弱ではない一方、SA-CORE-2026-017後にもリモートから到達できた異常・未完了の導入状態は本番環境でも残り得る。個別の侵害有無や被害規模は公表されていない。"
+      ],
+      "comment": "今回の焦点は、一般的なDrupal全体ではなく、インストーラーの保護が完了していない例外状態にある。SA-CORE-2026-017が修正した導入処理と近接しているものの、本件のCVEはCVE-2026-136716であり、CVE-2026-132165とは別件である。更新だけで閉じず、対象バージョンのサイトでupdate.phpを走らせ、特にuser 1アカウントに対する予期しない変更やアクセスをログで確認するという、公式が示す二つの復旧作業が必要になる。既に侵害されたサイトは脆弱な状態を脱している可能性もあるため、現在の到達性だけでは過去の影響を否定できない。",
+      "articleDetail": {
+        "conclusion": "未保護のインストーラーが残った例外状態のDrupalサイトは、CVE-2026-136716への更新と侵害痕跡の確認を同時に進める必要がある。",
+        "facts": [
+          "SA-CORE-2026-019はCVE-2026-136716をアクセス回避として公表し、深刻度をHighly criticalの21/25とした。",
+          "修正版はDrupal 11.4.14、11.3.23、10.6.23であり、10.5系以下と11.2系以下は既にサポート終了である。",
+          "公式は野外悪用を明記し、user 1アカウントの変更やアクセスがないかログ確認を求めている。"
+        ],
+        "background": [
+          "Drupal coreには導入用のinstall.phpが含まれ、通常は導入後に保護されていれば本件の影響を受けない。",
+          "直前のSA-CORE-2026-017もインストーラー内の複数問題を修正しており、本件はその後も残る特殊な導入状態を扱う。"
+        ],
+        "explanation": [
+          "例外的または未完了の導入状態でinstall.phpへのリモート到達性が残ると、認証なしのアクセス回避を足掛かりにサイト乗っ取りへ至り得る。",
+          "既存の本番サイトを直すにはコード更新に加え、状態を修正する更新フックをupdate.phpで実行する必要がある。"
+        ],
+        "implications": [
+          "SA-CORE-2026-017後にインストーラーを到達可能なままにしたサイトは、本番運用中でも影響対象となり、更新と調査の両方が必要になる。",
+          "すでに侵害済みのサイトは修正時点で脆弱な状態に見えない可能性があるため、現在の設定確認だけでは影響判定を終えられない。"
+        ],
+        "caveats": [
+          "公式は侵害件数、攻撃者、各サイトでの悪用時期を公表していない。",
+          "通常どおりインストーラーを保護済みのサイトは脆弱ではなく、全Drupalサイトが同じ条件で影響するわけではない。"
+        ],
+        "nextChecks": [
+          "対象サイトでinstall.phpが外部到達可能だった期間、user 1アカウントの変更履歴、Drupalが追加攻撃経路を公表するかを確認すると、対応範囲を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "未完了または異常な導入状態のDrupal運用者は、野外悪用が明記されたCVE-2026-136716に対し、更新とupdate.php実行を直ちに判断する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "公式が野外悪用と本番サイトを含む条件を示す一方、影響が通常の保護済みサイトへ一律に及ぶわけではないため、対象状態を切り分けた対応が必要である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T12:37:00+09:00",
+        "reason": "11月25日公表で対象期間外かつ前日版に未掲載だったが、公式が野外悪用と既存本番サイトへの対応を示したため追加した。",
+        "currentNewsValue": "対象バージョンで未保護のインストーラーが残ったサイトは、更新、update.php、侵害痕跡の確認を一続きで実施する必要がある。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T12:37:00+09:00",
+        "httpStatus": 200,
+        "note": "Drupal公式アドバイザリを確認した。"
+      }
+    }
+  ]
+}
