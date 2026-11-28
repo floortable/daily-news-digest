@@ -133,7 +133,8 @@ export function validateMonitoringCoverage(edition: Edition, registry: Monitorin
     errors.push(`${edition.date}: 一般ニュースのテクノロジー・セキュリティ比率が${technologySecurityLimit * 100}％を超えています`);
   }
 
-  const top5 = general.filter((article) => article.top5Rank !== null);
+  // Top 5 は一般枠と仕事枠をまたいで選ぶため、多様性は版全体で数える。
+  const top5 = edition.articles.filter((article) => article.top5Rank !== null);
   const top5Sources = new Set(top5.map((article) => article.sourceName));
   const top5Categories = new Set(top5.flatMap((article) => article.categories));
   if (top5Sources.size < 4) errors.push(`${edition.date}: Top 5は4媒体以上が必要です`);

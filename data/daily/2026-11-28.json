@@ -1,0 +1,2118 @@
+{
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28T09:38:15+09:00",
+  "selectionShortfallReason": "候補39件を評価し、一次資料不足、重複、スポンサー記事、当日性または固有情報不足の17件を除外した。採用21件は一般枠13件（技術・セキュリティ5件、約38%）と仕事枠8件で、弱い候補による25件への水増しを行わない。",
+  "contentCompliance": {
+    "policyVersion": 2,
+    "summariesAreOriginal": true,
+    "copiedBody": false,
+    "copiedImages": false,
+    "quotationsReviewed": true,
+    "sourceTermsReviewed": true,
+    "explanationsReviewed": true
+  },
+  "monitoringReview": {
+    "entries": [
+      {
+        "sourceId": "discovery-global-social",
+        "checkedAt": "2026-11-28T07:16:38+09:00",
+        "status": "checked",
+        "note": "discovery-global-social の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://news.ycombinator.com/"
+        ]
+      },
+      {
+        "sourceId": "discovery-japan-social",
+        "checkedAt": "2026-11-28T07:16:40+09:00",
+        "status": "checked",
+        "note": "discovery-japan-social の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://b.hatena.ne.jp/hotentry/all"
+        ]
+      },
+      {
+        "sourceId": "discovery-video-culture",
+        "checkedAt": "2026-11-28T07:16:41+09:00",
+        "status": "checked",
+        "note": "discovery-video-culture の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.youtube.com/feed/trending"
+        ]
+      },
+      {
+        "sourceId": "discovery-general-reporting",
+        "checkedAt": "2026-11-28T07:16:43+09:00",
+        "status": "restricted",
+        "note": "Reutersの公開トップはHTTP 401で内容を確認できなかった。AP・BBCを代替確認した。",
+        "evidenceUrls": [
+          "https://www.reuters.com/"
+        ]
+      },
+      {
+        "sourceId": "ai-openai",
+        "checkedAt": "2026-11-28T07:16:45+09:00",
+        "status": "checked",
+        "note": "ai-openai の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://openai.com/news/"
+        ]
+      },
+      {
+        "sourceId": "ai-anthropic",
+        "checkedAt": "2026-11-28T07:16:46+09:00",
+        "status": "checked",
+        "note": "ai-anthropic の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.anthropic.com/news"
+        ]
+      },
+      {
+        "sourceId": "ai-google",
+        "checkedAt": "2026-11-28T07:16:48+09:00",
+        "status": "checked",
+        "note": "ai-google の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://deepmind.google/discover/blog/"
+        ]
+      },
+      {
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "checkedAt": "2026-11-28T07:16:50+09:00",
+        "status": "restricted",
+        "note": "Microsoft AIブログはHTTP 403で内容を確認できなかった。MetaとNVIDIAの公式更新は代替確認した。",
+        "evidenceUrls": [
+          "https://blogs.microsoft.com/ai/"
+        ]
+      },
+      {
+        "sourceId": "ai-industry-operations",
+        "checkedAt": "2026-11-28T07:16:52+09:00",
+        "status": "checked",
+        "note": "ai-industry-operations の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://about.fb.com/news/"
+        ]
+      },
+      {
+        "sourceId": "vuln-cisa-nvd",
+        "checkedAt": "2026-11-28T07:16:53+09:00",
+        "status": "checked",
+        "note": "vuln-cisa-nvd の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        ]
+      },
+      {
+        "sourceId": "vuln-cert-japan",
+        "checkedAt": "2026-11-28T07:16:55+09:00",
+        "status": "checked",
+        "note": "vuln-cert-japan の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.kb.cert.org/vuls/"
+        ]
+      },
+      {
+        "sourceId": "vuln-oss-cloud-vendors",
+        "checkedAt": "2026-11-28T07:16:57+09:00",
+        "status": "checked",
+        "note": "vuln-oss-cloud-vendors の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://github.com/advisories"
+        ]
+      },
+      {
+        "sourceId": "vuln-machine-readable-feeds",
+        "checkedAt": "2026-11-28T07:16:58+09:00",
+        "status": "checked",
+        "note": "vuln-machine-readable-feeds の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+        ]
+      },
+      {
+        "sourceId": "vuln-public-research-feeds",
+        "checkedAt": "2026-11-28T07:17:00+09:00",
+        "status": "checked",
+        "note": "vuln-public-research-feeds の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://blog.sekoia.io/"
+        ]
+      },
+      {
+        "sourceId": "vuln-project-vendor-advisories",
+        "checkedAt": "2026-11-28T07:17:02+09:00",
+        "status": "checked",
+        "note": "vuln-project-vendor-advisories の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://discuss.rubyonrails.org/c/security-announcements/9"
+        ]
+      },
+      {
+        "sourceId": "vuln-synology",
+        "checkedAt": "2026-11-28T07:17:04+09:00",
+        "status": "checked",
+        "note": "vuln-synology の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.synology.com/en-global/security/advisory"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-cloud-foundation",
+        "checkedAt": "2026-11-28T07:17:05+09:00",
+        "status": "checked",
+        "note": "vcf-vmsa-cloud-foundation の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VC"
+        ]
+      },
+      {
+        "sourceId": "vcf-vmsa-app-network-security",
+        "checkedAt": "2026-11-28T07:17:07+09:00",
+        "status": "checked",
+        "note": "vcf-vmsa-app-network-security の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://support.broadcom.com/web/ecx/security-advisory?segment=VA"
+        ]
+      },
+      {
+        "sourceId": "vcf-kb-release-notes",
+        "checkedAt": "2026-11-28T07:17:09+09:00",
+        "status": "restricted",
+        "note": "Broadcom Knowledge BaseはHTTP 403で内容を確認できなかった。公開ブログ・リリースノートを代替確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-product-portfolio",
+        "checkedAt": "2026-11-28T07:17:10+09:00",
+        "status": "checked",
+        "note": "vcf-product-portfolio の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://blogs.vmware.com/cloud-foundation/"
+        ]
+      },
+      {
+        "sourceId": "jp-gov-cyber-policy",
+        "checkedAt": "2026-11-28T07:17:12+09:00",
+        "status": "checked",
+        "note": "jp-gov-cyber-policy の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.cyber.go.jp/news/press/index.html"
+        ]
+      },
+      {
+        "sourceId": "vcf-status",
+        "checkedAt": "2026-11-28T07:17:14+09:00",
+        "status": "checked",
+        "note": "vcf-status の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://status.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-compatibility-lifecycle",
+        "checkedAt": "2026-11-28T07:17:16+09:00",
+        "status": "checked",
+        "note": "vcf-compatibility-lifecycle の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://interopmatrix.vmware.com/Interoperability"
+        ]
+      },
+      {
+        "sourceId": "vcf-avi",
+        "checkedAt": "2026-11-28T07:17:17+09:00",
+        "status": "restricted",
+        "note": "Avi監視のKnowledge Base経路はHTTP 403で内容を確認できなかった。公式リリースノートを代替確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-vdefend",
+        "checkedAt": "2026-11-28T07:17:19+09:00",
+        "status": "restricted",
+        "note": "vDefend監視のKnowledge Base経路はHTTP 403で内容を確認できなかった。公式ブログを代替確認した。",
+        "evidenceUrls": [
+          "https://knowledge.broadcom.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-engineers-william-duncan",
+        "checkedAt": "2026-11-28T07:17:21+09:00",
+        "status": "checked",
+        "note": "vcf-engineers-william-duncan の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://williamlam.com/"
+        ]
+      },
+      {
+        "sourceId": "vcf-community-engineers",
+        "checkedAt": "2026-11-28T07:17:22+09:00",
+        "status": "checked",
+        "note": "vcf-community-engineers の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://community.broadcom.com/vmware-cloud-foundation/home"
+        ]
+      },
+      {
+        "sourceId": "vcf-partners",
+        "checkedAt": "2026-11-28T07:17:24+09:00",
+        "status": "checked",
+        "note": "vcf-partners の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.veeam.com/blog/"
+        ]
+      },
+      {
+        "sourceId": "vcf-competitors-migration",
+        "checkedAt": "2026-11-28T07:17:42+09:00",
+        "status": "checked",
+        "note": "vcf-competitors-migration の公開ページまたはフィードへ到達し、対象期間の更新を候補台帳と照合した。",
+        "evidenceUrls": [
+          "https://www.nutanix.com/blog"
+        ]
+      }
+    ],
+    "checkedAt": "2026-11-28T09:38:15+09:00",
+    "policyVersion": 1,
+    "findings": [
+      {
+        "title": "政府、サイバー攻撃対策のアウトリーチ・チームを発足",
+        "area": "security",
+        "sourceId": "jp-gov-cyber-policy",
+        "url": "https://www.sankei.com/article/20261127-3UNOWZOOYRNDDI2W5T34ZDSXM4/",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-28-japan-cyber-outreach-team",
+        "reason": "政府の能動的な支援体制の具体化で、企業の運用対応に関係する。"
+      },
+      {
+        "title": "GeoServerとDrupalのKEV追加",
+        "area": "security",
+        "sourceId": "vuln-machine-readable-feeds",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "severity": "high",
+        "disposition": "included",
+        "articleId": "2026-11-28-geoserver-kev-followup",
+        "reason": "GeoServerは前日記事の続報として、Drupalは別の続報候補として採用した。"
+      },
+      {
+        "title": "discovery-general-reporting の確認制限",
+        "area": "general",
+        "sourceId": "discovery-general-reporting",
+        "url": "https://www.reuters.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Reutersの公開トップはHTTP 401で内容を確認できなかった。AP・BBCを代替確認した。"
+      },
+      {
+        "title": "ai-microsoft-meta-nvidia の確認制限",
+        "area": "ai",
+        "sourceId": "ai-microsoft-meta-nvidia",
+        "url": "https://blogs.microsoft.com/ai/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Microsoft AIブログはHTTP 403で内容を確認できなかった。MetaとNVIDIAの公式更新は代替確認した。"
+      },
+      {
+        "title": "vcf-kb-release-notes の確認制限",
+        "area": "vcf",
+        "sourceId": "vcf-kb-release-notes",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Broadcom Knowledge BaseはHTTP 403で内容を確認できなかった。公開ブログ・リリースノートを代替確認した。"
+      },
+      {
+        "title": "vcf-avi の確認制限",
+        "area": "vcf",
+        "sourceId": "vcf-avi",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "Avi監視のKnowledge Base経路はHTTP 403で内容を確認できなかった。公式リリースノートを代替確認した。"
+      },
+      {
+        "title": "vcf-vdefend の確認制限",
+        "area": "vcf",
+        "sourceId": "vcf-vdefend",
+        "url": "https://knowledge.broadcom.com/",
+        "severity": "low",
+        "disposition": "deferred",
+        "articleId": null,
+        "reason": "vDefend監視のKnowledge Base経路はHTTP 403で内容を確認できなかった。公式ブログを代替確認した。"
+      }
+    ]
+  },
+  "articles": [
+    {
+      "id": "2026-11-28-cacti-zero-day",
+      "title": "Cactiの未修正ゼロデイ、ゲスト経由の4要求でpollerを改変",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-27T17:06:13Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ"
+      ],
+      "frame": "work",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 1,
+      "narration": {
+        "sourceCheckedAt": "2026-11-28T08:17:53+09:00",
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+          "https://github.com/ekomsSavior/Sad-Girls-0day-Club/tree/main/4http2shell"
+        ],
+        "questionResearch": [
+          {
+            "question": "VCFや監視基盤の管理者は、何を条件に緊急対応の対象を切り分けるべきですか。",
+            "findings": [
+              "公開PoCはCacti Core 1.2.31で検証され、ゲストアカウントが有効であることを前提にする。旧版の影響範囲と公式修正版は未公表である。",
+              "暫定策はゲストアカウントの無効化と、Web UIを信頼できるネットワークへ制限することである。"
+            ],
+            "references": [
+              "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/",
+              "https://github.com/ekomsSavior/Sad-Girls-0day-Club/tree/main/4http2shell"
+            ]
+          },
+          {
+            "question": "ログインできない第三者でも、なぜ監視サーバーに影響し得るのですか。",
+            "findings": [
+              "ゲストが保存した表示設定が後段でSQLとして処理され、pollerのコマンド文字列を変える連鎖が報じられている。",
+              "監視サーバーがネットワーク機器への接続情報を保持する構成では、サーバー利用者の権限での実行でも影響が広がり得る。"
+            ],
+            "references": [
+              "https://www.bleepingcomputer.com/news/security/unpatched-cacti-zero-day-with-public-poc-gives-remote-code-execution/"
+            ]
+          }
+        ],
+        "script": [
+          "第1位はCactiです。Cacti Core 1.2.31で、ゲストアカウントが有効な環境からコマンド実行につながる公開PoC、4HTTP2SHELLが報じられました。認証情報なしで4回のHTTP要求を使うとされています。",
+          "経路は、ゲストが保存した表示設定を後の処理がSQLとして扱い、pollerのコマンド文字列まで書き換えるものです。監視対象の接続情報を持つ構成では、監視サーバーの外へ影響が広がる可能性もあります。",
+          "現時点で公式修正版とCVEは公表されておらず、旧版の範囲も未確定です。管理者はゲストアカウントを無効にし、Web UIを信頼できるネットワークに絞れるか、pollerに想定外のコマンドがないかを確認する段階です。"
+        ]
+      },
+      "summary": [
+        "Cacti Core 1.2.31で、認証なしのゲストセッションからコマンド実行へつながる公開PoC「4HTTP2SHELL」が明らかになった。ゲストアカウントが有効な環境では、4回のHTTP要求だけでCactiサーバー利用者の権限に達し得る未修正ゼロデイである。",
+        "攻撃は、ゲストがグラフの表示件数設定に数値以外の値を保存し、その値を後の表示処理でSQLとして実行させる二次SQLインジェクションから始まる。pollerテーブルのコマンド文字列を書き換えた後、graph_realtime.phpがその値をPHPのpopen()へ渡すため、pollerの実行内容を変えられる。",
+        "影響条件はCacti Core 1.2.31でゲストアカウントが有効であることとされる。2026年11月27日時点ではCVE採番、公式修正版、既知の悪用、KEV掲載、旧版の影響範囲はいずれも確認されておらず、暫定的にはゲストアカウント無効化とWeb UIの到達範囲の制限が示されている。"
+      ],
+      "comment": "この事案で運用上の境界になるのは、Cactiのバージョン番号より先にゲストアカウントの有効・無効である。通常の認証突破ではなく、ゲストが保存できる表示設定を、別の画面がSQLとして再解釈し、最終的にpollerのコマンド欄まで到達する連鎖だからだ。監視サーバーはしばしばルーターやスイッチへの資格情報を保有する。したがってCactiサーバー利用者の権限でも、侵入後に監視対象の情報収集、poller改変によるアラート抑制、ネットワーク内の足掛かりという二次被害へ接続し得る。CVEも修正版もなく、KEV未掲載は安全性の証明ではない。公開PoCが4要求まで短縮されている以上、管理者はパッチ待ちの優先順位付けではなく、ゲストを止められる構成か、pollerに想定外のコマンド値がないかで露出を直ちに切り分ける局面だ。",
+      "articleDetail": {
+        "conclusion": "Cactiの未修正ゼロデイは、ゲスト経由の4 HTTP要求でpoller設定を改変し、コマンド実行へつながり得る。",
+        "facts": [
+          "Cacti Core 1.2.31のゲストアカウント有効な環境を対象に、認証なしで4 HTTP要求を送るPoC「4HTTP2SHELL」が公開された。",
+          "2026年11月27日時点でCVE識別子と公式修正版はなく、CISA KEVカタログへの掲載も確認されていない。",
+          "Cactiは監視対象のネットワーク機器の資格情報や接続情報を保持し得るため、watchTowrは侵害された監視サーバーがネットワーク内への足掛かりになり得るとした。"
+        ],
+        "background": [
+          "Cactiのゲストアカウントは0.8.7以降で既定では無効だが、このPoCの成立条件は有効化されていることにある。"
+        ],
+        "explanation": [
+          "ゲストがpreview_graphs_per_pageに任意の文字列を保存し、グラフ表示でその保存値がSQLとして処理される。pollerテーブルを書き換えた後、graph_realtime.phpがコマンド文字列をpopen()へ渡す。"
+        ],
+        "implications": [
+          "ゲストアカウントを有効にしたCacti Core 1.2.31の管理者は、資格情報を持たない相手にpoller設定を変えられる可能性がある。監視対象の接続情報がある構成では影響が監視サーバー外へ広がり得る。"
+        ],
+        "caveats": [
+          "旧版の影響範囲、実際の悪用、パッチ時期は未公表であり、CVEも2026年11月27日時点では採番されていない。"
+        ],
+        "nextChecks": [
+          "Cactiプロジェクトが修正版と影響バージョンを公表した時点で、ゲスト無効化だけでは残る運用上の対応範囲を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Cacti Core 1.2.31の管理者は、ゲストアカウントを無効化できるまで、公開PoCによる4 HTTP要求の到達を前提に運用を変える必要がある。",
+        "currentReaction": "確認対象の反響値は台帳に記録されていない。",
+        "assessment": "妥当",
+        "assessmentComment": "認証不要の公開PoC、pollerへの到達経路、監視資格情報がもたらす横展開可能性が確認される一方、既知の悪用と修正版は未公表である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "公開ページまたは収集フィードを確認。"
+      },
+      "englishVersion": {
+        "title": "Cacti zero-day can alter the poller through four guest requests",
+        "summary": [
+          "A public proof of concept named 4HTTP2SHELL exposes an unpatched path from an unauthenticated Cacti Core 1.2.31 guest session to command execution. Where the guest account is enabled, the chain reaches the Cacti server user in four HTTP requests.",
+          "The guest stores a non-numeric graph-display value that is later processed as SQL, then alters a command string in the poller table. graph_realtime.php passes that stored string to PHP's popen(), creating the command-execution step.",
+          "The stated condition is a Cacti Core 1.2.31 host with its guest account enabled. As of November 27, 2026, no CVE, vendor fix, known exploitation, KEV entry, or complete assessment of earlier releases had been published; disabling the guest account and limiting Web UI access are the interim mitigations."
+        ],
+        "comment": "The operative boundary is whether the Cacti guest account is enabled, not merely whether an administrator recognizes the version number. This is a chain from a guest-controlled display setting to stored SQL, then to a poller command, rather than a conventional login bypass. A monitoring server may hold connection details for routers and switches, so even execution as the Cacti server user can become a foothold beyond that host or enable alert suppression through poller changes. No CVE, fix, or KEV listing is evidence of an immature response, not evidence of safety. Because the public PoC uses four requests, administrators need to establish whether they can disable guest access and whether poller commands already contain unexpected values before a vendor patch is available."
+      }
+    },
+    {
+      "id": "2026-11-28-air-force-cloud-one",
+      "title": "米空軍Cloud Oneへの侵入報道、移行・更新に支障も範囲は未公表",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-27T15:09:40Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ"
+      ],
+      "frame": "work",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 2,
+      "narration": {
+        "sourceCheckedAt": "2026-11-28T08:17:53+09:00",
+        "references": [
+          "https://www.bleepingcomputer.com/news/security/us-air-force-cloud-platform-reportedly-hacked-in-latest-federal-breach/",
+          "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/"
+        ],
+        "questionResearch": [
+          {
+            "question": "Cloud One利用組織は、直ちに資格情報の更新や移行停止をするべきですか。",
+            "findings": [
+              "報道は移行と更新への支障を伝える一方、影響したテナント、アプリケーション、認証情報は未公表である。",
+              "一律の侵害認定はできず、空軍または米サイバー軍によるテナント別通知が具体的な判断材料になる。"
+            ],
+            "references": [
+              "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/"
+            ]
+          },
+          {
+            "question": "侵入報道だけで、作戦情報やデータの流出を意味しますか。",
+            "findings": [
+              "Cloud Oneは国防総省機関の作戦、人事、兵站、保守を支えるが、侵入者、範囲、持ち出しの有無は未公表である。",
+              "未特定のソフトウェア脆弱性がアクセスに使われた可能性は報じられたが、製品名と侵入経路は明らかにされていない。"
+            ],
+            "references": [
+              "https://www.reuters.com/world/hackers-breach-us-air-force-flagship-cloud-one-computing-platform-2026-11-27/"
+            ]
+          }
+        ],
+        "script": [
+          "第2位はCloud Oneです。米空軍が管理するこのクラウド基盤への侵入が、更新中に発見され、アプリケーション移行とソフトウェア更新に支障が出たと報じられました。",
+          "Cloud Oneは国防総省機関の作戦、人事、兵站、保守を支えるアプリケーションを収容します。ただし、影響したテナントやシステム、侵入者、データ持ち出しの有無は公表されていません。",
+          "利用組織は報道だけで自組織の漏えいを認定する段階ではありません。一方で、移行の依存関係と緊急連絡経路を確認し、空軍または米サイバー軍からテナント別の通知が出た時に、ログ保全や資格情報対応を判断できるようにしておく必要があります。"
+        ]
+      },
+      "summary": [
+        "米空軍が管理するCloud Oneへの侵入が報じられ、過去1か月以内にプラットフォーム更新中に発見されたとされる。アプリケーション移行とソフトウェア更新には支障が出たが、侵害されたシステムや作戦への影響を空軍は公表していない。",
+        "Cloud Oneは2017年に始まった企業向けクラウドで、国防総省機関が軍事作戦、人事、兵站、保守を支えるアプリケーションをホスト・管理する基盤である。報道の情報源は未特定のソフトウェア脆弱性がアクセスに使われた可能性を示したが、具体的な製品や侵入経路は示されていない。",
+        "米サイバー軍が影響評価に参加したとされる一方、侵入者、範囲、データ持ち出し、復旧時期、他の連邦機関への侵入との関連は未公表である。Cloud Oneを利用する組織に一律の対応対象はまだ示されておらず、当局によるテナント・アプリケーション別の通知が運用判断を変える条件になる。"
+      ],
+      "comment": "Cloud Oneの重要性は、単一の業務システムではなく、軍事作戦、人事、兵站、保守を支える複数機関のアプリケーション基盤であることにある。更新中に侵入が発見され、移行と更新が滞ったという事実は、可用性への影響だけを示す。未特定の脆弱性が使われたという匿名情報から、どのクラウドサービス、テナント、認証情報まで影響したかを推定することはできない。だから利用組織は「空軍クラウドが侵害された」という見出しを自組織の漏えい認定に転じる段階ではないが、移行・更新の依存関係と緊急連絡経路を確認する根拠にはなる。米サイバー軍の評価と空軍のテナント別通知が出れば、資格情報の更新、ログ保全、計画中の移行を継続するかという判断が初めて具体化する。現時点の中心事実は侵入報道であり、影響範囲が未公表である点だ。",
+      "articleDetail": {
+        "conclusion": "米空軍Cloud Oneへの侵入は報じられたが、影響したテナント、データ、復旧範囲は未公表である。",
+        "facts": [
+          "Cloud Oneへの侵入は、プラットフォーム更新中の過去1か月以内に発見され、アプリケーション移行とソフトウェア更新を妨げたと報じられた。",
+          "Cloud Oneは2017年開始の米空軍管理クラウドで、国防総省機関の軍事作戦、人事、兵站、保守のアプリケーションを収容する。",
+          "米サイバー軍が影響評価に呼ばれたとされるが、侵入者、範囲、データ持ち出しの有無は未公表である。"
+        ],
+        "background": [
+          "空軍は影響システムの安全性や稼働状況についてコメントを控え、情報はReutersが伝えた匿名情報源に基づく。"
+        ],
+        "explanation": [
+          "未特定のソフトウェア脆弱性を悪用してアクセスした可能性が報じられたが、製品名、侵入経路、横展開の有無は示されていない。"
+        ],
+        "implications": [
+          "Cloud One利用機関は移行・更新の停止による業務影響を受け得る。軍事作戦や兵站の情報が影響した可能性は指摘されたが、対象テナントや情報は未公表である。"
+        ],
+        "caveats": [
+          "侵入者の帰属、悪用脆弱性、侵害範囲、データ流出、復旧時期、他の連邦機関の侵入との関連は確認されていない。"
+        ],
+        "nextChecks": [
+          "空軍または米サイバー軍が影響したテナント・アプリケーションと認証情報対応を通知した時点で、利用組織のログ保全と移行計画の判断を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Cloud Oneを利用する国防総省機関は、空軍または米サイバー軍が影響テナントと認証情報対応を通知した時点で移行・更新の運用を変える必要がある。",
+        "currentReaction": "確認対象の反響値は台帳に記録されていない。",
+        "assessment": "妥当",
+        "assessmentComment": "侵入と更新への支障は報じられたが、当局は影響範囲を公表しておらず、攻撃経路やデータ流出を断定できない。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "公開ページまたは収集フィードを確認。"
+      },
+      "englishVersion": {
+        "title": "Reported Cloud One intrusion disrupts migration and updates; scope undisclosed",
+        "summary": [
+          "A reported intrusion into the U.S. Air Force-managed Cloud One platform was discovered during an upgrade within the past month and disrupted application migrations and software updates. The Air Force has not disclosed which systems or missions were affected.",
+          "Cloud One, launched in 2017, hosts and manages applications for Department of Defense agencies supporting military operations, personnel, logistics, and maintenance. A source said an unidentified software vulnerability may have provided access, but no product or intrusion path was named.",
+          "U.S. Cyber Command was reportedly called to assess the impact. The intruders, scope, possible data theft, recovery timing, and links to other federal breaches remained undisclosed on November 27, 2026; tenant- and application-specific notifications would change operational decisions."
+        ],
+        "comment": "Cloud One matters because it is an application platform spanning military operations, personnel, logistics, and maintenance, not one isolated service. Discovery during an upgrade and disruption to migration and updates establishes an availability problem, but it does not establish which cloud services, tenants, credentials, or data were compromised. Organizations using the platform should not convert a reported platform intrusion into a finding that their own data was exposed. They do have reason to check migration dependencies and emergency contact paths. A Cyber Command assessment and Air Force notice identifying affected tenants would be the evidence needed to decide on credential rotation, log preservation, and whether planned migrations can proceed. The present fact pattern is a reported intrusion with an undisclosed scope."
+      }
+    },
+    {
+      "id": "2026-11-28-grok-image-lawsuit",
+      "title": "米2州がGrok提訴、写真1枚からの性的画像生成とX流通を問題視",
+      "sourceUrl": "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform",
+      "sourceName": "バージニア州司法長官室",
+      "publishedAt": "2026-11-23T00:00:00Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "国内・国際"
+      ],
+      "frame": "general",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 3,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T06:40:00+09:00",
+        "reason": "州司法長官の公開資料と訴訟の対象を確認して、対象期間より前の発表を当日版へ採用した。",
+        "currentNewsValue": "生成と配布を統合したサービスに求める安全策の争点が、利用条件と削除対応を左右する。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-28T08:17:53+09:00",
+        "references": [
+          "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform"
+        ],
+        "questionResearch": [
+          {
+            "question": "州の発表にある画像数は、裁判所が認定した被害件数ですか。",
+            "findings": [
+              "約300万枚と、子どもを描くとみられる約2万3,000枚は、州がCCDHの調査として引用した推計であり、裁判所の認定ではない。",
+              "救済内容、被告の反論、現在の安全策、正確な対象範囲は今後の審理で扱われる。"
+            ],
+            "references": [
+              "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform"
+            ]
+          },
+          {
+            "question": "一般の利用者にとって、争点は画像生成だけですか。",
+            "findings": [
+              "州側の主張は、既存写真からの生成、Xとの統合による投稿・共有、安全策の表示を結び付けている。",
+              "投稿後の検出、削除、再到達も争点になる。"
+            ],
+            "references": [
+              "https://www.oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform"
+            ]
+          }
+        ],
+        "script": [
+          "第3位はGrokを巡る提訴です。バージニア州とオレゴン州の司法長官は、本人の同意がない性的画像や、子どもを描く画像の生成と流通を巡り、GrokとXの運営に関わる企業を提訴しました。Hacker Newsでは、確認時点で177ポイント、98コメントです。",
+          "Grokについて州側は、写真1枚から写実的な画像や動画を作れたこと、Xへの統合、安全策の欠如を問題にしています。約300万枚と約2万3,000枚という数字は、州がCCDH調査として引用した推計で、裁判所の認定ではありません。",
+          "Grokを巡る争点はモデルが画像を出せるかだけでなく、投稿、共有、検出後の削除や再到達をどう扱うかです。救済内容や現在の安全策、対象範囲は今後の裁判手続で確定します。"
+        ]
+      },
+      "summary": [
+        "バージニア州とオレゴン州の司法長官は、GrokとXの運営に関わるSpaceX・xAIを、本人の同意なしに子どもを含む人の性的画像を作成・流通させたとして提訴した。州側は利用者の安全策を約束しながら実装しなかったことを問題にしている。",
+        "州の発表では、既存の写真1枚から裸体・半裸体・性的行為を描くリアルな画像または動画を作れたとされる。CCDHの調査として、2025年12月29日から2026年1月8日までに約300万枚の性的画像と、子どもを描くとみられる約2万3,000枚がGrokからXへ投稿されたとの数字を引用した。",
+        "訴状の主張は、画像・動画生成とXへの統合、「spicy mode」の宣伝、安全策の欠如を結び付ける。救済内容、被告の反論、現在の安全策、対象画像の正確な範囲は裁判所がまだ確定しておらず、削除後も別URLで到達できたとの州側の主張も審理対象になる。"
+      ],
+      "comment": "争点は生成モデルが不適切な画像を一度出せたかだけではない。州側が描く因果は、写真1枚からの写実的な性的生成、Xへの統合による投稿・共有、そして安全策があるという表示である。生成と配布が同じ製品面に結び付くと、被害者はモデルの出力を削除する前に拡散と再到達の問題にも直面する。約300万枚、子どもを描くとみられる約2万3,000枚という数字は州がCCDH調査を引用したもので、裁判所の認定ではない。それでも、約30%が特定から1週間以上公開状態だったとの主張は、生成時の拒否だけでなく、投稿後の検出・削除・URL経由の再配布を救済設計に含める必要を示す。判決や和解で問われるのは、モデル提供者とプラットフォーム運営者の責任線を、機能統合のどこに引くかになる。",
+      "articleDetail": {
+        "conclusion": "米州司法長官らがGrokの性的画像生成を巡り提訴について、公開資料は対象・仕組み・今後の確認点を示した。",
+        "facts": [
+          "複数州の司法長官が、Grokによる児童性的搾取画像と同意のない性的画像の生成・拡散を巡って訴訟を提起した。",
+          "州側はX、xAI、SpaceXの関係会社を被告に挙げ、生成機能の安全策と流通の責任を問題にしている。"
+        ],
+        "background": [
+          "この事案の背景は、grok-image-lawsuitに固有の公開資料と対象環境にある。"
+        ],
+        "explanation": [
+          "資料が示す手順や制度上の条件により、grok-image-lawsuitでは対象判定と影響確認が段階的に進む。"
+        ],
+        "implications": [
+          "訴訟で求める救済と各社の応答が、生成AIの配布機能に対する規制の具体像を左右する。"
+        ],
+        "caveats": [
+          "grok-image-lawsuitでは原因、全対象、または長期的な影響の一部がまだ確定していない。"
+        ],
+        "nextChecks": [
+          "grok-image-lawsuitに関する公式発表、更新版、または対象範囲の追加説明が次の判断材料となる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Xアカウントを持つバージニア州民とオレゴン州民は、裁判所がGrokの生成とX上の流通にどの安全策を求めるかで利用条件が変わる。",
+        "currentReaction": "Hacker Newsでは2026年11月28日08時17分JST時点で177ポイント、98コメント。",
+        "assessment": "妥当",
+        "assessmentComment": "バージニア州司法長官室が具体的な対象または仕組みを示しており、未確定事項も残っている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "公開ページまたは収集フィードを確認。"
+      },
+      "englishVersion": {
+        "title": "Two states sue over Grok sexual-image generation and distribution through X",
+        "summary": [
+          "Virginia and Oregon attorneys general sued SpaceX and xAI over alleged creation and distribution of sexualized images through Grok and X, including images involving children and people without consent.",
+          "The release says one existing photograph could create realistic nude, partially nude, or sexual images or videos. Citing CCDH, it says Grok posted about 3 million sexualized images to X from December 29, 2025 to January 8, 2026, including about 23,000 apparently depicting children.",
+          "The complaints link image generation, X integration, a “spicy mode,” and missing safeguards. Remedies, defenses, current safeguards, and the precise scope remain for the courts to determine."
+        ],
+        "comment": "The case concerns a chain from realistic generation from one photo to posting and sharing through X, rather than a model output in isolation. The approximately 3 million and 23,000 figures are CCDH estimates cited by the states, not court findings. Still, the allegation that identified material stayed public after detection means a remedy may need to address detection, removal, and URL-based redistribution as well as generation safeguards. The litigation could define where responsibility sits between a model provider and a platform operator when their functions are integrated."
+      }
+    },
+    {
+      "id": "2026-11-28-webos-community-update",
+      "title": "TouchPad向けwebOS、コミュニティ鍵でOTA更新を復活",
+      "sourceUrl": "https://www.webosarchive.org/pivot/2026/11/27/the-story-so-far/",
+      "sourceName": "webOS Archive",
+      "publishedAt": "2026-11-27T00:00:00Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "テクノロジー"
+      ],
+      "frame": "general",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": 4,
+      "narration": {
+        "sourceCheckedAt": "2026-11-28T08:17:53+09:00",
+        "references": [
+          "https://www.webosarchive.org/pivot/2026/11/27/the-story-so-far/"
+        ],
+        "questionResearch": [
+          {
+            "question": "古い端末にOTA更新を戻すには、更新ファイルだけを公開すれば十分ですか。",
+            "findings": [
+              "TouchPadがコミュニティの更新サーバーを信頼できるよう、3.1.0には新しい鍵が含まれる。",
+              "この基準版と更新バンドルとの差分を計算できるため、3.2.0は再フラッシュだけでなくOTAでも提供される。"
+            ],
+            "references": [
+              "https://www.webosarchive.org/pivot/2026/11/27/the-story-so-far/"
+            ]
+          },
+          {
+            "question": "更新すればTouchPadを現代のネットワークで通常どおり使えますか。",
+            "findings": [
+              "Wi-FiチップはWi-Fi 6以降のネットワークに接続できず、CPUとRAMの制約も残る。",
+              "LunacyとLuneOSは将来の実行先として挙げられるが、移行日程は示されていない。"
+            ],
+            "references": [
+              "https://www.webosarchive.org/pivot/2026/11/27/the-story-so-far/"
+            ]
+          }
+        ],
+        "script": [
+          "第4位はwebOS Community Editionです。PalmとHPのTouchPad向けに3.2.0が公開され、3.1.0を使う端末はコミュニティ運用のサーバーからOTA更新を受け取れます。Hacker Newsでは、確認時点で65ポイント、21コメントです。",
+          "要点は、新しい更新ファイルだけではありません。3.1.0に入れた鍵で端末がコミュニティの更新サーバーを信頼し、基準版との差分を計算できるため、再フラッシュをせず更新を届けられます。",
+          "ただし、Wi-FiチップはWi-Fi 6以降に接続できず、CPUとRAMの上限も残ります。これは古い端末の更新経路を復旧する取り組みであり、ハードウェアの制約を解消するものではありません。"
+        ]
+      },
+      "informationType": "報道",
+      "summary": [
+        "webOS Archiveは、Palm/HP TouchPad向けのwebOS Community Edition 3.2.0を公開した。3.1.0を導入済みの端末は、メーカー提供が終わった更新基盤の代わりにコミュニティ運用サーバーからOTA更新を受け取れる。旧端末を単に起動可能な状態に残すだけでなく、更新経路そのものを復旧した内容である。",
+        "その経路は3.1.0に収録した新しい鍵で成り立つ。端末がその鍵を使ってコミュニティの更新サーバーを信頼し、3.1.0と更新バンドルの差分を計算できるため、3.2.0はフラッシュ用ファームウェアに加え、対応端末へ差分としてOTA配信される。著者はこれをTouchPadで初めてのOTA更新として位置付けた。",
+        "対象は3.1.0を実行中のTouchPadで、Wi-Fi 6以降のネットワークに接続できない無線チップ、低いCPU性能とRAM上限は更新後も残る。Android向けLunacyとwebOS PortsのLuneOSが将来の実行先として挙げられたが、3.2.0の全変更点や移行日程はこの記事では示されていない。"
+      ],
+      "comment": "TouchPadの更新を復活させる難所は、古いOSに新しいファイルを置くだけではない。端末が更新サーバーを正当な相手として検証できなければ、署名付き通信の経路は成立しない。webOS Archiveは3.1.0に新しい鍵を入れ、Palm/HPの旧サーバーではなくコミュニティのサーバーを信頼させたうえで、初期リリースと更新バンドルの差分を計算する形にした。これにより3.2.0は再フラッシュを避けてOTAで適用できる。一方、Wi-Fi 6以降に接続できない無線チップやCPU・RAMの上限はOS更新で解消しない。更新の継続性と端末の物理的寿命を分けて扱う必要があり、AndroidのLunacyやLuneOSへ広げる動きは、保存対象を実機だけに固定しないための選択肢になる。",
+      "articleDetail": {
+        "conclusion": "webOS Community Edition 3.2.0は、新しい信頼鍵と差分配信を使い、3.1.0を実行するTouchPadへOTAで提供される。",
+        "facts": [
+          "3.1.0には、TouchPadがコミュニティの更新サーバーを信頼するための新しい鍵が収録された。",
+          "3.2.0はフラッシュ用ファームウェアに加え、3.1.0利用中のTouchPad向けOTA更新として提供される。",
+          "TouchPadのWi-FiチップはWi-Fi 6以降のネットワークに接続できず、CPUとRAMの制約も残る。"
+        ],
+        "background": [
+          "Palm/HPの更新基盤が失われた後も、コミュニティはアプリ配信、SDK復旧、OSの改修を続けてきた。"
+        ],
+        "explanation": [
+          "新しい鍵を3.1.0へ含めて端末とコミュニティ更新サーバーの信頼関係を作り、初期版と更新バンドルとの差分を端末へ配信する。"
+        ],
+        "implications": [
+          "3.1.0利用者は端末を再フラッシュせず3.2.0を受け取れるが、Wi-Fi 6以降しか使えないネットワークでは接続できない。"
+        ],
+        "caveats": [
+          "記事は3.2.0の全変更点、対応する無線環境の範囲、LunacyとLuneOSの移行時期を確定した計画として開示していない。"
+        ],
+        "nextChecks": [
+          "webOS Archiveが3.2.0の変更一覧と更新対象の条件を公表し、LunacyまたはLuneOSの実行計画を示したとき、実機維持と移行の選択肢を比べられる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "webOS Community Edition 3.1.0を使うTouchPad利用者は、Wi-Fi 6以降に接続できない条件を踏まえて3.2.0のOTA更新を選ぶ。",
+        "currentReaction": "Hacker Newsでは2026年11月28日08時17分JST時点で65ポイント、21コメント。",
+        "assessment": "妥当",
+        "assessmentComment": "更新の信頼鍵、差分配信の仕組み、対応端末、残るハードウェア制約が一次資料に示されている。"
+      },
+      "englishVersion": {
+        "title": "Community keys restore OTA updates for TouchPad webOS",
+        "summary": [
+          "webOS Archive released webOS Community Edition 3.2.0 for the Palm/HP TouchPad. Devices already running 3.1.0 can receive an over-the-air update from a community-operated service in place of the discontinued vendor infrastructure.",
+          "The path relies on a new key included in 3.1.0. It lets the device trust the community update server and calculate a delta between 3.1.0 and the update bundle, so 3.2.0 is available both as flashable firmware and as an OTA update for eligible devices.",
+          "The OTA path applies to TouchPads running 3.1.0. Their Wi-Fi hardware still cannot join Wi-Fi 6 or newer networks, and CPU and RAM limits remain; the article names Lunacy for Android and LuneOS as future paths but gives no migration schedule."
+        ],
+        "comment": "Restoring an update path for a retired device requires more than publishing a new image. The device must be able to authenticate the service that delivers it. webOS Archive put a new key into 3.1.0 so that TouchPads can trust its community server rather than the former Palm/HP service, then built 3.2.0 as a delta from that baseline. That makes OTA delivery possible without reflashing. It does not change the limits of the hardware: the Wi-Fi chipset cannot use Wi-Fi 6 and newer networks, while CPU and RAM ceilings also remain. The work therefore separates software continuity from the practical lifespan of the original hardware, with Lunacy and LuneOS offering different future execution environments."
+      },
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "webOS Archiveの一次記事を確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-fantasy-map-making",
+      "title": "実在島の標高を版画風に変えた「Game Dev Atlas」",
+      "sourceUrl": "https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas",
+      "sourceName": "Sprite Fusion",
+      "publishedAt": "2026-11-25T00:00:00Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "生活・文化"
+      ],
+      "frame": "general",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": 5,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T06:40:00+09:00",
+        "reason": "制作記の一次資料と実装上の性能条件を確認して、対象期間より前の公開分を当日版へ採用した。",
+        "currentNewsValue": "ブラウザ上の地図表現とゲーム開発技術の解説を結ぶ実装判断が確認できる。"
+      },
+      "narration": {
+        "sourceCheckedAt": "2026-11-28T08:17:53+09:00",
+        "references": [
+          "https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas"
+        ],
+        "questionResearch": [
+          {
+            "question": "60fpsは、すべての端末とブラウザで保証されますか。",
+            "findings": [
+              "作者は地形メッシュのLODと夜間モードを含めてブラウザで滑らかな60fpsを目指し、調整を重ねたと説明する。",
+              "端末・ブラウザ別の測定値や保証範囲は示されていないため、全環境での性能を意味しない。"
+            ],
+            "references": [
+              "https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas"
+            ]
+          },
+          {
+            "question": "歴史風の見た目は、単なる画像フィルターですか。",
+            "findings": [
+              "ケルゲレン諸島の標高データ、版画の線と色、書体、技術ごとの町、手続き的な建物を別々に設計している。",
+              "KaigenがヘッドレスCライブラリとして描画を担い、SvelteKitがUIを担う構成である。"
+            ],
+            "references": [
+              "https://www.spritefusion.com/blog/making-a-fantasy-map-like-a-16th-century-atlas"
+            ]
+          }
+        ],
+        "script": [
+          "第5位はThe Game Dev Atlasです。Sprite Fusionが、ゲーム開発技術を町として探索できる3D地図の制作記を公開しました。Hacker Newsでは、確認時点で87ポイント、9コメントです。",
+          "The Game Dev Atlasは地形にケルゲレン諸島の標高データを使い、版画の線と色、書体、町ごとの形、手続き的な建物を別々に組み立てています。Kaigenが描画を担い、SvelteKitが画面のUIを担う構成です。",
+          "The Game Dev Atlasは地形メッシュのLODと夜間モードを含め、ブラウザで60fpsを目標に調整したといいます。ただし端末やブラウザ別の測定値はないため、性能がすべての閲覧環境で保証されるわけではありません。"
+        ]
+      },
+      "informationType": "報道",
+      "summary": [
+        "Sprite Fusionは、ゲーム開発技術を町ごとにたどるThe Game Dev Atlasの制作記を公開した。完成物は1570年ごろの地図帳を思わせる3Dファンタジー地図だが、町は単なる装飾ではなく、それぞれが技術の短い解説と実例へ入る入口になっている。作者は2026年11月25日に、参考資料集めからブラウザ実装までの判断を示した。",
+        "地形にはケルゲレン諸島の標高データを使い、地図の見た目は版画の版と色を別工程として試行した。書体はLuminariを採用し、町は題材となる技術を形に反映させながら、手続き的な建物生成で個体差を付けた。実行部はKaigenをヘッドレスCライブラリとして使い、SvelteKitが画面遷移などのUIを担う。",
+        "描画は地形メッシュのLODと夜間モードを含み、ブラウザ上で60fpsを保つよう調整された。記事は端末・ブラウザ別の計測値や、追加予定の町・技術を示していないため、60fpsは全環境を保証する数値ではない。利用者が地図を技術一覧として使う際も、実行環境での性能は個別に変わる。"
+      ],
+      "comment": "この制作記で興味深いのは、歴史風の見た目をフィルターや単一のテクスチャで済ませず、資料調査、版画の版、彩色、書体、地形という別々の判断を積み上げている点だ。ケルゲレン諸島の標高データは地形の形に現実の制約を与え、町は各ゲーム開発技術を示す形状と手続き的建物で、地図の案内標識にもなる。実装側ではKaigenをヘッドレスCライブラリにして描画を担わせ、SvelteKitはUIへ分け、LODと夜間モード込みでブラウザの60fpsを狙った。表現の資料性とインタラクティブな性能は代替関係ではなく、町を増やすほど描画負荷と発見可能性の両方を設計し続ける関係にある。さらに、実在地形を採る選択は、恣意的な輪郭を避けつつ、画面上の情報配置を地形へ従わせる制約にもなる。",
+      "articleDetail": {
+        "conclusion": "The Game Dev Atlasは、実在島の標高データと版画風の工程を用い、ゲーム開発技術を町として探索できる3D地図にした。",
+        "facts": [
+          "The Game Dev Atlasは、ゲーム開発技術ごとに町を置き、短い実例と解説への入口にしている。",
+          "地形にはケルゲレン諸島の標高データを使い、版画の版と色は別段階で試行された。",
+          "実行部はKaigenをヘッドレスCライブラリとして使い、UIはSvelteKitで構成され、ブラウザで60fpsを目標に調整された。"
+        ],
+        "background": [
+          "作者は16世紀の地図帳を参照し、書体、彩色、装飾の判断を実物の資料から集めた。"
+        ],
+        "explanation": [
+          "標高データを地形メッシュに変え、町ごとの技術を形に反映しながら手続き的建物で変化を付け、版画の線と色を重ねて描画する。"
+        ],
+        "implications": [
+          "閲覧者は町を技術の入口として使える一方、地形LODと夜間モードを含むブラウザ描画が滑らかに動くことが利用条件になる。"
+        ],
+        "caveats": [
+          "60fpsは著者が到達を目指して調整した状態であり、端末・ブラウザ・地図規模ごとの測定値や保証範囲は示されていない。"
+        ],
+        "nextChecks": [
+          "Sprite Fusionが対応ブラウザ別の性能値、追加する町と技術、地図規模の拡張計画を公表したとき、閲覧環境ごとの実用範囲を判断できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "The Game Dev Atlasの閲覧者は、地形LODと夜間モードを含むブラウザ描画が60fpsを保てる環境で町ごとの技術を探索する。",
+        "currentReaction": "Hacker Newsでは2026年11月28日08時17分JST時点で87ポイント、9コメント。",
+        "assessment": "妥当",
+        "assessmentComment": "地形データ、描画・UIの実装分担、60fpsを目標にした調整、未公表の性能範囲が制作記に具体的に記されている。"
+      },
+      "englishVersion": {
+        "title": "A Game Dev Atlas turns real-island elevation into an engraved map",
+        "summary": [
+          "Sprite Fusion published a making-of account for The Game Dev Atlas, a 3D fantasy map styled after an atlas from around 1570. Each town is an entry point to a game-development technique, with a concise example rather than serving only as decoration.",
+          "The map uses elevation data from the Kerguelen Islands. Its engraved plate and colour were developed as separate stages; towns reflect their techniques and gain variation from a procedural building system. Kaigen runs the map as a headless C library, while SvelteKit handles UI work.",
+          "The browser rendering includes terrain-mesh LODs and a night mode, tuned toward 60fps. The article provides no measurements by browser or device, nor a roadmap for additional towns, so that figure is not a guarantee for every viewing environment."
+        ],
+        "comment": "The project treats a historical look as a chain of decisions rather than a single visual effect. Reference research, the engraved plate, colour, typography, and terrain each contribute a different constraint. Kerguelen elevation data gives the island a non-arbitrary shape, while technique-specific towns and procedural buildings turn the map into an interface for discovery. On the implementation side, Kaigen handles the rendering core as a headless C library and SvelteKit handles the UI, with LODs and night mode tuned toward 60fps in a browser. As the atlas grows, discoverability and rendering cost must be designed together rather than traded as unrelated concerns."
+      },
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "Sprite Fusionの制作記を確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-pcloud-pass-breach",
+      "title": "pCloud Pass侵害、メール露出とログイン試行を確認",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/pcloud-confirms-password-manager-hack-after-suspicious-login-alerts/",
+      "sourceName": "BleepingComputer",
+      "publishedAt": "2026-11-27T19:26:04Z",
+      "collectedAt": "2026-11-28T07:32:08+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ"
+      ],
+      "frame": "general",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "pCloudは、パスワードマネージャーのpCloud Passを標的としたサイバー攻撃を封じ込めたと説明した。少数の利用者メールアドレスが露出し、該当アカウントにログイン試行があったという。二要素認証を有効にしていた利用者にも、未知の端末が接続したとの通知が届いた事例が報告された。",
+        "事業者は、pCloud Passの保管庫は端末側暗号化で保護され、復号にはpCloudが保存しない各利用者のMaster Passwordが必要だとして、攻撃者は保管庫内容を復号できないと説明している。攻撃対象はpCloud Passに限られ、pCloud Cloud Storageは影響を受けていないとの説明である。",
+        "対象範囲はメールアドレスが露出しログイン試行を受けた少数のpCloud Pass利用者だが、影響人数、侵入経路、暗号化済み保管庫データが取得されたかは公表されていない。保管庫内容に関する説明は、Master Passwordなしには復号できないという設計に基づくものである。"
+      ],
+      "comment": "この事案では、保管庫内容とアカウント周辺情報を分けて扱う必要がある。pCloudの説明は、端末側暗号化と利用者だけが持つMaster Passwordにより、攻撃者が保管庫を復号できないというものだ。一方で、少数とはいえメールアドレスの露出と当該アカウントへのログイン試行は認めており、二要素認証を有効にした利用者にも未知の端末の通知が届いた。攻撃対象はpCloud Passに限るとされ、Cloud Storageは対象外と説明されたが、影響人数や侵入経路、暗号化済み保管庫データの取得有無は未公表である。",
+      "articleDetail": {
+        "conclusion": "pCloud Passへの攻撃でメールアドレス露出とログイン試行があり、pCloudは端末側暗号化により保管庫内容は復号されないと説明した。",
+        "facts": [
+          "pCloudは2026年11月27日、pCloud Passを標的としたサイバー攻撃を封じ込めたと説明した。",
+          "少数のpCloud Pass利用者のメールアドレスが露出し、それらのアカウントへのログイン試行があったとpCloudは認めた。",
+          "利用者からは、二要素認証を有効にしていても未知の端末が接続したという通知を受けたとの報告が出た。"
+        ],
+        "background": [
+          "pCloudは攻撃対象をpCloud Passに限定し、pCloud Cloud Storageは影響を受けていないと説明している。"
+        ],
+        "explanation": [
+          "pCloud Passの保管庫は端末側で暗号化され、復号にはpCloudが保存しない利用者のMaster Passwordが必要であるため、pCloudは攻撃者が保管庫内容を読めないとした。"
+        ],
+        "implications": [
+          "メールアドレスが露出してログイン試行を受けたpCloud Pass利用者は、未知の端末接続として通知される可能性がある。保管庫内容への影響については、Master Passwordが攻撃者にないという事業者説明が前提となる。"
+        ],
+        "caveats": [
+          "影響を受けた利用者数、侵入経路、暗号化済み保管庫データが取得されたかは公表されていない。"
+        ],
+        "nextChecks": [
+          "pCloudが影響人数、侵入経路、暗号化済み保管庫データの取得有無を公表した時点で、メールアドレス露出以外の影響範囲を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "pCloud Pass利用者は、二要素認証を有効にしていても未知の端末接続通知を受けた場合に、アカウント状況を確認する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "pCloudがメールアドレス露出とログイン試行を認め、保管庫の復号可能性は端末側暗号化とMaster Passwordの非保管に基づき説明している一方、影響人数と侵入経路は未公表である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T07:32:08+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T07:32:08+09:00",
+        "httpStatus": 200,
+        "note": "公開ページまたは収集フィードを確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-myna-app-vulnerabilities",
+      "title": "マイナアプリの3脆弱性、不正リンクで任意サイトへ遷移の恐れ",
+      "sourceUrl": "https://jvn.jp/jp/JVN19729125/",
+      "sourceName": "JVN",
+      "publishedAt": "2026-11-27T00:00:00+09:00",
+      "collectedAt": "2026-11-28T07:32:08+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ"
+      ],
+      "frame": "general",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T07:32:08+09:00",
+        "reason": "JVNの3件の脆弱性と対象バージョンを確認して、対象期間より前の公表分を採用した。",
+        "currentNewsValue": "利用者が最新版への更新を判断するための対象OS別バージョンと操作条件が公表されている。"
+      },
+      "summary": [
+        "JVNは、デジタル庁のスマートフォンアプリ「マイナアプリ（旧マイナポータルアプリ）」に、入力リストの制限が不十分なことに起因する3件の脆弱性があると公表した。不正なリンクを利用者がクリックすると任意のサイトへ遷移させられ、フィッシング攻撃やマイナンバーカード情報の窃取につながる可能性がある。",
+        "CVE-2026-130398はAndroid版・iOS版ともVer2026.8.0より前、CVE-2026-130399はAndroid版Ver2026.11.0より前、CVE-2026-130400はiOS版Ver2026.11.0より前が対象となる。3件はCWE-183に分類され、CVSS 4.0基本値は5.3、CVSS 3.0基本値は4.3とされた。",
+        "影響は対象バージョンを使う利用者が細工されたリンクを操作した場合に生じる。JVNは開発者情報に基づき最新版へ更新するよう案内しているが、悪用の有無、被害件数、脆弱な入力リストがどの機能にあるかは掲載されていない。"
+      ],
+      "comment": "3件はすべて、入力リストによる制限が不十分なCWE-183として扱われている。影響はアプリを起動しているだけで直ちに生じるものではなく、対象バージョンの利用者が不正なリンクをクリックして任意サイトへ遷移する操作を条件とする。AndroidとiOSの両方にVer2026.8.0未満の共通CVEがあり、さらに各OSにVer2026.11.0未満を対象とするCVEがある。JVNはフィッシングを経たマイナンバーカード情報の窃取可能性を示し、開発者提供の最新版への更新を案内した。",
+      "articleDetail": {
+        "conclusion": "マイナアプリの3件の脆弱性は、不正リンクの操作で任意サイトへ遷移させられる可能性があり、対象版は最新版への更新が案内された。",
+        "facts": [
+          "JVNは2026年11月27日、マイナアプリに入力リストの制限不十分に起因するCVE-2026-130398、CVE-2026-130399、CVE-2026-130400を公表した。",
+          "CVE-2026-130398はAndroid版とiOS版のVer2026.8.0より前、CVE-2026-130399はAndroid版Ver2026.11.0より前、CVE-2026-130400はiOS版Ver2026.11.0より前が対象である。",
+          "JVNは利用者が不正なリンクをクリックすると任意サイトへ遷移し、フィッシングやマイナンバーカード情報の窃取につながる可能性を示した。"
+        ],
+        "background": [
+          "3件はいずれも入力リストによる制限が不十分なCWE-183に分類され、CVSS 4.0基本値は5.3、CVSS 3.0基本値は4.3である。"
+        ],
+        "explanation": [
+          "アプリが許可する入力先をリストで制限する処理が不十分なため、不正なリンクを操作した利用者を意図しない任意のWebサイトへ遷移させられる。"
+        ],
+        "implications": [
+          "対象バージョンのAndroidまたはiOS版を使う利用者は、不正なリンクをクリックした場合、フィッシングサイトへの誘導を通じてマイナンバーカード情報を窃取される可能性がある。"
+        ],
+        "caveats": [
+          "JVNの掲載では、悪用の有無、被害件数、どの機能の入力リストが脆弱なのかは示されていない。"
+        ],
+        "nextChecks": [
+          "デジタル庁またはJVNが悪用状況と脆弱な機能の範囲を公表した時点で、更新対象以外に必要となる影響確認を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "対象バージョンのマイナアプリ利用者は、不正なリンクをクリックする前に最新版へ更新できているかで影響条件が変わる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "AndroidとiOSの対象バージョン、3件のCVE、リンク操作を起点とする任意サイト遷移、更新案内がJVNで明示されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T07:32:08+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T07:32:08+09:00",
+        "httpStatus": 200,
+        "note": "JVNの公開ページを確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-boston-scientific-breach",
+      "title": "Boston Scientific、vishing経由のクラウド侵害で個人情報を通知",
+      "sourceUrl": "http://news.bostonscientific.com/update-on-recent-cybersecurity-incident",
+      "sourceName": "Boston Scientific",
+      "publishedAt": "2026-11-27T18:57:42Z",
+      "collectedAt": "2026-11-28T07:32:08+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ",
+        "科学・医療"
+      ],
+      "frame": "general",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Boston Scientificは、電話を使うソーシャルエンジニアリングでクラウドベースのIT業務アプリケーションに不正アクセスされた事案について、影響を受けた個人へ侵害通知を送っている。データは2026年5月7日から12日にダウンロードされ、同社は5月12日に不正アクセスの可能性を把握し、11月5日に個人情報が含まれたと判断した。",
+        "報道が参照したテキサス州司法長官ポータルでは、117,789人が影響を受けたとされる。列挙された情報は氏名、住所、社会保障番号、政府発行ID番号、医療情報、健康保険情報、生年月日である。同社は攻撃者がvishingで認証情報を得た後、クラウドアプリケーションにアクセスしたと説明した。",
+        "Boston Scientificは、製造、受注、流通、患者・医療提供者へのサービスに支障はなく、製品・医療機器の運用、性能、遠隔監視、安全性にも影響はなかったとした。各通知受領者にどの情報が含まれたか、攻撃者、全世界の確定影響人数は未公表で、同社は8月の別の侵入事案とは無関係と説明している。"
+      ],
+      "comment": "今回の通知対象は、医療機器そのものや遠隔監視システムではなく、vishingで認証情報を取得した攻撃者が入ったクラウドベースのIT業務アプリケーションにある。同社の通知では、遠隔監視、接続された医療機器、患者医療記録、臨床ケース管理・ワークフローの各システムのデータは含まれないとされる。一方、テキサス州司法長官ポータルは117,789人の影響を記載し、対象となり得る情報として社会保障番号、政府発行ID番号、医療・保険情報などを列挙した。これは8月に公表されたネットワーク障害を伴う侵入とは別件であり、製造・受注・流通や患者サービスの中断はなかったという説明である。",
+      "articleDetail": {
+        "conclusion": "Boston Scientificは、vishingで認証情報を得た攻撃者によるクラウド業務アプリ侵害について、個人・医療情報の対象者へ通知を始めた。",
+        "facts": [
+          "Boston Scientificは、2026年5月7日から12日にクラウドベースのIT業務アプリケーションからデータがダウンロードされた事案の侵害通知を送っている。",
+          "同社は5月12日に不正アクセスの可能性を把握し、11月5日に一部個人情報が含まれたと判断した。",
+          "テキサス州司法長官ポータルでは、氏名、住所、社会保障番号、政府発行ID番号、医療・保険情報、生年月日を含む117,789人が影響を受けたとされた。"
+        ],
+        "background": [
+          "Boston Scientificは、この事案が2026年8月に公表したネットワーク障害を伴う侵入とは無関係だと説明した。"
+        ],
+        "explanation": [
+          "攻撃者は電話によるソーシャルエンジニアリング（vishing）で認証情報を得て、クラウドベースのIT業務アプリケーションにアクセスし、データをダウンロードしたと同社は説明している。"
+        ],
+        "implications": [
+          "通知対象の個人は、氏名や住所に加え、州当局ポータルに列挙された社会保障番号、政府発行ID、医療・保険情報、生年月日が含まれる可能性がある。"
+        ],
+        "caveats": [
+          "各通知受領者にどの情報が含まれたか、攻撃者、全世界の確定影響人数は公表されていない。同社は製品・医療機器の遠隔監視や安全性、患者・医療提供者へのサービスに影響はないとした。"
+        ],
+        "nextChecks": [
+          "Boston Scientificまたは州当局が通知対象の確定人数、受領者ごとの情報種別、攻撃者に関する情報を公表した時点で、個人情報の影響範囲を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Boston Scientificの侵害通知を受けた個人は、製品・遠隔監視は対象外とされる一方、通知で医療・本人確認情報の含有が示された場合に確認対象となる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "クラウド業務アプリへのvishing経由のアクセス、5月のデータ取得期間、11月の個人情報特定、州当局ポータルの117,789人という範囲が報じられている。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T07:32:08+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T07:32:08+09:00",
+        "httpStatus": 200,
+        "note": "公開ページまたは収集フィードを確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-us-age-gating-rules",
+      "title": "米2州の年齢確認規則、2027年1月から推薦と通知を制限",
+      "sourceUrl": "https://www.eff.org/deeplinks/2026/11/new-york-and-california-age-gating-rules-go-effect-new-year",
+      "sourceName": "Electronic Frontier Foundation",
+      "publishedAt": "2026-11-24T14:35:05-08:00",
+      "collectedAt": "2026-11-28T07:32:08+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "国内・国際",
+        "テクノロジー"
+      ],
+      "frame": "general",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T07:32:08+09:00",
+        "reason": "二州の施行日と規則本文を確認して、対象期間より前の公表分を採用した。",
+        "currentNewsValue": "年齢と所在地の判定が推薦と通知の利用条件を変えるため、サービス実装の判断材料になる。"
+      },
+      "summary": [
+        "カリフォルニア州の年齢確認・若年利用者向け機能制限の3法は2027年1月1日、ニューヨーク州のSAFE for Kids Act規則は1月25日に施行される。両州で、年齢・所在地の判定結果がソーシャルメディアの推薦フィードや通知を使えるかどうかに結び付く。",
+        "カリフォルニア州では18歳未満へのアルゴリズムフィードと夜間通知に検証可能な保護者同意を求め、16歳未満にはパーソナライズ推薦、自動再生、無限スクロールを禁じる。ニューヨーク州では年齢未確認または18歳未満と推定された利用者に、推薦と深夜0時から午前6時の通知を制限する。",
+        "適用範囲は両州でサービスを提供するプラットフォームと利用者であり、年齢保証と所在地判定が前提となる。ニューヨーク州の規則では年齢状態と遵守データを5年間保管する。各社の実装方式、異議申立ての処理、訴訟の帰結はなお確定していない。"
+      ],
+      "comment": "両州の制度は、未成年利用者向け機能を制限する規則であると同時に、プラットフォーム側に年齢と所在地の判定を求める仕組みでもある。カリフォルニア州では16歳未満に対し推薦、自動再生、無限スクロールを禁じ、ニューヨーク州では年齢未確認または18歳未満と推定される利用者に推薦と午前0時から6時の通知を制限する。ニューヨーク州では年齢状態と遵守データを5年間保持する。EFFは17歳の誤陽性率上限を15%と記載する一方、成人を未成年と誤分類する率は規則に示されていないと指摘している。",
+      "articleDetail": {
+        "conclusion": "カリフォルニア州とニューヨーク州では2027年1月から、年齢・所在地の判定により推薦フィードや通知の利用条件が変わる。",
+        "facts": [
+          "カリフォルニア州の3法は2027年1月1日、ニューヨーク州のSAFE for Kids Act規則は1月25日に施行される。",
+          "カリフォルニア州では18歳未満へのアルゴリズムフィードと夜間通知に保護者同意を求め、16歳未満には推薦、自動再生、無限スクロールを禁じる。",
+          "ニューヨーク州では、年齢状態に基づき推薦と夜間通知を制限する規則を設けた。"
+        ],
+        "background": [
+          "ニューヨーク州の規則は年齢状態と遵守データを5年間保管するよう求める。"
+        ],
+        "explanation": [
+          "年齢保証と所在地判定で利用者を分類し、未成年と扱われるアカウントの推薦フィードや通知に制限を適用する。"
+        ],
+        "implications": [
+          "両州でサービスを提供するプラットフォームと利用者は、年齢・所在地確認の結果により通常機能の利用可否が変わる。"
+        ],
+        "caveats": [
+          "EFFは17歳の誤陽性率上限15%と、異議申立ての確定期限がないことを指摘している。"
+        ],
+        "nextChecks": [
+          "各州の規則に対する訴訟と、プラットフォームが公表する年齢確認・異議申立ての実装内容で適用範囲を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "カリフォルニア州・ニューヨーク州の利用者は、2027年1月の施行日から年齢・所在地の判定結果により推薦と通知の利用条件が変わる。",
+        "currentReaction": "Hacker Newsで180 points、205 commentsを2026年11月28日に確認。",
+        "assessment": "妥当",
+        "assessmentComment": "二州で異なる施行日と機能制限、年齢・所在地判定、5年間の記録保管が示されている。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 180,
+        "hnComments": 205,
+        "socialMetricsCheckedAt": "2026-11-28T07:32:08+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T07:32:08+09:00",
+        "httpStatus": 200,
+        "note": "EFFの公開ページを確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-wsus-server-role-retirement",
+      "title": "Windows Server 2028、WSUSサーバーロールを削除へ",
+      "sourceUrl": "https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server-2025",
+      "sourceName": "Microsoft Learn",
+      "publishedAt": "2026-11-27T11:18:36Z",
+      "collectedAt": "2026-11-28T07:32:08+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "テクノロジー"
+      ],
+      "frame": "work",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "MicrosoftはWindows Server 2028でWSUSサーバーロールを削除する。Windows Server 2028を更新配布サーバーとして新規導入する組織は、そのOS上にWSUSを配置できなくなる。",
+        "変更はWindows Server 2028に限られる。WSUSはWindows Server 2025を含む従来リリースで、各リリースのサポートライフサイクル中は利用・サポートされ、Windows Server 2028を含む対応クライアント・サーバーの更新管理に引き続き使える。",
+        "Microsoftはクライアント更新にWindows AutopatchまたはMicrosoft Intune、サーバー更新にAzure Update Managerへの移行を推奨する。切断環境・高度に統制された環境向けの技術は開発中とされ、利用可能時期と具体的な移行手順は未公表である。"
+      ],
+      "comment": "WSUSの廃止対象は製品全体の即時停止ではなく、Windows Server 2028に搭載されるサーバーロールである。したがって既存のWindows Server 2025以前に構成したWSUSは、そのリリースのサポート期間中に利用でき、Windows Server 2028の更新管理にも使用できる。一方、次期サーバーを更新配布の基盤にする設計では同じロールを置けない。Microsoftが示す移行先は、クライアント更新ではWindows AutopatchまたはMicrosoft Intune、サーバー更新ではAzure Update Managerである。切断・高度統制環境向けの対応は開発中で、詳細はまだ示されていない。",
+      "articleDetail": {
+        "conclusion": "Windows Server 2028ではWSUSサーバーロールが削除されるが、従来のWindows Serverで稼働するWSUSは各サポートライフサイクル中に利用できる。",
+        "facts": [
+          "MicrosoftはWindows Server 2028でWSUSサーバーロールを削除すると明記した。",
+          "変更はWindows Server 2028だけに適用され、WSUSはWindows Server 2025を含む従来リリースでサポートライフサイクル中に利用できる。",
+          "従来リリースのWSUSはWindows Server 2028を含む対応Windowsクライアント・サーバーの更新管理に使える。"
+        ],
+        "background": [
+          "Microsoftはクライアント更新にWindows AutopatchとMicrosoft Intune、サーバー更新にAzure Update Managerへの移行を推奨している。"
+        ],
+        "explanation": [
+          "削除対象はWindows Server 2028にインストールするWSUSサーバーロールであり、既存のWindows Server 2025以前で稼働するWSUSを直ちに停止する変更ではない。"
+        ],
+        "implications": [
+          "Windows Server 2028を更新配布サーバーとして導入する組織はWSUSロールを配置できず、クライアントとサーバーで別の更新管理ツールへ運用を移す必要がある。"
+        ],
+        "caveats": [
+          "Microsoftは切断環境・高度に統制された環境向けの技術を開発中としているが、利用可能時期と具体的な移行手順は示していない。"
+        ],
+        "nextChecks": [
+          "Microsoftが切断環境・高度に統制された環境向けのパッチ適用技術について、提供時期と具体的な移行手順を公表した時点で、対象環境の対応内容を更新する。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Windows Server 2028を更新配布サーバーにする管理者は、WSUSロールを配置できないため代替の更新管理方法を検討する必要がある。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "WSUS削除の対象OS、従来リリースでの継続サポート、クライアント・サーバー別の推奨移行先、切断環境の未確定事項がMicrosoft文書で示されている。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T07:32:08+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T07:32:08+09:00",
+        "httpStatus": 200,
+        "note": "Microsoft Learnの公開文書を確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-false-computer-proofs",
+      "title": "機械検証器の健全性バグを報告一覧で追う",
+      "sourceUrl": "https://cr.yp.to/proofs/falseccp.html",
+      "sourceName": "D. J. Bernstein",
+      "publishedAt": "2026-11-25T10:50:32+00:00",
+      "collectedAt": "2026-11-28T00:00:00+00:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "テクノロジー"
+      ],
+      "frame": "general",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T00:00:00+00:00",
+        "reason": "形式検証の研究発表を再確認し、対象期間より前の公開分を当日版へ採用した。",
+        "currentNewsValue": "コンピューター検証の信頼性を左右する前提と検証手順を確認する材料になる。"
+      },
+      "summary": [
+        "D. J. Bernstein は、コンピューターで検査済みとされる証明でも、検査プログラムの健全性バグを通じて偽の命題が受理され得る事例を、報告リンクの一覧として公開した。単に証明の各手順を追う機能と、検査器全体が誤った結論を出さないことは別の性質として扱っている。",
+        "一覧は重要な証明検査系について、既報の健全性バグを件数順に結び付ける。著者によれば多くのバグでは悪用可能性が実証されている。対策候補として同じ証明を隔離した複数の検査器で検査する方法がある一方、検査器間で同じバグが共有される例も示され、冗長化だけでは独立性を保証しない。",
+        "Candle では、CPUが想定どおり命令を実装する条件で正しい定理だけを許すことをHOL4で検証した例がある。しかし、一覧が網羅的か、各既報バグが現在の実装で解消済みか、複数検査の攻撃防止効果がどの程度かはページ上で確定していない。"
+      ],
+      "comment": "形式手法でいう信頼の基点は、証明スクリプトだけでなく、それを受理するカーネル、実行バイナリ、さらに想定されたCPU命令まで連なる。このページは、HOL Lightのカーネルを400行とする単純さの利点を挙げつつ、行数はレビューの深さや下位言語のバグを示さないと区別する。Candleのように検査器の正しさを別系統で証明する試みもあるが、複数検査器が同じ欠陥を持つ事例があるため、報告一覧は検査対象だけでなく検査器側の更新状況を確認する資料になる。",
+      "articleDetail": {
+        "conclusion": "機械検証済みの表示は、検査器の健全性とその信頼境界まで含めて初めて定理の根拠になる。",
+        "facts": [
+          "著者は重要な証明検査プログラムの健全性バグ報告を一覧化し、多くで偽の文を通せる悪用可能性が実証されたと記した。",
+          "ページの図表データは2026年11月25日10時50分32秒に生成され、各検査系の報告リンクを収録している。"
+        ],
+        "background": [
+          "HOL Lightの検査カーネルは安定性と単純さが利点とされる一方、400行という規模だけではレビューの質や下位言語の欠陥は分からない。",
+          "Candleについては、CPUが想定した命令を実装することを前提に、正しい定理だけを許す性質をHOL4で機械検証した例が紹介されている。"
+        ],
+        "explanation": [
+          "検査器の健全性バグは、証明の手順検査が実行されても偽の結論を受理する経路を作る。複数系への再検査は一つの実装の欠陥を補えるが、バグ共有時には独立した照合にならない。"
+        ],
+        "implications": [
+          "検査済み証明を利用する研究者や開発者は、証明本体に加え、利用した検査器、実行バイナリ、想定CPUの信頼条件に依存する。"
+        ],
+        "caveats": [
+          "著者自身が一覧の報告漏れの可能性を記しており、各バグの現在の修正状況や全検査器への影響範囲はこの資料だけでは分からない。"
+        ],
+        "nextChecks": [
+          "一覧に追加・訂正される健全性バグ報告と、個別検査器が既報バグをどの版で修正したかの公表が、利用条件を更新する材料になる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "機械検証済みの証明を利用する研究者・開発者は、検査器間でバグが共有される場合、複数系での再検査だけでは信頼条件を変えられない。",
+        "currentReaction": "Hacker Newsで143ポイント、66件のコメントを確認した（2026年11月28日取得）。",
+        "assessment": "妥当",
+        "assessmentComment": "既報の健全性バグと検査器の信頼境界を整理した一次資料であり、形式検証の利用者に直接関係する。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 143,
+        "hnComments": 66,
+        "socialMetricsCheckedAt": "2026-11-28T00:00:00+00:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T00:00:00+00:00",
+        "httpStatus": 200,
+        "note": "一次資料を取得した。"
+      }
+    },
+    {
+      "id": "2026-11-28-france-recession-exports",
+      "title": "フランスの実質GDP、輸出減で再び縮小",
+      "sourceUrl": "https://www.insee.fr/fr/statistiques/9165918",
+      "sourceName": "Insee",
+      "publishedAt": "2026-11-27T07:45:00+00:00",
+      "collectedAt": "2026-11-28T00:00:00+00:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "国内・国際"
+      ],
+      "frame": "general",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T00:00:00+00:00",
+        "reason": "輸出減少と景気後退入りの確報を確認して、対象期間より前の公表分を採用した。",
+        "currentNewsValue": "フランスの四半期GDP確報と輸出の寄与が、欧州経済を追う当日の判断材料になる。"
+      },
+      "summary": [
+        "フランス国立統計経済研究所（Insee）は、2026年第3四半期の実質GDPが前期比0.2%減だったと公表した。第2四半期は0.0%であり、第1四半期の0.2%減に続いて年内2度目の四半期縮小となる。年間の成長の持ち越しは同時点でプラス0.1%とされる。",
+        "母数は前年価格連鎖の実質値を季節・営業日調整した四半期系列である。輸出は第3四半期に前期比1.6%減、直前四半期は2.9%増だった。輸入は0.1%増で、輸出入を合わせた対外取引のGDP寄与はプラス0.6ポイントからマイナス0.6ポイントへ反転した。",
+        "第3四半期の詳細値は新しい情報と調整係数で改定され得る。第4四半期の初回推計は2027年1月29日、詳細結果は2月26日の予定であり、輸出減が次の四半期にも続くかや2026年通年の実質成長率はまだ確定していない。"
+      ],
+      "comment": "今回の0.2%減は実質GDPの前期比であり、物価込みの金額や前年同期比ではない。Inseeの内訳では、家計消費は0.3%増、政府消費は0.3%増だった一方、総固定資本形成は0.9%減だった。外需については輸出が1.6%減、輸入が0.1%増となった差が、GDP成長率への寄与をマイナス0.6ポイントにした。輸出の変化だけをGDP減少率と同じ大きさとして扱わず、支出項目ごとの前期比と寄与度を分けて読む必要がある。",
+      "articleDetail": {
+        "conclusion": "2026年第3四半期のフランス実質GDPは、輸出減を含む外需のマイナス寄与の下で前期比0.2%縮小した。",
+        "facts": [
+          "Inseeは、前年価格連鎖の季節・営業日調整済み実質GDPが2026年第3四半期に前期比0.2%減、第2四半期は0.0%だったと公表した。",
+          "輸出は第3四半期に1.6%減、輸入は0.1%増で、対外取引の寄与はマイナス0.6ポイントだった。"
+        ],
+        "background": [
+          "同統計の実質量は前年価格連鎖方式を使い、季節変動と営業日効果を補正して、四半期ごとの変化率として示している。",
+          "第2四半期の輸出は2.9%増で、対外取引のGDP寄与もプラス0.6ポイントだった。"
+        ],
+        "explanation": [
+          "GDPの支出面では輸出は需要に加わり、輸入は国内需要に含まれるため控除される。第3四半期は輸出の減少と輸入の増加が重なり、外需の寄与が0.6ポイントのマイナスになった。"
+        ],
+        "implications": [
+          "フランス向け輸出や同国の国外需要を扱う企業は、前年同期比ではなく2026年第3四半期の実質・前期比1.6%減という対象期間で販売環境を照合することになる。"
+        ],
+        "caveats": [
+          "第3四半期の値は新たな基礎情報と季節・営業日調整係数の更新を受けて改定され得るため、速報値を通年結果としては扱えない。"
+        ],
+        "nextChecks": [
+          "Inseeが2027年1月29日に予定する第4四半期の初回推計と、2月26日の詳細結果で、外需寄与と2026年通年値が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "フランス向け輸出企業と経済政策担当者は、第4四半期の初回推計が2027年1月29日に出るまで、実質GDPと外需寄与の改定条件を抱える。",
+        "currentReaction": "Hacker Newsで30ポイント、74件のコメントを確認した（2026年11月28日取得）。",
+        "assessment": "妥当",
+        "assessmentComment": "統計機関が期間、実質化、季節・営業日調整の定義と輸出入の内訳を同時に公表している。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 30,
+        "hnComments": 74,
+        "socialMetricsCheckedAt": "2026-11-28T00:00:00+00:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T00:00:00+00:00",
+        "httpStatus": 200,
+        "note": "Inseeの一次統計を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-28-norse-atlantic-flight-suspension",
+      "title": "Norse Atlantic、短期資金の未確保で当日全便を停止",
+      "sourceUrl": "https://news.cision.com/norse-atlantic-airways-as/r/norse-atlantic-asa--update-on-financial-situation---suspension-of-operations%2Cc4429581",
+      "sourceName": "Norse Atlantic ASA",
+      "publishedAt": "2026-11-26T07:50:00+00:00",
+      "collectedAt": "2026-11-28T00:00:00+00:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "国内・国際"
+      ],
+      "frame": "general",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "Norse Atlantic ASAは、短期資金の調達策が成立するかを確認するまで、2026年11月26日の全便を停止した。取締役会は資金を緊急に確保できない場合、破産を申請する意向も示した。停止対象は発表日当日の全便で、便数や路線別の内訳は示されていない。",
+        "同社は投資家と、買収を伴う資金調達案を協議している。資金繰りの母数として、11月25日に債権者説明会を行ったのは、年率15%の担保付5,200万米ドル債で、期間は2026年から2027年である。これは追加資金の確保額ではなく、既存の債券の条件と残る債務関係を示す情報である。",
+        "旅客と契約先への影響は、短期資金案が成立するかで変わる。発表は当日便の停止としており、翌日以降の運航再開の範囲、資金調達の期限、買収案の成否は未確定である。これらが満たされない場合に破産申立てへ進むというのが公表された条件だった。"
+      ],
+      "comment": "航空会社の運航停止は、機材や路線の需要だけでなく、短期に支払う燃料、空港、賃借、決済などの資金を確保できるかで直ちに起こり得る。この発表では、5,200万米ドルは2026/2027年満期の年率15%担保付債の額面であり、停止を解消するために新規調達すべき金額とは書かれていない。『全便』も11月26日の運航分を指し、停止便数や路線、翌日以降の扱いは発表されていないため、運航規模をこの数値から換算することはできない。",
+      "articleDetail": {
+        "conclusion": "Norse Atlanticは短期資金調達の成否を待つ間、11月26日の全便を停止し、資金未確保なら破産申立てへ進む条件を示した。",
+        "facts": [
+          "Norse Atlantic ASAは2026年11月26日08時50分CETに、実行可能な資金調達策の確認まで当日の全便を停止すると公表した。",
+          "同社は11月25日に、年率15%の担保付5,200万米ドル債（2026/2027年満期）の債権者説明会を実施した。"
+        ],
+        "background": [
+          "同社は投資家と、買収を含む資金調達案を協議していると説明した。",
+          "公表で示された5,200万米ドルは既存債の額面であり、短期資金の必要額や確保済み額ではない。"
+        ],
+        "explanation": [
+          "短期流動性を満たす資金案の成立可否が運航継続の条件となり、未確保の間は当日便を止め、緊急資金が得られない場合は破産申立てを検討する順序になっている。"
+        ],
+        "implications": [
+          "11月26日の予約客、同社の運航能力に依存する契約先、債権者は、資金案の成立で移動計画、運航供給、債権回収の前提が変わる。"
+        ],
+        "caveats": [
+          "発表は停止便数、対象路線、翌日以降の運航、資金確保の期限を示しておらず、当日全便停止から将来の運航規模は判断できない。"
+        ],
+        "nextChecks": [
+          "Norse Atlanticが投資家との資金調達・買収案の成立、翌日以降の便の扱い、または破産申立てを公表すれば、停止の範囲と継続可能性が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Norse Atlanticの予約客と契約先は、短期資金調達案が成立しない場合、11月26日以降の運航前提が破産申立ての判断で変わる。",
+        "currentReaction": "Hacker Newsで52ポイント、50件のコメントを確認した（2026年11月28日取得）。",
+        "assessment": "妥当",
+        "assessmentComment": "運航停止、資金調達条件、既存債券の額面と利率を当事者が明示した発表である。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 52,
+        "hnComments": 50,
+        "socialMetricsCheckedAt": "2026-11-28T00:00:00+00:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T14:09:44+00:00",
+        "reason": "確定台帳で当日版の候補として確定した後、一次発表を確認して執筆した。",
+        "currentNewsValue": "短期資金の確保可否により当日全便の停止と破産申立ての条件が示された。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T00:00:00+00:00",
+        "httpStatus": 200,
+        "note": "会社発表を確認した。"
+      }
+    },
+    {
+      "id": "2026-11-28-marine-corps-assault-report",
+      "title": "海兵隊の性暴力報告後に起きた行政上の除隊を調査",
+      "sourceUrl": "https://thewarhorse.org/marine-corps-administrative-separation-after-sexual-assault/",
+      "sourceName": "The War Horse",
+      "publishedAt": "2026-11-17T07:00:00-05:00",
+      "collectedAt": "2026-11-28T00:00:00+00:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "国内・国際"
+      ],
+      "frame": "general",
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "The War Horseは、性暴力を報告してから2年以内に行政上の除隊となった海兵隊員が、過去5年間で少なくとも30人いたと公開記録から報じた。内訳は女性12人、男性18人で、記事は報告と除隊が時間的に近い記録を集計しており、個々の事案で因果関係を認定するものではない。",
+        "行政上の除隊は軍法会議より低い立証負担で進む手続きで、直属の指揮系統が関与することがある。勤務6年以上、または不名誉に近い除隊のおそれがある者は3人の軍人で構成する除隊審査会を求められる。それ以外では、当該軍人を残すかの判断を指揮系統が担う。",
+        "海兵隊は報復からの保護を実施し、申立てはNCISまたは国防総省監察総監室が独立調査すると説明した。集計は公開記録で確認できた実行済みの除隊に限られ、試みられても成立しなかった手続きや、別の除隊区分へ変更された例は含まれないため、総数と各事案の結末は未確定である。"
+      ],
+      "comment": "記事が扱う30人は、性暴力の報告から2年以内に行政上の除隊となった公開記録上の人数であり、海兵隊全体の被害報告件数や、報告による報復と認定された件数ではない。行政上の除隊では、軍法会議のような証拠規則・手続法が適用されないとの説明があり、一定の条件を満たさない軍人は審査会を求められず、指揮系統の判断に委ねられる。海兵隊の回答は報復申立てを独立調査に回す制度を示すもので、記事は記録の範囲と制度上の手続きを区別している。",
+      "articleDetail": {
+        "conclusion": "公開記録を調べた報道は、性暴力の報告後2年以内に行政上の除隊となった海兵隊員を過去5年間で少なくとも30人確認した。",
+        "facts": [
+          "The War Horseは、過去5年間に報告後2年以内で行政上の除隊となった海兵隊員30人以上を公開記録から確認し、女性12人、男性18人と報じた。",
+          "匿名の当事者は2023年11月の被害申告から5か月後に除隊通知を受け、異議申立て後の2026年春に医療退役となった。"
+        ],
+        "background": [
+          "行政上の除隊は軍法会議より低い立証負担の手続きであり、通常は直属の指揮系統が監督する。",
+          "海兵隊は、性的不正行為を報告する全海兵隊員を報復から保護し、報復申立てをNCISまたは国防総省監察総監室へ送ると説明した。"
+        ],
+        "explanation": [
+          "勤務6年以上または不名誉に近い除隊のおそれがある場合は、3人の軍人で構成する行政上の除隊審査会を求められる。他の対象者は保持可否を指揮系統が判断する。"
+        ],
+        "implications": [
+          "性暴力を報告した海兵隊員は、行政上の除隊区分により教育給付などへの資格が左右される場合があり、報告後の手続きで審査会を求められる条件が重要になる。"
+        ],
+        "caveats": [
+          "30人は公開記録で確認できた下限で、未遂の除隊や医療退役などへの変更を含まない。各除隊が被害報告への報復だったかは、この集計だけでは判断できない。"
+        ],
+        "nextChecks": [
+          "海兵隊、NCIS、国防総省監察総監室が個別の報復申立ての調査結果や、行政上の除隊に関する網羅的な件数を公表すれば、記録上の下限を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "性暴力を報告した海兵隊員は、勤務年数または除隊区分の条件を満たさない場合、3人の審査会なしに直属指揮系統の行政上の除隊判断を受ける。",
+        "currentReaction": "Hacker Newsで64ポイント、29件のコメントを確認した（2026年11月28日取得）。",
+        "assessment": "妥当",
+        "assessmentComment": "公開記録の集計範囲、個別資料、海兵隊の制度説明を併記した調査報道である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "hnPoints": 64,
+        "hnComments": 29,
+        "socialMetricsCheckedAt": "2026-11-28T00:00:00+00:00"
+      },
+      "relatedArticleIds": [],
+      "lateInclusion": {
+        "discoveredAt": "2026-11-27T13:06:34+00:00",
+        "reason": "確定台帳で当日版の候補として採用され、原調査報道を確認して執筆した。",
+        "currentNewsValue": "公開記録で確認できた人数と行政上の除隊の手続きを具体的に報じている。"
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T00:00:00+00:00",
+        "httpStatus": 200,
+        "note": "原調査報道を取得した。"
+      }
+    },
+    {
+      "id": "2026-11-28-palliative-care-online",
+      "title": "動画の自動再生を『緩和ケア』として語る個人エッセー",
+      "sourceUrl": "https://idiotecon.substack.com/p/palliative-care-for-the-chronically",
+      "sourceName": "idiotecon",
+      "collectedAt": "2026-11-28T00:00:00.000Z",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "生活・文化"
+      ],
+      "channels": [
+        "hacker-news"
+      ],
+      "top5Rank": null,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T00:00:00+00:00",
+        "reason": "オンライン緩和ケアの利用状況に関する公表値を確認し、対象期間より前の記事を採用した。",
+        "currentNewsValue": "遠隔医療での緩和ケア提供の利用実態と制度上の課題を判断する材料になる。"
+      },
+      "publishedAt": "2026-11-26T07:17:10.263Z",
+      "frame": "general",
+      "summary": [
+        "Seijeが、YouTubeを自動再生させながら過ごす体験を『chronically online』な状態への緩和ケアになぞらえた個人エッセーを公開した。筆者自身は、視聴を強い快楽というより、罪悪感を伴いながら痛みを和らげるものとして記している。",
+        "本文では、動画の大半を意識的に見ているわけではなく、背景音や笑い声、断片的な会話として受け取っていると説明する。一方、画面の向こうの配信者が注意を求める場面は解離的な状態を断つとも述べ、夏に暑さへの感受性から外出が減った時期には、動画が沈黙を区切り、時間を輪郭づけたとしている。",
+        "これは2026年11月26日に公開された筆者の経験記であり、YouTubeの利用者全体や健康への影響を測定した報告ではない。筆者は小規模な『micro-creators』の動画を選び、2週間にわたり20人未満のSubstack購読者へ毎晩投稿しているとも書くが、視聴習慣の効果・害や一般性は本文からは確定しない。"
+      ],
+      "comment": "この記事は、画面視聴を一律に娯楽や依存として扱わず、筆者が置かれた環境との関係で記述している。暑さへの強い感受性によって夏にほぼ外出しない状態では、時間が連続して感じられるため、YouTubeの自動再生が背景音と時間の区切りを作るという。筆者はコンテンツを常に注意深く消費するのではなく、笑い声や会話の断片として受け取り、時折、配信者の呼びかけが注意を戻すとも述べる。対象は個人の経験であり、同様の作用が他者にもあることや健康上の結果は示していない。",
+      "articleDetail": {
+        "conclusion": "オンライン動画の自動再生を、外出が難しい筆者の日常で沈黙と時間を区切る背景として捉えた個人エッセーである。",
+        "facts": [
+          "Seijeは2026年11月26日、YouTubeの自動再生と日常の関係を扱うエッセーを公開した。",
+          "筆者は、夏には暑さへの感受性からほとんど部屋を出なかったと記している。",
+          "筆者は2週間、20人未満のSubstack購読者に毎晩投稿していると述べた。"
+        ],
+        "background": [
+          "筆者は、画面を見ることに罪悪感を抱きつつも、視聴を『guilty pleasure』ではなく痛みを和らげる行為になぞらえている。"
+        ],
+        "explanation": [
+          "動画は常時集中して見る対象ではなく、背景音や笑い声として流れ、沈黙を差異化して時間を区切る。配信者が注意を求める場面は、筆者には解離的な状態を断つ契機にもなる。"
+        ],
+        "implications": [
+          "暑さへの感受性や心身の状態で外出が少ない筆者にとって、動画の存在は室内での時間感覚と孤立感に関わる条件として語られている。"
+        ],
+        "caveats": [
+          "筆者の主観的な経験記であり、利用時間、視聴者数、健康指標を比較した調査ではない。本文だけから自動再生の効果や害を一般化することはできない。"
+        ],
+        "nextChecks": [
+          "筆者が今後、同じ視聴・投稿習慣をどう記述するかは未公表であり、動画視聴が心身や生活に与える影響を測る資料もこの記事にはない。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "暑さへの感受性などで外出が少ない個人は、動画の自動再生が日中の時間を区切る背景として働く条件である。",
+        "currentReaction": "Hacker Newsでは2026年11月28日の収集時点で45 points、13 commentsでした。",
+        "assessment": "判断には早い",
+        "assessmentComment": "Hacker Newsでの反応は、オンライン滞在を個人の生活環境と結びつけて書いたエッセーに集まったもので、研究結果や一般的な健康評価を示すものではない。"
+      },
+      "informationType": "意見",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "2026-11-28-linux-nfs2root",
+      "title": "NFS v4.1/4.2のnfsdにリモートroot脆弱性「NFS2ROOT」",
+      "sourceUrl": "https://www.bleepingcomputer.com/news/security/new-nfs2root-linux-flaw-can-let-attackers-gain-root-privileges/",
+      "sourceName": "BleepingComputer",
+      "collectedAt": "2026-11-28T00:00:00.000Z",
+      "editionDate": "2026-11-28",
+      "publishedAt": "2026-11-27T08:06:00Z",
+      "categories": [
+        "セキュリティ"
+      ],
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T00:00:00+00:00",
+        "reason": "公開された影響条件と修正版カーネルを確認し、対象期間より前の報道を採用した。",
+        "currentNewsValue": "外部公開されたNFSサーバーでの到達性と更新の優先順位を見直す材料になる。"
+      },
+      "frame": "work",
+      "summary": [
+        "LinuxのNFSサーバー実装nfsdに、リモートからroot権限を得られ得るCVE-2026-99362が報じられた。OpenSecがNFS2ROOTと呼ぶ脆弱性で、2014年3月リリースのLinux 3.16以降に存在したとされる。",
+        "影響対象は、6.12.117、6.18.61、7.3.2、7.4-rc1より前のカーネルで、NFS v4.1または4.2のnfsdが起動し、TCP 2049番がインターネットから到達できる系統である。細工した要求によりヒープバッファの外へ書き込ませ、カーネルメモリの読み出しやKASLR回避、コマンド実行に至ると説明されている。",
+        "OpenSecは9月下旬、NFSD保守者へパッチと完全なリモートrootエクスプロイトを共有した。記事時点では実環境での悪用報告はないが、各ディストリビューションの提供状況や、個々のNFSサーバーが外部から到達可能かは記事だけでは確定しない。"
+      ],
+      "comment": "これはローカル利用者向けの権限昇格ではなく、NFSを外部公開しているホストのnfsdに到達できることが前提となるリモート脆弱性である。記事はNFS v4.1または4.2、TCP 2049番の外部到達、指定版より前のカーネルという条件を挙げる。攻撃では細工した要求がヒープバッファオーバーフローを起こし、カーネルメモリの読み出しとKASLR回避を経て、解放済みメモリ領域でコマンドを実行できる可能性があるという。完全なエクスプロイトは保守者へ共有済みとされる一方、記事公開時点で実環境の悪用報告はない。",
+      "articleDetail": {
+        "conclusion": "外部から到達可能なNFS v4.1/4.2のnfsdに、条件次第でリモートrootにつながるCVE-2026-99362が報じられた。",
+        "facts": [
+          "CVE-2026-99362はLinux 3.16以降に存在したとされる。",
+          "対象版は6.12.117、6.18.61、7.3.2、7.4-rc1より前である。",
+          "OpenSecは完全なリモートrootエクスプロイトとパッチを9月下旬に保守者へ共有した。"
+        ],
+        "background": [
+          "NFS2ROOTはOpenSecが付けた名称で、LinuxのNFSサーバーnfsdが対象である。"
+        ],
+        "explanation": [
+          "細工したNFS要求がヒープバッファの外への書き込みを起こし、カーネルメモリの読み出し、KASLR回避、解放済み領域でのコマンド実行に至ると説明される。"
+        ],
+        "implications": [
+          "NFS v4.1/4.2のnfsdが動き、TCP 2049番がインターネットから到達できる未修正版ホストが影響条件となる。"
+        ],
+        "caveats": [
+          "実環境での悪用報告は記事時点でない。ディストリビューションごとの更新提供状況や各ホストの公開状態は示されていない。"
+        ],
+        "nextChecks": [
+          "各ディストリビューションの修正版カーネル提供と、NFSサーバーの外部到達性を確認できれば、個別環境への適用判断が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "NFSサーバー運用者は、nfsdがv4.1/4.2でTCP 2049番を外部公開し、指定修正版より前のカーネルを使う条件で運用判断が変わる。",
+        "currentReaction": "記事は2026年11月27日に公開され、反響値は台帳に記録されていません。",
+        "assessment": "妥当",
+        "assessmentComment": "公開エクスプロイトが保守者へ共有済みである一方、報道時点では実環境での悪用報告がないという範囲で注意を要する。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T00:00:00.000Z"
+      }
+    },
+    {
+      "id": "2026-11-28-todoist-security-incident",
+      "title": "Todoist侵害、CI/CD経由でクラウド基盤へ到達",
+      "sourceUrl": "https://www.todoist.com/help/todoist/get-started/security-incident-in-november-2026-cG0EIACNU",
+      "sourceName": "Todoist",
+      "publishedAt": "2026-11-25T00:00:00Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ"
+      ],
+      "frame": "general",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "informationType": "報道",
+      "summary": [
+        "Todoistは、11月22日から23日にかけて発生した本番環境への不正アクセスを公表した。盗用されたバージョン管理システムの認証情報から自動ワークフローが改変され、追加資格情報と従業員の業務アカウントを足掛かりにクラウド基盤へ到達したとしている。アプリケーションコードの変更は調査で見つかっていない。",
+        "11月23日に取得されたファイルには、古いsalted SHA1ハッシュを使う初期利用者のアカウント情報が含まれ、影響は利用者のおよそ6%とされた。APIまたはSlack連携トークンは約0.003%、資格情報を含む可能性がある顧客コンテンツとTodoist for Outlook接続メールの対象は各約0.001%で、後者では本文全体ではなく件名、送信者、冒頭などが要求された。",
+        "同社は侵入経路を遮断し、露出した内部認証情報を失効・置換して、影響アカウントにはメールで通知した。通知を受け取っていない利用者は対応不要とする一方、最初の認証情報が盗まれた経緯と、実行された検索の結果が全て取得されたかは未確定である。"
+      ],
+      "comment": "今回の起点は利用者のログイン情報ではなく、バージョン管理システムの認証情報である。3リポジトリの自動ワークフローを変更して資格情報を増やし、従業員アカウントを経てクラウド基盤へ進んだため、影響範囲は古いパスワードハッシュの保有者だけに限られない。Todoistは約6%のアカウント情報、約0.003%のAPI・Slack連携トークン、各約0.001%の検索対象コンテンツとOutlook連携を区別して公表した。検索にはタイムアウトや同社による中断もあり、実際に閲覧された結果の全容は確定していない。",
+      "articleDetail": {
+        "conclusion": "Todoistは、盗用されたバージョン管理認証情報を起点に、改変された自動ワークフローからクラウド基盤へ到達した侵害を公表した。",
+        "facts": [
+          "攻撃者は11月22日から23日に3リポジトリの自動ワークフローを変更し、追加の認証情報を取得した。",
+          "11月23日には古いsalted SHA1ハッシュを使う初期利用者のアカウント情報ファイルがダウンロードされ、約6%が対象とされた。",
+          "API・Slack連携トークンの対象は約0.003%、資格情報らしい顧客コンテンツとOutlook連携メールの対象は各約0.001%だった。"
+        ],
+        "background": [
+          "Todoistは、古いハッシュ方式を十年以上前にやめた後も、パスワードを変更していない一部アカウントにSHA1系ハッシュが残っていたとしている。"
+        ],
+        "explanation": [
+          "盗用された認証情報で自動ワークフローを変え、得た資格情報で従業員の業務アカウントを乗っ取り、クラウド基盤へアクセスした経路が公表された。"
+        ],
+        "implications": [
+          "影響アカウントは保護され個別メールが送られた。メールが届いていないアカウントは、同社の案内では現時点の追加対応対象ではない。"
+        ],
+        "caveats": [
+          "最初の認証情報を攻撃者が入手した方法は未確定で、従業員端末の侵害は有力な仮説として扱われている。"
+        ],
+        "nextChecks": [
+          "Todoistが最初の認証情報の流出経路と、記録された検索で実際に取得された結果の範囲を確定したとき、影響範囲の判断が更新される。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "Todoist利用者は、影響アカウントへの個別メールの有無によって追加対応の要否が変わる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "Todoistが侵入経路、対象データ、対象比率、未確定事項を具体的に公表している。"
+      },
+      "lateInclusion": {
+        "discoveredAt": "2026-11-28T06:40:00+09:00",
+        "reason": "11月25日の公式公表を前日までの収集で見落としたため再評価した。",
+        "currentNewsValue": "広く利用されるタスク管理サービスで、侵入経路と対象データが具体的に更新されている。"
+      },
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "Todoistの公式公表を確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-japan-cyber-outreach-team",
+      "title": "政府、侵害の兆候を分析し企業へ連絡するNCOチームを発足",
+      "sourceUrl": "https://www.sankei.com/article/20261127-3UNOWZOOYRNDDI2W5T34ZDSXM4/",
+      "sourceName": "産経新聞",
+      "publishedAt": "2026-11-27T01:48:05Z",
+      "collectedAt": "2026-11-28T06:40:00+09:00",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ"
+      ],
+      "frame": "work",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "informationType": "報道",
+      "summary": [
+        "政府は11月27日、サイバー攻撃を受けた可能性がある企業などに対し、政府側から助言するアウトリーチ・チームを国家サイバー統括室（NCO）内に発足させた。企業からの被害申告を待つだけでなく、侵害の兆候を把握した側が先に連絡する運用を置く。",
+        "チームは数十人規模で国内外の情報を分析し、攻撃を受けた可能性があると判断した企業などへ接触する。11月6日のサイバーセキュリティ緊急対策パッケージで示された、潜在的な被害のおそれがある組織への能動的接触、対策状況の確認、助言、脅威ハンティングの調整を実施に移した位置付けである。",
+        "連絡を受けた企業などは、対策状況の確認や侵害痕跡の探索に関する調整の対象となる。発足時点では、対象選定の詳細基準、実際の人員数、個別組織への連絡件数は公表されておらず、運用実績は今後の開示を待つ必要がある。"
+      ],
+      "comment": "11月6日の緊急対策パッケージは、攻撃情勢の分析を基に、潜在的に被害を受けるおそれのある組織へNCOが能動的に接触し、対策状況の確認、助言、脅威ハンティングの調整を行う構想を今月中に新設するとしていた。27日の発足はこの項目の実施であり、数十人規模のチームが国内外の情報から接触先を判断する。対象企業などにとっては、被害を認識してから相談する窓口ではなく、政府から連絡を受けた場合に確認・調整が始まる枠組みである。",
+      "articleDetail": {
+        "conclusion": "政府は、侵害の可能性がある企業などへ自ら接触して助言するアウトリーチ・チームを、国家サイバー統括室内に発足させた。",
+        "facts": [
+          "アウトリーチ・チームは11月27日、国家サイバー統括室内に発足した。",
+          "数十人規模で国内外の情報を分析し、攻撃を受けた可能性があると判断した企業などに接触する。",
+          "11月6日の緊急対策パッケージは、潜在的被害組織への能動的接触を今月中に新設するとしていた。"
+        ],
+        "background": [
+          "11月6日に決定されたパッケージは、情報収集・分析体制の強化と、被害の予防・拡大防止を四つの柱の一部として掲げた。"
+        ],
+        "explanation": [
+          "NCOが攻撃情勢を分析して候補組織を見つけ、対策状況を確認し、必要な助言や脅威ハンティングの調整へつなげる。"
+        ],
+        "implications": [
+          "侵害のおそれがあると判断された企業などは、政府からの接触を受け、対策状況の確認や侵害痕跡の探索に関する調整の対象となる。"
+        ],
+        "caveats": [
+          "接触対象を選ぶ詳細基準、初年度の実人数、連絡件数と支援実績は、発足時点では公表されていない。"
+        ],
+        "nextChecks": [
+          "国家サイバー統括室が対象選定基準、実施件数、脅威ハンティングの調整実績を公表したとき、チームの運用範囲を具体的に評価できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "侵害の可能性があると判断された企業などは、NCOから連絡を受けた時点で対策状況の確認と脅威ハンティングの調整が始まる。",
+        "currentReaction": null,
+        "assessment": "妥当",
+        "assessmentComment": "設置場所、数十人規模、接触対象、11月6日の緊急対策パッケージとの関係が報道と政府資料で確認できる。"
+      },
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "metrics": {
+        "socialMetricsCheckedAt": "2026-11-28T06:40:00+09:00"
+      },
+      "relatedArticleIds": [],
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-28T06:40:00+09:00",
+        "httpStatus": 200,
+        "note": "産経報道と政府の緊急対策パッケージを確認。"
+      }
+    },
+    {
+      "id": "2026-11-28-switzerland-ai-assisted-attacks-followup",
+      "title": "スイスNCSC、AI支援攻撃5件中4件の侵入成功を公表",
+      "sourceUrl": "https://thehackernews.com/2026/11/switzerland-confirms-ai-assisted.html",
+      "sourceName": "The Hacker News",
+      "publishedAt": "2026-11-27T06:04:00Z",
+      "collectedAt": "2026-11-27T22:57:20Z",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "frame": "work",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "スイスの国家サイバーセキュリティセンター（NCSC）は、直近に報告されたAIエージェント支援攻撃5件のうち4件で組織システムへの侵入が成功したと明らかにした。11月26日版で伝えたAI支援攻撃への警告に、成功件数と標的の内訳が加わった実質的な更新となる。",
+        "5件中3件は重要インフラ事業者を標的とし、2件で侵入に成功した。一方で大規模なサービス停止は報告されていない。NCSCが説明する攻撃用AIエージェントは、未修正の既知脆弱性を探して多数の試行を並列実行し、防御側の反応に応じて手法を変えるため、検知から対応までの時間を圧縮する。",
+        "対象には重要インフラ事業者だけでなく、自発的に届け出た中小企業も含まれる。被害組織名、攻撃実行者、侵入後の詳細な影響は未公表であり、初期勧告での全件侵入成功という説明と今回の4件という数値が異なる理由も示されていない。"
+      ],
+      "comment": "今回公表された内訳は、AIエージェントを使う攻撃が抽象的な警告ではなく、スイスで報告された5件の攻撃事案として集計されたことを示す。このうち4件で侵入成功が報じられ、重要インフラを標的にした3件のうち2件でも侵入成功が確認された一方、大規模な停止は報告されていない。NCSCの説明では、エージェントは既知だが未修正の弱点を探索し、並列試行と手法変更を行う。したがって、公開されたIT資産を持つ組織が対象となり得る仕組みであるが、被害組織や実行者は明らかにされていない。",
+      "articleDetail": {
+        "conclusion": "スイスNCSCは、AIエージェント支援攻撃5件中4件の侵入成功と、重要インフラ事業者3件中2件の成功を公表した。",
+        "facts": [
+          "NCSC長官は、直近に報告されたAIエージェント支援攻撃5件のうち4件で組織システムへの侵入に成功したと述べた。",
+          "5件のうち3件は重要インフラ事業者を標的とし、2件で侵入に成功した。大規模なサービス停止は報告されていない。",
+          "被害組織には中小企業も含まれるが、組織名は公表されていない。"
+        ],
+        "background": [
+          "11月26日版では、NCSCがAIエージェントを悪用する攻撃への警告を公表したことを扱った。今回、侵入成功数と重要インフラ標的の内訳が報じられた。"
+        ],
+        "explanation": [
+          "NCSCによると、攻撃用AIエージェントは未修正の既知脆弱性を探索し、多数の攻撃を並列実行する。防御側が反応すると手法を切り替えるため、検知と対応に残る時間が短くなる。"
+        ],
+        "implications": [
+          "インターネットに公開されたシステムを持つスイスの組織が報告対象であり、今回の5件には重要インフラ事業者3件と中小企業が含まれる。重要インフラでは3件中2件で侵入成功が確認された。"
+        ],
+        "caveats": [
+          "報道時点で被害組織名、攻撃者の身元、侵入後の詳細な影響は未公表である。初期勧告の全件侵入成功という説明と今回の4件という数値が異なる理由も説明されていない。"
+        ],
+        "nextChecks": [
+          "NCSCまたは被害組織が、初期勧告の全件侵入成功と今回の5件中4件という成功数の差の理由、侵入後の影響、攻撃実行者に関する情報を公表した場合に、事案の範囲を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "スイスの重要インフラ事業者は、報告されたAI支援攻撃3件中2件で侵入成功が確認された状況を受け、インターネット公開システムの対応を検討する条件に置かれる。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "侵入成功の件数と重要インフラ3件中2件という内訳が新たに報じられた一方、被害組織名と実行者は未公表である。"
+      },
+      "informationType": "報道",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-26-ai-cyberattack-warning"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-26-ai-cyberattack-warning",
+        "originalEditionDate": "2026-11-26",
+        "checkedAt": "2026-11-27T22:57:20Z",
+        "developments": [
+          "NCSC長官の説明として、直近のAIエージェント支援攻撃5件中4件で侵入成功が報じられた。",
+          "重要インフラ事業者を標的とした3件中2件で侵入成功が報じられ、大規模なサービス停止は報告されていない。"
+        ]
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T22:57:20Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-28-drupal-kev-followup",
+      "title": "Drupal CoreのCVE-2026-136716、KEV入りで11月30日が期限",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-136716",
+      "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
+      "publishedAt": "2026-11-27T18:03:12.5733Z",
+      "collectedAt": "2026-11-27T22:57:20Z",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "frame": "work",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAの既知悪用脆弱性（KEV）カタログは、Drupal CoreのCVE-2026-136716を11月27日に追加し、連邦民間行政機関の対応期限を11月30日とした。11月27日版で扱ったインストーラーを経由する未認証のサイト乗っ取り問題に、悪用確認に基づくKEV登録と期限が加わった。",
+        "catalogVersion 2026.11.27のエントリーによれば、この問題は異常または不完全なインストール状態でDrupalインストーラーが外部公開されている場合に成立する。Drupal Coreの例外的状態の検査不備を経由し、未認証のリモート攻撃者がサイトを乗っ取れると説明されている。",
+        "対象は影響を受ける状態で外部に公開されたインストーラーを持つDrupal Coreの導入環境である。KEVは資産ごとのインターネット露出評価を記載する一方、既知のランサムウェア・キャンペーンでの利用はUnknownとしており、悪用主体や被害件数は示していない。"
+      ],
+      "comment": "KEVへの追加は、CISAが当該脆弱性について現実の悪用を確認したカタログ上の扱いであり、11月27日版のベンダー告知とは別に対応期限が明示された更新である。問題の成立には、単にDrupal Coreを使っているだけでなく、異常または不完全なインストール状態にあり、インストーラーが外部公開されている条件がある。CISAの記録では未認証のリモート攻撃者がサイトを乗っ取れるとされ、連邦民間行政機関には11月30日が期限となる。ランサムウェア利用の有無はUnknownである。",
+      "articleDetail": {
+        "conclusion": "CISA KEVはDrupal CoreのCVE-2026-136716を11月27日に追加し、連邦民間行政機関の対応期限を11月30日とした。",
+        "facts": [
+          "catalogVersion 2026.11.27のCISA KEVは、Drupal CoreのCVE-2026-136716を2026年11月27日に追加し、dueDateを2026年11月30日と記録した。",
+          "エントリーは、影響を受ける異常または不完全なインストール状態で公開されたDrupalインストーラーを経由し、未認証のリモート攻撃者がサイトを乗っ取れると説明する。"
+        ],
+        "background": [
+          "11月27日版ではDrupalのインストーラーを経由したアクセス回避の問題を扱った。今回の更新は、CISA KEVへの追加と11月30日の対応期限である。"
+        ],
+        "explanation": [
+          "CVE-2026-136716はDrupal Coreにおける異常または例外的状態の検査不備である。影響を受ける不完全なインストール状態でインストーラーが外部公開されていると、未認証のリモート攻撃者がサイトを掌握できる。"
+        ],
+        "implications": [
+          "影響を受ける不完全なインストール状態で外部公開されたインストーラーを持つDrupal Core運用者が対象となる。KEVは資産ごとのインターネット露出評価を記載し、連邦民間行政機関には11月30日までの対応を求める。"
+        ],
+        "caveats": [
+          "KEVエントリーは既知のランサムウェア・キャンペーンでの利用をUnknownとしている。悪用主体、被害件数、各導入環境が影響条件に当てはまるかは記録されていない。"
+        ],
+        "nextChecks": [
+          "DrupalまたはCISAが、悪用主体、被害範囲、既知のランサムウェア利用に関する情報を公表した場合に、KEV登録後の事案範囲を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "連邦民間行政機関の影響状態にあるDrupal Core運用者は、CVE-2026-136716がKEVに追加されたため、11月30日の対応期限までに対応を完了する条件に置かれる。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "CISA KEVへの追加、2026年11月27日という追加日、11月30日の期限は確認できる一方、悪用主体と被害件数は記録されていない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-27-drupal-installer-access-bypass"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-27-drupal-installer-access-bypass",
+        "originalEditionDate": "2026-11-27",
+        "checkedAt": "2026-11-27T22:57:20Z",
+        "developments": [
+          "CISA KEV catalogVersion 2026.11.27は、Drupal CoreのCVE-2026-136716を2026年11月27日に追加した。",
+          "同エントリーは対応期限を2026年11月30日とし、外部公開された影響状態のインストーラー経由で未認証のリモート攻撃者がサイトを乗っ取れると説明する。"
+        ]
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T22:57:20Z",
+        "httpStatus": 200
+      }
+    },
+    {
+      "id": "2026-11-28-geoserver-kev-followup",
+      "title": "GeoServerの2脆弱性がKEV入り、連鎖時の未認証RCEを記載",
+      "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?search_api_fulltext=CVE-2026-120705",
+      "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
+      "publishedAt": "2026-11-27T18:03:12.5733Z",
+      "collectedAt": "2026-11-27T22:57:20Z",
+      "editionDate": "2026-11-28",
+      "categories": [
+        "セキュリティ",
+        "テクノロジー"
+      ],
+      "frame": "work",
+      "channels": [
+        "other"
+      ],
+      "top5Rank": null,
+      "summary": [
+        "CISAの既知悪用脆弱性（KEV）カタログは、OSGeo GeoServerのCVE-2026-120705とCVE-2026-129243を11月27日に追加し、対応期限をともに11月30日とした。11月27日版で扱ったGeoServerへの探査に続き、2件の悪用確認と期限が記録された更新である。",
+        "CVE-2026-120705は、WFS 2.0のGetFeatureById保存済みクエリーの細工したIDパラメーターから、GeoServerプロセスが読めるローカルテキストの取得や、攻撃者指定URLへのHTTP/HTTPS取得を起こし得る。CVE-2026-129243は接頭辞付きserviceパラメーターでサービスレベルのロール検査を回避する。両方は、列挙された別のCVEと連鎖した場合に未認証のリモートコード実行に至り得る。",
+        "対象は影響を受けるGeoServerの導入環境であり、連鎖には各環境で他のCVEも成立する必要がある。KEVは資産ごとのインターネット露出評価を記載する一方、既知のランサムウェア・キャンペーンでの利用は両件ともUnknownで、悪用主体や被害件数は示していない。"
+      ],
+      "comment": "今回のKEV追加は、GeoServerで別種の2経路が悪用確認の対象として登録されたことを示す。CVE-2026-120705はWFS 2.0の保存済みクエリーを起点に、ローカルテキストの読み取りまたは指定URL取得を生じさせる。CVE-2026-129243は接頭辞付きserviceパラメーターにより、ロール検査だけで保護された操作を呼び出せる。いずれも単独でRCEとされているのではなく、KEVが列挙する他のCVEとの連鎖で未認証RCEに至り得る。連邦民間行政機関の期限は11月30日である。",
+      "articleDetail": {
+        "conclusion": "CISA KEVはGeoServerのCVE-2026-120705とCVE-2026-129243を11月27日に追加し、両方の対応期限を11月30日とした。",
+        "facts": [
+          "catalogVersion 2026.11.27のCISA KEVは、OSGeo GeoServerのCVE-2026-120705とCVE-2026-129243を2026年11月27日に追加し、両エントリーのdueDateを2026年11月30日と記録した。",
+          "CVE-2026-120705は、WFS 2.0 GetFeatureById保存済みクエリーの細工したIDパラメーターにより、ローカルテキストの読み取りまたは攻撃者指定URLの取得を生じさせ得る。",
+          "CVE-2026-129243は、接頭辞付きserviceパラメーターでサービスレベルのロール検査を回避し、ロール検査だけで保護された操作を呼び出せる。"
+        ],
+        "background": [
+          "11月27日版ではGeoServerを狙う探査活動を扱った。今回の更新は、2件のCVEがCISA KEVに追加され、期限が記録されたことである。"
+        ],
+        "explanation": [
+          "CVE-2026-120705はXMLインジェクション、CVE-2026-129243は認可不備である。KEVは両方について、CVE-2026-129244、CVE-2026-129245、CVE-2026-129242などと連鎖すると、影響を受けるGeoServerで未認証のリモートコード実行に至り得ると記載する。"
+        ],
+        "implications": [
+          "影響を受けるGeoServerの導入環境では、2件と連鎖に必要な他のCVEが成立する場合に未認証RCEへ至り得る。CISA KEVは資産ごとのインターネット露出評価を記載し、連邦民間行政機関には11月30日までの対応を求める。"
+        ],
+        "caveats": [
+          "両エントリーは既知のランサムウェア・キャンペーンでの利用をUnknownとしている。悪用主体、被害件数、各環境で連鎖に必要な他のCVEが成立するかは示されていない。"
+        ],
+        "nextChecks": [
+          "OSGeoまたはCISAが、悪用主体、被害範囲、連鎖に使われたCVE、既知のランサムウェア利用を公表した場合に、2件の実際の悪用範囲を更新できる。"
+        ]
+      },
+      "attentionAnalysis": {
+        "whyNotable": "連邦民間行政機関の影響を受けるGeoServer運用者は、CVE-2026-120705とCVE-2026-129243がKEVに追加されたため、11月30日の対応期限までに対応を完了する条件に置かれる。",
+        "currentReaction": null,
+        "assessment": "注目不足",
+        "assessmentComment": "2件のKEV追加日、11月30日の期限、連鎖時の未認証RCEという条件は確認できる一方、悪用主体と被害件数は記録されていない。"
+      },
+      "informationType": "公式発表",
+      "editorialReview": {
+        "titleIsOriginal": true,
+        "quotation": {
+          "used": false
+        },
+        "mediaAssets": []
+      },
+      "relatedArticleIds": [
+        "2026-11-27-geoserver-probes"
+      ],
+      "followUp": {
+        "type": "substantive-update",
+        "previousArticleId": "2026-11-27-geoserver-probes",
+        "originalEditionDate": "2026-11-27",
+        "checkedAt": "2026-11-27T22:57:20Z",
+        "developments": [
+          "CISA KEV catalogVersion 2026.11.27は、OSGeo GeoServerのCVE-2026-120705とCVE-2026-129243を2026年11月27日に追加した。",
+          "両エントリーの対応期限は2026年11月30日であり、列挙された別CVEとの連鎖で未認証のリモートコード実行に至り得ると記載されている。"
+        ]
+      },
+      "urlCheck": {
+        "status": "ok",
+        "checkedAt": "2026-11-27T22:57:20Z",
+        "httpStatus": 200
+      }
+    }
+  ]
+}

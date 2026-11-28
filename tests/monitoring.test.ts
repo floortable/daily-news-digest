@@ -283,6 +283,48 @@ describe('監視証跡の検証', () => {
     expect(validateMonitoringCoverage(vcfInGeneral, registry).some((error) => error.includes('frame を work'))).toBe(true);
   });
 
+  it('仕事枠を含むTop 5は版全体で媒体と分野の多様性を数える', () => {
+    const edition = frameEdition(frameEnforcementStartDate);
+    const top5 = edition.articles.slice(0, 5);
+    const categories = ['テクノロジー', 'セキュリティ', '国内・国際', '生活・文化', '科学・医療'] as const;
+    const sources = ['仕事媒体', '仕事媒体', '一般媒体A', '一般媒体B', '一般媒体C'];
+    for (const article of edition.articles) {
+      article.frame = 'general';
+      article.top5Rank = null;
+    }
+    for (const [index, article] of top5.entries()) {
+      article.top5Rank = index + 1;
+      article.categories = [categories[index]];
+      article.sourceName = sources[index];
+    }
+    top5[0].frame = 'work';
+    top5[1].frame = 'work';
+
+    expect(validateMonitoringCoverage(edition, registry).filter((error) => error.includes('Top 5'))).toEqual([]);
+  });
+
+  it('媒体3・分野3にとどまるTop 5を拒否する', () => {
+    const edition = frameEdition(frameEnforcementStartDate);
+    const top5 = edition.articles.slice(0, 5);
+    const categories = ['テクノロジー', 'セキュリティ', '生活・文化', 'テクノロジー', 'セキュリティ'] as const;
+    const sources = ['媒体A', '媒体B', '媒体C', '媒体A', '媒体B'];
+    for (const article of edition.articles) {
+      article.frame = 'general';
+      article.top5Rank = null;
+    }
+    for (const [index, article] of top5.entries()) {
+      article.top5Rank = index + 1;
+      article.categories = [categories[index]];
+      article.sourceName = sources[index];
+    }
+    top5[0].frame = 'work';
+    top5[1].frame = 'work';
+
+    const errors = validateMonitoringCoverage(edition, registry);
+    expect(errors).toContain(`${edition.date}: Top 5は4媒体以上が必要です`);
+    expect(errors).toContain(`${edition.date}: Top 5は4分野以上が必要です`);
+  });
+
   it('施行日以降の仕事枠VCF記事は6件でも上限を設けず、施行日前は従来どおり検出する', () => {
     const current = frameEdition(frameEnforcementStartDate);
     for (const article of current.articles) article.frame = 'general';
